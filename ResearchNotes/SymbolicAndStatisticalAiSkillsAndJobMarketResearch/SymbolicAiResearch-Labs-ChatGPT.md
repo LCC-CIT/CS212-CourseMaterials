@@ -2,7 +2,24 @@
 
 <h2>Contents</h2>
 
-[TOC]
+- [Lab Assignment Ideas](#lab-assignment-ideas)
+- [Rule-Based Reasoning Labs](#rule-based-reasoning-labs)
+  - [1. Medical Diagnosis Expert System](#1-medical-diagnosis-expert-system)
+  - [2. Animal Classification System](#2-animal-classification-system)
+- [Logic Programming Labs](#logic-programming-labs)
+  - [3. Family Tree Inference](#3-family-tree-inference)
+  - [4. Simple Scheduling Problem](#4-simple-scheduling-problem)
+- [Search & Planning Labs](#search-planning-labs)
+  - [5. Puzzle Solver (8-puzzle, Towers of Hanoi)](#5-puzzle-solver-8-puzzle-towers-of-hanoi)
+  - [6. Robot Pathfinding in a Grid World](#6-robot-pathfinding-in-a-grid-world)
+  - [7. Planning with STRIPS-like Actions](#7-planning-with-strips-like-actions)
+- [Knowledge Representation Labs](#knowledge-representation-labs)
+  - [8. Semantic Network Explorer](#8-semantic-network-explorer)
+  - [9. Frame-Based Restaurant Scenario](#9-frame-based-restaurant-scenario)
+- [Symbolic NLP Labs](#symbolic-nlp-labs)
+  - [10. CFG Sentence Parser](#10-cfg-sentence-parser)
+  - [11. Rule-Based Chatbot](#11-rule-based-chatbot)
+- [Capstone Mini-Projects](#capstone-mini-projects)
 
 ## Lab Assignment Ideas
 

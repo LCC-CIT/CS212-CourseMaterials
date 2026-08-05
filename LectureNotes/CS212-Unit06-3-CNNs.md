@@ -20,7 +20,11 @@ author: Brian Bird
 
 <h2>Table of Contents</h2>
 
-[TOC]
+- [Convolutional Neural Networks (CNN)](#convolutional-neural-networks-cnn)
+  - [History of CNN Development](#history-of-cnn-development)
+- [Reference](#reference)
+  - [Articles and Tutorials](#articles-and-tutorials)
+  - [Interactive Web Pages](#interactive-web-pages)
 
 ## Convolutional Neural Networks (CNN)
 

@@ -21,7 +21,26 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [Tools and Concepts](#tools-and-concepts)
+  - [Google AI Studio](#google-ai-studio)
+    - [In the Prompt Playground (Interactive):](#in-the-prompt-playground-interactive)
+    - [In the Settings or Dashboard (Configuration)](#in-the-settings-or-dashboard-configuration)
+- [How To Use the Gemini API](#how-to-use-the-gemini-api)
+  - [Get an API Key](#get-an-api-key)
+  - [Install the Gemini SDK](#install-the-gemini-sdk)
+  - [Make a Request](#make-a-request)
+- [Appendix](#appendix)
+  - [Gemini Model Parameters](#gemini-model-parameters)
+  - [Setting an Environment Variable](#setting-an-environment-variable)
+    - [macOS / Linux (Terminal)](#macos-linux-terminal)
+    - [Windows (Command Prompt or PowerShell)](#windows-command-prompt-or-powershell)
+      - [1. Set the Persistent Variable](#1-set-the-persistent-variable)
+      - [2. Apply and Verify](#2-apply-and-verify)
+  - [Installing the google-genai on MacOS](#installing-the-google-genai-on-macos)
+    - [Python SDK Installation (Recommended)](#python-sdk-installation-recommended)
+    - [Best Practice: Use a Virtual Environment](#best-practice-use-a-virtual-environment)
+    - [Gemini CLI Installation (Optional Alternative)](#gemini-cli-installation-optional-alternative)
+- [Reference](#reference)
 
 ## Tools and Concepts
 

@@ -1,6 +1,18 @@
 <h1>Research on Agents and MCP</h1>
 
-[TOC]
+  - [Intro](#intro)
+  - [Use Cases](#use-cases)
+    - [1. Local Development and Testing](#1-local-development-and-testing)
+    - [2. Accessing Private Data and Systems](#2-accessing-private-data-and-systems)
+    - [3. Integrated AI Workflows](#3-integrated-ai-workflows)
+  - [Benefits of Local MCP Servers](#benefits-of-local-mcp-servers)
+- [Recommended MCP Server Implementation](#recommended-mcp-server-implementation)
+  - [Microsoft MCP Curriculum](#microsoft-mcp-curriculum)
+- [Practical Lab Assignments (Projects)](#practical-lab-assignments-projects)
+  - [1. The Local File Manager Agent](#1-the-local-file-manager-agent)
+  - [2. The Data Analysis Utility](#2-the-data-analysis-utility)
+  - [3. The Code Structure Inspector](#3-the-code-structure-inspector)
+  - [4. The Local Process Manager](#4-the-local-process-manager)
 
  ## Key Use Cases for a Local MCP Server
 

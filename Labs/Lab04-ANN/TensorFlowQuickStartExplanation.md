@@ -13,7 +13,13 @@ author: Brian Bird
 
 <h2>TensorFlow QuickStart Explained</h2>
 
-[TOC]
+- [Conceptual Steps](#conceptual-steps)
+  - [1. Set up TensorFlow](#1-set-up-tensorflow)
+  - [2. Load a dataset](#2-load-a-dataset)
+  - [3. Build a machine learning model](#3-build-a-machine-learning-model)
+  - [4. Train and evaluate your model](#4-train-and-evaluate-your-model)
+- [Conclusion](#conclusion)
+- [Reference](#reference)
 
 This tutorial teaches the basics of building a neural network with TensorFlow. You'll learn how to load and prepare a dataset, build a simple neural network model, train it, and then evaluate its performance. The primary goal is to classify images of handwritten digits from the MNIST dataset.
 

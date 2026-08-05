@@ -13,7 +13,17 @@ author: Brian Bird
 
 <h2>Group B</h2>
 
-[TOC]
+- [Keras Image Classification with the KMNIST Dataset](#keras-image-classification-with-the-kmnist-dataset)
+  - [Objective:](#objective)
+  - [Instructions](#instructions)
+  - [Bonus Challenge (Optional, XC)](#bonus-challenge-optional-xc)
+  - [Exercise: Keras Image Classification with the KMNIST Dataset](#exercise-keras-image-classification-with-the-kmnist-dataset)
+  - [Bonus Challenge (Optional)](#bonus-challenge-optional)
+- [Submitting your lab work on Moodle](#submitting-your-lab-work-on-moodle)
+  - [Beta Version](#beta-version)
+  - [Code Review](#code-review)
+  - [Production Version](#production-version)
+- [Grading Criteria](#grading-criteria)
 
 ## Keras Image Classification with the KMNIST Dataset
 

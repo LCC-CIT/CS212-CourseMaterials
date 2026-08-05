@@ -23,7 +23,15 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [Announcements for Fall 2025](#announcements-for-fall-2025)
+- [Registration for Winter Term 2026](#registration-for-winter-term-2026)
+  - [Relevant Links:](#relevant-links)
+- [Q and A](#q-and-a)
+- [Assignments Due](#assignments-due)
+  - [This Week (Week 7)](#this-week-week-7)
+  - [Next Week (Week 8) Chat Completion API](#next-week-week-8-chat-completion-api)
+- [Week 9: Model Context Protocol (MCP)](#week-9-model-context-protocol-mcp)
+- [Week 10:  Your Term Project](#week-10-your-term-project)
 
 ## Announcements for Fall 2025
 

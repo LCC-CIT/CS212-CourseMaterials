@@ -2,7 +2,39 @@
 
 <h2>Contents</h2>
 
-[TOC]
+- [AI Terminology](#ai-terminology)
+  - [🧠 Best Overall Term: "Approaches to AI"](#best-overall-term-approaches-to-ai)
+  - [🧩 Other Terms and When to Use Them](#other-terms-and-when-to-use-them)
+  - [🧠 TL;DR](#tldr)
+- [AI Ontology](#ai-ontology)
+  - [🧠 Suggested Hierarchical Ontology of AI Approaches](#suggested-hierarchical-ontology-of-ai-approaches)
+    - [1. Symbolic AI (Good Old-Fashioned AI)](#1-symbolic-ai-good-old-fashioned-ai)
+    - [2. Statistical AI](#2-statistical-ai)
+    - [3. Machine Learning (ML)](#3-machine-learning-ml)
+    - [4. Deep Learning (DL)](#4-deep-learning-dl)
+    - [5. Generative AI](#5-generative-ai)
+  - [🧩 Why This Matters](#why-this-matters)
+  - [🧠 Bonus Layer: Hybrid Systems](#bonus-layer-hybrid-systems)
+- [Which Approaches are Considered Machine Learning?](#which-approaches-are-considered-machine-learning)
+  - [🧠 Approaches Outside Machine Learning](#approaches-outside-machine-learning)
+    - [Symbolic AI](#symbolic-ai)
+    - [Statistical AI](#statistical-ai)
+  - [🤖 Approaches Within Machine Learning](#approaches-within-machine-learning)
+    - [Machine Learning](#machine-learning)
+    - [Deep Learning](#deep-learning)
+    - [Generative AI](#generative-ai)
+  - [🧩 Summary](#summary)
+  - [Explicitly Programmed AI vs. Machine Learning](#explicitly-programmed-ai-vs-machine-learning)
+    - [✅ Correct Framing](#correct-framing)
+    - [🧠 Refined Terminology](#refined-terminology)
+    - [🧩 Example Contrast](#example-contrast)
+- [Taxonomy of AI Systems](#taxonomy-of-ai-systems)
+- [🧠 Taxonomy of AI Systems](#taxonomy-of-ai-systems-1)
+  - [I. Foundational Paradigms (Conceptual Approaches)](#i-foundational-paradigms-conceptual-approaches)
+  - [II. Implementation Strategies (Architectural Subtypes)](#ii-implementation-strategies-architectural-subtypes)
+  - [III. Functional Categories (Use-Case Driven)](#iii-functional-categories-use-case-driven)
+  - [🧩 Optional Layer: Deployment Contexts](#optional-layer-deployment-contexts)
+  - [🧠 Summary View](#summary-view)
 
 ## AI Terminology
 

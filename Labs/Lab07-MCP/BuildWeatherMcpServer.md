@@ -1,6 +1,16 @@
 <h1>Build a Weather MCP Server</h1>
 
-[TOC]
+- [Introduction](#introduction)
+  - [Prerequisites](#prerequisites)
+- [Project Setup](#project-setup)
+- [Writing the Server](#writing-the-server)
+- [Testing](#testing)
+  - [Configuring Claude Desktop as a Client](#configuring-claude-desktop-as-a-client)
+    - [Testing with Claude Desktop](#testing-with-claude-desktop)
+  - [Configuring VS Code as a Client](#configuring-vs-code-as-a-client)
+    - [Testing with VS Code](#testing-with-vs-code)
+- [Troubleshooting](#troubleshooting)
+- [References](#references)
 
 ## Introduction
 

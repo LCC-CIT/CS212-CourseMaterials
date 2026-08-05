@@ -21,7 +21,9 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [Introduction](#introduction)
+- [Examples of MCP Hosts](#examples-of-mcp-hosts)
+- [Reference](#reference)
 
 ## Introduction
 

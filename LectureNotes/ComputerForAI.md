@@ -21,7 +21,14 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [Graphic Procesing Unit (GPU)](#graphic-procesing-unit-gpu)
+  - [Why GPUs Matter in Deep Learning](#why-gpus-matter-in-deep-learning)
+  - [GPU vs. CPU](#gpu-vs-cpu)
+  - [Optional GPU Use for TensorFlow](#optional-gpu-use-for-tensorflow)
+- [How Scikit-learn Handles Acceleration](#how-scikit-learn-handles-acceleration)
+  - [1. CPU Focus](#1-cpu-focus)
+  - [2. External Libraries for GPU Acceleration](#2-external-libraries-for-gpu-acceleration)
+- [References](#references)
 
 ## Graphic Procesing Unit (GPU)
 

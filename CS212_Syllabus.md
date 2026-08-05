@@ -11,7 +11,33 @@
 
 <h2>Table of Contents</h2>
 
- [TOC]
+- [Course Description](#course-description)
+- [Learning Outcomes](#learning-outcomes)
+  - [Online Resources](#online-resources)
+    - [Course Materials](#course-materials)
+    - [Learning Management System](#learning-management-system)
+  - [Software](#software)
+    - [Software Required for Course Work](#software-required-for-course-work)
+    - [Free and Discounted Software for Students](#free-and-discounted-software-for-students)
+  - [Computer Lab and Tutoring](#computer-lab-and-tutoring)
+    - [CIT Computer Lab and In-Person Tutoring](#cit-computer-lab-and-in-person-tutoring)
+    - [Online Tutoring](#online-tutoring)
+- [Assessment and Grading](#assessment-and-grading)
+  - [Points for Each Graded Activity](#points-for-each-graded-activity)
+  - [Grade Scale](#grade-scale)
+  - [Quizzes](#quizzes)
+  - [Participation and Attendance](#participation-and-attendance)
+    - [No Show Drop](#no-show-drop)
+  - [Midterm and Final Quizzes](#midterm-and-final-quizzes)
+  - [Academic Honesty](#academic-honesty)
+  - [Use of AI](#use-of-ai)
+  - [Late Work](#late-work)
+- [Accessibility and Campus Navigation](#accessibility-and-campus-navigation)
+  - [Center for Accessible Resources](#center-for-accessible-resources)
+- [Schedules](#schedules)
+  - [Academic Calendar for Fall Term 2026](#academic-calendar-for-fall-term-2026)
+  - [Weekly Learning Activities](#weekly-learning-activities)
+  - [Course Schedule](#course-schedule)
 
 ## Course Description
 

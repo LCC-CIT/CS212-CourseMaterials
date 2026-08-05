@@ -23,7 +23,9 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [Announcements for Fall 2025](#announcements-for-fall-2025)
+- [Things to Do This Week](#things-to-do-this-week)
+- [Instructor's Office Hours](#instructors-office-hours)
 
 ## Announcements for Fall 2025
 

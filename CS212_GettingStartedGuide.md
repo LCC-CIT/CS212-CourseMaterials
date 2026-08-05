@@ -2,7 +2,26 @@
 
 <h2>Getting Started</h2>
 
-[TOC]
+- [Introduction](#introduction)
+  - [Time commitment](#time-commitment)
+  - [First Steps](#first-steps)
+  - [Introduction to Moodle](#introduction-to-moodle)
+  - [Class Meetings and Office Hours](#class-meetings-and-office-hours)
+- [Basic Technology and Computer Skills](#basic-technology-and-computer-skills)
+  - [Software You Will Need](#software-you-will-need)
+  - [Skills You Will Need](#skills-you-will-need)
+- [Course Structure](#course-structure)
+  - [Objectives](#objectives)
+  - [Reading](#reading)
+  - [Activities](#activities)
+    - [Lab assignments](#lab-assignments)
+    - [Lab Partners](#lab-partners)
+    - [Getting and Giving a Code Review](#getting-and-giving-a-code-review)
+    - [What to Do with the Code Review You Get](#what-to-do-with-the-code-review-you-get)
+    - [What to Do If Something Goes Wrong](#what-to-do-if-something-goes-wrong)
+    - [Additional Questions](#additional-questions)
+- [Online Course Communication](#online-course-communication)
+- [Moodle Support](#moodle-support)
 
 ## Introduction
 

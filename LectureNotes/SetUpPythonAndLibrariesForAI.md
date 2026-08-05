@@ -22,7 +22,22 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [Python Packages We Will Use](#python-packages-we-will-use)
+  - [NumPy](#numpy)
+  - [scikit-learn](#scikit-learn)
+  - [TensorFlow with Keras](#tensorflow-with-keras)
+  - [Pillow](#pillow)
+  - [Matplotlib](#matplotlib)
+- [Setup Instructions for Windows](#setup-instructions-for-windows)
+  - [Install Python and the Python Launcher](#install-python-and-the-python-launcher)
+    - [Check for Python and the Python Launcher](#check-for-python-and-the-python-launcher)
+    - [Install One or Both if Missing](#install-one-or-both-if-missing)
+  - [Set Up a Virtual Environment](#set-up-a-virtual-environment)
+- [Setup Instructions for MacOS](#setup-instructions-for-macos)
+  - [Install Python](#install-python)
+  - [Install Libraries](#install-libraries)
+  - [Set Up a Virtual Environment](#set-up-a-virtual-environment-1)
+- [References](#references)
 
 ## Python Packages We Will Use
 

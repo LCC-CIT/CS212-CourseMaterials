@@ -13,7 +13,13 @@ author: Brian Bird
 
 
 
-[TOC]
+- [Introduction](#introduction)
+- [Instructions](#instructions)
+- [Submitting your lab work on Moodle](#submitting-your-lab-work-on-moodle)
+  - [Beta Version](#beta-version)
+  - [Code Review](#code-review)
+  - [Production Version](#production-version)
+- [Grading Criteria](#grading-criteria)
 
 ## Introduction
 

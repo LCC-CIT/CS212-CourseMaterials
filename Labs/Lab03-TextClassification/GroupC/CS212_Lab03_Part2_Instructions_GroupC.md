@@ -13,7 +13,13 @@ author: Brian Bird
 
 <h2>Group C</h2>
 
-[TOC]
+- [Part 1: The scikit-learn "Working with Text Data" Tutorial](#part-1-the-scikit-learn-working-with-text-data-tutorial)
+- [Part 2: Sentiment Analysis on Movie Reviews](#part-2-sentiment-analysis-on-movie-reviews)
+- [Submitting your lab work on Moodle](#submitting-your-lab-work-on-moodle)
+  - [Beta Version](#beta-version)
+  - [Code Review](#code-review)
+  - [Production Version](#production-version)
+- [Grading Criteria](#grading-criteria)
 
 ## Part 1: The scikit-learn "Working with Text Data" Tutorial
 

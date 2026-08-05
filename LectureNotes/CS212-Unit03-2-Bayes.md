@@ -20,7 +20,20 @@ author: Brian Bird
 
 <h2>Table of Contents</h2>
 
-[TOC]
+- [Bayes' Rule](#bayes-rule)
+  - [Odds vs. Probabilities](#odds-vs-probabilities)
+    - [Probability](#probability)
+    - [Odds](#odds)
+  - [Prior odds](#prior-odds)
+  - [Likelihood ratio](#likelihood-ratio)
+  - [Posterior odds](#posterior-odds)
+- [A Sentiment Analysis Example](#a-sentiment-analysis-example)
+  - [Training](#training)
+    - [Labeling](#labeling)
+    - [Calculating Likelihood Values](#calculating-likelihood-values)
+    - [Setting a Decision Threshold](#setting-a-decision-threshold)
+  - [Inference](#inference)
+- [Reference](#reference)
 
 ## Bayes' Rule
 

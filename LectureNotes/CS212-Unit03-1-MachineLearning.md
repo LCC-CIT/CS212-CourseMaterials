@@ -21,7 +21,27 @@ author: Brian Bird
 
 <h2>Table of Contents</h2>
 
-[TOC]
+- [Introduction](#introduction)
+- [Models](#models)
+  - [ML Terminology](#ml-terminology)
+- [Types of ML](#types-of-ml)
+  - [Supervised learning](#supervised-learning)
+  - [Unsupervised learning](#unsupervised-learning)
+  - [Reinforcement learning](#reinforcement-learning)
+- [Supervised Learning Models](#supervised-learning-models)
+  - [Nearest Neighbors (K-NN)](#nearest-neighbors-k-nn)
+  - [Statistical Models](#statistical-models)
+    - [Bayesian Models](#bayesian-models)
+      - [Naïve Bayes](#naïve-bayes)
+      - [Bayesian Networks (aka Belief Networks)](#bayesian-networks-aka-belief-networks)
+    - [Regression](#regression)
+      - [Linear Regression](#linear-regression)
+      - [Logistic Regression](#logistic-regression)
+  - [Tree-Based Models](#tree-based-models)
+    - [Decision Trees](#decision-trees)
+    - [Random Forests](#random-forests)
+  - [Artificial Neural Networks](#artificial-neural-networks)
+- [Reference](#reference)
 
 ## Introduction
 

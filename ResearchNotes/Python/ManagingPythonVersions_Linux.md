@@ -1,6 +1,13 @@
 <h1>Managing Multiple Versions of Python on Linux</h1>
 
-[TOC]
+- [Managing Multiple Versions of Python on Linux with pyenv](#managing-multiple-versions-of-python-on-linux-with-pyenv)
+- [📦 Installing pyenv](#installing-pyenv)
+- [⚙️ Using pyenv](#using-pyenv)
+- [🐍 Running Python Programs](#running-python-programs)
+- [📂 Virtual Environments with pyenv](#virtual-environments-with-pyenv)
+  - [Option 1: pyenv-virtualenv](#option-1-pyenv-virtualenv)
+  - [Option 2: Built-in venv](#option-2-built-in-venv)
+- [✅ Best Practices](#best-practices)
 
 
 ## Managing Multiple Versions of Python on Linux with pyenv

@@ -13,7 +13,11 @@ author: Brian Bird
 
 
 
-[TOC]
+- [Objectives](#objectives)
+- [Instructions](#instructions)
+- [Submitting your lab work on Moodle](#submitting-your-lab-work-on-moodle)
+  - [Production Version](#production-version)
+- [Grading Criteria](#grading-criteria)
 
 ## Objectives
 

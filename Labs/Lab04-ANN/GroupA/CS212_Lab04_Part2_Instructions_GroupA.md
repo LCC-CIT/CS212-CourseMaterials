@@ -13,7 +13,15 @@ author: Brian Bird
 
 <h2>Group A</h2>
 
-[TOC]
+- [Keras Image Classification with the CIFAR-10 Dataset](#keras-image-classification-with-the-cifar-10-dataset)
+  - [Objective:](#objective)
+  - [Instructions](#instructions)
+  - [Bonus Challenge (Optional, XC)](#bonus-challenge-optional-xc)
+- [Submitting your lab work on Moodle](#submitting-your-lab-work-on-moodle)
+  - [Beta Version](#beta-version)
+  - [Code Review](#code-review)
+  - [Production Version](#production-version)
+- [Grading Criteria](#grading-criteria)
 
 ## Keras Image Classification with the CIFAR-10 Dataset
 

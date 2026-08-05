@@ -1,6 +1,13 @@
 <h1>Building a MCP Client</h1>
 
-[TOC]
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Project Setup](#project-setup)
+- [Writing the Client Code](#writing-the-client-code)
+- [Running the Client](#running-the-client)
+- [Expected Interaction](#expected-interaction)
+  - [What is happening here?](#what-is-happening-here)
+- [References](#references)
 
 ## Introduction
 

@@ -22,7 +22,30 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [Math to Review](#math-to-review)
+  - [Equation of the Line](#equation-of-the-line)
+- [Math You Might Not Know](#math-you-might-not-know)
+  - [Statistics and Probability](#statistics-and-probability)
+    - [Descriptive Statistics](#descriptive-statistics)
+      - [Mean and Standard Error](#mean-and-standard-error)
+    - [Variance and Standard Deviation](#variance-and-standard-deviation)
+    - [Median](#median)
+  - [Probability Distributioins](#probability-distributioins)
+    - [Uniform Distribution](#uniform-distribution)
+    - [Normal Distribution](#normal-distribution)
+  - [Statistical Tests](#statistical-tests)
+    - [Parametric vs. Nonparametric Tests](#parametric-vs-nonparametric-tests)
+      - [Parametric Test: t-test](#parametric-test-t-test)
+      - [Nonparametric Test: Mann–Whitney U](#nonparametric-test-mannwhitney-u)
+    - [Interpreting the p-value](#interpreting-the-p-value)
+    - [Thresholds and Significance](#thresholds-and-significance)
+- [Linear Algebra](#linear-algebra)
+  - [Vectors](#vectors)
+  - [Matricies](#matricies)
+  - [Matrix Multiplication](#matrix-multiplication)
+    - [How It Works](#how-it-works)
+    - [Example](#example)
+- [References](#references)
 
 ## Math to Review
 

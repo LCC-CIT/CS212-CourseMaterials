@@ -2,7 +2,17 @@
 
 <h1>Intro to Jupyter Notebooks</h1>
 
-[TOC]
+- [What They Are](#what-they-are)
+- [Why They’re Popular](#why-theyre-popular)
+- [Getting Started](#getting-started)
+- [Typical Use Cases](#typical-use-cases)
+- [🧭 Step-by-Step: Hello World in Jupyter](#step-by-step-hello-world-in-jupyter)
+  - [1. ✅ Launch the Notebook](#1-launch-the-notebook)
+  - [2. 📓 Create a New Notebook](#2-create-a-new-notebook)
+  - [3. 🧪 Write Your First Cell](#3-write-your-first-cell)
+  - [4. 🖋️ Add Markdown (Optional)](#4-add-markdown-optional)
+  - [5. 💾 Save Your Work](#5-save-your-work)
+- [🧠 Bonus: Inline Math and Plots](#bonus-inline-math-and-plots)
 
 ------
 

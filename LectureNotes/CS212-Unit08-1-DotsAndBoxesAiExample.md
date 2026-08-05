@@ -23,7 +23,15 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [Introduction](#introduction)
+- [High-Level Implementation Steps](#high-level-implementation-steps)
+- [Prompt Templates for Dots and Boxes](#prompt-templates-for-dots-and-boxes)
+  - [1. System Instruction (Static Setup)](#1-system-instruction-static-setup)
+  - [2. User Prompt (Dynamic Input)](#2-user-prompt-dynamic-input)
+    - [Example JSON Input for Board State](#example-json-input-for-board-state)
+  - [3. Required JSON Response Format (Output)](#3-required-json-response-format-output)
+    - [Required JSON Output from Gemini](#required-json-output-from-gemini)
+- [Reference](#reference)
 
 ## Introduction
 

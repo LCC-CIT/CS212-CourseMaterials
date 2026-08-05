@@ -2,7 +2,13 @@
 
 <h2>Contents</h2>
 
-[TOC]
+- [Overview](#overview)
+- [Instructions](#instructions)
+  - [Giving and Getting a Code Review](#giving-and-getting-a-code-review)
+  - [What to Do with the Code Review You Give](#what-to-do-with-the-code-review-you-give)
+  - [What to Do with the Code Review You Get](#what-to-do-with-the-code-review-you-get)
+- [What to Do If Something Goes Wrong](#what-to-do-if-something-goes-wrong)
+- [FAQ](#faq)
 ## Overview
 
 Each student is on a team with one or two other students who are their lab partners. On Moodle, each team of lab partners is listed with a team name

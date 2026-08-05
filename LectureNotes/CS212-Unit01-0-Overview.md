@@ -27,7 +27,16 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [This Week's Learning Objectives](#this-weeks-learning-objectives)
+- [Announcements](#announcements)
+- [Things to Do This Week](#things-to-do-this-week)
+- [Reminders](#reminders)
+  - [Getting Help](#getting-help)
+    - [Office Hours](#office-hours)
+    - [Contacting Me](#contacting-me)
+    - [Tutoring](#tutoring)
+    - [Discord](#discord)
+  - [Class Participation](#class-participation)
 
 ## This Week's Learning Objectives
 

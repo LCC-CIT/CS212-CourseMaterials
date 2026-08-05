@@ -2,7 +2,34 @@
 
 <h1>Working With Text Data</h1>
 
-[TOC]
+- [Tutorial setup](#tutorial-setup)
+  - [Loading the 20 newsgroups dataset](#loading-the-20-newsgroups-dataset)
+    - [Exploring the Data](#exploring-the-data)
+- [Building Feature Vectors and Training](#building-feature-vectors-and-training)
+  - [Extracting features from text files](#extracting-features-from-text-files)
+    - [Bags of words](#bags-of-words)
+    - [Tokenize the Text and Build Feature Vectors](#tokenize-the-text-and-build-feature-vectors)
+      - [Code Explanation](#code-explanation)
+      - [Explore the Feature Vector Matrix](#explore-the-feature-vector-matrix)
+    - [Transform Occurance Counts to Frequencies](#transform-occurance-counts-to-frequencies)
+      - [Calculating Term Frequency](#calculating-term-frequency)
+      - [Calculating Term Frequency and Inverse Term Frequency](#calculating-term-frequency-and-inverse-term-frequency)
+  - [Training a classifier](#training-a-classifier)
+  - [Making Predictions](#making-predictions)
+- [Building a Pipeline](#building-a-pipeline)
+- [Testing Classification Accuracy](#testing-classification-accuracy)
+  - [Train and Test a Support Vector Machine](#train-and-test-a-support-vector-machine)
+    - [Classification Report](#classification-report)
+    - [Confusion Matrix](#confusion-matrix)
+- [Parameter Tuning Using Grid Search](#parameter-tuning-using-grid-search)
+- [Exercises](#exercises)
+  - [Setup for All the Exercises](#setup-for-all-the-exercises)
+  - [Exercise 1: Language identification](#exercise-1-language-identification)
+    - [Hints](#hints)
+  - [Exercise 2: Sentiment Analysis on movie reviews](#exercise-2-sentiment-analysis-on-movie-reviews)
+  - [Exercise 3: CLI text classification utility](#exercise-3-cli-text-classification-utility)
+  - [Where to from here](#where-to-from-here)
+- [What's New in scikit-learn 1.7 for Text Processing](#whats-new-in-scikit-learn-17-for-text-processing)
 
 The goal of this guide is to explore some of the main `scikit-learn` tools on a single practical task: analyzing a collection of text documents (newsgroups posts) on twenty different topics.
 

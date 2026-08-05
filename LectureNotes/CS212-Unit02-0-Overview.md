@@ -23,7 +23,9 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [This Week's Learning Objectives](#this-weeks-learning-objectives)
+- [Announcements](#announcements)
+- [Things to Do This Week](#things-to-do-this-week)
 
 ## This Week's Learning Objectives
 

@@ -21,7 +21,12 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [Single Rule System](#single-rule-system)
+  - [Each Rule Leads to a Goal&mdash;"Hard Coded" Rules (if, elif, else)](#each-rule-leads-to-a-goalmdashhard-coded-rules-if-elif-else)
+    - [Each Rule Leads to a Goal&mdash;Rules in a List](#each-rule-leads-to-a-goalmdashrules-in-a-list)
+    - [Chains of Rules Lead to a Goal&mdash;Rules in a List](#chains-of-rules-lead-to-a-goalmdashrules-in-a-list)
+    - [Chains of Rules Lead to a Goal&mdash;Rules in a File](#chains-of-rules-lead-to-a-goalmdashrules-in-a-file)
+- [References](#references)
 
 ## Single Rule System
 

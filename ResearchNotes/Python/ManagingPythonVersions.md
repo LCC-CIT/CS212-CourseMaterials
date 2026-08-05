@@ -1,6 +1,26 @@
 <h1>Managing Multiple Versions of Python on Windows</h1>
 
-[TOC]
+- [Traditional Approach](#traditional-approach)
+  - [Install & Versions](#install-versions)
+  - [PATH Hygiene](#path-hygiene)
+  - [Virtual Environments (per project)](#virtual-environments-per-project)
+  - [Selecting Python in Tools](#selecting-python-in-tools)
+  - [Pip Safety](#pip-safety)
+  - [Dependency Management](#dependency-management)
+    - [requirements.txt vs. pyproject.toml](#requirementstxt-vs-pyprojecttoml)
+      - [Creating a pyproject.toml file](#creating-a-pyprojecttoml-file)
+      - [Use pip with pyproject.toml](#use-pip-with-pyprojecttoml)
+      - [Installing a project with pip and pyproject.toml](#installing-a-project-with-pip-and-pyprojecttoml)
+  - [Optional Managers](#optional-managers)
+  - [Maintenance](#maintenance)
+- [New Python Install Manager](#new-python-install-manager)
+  - [Using the New Python Install Manager](#using-the-new-python-install-manager)
+  - [Install a Python runtime version](#install-a-python-runtime-version)
+    - [List installed runtime versions of Python](#list-installed-runtime-versions-of-python)
+    - [Run a program with a particular version of Python](#run-a-program-with-a-particular-version-of-python)
+    - [Create a venv for a particular version of Python](#create-a-venv-for-a-particular-version-of-python)
+    - [Activate an venv](#activate-an-venv)
+    - [Install a package for a particular version of Python](#install-a-package-for-a-particular-version-of-python)
 
 ## Traditional Approach
 

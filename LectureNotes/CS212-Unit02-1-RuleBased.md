@@ -22,7 +22,12 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [Review](#review)
+- [Introduction](#introduction)
+- [More on Rule-Based (Expert) Systems](#more-on-rule-based-expert-systems)
+  - [What are Rule-Based AI Systems?](#what-are-rule-based-ai-systems)
+  - [Historical Development](#historical-development)
+- [How They Work](#how-they-work)
 
 
 

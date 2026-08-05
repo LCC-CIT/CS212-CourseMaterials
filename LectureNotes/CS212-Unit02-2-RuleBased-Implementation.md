@@ -21,7 +21,15 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [Implementing Rule-Based Systems](#implementing-rule-based-systems)
+  - [Concept: forward chaining](#concept-forward-chaining)
+  - [Simple Implementation Algorithm](#simple-implementation-algorithm)
+    - [How Forward Chaining is Executed in the Algorithm](#how-forward-chaining-is-executed-in-the-algorithm)
+      - [Fact-Driven Search](#fact-driven-search)
+      - [Iterative Inference](#iterative-inference)
+  - [Implementation](#implementation)
+    - [Rule File](#rule-file)
+    - [Python Code](#python-code)
 
 
 

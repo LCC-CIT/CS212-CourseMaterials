@@ -25,7 +25,26 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [Learning a New Programming Language](#learning-a-new-programming-language)
+- [Installing Python and Running a Program](#installing-python-and-running-a-program)
+  - [Windows](#windows)
+    - [Check for Python and the Python Launcher](#check-for-python-and-the-python-launcher)
+    - [Install One or Both if Missing](#install-one-or-both-if-missing)
+    - [Run Hello World](#run-hello-world)
+  - [MacOS](#macos)
+    - [Check the version of Python](#check-the-version-of-python)
+    - [Install or Update Python](#install-or-update-python)
+      - [Install Homebrew (If You Don't Have It)](#install-homebrew-if-you-dont-have-it)
+      - [Install Python](#install-python)
+    - [Run Hello World](#run-hello-world-1)
+- [Using VS Code for Python Programming](#using-vs-code-for-python-programming)
+  - [Install the Python Extension](#install-the-python-extension)
+  - [Use the Debugger](#use-the-debugger)
+- [Learning Python](#learning-python)
+  - [Distinctives of Python](#distinctives-of-python)
+  - [Programming Paradigms of Python](#programming-paradigms-of-python)
+  - [Exercise](#exercise)
+- [Reference](#reference)
 
 ## Learning a New Programming Language
 

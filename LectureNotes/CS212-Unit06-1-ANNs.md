@@ -20,7 +20,22 @@ author: Brian Bird
 
 <h2>Table of Contents</h2>
 
-[TOC]
+- [Description](#description)
+  - [Neural Networks in the Brain](#neural-networks-in-the-brain)
+- [Perceptrons](#perceptrons)
+    - [Mathematical Model](#mathematical-model)
+      - [Activation Function](#activation-function)
+  - [Limitations of Perceptrons](#limitations-of-perceptrons)
+- [Artificial Neural Networks](#artificial-neural-networks)
+  - [Deep Learning](#deep-learning)
+  - [Characteristics of ANNs](#characteristics-of-anns)
+    - [Discussion](#discussion)
+- [Backpropagation](#backpropagation)
+  - [Backpropagation in a Perceptron](#backpropagation-in-a-perceptron)
+  - [Backpropagation in an ANN](#backpropagation-in-an-ann)
+- [Reference](#reference)
+  - [Articles and Tutorials](#articles-and-tutorials)
+  - [Interactive Web Pages](#interactive-web-pages)
 
 
 

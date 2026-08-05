@@ -2,7 +2,24 @@
 
 <h1>An introduction to machine learning with scikit-learn</h1>
 
-[TOC]
+- [Machine learning: the problem setting](#machine-learning-the-problem-setting)
+  - [Training set and testing set](#training-set-and-testing-set)
+  - [Loading an example dataset](#loading-an-example-dataset)
+    - [Shape of the data arrays](#shape-of-the-data-arrays)
+  - [Loading from external datasets](#loading-from-external-datasets)
+- [Learning and predicting](#learning-and-predicting)
+  - [Choosing the parameters of the model](#choosing-the-parameters-of-the-model)
+- [Conventions](#conventions)
+  - [Type casting](#type-casting)
+  - [Refitting and updating parameters](#refitting-and-updating-parameters)
+  - [Multiclass vs. multilabel fitting](#multiclass-vs-multilabel-fitting)
+- [Getting Python Help for scikit-learn](#getting-python-help-for-scikit-learn)
+- [New Features in scikit-learn 1.5-1.7](#new-features-in-scikit-learn-15-17)
+  - [Enhanced Array API Support](#enhanced-array-api-support)
+  - [Improved Sparse Data Handling](#improved-sparse-data-handling)
+  - [Enhanced Model Visualization](#enhanced-model-visualization)
+  - [Advanced Gradient Boosting Features](#advanced-gradient-boosting-features)
+  - [Enhanced ROC Curve Visualization](#enhanced-roc-curve-visualization)
 
 In this tutorial, we introduce the [machine learning](https://en.wikipedia.org/wiki/Machine_learning) vocabulary that we use throughout scikit-learn and give a simple learning example.
 

@@ -21,7 +21,15 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [What is AI-Assisted Coding](#what-is-ai-assisted-coding)
+  - [Don't Call it Vibe Coding](#dont-call-it-vibe-coding)
+- [How to Code with AI without Making a Mess](#how-to-code-with-ai-without-making-a-mess)
+  - [Architect & Planner Mindset (Before Coding)](#architect-planner-mindset-before-coding)
+  - [Critical Reviewer Mindset (During Coding)](#critical-reviewer-mindset-during-coding)
+  - [Process & Documentation Mindset (After Coding)](#process-documentation-mindset-after-coding)
+- [Rererence](#rererence)
+  - [Vibe Coding](#vibe-coding)
+  - [GitHub Copilot](#github-copilot)
 
 ## What is AI-Assisted Coding
 

@@ -25,7 +25,14 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [What is AI?](#what-is-ai)
+- [John McCarthy and the Dartmouth Workshop](#john-mccarthy-and-the-dartmouth-workshop)
+    - [McCarthy's Definition of AI](#mccarthys-definition-of-ai)
+- [Classical Symbolic AI (GOFAI)](#classical-symbolic-ai-gofai)
+- [A Modern Definition](#a-modern-definition)
+    - [Analysis of the modern definition](#analysis-of-the-modern-definition)
+- [Categories of AI](#categories-of-ai)
+- [What We'll Cover in this Course](#what-well-cover-in-this-course)
 
 ## What is AI?
 

@@ -23,7 +23,16 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [This Week's Objectives](#this-weeks-objectives)
+- [Announcements for Fall 2025](#announcements-for-fall-2025)
+  - [RegFest](#regfest)
+    - [Reccomended Classes for AAS in Software Development](#reccomended-classes-for-aas-in-software-development)
+  - [Last Day for Submissions](#last-day-for-submissions)
+  - [Global Game Jam](#global-game-jam)
+- [Q and A](#q-and-a)
+- [Assignments Due](#assignments-due)
+  - [This Week (Week 10)](#this-week-week-10)
+  - [Fianals Week (Week 11)](#fianals-week-week-11)
 
 ## This Week's Objectives
 

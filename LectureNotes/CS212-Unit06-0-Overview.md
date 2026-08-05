@@ -23,7 +23,13 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [Announcements for Fall 2025](#announcements-for-fall-2025)
+- [Registration for Winter Term 2026](#registration-for-winter-term-2026)
+  - [Relevant Links:](#relevant-links)
+- [Q and A](#q-and-a)
+- [Assignments Due](#assignments-due)
+  - [This Week](#this-week)
+  - [Next Week](#next-week)
 
 ## Announcements for Fall 2025
 

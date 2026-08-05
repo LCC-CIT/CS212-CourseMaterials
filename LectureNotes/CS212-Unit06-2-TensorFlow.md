@@ -20,7 +20,10 @@ author: Brian Bird
 
 <h2>Table of Contents</h2>
 
-[TOC]
+- [What is TensorFlow?](#what-is-tensorflow)
+- [Reference](#reference)
+  - [Articles and Tutorials](#articles-and-tutorials)
+  - [Interactive Web Pages](#interactive-web-pages)
 
 ## What is TensorFlow?
 

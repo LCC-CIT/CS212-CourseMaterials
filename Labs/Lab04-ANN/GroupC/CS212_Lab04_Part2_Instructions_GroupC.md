@@ -13,7 +13,15 @@ author: Brian Bird
 
 <h2>Group C</h2>
 
-[TOC]
+- [Keras Image Classification with the EMNIST (Letters) Dataset](#keras-image-classification-with-the-emnist-letters-dataset)
+  - [Objective:](#objective)
+  - [Instructions](#instructions)
+  - [Bonus Challenge (Optional)](#bonus-challenge-optional)
+- [Submitting your lab work on Moodle](#submitting-your-lab-work-on-moodle)
+  - [Beta Version](#beta-version)
+  - [Code Review](#code-review)
+  - [Production Version](#production-version)
+- [Grading Criteria](#grading-criteria)
 
 ## Keras Image Classification with the EMNIST (Letters) Dataset
 

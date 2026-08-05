@@ -23,7 +23,15 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [This Week's Objectives](#this-weeks-objectives)
+- [Announcements for Fall 2025](#announcements-for-fall-2025)
+- [Registration for Winter Term 2026](#registration-for-winter-term-2026)
+  - [Relevant Links:](#relevant-links)
+- [Q and A](#q-and-a)
+- [Assignments Due](#assignments-due)
+  - [This Week (Week 9)](#this-week-week-9)
+  - [Next Week (Week10)](#next-week-week10)
+  - [Fianals Week (Week 11)](#fianals-week-week-11)
 
 ## This Week's Objectives
 

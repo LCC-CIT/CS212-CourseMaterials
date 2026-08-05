@@ -19,7 +19,28 @@ author: Brian Bird
 
 <h2>Table of Contents</h2>
 
-[TOC]
+- [Working with Data](#working-with-data)
+  - [I. Core Components of a Dataset](#i-core-components-of-a-dataset)
+    - [A. Classes and Labels](#a-classes-and-labels)
+    - [B. Features and Feature Vectors](#b-features-and-feature-vectors)
+    - [C. Types of Features](#c-types-of-features)
+  - [II. Feature Selection and Dimensionality](#ii-feature-selection-and-dimensionality)
+    - [A. Feature Selection Rule of Thumb](#a-feature-selection-rule-of-thumb)
+    - [B. The Curse of Dimensionality](#b-the-curse-of-dimensionality)
+  - [III. Features of a Good Dataset](#iii-features-of-a-good-dataset)
+    - [A. Interpolation vs. Extrapolation](#a-interpolation-vs-extrapolation)
+    - [B. The Parent Distribution](#b-the-parent-distribution)
+    - [C. Prior Class Probabilities](#c-prior-class-probabilities)
+    - [D. Confusers (Hard Negatives)](#d-confusers-hard-negatives)
+    - [E. Dataset Size](#e-dataset-size)
+  - [IV. Data Preparation Techniques](#iv-data-preparation-techniques)
+    - [A. Scaling Features](#a-scaling-features)
+    - [B. Missing Features](#b-missing-features)
+  - [V. Splitting the Dataset](#v-splitting-the-dataset)
+    - [A. Partitioning Methods](#a-partitioning-methods)
+    - [B. k-Fold Cross Validation](#b-k-fold-cross-validation)
+  - [VI. Data Inspection](#vi-data-inspection)
+  - [Reference](#reference)
 
 # Working with Data
 

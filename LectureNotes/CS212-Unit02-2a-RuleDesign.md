@@ -21,7 +21,11 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-[TOC]
+- [Designing a Set of Rules for Forward Chaining](#designing-a-set-of-rules-for-forward-chaining)
+  - [The IF Column](#the-if-column)
+  - [The THEN and GOAL Column](#the-then-and-goal-column)
+  - [Depth of Chaining](#depth-of-chaining)
+  - [Implementation in a CSV Rule File](#implementation-in-a-csv-rule-file)
 
 A knowledge base consists of a set of rules. In most expert systems these rules are designed so that one rule can potentially trigger one or more other rules. This is called *forward chaining*.
 
