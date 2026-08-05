@@ -6,7 +6,7 @@ generator: Typora
 author: Brian Bird
 ---
 
-**CS 210, Intro to AI Programming**
+**CS 212, Intro to AI Programming**
 
 <h1>Symbolic AI: Rule-Based AI Techniques: Implementation</h1>
 

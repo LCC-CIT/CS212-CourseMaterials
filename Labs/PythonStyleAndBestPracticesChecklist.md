@@ -1,6 +1,6 @@
 <h1>Python Coding Style and Best Practices Checklist</h1>
 
-<h2>For CS 210, Intro to AI Programming</h2>
+<h2>For CS 212, Intro to AI Programming</h2>
 
 
 

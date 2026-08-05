@@ -7,7 +7,7 @@ author: Brian Bird
 
 <h1>Computer Systems for AI Work</h1>
 
-**CS 210, Intro to AI Programming**
+**CS 212, Intro to AI Programming**
 
 | Topics                               |                                   |
 | ------------------------------------ | --------------------------------- |

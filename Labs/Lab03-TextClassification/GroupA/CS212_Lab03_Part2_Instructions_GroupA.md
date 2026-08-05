@@ -7,7 +7,7 @@ generator: Typora
 author: Brian Bird
 ---
 
-**CS 210, Intro to AI Programming**
+**CS 212, Intro to AI Programming**
 
 <h1>Lab 3: Working with Text Data</h1>
 
@@ -17,7 +17,7 @@ author: Brian Bird
 
 ## Part 1: The scikit-learn "Working with Text Data" Tutorial
 
-The instructions for part 1 are [here](../CS210_Lab03_Part1_Instructions.html).
+The instructions for part 1 are [here](../CS212_Lab03_Part1_Instructions.html).
 Part 1 has it's own assignment submission link on the LMS.
 
 

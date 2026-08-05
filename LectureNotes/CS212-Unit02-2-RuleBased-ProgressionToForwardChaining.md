@@ -6,7 +6,7 @@ generator: Typora
 author: Brian Bird
 ---
 
-**CS 210, Intro to AI Programming**
+**CS 212, Intro to AI Programming**
 
 <h1>Symbolic AI: Rule-Based AI Techniques: Implementation</h1>
 
@@ -124,7 +124,7 @@ A better way to do this is to make separate rules that can be chained:
   - 'then': The new fact (string) derived when the rule fires.
   - 'is_goal': True if this fact is a final diagnosis or recommendation.
 
-Here is a link to [a more detailed example](CS210-Unit02-2a-RuleDesign.html) of forward chaned rules with an explaination of how they work.
+Here is a link to [a more detailed example](CS212-Unit02-2a-RuleDesign.html) of forward chaned rules with an explaination of how they work.
 
 Here is an example program:
 

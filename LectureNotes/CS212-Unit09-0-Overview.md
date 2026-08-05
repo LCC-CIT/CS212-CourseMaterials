@@ -1,12 +1,12 @@
 ---
 title: Week 9 Overview
-description: What's happening in CS 210 during week 9
+description: What's happening in CS 212 during week 9
 keywords: Announcements, Due Dates, Help
 generator: Typora
 author: Brian Bird
 ---
 
-**CS 210, Intro to AI Programming**
+**CS 212, Intro to AI Programming**
 
 <h1>Week 9 Overview for Fall 2025</h1>
 

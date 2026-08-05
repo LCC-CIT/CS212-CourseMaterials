@@ -11,7 +11,7 @@ author: Brian Bird
 
 <h2>Group A</h2>
 
-**CS 210, Intro to AI Programming**
+**CS 212, Intro to AI Programming**
 
 
 

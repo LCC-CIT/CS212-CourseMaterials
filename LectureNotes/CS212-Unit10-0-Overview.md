@@ -1,12 +1,12 @@
 ---
 title: Week 10 Overview
-description: What's happening in CS 210 during week 10
+description: What's happening in CS 212 during week 10
 keywords: Announcements, Due Dates, Help
 generator: Typora
 author: Brian Bird
 ---
 
-**CS 210, Intro to AI Programming**
+**CS 212, Intro to AI Programming**
 
 <h1>Week 10 Overview for Fall 2025</h1>
 
@@ -106,11 +106,11 @@ Any late assignments are due by the end of the day on **12/9, Tuesday of next we
 - Monday 12/8 Term project production version
 
 - Tuesday 12/9 Term project presentations. 
-  Read the [Term Project Presentation Guidelines](../Labs/TermProject/CS210-TermProjectPresentationGuide.html)
+  Read the [Term Project Presentation Guidelines](../Labs/TermProject/CS212-TermProjectPresentationGuide.html)
   
   
 
-![F2025Week10](/Volumes/DataCard/Repos/CS210-Repos/CS210-CourseMaterials/LectureNotes/Images/F2025Week10.png)
+![F2025Week10](/Volumes/DataCard/Repos/CS212-Repos/CS212-CourseMaterials/LectureNotes/Images/F2025Week10.png)
 
 
 

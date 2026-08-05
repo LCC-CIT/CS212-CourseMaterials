@@ -1,4 +1,4 @@
-<h1>CS 210: Introduction to AI Programming</h1>
+<h1>CS 212: Introduction to AI Programming</h1>
 
 <h2>Getting Started</h2>
 

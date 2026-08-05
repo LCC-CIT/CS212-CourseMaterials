@@ -1,6 +1,6 @@
 
 
-<h1>Possible Nearest Centroid Projects for CS 210</h1>
+<h1>Possible Nearest Centroid Projects for CS 212</h1>
 
 
 

@@ -8,7 +8,7 @@ author: Brian Bird
 
 <h1>Artificial Neural Netoworks (ANNs)</h1>
 
-**CS 210, Intro to AI Programming**
+**CS 212, Intro to AI Programming**
 
 | Topics                                          |                                                              |
 | ----------------------------------------------- | ------------------------------------------------------------ |

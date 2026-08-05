@@ -6,7 +6,7 @@ generator: Typora
 author: Brian Bird
 ---
 
-**CS 210, Intro to AI Programming**
+**CS 212, Intro to AI Programming**
 
 <h1>Calling a Chat-Completion API</h1>
 

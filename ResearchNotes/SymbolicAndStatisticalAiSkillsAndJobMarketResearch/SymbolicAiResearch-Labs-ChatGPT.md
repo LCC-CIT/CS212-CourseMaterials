@@ -6,7 +6,7 @@
 
 ## Lab Assignment Ideas
 
-These are potential lab assignments (all in Python) for CS 210
+These are potential lab assignments (all in Python) for CS 212
 
 ## Rule-Based Reasoning Labs
 

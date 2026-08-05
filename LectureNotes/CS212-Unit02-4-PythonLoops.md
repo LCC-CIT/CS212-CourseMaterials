@@ -1,6 +1,6 @@
 <h1>Python Loops</h1>
 
-**CS 210 Intro to AI Programming**
+**CS 212 Intro to AI Programming**
 
 <h2>Contents</h2>
 

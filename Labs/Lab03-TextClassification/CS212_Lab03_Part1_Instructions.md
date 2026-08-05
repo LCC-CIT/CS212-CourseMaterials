@@ -7,7 +7,7 @@ generator: Typora
 author: Brian Bird
 ---
 
-**CS 210, Intro to AI Programming**
+**CS 212, Intro to AI Programming**
 
 <h1>Lab 3, Text Classification</h1>
 
@@ -15,7 +15,7 @@ author: Brian Bird
 
 This part of the lab is for everyone.
 
-Do these parts of the "[Working with Text Data](https://lcc-cit.github.io/CS210-CourseMaterials/Tutorials/scikit-learn-1.7/WorkingWithTextData.html)" scikit-learn tutorial in the interactive Python interpreter (Command line):
+Do these parts of the "[Working with Text Data](https://lcc-cit.github.io/CS212-CourseMaterials/Tutorials/scikit-learn-1.7/WorkingWithTextData.html)" scikit-learn tutorial in the interactive Python interpreter (Command line):
 
 - Tutorial setup
 - Building Feature Vectors and Training

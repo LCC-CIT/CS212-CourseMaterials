@@ -1,5 +1,5 @@
 ---
-title: CS 210 Course Outline
+title: CS 212 Course Outline
 description: Outline for Intro to AI Programming
 generator: Typora
 author: Brian Bird
@@ -7,7 +7,7 @@ author: Brian Bird
 
 <h1>Course Outline</h1>
 
-**CS 210, Introduction to Artificial Intelligence Programming**
+**CS 212, Introduction to Artificial Intelligence Programming**
 
 1. Overview
 

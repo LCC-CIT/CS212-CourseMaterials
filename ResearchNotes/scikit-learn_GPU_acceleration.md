@@ -258,7 +258,7 @@ Speedup: 44.04x
 - Need: Scikit-learn algorithms NOT in cuML (DecisionTrees, Boosting)
 - Prototyping: Development cycle favors CPU-friendly sklearn
 
-### For This Lab (CS210 Lab 3 Part 2)
+### For This Lab (CS212 Lab 3 Part 2)
 
 **Recommendation:** **Not recommended for this project** because:
 

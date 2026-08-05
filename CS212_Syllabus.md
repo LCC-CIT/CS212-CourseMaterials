@@ -54,7 +54,7 @@ All of the software required for this class is free.  You can use any operating 
 
 #### Software Required for Course Work
 
-See the [Getting Started Guide](https://lcc-cit.github.io/CS210-CourseMaterials/CS212_GettingStartedGuide.html) for a list of the software needed for this class.
+See the [Getting Started Guide](https://lcc-cit.github.io/CS212-CourseMaterials/CS212_GettingStartedGuide.html) for a list of the software needed for this class.
 
 You will need to download and install any software you don't already have on your computer. The software has
 
