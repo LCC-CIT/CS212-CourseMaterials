@@ -6,7 +6,7 @@ generator: Typora
 author: Brian Bird
 ---
 
-**CS 212, Intro to AI Programming**
+**CS 212, AI Programming 1**
 
 <h1>Symbolic AI: Rule-Based AI Techniques: Implementation</h1>
 
@@ -192,6 +192,6 @@ Note: Some parts of this document were initially drafted with assistance from Ge
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) Intro to AI Programming Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
 
 [^1]: **A) Architectural Separation:** Rule-based systems established fundamental AI architecture by separating the  *Knowledge Base* from the *inference engine*, allowing rules to be easily modified without changing the program code.  **B) Formal Knowledge Representation:** They pioneered the structured representation of human logic making expert thought machine-readable for the first time. **C) Automated Reasoning:** The introduction of the *Inference Engine* provided computational *models* for deductive reasoning (like Forward and Backward Chaining), demonstrating how a computer could link discrete facts and rules to reach logical, non-obvious conclusions.

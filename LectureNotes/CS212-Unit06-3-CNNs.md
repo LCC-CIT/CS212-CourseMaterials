@@ -8,7 +8,7 @@ author: Brian Bird
 
 <h1>Convolutional Neural Netoworks (CNNs)</h1>
 
-**CS 212, Intro to AI Programming**
+**CS 212, AI Programming 1**
 
 | Topics                                          |                                                              |
 | ----------------------------------------------- | ------------------------------------------------------------ |
@@ -70,6 +70,6 @@ The significant breakthrough in the field of CNNs came in 2012 with the developm
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) Intro to AI Programming lecture notes by [Brian Bird](https://profbird.dev), written in 2024, revised in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 lecture notes by [Brian Bird](https://profbird.dev), written in 2024, revised in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
 
 Note: GPT-4 and GPT-4o were used to draft parts of these notes, July 2024.

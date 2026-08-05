@@ -8,7 +8,7 @@ author: Brian Bird
 
 <h1>Machine Learning</h1>
 
-**CS 212, Intro to AI Programming**
+**CS 212, AI Programming 1**
 
 | Topics                                                       |                           |
 | ------------------------------------------------------------ | ------------------------- |

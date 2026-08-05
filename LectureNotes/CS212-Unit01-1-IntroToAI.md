@@ -6,7 +6,7 @@ generator: Typora
 author: Brian Bird
 ---
 
-**CS 212, Intro to AI Programming**
+**CS 212, AI Programming 1**
 
 <h1>Overview of AI</h1>
 
@@ -111,7 +111,7 @@ Note: Parts of this document were drafted with assistance from Gemini 2.5 Flash
 
 
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) Intro to AI Programming Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
 
 [^1]: [Dartmouth workshop](https://en.wikipedia.org/wiki/Dartmouth_workshop)&mdash;Wikipedia
 [^2]: [What is AI? / Basic Questions](http://jmc.stanford.edu/artificial-intelligence/what-is-ai/#:~:text=Q.,methods%20that%20are%20biologically%20observable.)&mdash;Professor John McCarthy, Father of AI Website

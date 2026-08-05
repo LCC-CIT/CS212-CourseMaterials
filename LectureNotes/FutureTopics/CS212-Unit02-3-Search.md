@@ -6,7 +6,7 @@ generator: Typora
 author: Brian Bird
 ---
 
-**CS 212, Intro to AI Programming**
+**CS 212, AI Programming 1**
 
 <h1>Symbolic AI: Search-Based Techniques</h1>
 

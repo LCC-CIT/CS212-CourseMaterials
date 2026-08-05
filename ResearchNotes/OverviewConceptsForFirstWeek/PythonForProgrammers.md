@@ -1,4 +1,7 @@
 
+---
+render_with_liquid: false
+---
 
 <h1>Python Crash Course for Programmers</h1>
 

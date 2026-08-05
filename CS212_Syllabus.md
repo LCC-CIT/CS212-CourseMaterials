@@ -1,4 +1,4 @@
-<h1>Intro to Artificial Intelligence Programming</h1>
+<h1>Artificial Intelligence Programming 1</h1>
 
 <h2>CS 212 Syllabus for Fall 2026</h2>
 

@@ -8,7 +8,7 @@ author: Brian Bird
 
 <h1>Math Concepts for AI</h1>
 
-**CS 212, Intro to AI Programming**
+**CS 212, AI Programming 1**
 
 | Topics                               |                                   |
 | ------------------------------------ | --------------------------------- |
@@ -240,7 +240,7 @@ $$
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) Intro to AI Programming lecture notes by [Brian Bird](https://profbird.dev), written in <time>August 2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 lecture notes by [Brian Bird](https://profbird.dev), written in <time>August 2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
 
 MS Copilot GPT-4 was used to draft parts of these notes.
 
