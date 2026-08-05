@@ -1,9 +1,9 @@
 <!--
-Guidance for AI coding agents working on the CS210-CourseMaterials repository.
+Guidance for AI coding agents working on the CS212-CourseMaterials repository.
 Keep this concise and focused on observable, repo-specific patterns and workflows.
 -->
 
-# Copilot instructions for CS210-CourseMaterials
+# Copilot instructions for CS212-CourseMaterials
 
 Short summary (what this repo is): Course materials for an Intro to AI class — mostly static web content, lecture notes, labs and Jupyter notebooks. Primary artifacts are static HTML/Markdown pages, images, and notebooks organized for publication (GitHub Pages). The repo is authored and maintained by the course instructor.
 
