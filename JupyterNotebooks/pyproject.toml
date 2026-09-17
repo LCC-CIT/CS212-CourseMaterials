@@ -1,0 +1,7 @@
+[project]
+name = "ai-programming-notebook"
+version = "0.1.0"
+dependencies = [
+    "jupyterlab>=4.0",
+]
+
