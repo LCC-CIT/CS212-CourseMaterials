@@ -212,15 +212,15 @@ View [academic calendars](https://www.lanecc.edu/calendars/academic-calendar) on
 | ---------------- | ------------------------------------- | ------------------------------------------------------------ |
 | **1**<br />9/28  | Intro to AI<br />Python               | Introduce yourself on Discord<br />Lab 1<br />Quiz 1         |
 | **2**<br />10/5  | Symbolic AI                           | Lab 2<br />Quiz 2<br />Code review 1                         |
-| **3**<br />10/12 | Classical Machine Learning: Training  | Lab 3<br />Quiz 3<br />Code review 2                         |
-| **4**<br />10/19 | Classical Machine Learning: Inference | Lab 4<br />Quiz 4<br />Code review 3                         |
+| **3**<br />10/12 | Intro to ML and Bayes                 | Lab 3<br />Quiz 3<br />Code review 2                         |
+| **4**<br />10/19 | Training an ML Model                  | Lab 4<br />Quiz 4<br />Code review 3                         |
 | **5**<br />10/26 | History of AI and Midterm             | Code review 4<br />Term project proposal<br />Midterm quiz:<br />- In the classroom Thursday, 10/29 (hybrid)<br />- Remote version at home or optional in testing center 10/29&ndash;10/31 (online) |
-| **6**<br />11/2  | ANN: Image recognition                | Lab 5<br />Quiz 5                                            |
+| **6**<br />11/2  | Neural Networks                       | Lab 5<br />Quiz 5                                            |
 | **7**<br />11/9  | Generative AI                         | Lab 6<br />Quiz 6<br />Code review 5                         |
-| **8**<br />11/16 | Custom chatbot                        | Lab 7<br />Project: prompt engineering<br />Quiz 7<br />Code review 6 |
-| **9**<br />11/23 | LLM fine-tuning                       | Lab 8<br />Project: Custom chat-bot<br />Quiz 8<br />Code review 7 |
+| **8**<br />11/16 | Chat Completion API                   | Lab 7<br />Quiz 7<br />Code review 6                         |
+| **9**<br />11/23 | MCP                                   | Lab 8<br />Quiz 8<br />Code review 7                         |
 | **10**<br />11/30 | Social and ethical issues of AI       | Term Project<br /><br />Code review 8                        |
-| **11**<br />12/7 | Final                                 | Final quiz:<br />- In the classroom on 12/8 (hybrid)<br />- Remote version at home or optional in testing center 12/5&ndash;12/8 (online) |
+| **11**<br />12/7 | Final and Presentations               | Project presentations<br />Final quiz:<br />- In the classroom on Tuesday, 12/8 (hybrid)<br />- Remote version at home or optional in testing center 12/5&ndash;12/8 (online) |
 
 <a href="#top">Go back to the top</a>
 
