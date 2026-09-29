@@ -61,6 +61,7 @@ The goals for this week are to:
 - Join the Discord server so you can communicate with your team.
 - Introduce yourself on Discord. 
 - We'll choose teams on Thursday.
+- Fill out the personal survey.
 - Take the quiz over the reading by Sunday.
 
 ## Reminders
