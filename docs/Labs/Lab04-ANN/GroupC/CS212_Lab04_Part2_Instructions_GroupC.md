@@ -1,5 +1,5 @@
 ---
-title: Lab 4, Group C
+title: Lab 5, Group C
 description: Instructions for doing classification with TensorFlow
 keywords: classifier, TensorFlow, Keras
 material: Lab Instructions
@@ -9,7 +9,7 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-<h1>Lab 4: TensorFlow with Keras</h1>
+<h1>Lab 5: TensorFlow with Keras</h1>
 
 <h2>Group C</h2>
 
