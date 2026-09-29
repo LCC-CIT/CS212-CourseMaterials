@@ -1,5 +1,5 @@
 ---
-title: Lab 3, Group B
+title: Lab 4, Group B
 description: Instructions for doing text classification
 keywords: classifier, scikit-learn
 material: Lab Instructions
@@ -9,7 +9,7 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-<h1>Lab 3: Working with Text Data</h1>
+<h1>Lab 4: Working with Text Data</h1>
 
 <h2>Group B</h2>
 
