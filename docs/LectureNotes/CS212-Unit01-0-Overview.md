@@ -8,9 +8,9 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-<h1>Week 1 Overview for Fall 2025</h1>
+<h1>Week 1 Overview for Fall 2026</h1>
 
-<h2>Sept. 29 through Oct. 5</h2>
+<h2>Sept. 28 through Oct. 4</h2>
 
 
 
@@ -46,7 +46,7 @@ The goals for this week are to:
 
 - Install Python.
 - Adapt what you already know about programming to Python.
-- Understand what "classical AI" is.
+- Understand what "classical AI" (GOFAI) is.
 - Write a simple Python program that uses an AI algorithm.
 
 ## Announcements
@@ -54,7 +54,7 @@ The goals for this week are to:
 - **No-show/drop**
   Be aware of LCC's <u>no-show/drop</u> policy. You need to come to class once during the first week, or take the quiz in order to not be automatically dropped!
 - **Last day for a refund** 
-   Monday, Oct. 6, is the last day to get a refund if you drop a class.
+   Monday, Oct. 5, is the last day to get a refund if you drop a class.
 
 ## Things to Do This Week
 
@@ -71,8 +71,8 @@ The goals for this week are to:
 
 - I have drop-in office hours on [Zoom](https://lanecc.zoom.us/j/8982554800) and in person, building 19, room 152 at these times:
 
-  - Monday and Wednesday from 2:00 to 2:50. 
-  - Tuesday and Thursday from 4:00 to 4:50. 
+  - M, W 2:00–2:50 in building 19 room 152 (my office) &  [Zoom](https://lanecc.zoom.us/j/8982554800).
+  - Tu, Th 1:00–1:50 in building 19 room 135 (CIT lab).
 
   I'm available at other times too, just let me know when you'd like to meet. 
 
@@ -94,10 +94,10 @@ Ask questions in the class [Discussion channel](https://discord.com/channels/129
 ### Class Participation
 
 - If you are an on-campus or online student who can join us during class time, then come to the classroom (building 19, room 128) or join us on Zoom. You'll find the link to the live class session in the **Zoom Pro** app in the Canvas course navigation menu.
-- If you are an online student be sure to <u>watch the video recordings</u> of the in-class, lectures. Access these in the **Zoom Pro** app in the Canvas course navigation menu (look under *Cloud Recordings*).
+- If you are an online student be sure to <u>watch the video recordings</u> of the in-class, lectures. Access these in the **Zoom Pro** app in the Canvas course navigation menu.
 
 - You will get the most out of this class if you can come or Zoom to class where you can get help with your lab assignments! You can also get help during office hours or from a tutor in the lab (in person or on Zoom).
 
 
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, revised in 2026 are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
