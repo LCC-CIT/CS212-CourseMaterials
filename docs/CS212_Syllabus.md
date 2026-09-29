@@ -23,16 +23,11 @@ Upon successful completion of this course, students will be able to:
 
 1. Explain what AI programming is.
 2. Discuss the potential dangers and benefits of AI to society.
-
 3. Write programs that use symbolic AI techniques.
-
-4. Write programs that use statistical AI techniques.
-
-5. Write programs that use neural networks for image recognition.
-
-6. Write programs that use LLMs (Large Language Models).
-
-7. Create a custom chatbot using a fine-tuned LLM.
+4. Understand basic principles of Machine Learning (ML).
+5. Be able to prepare data for ML training.
+6. Write programs that use statistical ML techniques.
+7. Write programs that use neural networks.
 
 
 
