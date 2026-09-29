@@ -6,7 +6,7 @@
 | ----------------- | ------------------------------------------------------------ | ---- | ----------------- | ------------------------------------------------------------ |
 | **Course Number** | CS 212                                                       |      | **Name**          | Brian Bird                                                   |
 | **CRN**           | Hybrid (on campus) 22143<br />Online 22144                   |      | **E-mail**        | [birdb@lanecc.edu](mailto:birdb@lanecc.edu)                  |
-| **Day & Time**    | Tu, Th 2:00&ndash;3:50                                       |      | **Office Hours**  | M, W 2:00&ndash;2:50 (In person & Zoom)<br />Tu, Th 1:00&ndash;1:50 (Lab, in person) |
+| **Day & Time**    | Tu, Th 10:00&ndash;11:50                                     |      | **Office Hours**  | M, W 2:00&ndash;2:50 (In person & Zoom)<br />Tu, Th 1:00&ndash;1:50 (Lab, in person) |
 | **Classroom**     | Building 19, Room 126<br />[Zoom meeting](https://lanecc.zoom.us/j/99586887638) |      | **Office / Lab**  | M, W: Bldg 19, Rm 152 & [Zoom](https://lanecc.zoom.us/j/8982554800)<br />Tu, Th: CIT Lab (Bldg 19, Rm 135) |
 
 <h2>Table of Contents</h2>
