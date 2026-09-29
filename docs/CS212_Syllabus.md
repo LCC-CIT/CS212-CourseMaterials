@@ -5,9 +5,9 @@
 | <u>Class</u>      |                                                              |      | <u>Instructor</u> |                                                              |
 | ----------------- | ------------------------------------------------------------ | ---- | ----------------- | ------------------------------------------------------------ |
 | **Course Number** | CS 212                                                       |      | **Name**          | Brian Bird                                                   |
-| **CRN**           | Hybrid (on campus) 22141<br />Online 22142                   |      | **E-mail**        | [birdb@lanecc.edu](mailto:birdb@lanecc.edu)                  |
+| **CRN**           | Hybrid (on campus) 22143<br />Online 22144                   |      | **E-mail**        | [birdb@lanecc.edu](mailto:birdb@lanecc.edu)                  |
 | **Day & Time**    | Tu, Th 2:00&ndash;3:50                                       |      | **Office Hours**  | M, W 2:00&ndash;2:50 (In person & Zoom)<br />Tu, Th 4:00&ndash;4:50 (In person) |
-| **Room**          | Building 19, Room 126<br />[Zoom meeting](https://lanecc.zoom.us/j/8982554800) |      | **Room**          | M, W: Bldg 19, Rm 152 & [Zoom](https://lanecc.zoom.us/j/8982554800)<br />Tu, Th: CIT Lab (Bldg 19, Rm 135) |
+| **Classroom**     | Building 19, Room 126<br />[Zoom meeting](https://lanecc.zoom.us/j/99586887638) |      | **Office / Lab**  | M, W: Bldg 19, Rm 152 & [Zoom](https://lanecc.zoom.us/j/8982554800)<br />Tu, Th: CIT Lab (Bldg 19, Rm 135) |
 
 <h2>Table of Contents</h2>
 
@@ -42,7 +42,7 @@ Upon successful completion of this course, students will be able to:
 
 There is no textbook for this class. In place of a textbook you will read online tutorials and other free online resources.
 
-[Elements of AI](https://www.elementsofai.com), is a free high-quality course that I recommend, although it won't be directly used in this course. The course is mainly for non-programmers, but does a good job of covering many concepts relevant to this course.
+[Elements of AI](https://www.elementsofai.com), is a free high-quality course that I recommend, although it won't be directly used in this course. Elements of AI is mainly for non-programmers, but does a good job of covering many concepts relevant to this course.
 
 #### Learning Management System
 
@@ -56,9 +56,7 @@ All of the software required for this class is free.  You can use any operating 
 
 See the [Getting Started Guide](https://lcc-cit.github.io/CS212-CourseMaterials/CS212_GettingStartedGuide.html) for a list of the software needed for this class.
 
-You will need to download and install any software you don't already have on your computer. The software has
-
-already been installed on the computers in the classroom and in the CIT computer lab.
+You will need to download and install any software you don't already have on your computer. The software has already been installed on the computers in the classroom and in the CIT computer lab.
 
 
 ####  Free and Discounted Software for Students
@@ -210,17 +208,17 @@ View [academic calendars](https://www.lanecc.edu/calendars/academic-calendar) on
 
 | Week             | Topics                                | Activities                                                   |
 | ---------------- | ------------------------------------- | ------------------------------------------------------------ |
-| **1**<br />9/28  | Intro to AI<br />Python               | Introduce yourself on Discord<br />Lab 1<br />Quiz 1         |
-| **2**<br />10/5  | TBD                        | Lab 2<br />Quiz 2<br />Code review 1                         |
-| **3**<br />10/12 | Intro to ML and Bayes                 | Lab 3<br />Quiz 3<br />Code review 2                         |
-| **4**<br />10/19 | Training an ML Model                  | Lab 4<br />Quiz 4<br />Code review 3                         |
-| **5**<br />10/26 | History of AI and Midterm             | Code review 4<br />Term project proposal<br />Midterm quiz:<br />- In the classroom Thursday, 10/29 (hybrid)<br />- Remote version at home or optional in testing center 10/29&ndash;10/31 (online) |
-| **6**<br />11/2  | Neural Networks                       | Lab 5<br />Quiz 5                                            |
-| **7**<br />11/9  | Generative AI                         | Lab 6<br />Quiz 6<br />Code review 5                         |
-| **8**<br />11/16 | Chat Completion API                   | Lab 7<br />Quiz 7<br />Code review 6                         |
-| **9**<br />11/23 | MCP                                   | Lab 8<br />Quiz 8<br />Code review 7                         |
-| **10**<br />11/30 | Social and ethical issues of AI       | Term Project<br /><br />Code review 8                        |
-| **11**<br />12/7 | Final and Presentations               | Project presentations<br />Final quiz:<br />- In the classroom on Tuesday, 12/8 (hybrid)<br />- Remote version at home or optional in testing center 12/5&ndash;12/8 (online) |
+| **1**<br />9/28  | Intro to AI<br />Python               | Introduce yourself on Discord<br />Start lab 1<br />Quiz 1  |
+| **2**<br />10/5  | TBD                        | Start lab 2<br />Quiz 2<br />Lab 1 code review, production version |
+| **3**<br />10/12 | Intro to ML and Bayes                 | Start lab 3<br />Quiz 3<br />Lab 2 code review, production version |
+| **4**<br />10/19 | Training an ML Model                  | Start lab 4<br />Quiz 4<br />Lab 3 code review, production version |
+| **5**<br />10/26 | History of AI and Midterm Quiz        | Lab 4 code review<br />Midterm quiz: Thursday, 10/29 (hybrid section)<br />See Canvas for locations and dates for the online class section. |
+| **6**<br />11/2  | Neural Networks                       | Term project proposal<br />Start lab 5<br />Quiz 5          |
+| **7**<br />11/9  | Generative AI                         | Start lab 6<br />Quiz 6<br />Lab 5 code review, production version |
+| **8**<br />11/16 | Chat Completion API                   | Start lab 7<br />Quiz 7<br />Lab 6 code review, production version |
+| **9**<br />11/23 | MCP                                   | Start lab 8<br />Quiz 8<br />Lab 7 code review, production version |
+| **10**<br />11/30 | Social and ethical issues of AI       | Lab 8 code review, production version<br />Term Project code review, production version<br />Term project presentations |
+| **11**<br />12/7 | Final Quiz           | Final quiz: Tuesday, 12/8 (hybrid class section)<br />See Canvas for locations and dates for the online class section. |
 
 <a href="#top">Go back to the top</a>
 
