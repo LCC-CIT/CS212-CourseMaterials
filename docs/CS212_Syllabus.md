@@ -6,7 +6,7 @@
 | ----------------- | ------------------------------------------------------------ | ---- | ----------------- | ------------------------------------------------------------ |
 | **Course Number** | CS 212                                                       |      | **Name**          | Brian Bird                                                   |
 | **CRN**           | Hybrid (on campus) 22143<br />Online 22144                   |      | **E-mail**        | [birdb@lanecc.edu](mailto:birdb@lanecc.edu)                  |
-| **Day & Time**    | Tu, Th 2:00&ndash;3:50                                       |      | **Office Hours**  | M, W 2:00&ndash;2:50 (In person & Zoom)<br />Tu, Th 4:00&ndash;4:50 (In person) |
+| **Day & Time**    | Tu, Th 2:00&ndash;3:50                                       |      | **Office Hours**  | M, W 2:00&ndash;2:50 (In person & Zoom)<br />Tu, Th 1:00&ndash;1:50 (Lab, in person) |
 | **Classroom**     | Building 19, Room 126<br />[Zoom meeting](https://lanecc.zoom.us/j/99586887638) |      | **Office / Lab**  | M, W: Bldg 19, Rm 152 & [Zoom](https://lanecc.zoom.us/j/8982554800)<br />Tu, Th: CIT Lab (Bldg 19, Rm 135) |
 
 <h2>Table of Contents</h2>
@@ -212,7 +212,7 @@ View [academic calendars](https://www.lanecc.edu/calendars/academic-calendar) on
 | **2**<br />10/5  | TBD                        | Start lab 2<br />Quiz 2<br />Lab 1 code review, production version |
 | **3**<br />10/12 | Intro to ML and Bayes                 | Start lab 3<br />Quiz 3<br />Lab 2 code review, production version |
 | **4**<br />10/19 | Training an ML Model                  | Start lab 4<br />Quiz 4<br />Lab 3 code review, production version |
-| **5**<br />10/26 | History of AI and Midterm Quiz        | Lab 4 code review<br />Midterm quiz: Thursday, 10/29 (hybrid section)<br />See Canvas for locations and dates for the online class section. |
+| **5**<br />10/26 | History of AI and Midterm Quiz        | Lab 4 code review, production version<br />Midterm quiz: Thursday, 10/29 (hybrid section)<br />See Canvas for locations and dates for the online class section. |
 | **6**<br />11/2  | Neural Networks                       | Term project proposal<br />Start lab 5<br />Quiz 5          |
 | **7**<br />11/9  | Generative AI                         | Start lab 6<br />Quiz 6<br />Lab 5 code review, production version |
 | **8**<br />11/16 | Chat Completion API                   | Start lab 7<br />Quiz 7<br />Lab 6 code review, production version |
