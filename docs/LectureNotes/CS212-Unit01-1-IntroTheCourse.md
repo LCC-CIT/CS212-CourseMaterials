@@ -57,6 +57,8 @@ Q: How do you feel about AI doing coding&mdash;and more?
 
 ## Environmental, Social and Ethical Issues
 
+### The Problems
+
 - Environmental: AI data centers:
 
   -  Electrical power use.
@@ -79,12 +81,42 @@ Q: How do you feel about AI doing coding&mdash;and more?
   - Fake AI images and videos imitating real people.
   - AI scams and cybercrime.
 
-  
+  ### Potential Mitigations
 
+- Data Centers
+
+  - Alternate power sources like solar, wind and nuclear.
+  - Closed loop cooling.
+  - Underground, underwater and space based data centers.
+  - Use small models that run on a local PC
+  - Use medium sized models that run on a workstation.
+
+- Job loss&mdash;especially for software devs
+
+  - There might be a "backlash" when too many senior devs retire with no one to replace them. Or when too much bad software was written by unsupervised AI.
+  - The Software dev job role will change:
+    - Focus more on systems analysis, systems design and verification.
+    - Morph into AI systems designer and manager (a new kind of dev ops?).
+  - More software will be needed to do more things that are now possible with AI and to combat the bad things AI does.
+
+- Social and ethical issues
+
+  - As a dev:
+    - Don't train models on other people's IP.
+    - Don't write apps that cause harm.
+  - Government regulation.
+  - Education regardinng the dangers of AI.
+  - Making choices about what AI providers to support.
+
+  ### Course Tour
+
+  - Canvas Site
+  - Syullabus
+
+  
 
 ---
 
-
-
 [![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, revised in 2026 are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
 
+---
