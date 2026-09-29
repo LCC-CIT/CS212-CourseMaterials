@@ -58,6 +58,7 @@ The goals for this week are to:
 
 ## Things to Do This Week
 
+- Read the Getting Started Guide and Syllabus.
 - Join the Discord server so you can communicate with your team.
 - Introduce yourself on Discord. 
 - We'll choose teams on Thursday.
