@@ -47,7 +47,7 @@ To learn how to use Canvas, click on the **Help** icon in the global navigation 
 Come to class in person or via Zoom or watch the class Zoom recordings.
 
 - There are Zoom links in the syllabus.
-- All Zoom links for live class sessions, lecture recordings, and Zoom office hours can be found using the **Zoom app on the Canvas Home page** (or in the course navigation menu).
+- All Zoom links for live class sessions, lecture recordings, and Zoom office hours can be found using **Zoom Meetings and Recordings** in the *Start Here* module on Canvas (the first module on the course Home page).
 
 Come see me during office hours&mdash;drop in! No appointment needed. Come get help with assignments, discuss programming and AI, or just to say "hi". If you would like to meet at another time you can message me to make an appointment.
 
@@ -65,7 +65,7 @@ Come see me during office hours&mdash;drop in! No appointment needed. Come get h
 - [Zoom](https://zoom.us/) for participating in class or office hours remotely.
 - [Discord](https://discord.com/) for class communication and collaboration with your team.
   - Sign up for a free account, if you don't already have one. 
-  - Accept my invitation to the [Intro to AI Discord server](https://discord.com/invite/EpC4cGfG) (click on the link) and join the class server.
+  - Join the class Discord server. Invitation link: TBD
   - If you haven't used Discord before, [here's a 15 minute beginner's tutorial](https://youtu.be/rnYGrq95ezA?si=f2Bfrwu7WMJivcC6).
 - [VisualStudio Code](https://code.visualstudio.com), a code editor for Mac OS, Windows and Linux. You will use this for writing Python code.
 - [Python](https://www.python.org/) will be the programming language used for this class. There will be a quick intro to Python in the first week for those of you who don't know Python yet.
@@ -88,7 +88,7 @@ Come see me during office hours&mdash;drop in! No appointment needed. Come get h
 
 ## Course Structure
 
-This course is broken into topical weekly modules. The weeks start on Monday and end on Sunday. Every week is broken into four sections: Objectives, Reading, Lecture Notes and Activities.
+This course is broken into topical weekly modules. The weeks start on Monday and end on Sunday. Weeks 1–4 and 6–9 are each broken into four sections: Objectives, Reading, Lecture Notes and Activities.
 
 ### Objectives
 
@@ -104,7 +104,7 @@ Activities include lab assignments, code reviews, reading quizzes, and a term pr
 
 #### Lab assignments
 
-Each week you will have a lab assignment. This is a hands-on programming assignment.
+In weeks 1–4 and 6–9 you will have a lab assignment. This is a hands-on programming assignment.
 
 #### Lab Partners
 
@@ -148,7 +148,7 @@ All course communication (via e-mail, Discord, Canvas Inbox, discussion forums, 
 
 [The Core Rules of Netiquette](https://www.albion.com/netiquette/corerules.html) is a guide to respectful and constructive communication online.
 
-We will be using Discord for communication and collaboration in this class. See the Canvas Home page for an invitation link to the class Discord server. Questions about the course should be posted on Discord in the *Discussion* channel. Questions that relate specifically to you, such as grades or extensions, should be sent to your instructor via e-mail or Canvas Inbox. E-mails to your instructor or e-mails to another department regarding support issues should include your course number and section (online vs. hybrid/in person).
+We will be using Discord for communication and collaboration in this class. See the *Discord* page in the *Start Here* module on Canvas for an invitation link to the class Discord server. Questions about the course should be posted on Discord in the *Discussion* channel. Questions that relate specifically to you, such as grades or extensions, should be sent to your instructor via e-mail or Canvas Inbox. E-mails to your instructor or e-mails to another department regarding support issues should include your course number and section (online vs. hybrid/in person).
 
 Course announcements will be posted by the instructor on Canvas Announcements and on the Discord *Announcements* channel. Students are expected to check for announcements regularly (at least every class day). Any questions about announcements can be posted on the Discord *Discussion* channel.
 
