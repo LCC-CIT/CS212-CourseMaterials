@@ -33,7 +33,7 @@ B. Making a new expert system to do something you are interesed in. Send your in
 
 
 
-## Submitting your lab work on Moodle
+## Submitting your lab work on Canvas
 
 ### Beta Version
 
@@ -42,11 +42,11 @@ B. Making a new expert system to do something you are interesed in. Send your in
 ### Code Review
 
 - Review one of your lab partners' code and post the review in your team channel on Discord.
-- Submit a copy of the code review <u>you did</u> on Moodle.
+- Submit a copy of the code review <u>you did</u> to the code review assignment on Canvas.
 
 ### Production Version
 
- Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on Moodle:
+ Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on Canvas:
 
 1. The files: Python (.py) files (one or more) and one .csv rule file.
 2. The code review <u>from your lab partner</u> with the “Prod.” column filled out by you.

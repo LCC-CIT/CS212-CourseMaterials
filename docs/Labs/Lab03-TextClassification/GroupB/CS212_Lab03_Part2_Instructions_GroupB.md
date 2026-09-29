@@ -15,7 +15,7 @@ author: Brian Bird
 
 - [Part 1: The scikit-learn "Working with Text Data" Tutorial](#part-1-the-scikit-learn-working-with-text-data-tutorial)
 - [Part 2: Sentiment Analysis on Movie Reviews](#part-2-sentiment-analysis-on-movie-reviews)
-- [Submitting your lab work on Moodle](#submitting-your-lab-work-on-moodle)
+- [Submitting your lab work on Canvas](#submitting-your-lab-work-on-canvas)
   - [Beta Version](#beta-version)
   - [Code Review](#code-review)
   - [Production Version](#production-version)
@@ -24,7 +24,7 @@ author: Brian Bird
 ## Part 1: The scikit-learn "Working with Text Data" Tutorial
 
 The instructions for part 1 are [here](../CS212_Lab03_Part1_Instructions.html).
-Part 1 has it's own assignment submission link on the LMS.
+Part 1 has its own assignment submission on Canvas.
 
 
 
@@ -36,7 +36,7 @@ Alternatively, you can do a classification project of your own design.  You can 
 
 
 
-## Submitting your lab work on Moodle
+## Submitting your lab work on Canvas
 
 **Note**: You only need to submit your code. You <u>do not</u> need to upload your virtual environment (.venv) folder.
 
@@ -47,14 +47,14 @@ Alternatively, you can do a classification project of your own design.  You can 
 ### Code Review
 
 - Review one of your lab partners' code and post the review in your team channel on Discord.
-- Submit a copy of the code review <u>you did</u> on the LMS.
+- Submit a copy of the code review <u>you did</u> to the code review assignment on Canvas.
 
 ### Production Version
 
- Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on the LMS:
+ Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on Canvas:
 
 1. The Python (.py) file
-3. The code review <u>from your lab partner</u> with the “Prod.” column filled out by you.
+2. The code review <u>from your lab partner</u> with the “Prod.” column filled out by you.
 
 
 

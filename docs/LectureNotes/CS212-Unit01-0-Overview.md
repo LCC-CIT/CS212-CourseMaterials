@@ -94,7 +94,7 @@ Ask questions in the class [Discussion channel](https://discord.com/channels/129
 ### Class Participation
 
 - If you are an on-campus or online student who can join us during class time, then come to the classroom (building 19, room 128) or [join us on Zoom](https://lanecc.zoom.us/j/92444108339).
-- If you are an online student be sure to <u>watch the video recordings</u> of the in-class, lectures. Access these via the page linked near the top of Moodle main page.
+- If you are an online student be sure to <u>watch the video recordings</u> of the in-class, lectures. Access these via the page linked near the top of the Canvas course page.
 
 - You will get the most out of this class if you can come or Zoom to class where you can get help with your lab assignments! You can also get help during office hours or from a tutor in the lab (in person or on Zoom).
 

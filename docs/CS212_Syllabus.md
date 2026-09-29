@@ -211,7 +211,7 @@ View [academic calendars](https://www.lanecc.edu/calendars/academic-calendar) on
 | Week             | Topics                                | Activities                                                   |
 | ---------------- | ------------------------------------- | ------------------------------------------------------------ |
 | **1**<br />9/28  | Intro to AI<br />Python               | Introduce yourself on Discord<br />Lab 1<br />Quiz 1         |
-| **2**<br />10/5  | Symbolic AI                           | Lab 2<br />Quiz 2<br />Code review 1                         |
+| **2**<br />10/5  | TBD                        | Lab 2<br />Quiz 2<br />Code review 1                         |
 | **3**<br />10/12 | Intro to ML and Bayes                 | Lab 3<br />Quiz 3<br />Code review 2                         |
 | **4**<br />10/19 | Training an ML Model                  | Lab 4<br />Quiz 4<br />Code review 3                         |
 | **5**<br />10/26 | History of AI and Midterm             | Code review 4<br />Term project proposal<br />Midterm quiz:<br />- In the classroom Thursday, 10/29 (hybrid)<br />- Remote version at home or optional in testing center 10/29&ndash;10/31 (online) |

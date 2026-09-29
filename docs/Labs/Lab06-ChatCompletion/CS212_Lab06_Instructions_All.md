@@ -15,7 +15,7 @@ author: Brian Bird
 
 - [Objective](#objective)
 - [Instructions](#instructions)
-- [Submitting your lab work on Moodle](#submitting-your-lab-work-on-moodle)
+- [Submitting your lab work on Canvas](#submitting-your-lab-work-on-canvas)
   - [Beta Version](#beta-version)
   - [Code Review](#code-review)
   - [Production Version](#production-version)
@@ -33,7 +33,7 @@ Add a call to the Gemini chat completion API or some other generative chat compl
 
 If the app is not a game, add an AI feature that does something in response to the user's input. This should be more than just giving answers (don't just make a chatbot), but the AI featuere should do some kind of decision making based on the user's input or the state of the app and then the app should do something based on the response from the AI.
 
-## Submitting your lab work on Moodle
+## Submitting your lab work on Canvas
 
 ### Beta Version
 
@@ -42,14 +42,14 @@ If the app is not a game, add an AI feature that does something in response to t
 ### Code Review
 
 - Review one of your lab partners' code and post the review in your team channel on Discord.
-- Submit a copy of the code review <u>you did</u> on the LMS.
+- Submit a copy of the code review <u>you did</u> to the code review assignment on Canvas.
 
 ### Production Version
 
- Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on the LMS:
+ Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on Canvas:
 
 1. The Zipped project files or a link to your GitHub repository.
-3. The code review <u>from your lab partner</u> with the “Prod.” column filled out by you.
+2. The code review <u>from your lab partner</u> with the “Prod.” column filled out by you.
 
 
 

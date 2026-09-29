@@ -11,7 +11,7 @@
 - [FAQ](#faq)
 ## Overview
 
-Each student is on a team with one or two other students who are their lab partners. On Moodle, each team of lab partners is listed with a team name
+Each student is on a team with one or two other students who are their lab partners. On Canvas, each team of lab partners is listed in a group with a team name.
 
 There are three versions of each lab assignment—versions A, B and C. Each lab partner will do a different version. This allows each student to look at the other’s work and give them feedback without seeing a solution to their own assignment. 
 
@@ -26,11 +26,11 @@ student A reviews B, student B reviews C, and student C reviews A.
 
 ### What to Do with the Code Review You Give 
 
-Post the code review for your lab partner in your Discord team channel and submit the review using the Lab Review assignment link on Moodle. 
+Post the code review for your lab partner in your Discord team channel and submit the review to the Lab Review assignment on Canvas. 
 
 ### What to Do with the Code Review You Get 
 
-After getting a code review, you may revise your lab work. Fill in the right-most column (“production”) of the review form to indicate any revisions. Fill in the right-most column completely, even if you didn’t change anything. Then, upload the final (aka production) version of your lab work to Moodle and the completed code review of your own lab work. 
+After getting a code review, you may revise your lab work. Fill in the right-most column (“production”) of the review form to indicate any revisions. Fill in the right-most column completely, even if you didn’t change anything. Then, upload the final (aka production) version of your lab work to Canvas along with the completed code review of your own lab work. 
 
 ## What to Do If Something Goes Wrong 
 

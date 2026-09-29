@@ -12,7 +12,7 @@ The purpose of the presentation is to show off the AI empowered app you made and
   - In person: you will give a live presentation to the class.  
     You can use Zoom on your computer so students on Zoom and in the classroom (on the D-Ten) can see your app running.
   - On Zoom: You will share your screen and the instructor will project that for the class to see.
-  - Online (asynchronous): You can make a screen-cast and post a link to it in the presentation forum on Moodle. If you are making a screen-cast you can use any screen capture software that both records the screen and audio narration such as:
+  - Online (asynchronous): You can make a screen-cast and post a link to it in the presentation discussion on Canvas. If you are making a screen-cast you can use any screen capture software that both records the screen and audio narration such as:
     - [ScreenPal (formerly Screencast-O-Matic)](https://screenpal.com)&mdash;free for 15 minute or shorter recordings.
     - [ScreenRec](https://screenrec.com/)&mdash;free!
     - [Zoom](https://www.zoom.com)&mdash;Meet with your team on Zoom, use webcams and/or mics, share your screen and record the meeting.

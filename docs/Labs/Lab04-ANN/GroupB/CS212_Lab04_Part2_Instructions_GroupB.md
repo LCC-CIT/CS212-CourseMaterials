@@ -19,7 +19,7 @@ author: Brian Bird
   - [Bonus Challenge (Optional, XC)](#bonus-challenge-optional-xc)
   - [Exercise: Keras Image Classification with the KMNIST Dataset](#exercise-keras-image-classification-with-the-kmnist-dataset)
   - [Bonus Challenge (Optional)](#bonus-challenge-optional)
-- [Submitting your lab work on Moodle](#submitting-your-lab-work-on-moodle)
+- [Submitting your lab work on Canvas](#submitting-your-lab-work-on-canvas)
   - [Beta Version](#beta-version)
   - [Code Review](#code-review)
   - [Production Version](#production-version)
@@ -297,7 +297,7 @@ Now, re-compile (Step 6) and re-train (Step 7) the model.
 
 
 
-## Submitting your lab work on Moodle
+## Submitting your lab work on Canvas
 
 ### Beta Version
 
@@ -306,14 +306,14 @@ Now, re-compile (Step 6) and re-train (Step 7) the model.
 ### Code Review
 
 - Review one of your lab partners' code and post the review in your team channel on Discord.
-- Submit a copy of the code review <u>you did</u> on the LMS.
+- Submit a copy of the code review <u>you did</u> to the code review assignment on Canvas.
 
 ### Production Version
 
- Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on the LMS:
+ Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on Canvas:
 
 1. The Jupyter Notebook file (.Ipynb) or a link to your Google Colab notebook.
-3. The code review <u>from your lab partner</u> with the “Prod.” column filled out by you.
+2. The code review <u>from your lab partner</u> with the “Prod.” column filled out by you.
 
 
 

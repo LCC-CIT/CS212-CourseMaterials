@@ -49,7 +49,7 @@ Create a simplified system for monitoring a server cluster. The system uses a *H
 
 
 
-## Submitting your lab work on Moodle
+## Submitting your lab work on Canvas
 
 ### Beta Version
 
@@ -58,14 +58,14 @@ Create a simplified system for monitoring a server cluster. The system uses a *H
 ### Code Review
 
 - Review one of your lab partners' code and post the review in your team channel on Discord.
-- Submit a copy of the code review <u>you did</u> on Moodle.
+- Submit a copy of the code review <u>you did</u> to the code review assignment on Canvas.
 
 ### Production Version
 
- Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on Moodle:
+ Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on Canvas:
 
 1. The two Python (.py) files
-3. The code review <u>from your lab partner</u> with the “Prod.” column filled out by you.
+2. The code review <u>from your lab partner</u> with the “Prod.” column filled out by you.
 
 This will be a total of 3 files.
 

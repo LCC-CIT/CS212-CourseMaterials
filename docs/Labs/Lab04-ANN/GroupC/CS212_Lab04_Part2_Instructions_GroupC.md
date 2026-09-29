@@ -17,7 +17,7 @@ author: Brian Bird
   - [Objective:](#objective)
   - [Instructions](#instructions)
   - [Bonus Challenge (Optional)](#bonus-challenge-optional)
-- [Submitting your lab work on Moodle](#submitting-your-lab-work-on-moodle)
+- [Submitting your lab work on Canvas](#submitting-your-lab-work-on-canvas)
   - [Beta Version](#beta-version)
   - [Code Review](#code-review)
   - [Production Version](#production-version)
@@ -163,7 +163,7 @@ Re-compile and re-train this new, "deeper" model. Does the final test accuracy g
 
 
 
-## Submitting your lab work on Moodle
+## Submitting your lab work on Canvas
 
 ### Beta Version
 
@@ -172,14 +172,14 @@ Re-compile and re-train this new, "deeper" model. Does the final test accuracy g
 ### Code Review
 
 - Review one of your lab partners' code and post the review in your team channel on Discord.
-- Submit a copy of the code review <u>you did</u> on the LMS.
+- Submit a copy of the code review <u>you did</u> to the code review assignment on Canvas.
 
 ### Production Version
 
- Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on the LMS:
+ Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on Canvas:
 
 1. The Jupyter Notebook file (.Ipynb) or a link to your Google Colab notebook.
-3. The code review <u>from your lab partner</u> with the “Prod.” column filled out by you.
+2. The code review <u>from your lab partner</u> with the “Prod.” column filled out by you.
 
 
 

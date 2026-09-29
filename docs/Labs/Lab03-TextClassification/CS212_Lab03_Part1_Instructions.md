@@ -49,9 +49,9 @@ To make this interesting, you can use a different set of newsgroup categories fr
 
 There will be three versions of part 2. The instructions will be in separate documents.
 
-## Submitting your lab work on Moodle
+## Submitting your lab work on Canvas
 
-Upload the one file to the Lab 3, Part 1 assignment link. 
+Upload your Python code file to the Lab 3, Part 1 assignment on Canvas. 
 You only need to submit your code. You <u>do not</u> need to upload your virtual environment (.venv) folder.
 
 (No code review is needed)

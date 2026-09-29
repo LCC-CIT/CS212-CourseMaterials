@@ -19,9 +19,9 @@ Do the tutorial, [TensorFlow 2 quickstart for beginners](https://www.tensorflow.
 
 
 
-## Submitting your lab work on Moodle
+## Submitting your lab work on Canvas
 
-For part 1, submit a link to your Google Colab notebook in the text area on the submission page.
+For part 1, submit the URL link to your Google Colab notebook on Canvas.
 
 (No code review is needed)
 

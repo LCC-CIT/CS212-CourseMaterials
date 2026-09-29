@@ -15,7 +15,7 @@ author: Brian Bird
 
 - [Objectives](#objectives)
 - [Instructions](#instructions)
-- [Submitting your lab work on Moodle](#submitting-your-lab-work-on-moodle)
+- [Submitting your lab work on Canvas](#submitting-your-lab-work-on-canvas)
   - [Production Version](#production-version)
 - [Grading Criteria](#grading-criteria)
 
@@ -41,7 +41,7 @@ You have three options. You can <u>do any one</u> of these:
 
 
 
-## Submitting your lab work on Moodle
+## Submitting your lab work on Canvas
 
 No code review is needed for this lab assignment.
 
