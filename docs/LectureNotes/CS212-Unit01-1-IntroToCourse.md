@@ -16,6 +16,23 @@ author: Brian Bird
 
 [TOC]
 
+## Introductions
+
+- Who am I (your instructor)?
+
+  - Education
+  - Professional background
+  - Interests
+  - Teaching at LCC
+
+- Who are you?
+
+  - Degree or certificate you are pursuing
+  - Career goals
+  - Interests
+
+  
+
 ## What this Course is About
 
 In this course you will learn to:
