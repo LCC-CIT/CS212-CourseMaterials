@@ -47,7 +47,7 @@ To learn how to use Canvas, click on the **Help** icon in the global navigation 
 Come to class in person or via Zoom or watch the class Zoom recordings.
 
 - There are Zoom links in the syllabus.
-- All Zoom links for live class sessions, lecture recordings, and Zoom office hours can be found using **Zoom Meetings and Recordings** in the *Start Here* module on Canvas (the first module on the course Home page).
+- All Zoom links for live class sessions, lecture recordings, and Zoom office hours can be found in the **Zoom Pro** app in our Canvas course: click **Zoom Pro** in the course navigation menu on the left side of the course. You can also get there from **Zoom Meetings and Recordings** in the *Start Here* module (the first module on the course Home page).
 
 Come see me during office hours&mdash;drop in! No appointment needed. Come get help with assignments, discuss programming and AI, or just to say "hi". If you would like to meet at another time you can message me to make an appointment.
 
