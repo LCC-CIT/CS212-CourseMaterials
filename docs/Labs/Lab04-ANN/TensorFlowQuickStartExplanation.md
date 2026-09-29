@@ -1,6 +1,6 @@
 ---
-title: Lab 4, Part 1 Explanation
-description: Explanation of Quickstart tutorila in lab 4
+title: Lab 5, Part 1 Explanation
+description: Explanation of Quickstart tutorila in lab 5
 keywords: TensorFlow
 material: Lab Instructions
 generator: Typora
