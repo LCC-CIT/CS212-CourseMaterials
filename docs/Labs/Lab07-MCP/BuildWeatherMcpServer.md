@@ -14,7 +14,7 @@
 
 ## Introduction
 
-In this tutorial, you will build a Model Context Protocol (MCP) server that provides weather forecasts and alerts. This tutorial was adapted from [Build an MCP Server](https://modelcontextprotocol.io/docs/develop/build-server). The purpose was to simplify the tutorial for beginning Python programmers. The main changes were to use `pip` instead of `uv`,  use the ["official" MCP Server SDK](https://modelcontextprotocol.github.io/python-sdk/) and to not use [Python type hints](https://docs.python.org/3/library/typing.html).
+In this tutorial, you will build a Model Context Protocol (MCP) server that provides weather forecasts and alerts. This tutorial was adapted from <a href="https://modelcontextprotocol.io/docs/develop/build-server" target="_blank">Build an MCP Server</a>. The purpose was to simplify the tutorial for beginning Python programmers. The main changes were to use `pip` instead of `uv`,  use the <a href="https://modelcontextprotocol.github.io/python-sdk/" target="_blank">"official" MCP Server SDK</a> and to not use <a href="https://docs.python.org/3/library/typing.html" target="_blank">Python type hints</a>.
 
 This tutorial includes instructions for testing the server with two different MCP clients: 
 
@@ -24,13 +24,13 @@ This tutorial includes instructions for testing the server with two different MC
 ### Prerequisites
 
 - Python 3.10 or higher.
-- [Claude Desktop App](https://claude.ai/download) or [Visual Studio Code](https://code.visualstudio.com) installed.
+- <a href="https://claude.ai/download" target="_blank">Claude Desktop App</a> or <a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a> installed.
 
 
 
 ## Project Setup
 
-We will use standard Python tools (`venv` and `pip`) to set up the environment. The environment will include the ["official" Python MCP SDK](https://modelcontextprotocol.github.io/python-sdk/) from the Anthropic MCP open-source project. 
+We will use standard Python tools (`venv` and `pip`) to set up the environment. The environment will include the <a href="https://modelcontextprotocol.github.io/python-sdk/" target="_blank">"official" Python MCP SDK</a> from the Anthropic MCP open-source project. 
 
 - First make a new project folder with a name like `weather-mcp`
   - In that folder, using a terminal, do the following :
@@ -366,11 +366,11 @@ If the *weather-server* doesn't appear in the list of tools or the tool fails:
 
 ## References
 
-[Build an MCP Server](https://modelcontextprotocol.io/docs/develop/build-server)&mdash;Model Context Protocol Project, an open-source project managed by [Anthropic](https://www.anthropic.com).
+<a href="https://modelcontextprotocol.io/docs/develop/build-server" target="_blank">Build an MCP Server</a>&mdash;Model Context Protocol Project, an open-source project managed by <a href="https://www.anthropic.com" target="_blank">Anthropic</a>.
 
-[MCP Python SDK](https://modelcontextprotocol.github.io/python-sdk/)&mdash;The "official" SDK from the Anthropic MCP open-source project. The GitHub repository is [here.](https://github.com/modelcontextprotocol/python-sdk)
+<a href="https://modelcontextprotocol.github.io/python-sdk/" target="_blank">MCP Python SDK</a>&mdash;The "official" SDK from the Anthropic MCP open-source project. The GitHub repository is <a href="https://github.com/modelcontextprotocol/python-sdk" target="_blank">here.</a>
 
- [How to use the MCP server in VS Code](https://www.youtube.com/watch?v=91_6PnC9oUU)  
+ <a href="https://www.youtube.com/watch?v=91_6PnC9oUU" target="_blank">How to use the MCP server in VS Code</a>  
 This video demonstrates the "Agent mode" in VS Code and how to access MCP tools within the GitHub Copilot chat interface.
 
 
@@ -379,7 +379,7 @@ This video demonstrates the "Agent mode" in VS Code and how to access MCP tools 
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 course materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 course materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---
 

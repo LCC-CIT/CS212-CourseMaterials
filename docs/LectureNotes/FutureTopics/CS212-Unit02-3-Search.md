@@ -71,7 +71,7 @@ Search for an optimal set of steps to reach a particular configuration given a s
   - Only the boat can be used to cross the river (no wading or swimming).
   - If the zombies on either side of the river outnumber the humans, they will kill them.
 
-  Here is a solution to the [Zombies and humans river crossing problem](https://lcc-cit.github.io/CS123-CourseMaterials/LectureNotes/Topic-01-4-ZombieCrossingSolution.html) with a description of the state-space and the steps to get from the initial state-space configuration to the state-space configuration that is the goal.
+  Here is a solution to the <a href="https://lcc-cit.github.io/CS123-CourseMaterials/LectureNotes/Topic-01-4-ZombieCrossingSolution.html" target="_blank">Zombies and humans river crossing problem</a> with a description of the state-space and the steps to get from the initial state-space configuration to the state-space configuration that is the goal.
 
   
 
@@ -86,6 +86,6 @@ Note: Parts of this document were initially drafted with assistance from Gemini 
 
 
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) Intro to AI Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> Intro to AI Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
-[^1]: [Dartmouth workshop](https://en.wikipedia.org/wiki/Dartmouth_workshop)&mdash;Wikipedia
+[^1]: <a href="https://en.wikipedia.org/wiki/Dartmouth_workshop" target="_blank">Dartmouth workshop</a>&mdash;Wikipedia

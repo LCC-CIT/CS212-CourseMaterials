@@ -30,8 +30,8 @@ author: Brian Bird
 You have three options. You can <u>do any one</u> of these:
 
 1. Follow tutorials to build an MCP server and client
-   - Follow [this tutorial to build an MCP weather server](https://modelcontextprotocol.io/docs/develop/build-server), or [your instructor's simplified version](https://lcc-cit.github.io/CS212-CourseMaterials/Labs/Lab07-MCP/BuildWeatherMcpServer.html) of the tutorial.
-   - Follow [this tutorial to build an MCP client](https://modelcontextprotocol.io/docs/develop/build-client), or [your instructor's simplified version](https://lcc-cit.github.io/CS212-CourseMaterials/Labs/Lab07-MCP/BuildWeatherMcpClient.html) of the tutorial.   
+   - Follow <a href="https://modelcontextprotocol.io/docs/develop/build-server" target="_blank">this tutorial to build an MCP weather server</a>, or <a href="https://lcc-cit.github.io/CS212-CourseMaterials/Labs/Lab07-MCP/BuildWeatherMcpServer.html" target="_blank">your instructor's simplified version</a> of the tutorial.
+   - Follow <a href="https://modelcontextprotocol.io/docs/develop/build-client" target="_blank">this tutorial to build an MCP client</a>, or <a href="https://lcc-cit.github.io/CS212-CourseMaterials/Labs/Lab07-MCP/BuildWeatherMcpClient.html" target="_blank">your instructor's simplified version</a> of the tutorial.   
                                                     OR
 2. Write an MCP server to do something useful for the app you wrote in the previous lab. Incorporate an MCP client into the app from your previous lab.  
                                                           OR
@@ -64,7 +64,7 @@ The main focus of grading will be on problem solving skills in terms of getting 
 
 ------
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming lab instructions by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming lab instructions by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ------------
 

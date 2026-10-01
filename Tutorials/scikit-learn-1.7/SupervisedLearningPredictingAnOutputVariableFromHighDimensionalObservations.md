@@ -4,9 +4,9 @@
 
 The problem solved in supervised learning
 
-[Supervised learning](https://scikit-learn.org/1.7/supervised_learning.html#supervised-learning) consists in learning the link between two datasets: the observed data `X` and an external variable `y` that we are trying to predict, usually called "target" or "labels". Most often, `y` is a 1D array of length `n_samples`.
+<a href="https://scikit-learn.org/1.7/supervised_learning.html#supervised-learning" target="_blank">Supervised learning</a> consists in learning the link between two datasets: the observed data `X` and an external variable `y` that we are trying to predict, usually called "target" or "labels". Most often, `y` is a 1D array of length `n_samples`.
 
-All supervised [estimators](https://en.wikipedia.org/wiki/Estimator) in scikit-learn implement a `fit(X, y)` method to fit the model and a `predict(X)` method that, given unlabeled observations `X`, returns the predicted labels `y`.
+All supervised <a href="https://en.wikipedia.org/wiki/Estimator" target="_blank">estimators</a> in scikit-learn implement a `fit(X, y)` method to fit the model and a `predict(X)` method that, given unlabeled observations `X`, returns the predicted labels `y`.
 
 Vocabulary: classification and regression
 
@@ -14,7 +14,7 @@ If the prediction task is to classify the observations in a set of finite labels
 
 When doing classification in scikit-learn, `y` is a vector of integers or strings.
 
-Note: See the [Introduction to machine learning with scikit-learn Tutorial](https://scikit-learn.org/1.7/tutorial/basic/tutorial.html#introduction) for a quick run-through on the basic machine learning vocabulary used within scikit-learn.
+Note: See the <a href="https://scikit-learn.org/1.7/tutorial/basic/tutorial.html#introduction" target="_blank">Introduction to machine learning with scikit-learn Tutorial</a> for a quick run-through on the basic machine learning vocabulary used within scikit-learn.
 
 ## Nearest neighbor and the curse of dimensionality
 
@@ -34,7 +34,7 @@ array([0, 1, 2])
 
 ### k-Nearest neighbors classifier
 
-The simplest possible classifier is the [nearest neighbor](https://en.wikipedia.org/wiki/K-nearest_neighbor_algorithm): given a new observation `X_test`, find in the training set (i.e. the data used to train the estimator) the observation with the closest feature vector. (Please see the [Nearest Neighbors section](https://scikit-learn.org/1.7/modules/neighbors.html#neighbors) of the online Scikit-learn documentation for more information about this type of classifier.)
+The simplest possible classifier is the <a href="https://en.wikipedia.org/wiki/K-nearest_neighbor_algorithm" target="_blank">nearest neighbor</a>: given a new observation `X_test`, find in the training set (i.e. the data used to train the estimator) the observation with the closest feature vector. (Please see the <a href="https://scikit-learn.org/1.7/modules/neighbors.html#neighbors" target="_blank">Nearest Neighbors section</a> of the online Scikit-learn documentation for more information about this type of classifier.)
 
 Training set and testing set
 
@@ -84,7 +84,7 @@ For example, if each point is just a single number (8 bytes), then an effective
 
  dimensions would require more training data than the current estimated size of the entire internet (±1000 Exabytes or so).
 
-This is called the [curse of dimensionality](https://en.wikipedia.org/wiki/Curse_of_dimensionality) and is a core problem that machine learning addresses.
+This is called the <a href="https://en.wikipedia.org/wiki/Curse_of_dimensionality" target="_blank">curse of dimensionality</a> and is a core problem that machine learning addresses.
 
 ## Linear model: from regression to sparsity
 
@@ -104,7 +104,7 @@ The task at hand is to predict disease progression from physiological variables.
 
 ### Linear regression
 
-[`LinearRegression`](https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LinearRegression.html#sklearn.linear_model.LinearRegression), in its simplest form, fits a linear model to the data set by adjusting a set of parameters in order to make the sum of the squared residuals of the model as small as possible.
+<a href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LinearRegression.html#sklearn.linear_model.LinearRegression" target="_blank">`LinearRegression`</a>, in its simplest form, fits a linear model to the data set by adjusting a set of parameters in order to make the sum of the squared residuals of the model as small as possible.
 
 Linear models:
 
@@ -161,7 +161,7 @@ LinearRegression...
 
 ![Ridge Variance 1](sphx_glr_plot_ols_ridge_variance_001.png)
 
-A solution in high-dimensional statistical learning is to *shrink* the regression coefficients to zero: any two randomly chosen set of observations are likely to be uncorrelated. This is called [`Ridge`](https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.Ridge.html#sklearn.linear_model.Ridge) regression:
+A solution in high-dimensional statistical learning is to *shrink* the regression coefficients to zero: any two randomly chosen set of observations are likely to be uncorrelated. This is called <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.Ridge.html#sklearn.linear_model.Ridge" target="_blank">`Ridge`</a> regression:
 
 ```python
 >>> regr = linear_model.Ridge(alpha=.1)
@@ -194,7 +194,7 @@ We can choose `alpha` to minimize left out error, this time using the diabetes d
 
 Note
 
-Capturing in the fitted parameters noise that prevents the model to generalize to new data is called [overfitting](https://en.wikipedia.org/wiki/Overfitting). The bias introduced by the ridge regression is called a [regularization](https://en.wikipedia.org/wiki/Regularization_(machine_learning)).
+Capturing in the fitted parameters noise that prevents the model to generalize to new data is called <a href="https://en.wikipedia.org/wiki/Overfitting" target="_blank">overfitting</a>. The bias introduced by the ridge regression is called a <a href="https://en.wikipedia.org/wiki/Regularization_(machine_learning)" target="_blank">regularization</a>.
 
 ### Sparsity
 
@@ -208,7 +208,7 @@ A representation of the full diabetes dataset would involve 11 dimensions (10 fe
 
 We can see that, although feature 2 has a strong coefficient on the full model, it conveys little information on `y` when considered with feature 1.
 
-To improve the conditioning of the problem (i.e. mitigating the [The curse of dimensionality](https://scikit-learn.org/1.7/tutorial/statistical_inference/supervised_learning.html#curse-of-dimensionality)), it would be interesting to select only the informative features and set non-informative ones, like feature 2 to 0. Ridge regression will decrease their contribution, but not set them to zero. Another penalization approach, called [Lasso](https://scikit-learn.org/1.7/modules/linear_model.html#lasso) (least absolute shrinkage and selection operator), can set some coefficients to zero. Such methods are called **sparse methods** and sparsity can be seen as an application of Occam’s razor: *prefer simpler models*.
+To improve the conditioning of the problem (i.e. mitigating the <a href="https://scikit-learn.org/1.7/tutorial/statistical_inference/supervised_learning.html#curse-of-dimensionality" target="_blank">The curse of dimensionality</a>), it would be interesting to select only the informative features and set non-informative ones, like feature 2 to 0. Ridge regression will decrease their contribution, but not set them to zero. Another penalization approach, called <a href="https://scikit-learn.org/1.7/modules/linear_model.html#lasso" target="_blank">Lasso</a> (least absolute shrinkage and selection operator), can set some coefficients to zero. Such methods are called **sparse methods** and sparsity can be seen as an application of Occam’s razor: *prefer simpler models*.
 
 ```python
 >>> regr = linear_model.Lasso()
@@ -227,11 +227,11 @@ Lasso(alpha=0.025118864315095794)
 
 **Different algorithms for the same problem**
 
-Different algorithms can be used to solve the same mathematical problem. For instance the `Lasso` object in scikit-learn solves the lasso regression problem using a [coordinate descent](https://en.wikipedia.org/wiki/Coordinate_descent) method, that is efficient on large datasets. However, scikit-learn also provides the [`LassoLars`](https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LassoLars.html#sklearn.linear_model.LassoLars) object using the *LARS* algorithm, which is very efficient for problems in which the weight vector estimated is very sparse (i.e. problems with very few observations).
+Different algorithms can be used to solve the same mathematical problem. For instance the `Lasso` object in scikit-learn solves the lasso regression problem using a <a href="https://en.wikipedia.org/wiki/Coordinate_descent" target="_blank">coordinate descent</a> method, that is efficient on large datasets. However, scikit-learn also provides the <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LassoLars.html#sklearn.linear_model.LassoLars" target="_blank">`LassoLars`</a> object using the *LARS* algorithm, which is very efficient for problems in which the weight vector estimated is very sparse (i.e. problems with very few observations).
 
 ### Classification
 
-For classification, as in the labeling [iris](https://en.wikipedia.org/wiki/Iris_flower_data_set) task, linear regression is not the right approach as it will give too much weight to data far from the decision frontier. A linear approach is to fit a sigmoid function or **logistic** function:
+For classification, as in the labeling <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set" target="_blank">iris</a> task, linear regression is not the right approach as it will give too much weight to data far from the decision frontier. A linear approach is to fit a sigmoid function or **logistic** function:
 
 ![Logistic Regression](sphx_glr_plot_logistic_001.png)
 
@@ -241,7 +241,7 @@ For classification, as in the labeling [iris](https://en.wikipedia.org/wiki/Iris
 LogisticRegression(C=100000.0)
 ```
 
-This is known as [`LogisticRegression`](https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression).
+This is known as <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression" target="_blank">`LogisticRegression`</a>.
 
 ![Iris Logistic](sphx_glr_plot_iris_logistic_001.png)
 
@@ -251,7 +251,7 @@ If you have several classes to predict, an option often used is to fit one-versu
 
 Shrinkage and sparsity with logistic regression
 
-The `C` parameter controls the amount of regularization in the [`LogisticRegression`](https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression) object: a large value for `C` results in less regularization. `penalty="l2"` gives [Shrinkage](https://scikit-learn.org/1.7/tutorial/statistical_inference/supervised_learning.html#shrinkage) (i.e. non-sparse coefficients), while `penalty="l1"` gives [Sparsity](https://scikit-learn.org/1.7/tutorial/statistical_inference/supervised_learning.html#sparsity).
+The `C` parameter controls the amount of regularization in the <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression" target="_blank">`LogisticRegression`</a> object: a large value for `C` results in less regularization. `penalty="l2"` gives <a href="https://scikit-learn.org/1.7/tutorial/statistical_inference/supervised_learning.html#shrinkage" target="_blank">Shrinkage</a> (i.e. non-sparse coefficients), while `penalty="l1"` gives <a href="https://scikit-learn.org/1.7/tutorial/statistical_inference/supervised_learning.html#sparsity" target="_blank">Sparsity</a>.
 
 **Exercise**
 
@@ -264,13 +264,13 @@ X_digits, y_digits = datasets.load_digits(return_X_y=True)
 X_digits = X_digits / X_digits.max()
 ```
 
-A solution can be downloaded [`here`](https://scikit-learn.org/1.7/_downloads/e4d278c5c3a8450d66b5dd01a57ae923/plot_digits_classification_exercise.py).
+A solution can be downloaded <a href="https://scikit-learn.org/1.7/_downloads/e4d278c5c3a8450d66b5dd01a57ae923/plot_digits_classification_exercise.py" target="_blank">`here`</a>.
 
 ## Support vector machines (SVMs)
 
 ### Linear SVMs
 
-[Support Vector Machines](https://scikit-learn.org/1.7/modules/svm.html#svm) belong to the discriminant model family: they try to find a combination of samples to build a plane maximizing the margin between the two classes. Regularization is set by the `C` parameter: a small value for `C` means the margin is calculated using many or all of the observations around the separating line (more regularization); a large value for `C` means the margin is calculated on observations close to the separating line (less regularization).
+<a href="https://scikit-learn.org/1.7/modules/svm.html#svm" target="_blank">Support Vector Machines</a> belong to the discriminant model family: they try to find a combination of samples to build a plane maximizing the margin between the two classes. Regularization is set by the `C` parameter: a small value for `C` means the margin is calculated using many or all of the observations around the separating line (more regularization); a large value for `C` means the margin is calculated on observations close to the separating line (less regularization).
 
 
 ![SVM Margin 1](sphx_glr_plot_svm_margin_001.png)
@@ -283,9 +283,9 @@ A solution can be downloaded [`here`](https://scikit-learn.org/1.7/_downloads/e4
 
 Example:
 
-- [Plot different SVM classifiers in the iris dataset](https://scikit-learn.org/1.7/auto_examples/svm/plot_iris_svc.html#sphx-glr-auto-examples-svm-plot-iris-svc-py)
+- <a href="https://scikit-learn.org/1.7/auto_examples/svm/plot_iris_svc.html#sphx-glr-auto-examples-svm-plot-iris-svc-py" target="_blank">Plot different SVM classifiers in the iris dataset</a>
 
-SVMs can be used in regression –[`SVR`](https://scikit-learn.org/1.7/modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR) (Support Vector Regression)–, or in classification –[`SVC`](https://scikit-learn.org/1.7/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC) (Support Vector Classification).
+SVMs can be used in regression –<a href="https://scikit-learn.org/1.7/modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR" target="_blank">`SVR`</a> (Support Vector Regression)–, or in classification –<a href="https://scikit-learn.org/1.7/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC" target="_blank">`SVC`</a> (Support Vector Classification).
 
 ```python
 >>> from sklearn import svm
@@ -343,7 +343,7 @@ Classes are not always linearly separable in feature space. The solution is to b
 
 **Interactive example**
 
-See the [SVM GUI](https://scikit-learn.org/1.7/auto_examples/applications/svm_gui.html#sphx-glr-auto-examples-applications-svm-gui-py) to download `svm_gui.py`; add data points of both classes with right and left button, fit the model and change parameters and data.
+See the <a href="https://scikit-learn.org/1.7/auto_examples/applications/svm_gui.html#sphx-glr-auto-examples-applications-svm-gui-py" target="_blank">SVM GUI</a> to download `svm_gui.py`; add data points of both classes with right and left button, fit the model and change parameters and data.
 
 **Exercise**
 
@@ -364,7 +364,7 @@ y = y[y != 0]
 
 ![Iris Dataset](sphx_glr_plot_iris_dataset_001.png)
 
-A solution can be downloaded [`here`](https://scikit-learn.org/1.7/_downloads/a3ad6892094cf4c9641b7b11f9263348/plot_iris_exercise.py)
+A solution can be downloaded <a href="https://scikit-learn.org/1.7/_downloads/a3ad6892094cf4c9641b7b11f9263348/plot_iris_exercise.py" target="_blank">`here`</a>
 
 ## Enhanced Supervised Learning Features in scikit-learn 1.7
 
@@ -448,7 +448,7 @@ These enhancements maintain full backward compatibility while providing more fle
 
 ---
 
-This original version of this tutorial was written by scikit-learn developers under the [BSD License](https://opensource.org/license/BSD-3-clause).  
+This original version of this tutorial was written by scikit-learn developers under the <a href="https://opensource.org/license/BSD-3-clause" target="_blank">BSD License</a>.  
 
 ---
 

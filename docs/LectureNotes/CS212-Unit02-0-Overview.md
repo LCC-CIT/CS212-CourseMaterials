@@ -36,11 +36,11 @@ author: Brian Bird
   - Write rules for a *knowledge base*
   - Make an *inference engine*
   - Use *forward chaining*
-  - Use [Python loops](https://classes.lanecc.edu/mod/url/view.php?id=4661690) and [Python collection types](https://classes.lanecc.edu/mod/url/view.php?id=4661672)
+  - Use <a href="https://classes.lanecc.edu/mod/url/view.php?id=4661690" target="_blank">Python loops</a> and <a href="https://classes.lanecc.edu/mod/url/view.php?id=4661672" target="_blank">Python collection types</a>
 
 ## Announcements
 
-- [Fusion Lab](https://sites.google.com/lanecc.edu/fusionlab/home?pli=1) faculty and students are forming a club on emergent technology and AI. If you are interested, fill out the [Interest Form](https://out.smore.com/e/01kmx/T9ULP5?__$u__)
+- <a href="https://sites.google.com/lanecc.edu/fusionlab/home?pli=1" target="_blank">Fusion Lab</a> faculty and students are forming a club on emergent technology and AI. If you are interested, fill out the <a href="https://out.smore.com/e/01kmx/T9ULP5?__$u__" target="_blank">Interest Form</a>
 
 ## Things to Do This Week
 
@@ -51,4 +51,4 @@ author: Brian Bird
 
 
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 

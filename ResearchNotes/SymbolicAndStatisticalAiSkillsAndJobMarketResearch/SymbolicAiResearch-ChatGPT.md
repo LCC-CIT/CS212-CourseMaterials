@@ -48,7 +48,7 @@ Unlike modern machine learning, which learns patterns from data, symbolic AI exp
 
 - *Book:* Nils Nilsson, **Artificial Intelligence: A New Synthesis** (broad overview, symbolic + early connectionist).
 - *Book:* Eugene Charniak & Drew McDermott, **Introduction to Artificial Intelligence** (classic symbolic AI textbook).
-- *Library Hub:* [PyPI Symbolic AI libraries](https://pypi.org/search/?q=symbolic+ai) – collection of symbolic tools in Python.
+- *Library Hub:* <a href="https://pypi.org/search/?q=symbolic+ai" target="_blank">PyPI Symbolic AI libraries</a> – collection of symbolic tools in Python.
 
 ### Techniques and Methodologies
 
@@ -62,8 +62,8 @@ Unlike modern machine learning, which learns patterns from data, symbolic AI exp
 ##### References for Logic Programming (Prolog-style Unification in Python)
 
 - *Book:* Ivan Bratko, **Prolog Programming for Artificial Intelligence** (gold standard for logic programming).
-- *Library:* [kanren](https://github.com/logpy/logpy) (aka logpy, Python’s logic programming library).
-- *Tutorial:* [Declarative Programming in Python with Kanren](https://github.com/logpy/logpy) – examples of unification and relations.
+- *Library:* <a href="https://github.com/logpy/logpy" target="_blank">kanren</a> (aka logpy, Python’s logic programming library).
+- *Tutorial:* <a href="https://github.com/logpy/logpy" target="_blank">Declarative Programming in Python with Kanren</a> – examples of unification and relations.
 
 #### 2. Rule-based systems
 
@@ -81,8 +81,8 @@ These are a foundational element of symbolic AI, often used in *expert systems*.
 ##### References
 
 - *Book:* Peter Jackson, **Introduction to Expert Systems** (classic treatment of production systems).
-- *Tutorial:* [Rule-Based Expert Systems in Python](https://towardsdatascience.com/build-an-expert-system-in-python-a6f032b8e9a9) (Towards Data Science).
-- *Library:* [experta](https://github.com/noxdafox/experta) (Python expert system library, based on CLIPS).
+- *Tutorial:* <a href="https://towardsdatascience.com/build-an-expert-system-in-python-a6f032b8e9a9" target="_blank">Rule-Based Expert Systems in Python</a> (Towards Data Science).
+- *Library:* <a href="https://github.com/noxdafox/experta" target="_blank">experta</a> (Python expert system library, based on CLIPS).
 
 #### 3. Search-based symbolic methods
 
@@ -93,8 +93,8 @@ These are a foundational element of symbolic AI, often used in *expert systems*.
 ##### References
 
 - *Book:* Stuart Russell & Peter Norvig, **Artificial Intelligence: A Modern Approach** (AIMA) — Chapter on Search.
-- *Reference Code:* [AIMA Python](https://github.com/aimacode/aima-python) – official Python implementations from the textbook.
-- *Tutorial:* [A* Search Algorithm in Python](https://www.redblobgames.com/pathfinding/a-star/introduction.html) – fantastic visual + code explanation.
+- *Reference Code:* <a href="https://github.com/aimacode/aima-python" target="_blank">AIMA Python</a> – official Python implementations from the textbook.
+- *Tutorial:* <a href="https://www.redblobgames.com/pathfinding/a-star/introduction.html" target="_blank">A* Search Algorithm in Python</a> – fantastic visual + code explanation.
 
 #### 4. Knowledge representation frameworks
 
@@ -107,8 +107,8 @@ These are a foundational element of symbolic AI, often used in *expert systems*.
 
 - *Book:* John F. Sowa, **Knowledge Representation: Logical, Philosophical, and Computational Foundations**.
 - *Book:* Ronald Brachman & Hector Levesque, **Knowledge Representation and Reasoning**.
-- *Tutorial:* [Semantic Networks in AI](https://www.geeksforgeeks.org/semantic-networks-in-artificial-intelligence/) (GeeksforGeeks intro).
-- *Library:* [Owlready2](https://owlready2.readthedocs.io/en/latest/) – ontology/semantic web library in Python.
+- *Tutorial:* <a href="https://www.geeksforgeeks.org/semantic-networks-in-artificial-intelligence/" target="_blank">Semantic Networks in AI</a> (GeeksforGeeks intro).
+- *Library:* <a href="https://owlready2.readthedocs.io/en/latest/" target="_blank">Owlready2</a> – ontology/semantic web library in Python.
 
 
 
@@ -138,8 +138,8 @@ These are a foundational element of symbolic AI, often used in *expert systems*.
 ##### References
 
 - *Book:* Daniel Jurafsky & James H. Martin, **Speech and Language Processing** (classic NLP textbook, has symbolic parsing chapters).
-- *Library:* [NLTK CFG Documentation](https://www.nltk.org/howto/parse.html) – context-free grammars and parsers in Python.
-- *Tutorial:* [Context Free Grammar Parsing with NLTK](https://www.nltk.org/book/ch08.html) (official NLTK book, Chapter 8).
+- *Library:* <a href="https://www.nltk.org/howto/parse.html" target="_blank">NLTK CFG Documentation</a> – context-free grammars and parsers in Python.
+- *Tutorial:* <a href="https://www.nltk.org/book/ch08.html" target="_blank">Context Free Grammar Parsing with NLTK</a> (official NLTK book, Chapter 8).
 
 
 

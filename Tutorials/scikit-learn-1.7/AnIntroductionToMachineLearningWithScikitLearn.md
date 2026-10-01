@@ -21,20 +21,20 @@
   - [Advanced Gradient Boosting Features](#advanced-gradient-boosting-features)
   - [Enhanced ROC Curve Visualization](#enhanced-roc-curve-visualization)
 
-In this tutorial, we introduce the [machine learning](https://en.wikipedia.org/wiki/Machine_learning) vocabulary that we use throughout scikit-learn and give a simple learning example.
+In this tutorial, we introduce the <a href="https://en.wikipedia.org/wiki/Machine_learning" target="_blank">machine learning</a> vocabulary that we use throughout scikit-learn and give a simple learning example.
 
-To run the code in this tutorial, you must first install scikit-learn and all of its required dependencies. Please refer to the [installation instructions page](https://scikit-learn.org/1.7/install.html#installation-instructions) for more information and for system-specific instructions.
+To run the code in this tutorial, you must first install scikit-learn and all of its required dependencies. Please refer to the <a href="https://scikit-learn.org/1.7/install.html#installation-instructions" target="_blank">installation instructions page</a> for more information and for system-specific instructions.
 
 ## Machine learning: the problem setting
 
-In general, a learning problem considers a set of n [samples](https://scikit-learn.org/1.7/glossary.html#term-samples) of known (training) data and then tries to predict properties of unknown data. If each sample is more than a single number and, for instance, a multi-dimensional entry (aka [multivariate](https://en.wikipedia.org/wiki/Multivariate_random_variable) data), it is said to have multiple attributes or [features](https://scikit-learn.org/1.7/glossary.html#term-features).
+In general, a learning problem considers a set of n <a href="https://scikit-learn.org/1.7/glossary.html#term-samples" target="_blank">samples</a> of known (training) data and then tries to predict properties of unknown data. If each sample is more than a single number and, for instance, a multi-dimensional entry (aka <a href="https://en.wikipedia.org/wiki/Multivariate_random_variable" target="_blank">multivariate</a> data), it is said to have multiple attributes or <a href="https://scikit-learn.org/1.7/glossary.html#term-features" target="_blank">features</a>.
 
 Learning problems fall into a few categories:
 
-- [Supervised learning](https://en.wikipedia.org/wiki/Supervised_learning), in which the data comes with additional attributes that we want to predict ([Click here](https://scikit-learn.org/1.7/supervised_learning.html#supervised-learning) to go to the scikit-learn supervised learning page).This problem can be either:
-  - [Classification](https://en.wikipedia.org/wiki/Classification_in_machine_learning): samples belong to two or more classes and we want to learn from already labeled data how to predict the class of unlabeled data. An example of a classification problem would be handwritten digit recognition, in which the aim is to assign each input vector to one of a finite number of discrete categories.  Another way to think of classification is as a discrete (as opposed to continuous) form of supervised learning where one has a limited number of categories and for each of the n samples provided, one is to try to label them with the correct category or class.
-  - [Regression](https://en.wikipedia.org/wiki/Regression_analysis): if the desired output consists of one or more continuous variables, then the task is called *regression*. An example of a regression problem would be the prediction of the length of a salmon as a function of its age and weight.
-- [Unsupervised learning](https://en.wikipedia.org/wiki/Unsupervised_learning), in which the training data consists of a set of input vectors x without any corresponding target values. The goal in such problems may be to discover groups of similar examples within the data, where it is called [clustering](https://en.wikipedia.org/wiki/Cluster_analysis), or to determine the distribution of data within the input space, known as [density estimation](https://en.wikipedia.org/wiki/Density_estimation), or to project the data from a high-dimensional space down to two or three dimensions for the purpose of *visualization* ([Click here](https://scikit-learn.org/1.7/unsupervised_learning.html#unsupervised-learning) to go to the Scikit-Learn unsupervised learning page).
+- <a href="https://en.wikipedia.org/wiki/Supervised_learning" target="_blank">Supervised learning</a>, in which the data comes with additional attributes that we want to predict (<a href="https://scikit-learn.org/1.7/supervised_learning.html#supervised-learning" target="_blank">Click here</a> to go to the scikit-learn supervised learning page).This problem can be either:
+  - <a href="https://en.wikipedia.org/wiki/Classification_in_machine_learning" target="_blank">Classification</a>: samples belong to two or more classes and we want to learn from already labeled data how to predict the class of unlabeled data. An example of a classification problem would be handwritten digit recognition, in which the aim is to assign each input vector to one of a finite number of discrete categories.  Another way to think of classification is as a discrete (as opposed to continuous) form of supervised learning where one has a limited number of categories and for each of the n samples provided, one is to try to label them with the correct category or class.
+  - <a href="https://en.wikipedia.org/wiki/Regression_analysis" target="_blank">Regression</a>: if the desired output consists of one or more continuous variables, then the task is called *regression*. An example of a regression problem would be the prediction of the length of a salmon as a function of its age and weight.
+- <a href="https://en.wikipedia.org/wiki/Unsupervised_learning" target="_blank">Unsupervised learning</a>, in which the training data consists of a set of input vectors x without any corresponding target values. The goal in such problems may be to discover groups of similar examples within the data, where it is called <a href="https://en.wikipedia.org/wiki/Cluster_analysis" target="_blank">clustering</a>, or to determine the distribution of data within the input space, known as <a href="https://en.wikipedia.org/wiki/Density_estimation" target="_blank">density estimation</a>, or to project the data from a high-dimensional space down to two or three dimensions for the purpose of *visualization* (<a href="https://scikit-learn.org/1.7/unsupervised_learning.html#unsupervised-learning" target="_blank">Click here</a> to go to the Scikit-Learn unsupervised learning page).
 
 ### Training set and testing set
 
@@ -42,7 +42,7 @@ Machine learning is about learning some properties of a data set and then testin
 
 ### Loading an example dataset
 
-`scikit-learn` comes with a few standard datasets[^1], for instance the [iris](https://en.wikipedia.org/wiki/Iris_flower_data_set) and [digits](https://archive.ics.uci.edu/dataset/683/mnist+database+of+handwritten+digits) datasets for classification and the [diabetes dataset](https://www4.stat.ncsu.edu/~boos/var.select/diabetes.html) for regression.
+`scikit-learn` comes with a few standard datasets[^1], for instance the <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set" target="_blank">iris</a> and <a href="https://archive.ics.uci.edu/dataset/683/mnist+database+of+handwritten+digits" target="_blank">digits</a> datasets for classification and the <a href="https://www4.stat.ncsu.edu/~boos/var.select/diabetes.html" target="_blank">diabetes dataset</a> for regression.
 
 In the following, we start a Python interpreter from our shell and then load the `digits` dataset. 
 
@@ -51,7 +51,7 @@ from sklearn import datasets
 digits = datasets.load_digits()
 ```
 
-A *dataset* is a dictionary-like object that holds all the data and some metadata about the data. This data is stored in the `.data` member, which is a `n_samples, n_features` array. In the case of supervised problems, one or more response variables are stored in the `.target` member. More details on the different datasets can be found in the [dedicated section](https://scikit-learn.org/1.7/datasets.html#datasets).
+A *dataset* is a dictionary-like object that holds all the data and some metadata about the data. This data is stored in the `.data` member, which is a `n_samples, n_features` array. In the case of supervised problems, one or more response variables are stored in the `.target` member. More details on the different datasets can be found in the <a href="https://scikit-learn.org/1.7/datasets.html#datasets" target="_blank">dedicated section</a>.
 
 For instance, in the case of the digits dataset, `digits.data` gives access to the features[^2] that can be used to classify the digits samples:
 
@@ -96,19 +96,19 @@ digits.images[0]
 >     [  0.,   0.,   6.,  13.,  10.,   0.,   0.,   0.]])
 
 
-The [simple example on this dataset](https://scikit-learn.org/1.7/auto_examples/classification/plot_digits_classification.html#sphx-glr-auto-examples-classification-plot-digits-classification-py) illustrates how starting from the original problem one can shape the data for consumption in scikit-learn. In this example the 8x8 array in `digits.images` was flattened into 64 elements in a single row of the `digits.data` array.
+The <a href="https://scikit-learn.org/1.7/auto_examples/classification/plot_digits_classification.html#sphx-glr-auto-examples-classification-plot-digits-classification-py" target="_blank">simple example on this dataset</a> illustrates how starting from the original problem one can shape the data for consumption in scikit-learn. In this example the 8x8 array in `digits.images` was flattened into 64 elements in a single row of the `digits.data` array.
 
 ### Loading from external datasets
 
-To load from an external dataset, please refer to [loading external datasets](https://scikit-learn.org/1.7/datasets/loading_other_datasets.html#external-datasets).
+To load from an external dataset, please refer to <a href="https://scikit-learn.org/1.7/datasets/loading_other_datasets.html#external-datasets" target="_blank">loading external datasets</a>.
 
 ## Learning and predicting
 
-In the case of the digits dataset, the task is to predict, given an image, which digit it represents. We are given samples of each of the 10 possible classes (the digits zero through nine) which we use to [fit](https://scikit-learn.org/1.7/glossary.html#term-fit) (train) a model using an [estimator](https://scikit-learn.org/1.7/glossary.html#term-estimator)[^3] which will also be able to [predict](https://scikit-learn.org/1.7/glossary.html#term-predict) the classes into which new (previously unseen by the model) samples belong.
+In the case of the digits dataset, the task is to predict, given an image, which digit it represents. We are given samples of each of the 10 possible classes (the digits zero through nine) which we use to <a href="https://scikit-learn.org/1.7/glossary.html#term-fit" target="_blank">fit</a> (train) a model using an <a href="https://scikit-learn.org/1.7/glossary.html#term-estimator" target="_blank">estimator</a>[^3] which will also be able to <a href="https://scikit-learn.org/1.7/glossary.html#term-predict" target="_blank">predict</a> the classes into which new (previously unseen by the model) samples belong.
 
 In scikit-learn, an estimator for classification is a Python object that implements the methods `fit(X, y)` and `predict(T)`.
 
-An example of an estimator is the class `sklearn.svm.SVC`, which implements [support vector classification](https://en.wikipedia.org/wiki/Support_vector_machine). The estimator’s constructor takes as arguments the model’s parameters.
+An example of an estimator is the class `sklearn.svm.SVC`, which implements <a href="https://en.wikipedia.org/wiki/Support_vector_machine" target="_blank">support vector classification</a>. The estimator’s constructor takes as arguments the model’s parameters.
 
 For now, we will consider the estimator as a black box:
 
@@ -119,7 +119,7 @@ clf = svm.SVC(gamma=0.001, C=100.)
 
 ### Choosing the parameters of the model
 
-In this example, we set the value of `gamma` manually. To find good values for these parameters, we can use tools such as [grid search](https://scikit-learn.org/1.7/modules/grid_search.html#grid-search) and [cross validation](https://scikit-learn.org/1.7/modules/cross_validation.html#cross-validation).
+In this example, we set the value of `gamma` manually. To find good values for these parameters, we can use tools such as <a href="https://scikit-learn.org/1.7/modules/grid_search.html#grid-search" target="_blank">grid search</a> and <a href="https://scikit-learn.org/1.7/modules/cross_validation.html#cross-validation" target="_blank">cross validation</a>.
 
 The `clf` (classifier) estimator instance is first fitted to the model; that is, it must *learn* from the model. This is done by passing our training set to the `fit` method. For the training set, we’ll use all the image data from our dataset, except data for the last image, which we’ll reserve for testing prediction. We select the training set with the `[:-1]` Python syntax, which produces a new array that contains all but the last item from `digits.data`:
 
@@ -145,11 +145,11 @@ The corresponding image is:
 
 As you can see, it is a challenging task: after all, the images are of poor resolution. Do you agree with the classifier?
 
-A complete example of this classification problem is available as an example that you can run and study: [Recognizing hand-written digits](https://scikit-learn.org/1.7/auto_examples/classification/plot_digits_classification.html#sphx-glr-auto-examples-classification-plot-digits-classification-py).
+A complete example of this classification problem is available as an example that you can run and study: <a href="https://scikit-learn.org/1.7/auto_examples/classification/plot_digits_classification.html#sphx-glr-auto-examples-classification-plot-digits-classification-py" target="_blank">Recognizing hand-written digits</a>.
 
 ## Conventions
 
-scikit-learn estimators follow certain rules to make their behavior more predictive.  These are described in more detail in the [Glossary of Common Terms and API Elements](https://scikit-learn.org/1.7/glossary.html#glossary).
+scikit-learn estimators follow certain rules to make their behavior more predictive.  These are described in more detail in the <a href="https://scikit-learn.org/1.7/glossary.html#glossary" target="_blank">Glossary of Common Terms and API Elements</a>.
 
 ### Type casting
 
@@ -176,7 +176,7 @@ X_new.dtype
 
 In this example, `X` is `float32`, and is unchanged by `fit_transform(X)`.
 
-Using `float32`-typed training (or testing) data is often more efficient than using the usual `float64` `dtype`: it allows reduced memory usage and sometimes also reduces processing time by leveraging the vector instructions of the CPU. However it can sometimes lead to numerical stability problems causing the algorithm to be more sensitive to the scale of the values and [require adequate preprocessing](https://scikit-learn.org/1.7/modules/preprocessing.html#preprocessing-scaler).
+Using `float32`-typed training (or testing) data is often more efficient than using the usual `float64` `dtype`: it allows reduced memory usage and sometimes also reduces processing time by leveraging the vector instructions of the CPU. However it can sometimes lead to numerical stability problems causing the algorithm to be more sensitive to the scale of the values and <a href="https://scikit-learn.org/1.7/modules/preprocessing.html#preprocessing-scaler" target="_blank">require adequate preprocessing</a>.
 
 Keep in mind however that not all scikit-learn estimators attempt to work in `float32` mode. For instance, some transformers will always cast their input to `float64` and return `float64` transformed values as a result.
 
@@ -214,7 +214,7 @@ Here, the first `predict()` returns an integer array, since `iris.target` (an in
 
 ### Refitting and updating parameters
 
-[Hyper-parameters](https://scikit-learn.org/1.7/glossary.html#term-hyper-parameter) of an estimator can be updated after it has been constructed via the [set_params()](https://scikit-learn.org/1.7/glossary.html#term-set_params) method. Calling `fit()` more than once will overwrite what was learned by any previous `fit()`:
+<a href="https://scikit-learn.org/1.7/glossary.html#term-hyper-parameter" target="_blank">Hyper-parameters</a> of an estimator can be updated after it has been constructed via the <a href="https://scikit-learn.org/1.7/glossary.html#term-set_params" target="_blank">set_params()</a> method. Calling `fit()` more than once will overwrite what was learned by any previous `fit()`:
 
 ```python
 import numpy as np
@@ -247,11 +247,11 @@ clf.predict(X[:5])
 > array([0, 0, 0, 0, 0])
 
 
-Here, the default kernel `rbf` is first changed to `linear` via [`SVC.set_params()`](https://scikit-learn.org/1.7/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC.set_params) after the estimator has been constructed, and changed back to `rbf` to refit the estimator and to make a second prediction.
+Here, the default kernel `rbf` is first changed to `linear` via <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC.set_params" target="_blank">`SVC.set_params()`</a> after the estimator has been constructed, and changed back to `rbf` to refit the estimator and to make a second prediction.
 
 ### Multiclass vs. multilabel fitting
 
-When using [`multiclass classifiers`](https://scikit-learn.org/1.7/modules/classes.html#module-sklearn.multiclass), the learning and prediction task that is performed is dependent on the format of the target data fit upon:
+When using <a href="https://scikit-learn.org/1.7/modules/classes.html#module-sklearn.multiclass" target="_blank">`multiclass classifiers`</a>, the learning and prediction task that is performed is dependent on the format of the target data fit upon:
 
 ```python
 from sklearn.svm import SVC
@@ -281,7 +281,7 @@ classif.fit(X, y).predict(X)
 >       [0, 0, 0]])
 
 
-Here, the classifier is `fit()` on a 2d binary label representation of `y`, using the [`LabelBinarizer`](https://scikit-learn.org/1.7/modules/generated/sklearn.preprocessing.LabelBinarizer.html#sklearn.preprocessing.LabelBinarizer). In this case `predict()` returns a 2d array representing the corresponding multilabel predictions.
+Here, the classifier is `fit()` on a 2d binary label representation of `y`, using the <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.preprocessing.LabelBinarizer.html#sklearn.preprocessing.LabelBinarizer" target="_blank">`LabelBinarizer`</a>. In this case `predict()` returns a 2d array representing the corresponding multilabel predictions.
 
 Note that the fourth and fifth instances returned all zeroes, indicating that they matched none of the three labels `fit` upon. With multilabel outputs, it is similarly possible for an instance to be assigned multiple labels:
 
@@ -299,7 +299,7 @@ classif.fit(X, y).predict(X)
 >        [1, 0, 1, 0, 0]])
 
 
-In this case, the classifier is fit on instances that are each assigned multiple labels. The [`MultiLabelBinarizer`](https://scikit-learn.org/1.7/modules/generated/sklearn.preprocessing.MultiLabelBinarizer.html#sklearn.preprocessing.MultiLabelBinarizer) is used to binarize the 2d array of multilabels to `fit` upon. As a result, `predict()` returns a 2d array with multiple predicted labels for each instance.
+In this case, the classifier is fit on instances that are each assigned multiple labels. The <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.preprocessing.MultiLabelBinarizer.html#sklearn.preprocessing.MultiLabelBinarizer" target="_blank">`MultiLabelBinarizer`</a> is used to binarize the 2d array of multilabels to `fit` upon. As a result, `predict()` returns a 2d array with multiple predicted labels for each instance.
 
 ## Getting Python Help for `scikit-learn` 
 
@@ -405,9 +405,9 @@ These enhancements make scikit-learn 1.7 more powerful and user-friendly while m
 
 ---
 
-This [original version of this tutorial](https://scikit-learn.org/1.4/tutorial/basic/tutorial.html) was written by scikit-learn developers under a [BSD License](https://opensource.org/license/BSD-3-clause).  
+This <a href="https://scikit-learn.org/1.4/tutorial/basic/tutorial.html" target="_blank">original version of this tutorial</a> was written by scikit-learn developers under a <a href="https://opensource.org/license/BSD-3-clause" target="_blank">BSD License</a>.  
 The code examples and text were updated for scikit-learn version 1.7 by Brian Bird using Claude Sonet 4 on 10/19/2025 with more revisions 10/22/2025.
 
-[^1]: scikit-learn includes over a dozen popular datasets as well as artificial data generators. See [Dataset Loading Utilities](https://scikit-learn.org/stable/datasets.html#datasets) in the user guide.
+[^1]: scikit-learn includes over a dozen popular datasets as well as artificial data generators. See <a href="https://scikit-learn.org/stable/datasets.html#datasets" target="_blank">Dataset Loading Utilities</a> in the user guide.
 [^2]: The features for the digits dataset were derived from 32x32 bitmaps which were divided into nonoverlapping blocks of 4x4. The number of "on" pixels were counted in each block. This produced a matrix of 8x8 where each element is an integer in the range 0..16. These 64 integers are the features (attributes) which form each row of the data array.
 [^3]: Each ML model in scikit-learn has one or more estimators that implement the algorithms for that model. The key methons on an estimator are:   `fit(x, y)` which learns the parameters of the estimator from the training dataset. `predict(x)` which makes predictions based on the trained model.

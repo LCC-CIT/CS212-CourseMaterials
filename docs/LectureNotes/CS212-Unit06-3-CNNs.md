@@ -66,7 +66,7 @@ The significant breakthrough in the field of CNNs came in 2012 with the developm
 
 ### Interactive Web Pages
 
-[CNN Explainer](https://poloclub.github.io/cnn-explainer/)
+<a href="https://poloclub.github.io/cnn-explainer/" target="_blank">CNN Explainer</a>
 
 
 
@@ -74,6 +74,6 @@ The significant breakthrough in the field of CNNs came in 2012 with the developm
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 lecture notes by [Brian Bird](https://profbird.dev), written in 2024, revised in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 lecture notes by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in 2024, revised in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 Note: GPT-4 and GPT-4o were used to draft parts of these notes, July 2024.

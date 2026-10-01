@@ -15,7 +15,7 @@ author: Brian Bird
 
 This part of the lab is for everyone.
 
-Do the tutorial, [TensorFlow 2 quickstart for beginners](https://www.tensorflow.org/tutorials/quickstart/beginner), using Google Colab
+Do the tutorial, <a href="https://www.tensorflow.org/tutorials/quickstart/beginner" target="_blank">TensorFlow 2 quickstart for beginners</a>, using Google Colab
 
 
 

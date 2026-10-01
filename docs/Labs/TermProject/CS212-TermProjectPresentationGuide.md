@@ -13,17 +13,17 @@ The purpose of the presentation is to show off the AI empowered app you made and
     You can use Zoom on your computer so students on Zoom and in the classroom (on the D-Ten) can see your app running.
   - On Zoom: You will share your screen and the instructor will project that for the class to see.
   - Online (asynchronous): You can make a screen-cast and post a link to it in the presentation discussion on Canvas. If you are making a screen-cast you can use any screen capture software that both records the screen and audio narration such as:
-    - [ScreenPal (formerly Screencast-O-Matic)](https://screenpal.com)&mdash;free for 15 minute or shorter recordings.
-    - [ScreenRec](https://screenrec.com/)&mdash;free!
-    - [Zoom](https://www.zoom.com)&mdash;Meet with your team on Zoom, use webcams and/or mics, share your screen and record the meeting.
+    - <a href="https://screenpal.com" target="_blank">ScreenPal (formerly Screencast-O-Matic)</a>&mdash;free for 15 minute or shorter recordings.
+    - <a href="https://screenrec.com/" target="_blank">ScreenRec</a>&mdash;free!
+    - <a href="https://www.zoom.com" target="_blank">Zoom</a>&mdash;Meet with your team on Zoom, use webcams and/or mics, share your screen and record the meeting.
 
 
 
 
 ****
 
-[![Creative Commons License](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
-These course materials were written by [Brian Bird](https://profbird.dev), fall 2022 and revised fall <time>2025</time> and are licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/). 
+<a href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png" alt="Creative Commons License"></a>
+These course materials were written by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, fall 2022 and revised fall <time>2025</time> and are licensed under a <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>. 
 
 ------
 

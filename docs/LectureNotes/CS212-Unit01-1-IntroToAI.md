@@ -113,14 +113,14 @@ Here is an outline of what we'll cover:
 
 
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, revised in 2026 are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, revised in 2026 are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
-[^1]: [Dartmouth workshop](https://en.wikipedia.org/wiki/Dartmouth_workshop)&mdash;Wikipedia
-[^2]: [What is AI? / Basic Questions](http://jmc.stanford.edu/artificial-intelligence/what-is-ai/#:~:text=Q.,methods%20that%20are%20biologically%20observable.)&mdash;Professor John McCarthy, Father of AI Website
-[^3]: [2021 U.S. Code Title 15 - Commerce and Trade Chapter 119 - National Artificial Intelligence Initiative Sec. 9401 - Definitions](https://law.justia.com/codes/us/2021/title-15/chapter-119/sec-9401/#:~:text=SUBSIDIARIES%20SHORT%20TITLE-,Pub.,Title)&mdash;Justia web site
-[^4]: [GOFAI](https://en.wikipedia.org/wiki/GOFAI)&mdash;Wikipedia
-[^5]: [*Artificial Intelligence: The Very Idea*](https://direct.mit.edu/books/book/4347/Artificial-IntelligenceThe-Very-Idea), John Haugeland, 1989, MIT Press.
-[^6]: [National Artificial Intelligence Initiative Act of 2020](https://science.house.gov/bills?ID=34889C3E-C675-4EAF-B50F-880C05EB753B)
+[^1]: <a href="https://en.wikipedia.org/wiki/Dartmouth_workshop" target="_blank">Dartmouth workshop</a>&mdash;Wikipedia
+[^2]: <a href="http://jmc.stanford.edu/artificial-intelligence/what-is-ai/#:~:text=Q.,methods%20that%20are%20biologically%20observable." target="_blank">What is AI? / Basic Questions</a>&mdash;Professor John McCarthy, Father of AI Website
+[^3]: <a href="https://law.justia.com/codes/us/2021/title-15/chapter-119/sec-9401/#:~:text=SUBSIDIARIES%20SHORT%20TITLE-,Pub.,Title" target="_blank">2021 U.S. Code Title 15 - Commerce and Trade Chapter 119 - National Artificial Intelligence Initiative Sec. 9401 - Definitions</a>&mdash;Justia web site
+[^4]: <a href="https://en.wikipedia.org/wiki/GOFAI" target="_blank">GOFAI</a>&mdash;Wikipedia
+[^5]: <a href="https://direct.mit.edu/books/book/4347/Artificial-IntelligenceThe-Very-Idea" target="_blank">*Artificial Intelligence: The Very Idea*</a>, John Haugeland, 1989, MIT Press.
+[^6]: <a href="https://science.house.gov/bills?ID=34889C3E-C675-4EAF-B50F-880C05EB753B" target="_blank">National Artificial Intelligence Initiative Act of 2020</a>
 
 
 

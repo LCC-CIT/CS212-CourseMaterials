@@ -30,7 +30,7 @@ The digits dataset is made of 1797 8x8 images of hand-written digits
 <...>
 ```
 
-[![../../_images/sphx_glr_plot_digits_last_image_001.png](https://scikit-learn.org/1.7/_images/sphx_glr_plot_digits_last_image_001.png)](https://scikit-learn.org/1.7/auto_examples/datasets/plot_digits_last_image.html)
+<a href="https://scikit-learn.org/1.7/auto_examples/datasets/plot_digits_last_image.html" target="_blank"><img src="https://scikit-learn.org/1.7/_images/sphx_glr_plot_digits_last_image_001.png" alt="../../_images/sphx_glr_plot_digits_last_image_001.png"></a>
 
 To use this dataset with scikit-learn, we transform each 8x8 image into a feature vector of length 64
 
@@ -68,7 +68,7 @@ All estimator objects expose a `fit` method that takes a dataset (usually a 2-d 
 
 ---
 
-This original version of this tutorial was written by scikit-learn developers under the [BSD License](https://opensource.org/license/BSD-3-clause).  
+This original version of this tutorial was written by scikit-learn developers under the <a href="https://opensource.org/license/BSD-3-clause" target="_blank">BSD License</a>.  
 
 ---
 

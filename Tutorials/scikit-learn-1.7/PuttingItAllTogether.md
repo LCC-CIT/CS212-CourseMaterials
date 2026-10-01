@@ -50,13 +50,13 @@ ax0.axvline(
 ax0.legend(prop=dict(size=12))
 ```
 
-[![../../_images/sphx_glr_plot_digits_pipe_001.png](https://scikit-learn.org/1.7/_images/sphx_glr_plot_digits_pipe_001.png)](https://scikit-learn.org/1.7/auto_examples/compose/plot_digits_pipe.html)
+<a href="https://scikit-learn.org/1.7/auto_examples/compose/plot_digits_pipe.html" target="_blank"><img src="https://scikit-learn.org/1.7/_images/sphx_glr_plot_digits_pipe_001.png" alt="../../_images/sphx_glr_plot_digits_pipe_001.png"></a>
 
 ## Face recognition with eigenfaces
 
-The dataset used in this example is a preprocessed excerpt of the "Labeled Faces in the Wild", also known as [LFW](http://vis-www.cs.umass.edu/lfw/):
+The dataset used in this example is a preprocessed excerpt of the "Labeled Faces in the Wild", also known as <a href="http://vis-www.cs.umass.edu/lfw/" target="_blank">LFW</a>:
 
-[Download LFW dataset](http://vis-www.cs.umass.edu/lfw/lfw-funneled.tgz) (233MB)
+<a href="http://vis-www.cs.umass.edu/lfw/lfw-funneled.tgz" target="_blank">Download LFW dataset</a> (233MB)
 
 ```python
 """
@@ -222,11 +222,11 @@ plt.show()
 # tensorflow to implement such models.
 ```
 
-[![../../_images/plot_face_recognition_1.png](https://scikit-learn.org/1.7/_images/plot_face_recognition_1.png)](https://scikit-learn.org/1.7/_images/plot_face_recognition_1.png)
+<a href="https://scikit-learn.org/1.7/_images/plot_face_recognition_1.png" target="_blank"><img src="https://scikit-learn.org/1.7/_images/plot_face_recognition_1.png" alt="../../_images/plot_face_recognition_1.png"></a>
 
 **Prediction**
 
-[![../../_images/plot_face_recognition_2.png](https://scikit-learn.org/1.7/_images/plot_face_recognition_2.png)](https://scikit-learn.org/1.7/_images/plot_face_recognition_2.png)
+<a href="https://scikit-learn.org/1.7/_images/plot_face_recognition_2.png" target="_blank"><img src="https://scikit-learn.org/1.7/_images/plot_face_recognition_2.png" alt="../../_images/plot_face_recognition_2.png"></a>
 
 **Eigenfaces**
 
@@ -248,7 +248,7 @@ Gerhard_Schroeder       0.91      0.75      0.82        28
 
 Can we predict the variation in stock prices for Google over a given time frame?
 
-[Learning a graph structure](https://scikit-learn.org/1.7/auto_examples/applications/plot_stock_market.html#stock-market)
+<a href="https://scikit-learn.org/1.7/auto_examples/applications/plot_stock_market.html#stock-market" target="_blank">Learning a graph structure</a>
 
 ## Enhanced Pipelining Features in scikit-learn 1.7
 
@@ -373,7 +373,7 @@ These enhancements maintain full backward compatibility while providing more fle
 
 ---
 
-This original version of this tutorial was written by scikit-learn developers under the [BSD License](https://opensource.org/license/BSD-3-clause).  
+This original version of this tutorial was written by scikit-learn developers under the <a href="https://opensource.org/license/BSD-3-clause" target="_blank">BSD License</a>.  
 
 ---
 

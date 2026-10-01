@@ -30,10 +30,10 @@ author: Brian Bird
 ## Announcements for Fall 2025
 
 - **CIT Lab hiring workers**
-  The CIT Lab is looking for Front/Help Desk workers. [Here is the link to apply](https://lanecc.studentemployment.ngwebsolutions.com/JobXJobDetail.aspx?JobId=12268&s=1). It's a great opportunity and a fun place to work.
+  The CIT Lab is looking for Front/Help Desk workers. <a href="https://lanecc.studentemployment.ngwebsolutions.com/JobXJobDetail.aspx?JobId=12268&s=1" target="_blank">Here is the link to apply</a>. It's a great opportunity and a fun place to work.
 - **Student Emergent Tech & AI Club**
   Fusion Lab Faculty and students are forming a [club on emergent technology and AI](Images/ETAIClubPoster.pdf).
-   [Interest Form](https://out.smore.com/e/nd345/V0ERKC?__$u__) | Contact: [Kevin Steeves](https://out.smore.com/e/nd345/X14b6G?__$u__)
+   <a href="https://out.smore.com/e/nd345/V0ERKC?__$u__" target="_blank">Interest Form</a> | Contact: <a href="https://out.smore.com/e/nd345/X14b6G?__$u__" target="_blank">Kevin Steeves</a>
 
 ## Things to Do This Week
 
@@ -46,13 +46,13 @@ author: Brian Bird
 
 This is just a reminder that I'm always happy to chat, look at code or answer questions!
 
-- Drop in on [Zoom](https://lanecc.zoom.us/j/8982554800) or in person in building 19, room 152.
+- Drop in on <a href="https://lanecc.zoom.us/j/8982554800" target="_blank">Zoom</a> or in person in building 19, room 152.
   - Monday and Wednesday 2:00 to 3:50
   - Tuesday and Thursday 4:00 to 4:50
 - You can email or message me to make an appointment to meet at another time.
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---

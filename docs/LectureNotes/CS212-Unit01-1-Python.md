@@ -89,7 +89,7 @@ If it is installed, the version number will be reported.
 
 #### Install One or Both if Missing
 
-Download the latest [Python installer](https://www.python.org/downloads/) and run it.
+Download the latest <a href="https://www.python.org/downloads/" target="_blank">Python installer</a> and run it.
 
 - If Python isn't installed, then install it using the custom setup. Check the "Python Launcher" box in the "Optional Features" dialog.
 - If Python is installed, but not py, then choose the "Modify" option. In the "Optional Features" dialog, check the box for "Python Launcher".
@@ -148,7 +148,7 @@ If it's older than 3.14 (the latest version in October 2026) then upate it.
 #### Install or Update Python
 
 ##### Install Homebrew (If You Don't Have It)
-Installation instructions are [here](https://docs.brew.sh/Installation).
+Installation instructions are <a href="https://docs.brew.sh/Installation" target="_blank">here</a>.
 
 - Open the Terminal:
   Press `Cmd + Space` and type "Terminal," then press Enter.
@@ -251,7 +251,7 @@ You should see output confirming the version you just installed (e.g., `Python 3
 - Dynamic typing: You don't need to declare the data types of variables.
 - Interpreted, not compiled.
 - No `;` to terminate lines. The end of the line is the end of the line.
-- Python has a distinctive *pythonic* style which is described in the [PEP-8 style guide](https://peps.python.org/pep-0008/).
+- Python has a distinctive *pythonic* style which is described in the <a href="https://peps.python.org/pep-0008/" target="_blank">PEP-8 style guide</a>.
 
 Here is an implementation of the classic "FizzBuzz" program[^1] in Python:
 
@@ -308,13 +308,13 @@ The game is "die battle": two players each roll a single six-sided die, and the 
 
 ## Reference
 
-- [Python Tutorial](https://docs.python.org/3/tutorial/)&mdash;Python web site
-- [Using Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial)&mdash;Visual Studio Code web site
-- [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)&mdash;Official Python Web Site
+- <a href="https://docs.python.org/3/tutorial/" target="_blank">Python Tutorial</a>&mdash;Python web site
+- <a href="https://code.visualstudio.com/docs/python/python-tutorial" target="_blank">Using Python in VS Code</a>&mdash;Visual Studio Code web site
+- <a href="https://peps.python.org/pep-0008/" target="_blank">PEP 8 – Style Guide for Python Code</a>&mdash;Official Python Web Site
   - [Summary of the Style Guide]()&mdash;Google Gemini and Brian Bird
 
 
-- [Python: The Documentary | An origin story](https://www.youtube.com/watch?v=GfH4QL4VqJ0)&mdash;CultRepo Video
+- <a href="https://www.youtube.com/watch?v=GfH4QL4VqJ0" target="_blank">Python: The Documentary | An origin story</a>&mdash;CultRepo Video
 
   
 
@@ -325,7 +325,7 @@ Note: Parts of this document were drafted with assistance from Gemini 2.5 Flash 
 
 
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) Intro to AI Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, revised in 2026 are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> Intro to AI Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, revised in 2026 are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 [^1]: The FizzBuzz program iterates from 1 up to some specified limit.    It prints "Fizz" for multiples of 3, "Buzz" for multiples of 5, "FizzBuzz" for multiples of both, or just the number.
 

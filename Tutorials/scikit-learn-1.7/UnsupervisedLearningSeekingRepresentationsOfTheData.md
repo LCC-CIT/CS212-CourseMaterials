@@ -16,7 +16,7 @@ Given the iris dataset, if we knew that there were 3 types of iris, but did not 
 
 ### K-means clustering
 
-Note that there exist a lot of different clustering criteria and associated algorithms. The simplest clustering algorithm is [K-means](https://scikit-learn.org/1.7/modules/clustering.html#k-means).
+Note that there exist a lot of different clustering criteria and associated algorithms. The simplest clustering algorithm is <a href="https://scikit-learn.org/1.7/modules/clustering.html#k-means" target="_blank">K-means</a>.
 
 ```python
 >>> from sklearn import cluster, datasets
@@ -31,7 +31,7 @@ KMeans(n_clusters=3)
 [0 0 0 0 0 1 1 1 1 1 2 2 2 2 2]
 ```
 
-[![../../_images/sphx_glr_plot_cluster_iris_001.png](https://scikit-learn.org/1.7/_images/sphx_glr_plot_cluster_iris_001.png)](https://scikit-learn.org/1.7/auto_examples/cluster/plot_cluster_iris.html)
+<a href="https://scikit-learn.org/1.7/auto_examples/cluster/plot_cluster_iris.html" target="_blank"><img src="https://scikit-learn.org/1.7/_images/sphx_glr_plot_cluster_iris_001.png" alt="../../_images/sphx_glr_plot_cluster_iris_001.png"></a>
 
 Warning
 
@@ -43,7 +43,7 @@ For instance, on the image above, we can observe the difference between the grou
 
 **Application example: vector quantization**
 
-Clustering in general and KMeans, in particular, can be seen as a way of choosing a small number of exemplars to compress the information. The problem is sometimes known as [vector quantization](https://en.wikipedia.org/wiki/Vector_quantization). For instance, this can be used to posterize an image:
+Clustering in general and KMeans, in particular, can be seen as a way of choosing a small number of exemplars to compress the information. The problem is sometimes known as <a href="https://en.wikipedia.org/wiki/Vector_quantization" target="_blank">vector quantization</a>. For instance, this can be used to posterize an image:
 
 ```python
 >>> import scipy as sp
@@ -64,19 +64,19 @@ KMeans(n_clusters=5, n_init=1)
 
 **Raw image**
 
-[![../../_images/sphx_glr_plot_face_compress_001.png](https://scikit-learn.org/1.7/_images/sphx_glr_plot_face_compress_001.png)](https://scikit-learn.org/1.7/auto_examples/cluster/plot_face_compress.html)
+<a href="https://scikit-learn.org/1.7/auto_examples/cluster/plot_face_compress.html" target="_blank"><img src="https://scikit-learn.org/1.7/_images/sphx_glr_plot_face_compress_001.png" alt="../../_images/sphx_glr_plot_face_compress_001.png"></a>
 
 **K-means quantization**
 
-[![../../_images/sphx_glr_plot_face_compress_004.png](https://scikit-learn.org/1.7/_images/sphx_glr_plot_face_compress_004.png)](https://scikit-learn.org/1.7/auto_examples/cluster/plot_face_compress.html)
+<a href="https://scikit-learn.org/1.7/auto_examples/cluster/plot_face_compress.html" target="_blank"><img src="https://scikit-learn.org/1.7/_images/sphx_glr_plot_face_compress_004.png" alt="../../_images/sphx_glr_plot_face_compress_004.png"></a>
 
 **Equal bins**
 
-[![../../_images/sphx_glr_plot_face_compress_002.png](https://scikit-learn.org/1.7/_images/sphx_glr_plot_face_compress_002.png)](https://scikit-learn.org/1.7/auto_examples/cluster/plot_face_compress.html)
+<a href="https://scikit-learn.org/1.7/auto_examples/cluster/plot_face_compress.html" target="_blank"><img src="https://scikit-learn.org/1.7/_images/sphx_glr_plot_face_compress_002.png" alt="../../_images/sphx_glr_plot_face_compress_002.png"></a>
 
 ### Hierarchical agglomerative clustering: Ward
 
-A [Hierarchical clustering](https://scikit-learn.org/1.7/modules/clustering.html#hierarchical-clustering) method is a type of cluster analysis that aims to build a hierarchy of clusters. In general, the various approaches of this technique are either:
+A <a href="https://scikit-learn.org/1.7/modules/clustering.html#hierarchical-clustering" target="_blank">Hierarchical clustering</a> method is a type of cluster analysis that aims to build a hierarchy of clusters. In general, the various approaches of this technique are either:
 
 - **Agglomerative** - bottom-up approaches: each observation starts in its own cluster, and clusters are iteratively merged in such a way to minimize a *linkage* criterion. This approach is particularly interesting when the clusters of interest are made of only a few observations. When the number of clusters is large, it is much more computationally efficient than k-means.
 - **Divisive** - top-down approaches: all observations start in one cluster, which is iteratively split as one moves down the hierarchy. For estimating large numbers of clusters, this approach is both slow (due to all observations starting as one cluster, which it splits recursively) and statistically ill-posed.
@@ -85,7 +85,7 @@ A [Hierarchical clustering](https://scikit-learn.org/1.7/modules/clustering.html
 
 With agglomerative clustering, it is possible to specify which samples can be clustered together by giving a connectivity graph. Graphs in scikit-learn are represented by their adjacency matrix. Often, a sparse matrix is used. This can be useful, for instance, to retrieve connected regions (sometimes also referred to as connected components) when clustering an image.
 
-[![../../_images/sphx_glr_plot_coin_ward_segmentation_001.png](https://scikit-learn.org/1.7/_images/sphx_glr_plot_coin_ward_segmentation_001.png)](https://scikit-learn.org/1.7/auto_examples/cluster/plot_coin_ward_segmentation.html)
+<a href="https://scikit-learn.org/1.7/auto_examples/cluster/plot_coin_ward_segmentation.html" target="_blank"><img src="https://scikit-learn.org/1.7/_images/sphx_glr_plot_coin_ward_segmentation_001.png" alt="../../_images/sphx_glr_plot_coin_ward_segmentation_001.png"></a>
 
 ```python
 >>> from skimage.data import coins
@@ -122,7 +122,7 @@ AgglomerativeClustering(connectivity=..., n_clusters=27)
 
 We have seen that sparsity could be used to mitigate the curse of dimensionality, *i.e* an insufficient amount of observations compared to the number of features. Another approach is to merge together similar features: **feature agglomeration**. This approach can be implemented by clustering in the feature direction, in other words clustering the transposed data.
 
-[![../../_images/sphx_glr_plot_digits_agglomeration_001.png](https://scikit-learn.org/1.7/_images/sphx_glr_plot_digits_agglomeration_001.png)](https://scikit-learn.org/1.7/auto_examples/cluster/plot_digits_agglomeration.html)
+<a href="https://scikit-learn.org/1.7/auto_examples/cluster/plot_digits_agglomeration.html" target="_blank"><img src="https://scikit-learn.org/1.7/_images/sphx_glr_plot_digits_agglomeration_001.png" alt="../../_images/sphx_glr_plot_digits_agglomeration_001.png"></a>
 
 ```python
 >>> digits = datasets.load_digits()
@@ -152,7 +152,7 @@ If X is our multivariate data, then the problem that we are trying to solve is t
 
 ### Principal component analysis: PCA
 
-[Principal component analysis (PCA)](https://scikit-learn.org/1.7/modules/decomposition.html#pca) selects the successive components that explain the maximum variance in the signal. Let’s create a synthetic 3-dimensional dataset.
+<a href="https://scikit-learn.org/1.7/modules/decomposition.html#pca" target="_blank">Principal component analysis (PCA)</a> selects the successive components that explain the maximum variance in the signal. Let’s create a synthetic 3-dimensional dataset.
 
 ```python
 >>> # Create a signal with only 2 useful dimensions
@@ -198,9 +198,9 @@ PCA(n_components=2)
 
 ### Independent Component Analysis: ICA
 
-[Independent component analysis (ICA)](https://scikit-learn.org/1.7/modules/decomposition.html#ica) selects components so that the distribution of their loadings carries a maximum amount of independent information. It is able to recover **non-Gaussian** independent signals:
+<a href="https://scikit-learn.org/1.7/modules/decomposition.html#ica" target="_blank">Independent component analysis (ICA)</a> selects components so that the distribution of their loadings carries a maximum amount of independent information. It is able to recover **non-Gaussian** independent signals:
 
-[![../../_images/sphx_glr_plot_ica_blind_source_separation_001.png](https://scikit-learn.org/1.7/_images/sphx_glr_plot_ica_blind_source_separation_001.png)](https://scikit-learn.org/1.7/auto_examples/decomposition/plot_ica_blind_source_separation.html)
+<a href="https://scikit-learn.org/1.7/auto_examples/decomposition/plot_ica_blind_source_separation.html" target="_blank"><img src="https://scikit-learn.org/1.7/_images/sphx_glr_plot_ica_blind_source_separation_001.png" alt="../../_images/sphx_glr_plot_ica_blind_source_separation_001.png"></a>
 
 ```python
 >>> # Generate sample data
@@ -330,7 +330,7 @@ These enhancements maintain full backward compatibility while providing more fle
 
 ---
 
-This original version of this tutorial was written by scikit-learn developers under the [BSD License](https://opensource.org/license/BSD-3-clause).  
+This original version of this tutorial was written by scikit-learn developers under the <a href="https://opensource.org/license/BSD-3-clause" target="_blank">BSD License</a>.  
 
 ---
 

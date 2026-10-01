@@ -152,12 +152,12 @@ We split the full dataset into three non-overlapping subsets:
 ## Reference
 
 - Ch. 4, "Working with Data", *Practical Deep Learning*, First Edition, by Ronald T. Kneusel, No Starch Press, 2021.
-- [Build and test your first machine learning model using Python and scikit-learn](https://developer.ibm.com/tutorials/build-and-test-your-first-machine-learning-model-using-python-and-scikit-learn/) by Samaya Madhavan and Mark Sturdevant, IBM Developer, accessed 10/20/2025.
-- [Working with Categorical Data](https://developers.google.com/machine-learning/crash-course/categorical-data) in Machine Learning Crash Course, Google, accessed 10/20/2025.
+- <a href="https://developer.ibm.com/tutorials/build-and-test-your-first-machine-learning-model-using-python-and-scikit-learn/" target="_blank">Build and test your first machine learning model using Python and scikit-learn</a> by Samaya Madhavan and Mark Sturdevant, IBM Developer, accessed 10/20/2025.
+- <a href="https://developers.google.com/machine-learning/crash-course/categorical-data" target="_blank">Working with Categorical Data</a> in Machine Learning Crash Course, Google, accessed 10/20/2025.
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 lecture notes by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 lecture notes by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---
 Google Gemini Flash 2.5 Pro was used to draft these notes.

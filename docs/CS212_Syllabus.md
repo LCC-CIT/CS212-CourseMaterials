@@ -7,7 +7,7 @@
 | **Course Number** | CS 212                                                       |      | **Name**          | Brian Bird                                                   |
 | **CRN**           | Hybrid (on campus) 22143<br />Online 22144                   |      | **E-mail**        | [birdb@lanecc.edu](mailto:birdb@lanecc.edu)                  |
 | **Day & Time**    | Tu, Th 10:00&ndash;11:50                                     |      | **Office Hours**  | M, W 2:00&ndash;2:50 (In person & Zoom)<br />Tu, Th 1:00&ndash;1:50 (Lab, in person) |
-| **Classroom**     | Building 19, Room 126<br />[Zoom meeting](https://lanecc.zoom.us/j/99586887638) |      | **Office / Lab**  | M, W: Bldg 19, Rm 152 & [Zoom](https://lanecc.zoom.us/j/8982554800)<br />Tu, Th: CIT Lab (Bldg 19, Rm 135) |
+| **Classroom**     | Building 19, Room 126<br /><a href="https://lanecc.zoom.us/j/99586887638" target="_blank">Zoom meeting</a> |      | **Office / Lab**  | M, W: Bldg 19, Rm 152 & <a href="https://lanecc.zoom.us/j/8982554800" target="_blank">Zoom</a><br />Tu, Th: CIT Lab (Bldg 19, Rm 135) |
 
 <h2>Table of Contents</h2>
 
@@ -37,11 +37,11 @@ Upon successful completion of this course, students will be able to:
 
 There is no textbook for this class. In place of a textbook you will read online tutorials and other free online resources.
 
-[Elements of AI](https://www.elementsofai.com), is a free high-quality course that I recommend, although it won't be directly used in this course. Elements of AI is mainly for non-programmers, but does a good job of covering many concepts relevant to this course.
+<a href="https://www.elementsofai.com" target="_blank">Elements of AI</a>, is a free high-quality course that I recommend, although it won't be directly used in this course. Elements of AI is mainly for non-programmers, but does a good job of covering many concepts relevant to this course.
 
 #### Learning Management System
 
-Canvas is the Learning Management System (LMS) used for this course; LCC’s Canvas site is at: [canvas.lanecc.edu](https://canvas.lanecc.edu). 
+Canvas is the Learning Management System (LMS) used for this course; LCC’s Canvas site is at: <a href="https://canvas.lanecc.edu" target="_blank">canvas.lanecc.edu</a>. 
 
 ### Software
 
@@ -49,7 +49,7 @@ All of the software required for this class is free.  You can use any operating 
 
 #### Software Required for Course Work
 
-See the [Getting Started Guide](https://lcc-cit.github.io/CS212-CourseMaterials/CS212_GettingStartedGuide.html) for a list of the software needed for this class.
+See the <a href="https://lcc-cit.github.io/CS212-CourseMaterials/CS212_GettingStartedGuide.html" target="_blank">Getting Started Guide</a> for a list of the software needed for this class.
 
 You will need to download and install any software you don't already have on your computer. The software has already been installed on the computers in the classroom and in the CIT computer lab.
 
@@ -58,10 +58,10 @@ You will need to download and install any software you don't already have on you
 
 None of the software provided in these offers is required for this class, but you may want to take advantage of the free and discounted software offers.
 
-- [**Google Gemini for Students**](https://gemini.google/students/) College students can sign up for a free one-year subscription to Google One AI Premium (Gemini Pro plan).
-- [**Azure Dev Tools for Teaching**](https://signup.azure.com/studentverification?offerType=3) (previously known as Microsoft Imagine Premium, Dream Spark, and MSDNAA) is a subscription-based offering, paid for by the LCC CIT department, providing access to professional development and design tools, software, and services from Microsoft. 
-- [**Microsoft Office 365**](https://help.lanecc.edu/TDClient/389/Portal/KB/ArticleDet?ID=5328) LCC students and staff can get a free subscription to Office 365, which includes Microsoft Word, Excel, PowerPoint, Access, and more.
-- **[On The Hub](https://lanecc.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?cmi_mnuMain=f189368a-f0a6-e811-8109-000d3af41938)** has partnered with Microsoft, Adobe, IBM, Symantec, VMware and other software publishers to offer discounted and free software for students and faculty.
+- <a href="https://gemini.google/students/" target="_blank">**Google Gemini for Students**</a> College students can sign up for a free one-year subscription to Google One AI Premium (Gemini Pro plan).
+- <a href="https://signup.azure.com/studentverification?offerType=3" target="_blank">**Azure Dev Tools for Teaching**</a> (previously known as Microsoft Imagine Premium, Dream Spark, and MSDNAA) is a subscription-based offering, paid for by the LCC CIT department, providing access to professional development and design tools, software, and services from Microsoft. 
+- <a href="https://help.lanecc.edu/TDClient/389/Portal/KB/ArticleDet?ID=5328" target="_blank">**Microsoft Office 365**</a> LCC students and staff can get a free subscription to Office 365, which includes Microsoft Word, Excel, PowerPoint, Access, and more.
+- **<a href="https://lanecc.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?cmi_mnuMain=f189368a-f0a6-e811-8109-000d3af41938" target="_blank">On The Hub</a>** has partnered with Microsoft, Adobe, IBM, Symantec, VMware and other software publishers to offer discounted and free software for students and faculty.
 
 
 
@@ -73,7 +73,7 @@ The CIT Main lab (Building 19, room 135) is equipped with computers and software
 
 #### Online Tutoring
 
-See the [LCC Tutoring Services](https://www.lanecc.edu/tutor) web page for information.
+See the <a href="https://www.lanecc.edu/tutor" target="_blank">LCC Tutoring Services</a> web page for information.
 
 
 
@@ -123,7 +123,7 @@ The college’s “no show, drop” policy requires that: during the first week 
 The midterm and final quizzes are given in weeks 5 and 11. See Canvas for exact dates and times. Quizzes are "closed book", but students may prepare an 8 1/2 x 11 sheet of notes to refer to during the quiz. How you take these quizzes depends on your course modality:
 
 - **On-campus students (hybrid modality):** You will take the quiz in the classroom during the normal class time. In-class (hybrid) students may also take the quiz in Instructional Testing Services but may not take the remote version.
-- **Online students:** May take the quiz in [Instructional Testing Services](https://www.lanecc.edu/get-support/academic-support/instructional-testing-services) in the Center Building, room 311. If you are not able to come to campus to take the quiz, you can take the remote version.
+- **Online students:** May take the quiz in <a href="https://www.lanecc.edu/get-support/academic-support/instructional-testing-services" target="_blank">Instructional Testing Services</a> in the Center Building, room 311. If you are not able to come to campus to take the quiz, you can take the remote version.
 
 ### Academic Honesty
 
@@ -152,18 +152,18 @@ Lane Community College (LCC) is dedicated to providing inclusive learning enviro
 **Location:** Main Campus, Building 19, Room 263A
 
 **Remote Support through Support Hub:** Monday - Thursday 9:00am&ndash;12:30 and 1:30pm&ndash;3:00pm. 
-Enter the Support Hub by going to [lanecc.edu/hub](https://www.lanecc.edu/hub). Wait for a Lane staff to let you into the Zoom.
+Enter the Support Hub by going to <a href="https://www.lanecc.edu/hub" target="_blank">lanecc.edu/hub</a>. Wait for a Lane staff to let you into the Zoom.
 
 **Phone:** Voice, (541) 463-5150 TTY: 711, Monday&mdash;Friday 9:00am&ndash;12:30pm and 1:30pm&ndash;3:00pm.
 **Email:** AccessibleResources@lanecc.edu
 
-For upcoming closures, please visit the [Center for Accessible Resources webpage ](https://www.lanecc.edu/disability)
+For upcoming closures, please visit the <a href="https://www.lanecc.edu/disability" target="_blank">Center for Accessible Resources webpage </a>
 
 ## Campus Location and Maps
 
-- [Main Campus](https://www.lanecc.edu/about-lane/our-locations/main-campus): 4000 East 30th Ave. Eugene, Oregon 97405
-- [Bus service and free student bus pass](https://www.lanecc.edu/experience-lane/transportation-getting-around/lcc-bus-pass)
-- [Interactive Map of the LCC Main Campus](https://map.concept3d.com/?id=780#!ct/80243,11008,10696,80244,80245?s/)
+- <a href="https://www.lanecc.edu/about-lane/our-locations/main-campus" target="_blank">Main Campus</a>: 4000 East 30th Ave. Eugene, Oregon 97405
+- <a href="https://www.lanecc.edu/experience-lane/transportation-getting-around/lcc-bus-pass" target="_blank">Bus service and free student bus pass</a>
+- <a href="https://map.concept3d.com/?id=780#!ct/80243,11008,10696,80244,80245?s/" target="_blank">Interactive Map of the LCC Main Campus</a>
 - [Floor plan of building 19](Images/Building19FloorPlan.pdf) (All CIT classes meet on the 1st floor of this building)
 
 ## Schedules
@@ -179,7 +179,7 @@ For upcoming closures, please visit the [Center for Accessible Resources webpage
 | Thanksgiving Vacation – college closed | 11/26&ndash;11/29 | Thursday, Friday |
 | Final exam                             | 12/8              | Tuesday          |
 
-View [academic calendars](https://www.lanecc.edu/calendars/academic-calendar) on the LCC web site.  
+View <a href="https://www.lanecc.edu/calendars/academic-calendar" target="_blank">academic calendars</a> on the LCC web site.  
 
 ### Weekly Learning Activities
 

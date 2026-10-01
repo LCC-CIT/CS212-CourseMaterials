@@ -34,15 +34,15 @@ author: Brian Bird
 ## Announcements for Fall 2025
 
 - **CIT Lab hiring workers**
-  The CIT Lab is looking for Front/Help Desk workers. [Here is the link to apply](https://lanecc.studentemployment.ngwebsolutions.com/JobXJobDetail.aspx?JobId=12268&s=1). It's a great opportunity and a fun place to work.
+  The CIT Lab is looking for Front/Help Desk workers. <a href="https://lanecc.studentemployment.ngwebsolutions.com/JobXJobDetail.aspx?JobId=12268&s=1" target="_blank">Here is the link to apply</a>. It's a great opportunity and a fun place to work.
 
 - **Student Emergent Tech & AI Club**
   Fusion Lab Faculty and students are forming a [club on emergent technology and AI](Images/ETAIClubPoster.pdf).
-   [Interest Form](https://out.smore.com/e/nd345/V0ERKC?__$u__) | Contact: [Kevin Steeves](https://out.smore.com/e/nd345/X14b6G?__$u__)
+   <a href="https://out.smore.com/e/nd345/V0ERKC?__$u__" target="_blank">Interest Form</a> | Contact: <a href="https://out.smore.com/e/nd345/X14b6G?__$u__" target="_blank">Kevin Steeves</a>
 
 - **Snacks/Food available**
   
-  In light of the interruption of SNAP benefits, the CIT lab has an increased stock of free snack and lunch food. The [Titan Food Pantry](https://www.lanecc.edu/get-support/daily-living-support/titan-pantry-and-closet) has also has an increased stock and variety of food that is available for students.
+  In light of the interruption of SNAP benefits, the CIT lab has an increased stock of free snack and lunch food. The <a href="https://www.lanecc.edu/get-support/daily-living-support/titan-pantry-and-closet" target="_blank">Titan Food Pantry</a> has also has an increased stock and variety of food that is available for students.
 
 ## Registration for Winter Term 2026
 
@@ -55,15 +55,15 @@ Registration for winter term is open. If you are pursuing the AAS in Software De
 
 ### Relevant Links:
 
-- [Degree Requirements](https://lanecc.smartcatalogiq.com/en/current/lcc-catalog/programs-of-study/computer-information-technology/software-development-aas) for AAS in Software Dev
+- <a href="https://lanecc.smartcatalogiq.com/en/current/lcc-catalog/programs-of-study/computer-information-technology/software-development-aas" target="_blank">Degree Requirements</a> for AAS in Software Dev
 
-- [Term-By-Term Sample Planner](https://docs.google.com/document/d/1F8CJY1M7A4J9uJtGRDFRyF-0j7l2AVe0vpPE5vcfHXE/edit?tab=t.0) for AAS in Software Dev
+- <a href="https://docs.google.com/document/d/1F8CJY1M7A4J9uJtGRDFRyF-0j7l2AVe0vpPE5vcfHXE/edit?tab=t.0" target="_blank">Term-By-Term Sample Planner</a> for AAS in Software Dev
 
 - [Winter 2026 Class Schedule](**CS135M  Beginning Mobile Application Development**)
 
-- [Academic Advising](https://lanecc.edu/advising)
+- <a href="https://lanecc.edu/advising" target="_blank">Academic Advising</a>
 
-- [Registration](https://my.lanecc.edu/StudentRegistrationSsb/ssb/registration)
+- <a href="https://my.lanecc.edu/StudentRegistrationSsb/ssb/registration" target="_blank">Registration</a>
 
 ## Q and A
 
@@ -97,6 +97,6 @@ Registration for winter term is open. If you are pursuing the AAS in Software De
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---

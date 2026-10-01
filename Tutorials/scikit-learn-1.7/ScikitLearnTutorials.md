@@ -24,19 +24,19 @@
   - [Exercise 3: CLI text classification utility](WorkingWithTextData.md#exercise-3-cli-text-classification-utility)
   - [Where to from here](WorkingWithTextData.md#where-to-from-here)
 - [Choosing the right estimator](ChoosingTheRightEstimatorScikitLearn142Documentation.html)
-- [External Resources, Videos and Talks](https://scikit-learn.org/1.7/presentations.html)
-  - [New to Scientific Python?](https://scikit-learn.org/1.7/presentations.html#new-to-scientific-python)
-  - [External Tutorials](https://scikit-learn.org/1.7/presentations.html#external-tutorials)
-  - [Videos](https://scikit-learn.org/1.7/presentations.html#videos)
+- <a href="https://scikit-learn.org/1.7/presentations.html" target="_blank">External Resources, Videos and Talks</a>
+  - <a href="https://scikit-learn.org/1.7/presentations.html#new-to-scientific-python" target="_blank">New to Scientific Python?</a>
+  - <a href="https://scikit-learn.org/1.7/presentations.html#external-tutorials" target="_blank">External Tutorials</a>
+  - <a href="https://scikit-learn.org/1.7/presentations.html#videos" target="_blank">Videos</a>
 
 ## Note on IPython
 
-Some of the tutorials have code blocks start with >>> and are intended to be executed in [IPython](https://ipython.org/) using doctest_mode. IPPython has not been updated since 2020 (it is replaced by Jupyter notbooks).  But you can simply execute the code in the Python interactive console by copying the code in a way that omits the >>> at the beginning of the line.  
+Some of the tutorials have code blocks start with >>> and are intended to be executed in <a href="https://ipython.org/" target="_blank">IPython</a> using doctest_mode. IPPython has not been updated since 2020 (it is replaced by Jupyter notbooks).  But you can simply execute the code in the Python interactive console by copying the code in a way that omits the >>> at the beginning of the line.  
 
 
 ---
 
-These tutorials are updated from "scikit-learn Tutorials" by scikit-learn developers. Original Source: https://scikit-learn.org/1.4/tutorial/index.html under the [BSD License](https://opensource.org/license/BSD-3-clause).  
+These tutorials are updated from "scikit-learn Tutorials" by scikit-learn developers. Original Source: https://scikit-learn.org/1.4/tutorial/index.html under the <a href="https://opensource.org/license/BSD-3-clause" target="_blank">BSD License</a>.  
 
 ---
 

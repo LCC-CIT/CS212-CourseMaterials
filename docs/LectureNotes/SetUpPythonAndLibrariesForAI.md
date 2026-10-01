@@ -45,7 +45,7 @@ author: Brian Bird
 NumPy is a scientific computing library for efficient array processing, offering fast, flexible multi-dimensional arrays that outperform native Python lists. It adds additional array features that used by many scientific and machine learning libraries.
 
 ### scikit-learn
-Scikit-learn is a library for traditional machine learning in Python, built on NumPy arrays. It offers a consistent interface to a wide range of models and tools, many beyond the scope of this course. As you deepen your understanding, the [official documentation](https://scikit-learn.org/stable/documentation.html) is an essential resource.
+Scikit-learn is a library for traditional machine learning in Python, built on NumPy arrays. It offers a consistent interface to a wide range of models and tools, many beyond the scope of this course. As you deepen your understanding, the <a href="https://scikit-learn.org/stable/documentation.html" target="_blank">official documentation</a> is an essential resource.
 
 ### TensorFlow with Keras
 TensorFlow is a widely adopted, open-source framework and toolkit developed by Google. It provides deep learning neural network functionality and includes Keras, a user-friendly Python API (programming interface). 
@@ -259,17 +259,17 @@ deactivate
 - *Practical Deep Learning: A Python-Based Introduction*, 2nd Edition, Ronald T. Kneusel, 2025, No Starch Press. 
   Chapter 0: The operating Environment, Installing the Toolkits
 
-- [Install scikit-Learn](https://scikit-learn.org/stable/install.html)&mdash;scikit-learn.org
+- <a href="https://scikit-learn.org/stable/install.html" target="_blank">Install scikit-Learn</a>&mdash;scikit-learn.org
 
-- [Install Tensorflow 2](https://www.tensorflow.org/install)&mdash;tensorflow.org
-- [Getting Started with Tensorflow Metal](https://developer.apple.com/metal/tensorflow-plugin/)&mdash;Apple Developer
+- <a href="https://www.tensorflow.org/install" target="_blank">Install Tensorflow 2</a>&mdash;tensorflow.org
+- <a href="https://developer.apple.com/metal/tensorflow-plugin/" target="_blank">Getting Started with Tensorflow Metal</a>&mdash;Apple Developer
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 lecture notes by [Brian Bird](https://profbird.dev), written in <time>September 2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 lecture notes by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>September 2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 MS Copilot with GPT-5 was used to draft parts of these notes.
 
-[^1]: WinGet, the [Windows Package Manager](https://github.com/microsoft/winget-cli?tab=readme-ov-file),  is installed by default on Windows 11 and can be installed on Windows 10. 
+[^1]: WinGet, the <a href="https://github.com/microsoft/winget-cli?tab=readme-ov-file" target="_blank">Windows Package Manager</a>,  is installed by default on Windows 11 and can be installed on Windows 10. 
 [^2]: A Python virtual environment is like a sandbox for your Python projects—it isolates dependencies so that each project can have its own specific versions of packages, without interfering with others or your system-wide Python setup. It creates a folder (venv) containing: a) A copy of the Python interpreter. b) A local pip installer. c) A clean site-packages directory for your project’s dependencies. When you activate it, your shell temporarily switches to using that isolated Python and pip. 
-[^3]: Homebrew is not installed by default on MacOS. See the [Homebrew website](https://brew.sh/) for installation instructions.  Another popular package manager for MacOS is [MacPorts](https://www.macports.org/).  ↩
+[^3]: Homebrew is not installed by default on MacOS. See the <a href="https://brew.sh/" target="_blank">Homebrew website</a> for installation instructions.  Another popular package manager for MacOS is <a href="https://www.macports.org/" target="_blank">MacPorts</a>.  ↩

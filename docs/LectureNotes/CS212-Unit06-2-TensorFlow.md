@@ -29,29 +29,29 @@ author: Brian Bird
 
 From Wikipedia:
 
-> TensorFlow is a [software library](https://en.wikipedia.org/wiki/Library_(computing)) for [machine learning](https://en.wikipedia.org/wiki/Machine_learning) and [artificial intelligence](https://en.wikipedia.org/wiki/Artificial_intelligence). It can be used across a range of tasks, but is used mainly for [training](https://en.wikipedia.org/wiki/Types_of_artificial_neural_networks#Training) and [inference](https://en.wikipedia.org/wiki/Statistical_inference) of [neural networks](https://en.wikipedia.org/wiki/Neural_network_(machine_learning)).It is one of the most popular [deep learning](https://en.wikipedia.org/wiki/Deep_learning) frameworks, alongside others such as [PyTorch](https://en.wikipedia.org/wiki/PyTorch). It is [free and open-source software](https://en.wikipedia.org/wiki/Free_and_open-source_software) released under the [Apache License 2.0](https://en.wikipedia.org/wiki/Apache_License_2.0).
+> TensorFlow is a <a href="https://en.wikipedia.org/wiki/Library_(computing)" target="_blank">software library</a> for <a href="https://en.wikipedia.org/wiki/Machine_learning" target="_blank">machine learning</a> and <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank">artificial intelligence</a>. It can be used across a range of tasks, but is used mainly for <a href="https://en.wikipedia.org/wiki/Types_of_artificial_neural_networks#Training" target="_blank">training</a> and <a href="https://en.wikipedia.org/wiki/Statistical_inference" target="_blank">inference</a> of <a href="https://en.wikipedia.org/wiki/Neural_network_(machine_learning)" target="_blank">neural networks</a>.It is one of the most popular <a href="https://en.wikipedia.org/wiki/Deep_learning" target="_blank">deep learning</a> frameworks, alongside others such as <a href="https://en.wikipedia.org/wiki/PyTorch" target="_blank">PyTorch</a>. It is <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software" target="_blank">free and open-source software</a> released under the <a href="https://en.wikipedia.org/wiki/Apache_License_2.0" target="_blank">Apache License 2.0</a>.
 > 
-> It was developed by the [Google Brain](https://en.wikipedia.org/wiki/Google_Brain) team for [Google](https://en.wikipedia.org/wiki/Google)'s internal use in research and production. The initial version was released under the [Apache License 2.0](https://en.wikipedia.org/wiki/Apache_License_2.0) in 2015. Google released an updated version, TensorFlow 2.0, in September 2019.
+> It was developed by the <a href="https://en.wikipedia.org/wiki/Google_Brain" target="_blank">Google Brain</a> team for <a href="https://en.wikipedia.org/wiki/Google" target="_blank">Google</a>'s internal use in research and production. The initial version was released under the <a href="https://en.wikipedia.org/wiki/Apache_License_2.0" target="_blank">Apache License 2.0</a> in 2015. Google released an updated version, TensorFlow 2.0, in September 2019.
 > 
-> TensorFlow can be used in a wide variety of programming languages, including [Python](https://en.wikipedia.org/wiki/Python_(programming_language)), [JavaScript](https://en.wikipedia.org/wiki/JavaScript), [C++](https://en.wikipedia.org/wiki/C%2B%2B), and [Java](https://en.wikipedia.org/wiki/Java_(programming_language)), facilitating its use in a range of applications in many sectors.
+> TensorFlow can be used in a wide variety of programming languages, including <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Python</a>, <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>, <a href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank">C++</a>, and <a href="https://en.wikipedia.org/wiki/Java_(programming_language)" target="_blank">Java</a>, facilitating its use in a range of applications in many sectors.
 
 ## Reference
 
 ### Articles and Tutorials
 
-[TensorFlow](https://en.wikipedia.org/wiki/TensorFlow)&mdash;Wikipedia
+<a href="https://en.wikipedia.org/wiki/TensorFlow" target="_blank">TensorFlow</a>&mdash;Wikipedia
 
-[TensorFlow Tutorials](https://www.tensorflow.org/tutorials)&mdash;Official TensorFlow documentation
+<a href="https://www.tensorflow.org/tutorials" target="_blank">TensorFlow Tutorials</a>&mdash;Official TensorFlow documentation
 
 ### Interactive Web Pages
 
-[Tensorflow Playground](http://playground.tensorflow.org/)&mdash;Tinker with a neural network in your browser.
+<a href="http://playground.tensorflow.org/" target="_blank">Tensorflow Playground</a>&mdash;Tinker with a neural network in your browser.
 
-- [Understanding neural networks with TensorFlow Playground](https://cloud.google.com/blog/products/ai-machine-learning/understanding-neural-networks-with-tensorflow-playground)&mdash;Kaz Sato, Google Cloud, 2016.
+- <a href="https://cloud.google.com/blog/products/ai-machine-learning/understanding-neural-networks-with-tensorflow-playground" target="_blank">Understanding neural networks with TensorFlow Playground</a>&mdash;Kaz Sato, Google Cloud, 2016.
 - 
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 lecture notes by [Brian Bird](https://profbird.dev), written in <time>2025</time> are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 lecture notes by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time> are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---

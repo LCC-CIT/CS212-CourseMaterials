@@ -159,21 +159,21 @@ Here is a simplified summary of the steps in the algorithm:
 
 ### Articles and Tutorials
 
-[What is a Perceptron: A Beginners Guide for Perceptron](https://www.simplilearn.com/tutorials/deep-learning-tutorial/perceptron)&mdash;Mayank Banoula, SimpliLearn, 2023.
+<a href="https://www.simplilearn.com/tutorials/deep-learning-tutorial/perceptron" target="_blank">What is a Perceptron: A Beginners Guide for Perceptron</a>&mdash;Mayank Banoula, SimpliLearn, 2023.
 
-[Deep Learning](https://www.deeplearningbook.org/)&mdash;Ian Goodfellow, Yoshua Bengio, Aaron Courville, MIT Press, 2016
+<a href="https://www.deeplearningbook.org/" target="_blank">Deep Learning</a>&mdash;Ian Goodfellow, Yoshua Bengio, Aaron Courville, MIT Press, 2016
 
-[Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)&mdash;Michael A. Nielsen, Determination Press, 2015
+<a href="http://neuralnetworksanddeeplearning.com/" target="_blank">Neural Networks and Deep Learning</a>&mdash;Michael A. Nielsen, Determination Press, 2015
 
 ### Interactive Web Pages
 
-[Tensorflow Playground](http://playground.tensorflow.org/)&mdash;Tinker with a neural network in your browser.
+<a href="http://playground.tensorflow.org/" target="_blank">Tensorflow Playground</a>&mdash;Tinker with a neural network in your browser.
 
-- [Understanding neural networks with TensorFlow Playground](https://cloud.google.com/blog/products/ai-machine-learning/understanding-neural-networks-with-tensorflow-playground)&mdash;Kaz Sato, Google Cloud, 2016.
+- <a href="https://cloud.google.com/blog/products/ai-machine-learning/understanding-neural-networks-with-tensorflow-playground" target="_blank">Understanding neural networks with TensorFlow Playground</a>&mdash;Kaz Sato, Google Cloud, 2016.
 
-[Machine Learning Playground](https://ml-playground.com)&mdash;Experiment with multiple ML models
+<a href="https://ml-playground.com" target="_blank">Machine Learning Playground</a>&mdash;Experiment with multiple ML models
 
-[Perceptron Visualizer](https://perceptrondemo.com/)
+<a href="https://perceptrondemo.com/" target="_blank">Perceptron Visualizer</a>
 
 
 
@@ -181,6 +181,6 @@ Here is a simplified summary of the steps in the algorithm:
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 lecture notes by [Brian Bird](https://profbird.dev), written in <time>2024</time>, revised in <time>2025</time> are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 lecture notes by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2024</time>, revised in <time>2025</time> are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 Note: GPT-4 and GPT-4o were used to draft parts of these notes, July 2024.

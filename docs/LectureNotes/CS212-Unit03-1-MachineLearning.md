@@ -106,7 +106,7 @@ Inference (classification in this case): A home that hasn't sold yet can have it
 **Example:** Character recognition.
 
 <details>
-  <summary>What do you think the steps would be to train a model for Handwritten Character Recognition (HCR) using the <a href="https://en.wikipedia.org/wiki/MNIST_database">MNIST data set</a>?<br>(Click to expand)</summary>
+  <summary>What do you think the steps would be to train a model for Handwritten Character Recognition (HCR) using the <a href="https://en.wikipedia.org/wiki/MNIST_database" target="_blank">MNIST data set</a>?<br>(Click to expand)</summary>
 <h4>Training the Model</h4>
 <ul>
   <li><b>Data Collection:</b> Gather a large dataset of handwritten characters, each labeled with their correct character (such as the MNIST).</li>
@@ -186,7 +186,7 @@ In the example below, the input, on the x-axis, is the number of hours students 
 
 <img src="Images/EoAI-Ch4-Ex19.png" alt="logistic regression graph" style="zoom:30%;" />
 
-[logistic regression graph on Desmos](https://www.desmos.com/calculator/zxs34s4tbd)
+<a href="https://www.desmos.com/calculator/zxs34s4tbd" target="_blank">logistic regression graph on Desmos</a>
 
 **Other types of logistic regression**
 
@@ -242,25 +242,25 @@ An Artificial Neural Network (ANN) is a computational model inspired by the stru
 
 ## Reference
 
-[Intro to Machine Learning](https://developers.google.com/machine-learning/intro-to-ml)&mdash;A very short Google course that introduces machine learning (ML) concepts. 
+<a href="https://developers.google.com/machine-learning/intro-to-ml" target="_blank">Intro to Machine Learning</a>&mdash;A very short Google course that introduces machine learning (ML) concepts. 
 
-[Machine Learning](https://course.elementsofai.com/4)&mdash;Elements of AI course by MiniLearn and the University of Helsinki.
+<a href="https://course.elementsofai.com/4" target="_blank">Machine Learning</a>&mdash;Elements of AI course by MiniLearn and the University of Helsinki.
 
-[What is supervised learning?](https://www.ibm.com/topics/supervised-learning)&mdash;IBM
+<a href="https://www.ibm.com/topics/supervised-learning" target="_blank">What is supervised learning?</a>&mdash;IBM
 
-[What is unsupervised learning?](https://www.ibm.com/topics/unsupervised-learning)&mdash;IBM
+<a href="https://www.ibm.com/topics/unsupervised-learning" target="_blank">What is unsupervised learning?</a>&mdash;IBM
 
-[What is reinforcement learning?](https://www.ibm.com/topics/reinforcement-learning)&mdash;IBM
+<a href="https://www.ibm.com/topics/reinforcement-learning" target="_blank">What is reinforcement learning?</a>&mdash;IBM
 
-[10 Machine Learning Methods that Every Data Scientist Should Know](https://medium.com/towards-data-science/10-machine-learning-methods-that-every-data-scientist-should-know-3cc96e0eeee9)&mdash;Jorge Castañón, Towards Data Science on Medium, 2019.
+<a href="https://medium.com/towards-data-science/10-machine-learning-methods-that-every-data-scientist-should-know-3cc96e0eeee9" target="_blank">10 Machine Learning Methods that Every Data Scientist Should Know</a>&mdash;Jorge Castañón, Towards Data Science on Medium, 2019.
 
-[8 Machine Learning Models Explained in 20 Minutes](https://www.datacamp.com/blog/machine-learning-models-explained)&mdash;Natassha Selvaraj, DataCamp, 2022.
+<a href="https://www.datacamp.com/blog/machine-learning-models-explained" target="_blank">8 Machine Learning Models Explained in 20 Minutes</a>&mdash;Natassha Selvaraj, DataCamp, 2022.
 
 
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) Intro to AI lecture notes by [Brian Bird](https://profbird.dev), written in 2024, revised in <time>2025</time> are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> Intro to AI lecture notes by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in 2024, revised in <time>2025</time> are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---
 

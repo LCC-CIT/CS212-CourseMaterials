@@ -255,15 +255,15 @@ $$
   Chapter 0: Basic Linear Algebra, Statistics and Probability
 - *Math for Deep Learning*, Ronald T. Kneusel, 2021, No Starch Press. 
 
-- [Vectrors and Spaces](https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces)&mdash;Khan Academy
+- <a href="https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces" target="_blank">Vectrors and Spaces</a>&mdash;Khan Academy
 
-- [Matrix Transformations](https://www.khanacademy.org/math/linear-algebra/matrix-transformations)&mdash;Kahn Academy
+- <a href="https://www.khanacademy.org/math/linear-algebra/matrix-transformations" target="_blank">Matrix Transformations</a>&mdash;Kahn Academy
 
 
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 lecture notes by [Brian Bird](https://profbird.dev), written in <time>August 2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 lecture notes by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>August 2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 MS Copilot GPT-4 was used to draft parts of these notes.
 

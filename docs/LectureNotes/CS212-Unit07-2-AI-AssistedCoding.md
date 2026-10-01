@@ -46,7 +46,7 @@ This assistance allows developers to accelerate debugging, quickly translate cod
 
 ### Don't Call it Vibe Coding
 
-Vibe coding is a term that was casually used by Andrej Karpathy in [a post on X](https://x.com/karpathy/status/1886192184808149383?lang=en) to describe his experience writing code using AI. The term caught on and became popular but then quickly fell into disfavor because it implies a casual, non-rigorous approach that prioritizes quick code generation based on a "vibe" rather than well thought out design and careful testing.
+Vibe coding is a term that was casually used by Andrej Karpathy in <a href="https://x.com/karpathy/status/1886192184808149383?lang=en" target="_blank">a post on X</a> to describe his experience writing code using AI. The term caught on and became popular but then quickly fell into disfavor because it implies a casual, non-rigorous approach that prioritizes quick code generation based on a "vibe" rather than well thought out design and careful testing.
 
 Critics argue it encourages thoughtless production of code without full comprehension, leading to:
 
@@ -109,23 +109,23 @@ By applying these principles, you move away from "vibe coding" and engage in AI 
 
 ## Rererence
 
-[Pair Programming](https://extremeprogrammingalliance.com/about-extreme-programming-xp/extreme-programming-xp-practices/extreme-programming-xp-coding-technical-practices/)&mdash;Extreme Programming Alliance (XPA)
+<a href="https://extremeprogrammingalliance.com/about-extreme-programming-xp/extreme-programming-xp-practices/extreme-programming-xp-coding-technical-practices/" target="_blank">Pair Programming</a>&mdash;Extreme Programming Alliance (XPA)
 
 ### Vibe Coding
 
-[Vibe Coding](https://en.wikipedia.org/wiki/Vibe_coding)&mdash;Wikipedia
+<a href="https://en.wikipedia.org/wiki/Vibe_coding" target="_blank">Vibe Coding</a>&mdash;Wikipedia
 
-[Andrej Karpathy's  "vibe coding" post](https://x.com/karpathy/status/1886192184808149383?lang=en)&mdash;X
+<a href="https://x.com/karpathy/status/1886192184808149383?lang=en" target="_blank">Andrej Karpathy's  "vibe coding" post</a>&mdash;X
 
-[Vibe Coding: The Shadow IT Problem No One Saw Coming](https://thenewstack.io/vibe-coding-the-shadow-it-problem-no-one-saw-coming/)&mdash;[Steve Fenton](https://thenewstack.io/author/steve-fenton/), The New Stack, 2025.
+<a href="https://thenewstack.io/vibe-coding-the-shadow-it-problem-no-one-saw-coming/" target="_blank">Vibe Coding: The Shadow IT Problem No One Saw Coming</a>&mdash;<a href="https://thenewstack.io/author/steve-fenton/" target="_blank">Steve Fenton</a>, The New Stack, 2025.
 
 ### GitHub Copilot
 
-[GitHub Copilot Tutorials](https://github.com/features/copilot/tutorials)&mdash;GitHub.
+<a href="https://github.com/features/copilot/tutorials" target="_blank">GitHub Copilot Tutorials</a>&mdash;GitHub.
 
-[GitHub Copilot for VS Code Cheat Sheet](https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features)&mdash;GitHub.
+<a href="https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features" target="_blank">GitHub Copilot for VS Code Cheat Sheet</a>&mdash;GitHub.
 
-[GitHub for Education](https://github.com/education)&mdash;Free Enterprise level account that includes GitHub Copilot.
+<a href="https://github.com/education" target="_blank">GitHub for Education</a>&mdash;Free Enterprise level account that includes GitHub Copilot.
 
 
 
@@ -133,6 +133,6 @@ Note: Parts of this document were drafted using Gemini Flash 2.5 (2025).
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---

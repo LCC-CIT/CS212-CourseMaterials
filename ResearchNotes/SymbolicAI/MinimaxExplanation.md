@@ -105,7 +105,7 @@ Yes, there are several diagrams illustrating the **Minimax algorithm** that are 
 
 Here is an example of a diagram retrieved from a search for Creative Commons-licensed images, which visually explains the Minimax process of traversing a game tree:
 
-[Image of Minimax algorithm game tree diagram creative commons](https://upload.wikimedia.org/wikipedia/commons/6/6f/Minimax.svg)
+<a href="https://upload.wikimedia.org/wikipedia/commons/6/6f/Minimax.svg" target="_blank">Image of Minimax algorithm game tree diagram creative commons</a>
 
 
 

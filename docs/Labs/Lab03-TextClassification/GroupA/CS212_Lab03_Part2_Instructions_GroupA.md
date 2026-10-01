@@ -32,7 +32,7 @@ Part 1 has its own assignment submission on Canvas.
 
 You will do Exercise 2, Language identification, which is at the end of the ["Working with Text Data" tutorial](../../../Tutorials/scikit-learn-1.7/WorkingWithTextData.html). The skeleton code for this exercise imports the perceptrion classifier, but you may use whatever classifier you wish. You might prefer to use the Multinomial Naive Bays or the Support Vector Machine classifier used in the tutorial.
 
-Alternatively, you can do a classification project of your own design.  You can browse the [scikit-learn datset loaders](https://scikit-learn.org/stable/datasets.html) page for ideas. Let me know if you would have something to propose. It would be very cool to see some of you do a mini-project of your own choosing!
+Alternatively, you can do a classification project of your own design.  You can browse the <a href="https://scikit-learn.org/stable/datasets.html" target="_blank">scikit-learn datset loaders</a> page for ideas. Let me know if you would have something to propose. It would be very cool to see some of you do a mini-project of your own choosing!
 
 
 
@@ -66,7 +66,7 @@ The main focus of grading will be on use of the sckit-learn classes and problem 
 
 ------
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming lab instructions by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming lab instructions by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ------------
 

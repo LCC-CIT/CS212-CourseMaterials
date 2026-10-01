@@ -1,6 +1,6 @@
 # Building a Weather MCP Server for Claude Desktop
 
-In this tutorial, you will build a Model Context Protocol (MCP) server that provides weather data. This tutorial is adapted from [Build an MCP Server](https://modelcontextprotocol.io/docs/develop/build-server) on the Model Context Protocol web site.
+In this tutorial, you will build a Model Context Protocol (MCP) server that provides weather data. This tutorial is adapted from <a href="https://modelcontextprotocol.io/docs/develop/build-server" target="_blank">Build an MCP Server</a> on the Model Context Protocol web site.
 
 This tutorial includes instructions for testing the server with:
 
@@ -10,7 +10,7 @@ This tutorial includes instructions for testing the server with:
 ## Prerequisites
 
 - Python 3.10 or higher
-- [Claude Desktop App](https://claude.ai/download) installed
+- <a href="https://claude.ai/download" target="_blank">Claude Desktop App</a> installed
 - Basic familiarity with the terminal
 
 ## 1. Project Setup
@@ -262,7 +262,7 @@ You will not use the Claude interface. Instead, you will use the Copilot Chat si
 
 ------
 
-... [How to use the MCP server in VS Code](https://www.youtube.com/watch?v=91_6PnC9oUU) ...
+... <a href="https://www.youtube.com/watch?v=91_6PnC9oUU" target="_blank">How to use the MCP server in VS Code</a> ...
 
 This video is relevant because it visually demonstrates the "Agent mode" in VS Code and how to access MCP tools within the GitHub Copilot chat interface, which replaces the Claude Desktop testing steps.
 

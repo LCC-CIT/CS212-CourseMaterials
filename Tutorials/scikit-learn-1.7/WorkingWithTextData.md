@@ -44,15 +44,15 @@ In this section we will see how to:
 
 To get started with this tutorial, you must first install *scikit-learn* and all of its required dependencies.
 
-Please refer to the [installation instructions](https://scikit-learn.org/1.7/install.html#installation-instructions) page for more information and for system-specific instructions.
+Please refer to the <a href="https://scikit-learn.org/1.7/install.html#installation-instructions" target="_blank">installation instructions</a> page for more information and for system-specific instructions.
 
 ### Loading the 20 newsgroups dataset
 
-The dataset is called “Twenty Newsgroups”. Here is the official description, quoted from the [website](http://qwone.com/~jason/20Newsgroups/):
+The dataset is called “Twenty Newsgroups”. Here is the official description, quoted from the <a href="http://qwone.com/~jason/20Newsgroups/" target="_blank">website</a>:
 
-> The 20 Newsgroups data set is a collection of approximately 20,000 newsgroup documents, partitioned (nearly) evenly across 20 different newsgroups. To the best of our knowledge, it was originally collected by Ken Lang, probably for his paper "[Newsweeder: Learning to filter netnews](http://qwone.com/~jason/20Newsgroups/lang95.bib)", though he does not explicitly mention this collection. The 20 newsgroups collection has become a popular data set for experiments in text applications of machine learning techniques, such as text classification and text clustering.
+> The 20 Newsgroups data set is a collection of approximately 20,000 newsgroup documents, partitioned (nearly) evenly across 20 different newsgroups. To the best of our knowledge, it was originally collected by Ken Lang, probably for his paper "<a href="http://qwone.com/~jason/20Newsgroups/lang95.bib" target="_blank">Newsweeder: Learning to filter netnews</a>", though he does not explicitly mention this collection. The 20 newsgroups collection has become a popular data set for experiments in text applications of machine learning techniques, such as text classification and text clustering.
 
-In the following we will use the built-in dataset loader for 20 newsgroups from scikit-learn. Alternatively, it is possible to download the dataset manually from the website and use the [`sklearn.datasets.load_files`](https://scikit-learn.org/1.7/modules/generated/sklearn.datasets.load_files.html#sklearn.datasets.load_files) function by pointing it to the `20news-bydate-train` sub-folder of the uncompressed archive folder.
+In the following we will use the built-in dataset loader for 20 newsgroups from scikit-learn. Alternatively, it is possible to download the dataset manually from the website and use the <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.datasets.load_files.html#sklearn.datasets.load_files" target="_blank">`sklearn.datasets.load_files`</a> function by pointing it to the `20news-bydate-train` sub-folder of the uncompressed archive folder.
 
 In order to get faster execution times for this first example, we will work on a partial dataset with only 4 categories out of the 20 available in the dataset:
 
@@ -164,7 +164,7 @@ Fortunately, <u>most values in x will be zeros</u> since for a given document le
 
 #### Tokenize the Text and Build Feature Vectors
 
-Text preprocessing[^1], tokenizing[^2] and filtering (removal) of stopwords[^3] are all included in [`CountVectorizer`](https://scikit-learn.org/1.7/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#sklearn.feature_extraction.text.CountVectorizer), which:
+Text preprocessing[^1], tokenizing[^2] and filtering (removal) of stopwords[^3] are all included in <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#sklearn.feature_extraction.text.CountVectorizer" target="_blank">`CountVectorizer`</a>, which:
 
 - Builds a dictionary of features in which each unique token (word) found across all documents is assigned a specific index (a column number in the resulting matrix).
 -  Transforms documents to feature vectors[^4]. Each document is transformed into a vector (a row in the matrix) where the value at each position corresponds to the count (*frequency*) of a specific word (*feature*) from the dictionary in that document.
@@ -199,7 +199,7 @@ X_train_counts.shape
 > *response:*  
 > (2257, 35788)
 
-[`CountVectorizer`](https://scikit-learn.org/1.7/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#sklearn.feature_extraction.text.CountVectorizer) supports counts of words (or *N-grams*[^5] of words or consecutive characters). Once fitted, our vectorizer object will have built a dictionary of feature indices:
+<a href="https://scikit-learn.org/1.7/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#sklearn.feature_extraction.text.CountVectorizer" target="_blank">`CountVectorizer`</a> supports counts of words (or *N-grams*[^5] of words or consecutive characters). Once fitted, our vectorizer object will have built a dictionary of feature indices:
 
 ```python
 count_vect.vocabulary_.get('algorithm')
@@ -221,7 +221,7 @@ We can avoid this potential discrepancy by dividing the number of occurrences of
 
 ##### Calculating Term Frequency
 
-The scipy sparse matrix of *term frequencies* can be computed using [`TfidfTransformer`](https://scikit-learn.org/1.7/modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer). (This code is an example, we won't use `X_train-tf`  after this.)
+The scipy sparse matrix of *term frequencies* can be computed using <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer" target="_blank">`TfidfTransformer`</a>. (This code is an example, we won't use `X_train-tf`  after this.)
 
 ```python
 from sklearn.feature_extraction.text import TfidfTransformer
@@ -239,7 +239,7 @@ In the above example-code, we first used the `fit(..)` method to fit our estimat
 
 Another refinement on top of `tf` is to give a lower weight to words that occur across many documents in the corpus and are therefore are less informative than those that occur only in a smaller portion of the corpus.
 
-This weight reduction is called [tf–idf](https://en.wikipedia.org/wiki/Tf-idf) for “*Term Frequency* times *Inverse Document Frequency*”. The calculation of `tf` and `idf` can be combined. This is done through using the `fit_transform(..)` method as shown below:
+This weight reduction is called <a href="https://en.wikipedia.org/wiki/Tf-idf" target="_blank">tf–idf</a> for “*Term Frequency* times *Inverse Document Frequency*”. The calculation of `tf` and `idf` can be combined. This is done through using the `fit_transform(..)` method as shown below:
 
 ```python
 tfidf_transformer = TfidfTransformer()
@@ -254,7 +254,7 @@ X_train_tfidf.shape
 
 ### Training a classifier
 
-Now that we have our features in `X_train_tfidf`, we can train a classifier to try to predict the category of a post. Let's start with a [naïve Bayes](https://scikit-learn.org/1.7/modules/naive_bayes.html#naive-bayes) classifier, which provides a nice baseline for this task. `scikit-learn` includes several variants of this classifier, and the one most suitable for word counts is the *multinomial*[^7] variant:
+Now that we have our features in `X_train_tfidf`, we can train a classifier to try to predict the category of a post. Let's start with a <a href="https://scikit-learn.org/1.7/modules/naive_bayes.html#naive-bayes" target="_blank">naïve Bayes</a> classifier, which provides a nice baseline for this task. `scikit-learn` includes several variants of this classifier, and the one most suitable for word counts is the *multinomial*[^7] variant:
 
 ```python
 from sklearn.naive_bayes import MultinomialNB
@@ -306,7 +306,7 @@ for doc, category in zip(docs_new, predicted):
 
 ## Building a Pipeline
 
-In order to make the vectorizer => transformer => classifier easier to work with, `scikit-learn` provides a [`Pipeline`](https://scikit-learn.org/1.7/modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline) class that behaves like a compound classifier:
+In order to make the vectorizer => transformer => classifier easier to work with, `scikit-learn` provides a <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" target="_blank">`Pipeline`</a> class that behaves like a compound classifier:
 
 ```python
 from sklearn.pipeline import Pipeline
@@ -360,7 +360,7 @@ We achieved 83.5% accuracy.
 
 ### Train and Test a Support Vector Machine
 
-Let's see if we can do better with a linear [support vector machine (SVM)](https://scikit-learn.org/1.7/modules/svm.html#svm), which is widely regarded as one of the best text classification algorithms (although it's also a bit slower than naïve Bayes). We can change the learner by simply plugging a different classifier object into our pipeline:
+Let's see if we can do better with a linear <a href="https://scikit-learn.org/1.7/modules/svm.html#svm" target="_blank">support vector machine (SVM)</a>, which is widely regarded as one of the best text classification algorithms (although it's also a bit slower than naïve Bayes). We can change the learner by simply plugging a different classifier object into our pipeline:
 
 ```python
 from sklearn.linear_model import SGDClassifier
@@ -519,7 +519,7 @@ The `cv_results_` parameter can be easily imported into pandas as a `DataFrame` 
 
 ### Setup for All the Exercises
 
-The source code for these exercises is [on GitHub](https://github.com/scikit-learn/scikit-learn/tree/1.4.X/doc/tutorial/text_analytics).
+The source code for these exercises is <a href="https://github.com/scikit-learn/scikit-learn/tree/1.4.X/doc/tutorial/text_analytics" target="_blank">on GitHub</a>.
 
 The tutorial folder on GitHub should contain the following sub-folders:
 
@@ -587,12 +587,12 @@ Bonus point if the utility is able to give a confidence level for its prediction
 
 Here are a few suggestions to help further your scikit-learn intuition upon the completion of this tutorial:
 
-- Try playing around with the `analyzer` and `token normalisation` under [`CountVectorizer`](https://scikit-learn.org/1.7/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#sklearn.feature_extraction.text.CountVectorizer).
-- If you don't have labels, try using [Clustering](https://scikit-learn.org/1.7/auto_examples/text/plot_document_clustering.html#sphx-glr-auto-examples-text-plot-document-clustering-py) on your problem.
-- If you have multiple labels per document, e.g. categories, have a look at the [Multiclass and multilabel section](https://scikit-learn.org/1.7/modules/multiclass.html#multiclass).
-- Try using [Truncated SVD](https://scikit-learn.org/1.7/modules/decomposition.html#lsa) for [latent semantic analysis](https://en.wikipedia.org/wiki/Latent_semantic_analysis).
-- Have a look at using [Out-of-core Classification](https://scikit-learn.org/1.7/auto_examples/applications/plot_out_of_core_classification.html#sphx-glr-auto-examples-applications-plot-out-of-core-classification-py) to learn from data that would not fit into the computer main memory.
-- Have a look at the [Hashing Vectorizer](https://scikit-learn.org/1.7/modules/feature_extraction.html#hashing-vectorizer) as a memory efficient alternative to [`CountVectorizer`](https://scikit-learn.org/1.7/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#sklearn.feature_extraction.text.CountVectorizer).
+- Try playing around with the `analyzer` and `token normalisation` under <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#sklearn.feature_extraction.text.CountVectorizer" target="_blank">`CountVectorizer`</a>.
+- If you don't have labels, try using <a href="https://scikit-learn.org/1.7/auto_examples/text/plot_document_clustering.html#sphx-glr-auto-examples-text-plot-document-clustering-py" target="_blank">Clustering</a> on your problem.
+- If you have multiple labels per document, e.g. categories, have a look at the <a href="https://scikit-learn.org/1.7/modules/multiclass.html#multiclass" target="_blank">Multiclass and multilabel section</a>.
+- Try using <a href="https://scikit-learn.org/1.7/modules/decomposition.html#lsa" target="_blank">Truncated SVD</a> for <a href="https://en.wikipedia.org/wiki/Latent_semantic_analysis" target="_blank">latent semantic analysis</a>.
+- Have a look at using <a href="https://scikit-learn.org/1.7/auto_examples/applications/plot_out_of_core_classification.html#sphx-glr-auto-examples-applications-plot-out-of-core-classification-py" target="_blank">Out-of-core Classification</a> to learn from data that would not fit into the computer main memory.
+- Have a look at the <a href="https://scikit-learn.org/1.7/modules/feature_extraction.html#hashing-vectorizer" target="_blank">Hashing Vectorizer</a> as a memory efficient alternative to <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#sklearn.feature_extraction.text.CountVectorizer" target="_blank">`CountVectorizer`</a>.
 
 ## What's New in scikit-learn 1.7 for Text Processing
 
@@ -610,7 +610,7 @@ scikit-learn 1.7 introduces several enhancements that improve the text processin
 
 ---
 
-This [original version](https://scikit-learn.org/1.4/tutorial/text_analytics/working_with_text_data.html) of this tutorial was written by scikit-learn developers under a [BSD License](https://opensource.org/license/BSD-3-clause).  
+This <a href="https://scikit-learn.org/1.4/tutorial/text_analytics/working_with_text_data.html" target="_blank">original version</a> of this tutorial was written by scikit-learn developers under a <a href="https://opensource.org/license/BSD-3-clause" target="_blank">BSD License</a>.  
 
 The code examples and text were updated for scikit-learn version 1.7 by Brian Bird, 10/23/2025
 

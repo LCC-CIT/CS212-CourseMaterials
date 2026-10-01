@@ -38,7 +38,7 @@ author: Brian Bird
 
 - **Week 8 is the last week to drop a class or change grade options**
   This <u>Friday, November 21</u> is the last day to make fall term schedule changes. This includes adding or dropping a course, withdrawing, taking an incomplete, or changing grading methods. 
-  **Note**: Students should <u>always</u> consult [an academic advisor](https://www.lanecc.edu/get-support/academic-support/academic-advising) and/or [financial aid](https://www.lanecc.edu/costs-admission/paying-college/financial-aid) representative before making these changes, especially withdrawing. These types of changes can potentially have implications for academic progress and/or financial aid awards. 
+  **Note**: Students should <u>always</u> consult <a href="https://www.lanecc.edu/get-support/academic-support/academic-advising" target="_blank">an academic advisor</a> and/or <a href="https://www.lanecc.edu/costs-admission/paying-college/financial-aid" target="_blank">financial aid</a> representative before making these changes, especially withdrawing. These types of changes can potentially have implications for academic progress and/or financial aid awards. 
 
 - **LCC Team Gets First Place at QuackHacks!**
 
@@ -73,12 +73,12 @@ Registration for winter term is open. If you are pursuing the AAS in Software De
 
 ### Relevant Links:
 
-- [Degree Requirements](https://lanecc.smartcatalogiq.com/en/current/lcc-catalog/programs-of-study/computer-information-technology/software-development-aas) for AAS in Software Dev
-- [Term-By-Term Sample Planner](https://docs.google.com/document/d/1F8CJY1M7A4J9uJtGRDFRyF-0j7l2AVe0vpPE5vcfHXE/edit?tab=t.0) for AAS in Software Dev
+- <a href="https://lanecc.smartcatalogiq.com/en/current/lcc-catalog/programs-of-study/computer-information-technology/software-development-aas" target="_blank">Degree Requirements</a> for AAS in Software Dev
+- <a href="https://docs.google.com/document/d/1F8CJY1M7A4J9uJtGRDFRyF-0j7l2AVe0vpPE5vcfHXE/edit?tab=t.0" target="_blank">Term-By-Term Sample Planner</a> for AAS in Software Dev
 
 - [Winter 2026 Class Schedule](**CS135M  Beginning Mobile Application Development**)
-- [Academic Advising](https://lanecc.edu/advising)
-- [Registration](https://my.lanecc.edu/StudentRegistrationSsb/ssb/registration)
+- <a href="https://lanecc.edu/advising" target="_blank">Academic Advising</a>
+- <a href="https://my.lanecc.edu/StudentRegistrationSsb/ssb/registration" target="_blank">Registration</a>
 
 ## Q and A
 
@@ -130,6 +130,6 @@ Your project can be an entirely new app that incorporates some type of AI, or yo
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---

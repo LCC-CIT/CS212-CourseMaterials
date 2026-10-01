@@ -230,13 +230,13 @@ print(f"Name: {name}, Age: {age}")
 
 ## References
 
-- [**Python Data Structures**](https://docs.python.org/3/tutorial/datastructures.html)
+- <a href="https://docs.python.org/3/tutorial/datastructures.html" target="_blank">**Python Data Structures**</a>
   Part of the official Python Tutorial. Covers: lists, tuples, sets, and dictionaries.
 - **W3Schools Python Collections**
-  - [Python Lists](https://www.w3schools.com/python/python_lists.asp)
-  - [Python Tuples](https://www.w3schools.com/python/python_tuples.asp)
-  - [Python Sets](https://www.w3schools.com/python/python_sets.asp)
-  - [Python Dictionaries](https://www.w3schools.com/python/python_dictionaries.asp)
+  - <a href="https://www.w3schools.com/python/python_lists.asp" target="_blank">Python Lists</a>
+  - <a href="https://www.w3schools.com/python/python_tuples.asp" target="_blank">Python Tuples</a>
+  - <a href="https://www.w3schools.com/python/python_sets.asp" target="_blank">Python Sets</a>
+  - <a href="https://www.w3schools.com/python/python_dictionaries.asp" target="_blank">Python Dictionaries</a>
 
 
 
@@ -245,6 +245,6 @@ Note: This document was drafted using Gemini 2.5 Flash
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---

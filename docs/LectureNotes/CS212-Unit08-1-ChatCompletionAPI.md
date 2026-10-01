@@ -284,17 +284,17 @@ brew install gemini-cli
 
 This is a separate tool from the Python SDK and is used for non-scripted, terminal-based interaction.
 
-To see a step-by-step guide on setting up the CLI, you can watch this video: [Google Gemini CLI: AI in Your Terminal (Windows • Linux • macOS)](https://www.youtube.com/watch?v=xqvprnPocHs). This video provides instructions for installing and using the command-line interface, which is the tool that can be installed using Homebrew.
+To see a step-by-step guide on setting up the CLI, you can watch this video: <a href="https://www.youtube.com/watch?v=xqvprnPocHs" target="_blank">Google Gemini CLI: AI in Your Terminal (Windows • Linux • macOS)</a>. This video provides instructions for installing and using the command-line interface, which is the tool that can be installed using Homebrew.
 
 
 
 ## Reference
 
-[Free Gemini Pro Subscription for Students](https://gemini.google/sg/students/?hl=en)
+<a href="https://gemini.google/sg/students/?hl=en" target="_blank">Free Gemini Pro Subscription for Students</a>
 
-[Google AI Studio](https://aistudio.google.com/app/)
+<a href="https://aistudio.google.com/app/" target="_blank">Google AI Studio</a>
 
-[Google Gemini API Docs](https://ai.google.dev/gemini-api/docs)
+<a href="https://ai.google.dev/gemini-api/docs" target="_blank">Google Gemini API Docs</a>
 
 
 
@@ -302,6 +302,6 @@ Note: Parts of this document were drafted using Gemini Flash 2.5 (2025).
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 lecture notes by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 lecture notes by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---

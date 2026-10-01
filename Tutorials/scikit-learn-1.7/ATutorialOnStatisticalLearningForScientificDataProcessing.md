@@ -4,11 +4,11 @@
 
 Statistical learning
 
-[Machine learning](https://en.wikipedia.org/wiki/Machine_learning) is a technique with a growing importance, as the size of the datasets experimental sciences are facing is rapidly growing. Problems it tackles range from building a prediction function linking different observations, to classifying observations, or learning the structure in an unlabeled dataset.
+<a href="https://en.wikipedia.org/wiki/Machine_learning" target="_blank">Machine learning</a> is a technique with a growing importance, as the size of the datasets experimental sciences are facing is rapidly growing. Problems it tackles range from building a prediction function linking different observations, to classifying observations, or learning the structure in an unlabeled dataset.
 
-This tutorial will explore *statistical learning*, the use of machine learning techniques with the goal of [statistical inference](https://en.wikipedia.org/wiki/Statistical_inference): drawing conclusions on the data at hand.
+This tutorial will explore *statistical learning*, the use of machine learning techniques with the goal of <a href="https://en.wikipedia.org/wiki/Statistical_inference" target="_blank">statistical inference</a>: drawing conclusions on the data at hand.
 
-Scikit-learn is a Python module integrating classic machine learning algorithms in the tightly-knit world of scientific Python packages ([NumPy](https://www.numpy.org/), [SciPy](https://scipy.org/), [matplotlib](https://matplotlib.org/)).
+Scikit-learn is a Python module integrating classic machine learning algorithms in the tightly-knit world of scientific Python packages (<a href="https://www.numpy.org/" target="_blank">NumPy</a>, <a href="https://scipy.org/" target="_blank">SciPy</a>, <a href="https://matplotlib.org/" target="_blank">matplotlib</a>).
 
 - [Statistical learning: the setting and the estimator object in scikit-learn](StatisticalLearningTheSettingAndTheEstimatorObjectInScikitLearn.md)
   - [Datasets](StatisticalLearningTheSettingAndTheEstimatorObjectInScikitLearn.md#datasets)
@@ -33,7 +33,7 @@ Scikit-learn is a Python module integrating classic machine learning algorithms 
 
 ---
 
-This original version of this tutorial was written by scikit-learn developers under the [BSD License](https://opensource.org/license/BSD-3-clause).  
+This original version of this tutorial was written by scikit-learn developers under the <a href="https://opensource.org/license/BSD-3-clause" target="_blank">BSD License</a>.  
 
 ---
 

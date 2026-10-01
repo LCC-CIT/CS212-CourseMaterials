@@ -71,9 +71,9 @@ The goals for this week are to:
 
 #### Office Hours
 
-- I have drop-in office hours on [Zoom](https://lanecc.zoom.us/j/8982554800) and in person, building 19, room 152 at these times:
+- I have drop-in office hours on <a href="https://lanecc.zoom.us/j/8982554800" target="_blank">Zoom</a> and in person, building 19, room 152 at these times:
 
-  - M, W 2:00–2:50 in building 19 room 152 (my office) &  [Zoom](https://lanecc.zoom.us/j/8982554800).
+  - M, W 2:00–2:50 in building 19 room 152 (my office) &  <a href="https://lanecc.zoom.us/j/8982554800" target="_blank">Zoom</a>.
   - Tu, Th 1:00–1:50 in building 19 room 135 (CIT lab).
 
   I'm available at other times too, just let me know when you'd like to meet. 
@@ -83,15 +83,15 @@ The goals for this week are to:
 Don't hesitate to reach out if you have questions, would like help debugging code, or anything else!
 
 - Email me: birdb@lanecc.edu
-- DM me on Discord: [@profbird](https://discord.com/users/795803452869443586)
+- DM me on Discord: <a href="https://discord.com/users/795803452869443586" target="_blank">@profbird</a>
 
 #### Tutoring
 
-There are tutors available in the CIT Lab, building 19, room 135, or [online](https://www.lanecc.edu/get-support/academic-support/academic-and-tutoring-services).
+There are tutors available in the CIT Lab, building 19, room 135, or <a href="https://www.lanecc.edu/get-support/academic-support/academic-and-tutoring-services" target="_blank">online</a>.
 
 #### Discord
 
-Ask questions in the class [Discussion channel](https://discord.com/channels/1290812758249701396/1324897172981809273). I'll answer questions pretty quickly on weekdays, often on Saturday and sometimes on Sunday. Other students will often help you too!
+Ask questions in the class <a href="https://discord.com/channels/1290812758249701396/1324897172981809273" target="_blank">Discussion channel</a>. I'll answer questions pretty quickly on weekdays, often on Saturday and sometimes on Sunday. Other students will often help you too!
 
 ### Class Participation
 
@@ -102,4 +102,4 @@ Ask questions in the class [Discussion channel](https://discord.com/channels/129
 
 
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, revised in 2026 are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, revised in 2026 are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 

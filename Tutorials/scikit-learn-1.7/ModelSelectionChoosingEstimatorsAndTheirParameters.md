@@ -34,7 +34,7 @@ To get a better measure of prediction accuracy (which we can use as a proxy for 
 [0.934..., 0.956..., 0.939...]
 ```
 
-This is called a [`KFold`](https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.KFold.html#sklearn.model_selection.KFold) cross-validation.
+This is called a <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.KFold.html#sklearn.model_selection.KFold" target="_blank">`KFold`</a> cross-validation.
 
 ## Cross-validation generators
 
@@ -65,11 +65,11 @@ The cross-validation can then be performed easily:
 [0.963..., 0.922..., 0.963..., 0.963..., 0.930...]
 ```
 
-The cross-validation score can be directly calculated using the [`cross_val_score`](https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.cross_val_score.html#sklearn.model_selection.cross_val_score) helper. Given an estimator, the cross-validation object and the input dataset, the [`cross_val_score`](https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.cross_val_score.html#sklearn.model_selection.cross_val_score) splits the data repeatedly into a training and a testing set, trains the estimator using the training set and computes the scores based on the testing set for each iteration of cross-validation.
+The cross-validation score can be directly calculated using the <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.cross_val_score.html#sklearn.model_selection.cross_val_score" target="_blank">`cross_val_score`</a> helper. Given an estimator, the cross-validation object and the input dataset, the <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.cross_val_score.html#sklearn.model_selection.cross_val_score" target="_blank">`cross_val_score`</a> splits the data repeatedly into a training and a testing set, trains the estimator using the training set and computes the scores based on the testing set for each iteration of cross-validation.
 
 By default the estimator’s `score` method is used to compute the individual scores.
 
-Refer the [metrics module](https://scikit-learn.org/1.7/modules/metrics.html#metrics) to learn more on the available scoring methods.
+Refer the <a href="https://scikit-learn.org/1.7/modules/metrics.html#metrics" target="_blank">metrics module</a> to learn more on the available scoring methods.
 
 ```python
 >>> cross_val_score(svc, X_digits, y_digits, cv=k_fold, n_jobs=-1)
@@ -88,25 +88,25 @@ array([0.96578289, 0.92708922, 0.96681476, 0.96362897, 0.93192644])
 
 **Cross-validation generators**
 
-| [`KFold`](https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.KFold.html#sklearn.model_selection.KFold) **(n_splits, shuffle, random_state)** | [`StratifiedKFold`](https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.StratifiedKFold.html#sklearn.model_selection.StratifiedKFold) **(n_splits, shuffle, random_state)** | [`GroupKFold`](https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.GroupKFold.html#sklearn.model_selection.GroupKFold) **(n_splits)** |
+| <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.KFold.html#sklearn.model_selection.KFold" target="_blank">`KFold`</a> **(n_splits, shuffle, random_state)** | <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.StratifiedKFold.html#sklearn.model_selection.StratifiedKFold" target="_blank">`StratifiedKFold`</a> **(n_splits, shuffle, random_state)** | <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.GroupKFold.html#sklearn.model_selection.GroupKFold" target="_blank">`GroupKFold`</a> **(n_splits)** |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Splits it into K folds, trains on K-1 and then tests on the left-out. | Same as K-Fold but preserves the class distribution within each fold. | Ensures that the same group is not in both testing and training sets. |
 
-| [`ShuffleSplit`](https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.ShuffleSplit.html#sklearn.model_selection.ShuffleSplit) **(n_splits, test_size, train_size, random_state)** | [`StratifiedShuffleSplit`](https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.StratifiedShuffleSplit.html#sklearn.model_selection.StratifiedShuffleSplit) | [`GroupShuffleSplit`](https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.GroupShuffleSplit.html#sklearn.model_selection.GroupShuffleSplit) |
+| <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.ShuffleSplit.html#sklearn.model_selection.ShuffleSplit" target="_blank">`ShuffleSplit`</a> **(n_splits, test_size, train_size, random_state)** | <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.StratifiedShuffleSplit.html#sklearn.model_selection.StratifiedShuffleSplit" target="_blank">`StratifiedShuffleSplit`</a> | <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.GroupShuffleSplit.html#sklearn.model_selection.GroupShuffleSplit" target="_blank">`GroupShuffleSplit`</a> |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Generates train/test indices based on random permutation.    | Same as shuffle split but preserves the class distribution within each iteration. | Ensures that the same group is not in both testing and training sets. |
 
-| [`LeaveOneGroupOut`](https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.LeaveOneGroupOut.html#sklearn.model_selection.LeaveOneGroupOut) **()** | [`LeavePGroupsOut`](https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.LeavePGroupsOut.html#sklearn.model_selection.LeavePGroupsOut)  **(n_groups)** | [`LeaveOneOut`](https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.LeaveOneOut.html#sklearn.model_selection.LeaveOneOut) **()** |
+| <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.LeaveOneGroupOut.html#sklearn.model_selection.LeaveOneGroupOut" target="_blank">`LeaveOneGroupOut`</a> **()** | <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.LeavePGroupsOut.html#sklearn.model_selection.LeavePGroupsOut" target="_blank">`LeavePGroupsOut`</a>  **(n_groups)** | <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.LeaveOneOut.html#sklearn.model_selection.LeaveOneOut" target="_blank">`LeaveOneOut`</a> **()** |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Takes a group array to group observations.                   | Leave P groups out.                                          | Leave one observation out.                                   |
 
-| [`LeavePOut`](https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.LeavePOut.html#sklearn.model_selection.LeavePOut) **(p)** | [`PredefinedSplit`](https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.PredefinedSplit.html#sklearn.model_selection.PredefinedSplit) |
+| <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.LeavePOut.html#sklearn.model_selection.LeavePOut" target="_blank">`LeavePOut`</a> **(p)** | <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.PredefinedSplit.html#sklearn.model_selection.PredefinedSplit" target="_blank">`PredefinedSplit`</a> |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Leave P observations out.                                    | Generates train/test indices based on predefined splits.     |
 
 **Exercise**
 
-On the digits dataset, plot the cross-validation score of a [`SVC`](https://scikit-learn.org/1.7/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC) estimator with a linear kernel as a function of parameter `C` (use a logarithmic grid of points, from 1 to 10).
+On the digits dataset, plot the cross-validation score of a <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC" target="_blank">`SVC`</a> estimator with a linear kernel as a function of parameter `C` (use a logarithmic grid of points, from 1 to 10).
 
 ```python
 >>> import numpy as np
@@ -146,7 +146,7 @@ GridSearchCV(cv=None,...
 0.943...
 ```
 
-By default, the [`GridSearchCV`](https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV) uses a 5-fold cross-validation. However, if it detects that a classifier is passed, rather than a regressor, it uses a stratified 5-fold.
+By default, the <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV" target="_blank">`GridSearchCV`</a> uses a 5-fold cross-validation. However, if it detects that a classifier is passed, rather than a regressor, it uses a stratified 5-fold.
 
 Nested cross-validation
 
@@ -155,7 +155,7 @@ Nested cross-validation
 array([0.938..., 0.963..., 0.944...])
 ```
 
-Two cross-validation loops are performed in parallel: one by the [`GridSearchCV`](https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV) estimator to set `gamma` and the other one by `cross_val_score` to measure the prediction performance of the estimator. The resulting scores are unbiased estimates of the prediction score on new data.
+Two cross-validation loops are performed in parallel: one by the <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV" target="_blank">`GridSearchCV`</a> estimator to set `gamma` and the other one by `cross_val_score` to measure the prediction performance of the estimator. The resulting scores are unbiased estimates of the prediction score on new data.
 
 Warning
 
@@ -163,7 +163,7 @@ You cannot nest objects with parallel computing (`n_jobs` different than 1).
 
 ### Cross-validated estimators
 
-Cross-validation to set a parameter can be done more efficiently on an algorithm-by-algorithm basis. This is why, for certain estimators, scikit-learn exposes [Cross-validation: evaluating estimator performance](https://scikit-learn.org/1.7/modules/cross_validation.html#cross-validation) estimators that set their parameter automatically by cross-validation:
+Cross-validation to set a parameter can be done more efficiently on an algorithm-by-algorithm basis. This is why, for certain estimators, scikit-learn exposes <a href="https://scikit-learn.org/1.7/modules/cross_validation.html#cross-validation" target="_blank">Cross-validation: evaluating estimator performance</a> estimators that set their parameter automatically by cross-validation:
 
 ```python
 >>> from sklearn import linear_model, datasets
@@ -195,7 +195,7 @@ X, y = datasets.load_diabetes(return_X_y=True)
 X = X[:150]
 ```
 
-**Solution:** [Cross-validation on diabetes Dataset Exercise](https://scikit-learn.org/1.7/auto_examples/exercises/plot_cv_diabetes.html#sphx-glr-auto-examples-exercises-plot-cv-diabetes-py)
+**Solution:** <a href="https://scikit-learn.org/1.7/auto_examples/exercises/plot_cv_diabetes.html#sphx-glr-auto-examples-exercises-plot-cv-diabetes-py" target="_blank">Cross-validation on diabetes Dataset Exercise</a>
 
 ## Enhanced Model Selection Features in scikit-learn 1.7
 
@@ -288,7 +288,7 @@ These enhancements maintain full backward compatibility while providing more fle
 
 ---
 
-This original version of this tutorial was written by scikit-learn developers under the [BSD License](https://opensource.org/license/BSD-3-clause).  
+This original version of this tutorial was written by scikit-learn developers under the <a href="https://opensource.org/license/BSD-3-clause" target="_blank">BSD License</a>.  
 
 ---
 

@@ -176,18 +176,18 @@ Let's say we want to do inference on two new posts. The posts have these words (
 
 ## Reference
 
-[Thomas Bayes](https://en.wikipedia.org/wiki/Thomas_Bayes)&mdash;Wikipedia
+<a href="https://en.wikipedia.org/wiki/Thomas_Bayes" target="_blank">Thomas Bayes</a>&mdash;Wikipedia
 
-[Bayes' Rule - Explained for Beginners](https://www.freecodecamp.org/news/bayes-rule-explained/)&mdash;FreeCodeCamp
+<a href="https://www.freecodecamp.org/news/bayes-rule-explained/" target="_blank">Bayes' Rule - Explained for Beginners</a>&mdash;FreeCodeCamp
 
-[An Intuitive (and Short) Explanation of Bayes’ Theorem](https://betterexplained.com/articles/an-intuitive-and-short-explanation-of-bayes-theorem/)&mdash;Better Explained
+<a href="https://betterexplained.com/articles/an-intuitive-and-short-explanation-of-bayes-theorem/" target="_blank">An Intuitive (and Short) Explanation of Bayes’ Theorem</a>&mdash;Better Explained
 
-[Naive Bayes classification](https://course.elementsofai.com/3/3)&mdash;Elements of AI, Part 1: Introduction to AI, "Real world AI". MiniLearn. 2024.
+<a href="https://course.elementsofai.com/3/3" target="_blank">Naive Bayes classification</a>&mdash;Elements of AI, Part 1: Introduction to AI, "Real world AI". MiniLearn. 2024.
 
-[^1]: [Number of Days per Month/Year with Rainfall](https://www.weather.gov/media/pqr/climate/ClimateBookEugene/pg78.pdf)&mdash;National Weather Service
+[^1]: <a href="https://www.weather.gov/media/pqr/climate/ClimateBookEugene/pg78.pdf" target="_blank">Number of Days per Month/Year with Rainfall</a>&mdash;National Weather Service
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) Intro to AI lecture notes by [Brian Bird](https://profbird.dev), written in 2024 revised in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> Intro to AI lecture notes by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in 2024 revised in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 MS Copilot GPT-4 was used to draft parts of these notes.

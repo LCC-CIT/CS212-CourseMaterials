@@ -110,11 +110,11 @@ for x in range(1, 5):
 
 ## References
 
-- [**Python Looping Techniques **](https://docs.python.org/3/tutorial/datastructures.html#looping-techniques)
+- <a href="https://docs.python.org/3/tutorial/datastructures.html#looping-techniques" target="_blank">**Python Looping Techniques **</a>
   Part of the official Python Tutorial.
 - **W3Schools Python Loops**
-  - [Python while loops](https://www.w3schools.com/python/python_while_loops.asp)
-  - [Python for Loops](https://www.w3schools.com/python/python_for_loops.asp)
+  - <a href="https://www.w3schools.com/python/python_while_loops.asp" target="_blank">Python while loops</a>
+  - <a href="https://www.w3schools.com/python/python_for_loops.asp" target="_blank">Python for Loops</a>
 
 
 
@@ -123,6 +123,6 @@ Note: This document was drafted using Gemini 2.5 Flash
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---

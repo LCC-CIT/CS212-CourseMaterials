@@ -151,7 +151,7 @@ Great choice, Brian — music genre classification is a rich playground for expe
 - **Overview**: 1,000 audio tracks (30 seconds each) across 10 genres: blues, classical, country, disco, hip-hop, jazz, metal, pop, reggae, and rock.
 - **Format**: WAV files, mono channel, 22,050 Hz sampling rate.
 - **Use Case**: Ideal for baseline models and quick prototyping.
-- [Dataset details](https://github.com/crgoku7/MusicGenreClassification)
+- <a href="https://github.com/crgoku7/MusicGenreClassification" target="_blank">Dataset details</a>
 
 ---
 
@@ -160,7 +160,7 @@ Great choice, Brian — music genre classification is a rich playground for expe
 - **Overview**: 16 genre categories with audio samples transformed into spectrograms.
 - **Strength**: Designed for transfer learning; good for experimenting with visual features from audio.
 - **Bonus**: Comes with a demo and pretrained models.
-- [Explore on Hugging Face](https://huggingface.co/ccmusic-database/music_genre)
+- <a href="https://huggingface.co/ccmusic-database/music_genre" target="_blank">Explore on Hugging Face</a>
 
 ---
 
@@ -169,7 +169,7 @@ Great choice, Brian — music genre classification is a rich playground for expe
 - **Overview**: Metadata and audio features for 1 million songs (no raw audio).
 - **Strength**: Excellent for large-scale genre prediction using features like tempo, loudness, and key.
 - **Note**: Often paired with the Echo Nest API for richer data.
-- [Project overview](https://bing.com/search?q=music+genre+classification+training+datasets)
+- <a href="https://bing.com/search?q=music+genre+classification+training+datasets" target="_blank">Project overview</a>
 
 ---
 
@@ -647,9 +647,9 @@ Design a questionnaire with Likert-scale items (e.g. “I enjoy social gathering
 ---
 
 ## 🧰 Tools & Data Sources
-- [O*NET](https://www.onetonline.org/) for personality–career mappings
-- [DISC GitHub implementation](https://github.com/lscarso/DISC) with centroid logic in Excel
-- [Scikit-learn’s NearestCentroid](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestCentroid.html) for fast prototyping
+- <a href="https://www.onetonline.org/" target="_blank">O*NET</a> for personality–career mappings
+- <a href="https://github.com/lscarso/DISC" target="_blank">DISC GitHub implementation</a> with centroid logic in Excel
+- <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestCentroid.html" target="_blank">Scikit-learn’s NearestCentroid</a> for fast prototyping
 
 ---
 
@@ -990,7 +990,7 @@ Yes — there are several well‑known, openly available Big Five (OCEAN) person
 ---
 
 ### 📂 1. **Big Five Trait Scores — 307,313 Participants**
-- **Source**: [GitHub – automoto/big-five-data](https://github.com/automoto/big-five-data)  
+- **Source**: <a href="https://github.com/automoto/big-five-data" target="_blank">GitHub – automoto/big-five-data</a>  
 - **Details**: Scores for Agreeableness, Extraversion, Openness, Conscientiousness, and Neuroticism, calculated from the IPIP‑NEO‑300 questionnaire.  
 - **Format**: CSV and SQLite database, with demographic fields (country, age, sex) and normalized trait scores (0–1).  
 - **Strength**: Large, diverse, and based on one of the most accurate public‑domain Big Five instruments.
@@ -998,7 +998,7 @@ Yes — there are several well‑known, openly available Big Five (OCEAN) person
 ---
 
 ### 📂 2. **Big Five Personality Test — 1M+ Responses**
-- **Source**: [Kaggle – Big Five Personality Test](https://www.kaggle.com/datasets/tunguz/big-five-personality-test)  
+- **Source**: <a href="https://www.kaggle.com/datasets/tunguz/big-five-personality-test" target="_blank">Kaggle – Big Five Personality Test</a>  
 - **Details**: Over 1,015,000 questionnaire answers to 50 IPIP‑based items, collected by Open Psychometrics.  
 - **Format**: CSV (~416 MB) with 110 columns, including item‑level responses and derived trait scores.  
 - **Strength**: Massive scale, item‑level granularity, and well‑documented codebook.
@@ -1006,7 +1006,7 @@ Yes — there are several well‑known, openly available Big Five (OCEAN) person
 ---
 
 ### 📂 3. **Open Psychometrics Raw Data**
-- **Source**: [OpenPsychometrics.org – BIG5 dataset](https://openpsychometrics.org/_rawdata/)  
+- **Source**: <a href="https://openpsychometrics.org/_rawdata/" target="_blank">OpenPsychometrics.org – BIG5 dataset</a>  
 - **Details**: 50 Likert‑rated statements from the International Personality Item Pool, plus demographics (gender, age, race, native language, country).  
 - **Size**: ~19,700 participants.  
 - **Strength**: Clean, anonymized, and easy to parse; great for smaller‑scale experiments.

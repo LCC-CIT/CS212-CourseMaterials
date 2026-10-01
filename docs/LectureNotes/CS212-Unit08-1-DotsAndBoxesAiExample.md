@@ -112,13 +112,13 @@ By enforcing the JSON output format, you eliminate the risk of the model adding 
 
 ## Reference
 
-[Free Gemini Pro Subscription for Students](https://gemini.google/sg/students/?hl=en)
+<a href="https://gemini.google/sg/students/?hl=en" target="_blank">Free Gemini Pro Subscription for Students</a>
 
-[Google AI Studio](https://aistudio.google.com/app/)
+<a href="https://aistudio.google.com/app/" target="_blank">Google AI Studio</a>
 
-[Google Gemini API Docs](https://ai.google.dev/gemini-api/docs)
+<a href="https://ai.google.dev/gemini-api/docs" target="_blank">Google Gemini API Docs</a>
 
-[Building an LLM-Powered Text-Based AI RPG](https://www.youtube.com/watch?v=YVuoIxil9Sw)&mdash; This video shows how an LLM can be used to drive game mechanics in a text-based RPG.
+<a href="https://www.youtube.com/watch?v=YVuoIxil9Sw" target="_blank">Building an LLM-Powered Text-Based AI RPG</a>&mdash; This video shows how an LLM can be used to drive game mechanics in a text-based RPG.
 
 
 
@@ -126,6 +126,6 @@ Note: Parts of this document were drafted using Gemini Flash 2.5 (2025).
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 lecture notes by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 lecture notes by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---

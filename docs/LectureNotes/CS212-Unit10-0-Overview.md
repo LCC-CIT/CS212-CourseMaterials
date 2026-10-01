@@ -73,15 +73,15 @@ If you are pursuing the AAS in Software Development, these are the recommended c
 
 - Relevant Links:
 
-  - [Degree Requirements](https://lanecc.smartcatalogiq.com/en/current/lcc-catalog/programs-of-study/computer-information-technology/software-development-aas) for AAS in Software Dev
+  - <a href="https://lanecc.smartcatalogiq.com/en/current/lcc-catalog/programs-of-study/computer-information-technology/software-development-aas" target="_blank">Degree Requirements</a> for AAS in Software Dev
 
-  - [Term-By-Term Sample Planner](https://docs.google.com/document/d/1F8CJY1M7A4J9uJtGRDFRyF-0j7l2AVe0vpPE5vcfHXE/edit?tab=t.0) for AAS in Software Dev
+  - <a href="https://docs.google.com/document/d/1F8CJY1M7A4J9uJtGRDFRyF-0j7l2AVe0vpPE5vcfHXE/edit?tab=t.0" target="_blank">Term-By-Term Sample Planner</a> for AAS in Software Dev
 
   - [Winter 2026 Class Schedule](**CS135M  Beginning Mobile Application Development**)
 
-  - [Academic Advising](https://lanecc.edu/advising)
+  - <a href="https://lanecc.edu/advising" target="_blank">Academic Advising</a>
 
-  - [Registration](https://my.lanecc.edu/StudentRegistrationSsb/ssb/registration)
+  - <a href="https://my.lanecc.edu/StudentRegistrationSsb/ssb/registration" target="_blank">Registration</a>
 
 ### Last Day for Submissions
 
@@ -89,7 +89,7 @@ Any late assignments are due by the end of the day on **12/9, Tuesday of next we
 
 ### Global Game Jam
 
-**Save the date! Jan 30&ndash;Feb 1, 2026**. LCC is hosting this game jam in the CIT Lab, building 19, room 135. Food and drinks will be provided. Come build a game!  [Registration is now open](https://globalgamejam.org/jam-sites/2026/lcc-bitforest-ggj26)
+**Save the date! Jan 30&ndash;Feb 1, 2026**. LCC is hosting this game jam in the CIT Lab, building 19, room 135. Food and drinks will be provided. Come build a game!  <a href="https://globalgamejam.org/jam-sites/2026/lcc-bitforest-ggj26" target="_blank">Registration is now open</a>
 
 ## Q and A
 
@@ -125,6 +125,6 @@ Any late assignments are due by the end of the day on **12/9, Tuesday of next we
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---

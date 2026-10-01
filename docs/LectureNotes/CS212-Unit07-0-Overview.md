@@ -37,7 +37,7 @@ author: Brian Bird
 
 - **Snacks/Food available**
 
-  In light of the interruption of SNAP benefits, the CIT lab has an increased stock of free snack and lunch food. The [Titan Food Pantry](https://www.lanecc.edu/get-support/daily-living-support/titan-pantry-and-closet) has also has an increased stock and variety of food that is available for students.
+  In light of the interruption of SNAP benefits, the CIT lab has an increased stock of free snack and lunch food. The <a href="https://www.lanecc.edu/get-support/daily-living-support/titan-pantry-and-closet" target="_blank">Titan Food Pantry</a> has also has an increased stock and variety of food that is available for students.
 
 - **Reg Fest. 
 
@@ -56,12 +56,12 @@ Registration for winter term is open. If you are pursuing the AAS in Software De
 
 ### Relevant Links:
 
-- [Degree Requirements](https://lanecc.smartcatalogiq.com/en/current/lcc-catalog/programs-of-study/computer-information-technology/software-development-aas) for AAS in Software Dev
-- [Term-By-Term Sample Planner](https://docs.google.com/document/d/1F8CJY1M7A4J9uJtGRDFRyF-0j7l2AVe0vpPE5vcfHXE/edit?tab=t.0) for AAS in Software Dev
+- <a href="https://lanecc.smartcatalogiq.com/en/current/lcc-catalog/programs-of-study/computer-information-technology/software-development-aas" target="_blank">Degree Requirements</a> for AAS in Software Dev
+- <a href="https://docs.google.com/document/d/1F8CJY1M7A4J9uJtGRDFRyF-0j7l2AVe0vpPE5vcfHXE/edit?tab=t.0" target="_blank">Term-By-Term Sample Planner</a> for AAS in Software Dev
 
 - [Winter 2026 Class Schedule](**CS135M  Beginning Mobile Application Development**)
-- [Academic Advising](https://lanecc.edu/advising)
-- [Registration](https://my.lanecc.edu/StudentRegistrationSsb/ssb/registration)
+- <a href="https://lanecc.edu/advising" target="_blank">Academic Advising</a>
+- <a href="https://my.lanecc.edu/StudentRegistrationSsb/ssb/registration" target="_blank">Registration</a>
 
 ## Q and A
 
@@ -111,6 +111,6 @@ Submit a project proposal before starting on your app.
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---

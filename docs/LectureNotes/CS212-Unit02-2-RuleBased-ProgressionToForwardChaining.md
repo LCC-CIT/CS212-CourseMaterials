@@ -433,7 +433,7 @@ print("====================================")
 
 ## References
 
-- [What are Expert Systems in Artificial Intelligence?](https://www.mygreatlearning.com/blog/expert-systems-in-artificial-intelligence/) By [Samudyata Bhat](https://www.mygreatlearning.com/blog/author/samudyata/) Updated on Feb 6, 2025 on Great Learning.
+- <a href="https://www.mygreatlearning.com/blog/expert-systems-in-artificial-intelligence/" target="_blank">What are Expert Systems in Artificial Intelligence?</a> By <a href="https://www.mygreatlearning.com/blog/author/samudyata/" target="_blank">Samudyata Bhat</a> Updated on Feb 6, 2025 on Great Learning.
 - 
 
 Note: Some parts of this document were initially drafted with assistance from Gemini 2.5 Flash
@@ -441,6 +441,6 @@ Note: Some parts of this document were initially drafted with assistance from Ge
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 [^1]: TBD

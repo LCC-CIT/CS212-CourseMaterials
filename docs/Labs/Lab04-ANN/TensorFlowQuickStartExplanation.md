@@ -67,7 +67,7 @@ This tutorial provides a hands-on introduction to building a simple neural netwo
 
 ## Reference
 
-[TensorFlow 2 quickstart for beginners](https://www.tensorflow.org/tutorials/quickstart/beginner),
+<a href="https://www.tensorflow.org/tutorials/quickstart/beginner" target="_blank">TensorFlow 2 quickstart for beginners</a>,
 
 Writen by Brian Bird, 11/4/2025 using Gemini Pro 2.5
 

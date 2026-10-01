@@ -56,9 +56,9 @@ These are freely available applications that incorporate MCP client code so that
 
 ## Reference
 
-[What is the Model Context Protocol (MCP)?](https://modelcontextprotocol.io/docs/getting-started/intro)&mdash;Model Context Protocol Project web site by Anthropic.
+<a href="https://modelcontextprotocol.io/docs/getting-started/intro" target="_blank">What is the Model Context Protocol (MCP)?</a>&mdash;Model Context Protocol Project web site by Anthropic.
 
-[Use MCP Servers](https://lmstudio.ai/docs/app/mcp)&mdash;LM Studio documentation.
+<a href="https://lmstudio.ai/docs/app/mcp" target="_blank">Use MCP Servers</a>&mdash;LM Studio documentation.
 
 
 
@@ -66,6 +66,6 @@ These are freely available applications that incorporate MCP client code so that
 
 ---
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming 1 lecture notes by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 lecture notes by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---

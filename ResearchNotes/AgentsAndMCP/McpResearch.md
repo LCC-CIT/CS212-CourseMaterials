@@ -60,7 +60,7 @@ A local server can integrate an AI agent into the developer's everyday workflow.
 
 ------
 
-This video discusses building a remote MCP server, which is a related topic, as the core principles of creating an MCP server are similar whether it's deployed locally or remotely: [Building Remote MCP Servers](https://m.youtube.com/watch?v=b9cwTqr1cKo).
+This video discusses building a remote MCP server, which is a related topic, as the core principles of creating an MCP server are similar whether it's deployed locally or remotely: <a href="https://m.youtube.com/watch?v=b9cwTqr1cKo" target="_blank">Building Remote MCP Servers</a>.
 
 This is an excellent idea for a freshman AI programming class! The Model Context Protocol (MCP) and agentic workflows are very current and give students a practical, hands-on understanding of how LLMs connect to the real world.
 

@@ -29,7 +29,7 @@ author: Brian Bird
 
 ### Objective:
 
-Your goal is to apply the exact same steps as those in the "[Basic image classification](https://www.tensorflow.org/tutorials/keras/classification)" tutorial (which used the Fashion MNIST dataset) to a new, KMNIST dataset, which is a collection of 10 classical Japanese "Kuzushiji" characters.
+Your goal is to apply the exact same steps as those in the "<a href="https://www.tensorflow.org/tutorials/keras/classification" target="_blank">Basic image classification</a>" tutorial (which used the Fashion MNIST dataset) to a new, KMNIST dataset, which is a collection of 10 classical Japanese "Kuzushiji" characters.
 
 This dataset contains 70,000 (60,000 training, 10,000 testing) 28x28 grayscale images of 10 different classical Japanese characters.
 
@@ -325,7 +325,7 @@ The main focus of grading will be on use of the sckit-learn classes and problem 
 
 ------
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) AI Programming lab instructions by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming lab instructions by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ------------
 

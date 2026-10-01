@@ -24,7 +24,7 @@ Here are the things you should do to get ready for this course:
 
 1. Finish reading this guide.
 
-2. Read the [Syllabus](https://lcc-cit.github.io/CS212-CourseMaterials/CS212_Syllabus.html).
+2. Read the <a href="https://lcc-cit.github.io/CS212-CourseMaterials/CS212_Syllabus.html" target="_blank">Syllabus</a>.
 
 3. Look at the [Software You Will Need](#software-you-will-need) section below and install any software you don't already have on your computer.
 4. Look at the **Week 1** module on Canvas (accessible from the course **Home** page):
@@ -38,7 +38,7 @@ Here are the things you should do to get ready for this course:
 
 ### Introduction to Canvas
 
-Canvas is the learning management system (LMS) used by Lane Community College. LCC's Canvas site is at [canvas.lanecc.edu](https://canvas.lanecc.edu). Once logged in with your LCC credentials, you can access our course from your Dashboard or Courses menu. The course **Home** page provides access to course modules, announcements, and assignments.
+Canvas is the learning management system (LMS) used by Lane Community College. LCC's Canvas site is at <a href="https://canvas.lanecc.edu" target="_blank">canvas.lanecc.edu</a>. Once logged in with your LCC credentials, you can access our course from your Dashboard or Courses menu. The course **Home** page provides access to course modules, announcements, and assignments.
 
 To learn how to use Canvas, click on the **Help** icon in the global navigation menu on the left side of Canvas. There you will find Canvas Guides and tutorials for students.
 
@@ -59,19 +59,19 @@ Come see me during office hours&mdash;drop in! No appointment needed. Come get h
 ### Software You Will Need
 
 - A web browser.
-- [Adobe Reader](https://get.adobe.com/reader/) for reading PDF files.
-- [VLC Media Player](https://www.videolan.org/vlc/) or another media player for viewing videos.
-- Office software such as [Microsoft Office 365](https://help.lanecc.edu/TDClient/389/Portal/KB/ArticleDet?ID=5328) (free for LCC students), [Google Docs](https://docs.google.com/), or [LibreOffice](https://www.libreoffice.org/).
-- [Zoom](https://zoom.us/) for participating in class or office hours remotely.
-- [Discord](https://discord.com/) for class communication and collaboration with your team.
+- <a href="https://get.adobe.com/reader/" target="_blank">Adobe Reader</a> for reading PDF files.
+- <a href="https://www.videolan.org/vlc/" target="_blank">VLC Media Player</a> or another media player for viewing videos.
+- Office software such as <a href="https://help.lanecc.edu/TDClient/389/Portal/KB/ArticleDet?ID=5328" target="_blank">Microsoft Office 365</a> (free for LCC students), <a href="https://docs.google.com/" target="_blank">Google Docs</a>, or <a href="https://www.libreoffice.org/" target="_blank">LibreOffice</a>.
+- <a href="https://zoom.us/" target="_blank">Zoom</a> for participating in class or office hours remotely.
+- <a href="https://discord.com/" target="_blank">Discord</a> for class communication and collaboration with your team.
   - Sign up for a free account, if you don't already have one. 
   - Join the class Discord server. Invitation link: TBD
-  - If you haven't used Discord before, [here's a 15 minute beginner's tutorial](https://youtu.be/rnYGrq95ezA?si=f2Bfrwu7WMJivcC6).
-- [VisualStudio Code](https://code.visualstudio.com), a code editor for Mac OS, Windows and Linux. You will use this for writing Python code.
-- [Python](https://www.python.org/) will be the programming language used for this class. There will be a quick intro to Python in the first week for those of you who don't know Python yet.
-- [Jupyter Notebooks](https://jupyter.org/) will be used for some of the programming examples and lab assignments.
-- [Google Colab](https://colab.research.google.com/) will be used for running and sharing Jupyter Notebooks online.
-- [Google Gemini for Students](https://gemini.google/students/): Google offers students a free one-year Pro subscription (Google One AI Premium) to their Gemini AI platform. We will use this in class when we incorporate calls to an LLM API in the apps we write.
+  - If you haven't used Discord before, <a href="https://youtu.be/rnYGrq95ezA?si=f2Bfrwu7WMJivcC6" target="_blank">here's a 15 minute beginner's tutorial</a>.
+- <a href="https://code.visualstudio.com" target="_blank">VisualStudio Code</a>, a code editor for Mac OS, Windows and Linux. You will use this for writing Python code.
+- <a href="https://www.python.org/" target="_blank">Python</a> will be the programming language used for this class. There will be a quick intro to Python in the first week for those of you who don't know Python yet.
+- <a href="https://jupyter.org/" target="_blank">Jupyter Notebooks</a> will be used for some of the programming examples and lab assignments.
+- <a href="https://colab.research.google.com/" target="_blank">Google Colab</a> will be used for running and sharing Jupyter Notebooks online.
+- <a href="https://gemini.google/students/" target="_blank">Google Gemini for Students</a>: Google offers students a free one-year Pro subscription (Google One AI Premium) to their Gemini AI platform. We will use this in class when we incorporate calls to an LLM API in the apps we write.
 
 
 ### Skills You Will Need
@@ -146,7 +146,7 @@ After your lab partner gives you a code review, you may revise your lab work and
 
 All course communication (via e-mail, Discord, Canvas Inbox, discussion forums, video chat, etc.) should be clear, concise, and respectful. Do your best to use complete sentences with standard spelling, grammar and punctuation.
 
-[The Core Rules of Netiquette](https://www.albion.com/netiquette/corerules.html) is a guide to respectful and constructive communication online.
+<a href="https://www.albion.com/netiquette/corerules.html" target="_blank">The Core Rules of Netiquette</a> is a guide to respectful and constructive communication online.
 
 We will be using Discord for communication and collaboration in this class. See the *Discord* page in the *Start Here* module on Canvas for an invitation link to the class Discord server. Questions about the course should be posted on Discord in the *Discussion* channel. Questions that relate specifically to you, such as grades or extensions, should be sent to your instructor via e-mail or Canvas Inbox. E-mails to your instructor or e-mails to another department regarding support issues should include your course number and section (online vs. hybrid/in person).
 
@@ -158,7 +158,7 @@ Course announcements will be posted by the instructor on Canvas Announcements an
 
 Help links can be found by clicking on the **Help** icon in the global navigation menu on the left side of Canvas. Canvas support is available 24/7 via live chat or phone, along with self-help Canvas Guides.
 
-Support information and technical assistance from LCC's Student Help Desk (SHeD) is also available at [support.lanecc.edu](https://support.lanecc.edu) or [library.lanecc.edu/shed](https://library.lanecc.edu/shed).
+Support information and technical assistance from LCC's Student Help Desk (SHeD) is also available at <a href="https://support.lanecc.edu" target="_blank">support.lanecc.edu</a> or <a href="https://library.lanecc.edu/shed" target="_blank">library.lanecc.edu/shed</a>.
 
 
 

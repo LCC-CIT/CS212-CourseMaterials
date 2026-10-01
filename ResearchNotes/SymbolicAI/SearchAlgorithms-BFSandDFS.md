@@ -124,9 +124,9 @@ Finding diagrams explicitly labeled with an open license can be tricky, but seve
 
 | Resource          | Description                                                  | Recommended Link                                             |
 | ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **VisuAlgo**      | An interactive tool specifically designed for learning data structures and algorithms. Its **Graph Data Structures** visualization is perfect for demonstrating different types of graphs and their properties. | [VisuAlgo: Graph Data Structures](https://visualgo.net/en/graphds) |
-| **GeeksforGeeks** | A standard computer science learning platform that offers clear, static diagrams and illustrations of various graph types and their real-world applications. | [Introduction to Graph Data Structure](https://www.geeksforgeeks.org/dsa/introduction-to-graphs-data-structure-and-algorithm-tutorials/) |
-| **freeCodeCamp**  | An article with simple, visual examples of nodes, edges, and cycles, often published under a Creative Commons license for broad educational use. | [Data Structures 101: Graphs](https://www.freecodecamp.org/news/data-structures-101-graphs-a-visual-introduction-for-beginners-6d88f36ec768/) |
+| **VisuAlgo**      | An interactive tool specifically designed for learning data structures and algorithms. Its **Graph Data Structures** visualization is perfect for demonstrating different types of graphs and their properties. | <a href="https://visualgo.net/en/graphds" target="_blank">VisuAlgo: Graph Data Structures</a> |
+| **GeeksforGeeks** | A standard computer science learning platform that offers clear, static diagrams and illustrations of various graph types and their real-world applications. | <a href="https://www.geeksforgeeks.org/dsa/introduction-to-graphs-data-structure-and-algorithm-tutorials/" target="_blank">Introduction to Graph Data Structure</a> |
+| **freeCodeCamp**  | An article with simple, visual examples of nodes, edges, and cycles, often published under a Creative Commons license for broad educational use. | <a href="https://www.freecodecamp.org/news/data-structures-101-graphs-a-visual-introduction-for-beginners-6d88f36ec768/" target="_blank">Data Structures 101: Graphs</a> |
 
 The video explains the difference between a graph and a tree data structure, offering more context for first-year college students. Introduction to Graph Data Structure - What is a Graph ? | Tress vs Graphs | Types & Real Examples
 
