@@ -264,7 +264,7 @@ X_digits, y_digits = datasets.load_digits(return_X_y=True)
 X_digits = X_digits / X_digits.max()
 ```
 
-A solution can be downloaded <a href="https://scikit-learn.org/1.7/_downloads/e4d278c5c3a8450d66b5dd01a57ae923/plot_digits_classification_exercise.py" target="_blank">`here`</a>.
+A solution can be downloaded <a href="https://scikit-learn.org/1.7/_downloads/e4d278c5c3a8450d66b5dd01a57ae923/plot_digits_classification_exercise.py" download target="_blank">`here`</a>.
 
 ## Support vector machines (SVMs)
 
@@ -364,7 +364,7 @@ y = y[y != 0]
 
 ![Iris Dataset](sphx_glr_plot_iris_dataset_001.png)
 
-A solution can be downloaded <a href="https://scikit-learn.org/1.7/_downloads/a3ad6892094cf4c9641b7b11f9263348/plot_iris_exercise.py" target="_blank">`here`</a>
+A solution can be downloaded <a href="https://scikit-learn.org/1.7/_downloads/a3ad6892094cf4c9641b7b11f9263348/plot_iris_exercise.py" download target="_blank">`here`</a>
 
 ## Enhanced Supervised Learning Features in scikit-learn 1.7
 

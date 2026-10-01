@@ -29,7 +29,7 @@ Build a reservation system that recommends a meeting room based on the number of
 | **16+ (Large)**   | Any              | Reservation Denied (No large rooms) |
 
 
-Translate the program from either <a href="roomReservations.js">JavaScript</a> or <a href="roomReservations.cs">C#</a> into Python
+Translate the program from either <a href="roomReservations.js" download>JavaScript</a> or <a href="roomReservations.cs" download>C#</a> into Python
 
 
 
