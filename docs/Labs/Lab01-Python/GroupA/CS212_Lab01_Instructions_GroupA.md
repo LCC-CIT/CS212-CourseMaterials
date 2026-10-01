@@ -27,7 +27,7 @@ This program calculates the shipping cost based on the package's *Weight (in kg)
 | **B** | $15.00       | $20.00           | $25.00        |
 | **C** | $20.00       | $25.00           | $30.00        |
 
-Translate the program from either [JavaScript](shippingCalculator.js) or [C#](shippingCalculator.cs) into Python
+Translate the program from either <a href="shippingCalculator.js">JavaScript</a> or <a href="shippingCalculator.cs">C#</a> into Python
 
 ### 2. Write a Python Program
 

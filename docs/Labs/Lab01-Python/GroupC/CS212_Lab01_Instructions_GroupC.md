@@ -28,7 +28,7 @@ Create a system that checks the compatibility of two core PC components: the **C
 | **Other**       | Any               | Incompatible          | Incompatible            |
 
 
-Translate the program from either [JavaScript](pcComponentCompatibility.js) or [C#](pcComponentCompatibility.cs) into Python
+Translate the program from either <a href="pcComponentCompatibility.js">JavaScript</a> or <a href="pcComponentCompatibility.cs">C#</a> into Python
 
 
 

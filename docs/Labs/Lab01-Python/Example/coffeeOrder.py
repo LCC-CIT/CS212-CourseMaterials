@@ -41,3 +41,13 @@ calculate_coffee_price("Large", "Oat")
 print("-" * 30)
 # Example 2: Small with Dairy Milk
 calculate_coffee_price("Small", "Dairy")
+
+
+# CLI Code to prompt for order details
+print("Coffee sizes: small, medium, large")
+order_size = input("Choose a coffee size: ").strip()
+
+print("Milk options: dairy, oat, almond")
+milk_type = input("Choose a milk type: ").strip()
+
+calculate_coffee_price(order_size, milk_type)

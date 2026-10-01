@@ -28,7 +28,7 @@ This is a simplified diagnostic system for a fictional clinic. The system should
 | False | True             | Cold/Allergies - Recommend over-the-counter medication.      |
 | False | False            | General Check-up - Patient appears healthy.                  |
 
-Translate the program from either [JavaScript](medicalDiagnosis.js) or [C#](medicalDiagnosis.cs) into [Python](medicalDiagnosis.py)
+Translate the program from either <a href="medicalDiagnosis.js">JavaScript</a> or <a href="medicalDiagnosis.cs">C#</a> into <a href="medicalDiagnosis.py">Python</a>
 
 ### 2. Write a Python Program
 
@@ -47,4 +47,4 @@ Write a program that calculates the price of a custom coffee order. The price is
 
 The program should take the size and milk type as input and output the final price.
 
-[Python solution](coffeeOrder.py)
+<a href="coffeeOrder.py">Python solution</a>

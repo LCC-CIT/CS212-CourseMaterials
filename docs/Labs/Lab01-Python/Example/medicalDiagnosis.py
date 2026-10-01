@@ -27,3 +27,20 @@ def diagnose_symptoms(has_fever, has_cough):
 diagnose_symptoms(True, True)
 # Example 2: False Fever, True Cough (Cold)
 diagnose_symptoms(False, True)
+
+# CLI UI 
+
+def ask_yes_no(question):
+    while True:
+        answer = input(f"{question} (yes/no): ").strip().lower()
+        if answer in ("yes", "y"):
+            return True
+        if answer in ("no", "n"):
+            return False
+        print("Please enter yes or no.")
+
+
+has_fever = ask_yes_no("Do you have a fever?")
+has_cough = ask_yes_no("Do you have a persistent cough?")
+diagnose_symptoms(has_fever, has_cough)
+
