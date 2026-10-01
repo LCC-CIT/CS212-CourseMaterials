@@ -279,8 +279,8 @@ for i in range(1, 10):
 
 ### Programming Paradigms of Python
 
-- **Multi‑paradigm, but not in equal balance**  
-  While Python supports OOP, functional programming, and procedural code, its sweet spot blends object orientation with functional elements — without the ceremony of C++ or C# and Java’s class scaffolding.
+- **Multi‑paradigm**  
+  While Python supports OOP, functional programming, and procedural code, its sweet spot blends object orientation with functional elements — without the ceremony of C++ or the full class features of C# and Java.
 - **Dynamic typing and duck typing**: Python favors type flexibility at runtime over compile‑time enforcement. Class types are implicit — *if it quacks and walks like a duck, it’s treated like a duck*.
 - **First‑class functions**: You can pass, return, and store functions just like data, which supports a more functional style than many C‑family languages.
 
