@@ -52,15 +52,14 @@ Most programming languages have many things in common:
 
 - They implement *algorithms*&mdash;think of an algorithm as a recipe or set of instructions for doing something.
 - They have a way to implement the three common *control structures*:
-  - Sequence
-  - Selection
-  - Repetition
+  - Sequence&mdash;executing code sequentially, one line after another.
+  - Selection&mdash;if and switch statements
+  - Repetition&mdash;loops
 - There are ways to define and call functions (aka procedures, methods, subroutines)
 - There are ways to represent structured data:
   - Strings
-  - Arrays 
-    Python has lists, which are similar. The NumPy library provides actual arrays.
-  - Dictionaries
+  - Arrays&mdash;Python has lists, which are similar. The NumPy library provides actual arrays.
+  - Dictionaries&mdash;Python's dictionaries are very similar to JavaScript objects.
 
 Once you've learned how to work with these concepts in one language, it's mostly just a mater of learning the new syntax for the next language you learn.
 
@@ -134,7 +133,7 @@ Hello, World! Python is running on Windows.
 
 ### MacOS
 
-While macOS comes with a system version of Python pre-installed, it's outdated and should not be used for development. We will install a modern version using **Homebrew**, the popular package manager for macOS.
+While macOS comes with a system version of Python pre-installed, it's outdated and should not be used for development. We will install an up to date version using *Homebrew*, a package manager for macOS.
 
 #### Check the version of Python
 
@@ -144,32 +143,28 @@ In the Terminal, run:
 python3 --version
 ```
 
-If it's older than 3.12 (or whtever the latest version is) then upate it.
+If it's older than 3.14 (the latest version in October 2026) then upate it.
 
 #### Install or Update Python
 
 ##### Install Homebrew (If You Don't Have It)
-Homebrew is a tool that makes installing developer software on Mac incredibly easy.
+Installation instructions are [here](https://docs.brew.sh/Installation).
 
-**Open the Terminal:**
+- Open the Terminal:
+  Press `Cmd + Space` and type "Terminal," then press Enter.
 
-Press `Cmd + Space` and type "Terminal," then press Enter.
+- Run the Homebrew installation command:
+  Copy and paste the following line into your Terminal and press Enter
 
-**Run the Homebrew installation command:**
+  ```
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  ```
 
-Copy and paste the following line into your Terminal and press Enter
+  The script will prompt you to enter your administrator password (it won't display as you type) and press Enter.
 
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-The script will prompt you to enter your administrator password (it won't display as you type) and press Enter.
-
-Follow any final on-screen instructions, such as adding Homebrew to your system's PATH.
+  Follow any final on-screen instructions, such as adding Homebrew to your system's PATH.
 
 ##### Install Python
-
-Once Homebrew is installed, installing Python is a single command.
 
 In the Terminal, run:
 
@@ -177,7 +172,7 @@ In the Terminal, run:
 brew install python
 ```
 
-Homebrew will download and install the latest stable version of Python (typically Python 3.x).
+Homebrew will download and install the latest stable version of Python.
 
 **Verify the Installation**
 
@@ -285,7 +280,7 @@ for i in range(1, 10):
 ### Programming Paradigms of Python
 
 - **Multi‑paradigm, but not in equal balance**  
-  While Python supports OOP, functional programming, and procedural code, its sweet spot blends object orientation with functional elements — without the ceremony of C++ or Java’s class scaffolding.
+  While Python supports OOP, functional programming, and procedural code, its sweet spot blends object orientation with functional elements — without the ceremony of C++ or C# and Java’s class scaffolding.
 - **Dynamic typing and duck typing**: Python favors type flexibility at runtime over compile‑time enforcement. Class types are implicit — *if it quacks and walks like a duck, it’s treated like a duck*.
 - **First‑class functions**: You can pass, return, and store functions just like data, which supports a more functional style than many C‑family languages.
 
@@ -330,7 +325,7 @@ Note: Parts of this document were drafted with assistance from Gemini 2.5 Flash 
 
 
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) Intro to AI Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
+[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) Intro to AI Course Materials by [Brian Bird](https://profbird.dev), written in <time>2025</time>, revised in 2026 are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). 
 
 [^1]: The FizzBuzz program iterates from 1 up to some specified limit.    It prints "Fizz" for multiples of 3, "Buzz" for multiples of 5, "FizzBuzz" for multiples of both, or just the number.
 
