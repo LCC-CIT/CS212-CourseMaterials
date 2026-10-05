@@ -203,14 +203,14 @@ View <a href="https://www.lanecc.edu/calendars/academic-calendar" target="_blank
 
 | Week             | Topics                                | Activities                                                   |
 | ---------------- | ------------------------------------- | ------------------------------------------------------------ |
-| **1**<br />9/28  | Intro to AI<br />Python               | Introduce yourself on Discord<br />Start lab 1<br />Quiz 1  |
-| **2**<br />10/5  | TBD                        | Start lab 2<br />Quiz 2<br />Lab 1 code review, production version |
-| **3**<br />10/12 | Intro to ML and Bayes                 | Start lab 3<br />Quiz 3<br />Lab 2 code review, production version |
-| **4**<br />10/19 | Training an ML Model                  | Start lab 4<br />Quiz 4<br />Lab 3 code review, production version |
+| **1**<br />9/28  | Intro to AI<br />Python               | Introduce yourself on Discord<br />Start lab 1&mdash;Python & expert systems<br />Quiz 1 |
+| **2**<br />10/5  | TBD                        | Start lab 2&mdash;Python and SMT solver<br />Quiz 2<br />Lab 1 code review, production version |
+| **3**<br />10/12 | Intro to ML and Bayes                 | Start lab 3&mdash;ML & Bayes rule<br />Quiz 3<br />Lab 2 code review, production version |
+| **4**<br />10/19 | Training an ML Model                  | Start lab 4&mdash;Neural Networks<br />Quiz 4<br />Lab 3 code review, production version |
 | **5**<br />10/26 | History of AI and Midterm Quiz        | Lab 4 code review, production version<br />Midterm quiz: Thursday, 10/29 (hybrid section)<br />See Canvas for locations and dates for the online class section. |
-| **6**<br />11/2  | Neural Networks                       | Term project proposal<br />Start lab 5<br />Quiz 5          |
-| **7**<br />11/9  | Generative AI                         | Start lab 6<br />Quiz 6<br />Lab 5 code review, production version |
-| **8**<br />11/16 | Chat Completion API                   | Start lab 7<br />Quiz 7<br />Lab 6 code review, production version |
+| **6**<br />11/2  | Neural Networks                       | Term project proposal<br />Start lab 5&mdash;Writing code with AI<br />Quiz 5 |
+| **7**<br />11/9  | Generative AI                         | Start lab 6&mdash;Chat completion API<br />Quiz 6<br />Lab 5 code review, production version |
+| **8**<br />11/16 | Chat Completion API                   | Start lab 7&mdash;MCP clients and server<br />Quiz 7<br />Lab 6 code review, production version |
 | **9**<br />11/23 | MCP                                   | Start lab 8<br />Quiz 8<br />Lab 7 code review, production version |
 | **10**<br />11/30 | Social and ethical issues of AI       | Lab 8 code review, production version<br />Term Project code review, production version<br />Term project presentations |
 | **11**<br />12/7 | Final Quiz           | Final quiz: Tuesday, 12/8 (hybrid class section)<br />See Canvas for locations and dates for the online class section. |
