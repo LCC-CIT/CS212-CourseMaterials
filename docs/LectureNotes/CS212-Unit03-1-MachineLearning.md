@@ -258,10 +258,11 @@ An Artificial Neural Network (ANN) is a computational model inspired by the stru
 
 
 
----
-
-<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> Intro to AI lecture notes by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in 2024, revised in <time>2025</time> are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
+*Note: MS Copilot GPT-4, GPT-5 and Gemini Flash 2.5 were used to draft various parts of these notes.*
 
 ---
 
-Note: MS Copilot GPT-4, GPT-5 and Gemini Flash 2.5 were used to draft various parts of these notes.
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> Intro to AI lecture notes by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in 2024, revised in <time>2026</time> are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
+
+---
+
