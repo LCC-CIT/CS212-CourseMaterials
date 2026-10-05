@@ -4,7 +4,7 @@
 
 <h2>Contents</h2>
 
-[toc]
+[TOC]
 
 ## Lists (Mutable, Ordered, Indexed)
 
