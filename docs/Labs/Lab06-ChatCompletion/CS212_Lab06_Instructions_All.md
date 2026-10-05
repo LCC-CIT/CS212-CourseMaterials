@@ -1,5 +1,5 @@
 ---
-title: Lab 7, All Groups
+title: Lab 6, All Groups
 description: Instructions for adding calls to a chat completion API to an app
 keywords: AI-assisted coding
 material: Lab Instructions
@@ -9,7 +9,7 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-<h1>Lab 7: Calling a Chat Completion API</h1>
+<h1>Lab 6: Calling a Chat Completion API</h1>
 
 
 

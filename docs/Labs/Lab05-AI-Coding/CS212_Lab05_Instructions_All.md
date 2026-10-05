@@ -1,5 +1,5 @@
 ---
-title: Lab 6, All Groups
+title: Lab 5, All Groups
 description: Instructions for making an app with GitHub Copilot
 keywords: AI-assisted coding
 material: Lab Instructions
@@ -9,7 +9,7 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-<h1>Lab 6: AI Assisted Coding</h1>
+<h1>Lab 5: AI Assisted Coding</h1>
 
 
 

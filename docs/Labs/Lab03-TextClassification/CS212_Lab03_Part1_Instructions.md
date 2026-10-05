@@ -1,5 +1,5 @@
 ---
-title: Lab 4, Part 1
+title: Lab 3, Part 1
 description: Part 1 of the assignment is to do the scikit-learn "Working with Text Data Tutorial"
 keywords: scikit-learn
 material: Lab Instructions
@@ -9,7 +9,7 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-<h1>Lab 4, Text Classification</h1>
+<h1>Lab 3, Text Classification</h1>
 
 <h2>Part 1</h2>
 
@@ -51,7 +51,7 @@ There will be three versions of part 2. The instructions will be in separate doc
 
 ## Submitting your lab work on Canvas
 
-Upload your Python code file to the Lab 4, Part 1 assignment on Canvas. 
+Upload your Python code file to the Lab 3, Part 1 assignment on Canvas. 
 You only need to submit your code. You <u>do not</u> need to upload your virtual environment (.venv) folder.
 
 (No code review is needed)

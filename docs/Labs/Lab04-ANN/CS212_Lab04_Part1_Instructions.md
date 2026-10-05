@@ -1,5 +1,5 @@
 ---
-title: Lab 5, Part 1
+title: Lab 4, Part 1
 description: Part 1 of the assignment is to do the TensorFlow quickstart tutorial
 keywords: TensorFlow
 material: Lab Instructions
@@ -9,7 +9,7 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-<h1>Lab 5, Image Classification with TensorFlow</h1>
+<h1>Lab 4, Image Classification with TensorFlow</h1>
 
 <h2>Part 1</h2>
 
