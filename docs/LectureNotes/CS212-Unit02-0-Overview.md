@@ -33,10 +33,10 @@ author: Brian Bird
 
   This week you will learn how to:
 
-  - Write rules for a *knowledge base*
-  - Make an *inference engine*
-  - Use *forward chaining*
-  - Use <a href="https://classes.lanecc.edu/mod/url/view.php?id=4661690" target="_blank">Python loops</a> and <a href="https://classes.lanecc.edu/mod/url/view.php?id=4661672" target="_blank">Python collection types</a>
+  - Explain what a *SMT solver* is.
+  - Identify problems that can be solved by an SMT solver.
+  - Write an app that uses a SMT sovler.
+  - Use <a href="https:CS212-Unit02-PythonLoops.html" target="_blank">Python loops</a> and <a href="https://CS212-Unit02-PythonCollectionTypes.html" target="_blank">Python collection types</a>
 
 ## Announcements
 
