@@ -1,5 +1,5 @@
 ---
-title: Lab 8, MCP
+title: Lab 7, MCP
 description: Tutorials on building an MCP server and client
 keywords: MCP
 material: Lab Instructions
@@ -9,7 +9,7 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-<h1>Lab 8: Model Context Protocol</h1>
+<h1>Lab 7: Model Context Protocol</h1>
 
 
 

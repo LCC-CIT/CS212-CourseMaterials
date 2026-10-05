@@ -1,6 +1,6 @@
-# Rubric for Lab 7
+# Rubric for Lab 6
 
-## Adding an AI feature to the lab 7 app
+## Adding an AI feature to the lab 6 app
 
 Since I already graded code quality and unit tests (or some kind of test) for the non-ai version, I'm not checking that again here.
 
