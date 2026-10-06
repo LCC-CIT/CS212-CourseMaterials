@@ -4,7 +4,7 @@
 
 <h2>Contents</h2>
 
-[toc]
+[TOC]
 
 ## `for` Loops (Iteration Over a Sequence)
 
