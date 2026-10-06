@@ -1,5 +1,5 @@
 ---
-title: Lab 3, Group A
+title: Lab 2, Group A
 description: Group A assignment to use the Z3 constraint solver to schedule class sections, instructors and classrooms
 keywords: constraint solver, Z3, scheduling, constraint satisfaction, unsat core, CSV files, testing
 material: Lab Instructions
@@ -7,7 +7,7 @@ generator: Typora
 author: Brian Bird
 ---
 
-<h1>Lab 3, Scheduling with a Constraint Solver</h1>
+<h1>Lab 2, Scheduling with a Constraint Solver</h1>
 
 <h2>Group A</h2>
 
