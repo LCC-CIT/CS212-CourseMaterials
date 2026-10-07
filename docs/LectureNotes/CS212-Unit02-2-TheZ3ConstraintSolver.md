@@ -14,7 +14,7 @@ Z3 is written in C++, but it comes with a Python package, so you can use it by w
 
 ### Installing
 
-In a terminal (or in a Jupyter notebook cell, start the line with `%`):
+In a terminal (in a Jupyter notebook cell, use `%pip install z3-solver` instead):
 
 ```bash
 pip install z3-solver
@@ -24,25 +24,32 @@ pip install z3-solver
 
 ### Your First Z3 Program
 
-Let's solve the algebra problem from the beginning:
+Let's solve the movie seating puzzle from [Constraint Solvers](CS212-Unit02-1-ConstraintSolvers.md). Each friend's seat number is an unknown:
 
 ```python
-from z3 import Int, Solver, sat
+from z3 import Ints, Solver, Distinct, Abs, sat
 
-x = Int('x')          # 1. create the variables
-y = Int('y')
+ana, ben, cat, dev = Ints('ana ben cat dev')  # 1. create the variables
 
-s = Solver()          # 2. create a solver
-s.add(x + y == 10)    # 3. add the constraints
-s.add(x - y == 2)
+s = Solver()                                  # 2. create a solver
 
-if s.check() == sat:  # 4. ask for a solution
-    m = s.model()     # 5. get the solution
-    print(m[x], m[y])
+for friend in (ana, ben, cat, dev):           # 3. add the constraints
+    s.add(friend >= 1, friend <= 4)           # seats are numbered 1-4
+s.add(Distinct(ana, ben, cat, dev))           # everyone gets their own seat
+s.add(Abs(ana - ben) > 1)                     # Ana and Ben aren't next to each other
+s.add(cat == 1)                               # Cat gets the aisle seat
+s.add(Abs(dev - ana) == 1)                    # Dev sits next to Ana
+s.add(ana < ben)                              # Ana is to the left of Ben
+
+if s.check() == sat:                          # 4. ask for a solution
+    m = s.model()                             # 5. get the solution
+    print(m)
 else:
     print("No solution")
-# Output: 6 4
+# Output: [ben = 4, dev = 3, ana = 2, cat = 1]
 ```
+
+Notice that the code is just the puzzle's rules, translated one by one. Nowhere did we tell Z3 *how* to find the seating.
 
 Every Z3 program follows the same five steps: **create variables → create a solver → add constraints → check → read the model.** The rest of this tutorial explains each step.
 
@@ -86,7 +93,7 @@ Because `x` is a Z3 symbol, writing `x + y == 10` does **not** produce `True` or
 
 > ⚠️ **Common mistake:** `x = 10` is Python *assignment* (it throws away your Z3 variable!). `x == 10` is the Z3 *constraint*.
 
-### Combining Rules: Logical Functions
+### Combining Rules: Z3 Functions
 
 Python's `and`, `or`, `not` and `if` don't work on Z3 expressions. Z3 provides its own capitalized versions:
 
@@ -99,6 +106,7 @@ Python's `and`, `or`, `not` and `if` don't work on Z3 expressions. Z3 provides i
 | `If(cond, then, else)` | a value that depends on a condition | `If(x > 0, 1, 0)` |
 | `Distinct(a, b, c, ...)` | every one has a different value | `Distinct(x, y, z)` |
 | `Sum([a, b, c, ...])` | the total of a list of expressions | `Sum([x, y, z])` |
+| `Abs(a)` | the absolute value (distance from zero) | `Abs(x - y) == 1` means x and y are 1 apart |
 
 Notes:
 
@@ -143,18 +151,18 @@ A **model** is the solver's answer: a value for each variable. You can look valu
 
 ```python
 m = s.model()
-m[x]              # the value of x as a Z3 object, e.g. 6
-m[x].as_long()    # the value of x as a normal Python int
-m.eval(x * y)     # evaluate any expression using the solution -> 24
+m[ana]              # the value of ana as a Z3 object: 2
+m[ana].as_long()    # the value of ana as a normal Python int: 2
+m.eval(ben - ana)   # evaluate any expression using the solution: 2
 ```
 
-Use `.as_long()` whenever you need a regular Python integer, for example to use it as a list index or in an f-string. Printing a whole model (`print(m)`) shows all the variables in the form `[y = 4, x = 6]`. The order isn't alphabetical, so don't rely on it.
+Use `.as_long()` whenever you need a regular Python integer, for example to use it as a list index or in an f-string. Printing a whole model (`print(m)`) shows all the variables in the form `[ben = 4, dev = 3, ana = 2, cat = 1]`. The order isn't predictable, so don't rely on it.
 
 If a variable doesn't matter to any rule, the model may leave it out, and `m[x]` gives `None`. Use `m.eval(x, model_completion=True)` to make Z3 fill in a value.
 
 ### A Complete Mini Example
 
-Find three *different* numbers *a*, *b*, *c*, each between 1 and 3, such that *a < b*, and *if b is 2 then c must be 3*:
+Find three *different* numbers *a*, *b*, *c*, each between 1 and 3, such that *a < b*, and *if b is 3 then c must be 1*:
 
 ```python
 from z3 import Ints, Solver, And, Distinct, Implies, sat
@@ -166,14 +174,14 @@ for v in (a, b, c):
     s.add(And(v >= 1, v <= 3))     # each is between 1 and 3
 s.add(Distinct(a, b, c))           # all different
 s.add(a < b)
-s.add(Implies(b == 2, c == 3))
+s.add(Implies(b == 3, c == 1))
 
 if s.check() == sat:
     m = s.model()
-    print(m[a], m[b], m[c])        # 2 3 1 (Z3 might pick another valid answer)
+    print(m[a], m[b], m[c])        # 1 2 3 (Z3 might pick another valid answer)
 ```
 
-(Check it by hand: 2 < 3, all different, and *b* isn't 2, so the `Implies` rule doesn't apply. Note that `1 2 3` would break the last rule: *b* is 2, but *c* must be 3. Z3 didn't need to try it.)
+(Check it by hand: 1 < 2, all different, and *b* isn't 3, so the `Implies` rule doesn't apply. Note that `1 3 2` would break the last rule: *b* is 3, so *c* must be 1. The only other valid answer is `2 3 1`.)
 
 ## Putting It Together: Two Realistic Examples
 
@@ -243,7 +251,7 @@ if s.check() == sat:
         print(p, "-> truck", m[truck[p]].as_long())
 ```
 
-`If(truck[p] == t, w, 0)` contributes the package's weight *only if* it is on truck `t`, so `Sum` gives the total load of truck `t`. This "indicator" pattern is how you count and total things in Z3. One valid answer: P1 and P5 on truck 1, the other three on truck 0 (loads 10 and 10). Z3 may pick a different valid one.
+`If(truck[p] == t, w, 0)` contributes the package's weight *only if* it is on truck `t`, so `Sum` gives the total load of truck `t`. This "indicator" pattern is how you count and total things in Z3. One valid answer: P1 and P5 on one truck, the other three on the other truck (loads of 10 kg each). Z3 may pick a different valid one.
 
 ## Going Further
 
@@ -263,6 +271,8 @@ while s.check() == sat:
 ```
 
 When all answers are used up, `check()` returns `unsat` and the loop ends.
+
+With more than one variable, forbid the whole *combination*, not each value separately: `s.add(Or(x != m[x], y != m[y]))` means "at least one variable must be different next time."
 
 ### Trying "What If" Scenarios with `push` and `pop`
 
@@ -308,7 +318,7 @@ You could use `o.minimize(...)` in the delivery example to find the smallest num
 4. **Check before you read.** Call `s.model()` only after `s.check() == sat`.
 5. **`unsat` means your rules conflict.** To debug, comment out constraints one at a time (or use `push`/`pop`) until it becomes `sat`. The last rule you removed was part of the conflict.
 6. **Convert answers to Python.** Use `.as_long()` to turn a Z3 integer into a regular `int`.
-7. **Z3 gives *a* solution, not *the* solution.** There may be many valid answers, and the one you get can differ between runs or versions.
+7. **Z3 gives *a* solution, not *the* solution.** There may be many valid answers, and which one you get can change if you reorder your constraints or use a different version of Z3. If your program needs a specific answer, add a rule (or use `Optimize`) that says so.
 
 ## Cheat Sheet
 
@@ -319,13 +329,14 @@ from z3 import *
 x = Int('x')            # whole number
 r = Real('r')           # decimal number
 b = Bool('b')           # True / False
-p, q, r2 = Ints('p q r2') # several at once
+a, c, d = Ints('a c d') # several at once
 
 # --- constraints (expressions using +, -, *, ==, !=, <, <=, >, >=) ---
-And(p, q)   Or(p, q)   Not(p)   Implies(p, q)
-If(cond, value_if_true, value_if_false)
-Distinct(a, b, c)
-Sum([a, b, c])
+And(x > 0, x < 5)   Or(b, x == 3)   Not(b)   Implies(b, x == 0)
+If(x > 0, 1, 0)         # If(condition, value_if_true, value_if_false)
+Distinct(a, c, d)
+Sum([a, c, d])
+Abs(a - c)
 
 # --- solver ---
 s = Solver()
@@ -347,7 +358,7 @@ o.maximize(expr);  o.minimize(expr)
 
 ## Practice Problems
 
-1. **Age puzzle.** Alice is twice as old as Bob. In 5 years, their ages will add up to 40. How old are they now? (Variables: `alice`, `bob`.)
+1. **Coin puzzle.** You have exactly 6 coins (pennies, nickels, dimes, and quarters) worth a total of 47 cents. How many of each coin do you have? (Variables: `pennies`, `nickels`, `dimes`, `quarters`. Don't forget that you can't have a negative number of coins!) Then change the puzzle to 7 coins and use the technique from [Asking for Another Solution](#asking-for-another-solution) to find every answer.
 2. **Impossible?** Add the constraints `x > 10`, `x < 20`, and `x * 2 == 25` for an `Int` named `x`. What does `check()` return? Why?
 3. **Meeting times.** Three meetings must be assigned to time slots 1-4 (one slot per meeting, no two meetings in the same slot). Meeting A must be before meeting B, and meeting C can't be in slot 1. Use `Distinct`.
 4. **Gates.** In the airport example, add a fifth flight `"F5": (11, 13)` and find the smallest `NUM_GATES` that makes the problem satisfiable.
