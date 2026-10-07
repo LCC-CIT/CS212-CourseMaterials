@@ -27,44 +27,39 @@ Unlike traditional imperative programming where you must write algorithms (loops
 
 ## Quickstart & Setup with `uv`
 
-[`uv`](https://docs.astral.sh/uv/) is an extremely fast Python package manager and environment runner.
+[`uv`](https://docs.astral.sh/uv/) is a fast Python package and project manager. It reads [`pyproject.toml`](pyproject.toml) and automatically installs the right Python version and packages for you.
 
-### 1. Prerequisites
-Ensure `uv` is installed:
+### 1. Install `uv`
+
+**Windows** (PowerShell):
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+**macOS**: if you already use [Homebrew](https://brew.sh), run `brew install uv`. Otherwise, use the installer below (no need to install Homebrew just for `uv`).
+
+**macOS / Linux**:
 ```bash
-# macOS / Linux
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-### 2. Set Up Virtual Environment & Dependencies
-Navigate to this directory:
-```bash
-cd /Volumes/DataCard/Repos/CS212-Repos/CS212-CourseMaterials/docs/Examples/ConstraintSolving
-```
+Close and reopen your terminal afterward so it can find the `uv` command. Check it with `uv --version`.
 
-Create a virtual environment and install dependencies:
-```bash
-# Create a virtual environment (Python 3.12 or 3.14)
-uv venv --python 3.14 .venv
-
-# Install required packages
-uv pip install --python .venv/bin/python z3-solver
-```
-*(If you also want to run the Jupyter notebook `Z3.ipynb`, add `ipykernel`: `uv pip install --python .venv/bin/python z3-solver ipykernel`)*
-
-### 3. Run the Program
-You can run the script directly using `uv run` or through `.venv`:
+### 2. Run the Program
+Open a terminal in the `ConstraintSolving` folder you downloaded (for example, `cd Downloads/ConstraintSolving`), then run:
 
 ```bash
-# Run with the default students.csv
-uv run assign_lab_partners.py -i students.csv
+# Read students.csv and print the groups
+uv run assign_lab_partners.py
 
-# Or run using the virtual environment interpreter directly:
-.venv/bin/python assign_lab_partners.py -i students.csv
-
-# Export assignments to a CSV file:
+# Use a different roster and save the results to a CSV file
 uv run assign_lab_partners.py -i students.csv -o assignments.csv
 ```
+
+The first `uv run` takes a minute: it downloads Python 3.14, creates a `.venv` folder, and installs `z3-solver`. After that, it starts right away.
+
+### 3. Run the Notebook (Optional)
+Run `uv sync` in this folder to create the `.venv` folder. Then open [`Z3.ipynb`](Z3.ipynb) in VS Code and choose the `.venv` Python environment as the kernel.
 
 ---
 
