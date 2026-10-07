@@ -36,11 +36,13 @@ author: Brian Bird
   - Explain what a *SMT solver* is.
   - Identify problems that can be solved by an SMT solver.
   - Write an app that uses a SMT sovler.
-  - Use <a href="./CS212-Unit02-4-PythonLoops.html" target="_blank">Python loops</a> and <a href="./CS212-Unit02--3-PythonCollectionTypes.html" target="_blank">Python collection types</a>
+  - Use a <a href="./CS212-Unit02-5-PythonProjects.html" target="_blank">Python virtual environment</a>, <a href="./CS212-Unit02-4-PythonLoops.html" target="_blank">Python loops</a> and <a href="./CS212-Unit02--3-PythonCollectionTypes.html" target="_blank">Python collection types</a>
 
 ## Announcements
 
-- <a href="https://sites.google.com/lanecc.edu/fusionlab/home?pli=1" target="_blank">Fusion Lab</a> faculty and students are forming a club on emergent technology and AI. If you are interested, fill out the <a href="https://out.smore.com/e/01kmx/T9ULP5?__$u__" target="_blank">Interest Form</a>
+- #### Student Resources Fair
+
+  The Internal Student Resources Fair is taking place on the 2nd Floor of Center on October 7, 9:30 to 1:30! There will be free snacks, opportunities to win prizes, and several experts from our campus partners who are eager to educate students on all of the great LCC resources available for our students.
 
 ## Things to Do This Week
 
