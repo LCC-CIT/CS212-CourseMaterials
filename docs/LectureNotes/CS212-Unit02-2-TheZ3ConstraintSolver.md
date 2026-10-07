@@ -389,7 +389,7 @@ o.maximize(expr);  o.minimize(expr)
 
 
 
-*This page was drafted by Claude Sonnet 5.5 and needs to be revised by a human*
+*This page was drafted by Claude Sonnet 5.5 and was revised by Brian Bird with assistance from Claude Opus 5.5*
 
 ---
 
