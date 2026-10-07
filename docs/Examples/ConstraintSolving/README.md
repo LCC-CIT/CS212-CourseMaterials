@@ -106,8 +106,11 @@ num_groups_of_3 = num_groups - num_groups_of_2
 
 ### Step 2: Decision Variables (`Int()`)
 ```python
-group = [Int(f'group_{i}') for i in range(num_students)]
-version = [Int(f'version_{i}') for i in range(num_students)]
+group = []
+version = []
+for i in range(num_students):
+    group.append(Int(f"group_{i}"))
+    version.append(Int(f"version_{i}"))
 ```
 The `Int()` function creates symbolic integer placeholders called **decision variables** (one per student):
 - `group[i]`: Represents the group index ($0 \le \text{group}_i < \text{num\_groups}$) assigned to student $i$.

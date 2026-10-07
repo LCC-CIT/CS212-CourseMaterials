@@ -61,8 +61,11 @@ def solve_group_assignments(students: list[str], max_group_size: int = 3):
     num_groups_of_3 = num_groups - num_groups_of_2
 
     # 2. Decision variables
-    group = [Int(f"group_{i}") for i in range(num_students)]
-    version = [Int(f"version_{i}") for i in range(num_students)]
+    group = []
+    version = []
+    for i in range(num_students):
+        group.append(Int(f"group_{i}"))
+        version.append(Int(f"version_{i}"))
 
     s = Solver()
 
@@ -95,8 +98,12 @@ def solve_group_assignments(students: list[str], max_group_size: int = 3):
     versions_map = {0: "A", 1: "B", 2: "C"}
 
     # Organize results by group
-    groups_dict = {g: [] for g in range(num_groups)}
-    for i, name in enumerate(students):
+    groups_dict = {}
+    for g in range(num_groups):
+        groups_dict[g] = []
+
+    for i in range(num_students):
+        name = students[i]
         g_val = m[group[i]].as_long()
         v_val = m[version[i]].as_long()
         groups_dict[g_val].append((name, versions_map[v_val]))
@@ -109,7 +116,7 @@ def save_results_to_csv(groups_dict: dict, output_path: Path):
     with open(output_path, mode="w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["Group", "Student", "Lab Version"])
-        for g in sorted(groups_dict.keys()):
+        for g in range(len(groups_dict)):
             for name, ver in groups_dict[g]:
                 writer.writerow([g + 1, name, ver])
 
@@ -154,7 +161,7 @@ def main():
 
     print(f"Total groups: {num_groups} ({g3} groups of 3, {g2} groups of 2)\n")
     print("=== Lab Partner Groups and Assignments ===\n")
-    for g in sorted(groups_dict.keys()):
+    for g in range(num_groups):
         print(f"Group {g + 1} (Size {len(groups_dict[g])}):")
         for name, ver in groups_dict[g]:
             print(f"  - {name}: Version {ver}")

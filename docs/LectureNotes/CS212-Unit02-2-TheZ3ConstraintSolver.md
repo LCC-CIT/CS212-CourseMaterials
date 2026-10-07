@@ -67,11 +67,13 @@ A Z3 variable is **not** a normal Python variable. It doesn't hold a value yet. 
 
 The string you pass (`'x'`) is the name Z3 uses when it prints results. It's good practice to make it match the Python variable name.
 
-To make a whole **list** of variables, use a list comprehension, like in the lab partner example. Each variable needs a *different* name:
+To make a whole **list** of variables, use a loop, like in the lab partner example. Each variable needs a *different* name:
 
 ```python
 # One variable per package: which truck carries it?
-truck = [Int(f'truck_{i}') for i in range(5)]
+truck = []
+for i in range(5):
+    truck.append(Int(f'truck_{i}'))
 print(truck)   # [truck_0, truck_1, truck_2, truck_3, truck_4]
 ```
 
@@ -112,7 +114,13 @@ Notes:
 
 - `Implies(a, b)` only restricts things when `a` is true. If `a` is false, the rule is satisfied automatically, whatever `b` is.
 - `If(...)` is how you do an "if statement" **inside** a rule. A regular Python `if` can't be used because Python can't tell whether `x > 0` is true until the solver has picked a value for `x`. `If(x > 0, 1, 0)` gives `1` when `x` is positive and `0` otherwise, which makes it ideal for **counting**.
-- Use `Sum` with a list comprehension to add up many terms: `Sum([If(truck[i] == 0, 1, 0) for i in range(5)])` counts how many packages are in truck 0.
+- To add up many terms, start at `0` and use `+=` in a loop. This counts how many packages are in truck 0:
+
+  ```python
+  count = 0
+  for i in range(5):
+      count += If(truck[i] == 0, 1, 0)
+  ```
 
 ## Step 3: The Solver Object and Its Methods
 
@@ -201,7 +209,10 @@ flights = {            # name: (arrive, depart)
 names = list(flights)
 NUM_GATES = 2
 
-gate = {f: Int(f'gate_{f}') for f in names}   # one variable per flight
+gate = {}                     # one variable per flight
+for f in names:
+    gate[f] = Int(f'gate_{f}')
+
 s = Solver()
 
 # Each flight uses a valid gate number.
@@ -211,7 +222,8 @@ for f in names:
 # Flights that overlap in time need different gates.
 for i in range(len(names)):
     for j in range(i + 1, len(names)):
-        f, g = names[i], names[j]
+        f = names[i]
+        g = names[j]
         start1, end1 = flights[f]
         start2, end2 = flights[g]
         if start1 < end2 and start2 < end1:      # plain Python: the times are known
@@ -229,20 +241,25 @@ Notice the two different kinds of `if`/comparison here. The overlap test uses or
 Five packages must be split between two trucks. Each truck can carry at most 10 kg.
 
 ```python
-from z3 import Int, Solver, Sum, If, sat
+from z3 import Int, Solver, If, sat
 
 weights = {"P1": 4, "P2": 3, "P3": 5, "P4": 2, "P5": 6}   # kg
 CAPACITY = 10
 NUM_TRUCKS = 2
 
-truck = {p: Int(f'truck_{p}') for p in weights}   # which truck carries each package
+truck = {}                    # which truck carries each package
+for p in weights:
+    truck[p] = Int(f'truck_{p}')
+
 s = Solver()
 
 for p in weights:
     s.add(truck[p] >= 0, truck[p] < NUM_TRUCKS)
 
 for t in range(NUM_TRUCKS):
-    load = Sum([If(truck[p] == t, w, 0) for p, w in weights.items()])
+    load = 0
+    for p in weights:
+        load += If(truck[p] == t, weights[p], 0)
     s.add(load <= CAPACITY)
 
 if s.check() == sat:
@@ -251,7 +268,7 @@ if s.check() == sat:
         print(p, "-> truck", m[truck[p]].as_long())
 ```
 
-`If(truck[p] == t, w, 0)` contributes the package's weight *only if* it is on truck `t`, so `Sum` gives the total load of truck `t`. This "indicator" pattern is how you count and total things in Z3. One valid answer: P1 and P5 on one truck, the other three on the other truck (loads of 10 kg each). Z3 may pick a different valid one.
+`If(truck[p] == t, weights[p], 0)` contributes the package's weight *only if* it is on truck `t`, so `load` adds up to the total weight on truck `t`. This "indicator" pattern is how you count and total things in Z3. One valid answer: P1 and P5 on one truck, the other three on the other truck (loads of 10 kg each). Z3 may pick a different valid one.
 
 ## Going Further
 
