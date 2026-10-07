@@ -12,40 +12,7 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-- [Why Projects Need Their Own Environment](#why-projects-need-their-own-environment)
-- [Virtual Environments with venv and pip](#virtual-environments-with-venv-and-pip)
-  - [What is a .venv Folder?](#what-is-a-venv-folder)
-  - [Create a Virtual Environment](#create-a-virtual-environment)
-    - [Windows](#windows)
-    - [MacOS](#macos)
-  - [Activate the Environment](#activate-the-environment)
-    - [Windows](#windows-1)
-    - [MacOS](#macos-1)
-  - [Install Packages with pip](#install-packages-with-pip)
-  - [Share Your Dependencies with requirements.txt](#share-your-dependencies-with-requirementstxt)
-  - [Deactivate the Environment](#deactivate-the-environment)
-  - [Use the Environment in VS Code](#use-the-environment-in-vs-code)
-  - [Version Control and .venv](#version-control-and-venv)
-  - [Troubleshooting](#troubleshooting)
-- [Managing Projects with uv](#managing-projects-with-uv)
-  - [What is uv?](#what-is-uv)
-  - [Advantages and Disadvantages](#advantages-and-disadvantages)
-  - [Install uv](#install-uv)
-    - [Windows](#windows-2)
-    - [MacOS](#macos-2)
-  - [Create a Project](#create-a-project)
-  - [Add and Remove Packages](#add-and-remove-packages)
-  - [Run Your Code](#run-your-code)
-  - [Manage Python Versions](#manage-python-versions)
-  - [Work on an Existing Project](#work-on-an-existing-project)
-  - [Command Cheat Sheet](#command-cheat-sheet)
-  - [Understanding pyproject.toml](#understanding-pyprojecttoml)
-    - [What is TOML?](#what-is-toml)
-    - [Anatomy of pyproject.toml](#anatomy-of-pyprojecttoml)
-    - [The uv.lock File](#the-uvlock-file)
-  - [Using uv with VS Code](#using-uv-with-vs-code)
-- [Exercise](#exercise)
-- [Reference](#reference)
+[TOC]
 
 ## Why Projects Need Their Own Environment
 
@@ -59,7 +26,7 @@ If you installed every package you used into your one system-wide copy of Python
 
 The solution is to give **each project its own isolated environment** with its own packages (and possibly its own version of Python). This is called a *virtual environment*.
 
-## Virtual Environments with venv and pip
+## Managing Virtual Environments with `venv` and `pip`
 
 Python includes the `venv` module for creating virtual environments, and `pip` for installing packages into them. These are the official, built-in tools, and they work the same way on every computer that has Python. 
 
@@ -238,15 +205,15 @@ Also, don't copy or move a `.venv` folder to another location or computer. It co
 | Nothing happens, or the wrong Python version is used         | Check the path with `Get-Command python` or `which python`. Delete `.venv` and re-create it with the right version of Python. |
 | Packages vanished after moving the project                   | `.venv` can't be moved. Delete it and re-create it, then run `pip install -r requirements.txt`. |
 
-## Managing Projects with uv
+## Managing Virtual Environments (and more) with `uv`
 
-### What is uv?
+### What is `uv`?
 
 <a href="https://docs.astral.sh/uv/" target="_blank">**uv**</a> is a modern, very fast Python package and project manager from a company called Astral. It's written in Rust, and it's designed to replace a whole collection of separate tools with a single command:
 
 | Task                              | Traditional tool(s)              | uv equivalent                        |
 | --------------------------------- | -------------------------------- | ------------------------------------ |
-| Install and switch Python versions | pyenv, installers from python.org | `uv python install`                  |
+| Install and switch Python versions | `pyenv` and installers from python.org | `uv python install`                  |
 | Create virtual environments       | `python -m venv`                 | `uv venv` (or automatic)             |
 | Install packages                  | `pip`                            | `uv add`, `uv pip install`           |
 | Record exact dependency versions  | `pip freeze`, pip-tools          | `uv.lock` (automatic)                |
