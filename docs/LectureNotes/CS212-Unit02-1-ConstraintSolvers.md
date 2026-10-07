@@ -12,13 +12,19 @@ Most of the programming you have done so far is *imperative*: you write step-by-
 
 A *constraint solver* works the opposite way. You don't tell it *how* to find the answer. You only describe the problem in terms of what a correct answer looks like, and the solver figures out the rest. This style is called *declarative* programming.
 
-You already know a tiny version of this from algebra class:
+You have probably solved a small version of this kind of problem in a puzzle book:
 
-> Find two numbers, *x* and *y*, such that  
-> x + y = 10  
-> x − y = 2
+> Four friends, Ana, Ben, Cat, and Dev, are going to a movie and will sit in four seats in a row, numbered 1 to 4 from left to right.
+>
+> - Each friend gets their own seat.
+> - Ana and Ben had an argument, so they can't sit next to each other.
+> - Cat wants the aisle seat, which is seat 1.
+> - Dev wants to sit next to Ana.
+> - Ana sits somewhere to the left of Ben.
+>
+> Who sits where?
 
-You didn't follow a fixed recipe; you worked out an answer (x = 6, y = 4) that satisfied the two *rules*. A constraint solver does the same thing, but for problems with hundreds or thousands of unknowns and rules, where solving by hand would be impossible.
+There is no formula or step-by-step method for this, the way there is for a system of equations in algebra class. Instead, you probably tried an arrangement, checked it against the rules, and crossed out the ones that didn't work: *Cat is in seat 1, so Ana and Ben must be in seats 2 and 4 to avoid being next to each other. Ana is left of Ben, so Ana is in 2 and Ben in 4. That leaves seat 3 for Dev, who is next to Ana. It works!* You described what a correct answer looks like, then searched for one. A constraint solver does the same thing, but for problems with hundreds or thousands of unknowns and rules, where solving by hand would be impossible.
 
 ### The Three Inputs
 
@@ -26,19 +32,19 @@ Every constraint problem has the same three parts:
 
 | Input | Meaning | Example (above) |
 | --- | --- | --- |
-| **Variables** (also called *decision variables*) | The unknowns you want the solver to find | `x`, `y` |
-| **Domains** | The kinds of values each variable may take (whole numbers, true/false, ...) | whole numbers |
-| **Constraints** | Rules that any valid answer must obey | `x + y == 10`, `x - y == 2` |
+| **Variables** (also called *decision variables*) | The unknowns you want the solver to find | The seat number for each friend: `ana`, `ben`, `cat`, `dev` |
+| **Domains** | The kinds of values each variable may take (whole numbers, true/false, ...) | Whole numbers from 1 to 4 |
+| **Constraints** | Rules that any valid answer must obey | All four seats are different, `abs(ana - ben) > 1`, `cat == 1`, `abs(dev - ana) == 1`, `ana < ben` |
 
 The solver searches for values for the variables that make **every** constraint true at the same time. There are three possible outcomes:
 
-- **Satisfiable (`sat`)**: at least one solution exists, and the solver gives you one.
-- **Unsatisfiable (`unsat`)**: the rules contradict each other (for example, *a > 5* and *a < 3*), so no solution exists. Knowing that is useful too!
+- **Satisfiable (`sat`)**: at least one solution exists, and the solver gives you one. (For the movie puzzle: `ana = 2`, `ben = 4`, `cat = 1`, `dev = 3`.)
+- **Unsatisfiable (`unsat`)**: the rules contradict each other, so no solution exists. For example, if we added the rule "Cat sits next to Ben," there would be no valid seating. Knowing that is useful too!
 - **Unknown**: the problem was too hard and the solver gave up (rare for the problems in this course).
 
 ### Why Not Just Write a Loop?
 
-You *could* solve small problems by trying every combination with nested loops. But the number of combinations explodes. It increases with the number of constraints and the domain size (boundaries of the possible solution). Constraint solvers use smart techniques to rule out huge numbers of combinations at once. When they learn that a partial answer breaks a rule, they discard every answer that starts that way without looking at any of them.
+You *could* solve small problems by trying every combination with nested loops. For the four friends that's only 4 × 3 × 2 × 1 = 24 seating arrangements, so a loop would finish instantly. But the number of combinations explodes as the problem grows. Seating 20 guests at a wedding has about 2.4 quintillion (2,400,000,000,000,000,000) possible arrangements, far too many to check one at a time. Constraint solvers use smart techniques to rule out huge numbers of combinations at once. When they learn that a partial answer breaks a rule (for example, "Ana in seat 1 and Ben in seat 2"), they discard every answer that starts that way without looking at any of them.
 
 ### Constraint Solvers Use Symbolic AI
 
