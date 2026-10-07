@@ -1,14 +1,14 @@
 ---
-title: Unit 1 Overview
-description: What's AI
-keywords: Classical AI, Symbolic AI, GOFAI
+title: Python: Learning and Using
+description: How to get started with Python if you know another language.
+keywords: Python, MacOS, Windows
 generator: Typora
 author: Brian Bird
 ---
 
 **CS 212, AI Programming 1**
 
-<h1>Overview of AI</h1>
+<h1>Intro to Python</h1>
 
 <h2>Contents</h2>
 

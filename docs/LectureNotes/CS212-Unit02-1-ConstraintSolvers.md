@@ -6,11 +6,11 @@
 
 [TOC]
 
-## The Big Idea: Describe the Answer, Don't Compute It
+## Code the Problem, Not the Solution
 
 Most of the programming you have done so far is *imperative*: you write step-by-step instructions that *compute* an answer.
 
-A *constraint solver* works the opposite way. You don't tell it *how* to find the answer. You only describe what a correct answer looks like, and the solver figures out the rest. This style is called *declarative* programming.
+A *constraint solver* works the opposite way. You don't tell it *how* to find the answer. You only describe the problem in terms of what a correct answer looks like, and the solver figures out the rest. This style is called *declarative* programming.
 
 You already know a tiny version of this from algebra class:
 
