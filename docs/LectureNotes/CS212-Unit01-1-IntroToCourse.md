@@ -10,8 +10,6 @@ author: Brian Bird
 
 <h1>Intro to CS 212, AI Programming 1</h1>
 
-
-
 <h2>Contents</h2>
 
 [TOC]

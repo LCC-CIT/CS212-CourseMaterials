@@ -8,7 +8,7 @@
 
 ## Lists (Mutable, Ordered, Indexed)
 
-A **list** is an ordered, mutable (changeable) sequence of items. It's the most basic and common collection type in Python. Since they are ordered, you can access items by their index. Lists can contain duplicate elements and a mix of different data types.
+A *list* is an ordered, mutable (changeable) sequence of items. It's the most basic and common collection type in Python. Since they are ordered, you can access items by their index. Lists can contain duplicate elements and a mix of different data types.
 
 | Feature        | Description                                  |
 | -------------- | -------------------------------------------- |
