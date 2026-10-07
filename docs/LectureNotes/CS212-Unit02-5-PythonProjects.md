@@ -1,5 +1,5 @@
 ---
-title: Python Projects
+title: .venv and Python Projects
 description: How to use virtual environments (.venv), pip, and uv to manage Python projects and their packages.
 keywords: Python, venv, pip, uv, pyproject.toml, MacOS, Windows
 generator: Typora
