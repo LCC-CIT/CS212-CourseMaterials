@@ -525,7 +525,7 @@ uv creates a `.venv` folder in your project, so VS Code finds it the same way as
 
 
 
-*Note: Parts of this document were drafted with assistance from Claude Sonnet 5.5 10/7/2026*
+*Note: Parts of this document were drafted with assistance from Claude Sonnet 5.5, 10/7/2026*
 
 ---
 
