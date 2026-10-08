@@ -1,0 +1,11 @@
+crew_id,captain,max_flights,qualified_destinations
+C01,Linda Park,3,PDX;BOI;SUN
+C02,Marcus Hill,3,SEA;MFR;RDM
+C03,Priya Shah,3,PDX;BOI;MFR
+C04,Tom Becker,3,SEA;BOI;SUN;RDM
+C05,Grace Liu,3,PDX;SUN;MFR
+C06,Daniel Ortiz,3,BOI;SUN;RDM
+C07,Nina Petrov,2,PDX;SEA;BOI
+C08,Kevin Walsh,2,PDX;SUN;MFR;RDM
+C09,Rosa Delgado,2,SEA;BOI;SUN
+C10,Sam Okafor,2,PDX;SEA;MFR;RDM

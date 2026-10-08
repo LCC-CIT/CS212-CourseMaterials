@@ -57,7 +57,7 @@ A valid schedule must follow all of these rules. Each rule will become a group o
 
 ## Data Files
 
-The data files have already been created for you: [instructors.csv](GroupA-V2-Data/instructors.csv), [classrooms.csv](GroupA-V2-Data/classrooms.csv) and [sections.csv](GroupA-V2-Data/sections.csv). Download them into your project folder. They have the columns described below. In columns that hold a list, the items are separated with semicolons, for example `CS133Y;CS161;CS162`.
+The data files have already been created for you: [instructors.csv](GroupA-V2-Data/instructors.csv), [classrooms.csv](GroupA-V2-Data/classrooms.csv) and [sections.csv](GroupA-V2-Data/sections.csv). To download all three at once, use this link: [Download the Group A data files as a zip file](https://download-directory.github.io/?url=https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Labs/Lab02-ConstraintSolvers/GroupA-V2-Data). Unzip the file and move the three CSV files into your project folder. They have the columns described below. In columns that hold a list, the items are separated with semicolons, for example `CS133Y;CS161;CS162`.
 
 **`instructors.csv`**
 
@@ -85,17 +85,72 @@ The data files have already been created for you: [instructors.csv](GroupA-V2-Da
 
 ## Requirements
 
-1. **Data files.** Download the three CSV files described above into your project folder.
+1. **Data files.** Download the [zip file of data files](https://download-directory.github.io/?url=https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Labs/Lab02-ConstraintSolvers/GroupA-V2-Data), unzip it and put the three CSV files described above in your project folder.
 2. **Loading data.** Load each CSV file into a list of dictionaries, for example with `csv.DictReader`. Convert numbers to `int` and split the semicolon lists into Python lists.
 3. **Decision variables.** For each section, create three Z3 `Int` variables: its time slot, its instructor (an index into the instructors list) and its classroom (an index into the classrooms list).
 4. **Constraints.** Add constraints for all six scheduling rules. You will need these Z3 tools: `And`, `Or`, `Implies`, and `Sum` combined with `If` for counting (rule 5). For rules 2 and 3 you can use either `Implies` on every pair of sections or `Distinct`.
 5. **Solving.** Use a Z3 `Solver` to find a schedule. Read the values out of the model and return the schedule as a list of dictionaries. Print the schedule in a readable table sorted by time slot, showing the time, section, course, instructor and classroom.
-6. **Explaining an impossible schedule.** Create one Boolean tracking variable per constraint group (the names in the rules table) and add each constraint as `Implies(group_flag, constraint)`. Call `check()` with all the flags as assumptions. When the result is `unsat`, print the names of the groups in `unsat_core()`. Make a folder named `unsolvable_data` with three modified copies of the data files, each of which breaks a different rule. For example: a course that no instructor is qualified to teach, a section whose `earliest_slot` is later than its `latest_slot`, or more sections of a course than its qualified instructors can teach in total. Your program must report the conflicting groups for each one.
+6. **Explaining an impossible schedule.** Create one Boolean tracking variable per constraint group (the names in the rules table) and add each constraint as `Implies(group_flag, constraint)`. Call `check()` with all the flags as assumptions. When the result is `unsat`, print the names of the groups in `unsat_core()`. Make a folder named `unsolvable_data` with three modified copies of the data files, each of which breaks a different rule. For example: a course that no instructor is qualified to teach, a section whose `earliest_slot` is later than its `latest_slot`, or a course with 3 sections that only one part-time instructor (`max_sections` of 2) is qualified to teach. Your program must report the conflicting groups for each one. Keep each conflict small. Proving that no solution exists can take Z3 a very long time, and in testing for this lab, a larger version of the last example (14 sections of a course for 13 openings) timed out instead of returning `unsat`.
 7. **Separation of concerns.** Keep the Z3 model and solving code in its own module, separate from file loading and from user input and output.
 8. **Testing.** Write a test module with a function that checks a schedule against all six rules in plain Python, without using Z3. Use it to test that:
    - the schedule from your real data passes every rule,
    - each data set in `unsolvable_data` is reported as `unsat` with the expected constraint group in the core,
    - the checker itself catches a schedule that you broke on purpose, for example by moving two sections into the same classroom at the same time.
+
+> **Example: a simple test driver**
+>
+> You don't need a testing framework for requirement 8. Write each test as a function that uses `assert`, which stops the function with an `AssertionError` if its condition is `False`. Then write a short "test driver" loop that calls each test function and reports whether it passed.
+>
+> This small example tests a checker for one rule, using two hand-made schedules:
+>
+> ```python
+> # A checker for one rule, written in plain Python (no Z3)
+> def has_room_conflict(schedule):
+>     """Return True if two sections are in the same room in the same time slot."""
+>     for j in range(len(schedule)):
+>         for k in range(j):
+>             if (schedule[j]["slot"] == schedule[k]["slot"]
+>                     and schedule[j]["room_id"] == schedule[k]["room_id"]):
+>                 return True
+>     return False
+> 
+> # Each test is a function. assert stops the test with an error if its condition is False.
+> def test_good_schedule_has_no_room_conflict():
+>     schedule = [
+>         {"section_id": "S01", "slot": 0, "room_id": "BLD19-108"},
+>         {"section_id": "S02", "slot": 0, "room_id": "BLD19-110"},
+>     ]
+>     assert not has_room_conflict(schedule)
+> 
+> def test_room_conflict_is_caught():
+>     schedule = [
+>         {"section_id": "S01", "slot": 0, "room_id": "BLD19-108"},
+>         {"section_id": "S02", "slot": 0, "room_id": "BLD19-108"},    # same room and slot
+>     ]
+>     assert has_room_conflict(schedule)
+> 
+> # The test driver: run each test function and report whether it passed
+> tests = [test_good_schedule_has_no_room_conflict, test_room_conflict_is_caught]
+> passed = 0
+> for test in tests:
+>     try:
+>         test()
+>         print("PASS:", test.__name__)
+>         passed = passed + 1
+>     except AssertionError:
+>         print("FAIL:", test.__name__)
+> print(passed, "of", len(tests), "tests passed")
+> ```
+>
+> Output:
+>
+> ```
+> PASS: test_good_schedule_has_no_room_conflict
+> PASS: test_room_conflict_is_caught
+> 2 of 2 tests passed
+> ```
+>
+> The `tests` list holds the functions themselves (no parentheses), so the loop can call each one with `test()`, and `test.__name__` is the function's name. Put your own tests in the list and run the module with `uv run test_scheduler.py`, or whatever you named it. If you already know `pytest`, you can use it instead: it finds and runs functions whose names start with `test_`.
 
 ## Z3 Tips
 
@@ -235,7 +290,7 @@ Choose one of these two approaches. If you have time, try both and compare them.
 
 **Option A: A loop with `push()` and `pop()`.** Keep using your `Solver`. In a loop, add a constraint that `part_time_sections` is at most *k*, check, then lower *k* and try again. Stop when the check is `unsat` or `unknown`, or when *k* reaches 6.
 
-> **Aside: a loop with `push()` and `pop()`**
+> **Example: a loop with `push()` and `pop()`**
 >
 > `push()` saves a checkpoint of the constraints the solver has so far. `pop()` goes back to the last checkpoint, removing any constraints that were added after it. This lets you try a constraint, check it, and then take it back out before trying a different one.
 >
@@ -278,6 +333,13 @@ from z3 import Optimize
 optimizer = Optimize()
 optimizer.set("timeout", 30000)    # milliseconds
 # ... add all of your constraints with optimizer.add() ...
+
+# Turn every constraint group on. Without this, Z3 can make the tracking
+# flags False, which turns off your rules. (This is also much faster than
+# passing the flags to check() as assumptions.)
+for flag in flag_list:
+    optimizer.add(flag)
+
 optimizer.add(part_time_sections >= 6)    # the lower bound
 optimizer.minimize(part_time_sections)
 

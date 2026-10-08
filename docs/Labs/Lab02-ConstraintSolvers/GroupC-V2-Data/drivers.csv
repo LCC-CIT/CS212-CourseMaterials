@@ -1,0 +1,11 @@
+driver_id,name,max_deliveries,skills
+D01,Jordan Reyes,3,appliance;furniture;assembly
+D02,Alex Morgan,3,install;haul_away;tv_mount
+D03,Chris Tanaka,3,appliance;furniture;haul_away
+D04,Pat Sullivan,3,install;furniture;assembly;tv_mount
+D05,Jamie Foster,3,appliance;assembly;haul_away
+D06,Taylor Brooks,3,furniture;assembly;tv_mount
+D07,Morgan Lee,2,appliance;install;furniture
+D08,Casey Novak,2,appliance;assembly;haul_away;tv_mount
+D09,Riley Adams,2,install;furniture;assembly
+D10,Drew Santos,2,appliance;install;haul_away;tv_mount

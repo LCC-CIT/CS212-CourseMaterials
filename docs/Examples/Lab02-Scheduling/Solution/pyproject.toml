@@ -1,0 +1,13 @@
+[project]
+name = "lab02-scheduling-example"
+version = "0.1.0"
+description = "Lab 2 class example solution: scheduling auto repair jobs with the Z3 constraint solver"
+requires-python = ">=3.10"
+dependencies = [
+    "z3-solver>=4.13",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
