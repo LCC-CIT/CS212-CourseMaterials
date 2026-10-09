@@ -1,0 +1,6 @@
+# Exclude specific URLs from lychee when they work in a browser but fail in CI.
+# One regular expression per line. Add a comment saying why.
+# https://lychee.cli.rs/recipes/excluding-links/
+
+# Works in a browser, but lychee gets an HTTP/2 protocol error
+^https://gemini\.google\.com/$

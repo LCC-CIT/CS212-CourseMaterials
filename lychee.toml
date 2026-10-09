@@ -1,0 +1,4 @@
+# Link checker settings: https://lychee.cli.rs/guides/config/
+# Servers that block bots answer 403, and busy servers answer 429 (too many requests).
+# Both mean the page exists, so they don't count as broken.
+accept = [200, 403, 429]
