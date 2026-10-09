@@ -119,7 +119,7 @@ Any late assignments are due by the end of the day on **12/9, Tuesday of next we
   
   
 
-![F2025Week10](/Volumes/DataCard/Repos/CS212-Repos/CS212-CourseMaterials/LectureNotes/Images/F2025Week10.png)
+![F2025Week10](Images/F2025Week10.png)
 
 
 

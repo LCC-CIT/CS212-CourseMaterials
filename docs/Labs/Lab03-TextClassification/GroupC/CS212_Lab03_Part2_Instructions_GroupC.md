@@ -30,7 +30,7 @@ Part 1 has its own assignment submission on Canvas.
 
 ## Part 2: Sentiment Analysis on Movie Reviews
 
-You will do Exercise 2, Sentiment Analysis on movie reviews, which is at the end of the ["Working with Text Data" tutorial](../../../Tutorials/scikit-learn-1.7/WorkingWithTextData.html). The skeleton code for this exercise imports the perceptron classifier, but you may use whatever classifier you wish. You might prefer to use the Multinomial Naive Bays or the Support Vector Machine classifier used in the tutorial.
+You will do Exercise 2, Sentiment Analysis on movie reviews, which is at the end of the ["Working with Text Data" tutorial](https://github.com/LCC-CIT/CS212-CourseMaterials/blob/main/Tutorials/scikit-learn-1.7/WorkingWithTextData.md). The skeleton code for this exercise imports the perceptron classifier, but you may use whatever classifier you wish. You might prefer to use the Multinomial Naive Bays or the Support Vector Machine classifier used in the tutorial.
 
 Alternatively, you can do a classification project of your own design.  You can browse the <a href="https://scikit-learn.org/stable/datasets.html" target="_blank">scikit-learn datset loaders</a> page for ideas. Let me know if you would have something to propose. It would be very cool to see some of you do a mini-project of your own choosing!
 

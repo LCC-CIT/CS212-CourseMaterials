@@ -40,7 +40,7 @@ The *Model Context Protocol* (MCP) standardizes communication with and between L
 **This week you will:**
 
 - Get a basic understanding of the MCP protocol.
-- <a href="https://classes.lanecc.edu/mod/url/view.php?id=4679547" target="_blank">Build an MCP Server</a>.
+- <a href="../Labs/Lab07-MCP/BuildWeatherMcpServer.html" target="_blank">Build an MCP Server</a>.
 - Build an MCP client.
 
 ## Announcements for Fall 2025

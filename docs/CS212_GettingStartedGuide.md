@@ -146,7 +146,7 @@ After your lab partner gives you a code review, you may revise your lab work and
 
 All course communication (via e-mail, Discord, Canvas Inbox, discussion forums, video chat, etc.) should be clear, concise, and respectful. Do your best to use complete sentences with standard spelling, grammar and punctuation.
 
-<a href="https://www.albion.com/netiquette/corerules.html" target="_blank">The Core Rules of Netiquette</a> is a guide to respectful and constructive communication online.
+<a href="http://www.albion.com/netiquette/corerules.html" target="_blank">The Core Rules of Netiquette</a> is a guide to respectful and constructive communication online.
 
 We will be using Discord for communication and collaboration in this class. See the *Discord* page in the *Start Here* module on Canvas for an invitation link to the class Discord server. Questions about the course should be posted on Discord in the *Discussion* channel. Questions that relate specifically to you, such as grades or extensions, should be sent to your instructor via e-mail or Canvas Inbox. E-mails to your instructor or e-mails to another department regarding support issues should include your course number and section (online vs. hybrid/in person).
 

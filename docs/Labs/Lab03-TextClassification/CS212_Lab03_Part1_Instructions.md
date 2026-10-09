@@ -15,7 +15,7 @@ author: Brian Bird
 
 This part of the lab is for everyone.
 
-Do these parts of the "<a href="https://lcc-cit.github.io/CS212-CourseMaterials/Tutorials/scikit-learn-1.7/WorkingWithTextData.html" target="_blank">Working with Text Data</a>" scikit-learn tutorial in the interactive Python interpreter (Command line):
+Do these parts of the "<a href="https://github.com/LCC-CIT/CS212-CourseMaterials/blob/main/Tutorials/scikit-learn-1.7/WorkingWithTextData.md" target="_blank">Working with Text Data</a>" scikit-learn tutorial in the interactive Python interpreter (Command line):
 
 - Tutorial setup
 - Building Feature Vectors and Training
