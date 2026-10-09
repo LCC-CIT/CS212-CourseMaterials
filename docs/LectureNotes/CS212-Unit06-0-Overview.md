@@ -58,7 +58,7 @@ Registration for winter term is open. If you are pursuing the AAS in Software De
 
 - <a href="https://docs.google.com/document/d/1F8CJY1M7A4J9uJtGRDFRyF-0j7l2AVe0vpPE5vcfHXE/edit?tab=t.0" target="_blank">Term-By-Term Sample Planner</a> for AAS in Software Dev
 
-- [Winter 2026 Class Schedule](**CS135M  Beginning Mobile Application Development**)
+- Winter 2026 Class Schedule
 
 - <a href="https://lanecc.edu/advising" target="_blank">Academic Advising</a>
 
