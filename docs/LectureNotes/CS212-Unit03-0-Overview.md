@@ -29,6 +29,11 @@ author: Brian Bird
 
 ## This Week's Learning Objectives
 
+<figure style="float: right; width: 200px; margin: 0 0 1em 1.5em;">
+  <img src="../Images/Classical_ML_Training.png" alt="Training Classical ML Models" width="200">
+  <figcaption style="text-align: center; font-size: small;">Image by Brian Bird using Nano Banana</figcaption>
+</figure>
+
 - This week we will get started on machine learning.
 
   This week you will:
@@ -37,9 +42,7 @@ author: Brian Bird
   - Understand how Bayes' Rule is applied in ML.
   - Be able to use Scikit-Learn to train an ML model.
 
-![Training Classical ML Models](../Images/Classical_ML_Training.png)
-
-*Image by Brian Bird using Nano Banana*
+<div style="clear: both;"></div>
 
 ## Announcements
 
