@@ -8,10 +8,10 @@ Solution for the [Lab 2 class example](../CS212_Lab02_Example.html): scheduling 
 | `scheduler.py` | The Z3 model, solving, the unsat core, and Challenge 2 |
 | `main.py` | Prints the schedule, the unsolvable data reports, and Challenge 2 results |
 | `test_scheduler.py` | A plain Python schedule checker and the tests |
-| `*.csv` | The data files from the lab instructions |
+| `../Data/` | The data files from the lab instructions (`mechanics.csv`, `bays.csv` and `jobs.csv`). They are in the `Data` folder next to this folder, not in this one. |
 | `unsolvable_data/` | Three data sets that each break a different rule |
 
-Run the program and the tests from this folder:
+Run the program and the tests from this folder. The code opens files using relative paths (`../Data` and `unsolvable_data`), and Python starts those paths at the folder where the code is *running*, not the folder that holds the `.py` file. If you run it from somewhere else, it won't find the data.
 
 ```bash
 uv run main.py

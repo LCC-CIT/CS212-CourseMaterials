@@ -59,7 +59,7 @@ A valid schedule must follow all of these rules. Each rule will become a group o
 
 ## Data Files
 
-The data files have already been created for you: [mechanics.csv](Data/mechanics.csv), [bays.csv](Data/bays.csv) and [jobs.csv](Data/jobs.csv). To download all three at once, use this link: [Download the example data files as a zip file](https://download-directory.github.io/?url=https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Examples/Lab02-Scheduling/Data). Unzip the file and move the three CSV files into your project folder. They have the columns described below. In columns that hold a list, the items are separated with semicolons, for example `brakes;engine;electrical`.
+The data files have already been created for you: [mechanics.csv](Data/mechanics.csv), [bays.csv](Data/bays.csv) and [jobs.csv](Data/jobs.csv). To download all three at once, use this link: [Download the example data files as a zip file](https://download-directory.github.io/?url=https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Examples/Lab02-Scheduling/Data). Unzip the file and put the three CSV files in a folder named `Data` inside your project folder. They have the columns described below. In columns that hold a list, the items are separated with semicolons, for example `brakes;engine;electrical`.
 
 **`mechanics.csv`**
 
@@ -87,7 +87,7 @@ The data files have already been created for you: [mechanics.csv](Data/mechanics
 
 ## Requirements (What the Program Needs to Do)
 
-1. **Data files.** Download the [zip file of data files](https://download-directory.github.io/?url=https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Examples/Lab02-Scheduling/Data), unzip it and put the three CSV files described above in your project folder.
+1. **Data files.** Download the [zip file of data files](https://download-directory.github.io/?url=https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Examples/Lab02-Scheduling/Data), unzip it and put the three CSV files described above in a folder named `Data` inside your project folder. When your program opens a file using a relative path such as `Data/jobs.csv`, Python starts looking in the folder where the program is *running* (the current working directory), not the folder that holds the `.py` file. So run your program, for example with `uv run main.py`, from your project folder, the one that contains `Data`.
 
 2. **Loading data.** Load each CSV file into a list of dictionaries, for example with `csv.DictReader`. Convert numbers to `int` and split the semicolon lists into Python lists.
 
@@ -330,9 +330,10 @@ import os
 from data_loader import load_data
 from scheduler import solve_schedule
 
-# The data files are in the same folder as this program
-PROGRAM_FOLDER = os.path.dirname(os.path.abspath(__file__))
-UNSOLVABLE_FOLDER = os.path.join(PROGRAM_FOLDER, "unsolvable_data")
+# These paths start at the folder where you run the program,
+# so run it from your project folder, the one that contains Data
+DATA_FOLDER = "Data"
+UNSOLVABLE_FOLDER = "unsolvable_data"
 
 
 # TODO: Write print_schedule(schedule). It prints the schedule as a table
@@ -340,7 +341,7 @@ UNSOLVABLE_FOLDER = os.path.join(PROGRAM_FOLDER, "unsolvable_data")
 
 
 def main():
-    data = load_data(PROGRAM_FOLDER)
+    data = load_data(DATA_FOLDER)
     answer = solve_schedule(data)
     if answer["status"] == "sat":
         print(answer["schedule"])    # TODO: print a table instead

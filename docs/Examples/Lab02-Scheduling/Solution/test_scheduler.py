@@ -12,8 +12,9 @@ from data_loader import load_data
 from scheduler import (TIME_SLOTS, solve_schedule, minimize_part_time_with_loop,
                        minimize_part_time_with_optimizer, part_time_lower_bound)
 
-PROGRAM_FOLDER = os.path.dirname(os.path.abspath(__file__))
-UNSOLVABLE_FOLDER = os.path.join(PROGRAM_FOLDER, "unsolvable_data")
+# These paths start at the folder where the tests are run (run them from this folder).
+DATA_FOLDER = os.path.join("..", "Data")
+UNSOLVABLE_FOLDER = "unsolvable_data"
 
 
 def check_schedule(schedule, data):
@@ -97,7 +98,7 @@ def count_part_time(schedule, data):
 # ----- The schedule from the real data -----
 
 def test_real_data_schedule_passes_every_rule():
-    data = load_data(PROGRAM_FOLDER)
+    data = load_data(DATA_FOLDER)
     answer = solve_schedule(data)
     assert answer["status"] == "sat"
     assert check_schedule(answer["schedule"], data) == []
@@ -135,7 +136,7 @@ def broken_copy(schedule):
 
 
 def test_checker_catches_bay_conflict():
-    data = load_data(PROGRAM_FOLDER)
+    data = load_data(DATA_FOLDER)
     schedule = broken_copy(solve_schedule(data)["schedule"])
     # The schedule is in the same order as data["jobs"]. Find a job that can
     # move into job 0's slot, and put it in job 0's bay.
@@ -149,7 +150,7 @@ def test_checker_catches_bay_conflict():
 
 
 def test_checker_catches_unqualified_mechanic():
-    data = load_data(PROGRAM_FOLDER)
+    data = load_data(DATA_FOLDER)
     schedule = broken_copy(solve_schedule(data)["schedule"])
     # M02 isn't certified for brakes, which job J101 needs
     schedule[0]["mechanic_id"] = "M02"
@@ -157,7 +158,7 @@ def test_checker_catches_unqualified_mechanic():
 
 
 def test_checker_catches_time_window():
-    data = load_data(PROGRAM_FOLDER)
+    data = load_data(DATA_FOLDER)
     schedule = broken_copy(solve_schedule(data)["schedule"])
     # J104 is an afternoon job (slots 6 to 7)
     for entry in schedule:
@@ -169,7 +170,7 @@ def test_checker_catches_time_window():
 # ----- Challenge 2 -----
 
 def test_loop_finds_fewest_part_time_jobs():
-    data = load_data(PROGRAM_FOLDER)
+    data = load_data(DATA_FOLDER)
     answer = minimize_part_time_with_loop(data)
     assert answer["status"] == "sat"
     assert check_schedule(answer["schedule"], data) == []
@@ -178,7 +179,7 @@ def test_loop_finds_fewest_part_time_jobs():
 
 
 def test_optimizer_finds_fewest_part_time_jobs():
-    data = load_data(PROGRAM_FOLDER)
+    data = load_data(DATA_FOLDER)
     answer = minimize_part_time_with_optimizer(data)
     assert answer["status"] == "sat"
     assert check_schedule(answer["schedule"], data) == []

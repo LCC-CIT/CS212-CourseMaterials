@@ -10,9 +10,10 @@ from data_loader import load_data
 from scheduler import (solve_schedule, minimize_part_time_with_loop,
                        minimize_part_time_with_optimizer)
 
-# The data files are in the same folder as this program
-PROGRAM_FOLDER = os.path.dirname(os.path.abspath(__file__))
-UNSOLVABLE_FOLDER = os.path.join(PROGRAM_FOLDER, "unsolvable_data")
+# These paths start at the folder where the program is run (run it from this folder).
+# The data files are in the Data folder, one level up.
+DATA_FOLDER = os.path.join("..", "Data")
+UNSOLVABLE_FOLDER = "unsolvable_data"
 
 
 def by_slot(entry):
@@ -47,7 +48,7 @@ def print_challenge_2_answer(answer):
 
 def main():
     print("=== Schedule ===")
-    data = load_data(PROGRAM_FOLDER)
+    data = load_data(DATA_FOLDER)
     print_answer(solve_schedule(data))
 
     print()
