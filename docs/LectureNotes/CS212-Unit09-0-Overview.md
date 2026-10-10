@@ -40,7 +40,7 @@ The *Model Context Protocol* (MCP) standardizes communication with and between L
 **This week you will:**
 
 - Get a basic understanding of the MCP protocol.
-- <a href="https://classes.lanecc.edu/mod/url/view.php?id=4679547" target="_blank">Build an MCP Server</a>.
+- <a href="../Labs/Lab07-MCP/BuildWeatherMcpServer.html" target="_blank">Build an MCP Server</a>.
 - Build an MCP client.
 
 ## Announcements for Fall 2025
@@ -62,7 +62,7 @@ Registration for winter term is open. If you are pursuing the AAS in Software De
 - <a href="https://lanecc.smartcatalogiq.com/en/current/lcc-catalog/programs-of-study/computer-information-technology/software-development-aas" target="_blank">Degree Requirements</a> for AAS in Software Dev
 - <a href="https://docs.google.com/document/d/1F8CJY1M7A4J9uJtGRDFRyF-0j7l2AVe0vpPE5vcfHXE/edit?tab=t.0" target="_blank">Term-By-Term Sample Planner</a> for AAS in Software Dev
 
-- [Winter 2026 Class Schedule](**CS135M  Beginning Mobile Application Development**)
+- Winter 2026 Class Schedule
 - <a href="https://lanecc.edu/advising" target="_blank">Academic Advising</a>
 - <a href="https://my.lanecc.edu/StudentRegistrationSsb/ssb/registration" target="_blank">Registration</a>
 

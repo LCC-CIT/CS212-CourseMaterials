@@ -433,7 +433,7 @@ print("====================================")
 
 ## References
 
-- <a href="https://www.mygreatlearning.com/blog/expert-systems-in-artificial-intelligence/" target="_blank">What are Expert Systems in Artificial Intelligence?</a> By <a href="https://www.mygreatlearning.com/blog/author/samudyata/" target="_blank">Samudyata Bhat</a> Updated on Feb 6, 2025 on Great Learning.
+- <a href="https://www.mygreatlearning.com/blog/expert-systems-in-artificial-intelligence/" target="_blank">What are Expert Systems in Artificial Intelligence?</a> By Samudyata Bhat Updated on Feb 6, 2025 on Great Learning.
 - 
 
 Note: Some parts of this document were initially drafted with assistance from Gemini 2.5 Flash

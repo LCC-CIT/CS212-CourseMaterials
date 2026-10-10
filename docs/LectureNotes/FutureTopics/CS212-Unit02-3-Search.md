@@ -71,7 +71,7 @@ Search for an optimal set of steps to reach a particular configuration given a s
   - Only the boat can be used to cross the river (no wading or swimming).
   - If the zombies on either side of the river outnumber the humans, they will kill them.
 
-  Here is a solution to the <a href="https://lcc-cit.github.io/CS123-CourseMaterials/LectureNotes/Topic-01-4-ZombieCrossingSolution.html" target="_blank">Zombies and humans river crossing problem</a> with a description of the state-space and the steps to get from the initial state-space configuration to the state-space configuration that is the goal.
+  Here is a solution to the <a href="https://lcc-cit.github.io/CS112-CourseMaterials/LectureNotes/CS112-Topic02-1-ZombieCrossingSolution.html" target="_blank">Zombies and humans river crossing problem</a> with a description of the state-space and the steps to get from the initial state-space configuration to the state-space configuration that is the goal.
 
   
 

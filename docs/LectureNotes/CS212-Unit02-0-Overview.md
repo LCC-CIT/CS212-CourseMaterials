@@ -36,7 +36,7 @@ author: Brian Bird
   - Explain what a *SMT solver* is.
   - Identify problems that can be solved by an SMT solver.
   - Write an app that uses a SMT sovler.
-  - Use a <a href="./CS212-Unit02-5-PythonProjects.html" target="_blank">Python virtual environment</a>, <a href="./CS212-Unit02-4-PythonLoops.html" target="_blank">Python loops</a> and <a href="./CS212-Unit02--3-PythonCollectionTypes.html" target="_blank">Python collection types</a>
+  - Use a <a href="./CS212-Unit02-5-PythonProjects.html" target="_blank">Python virtual environment</a>, <a href="./CS212-Unit02-4-PythonLoops.html" target="_blank">Python loops</a> and <a href="./CS212-Unit02-3-PythonCollectionTypes.html" target="_blank">Python collection types</a>
 
 ## Announcements
 

@@ -1,6 +1,6 @@
 # Lab 2 Class Example Solution
 
-Solution for the [Lab 2 class example](../CS212_Lab02_Example.md): scheduling auto repair jobs with the Z3 constraint solver. It covers all of the requirements and both options in Challenge 2. It doesn't include Challenge 1.
+Solution for the [Lab 2 class example](../CS212_Lab02_Example.html): scheduling auto repair jobs with the Z3 constraint solver. It covers all of the requirements and both options in Challenge 2. It doesn't include Challenge 1.
 
 | File | What it does |
 | --- | --- |

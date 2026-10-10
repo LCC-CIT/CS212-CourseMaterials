@@ -1,0 +1,77 @@
+name: Check links
+
+on:
+  workflow_dispatch:
+  # Run only when something that affects the published site or the checker changes.
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'lychee.toml'
+      - '.lycheeignore'
+      - '.github/workflows/link-check.yaml'
+  # Limited to main so a pull request branch isn't checked twice (push + PR).
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'lychee.toml'
+      - '.lycheeignore'
+      - '.github/workflows/link-check.yaml'
+  # Weekly run catches external links that break while no one is editing.
+  schedule:
+    - cron: '17 9 * * 1'
+
+permissions:
+  contents: read
+
+# A newer push supersedes a run that is still going.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+
+      # Build only /docs, the same way GitHub Pages does (github-pages gem and
+      # theme), so the checker sees the published site and not the repo root.
+      - name: Build
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./docs
+          # Output goes in a folder named like the repo so the root-relative
+          # links the site generates (/CS212-CourseMaterials/assets/...) resolve.
+          destination: ./_site/CS212-CourseMaterials
+
+      # Restore and save are separate steps so the cache is saved even when
+      # the link check fails (a plain cache step skips saving on failure).
+      - name: Restore lychee cache
+        uses: actions/cache/restore@v5
+        with:
+          path: .lycheecache
+          key: cache-lychee-${{ github.sha }}
+          restore-keys: cache-lychee-
+
+      - name: Link checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # --root-dir resolves the site's root-relative links against _site/.
+          # --remap checks links to our own published pages against this build,
+          # not the live site, which lags a push.
+          args: >-
+            --cache --max-cache-age 1d
+            --root-dir ${{ github.workspace }}/_site
+            --remap 'https://lcc-cit\.github\.io/CS212-CourseMaterials/ file://${{ github.workspace }}/_site/CS212-CourseMaterials/'
+            ./_site/CS212-CourseMaterials/
+          fail: true
+
+      - name: Save lychee cache
+        if: always()
+        uses: actions/cache/save@v5
+        with:
+          path: .lycheecache
+          key: cache-lychee-${{ github.sha }}

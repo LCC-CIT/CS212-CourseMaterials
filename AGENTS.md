@@ -32,6 +32,15 @@ Course materials for **CS 212, AI Programming 1** at Lane Community College, by 
 - Student-facing instructions must work on Windows, macOS, and Linux. Never include absolute paths from the instructor's machine.
 - Python projects use [`uv`](https://docs.astral.sh/uv/) with a `pyproject.toml`; students run them with `uv run <script>.py`.
 
+## Link Check
+
+`.github/workflows/link-check.yaml` builds `docs/` with `actions/jekyll-build-pages` and runs [lychee](https://lychee.cli.rs/) on the result. It runs on pull requests and pushes to `main` that touch `docs/` or the checker's settings, weekly (to catch external link rot), and on demand. It fails on any broken link.
+
+- Settings are in `lychee.toml` (accepts 200, 403, 429) and `.lycheeignore` (one regex per line).
+- Fix a broken link rather than ignoring it. Add to `.lycheeignore` only a link that works in a browser but fails in CI, and add a comment saying why.
+- The workflow remaps our own published URLs (`https://lcc-cit.github.io/CS212-CourseMaterials/...`) to the local build, so a new page doesn't fail before the site has deployed.
+- Only `docs/` is published. A link to a folder outside it (such as `Tutorials/`) will be broken on the site.
+
 ## Working Here
 
 - Commit and push only when the instructor asks. Leave notebook metadata and saved outputs alone unless the change requires otherwise.

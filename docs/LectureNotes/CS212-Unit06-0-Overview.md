@@ -18,7 +18,7 @@ author: Brian Bird
 | 2.  Symbolic AI                          | 7. Generative AI                       |
 | 3. Classical machine learning: training  | 8. Custom chatbot                      |
 | 4. Classical machine learning: inference | 9. LLM fine-tuning                     |
-| 5. More ML + [History of AI]()           | 10. Social and ethical issues          |
+| 5. More ML + History of AI           | 10. Social and ethical issues          |
 |                                          | 11. Final project presentation         |
 
 <h2>Contents</h2>
@@ -34,8 +34,7 @@ author: Brian Bird
 ## Announcements for Fall 2025
 
 - **CIT Lab hiring workers**
-  The CIT Lab is looking for Front/Help Desk workers. <a href="https://lanecc.studentemployment.ngwebsolutions.com/JobXJobDetail.aspx?JobId=12268&s=1" target="_blank">Here is the link to apply</a>. It's a great opportunity and a fun place to work.
-
+  
 - **Student Emergent Tech & AI Club**
   Fusion Lab Faculty and students are forming a [club on emergent technology and AI](Images/ETAIClubPoster.pdf).
    <a href="https://out.smore.com/e/nd345/V0ERKC?__$u__" target="_blank">Interest Form</a> | Contact: <a href="https://out.smore.com/e/nd345/X14b6G?__$u__" target="_blank">Kevin Steeves</a>
@@ -59,7 +58,7 @@ Registration for winter term is open. If you are pursuing the AAS in Software De
 
 - <a href="https://docs.google.com/document/d/1F8CJY1M7A4J9uJtGRDFRyF-0j7l2AVe0vpPE5vcfHXE/edit?tab=t.0" target="_blank">Term-By-Term Sample Planner</a> for AAS in Software Dev
 
-- [Winter 2026 Class Schedule](**CS135M  Beginning Mobile Application Development**)
+- Winter 2026 Class Schedule
 
 - <a href="https://lanecc.edu/advising" target="_blank">Academic Advising</a>
 

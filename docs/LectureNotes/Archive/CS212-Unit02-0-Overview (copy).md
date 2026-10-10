@@ -36,11 +36,11 @@ author: Brian Bird
   - Write rules for a *knowledge base*
   - Make an *inference engine*
   - Use *forward chaining*
-  - Use <a href="https://classes.lanecc.edu/mod/url/view.php?id=4661690" target="_blank">Python loops</a> and <a href="https://classes.lanecc.edu/mod/url/view.php?id=4661672" target="_blank">Python collection types</a>
+  - Use <a href="../CS212-Unit02-4-PythonLoops.html" target="_blank">Python loops</a> and <a href="../CS212-Unit02-3-PythonCollectionTypes.html" target="_blank">Python collection types</a>
 
 ## Announcements
 
-- <a href="https://sites.google.com/lanecc.edu/fusionlab/home?pli=1" target="_blank">Fusion Lab</a> faculty and students are forming a club on emergent technology and AI. If you are interested, fill out the <a href="https://out.smore.com/e/01kmx/T9ULP5?__$u__" target="_blank">Interest Form</a>
+- <a href="https://inside.lanecc.edu/atc/fusion-lab" target="_blank">Fusion Lab</a> faculty and students are forming a club on emergent technology and AI. If you are interested, fill out the <a href="https://out.smore.com/e/01kmx/T9ULP5?__$u__" target="_blank">Interest Form</a>
 
 ## Things to Do This Week
 
