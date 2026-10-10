@@ -57,7 +57,7 @@ A valid schedule must follow all of these rules. Each rule will become a group o
 
 ## Data Files
 
-The data files have already been created for you: [crews.csv](GroupB-V2-Data/crews.csv), [aircraft.csv](GroupB-V2-Data/aircraft.csv) and [flights.csv](GroupB-V2-Data/flights.csv). To download all three at once, use this link: [Download the Group B data files as a zip file](https://download-directory.github.io/?url=https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Labs/Lab02-ConstraintSolvers/GroupB-V2-Data). Unzip the file and move the three CSV files into your project folder. They have the columns described below. In columns that hold a list, the items are separated with semicolons, for example `PDX;BOI;SUN`.
+The data files have already been created for you: [crews.csv](GroupB-V2-Data/crews.csv), [aircraft.csv](GroupB-V2-Data/aircraft.csv) and [flights.csv](GroupB-V2-Data/flights.csv). To download all three at once, use this link: [Download the Group B data files as a zip file](https://download-directory.github.io/?url=https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Labs/Lab02-ConstraintSolvers/GroupB-V2-Data). Unzip the file and put the three CSV files in a folder named `Data` inside your project folder. They have the columns described below. In columns that hold a list, the items are separated with semicolons, for example `PDX;BOI;SUN`.
 
 **`crews.csv`**
 
@@ -90,7 +90,24 @@ The data files have already been created for you: [crews.csv](GroupB-V2-Data/cre
 3. **Decision variables.** For each flight, create three Z3 `Int` variables: its time slot, its crew (an index into the crews list) and its aircraft (an index into the aircraft list).
 4. **Constraints.** Add constraints for all six scheduling rules. You will need these Z3 tools: `And`, `Or`, `Implies`, and `Sum` combined with `If` for counting (rule 5). For rules 2 and 3 you can use either `Implies` on every pair of flights or `Distinct`.
 5. **Solving.** Use a Z3 `Solver` to find a schedule. Read the values out of the model and return the schedule as a list of dictionaries. Print the schedule in a readable table sorted by time slot, showing the departure time, flight number, destination, crew and aircraft.
-6. **Explaining an impossible schedule.** Create one Boolean tracking variable per constraint group (the names in the rules table) and add each constraint as `Implies(group_flag, constraint)`. Call `check()` with all the flags as assumptions. When the result is `unsat`, print the names of the groups in `unsat_core()`. Make a folder named `unsolvable_data` inside your `Data` folder, with three modified copies of the data files, each of which breaks a different rule. For example: a destination that no crew is qualified for, a flight whose `earliest_slot` is later than its `latest_slot`, or a destination with 3 flights that only one reserve crew (`max_flights` of 2) is qualified for. Your program must report the conflicting groups for each one. Keep each conflict small. Proving that no solution exists can take Z3 a very long time, and in testing for this lab, a larger version of the last example (14 flights to one destination for 13 openings) timed out instead of returning `unsat`.
+6. **Explaining an impossible schedule.** Sometimes no schedule can follow all the rules at once. When that happens, your program should report which rules conflict.
+
+   - Add code to do these things:
+
+     - Create one tracking flag for each constraint group (the names in the rules table). A flag is a Z3 `Bool`, a variable that is either true or false. It works like a switch that turns its group of constraints on.
+
+     - Add each constraint as `Implies(group_flag, constraint)`. `Implies(a, b)` means "if `a` is true, then `b` must be true," so a constraint only applies when its flag is on.
+
+     - Call `check()` with all the flags as *assumptions*. An assumption is a flag that Z3 treats as true for that one check, so every group of constraints is turned on.
+
+     - When the result is `unsat` (short for "unsatisfiable," which means Z3 has proved that no solution exists), print the names of the groups in `unsat_core()`. The *unsat core* is a set of flags whose constraint groups can't all be met at the same time.
+
+   - Make a folder named `unsolvable_data` inside your `Data` folder, with three modified copies of the data files, each of which breaks a different rule. For example: a destination that no crew is qualified for, a flight whose `earliest_slot` is later than its `latest_slot`, or a destination with 3 flights that only one reserve crew (`max_flights` of 2) is qualified for.
+
+   - Your program must report the conflicting groups for each unsolvable data file.
+
+   - Hint: keep each conflict small. Proving that no solution exists can take Z3 a very long time. In testing earlier versions of this lab, a larger version of the last example (14 flights to one destination for 13 openings) ran past the time limit and returned `unknown` instead of `unsat`.
+
 7. **Separation of concerns.** Keep the Z3 model and solving code in its own module, separate from file loading and from user input and output.
 8. **Testing.** Write a test module with a function that checks a schedule against all six rules in plain Python, without using Z3. Use it to test that:
    - the schedule from your real data passes every rule,
@@ -288,7 +305,7 @@ The regular crews can work at most 6 × 3 = 18 flights, so at least 24 − 18 = 
 
 Choose one of these two approaches. If you have time, try both and compare them.
 
-**Option A: A loop with `push()` and `pop()`.** Keep using your `Solver`. In a loop, add a constraint that `reserve_flights` is at most *k*, check, then lower *k* and try again. Stop when the check is `unsat` or `unknown`, or when *k* reaches 6.
+**Option A: A loop with `push()` and `pop()`.** Keep using your `Solver`. In a loop, add a constraint that `reserve_flights` is at most *k*, check, then lower *k* and try again. Stop when the check is `unsat` or `unknown`, or when *k* goes below the lower bound (6).
 
 > **Example: a loop with `push()` and `pop()`**
 >
@@ -349,7 +366,7 @@ if optimizer.check() == sat:
 ```
 
 - **Pros:** It takes only a few lines of code, and Z3 does the searching for you.
-- **Cons:** It's all or nothing: if the check times out, you may not get a schedule at all. It can be much slower than finding a single schedule. In testing for this lab, it took about 6 times longer without the lower bound, and on this kind of problem it sometimes returned wrong answers without one. It's also sensitive to how the count is written: with a separate `If` for every flight and reserve crew pair, instead of one `If` per flight as shown above, it timed out. Your model code must be able to add constraints to an `Optimize` object as well as a `Solver`.
+- **Cons:** It's all or nothing: if the check times out, you may not get a schedule at all. It can be much slower than finding a single schedule. In testing for this lab, it took about 6 times longer without the lower bound, and on this kind of problem it sometimes returned wrong answers without one. It's also sensitive to how the count is written: with a separate `If` for every flight and reserve crew pair, instead of one `If` per flight as shown above, it timed out. That's why the code that adds your constraints should go through one function that only calls `add()`, so it can add constraints to an `Optimize` object as well as a `Solver`.
 
 ## Submitting your lab work on Canvas
 
