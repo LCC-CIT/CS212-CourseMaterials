@@ -156,14 +156,22 @@ The data files have already been created for you: [mechanics.csv](Data/mechanics
 
 ## Z3 Tips
 
-These snippets show the pattern for this problem. Your code will need more than this. In your program, the file loading code goes in its own module (requirement 7). The file names have no folder in them, so Python looks for the CSV files in the folder you run the program from.
+These snippets show the pattern for this problem. Your code will need more than this. Requirement 7 asks you to keep the Z3 model separate from file loading and from input and output, so the snippets are split into three modules, like the complete solution:
+
+| Module | Its job | Uses Z3? |
+| --- | --- | --- |
+| `data_loader.py` | Loads the CSV files into lists of dictionaries | No |
+| `scheduler.py` | Creates the variables, adds the constraints, solves, and returns the answer as dictionaries and lists | Yes |
+| `main.py` | Runs the other modules and prints the results | No |
+
+`scheduler.py` doesn't read files or print anything. It takes the loaded data and returns the answer, so you can test it without any printing and change how the output looks without touching the Z3 code. The tests (requirement 8) go in a fourth module, `test_scheduler.py`.
+
+### `data_loader.py`
 
 ```python
-# TODO: Split this code into modules: file loading, the Z3 model and solving,
-#       and user input and output (requirement 7)
-
 import csv
-from z3 import Solver, Int, Bool, And, Or, Implies, Sum, If, sat, unsat
+import os
+
 
 # Load a CSV file into a list of dictionaries (requirement 2)
 # Each row becomes a dictionary whose keys are the column names,
@@ -176,72 +184,157 @@ def load_csv(filename):
             rows.append(row)
     return rows
 
-mechanics = load_csv("mechanics.csv")
-bays = load_csv("bays.csv")
-jobs = load_csv("jobs.csv")
 
-# Every value is read as a string, so convert the numbers to int
-# and split the semicolon lists into Python lists
-for mechanic_info in mechanics:
-    mechanic_info["max_jobs"] = int(mechanic_info["max_jobs"])
-    mechanic_info["certifications"] = mechanic_info["certifications"].split(";")
-for job in jobs:
-    job["earliest_slot"] = int(job["earliest_slot"])
-    job["latest_slot"] = int(job["latest_slot"])
+# Load the three data files from a folder. Taking the folder as a parameter lets
+# you load the real data and each data set in unsolvable_data (requirement 6).
+def load_data(folder):
+    mechanics = load_csv(os.path.join(folder, "mechanics.csv"))
+    bays = load_csv(os.path.join(folder, "bays.csv"))
+    jobs = load_csv(os.path.join(folder, "jobs.csv"))
+
+    # Every value is read as a string, so convert the numbers to int
+    # and split the semicolon lists into Python lists
+    for mechanic_info in mechanics:
+        mechanic_info["max_jobs"] = int(mechanic_info["max_jobs"])
+        mechanic_info["certifications"] = mechanic_info["certifications"].split(";")
+    for job in jobs:
+        job["earliest_slot"] = int(job["earliest_slot"])
+        job["latest_slot"] = int(job["latest_slot"])
+
+    # A dictionary written with { "key": value } is like an object literal in JS
+    return {"mechanics": mechanics, "bays": bays, "jobs": jobs}
+```
+
+### `scheduler.py`
+
+```python
+from z3 import Solver, Int, Bool, And, Or, Implies, Sum, If, sat, unsat
+
+TIME_SLOTS = ["7:00 am", "8:00 am", "9:00 am", "10:00 am",
+              "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm"]
+
+GROUP_NAMES = ["domain", "bay_conflict", "mechanic_conflict", "qualification",
+               "workload", "time_window"]
+
 
 # One set of decision variables per job (requirement 3)
-slot = []
-mechanic = []
-bay = []
-for job in jobs:
-    job_id = job["job_id"]
-    slot.append(Int("slot_" + job_id))
-    mechanic.append(Int("mechanic_" + job_id))
-    bay.append(Int("bay_" + job_id))
+# The slot, mechanic and bay of job j are slot[j], mechanic[j] and bay[j].
+def create_variables(jobs):
+    slot = []
+    mechanic = []
+    bay = []
+    for job in jobs:
+        job_id = job["job_id"]
+        slot.append(Int("slot_" + job_id))
+        mechanic.append(Int("mechanic_" + job_id))
+        bay.append(Int("bay_" + job_id))
+    return slot, mechanic, bay    # a function can return more than one value
+
 
 # One tracking flag per constraint group (requirement 6)
-group_names = ["domain", "bay_conflict", "mechanic_conflict", "qualification",
-               "workload", "time_window"]
-flags = {}        # a dictionary, like an object in JS or a Dictionary in C#
-flag_list = []
-for name in group_names:
-    flags[name] = Bool(name)
-    flag_list.append(flags[name])
+def create_flags():
+    flags = {}        # a dictionary, like an object in JS or a Dictionary in C#
+    flag_list = []
+    for name in GROUP_NAMES:
+        flags[name] = Bool(name)
+        flag_list.append(flags[name])
+    return flags, flag_list
 
-solver = Solver()
-solver.set("timeout", 10000)    # milliseconds
 
-# Every constraint is added through this function so it belongs to a group
-def add(group, constraint):
-    solver.add(Implies(flags[group], constraint))
+def add_constraints(solver, data, slot, mechanic, bay, flags):
+    mechanics = data["mechanics"]
+    bays = data["bays"]
+    jobs = data["jobs"]
 
-# TODO: Add the constraints for the other rules (requirement 4):
-#       domain, bay_conflict, mechanic_conflict, qualification and time_window
+    # Every constraint is added through this function so it belongs to a group.
+    # Implies(flag, constraint) means "if the flag is on, the constraint applies".
+    # When there's no solution, Z3 reports which flags it had to turn on to find
+    # the conflict. That tells us which rules can't all be met at the same time.
+    def add(group, constraint):
+        solver.add(Implies(flags[group], constraint))
 
-# Counting with Sum and If (rule 5)
-# If(condition, 1, 0) works like the ternary operator: condition ? 1 : 0
-for w in range(len(mechanics)):
-    terms = []
-    for j in range(len(jobs)):
-        terms.append(If(mechanic[j] == w, 1, 0))
-    count = Sum(terms)
-    add("workload", count <= mechanics[w]["max_jobs"])
+    # TODO: Add the constraints for the other rules (requirement 4):
+    #       domain, bay_conflict, mechanic_conflict, qualification and time_window
+    #       Hint: j is a job number, so loop with for j in range(len(jobs)).
 
-result = solver.check(flag_list)    # the flags are passed in as assumptions
-if result == sat:
-    model = solver.model()
-    # Read a value from the model and convert it to a Python int
-    first_slot = model.eval(slot[0], model_completion=True).as_long()
-    # TODO: Read every job's slot, mechanic and bay out of the model,
-    #       return the schedule as a list of dictionaries and print it
-    #       as a table sorted by time slot (requirement 5)
-elif result == unsat:
-    print("Conflicting rules:", solver.unsat_core())
-# TODO: Handle the case where result is unknown (the solver timed out)
+    # Counting with Sum and If (rule 5)
+    # If(condition, 1, 0) works like the ternary operator: condition ? 1 : 0
+    # w is a mechanic ("worker") number: a position in the mechanics list.
+    for w in range(len(mechanics)):
+        terms = []
+        for j in range(len(jobs)):
+            terms.append(If(mechanic[j] == w, 1, 0))
+        count = Sum(terms)
+        add("workload", count <= mechanics[w]["max_jobs"])
 
-# TODO: Run the program on each data set in the unsolvable_data folder (requirement 6)
-# TODO: Write the test module with a plain Python schedule checker (requirement 8)
+
+# TODO: Write read_schedule(model, data, slot, mechanic, bay). It returns the
+#       schedule as a list of dictionaries, one for each job (requirement 5).
+
+
+# Find a schedule, or explain why there isn't one.
+# Returns a dictionary with "status" ("sat", "unsat" or "unknown"),
+# "schedule" (a list, or None) and "conflicts" (a list of group names).
+def solve_schedule(data, timeout_ms=10000):
+    solver = Solver()
+    solver.set("timeout", timeout_ms)
+    slot, mechanic, bay = create_variables(data["jobs"])
+    flags, flag_list = create_flags()
+    add_constraints(solver, data, slot, mechanic, bay, flags)
+
+    result = solver.check(flag_list)    # the flags are passed in as assumptions
+
+    answer = {"status": str(result), "schedule": None, "conflicts": []}
+    if result == sat:
+        model = solver.model()
+        # model_completion=True makes Z3 fill in a value if no rule mentions
+        # the variable. as_long() converts the Z3 number to a Python int.
+        first_slot = model.eval(slot[0], model_completion=True).as_long()
+        # TODO: Use read_schedule() to set answer["schedule"]
+    elif result == unsat:
+        # TODO: Set answer["conflicts"] to the names of the flags in the core
+        print("Conflicting rules:", solver.unsat_core())    # remove this print
+    # When the result is unknown, the solver timed out and the answer keeps
+    # its "unknown" status.
+    return answer
 ```
+
+### `main.py`
+
+```python
+import os
+
+from data_loader import load_data
+from scheduler import solve_schedule
+
+# The data files are in the same folder as this program
+PROGRAM_FOLDER = os.path.dirname(os.path.abspath(__file__))
+UNSOLVABLE_FOLDER = os.path.join(PROGRAM_FOLDER, "unsolvable_data")
+
+
+# TODO: Write print_schedule(schedule). It prints the schedule as a table
+#       sorted by time slot (requirement 5).
+
+
+def main():
+    data = load_data(PROGRAM_FOLDER)
+    answer = solve_schedule(data)
+    if answer["status"] == "sat":
+        print(answer["schedule"])    # TODO: print a table instead
+    elif answer["status"] == "unsat":
+        print("No schedule is possible. Conflicting rules:", answer["conflicts"])
+    else:
+        print("The solver timed out before it found an answer.")
+
+    # TODO: Run the program on each data set in the unsolvable_data folder
+    #       (requirement 6). Use os.listdir(UNSOLVABLE_FOLDER) for the folder names.
+
+
+if __name__ == "__main__":    # run main() only when this file is run, not imported
+    main()
+```
+
+`test_scheduler.py` (requirement 8) is a fourth module. It imports `load_data` and `solve_schedule`, and has the plain Python schedule checker and the tests.
 
 ## Optional Challenges
 
@@ -271,26 +364,48 @@ Update your loading code for the new columns, add the two new groups to your tra
 
 **Challenge 2: Minimizing part-time jobs.** The shop would rather give its full-time mechanics a full day of work than rely on part-time mechanics. Find a schedule that has as few jobs done by part-time mechanics as possible, and print that number and the schedule that goes with it.
 
-First, count the jobs done by part-time mechanics. This uses `Sum` and `If` like the workload counting in the Z3 tips, with one `If` for each job:
+All of the Challenge 2 code goes in `scheduler.py`, and `main.py` prints the results. Each approach below is a function that takes the `data` dictionary and returns a dictionary, like `solve_schedule()`.
+
+First, count the jobs done by part-time mechanics. This uses `Sum` and `If` like the workload counting in the Z3 tips, with one `If` for each job. Add these functions to `scheduler.py` (and add `Or` and `Optimize` to its `from z3 import` line):
 
 ```python
-part_time_terms = []
-for j in range(len(jobs)):
-    # A list of conditions: "job j is done by part-time mechanic w"
-    done_by_part_time = []
-    for w in range(len(mechanics)):
-        if mechanics[w]["max_jobs"] == 2:    # part-time
-            done_by_part_time.append(mechanic[j] == w)
-    # Count 1 if any of those conditions is true
-    part_time_terms.append(If(Or(done_by_part_time), 1, 0))
-part_time_jobs = Sum(part_time_terms)
+def is_part_time(mechanic_info):
+    """Part-time mechanics are the ones who can do at most 2 jobs."""
+    return mechanic_info["max_jobs"] == 2
+
+
+# A Z3 expression for the number of jobs done by part-time mechanics
+def count_part_time_jobs(data, mechanic):
+    part_time_terms = []
+    for j in range(len(data["jobs"])):
+        # A list of conditions: "job j is done by part-time mechanic w"
+        done_by_part_time = []
+        for w in range(len(data["mechanics"])):
+            if is_part_time(data["mechanics"][w]):
+                done_by_part_time.append(mechanic[j] == w)
+        # Count 1 if any of those conditions is true
+        part_time_terms.append(If(Or(done_by_part_time), 1, 0))
+    return Sum(part_time_terms)
 ```
 
-The full-time mechanics can do at most 6 × 3 = 18 jobs, so at least 24 − 18 = 6 jobs must go to part-time mechanics. That makes 6 the lowest possible value. Proving that no solution exists can take Z3 much longer than finding one, so both approaches below use 6 as a lower bound instead of asking Z3 to prove that 5 is impossible.
+The full-time mechanics can do at most 6 × 3 = 18 jobs, so at least 24 − 18 = 6 jobs must go to part-time mechanics. That makes 6 the lowest possible value. Proving that no solution exists can take Z3 much longer than finding one, so both approaches below use 6 as a lower bound instead of asking Z3 to prove that 5 is impossible. You can write `6` in your code, or calculate it from the data like this:
+
+```python
+# The fewest part-time jobs possible: the jobs full-time mechanics can't cover
+def part_time_lower_bound(data):
+    full_time_capacity = 0
+    for mechanic_info in data["mechanics"]:
+        if not is_part_time(mechanic_info):
+            full_time_capacity = full_time_capacity + mechanic_info["max_jobs"]
+    lower_bound = len(data["jobs"]) - full_time_capacity
+    if lower_bound < 0:
+        lower_bound = 0
+    return lower_bound
+```
 
 Choose one of these two approaches. If you have time, try both and compare them.
 
-**Option A: A loop with `push()` and `pop()`.** Keep using your `Solver`. In a loop, add a constraint that `part_time_jobs` is at most *k*, check, then lower *k* and try again. Stop when the check is `unsat` or `unknown`, or when *k* reaches 6.
+**Option A: A loop with `push()` and `pop()`.** Keep using a `Solver`. In a loop, add a constraint that `part_time_jobs` is at most *k*, check, then lower *k* and try again. Stop when the check is `unsat` or `unknown`, or when *k* goes below the lower bound (6).
 
 > **Example: a loop with `push()` and `pop()`**
 >
@@ -324,34 +439,75 @@ Choose one of these two approaches. If you have time, try both and compare them.
 >
 > Read the value out of the model before calling `pop()`, because the model belongs to that check. In this challenge, the limit is on `part_time_jobs` instead of on `x`.
 
+Here is the pattern as a function in `scheduler.py`. It sets up the model the same way `solve_schedule()` does, then loops. The TODOs are yours:
+
+```python
+# Returns a dictionary with "status" ("sat" if at least one schedule was found,
+# otherwise the last check result), "count" (the fewest part-time jobs found,
+# or None) and "schedule" (the schedule that goes with it, or None).
+def minimize_part_time_with_loop(data, timeout_ms=10000):
+    solver = Solver()
+    solver.set("timeout", timeout_ms)
+    slot, mechanic, bay = create_variables(data["jobs"])
+    flags, flag_list = create_flags()
+    add_constraints(solver, data, slot, mechanic, bay, flags)
+    part_time_jobs = count_part_time_jobs(data, mechanic)
+    lower_bound = part_time_lower_bound(data)
+
+    answer = {"status": "unknown", "count": None, "schedule": None}
+
+    limit = len(data["jobs"])
+    while limit >= lower_bound:
+        solver.push()                         # save a checkpoint
+        solver.add(part_time_jobs <= limit)   # try a tighter limit
+        result = solver.check(flag_list)
+        # TODO: If the result is sat, read the model and save the count and
+        #       the schedule in answer. Do this before pop().
+        solver.pop()                          # remove the limit
+        # TODO: If the result isn't sat, stop the loop. Only change the
+        #       status if you never found a schedule.
+        limit = limit - 1                     # try one fewer part-time job
+    return answer
+```
+
 - **Pros:** It uses the `Solver` you already have. Every check that succeeds gives you a complete schedule, so if a later check times out you still have the best one found so far. You can print *k* each time through the loop to watch it improve.
 - **Cons:** You write more code, and Z3 runs many separate checks. You have to decide when to stop the loop.
 
-**Option B: The `Optimize` class.** Z3 has an `Optimize` class that works like a `Solver`, with the same `add()`, `check()` and `model()` methods, plus a `minimize()` method. Add all of your constraints to an `Optimize` object instead of a `Solver`, then tell it what to minimize:
+**Option B: The `Optimize` class.** Z3 has an `Optimize` class that works like a `Solver`, with the same `add()`, `check()` and `model()` methods, plus a `minimize()` method. Your `add_constraints()` function already works with an `Optimize` object, because it only calls `solver.add()`. Pass it an `Optimize` instead of a `Solver`, then tell it what to minimize. Here is a second function in `scheduler.py`:
 
 ```python
-from z3 import Optimize
+# Returns a dictionary with the same keys as minimize_part_time_with_loop()
+def minimize_part_time_with_optimizer(data, timeout_ms=30000):
+    optimizer = Optimize()
+    optimizer.set("timeout", timeout_ms)    # milliseconds
+    slot, mechanic, bay = create_variables(data["jobs"])
+    flags, flag_list = create_flags()
+    add_constraints(optimizer, data, slot, mechanic, bay, flags)
 
-optimizer = Optimize()
-optimizer.set("timeout", 30000)    # milliseconds
-# ... add all of your constraints with optimizer.add() ...
+    # Turn every constraint group on. Without this, Z3 can make the tracking
+    # flags False, which turns off your rules. (This is also much faster than
+    # passing the flags to check() as assumptions.)
+    for flag in flag_list:
+        optimizer.add(flag)
 
-# Turn every constraint group on. Without this, Z3 can make the tracking
-# flags False, which turns off your rules. (This is also much faster than
-# passing the flags to check() as assumptions.)
-for flag in flag_list:
-    optimizer.add(flag)
+    part_time_jobs = count_part_time_jobs(data, mechanic)
+    optimizer.add(part_time_jobs >= part_time_lower_bound(data))    # the lower bound
+    optimizer.minimize(part_time_jobs)
 
-optimizer.add(part_time_jobs >= 6)    # the lower bound
-optimizer.minimize(part_time_jobs)
+    result = optimizer.check()
 
-if optimizer.check() == sat:
-    model = optimizer.model()
-    print("Part-time jobs:", model.eval(part_time_jobs))    # Part-time jobs: 6
+    answer = {"status": str(result), "count": None, "schedule": None}
+    if result == sat:
+        model = optimizer.model()
+        answer["count"] = model.eval(part_time_jobs, model_completion=True).as_long()    # 6
+        # TODO: Use read_schedule() to set answer["schedule"]
+    return answer
 ```
 
+In `main.py`, call either function and print `answer["count"]` and the schedule when `answer["status"]` is `"sat"`.
+
 - **Pros:** It takes only a few lines of code, and Z3 does the searching for you.
-- **Cons:** It's all or nothing: if the check times out, you may not get a schedule at all. It can be much slower than finding a single schedule. In testing for this lab, it took about 9 times longer without the lower bound, and on this kind of problem it sometimes returned wrong answers without one. It's also sensitive to how the count is written: with a separate `If` for every job and part-time mechanic pair, instead of one `If` per job as shown above, it timed out. Your model code must be able to add constraints to an `Optimize` object as well as a `Solver`.
+- **Cons:** It's all or nothing: if the check times out, you may not get a schedule at all. It can be much slower than finding a single schedule. In testing for this lab, it took about 9 times longer without the lower bound, and on this kind of problem it sometimes returned wrong answers without one. It's also sensitive to how the count is written: with a separate `If` for every job and part-time mechanic pair, instead of one `If` per job as shown above, it timed out. That's why `add_constraints()` should only call `add()`, so it can add constraints to an `Optimize` object as well as a `Solver`.
 
 ## Submitting your lab work on Canvas
 
