@@ -8,19 +8,21 @@
 
 ## Meet Z3
 
-**Z3** is a free, open-source constraint solver from Microsoft Research. Technically it's an **SMT solver** (*Satisfiability Modulo Theories*). You don't need to know what that means. In practice it means that Z3 understands rules about whole numbers, decimal numbers, true/false values, and more, all in the same problem.
+Z3 is a free, open-source constraint solver from Microsoft Research. Technically it's an *SMT solver* (*Satisfiability Modulo Theories*). You don't need to know all the details of what that means. In practice it means that Z3 understands rules about whole numbers, decimal numbers, true/false values, and more, all in the same problem and can determine if the problem is solvable and then solve it.
 
 Z3 is written in C++, but it comes with a Python package, so you can use it by writing ordinary Python code.
 
 ### Installing
 
-In a terminal (in a Jupyter notebook cell, use `%pip install z3-solver` instead):
+In a terminal or .py file:
 
 ```bash
 pip install z3-solver
 ```
 
 > The package is named `z3-solver`, but in your code you import it as `z3`.
+
+(In a Jupyter notebook cell, use `%pip install z3-solver` instead).
 
 ### Your First Z3 Program
 
@@ -389,7 +391,7 @@ o.maximize(expr);  o.minimize(expr)
 
 
 
-*This page was drafted by Claude Sonnet 5.5 and was revised by Brian Bird with assistance from Claude Opus 5.5, 10/7/26*
+*This page was drafted by Claude Sonnet 5.5 and was revised by Brian Bird with assistance from Claude Opus 5.5, 10/10/26*
 
 ---
 

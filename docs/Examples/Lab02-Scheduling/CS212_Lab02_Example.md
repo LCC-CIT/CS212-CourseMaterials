@@ -377,4 +377,4 @@ The main focus of grading will be on how you model the problem as constraints an
 
 
 
-*These instructions were drafted by Claude Sonnet 5.5 and adapted by Claude Opus 5.5 for the class example.*
+*These example instructions were drafted by Claude Sonnet 5.5,adapted by Claude Opus 5.5 and revised by Brian Bird 10/10/26.*
