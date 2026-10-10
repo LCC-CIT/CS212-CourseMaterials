@@ -18,6 +18,8 @@ uv run main.py
 uv run test_scheduler.py
 uv run pytest           # the same tests, run with pytest
 ```
+Note: If you are **not familiar with pytest**, you don't need to use it in your actual lab assigment.
+If you **do know how to use pytest** you are welcome to use it instead of the test drivers.
 
 ## Unsolvable Data Sets
 

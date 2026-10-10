@@ -13,7 +13,7 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-This is the class example for Lab 2. It has the same requirements as the lab assignments for each group, but a different scheduling problem. We'll work through it in class, and a complete solution is in the [Solution folder](Solution/README.md).
+This example for Lab 2 has the same type of requirements as the lab assignments for each group, but a different scheduling problem. We'll work through it in class, and a complete solution is in the [Solution folder](Solution/README.md).
 
 <h2>Contents</h2>
 
@@ -85,21 +85,44 @@ The data files have already been created for you: [mechanics.csv](Data/mechanics
 | `earliest_slot` | Earliest allowed time slot |
 | `latest_slot` | Latest allowed time slot |
 
-## Requirements
+## Requirements (What the Program Needs to Do)
 
 1. **Data files.** Download the [zip file of data files](https://download-directory.github.io/?url=https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Examples/Lab02-Scheduling/Data), unzip it and put the three CSV files described above in your project folder.
+
 2. **Loading data.** Load each CSV file into a list of dictionaries, for example with `csv.DictReader`. Convert numbers to `int` and split the semicolon lists into Python lists.
+
 3. **Decision variables.** For each job, create three Z3 `Int` variables: its time slot, its mechanic (an index into the mechanics list) and its bay (an index into the bays list).
+
 4. **Constraints.** Add constraints for all six scheduling rules. You will need these Z3 tools: `And`, `Or`, `Implies`, and `Sum` combined with `If` for counting (rule 5). For rules 2 and 3 you can use either `Implies` on every pair of jobs or `Distinct`.
+
 5. **Solving.** Use a Z3 `Solver` to find a schedule. Read the values out of the model and return the schedule as a list of dictionaries. Print the schedule in a readable table sorted by time slot, showing the time, job ID, service, mechanic and bay.
-6. **Explaining an impossible schedule.** Create one Boolean tracking variable per constraint group (the names in the rules table) and add each constraint as `Implies(group_flag, constraint)`. Call `check()` with all the flags as assumptions. When the result is `unsat`, print the names of the groups in `unsat_core()`. Make a folder named `unsolvable_data` with three modified copies of the data files, each of which breaks a different rule. For example: a service that no mechanic is certified for, a job whose `earliest_slot` is later than its `latest_slot`, or a service needed by 3 jobs that only one part-time mechanic (`max_jobs` of 2) is certified for. Your program must report the conflicting groups for each one. Keep each conflict small. Proving that no solution exists can take Z3 a very long time, and in testing for this lab, a larger version of the last example (14 jobs needing one service for 13 openings) timed out instead of returning `unsat`.
+
+6. **Explaining an impossible schedule.** Sometimes no schedule can follow all the rules at once. When that happens, your program should report which rules conflict.
+
+   - Add code to do these things:
+
+     - Create one tracking flag for each constraint group (the names in the rules table). A flag is a Z3 `Bool`, a variable that is either true or false. It works like a switch that turns its group of constraints on.
+
+     - Add each constraint as `Implies(group_flag, constraint)`. `Implies(a, b)` means "if `a` is true, then `b` must be true," so a constraint only applies when its flag is on.
+
+     - Call `check()` with all the flags as *assumptions*. An assumption is a flag that Z3 treats as true for that one check, so every group of constraints is turned on.
+
+     - When the result is `unsat` (short for "unsatisfiable," which means Z3 has proved that no solution exists), print the names of the groups in `unsat_core()`. The *unsat core* is a set of flags whose constraint groups can't all be met at the same time.
+
+   - Make a folder named `unsolvable_data` with three modified copies of the data files, each of which breaks a different rule. For example: a service that no mechanic is certified for, a job whose `earliest_slot` is later than its `latest_slot`, or a service needed by 3 jobs that only one part-time mechanic (`max_jobs` of 2) is certified for.
+
+   - Your program must report the conflicting groups for each unsolvable data file.
+
+   - Hint: keep each conflict small. Proving that no solution exists can take Z3 a very long time. In testing earlier versions of this lab, a larger version of the last example (14 jobs needing one service for 13 openings) ran past the time limit and returned `unknown` instead of `unsat`.
+
 7. **Separation of concerns.** Keep the Z3 model and solving code in its own module, separate from file loading and from user input and output.
+
 8. **Testing.** Write a test module with a function that checks a schedule against all six rules in plain Python, without using Z3. Use it to test that:
    - the schedule from your real data passes every rule,
    - each data set in `unsolvable_data` is reported as `unsat` with the expected constraint group in the core,
    - the checker itself catches a schedule that you broke on purpose, for example by putting two jobs in the same bay at the same time.
 
-> **Example: a simple test driver**
+> **A simple test driver**
 >
 > You don't need a testing framework for requirement 8. Write each test as a function that uses `assert`, which stops the function with an `AssertionError` if its condition is `False`. Then write a short "test driver" loop that calls each test function and reports whether it passed.
 >
@@ -154,7 +177,7 @@ The data files have already been created for you: [mechanics.csv](Data/mechanics
 >
 > The `tests` list holds the functions themselves (no parentheses), so the loop can call each one with `test()`, and `test.__name__` is the function's name. Put your own tests in the list and run the module with `uv run test_scheduler.py`, or whatever you named it. If you already know `pytest`, you can use it instead: it finds and runs functions whose names start with `test_`.
 
-## Z3 Tips
+## Partially Completed Code
 
 These snippets show the pattern for this problem. Your code will need more than this. Requirement 7 asks you to keep the Z3 model separate from file loading and from input and output, so the snippets are split into three modules, like the complete solution:
 
