@@ -9,7 +9,7 @@ without Z3, so it doesn't depend on the code it is testing.
 import os
 
 from data_loader import load_data
-from scheduler import (solve_schedule, minimize_part_time_with_loop,
+from scheduler import (TIME_SLOTS, solve_schedule, minimize_part_time_with_loop,
                        minimize_part_time_with_optimizer, part_time_lower_bound)
 
 PROGRAM_FOLDER = os.path.dirname(os.path.abspath(__file__))
@@ -38,7 +38,7 @@ def check_schedule(schedule, data):
     if sorted(scheduled_ids) != sorted(jobs_by_id.keys()):
         broken.append("domain")
     for entry in schedule:
-        if (entry["slot"] < 0 or entry["slot"] > 7
+        if (entry["slot"] < 0 or entry["slot"] >= len(TIME_SLOTS)
                 or entry["mechanic_id"] not in mechanics_by_id
                 or entry["bay_id"] not in bay_ids):
             broken.append("domain")
@@ -85,7 +85,7 @@ def count_part_time(schedule, data):
     """Count the jobs done by part-time mechanics, in plain Python."""
     part_time_ids = []
     for mechanic_info in data["mechanics"]:
-        if mechanic_info["max_jobs"] == 2:
+        if mechanic_info["max_jobs"] == 2:    # part-time
             part_time_ids.append(mechanic_info["mechanic_id"])
     count = 0
     for entry in schedule:
@@ -137,12 +137,13 @@ def broken_copy(schedule):
 def test_checker_catches_bay_conflict():
     data = load_data(PROGRAM_FOLDER)
     schedule = broken_copy(solve_schedule(data)["schedule"])
-    # Find a job that can move into job 0's slot, and put it in job 0's bay
-    for entry in schedule[1:]:
-        job = data["jobs"][schedule.index(entry)]
+    # The schedule is in the same order as data["jobs"]. Find a job that can
+    # move into job 0's slot, and put it in job 0's bay.
+    for j in range(1, len(schedule)):
+        job = data["jobs"][j]
         if job["earliest_slot"] <= schedule[0]["slot"] <= job["latest_slot"]:
-            entry["slot"] = schedule[0]["slot"]
-            entry["bay_id"] = schedule[0]["bay_id"]
+            schedule[j]["slot"] = schedule[0]["slot"]
+            schedule[j]["bay_id"] = schedule[0]["bay_id"]
             break
     assert "bay_conflict" in check_schedule(schedule, data)
 
@@ -207,4 +208,6 @@ if __name__ == "__main__":
             passed = passed + 1
         except AssertionError:
             print("FAIL:", test.__name__)
+        except Exception as error:    # a crash in the test is a failure too
+            print("ERROR:", test.__name__, "-", error)
     print(passed, "of", len(tests), "tests passed")

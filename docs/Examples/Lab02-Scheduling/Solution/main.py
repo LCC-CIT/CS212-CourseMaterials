@@ -38,6 +38,13 @@ def print_answer(answer):
         print("The solver timed out before it found an answer.")
 
 
+def print_challenge_2_answer(answer):
+    """Print the part-time job count (if there is one), then the schedule."""
+    if answer["status"] == "sat":
+        print("Jobs done by part-time mechanics:", answer["count"])
+    print_answer(answer)
+
+
 def main():
     print("=== Schedule ===")
     data = load_data(PROGRAM_FOLDER)
@@ -51,17 +58,11 @@ def main():
 
     print()
     print("=== Challenge 2, Option A: push() and pop() loop ===")
-    answer = minimize_part_time_with_loop(data)
-    if answer["status"] == "sat":
-        print("Jobs done by part-time mechanics:", answer["count"])
-    print_answer(answer)
+    print_challenge_2_answer(minimize_part_time_with_loop(data))
 
     print()
     print("=== Challenge 2, Option B: Optimize ===")
-    answer = minimize_part_time_with_optimizer(data)
-    if answer["status"] == "sat":
-        print("Jobs done by part-time mechanics:", answer["count"])
-    print_answer(answer)
+    print_challenge_2_answer(minimize_part_time_with_optimizer(data))
 
 
 if __name__ == "__main__":

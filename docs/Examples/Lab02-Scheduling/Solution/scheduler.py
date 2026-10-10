@@ -46,10 +46,15 @@ def add_constraints(solver, data, slot, mechanic, bay, flags):
     bays = data["bays"]
     jobs = data["jobs"]
 
-    # Every constraint is added through this function so it belongs to a group
+    # Every constraint is added through this function so it belongs to a group.
+    # Implies(flag, constraint) means "if the flag is on, the constraint applies".
+    # When there's no solution, Z3 reports which flags it had to turn on to find
+    # the conflict. That tells us which rules can't all be met at the same time.
     def add(group, constraint):
         solver.add(Implies(flags[group], constraint))
 
+    # j is the job number and w is the mechanic ("worker") number.
+    # They are positions in the jobs and mechanics lists.
     for j in range(len(jobs)):
         job = jobs[j]
 
@@ -91,19 +96,27 @@ def read_schedule(model, data, slot, mechanic, bay):
     schedule = []
     for j in range(len(data["jobs"])):
         job = data["jobs"][j]
-        slot_number = model.eval(slot[j], model_completion=True).as_long()
-        mechanic_info = data["mechanics"][model.eval(mechanic[j], model_completion=True).as_long()]
-        bay_info = data["bays"][model.eval(bay[j], model_completion=True).as_long()]
 
-        entry = {}
-        entry["job_id"] = job["job_id"]
-        entry["service"] = job["service"]
-        entry["slot"] = slot_number
-        entry["time"] = TIME_SLOTS[slot_number]
-        entry["mechanic_id"] = mechanic_info["mechanic_id"]
-        entry["mechanic_name"] = mechanic_info["name"]
-        entry["bay_id"] = bay_info["bay_id"]
-        schedule.append(entry)
+        # model_completion=True makes Z3 fill in a value if no rule mentions
+        # the variable, so we always get a number back.
+        # as_long() converts the Z3 number to a regular Python int.
+        slot_number = model.eval(slot[j], model_completion=True).as_long()
+        mechanic_number = model.eval(mechanic[j], model_completion=True).as_long()
+        bay_number = model.eval(bay[j], model_completion=True).as_long()
+
+        # The numbers are positions in the mechanics and bays lists
+        mechanic_info = data["mechanics"][mechanic_number]
+        bay_info = data["bays"][bay_number]
+
+        schedule.append({
+            "job_id": job["job_id"],
+            "service": job["service"],
+            "slot": slot_number,
+            "time": TIME_SLOTS[slot_number],
+            "mechanic_id": mechanic_info["mechanic_id"],
+            "mechanic_name": mechanic_info["name"],
+            "bay_id": bay_info["bay_id"],
+        })
     return schedule
 
 
@@ -127,15 +140,12 @@ def solve_schedule(data, timeout_ms=10000):
     solver = Solver()
     solver.set("timeout", timeout_ms)
     slot, mechanic, bay = create_variables(data["jobs"])
-    flags, flag_list = create_flags()
+    flags, flag_list = create_flags()    # the function returns two values
     add_constraints(solver, data, slot, mechanic, bay, flags)
 
     result = solver.check(flag_list)    # the flags are passed in as assumptions
 
-    answer = {}
-    answer["status"] = str(result)
-    answer["schedule"] = None
-    answer["conflicts"] = []
+    answer = {"status": str(result), "schedule": None, "conflicts": []}
     if result == sat:
         answer["schedule"] = read_schedule(solver.model(), data, slot, mechanic, bay)
     elif result == unsat:
@@ -146,6 +156,7 @@ def solve_schedule(data, timeout_ms=10000):
 # ----- Challenge 2: minimizing the jobs done by part-time mechanics -----
 
 def is_part_time(mechanic_info):
+    """Part-time mechanics are the ones who can do at most 2 jobs."""
     return mechanic_info["max_jobs"] == 2
 
 
@@ -189,10 +200,7 @@ def minimize_part_time_with_loop(data, timeout_ms=10000):
     part_time_jobs = count_part_time_jobs(data, mechanic)
     lower_bound = part_time_lower_bound(data)
 
-    answer = {}
-    answer["status"] = "unknown"
-    answer["count"] = None
-    answer["schedule"] = None
+    answer = {"status": "unknown", "count": None, "schedule": None}
 
     limit = len(data["jobs"])
     while limit >= lower_bound:
@@ -203,15 +211,16 @@ def minimize_part_time_with_loop(data, timeout_ms=10000):
             # Read the model before pop(), because it belongs to this check
             model = solver.model()
             answer["status"] = "sat"
-            answer["count"] = model.eval(part_time_jobs).as_long()
+            answer["count"] = model.eval(part_time_jobs, model_completion=True).as_long()
             answer["schedule"] = read_schedule(model, data, slot, mechanic, bay)
         solver.pop()                                # remove the limit
         if result != sat:
+            # Keep the last good schedule. Only report the failure
+            # if we never found one.
             if answer["count"] is None:
                 answer["status"] = str(result)
             break
-        # The schedule found may beat the limit, so continue from its count
-        limit = answer["count"] - 1
+        limit = limit - 1                           # try one fewer part-time job
     return answer
 
 
@@ -226,21 +235,20 @@ def minimize_part_time_with_optimizer(data, timeout_ms=30000):
     flags, flag_list = create_flags()
     add_constraints(optimizer, data, slot, mechanic, bay, flags)
     # Turn every constraint group on. Passing the flags to check() as assumptions
-    # also works, but in testing it made the optimizer much slower.
+    # made the optimizer time out in testing.
     for flag in flag_list:
         optimizer.add(flag)
     part_time_jobs = count_part_time_jobs(data, mechanic)
-    optimizer.add(part_time_jobs >= part_time_lower_bound(data))    # the lower bound
+    # The lower bound tells the optimizer it can stop at that number. Without it,
+    # Z3 spends a long time trying to prove that a smaller number is impossible.
+    optimizer.add(part_time_jobs >= part_time_lower_bound(data))
     optimizer.minimize(part_time_jobs)
 
     result = optimizer.check()
 
-    answer = {}
-    answer["status"] = str(result)
-    answer["count"] = None
-    answer["schedule"] = None
+    answer = {"status": str(result), "count": None, "schedule": None}
     if result == sat:
         model = optimizer.model()
-        answer["count"] = model.eval(part_time_jobs).as_long()
+        answer["count"] = model.eval(part_time_jobs, model_completion=True).as_long()
         answer["schedule"] = read_schedule(model, data, slot, mechanic, bay)
     return answer

@@ -33,8 +33,4 @@ def load_data(folder):
         job["earliest_slot"] = int(job["earliest_slot"])
         job["latest_slot"] = int(job["latest_slot"])
 
-    data = {}
-    data["mechanics"] = mechanics
-    data["bays"] = bays
-    data["jobs"] = jobs
-    return data
+    return {"mechanics": mechanics, "bays": bays, "jobs": jobs}

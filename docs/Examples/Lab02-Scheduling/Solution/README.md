@@ -31,5 +31,5 @@ Keep a workload conflict small. In testing, a version with 14 jobs for 13 openin
 
 ## Notes on Challenge 2
 
-- Option A (the `push()`/`pop()` loop) continues from the count in each schedule it finds, instead of lowering the limit by 1 each time, so it needs fewer checks.
+- Option A (the `push()`/`pop()` loop) lowers the limit by 1 each time, as in the lab instructions, and stops at the lower bound.
 - Option B (`Optimize`) turns the constraint groups on by adding the flags as constraints. Passing them to `check()` as assumptions made the optimizer time out in testing.
