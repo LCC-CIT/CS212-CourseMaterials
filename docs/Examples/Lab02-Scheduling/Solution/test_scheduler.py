@@ -13,8 +13,8 @@ from scheduler import (TIME_SLOTS, solve_schedule, minimize_part_time_with_loop,
                        minimize_part_time_with_optimizer, part_time_lower_bound)
 
 # These paths start at the folder where the tests are run (run them from this folder).
-DATA_FOLDER = os.path.join("..", "Data")
-UNSOLVABLE_FOLDER = "unsolvable_data"
+DATA_FOLDER = os.path.join("..", "Data")    # also holds the unsolvable_data folder
+UNSOLVABLE_FOLDER = os.path.join(DATA_FOLDER, "unsolvable_data")
 
 
 def check_schedule(schedule, data):

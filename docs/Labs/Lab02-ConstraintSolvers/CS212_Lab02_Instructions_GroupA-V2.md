@@ -85,12 +85,12 @@ The data files have already been created for you: [instructors.csv](GroupA-V2-Da
 
 ## Requirements
 
-1. **Data files.** Download the [zip file of data files](https://download-directory.github.io/?url=https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Labs/Lab02-ConstraintSolvers/GroupA-V2-Data), unzip it and put the three CSV files described above in your project folder.
+1. **Data files.** Download the [zip file of data files](https://download-directory.github.io/?url=https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Labs/Lab02-ConstraintSolvers/GroupA-V2-Data), unzip it and put the three CSV files described above in a folder named `Data` inside your project folder. When your program opens a file using a relative path such as `Data/instructors.csv`, Python starts looking in the folder where the program is *running* (the current working directory), not the folder that holds the `.py` file. So run your program, for example with `uv run main.py`, from your project folder, the one that contains `Data`.
 2. **Loading data.** Load each CSV file into a list of dictionaries, for example with `csv.DictReader`. Convert numbers to `int` and split the semicolon lists into Python lists.
 3. **Decision variables.** For each section, create three Z3 `Int` variables: its time slot, its instructor (an index into the instructors list) and its classroom (an index into the classrooms list).
 4. **Constraints.** Add constraints for all six scheduling rules. You will need these Z3 tools: `And`, `Or`, `Implies`, and `Sum` combined with `If` for counting (rule 5). For rules 2 and 3 you can use either `Implies` on every pair of sections or `Distinct`.
 5. **Solving.** Use a Z3 `Solver` to find a schedule. Read the values out of the model and return the schedule as a list of dictionaries. Print the schedule in a readable table sorted by time slot, showing the time, section, course, instructor and classroom.
-6. **Explaining an impossible schedule.** Create one Boolean tracking variable per constraint group (the names in the rules table) and add each constraint as `Implies(group_flag, constraint)`. Call `check()` with all the flags as assumptions. When the result is `unsat`, print the names of the groups in `unsat_core()`. Make a folder named `unsolvable_data` with three modified copies of the data files, each of which breaks a different rule. For example: a course that no instructor is qualified to teach, a section whose `earliest_slot` is later than its `latest_slot`, or a course with 3 sections that only one part-time instructor (`max_sections` of 2) is qualified to teach. Your program must report the conflicting groups for each one. Keep each conflict small. Proving that no solution exists can take Z3 a very long time, and in testing for this lab, a larger version of the last example (14 sections of a course for 13 openings) timed out instead of returning `unsat`.
+6. **Explaining an impossible schedule.** Create one Boolean tracking variable per constraint group (the names in the rules table) and add each constraint as `Implies(group_flag, constraint)`. Call `check()` with all the flags as assumptions. When the result is `unsat`, print the names of the groups in `unsat_core()`. Make a folder named `unsolvable_data` inside your `Data` folder, with three modified copies of the data files, each of which breaks a different rule. For example: a course that no instructor is qualified to teach, a section whose `earliest_slot` is later than its `latest_slot`, or a course with 3 sections that only one part-time instructor (`max_sections` of 2) is qualified to teach. Your program must report the conflicting groups for each one. Keep each conflict small. Proving that no solution exists can take Z3 a very long time, and in testing for this lab, a larger version of the last example (14 sections of a course for 13 openings) timed out instead of returning `unsat`.
 7. **Separation of concerns.** Keep the Z3 model and solving code in its own module, separate from file loading and from user input and output.
 8. **Testing.** Write a test module with a function that checks a schedule against all six rules in plain Python, without using Z3. Use it to test that:
    - the schedule from your real data passes every rule,
@@ -154,7 +154,7 @@ The data files have already been created for you: [instructors.csv](GroupA-V2-Da
 
 ## Z3 Tips
 
-These snippets show the pattern for this problem. Your code will need more than this. In your program, the file loading code goes in its own module (requirement 7). The file names have no folder in them, so Python looks for the CSV files in the folder you run the program from.
+These snippets show the pattern for this problem. Your code will need more than this. In your program, the file loading code goes in its own module (requirement 7). The file paths start with `Data/`, so Python looks for the CSV files in the `Data` folder inside the folder you run the program from.
 
 ```python
 # TODO: Split this code into modules: file loading, the Z3 model and solving,
@@ -174,9 +174,9 @@ def load_csv(filename):
             rows.append(row)
     return rows
 
-instructors = load_csv("instructors.csv")
-classrooms = load_csv("classrooms.csv")
-sections = load_csv("sections.csv")
+instructors = load_csv("Data/instructors.csv")
+classrooms = load_csv("Data/classrooms.csv")
+sections = load_csv("Data/sections.csv")
 
 # Every value is read as a string, so convert the numbers to int
 # and split the semicolon lists into Python lists
@@ -366,7 +366,7 @@ if optimizer.check() == sat:
 
  Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on Canvas:
 
-1. The files: Python (.py) files (one or more) and the `unsolvable_data` folder. If you did Challenge 1, also include your refactored data files.
+1. The files: Python (.py) files (one or more) and the `unsolvable_data` folder from inside your `Data` folder. If you did Challenge 1, also include your refactored data files.
 2. The code review <u>from your lab partner</u> with the “Prod.” column filled out by you.
 
 ### Grading Criteria

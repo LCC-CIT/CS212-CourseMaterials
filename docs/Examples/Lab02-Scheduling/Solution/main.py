@@ -11,9 +11,9 @@ from scheduler import (solve_schedule, minimize_part_time_with_loop,
                        minimize_part_time_with_optimizer)
 
 # These paths start at the folder where the program is run (run it from this folder).
-# The data files are in the Data folder, one level up.
+# The data files, and the unsolvable_data folder, are in the Data folder, one level up.
 DATA_FOLDER = os.path.join("..", "Data")
-UNSOLVABLE_FOLDER = "unsolvable_data"
+UNSOLVABLE_FOLDER = os.path.join(DATA_FOLDER, "unsolvable_data")
 
 
 def by_slot(entry):

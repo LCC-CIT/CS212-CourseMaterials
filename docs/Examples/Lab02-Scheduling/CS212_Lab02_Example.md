@@ -109,7 +109,7 @@ The data files have already been created for you: [mechanics.csv](Data/mechanics
 
      - When the result is `unsat` (short for "unsatisfiable," which means Z3 has proved that no solution exists), print the names of the groups in `unsat_core()`. The *unsat core* is a set of flags whose constraint groups can't all be met at the same time.
 
-   - Make a folder named `unsolvable_data` with three modified copies of the data files, each of which breaks a different rule. For example: a service that no mechanic is certified for, a job whose `earliest_slot` is later than its `latest_slot`, or a service needed by 3 jobs that only one part-time mechanic (`max_jobs` of 2) is certified for.
+   - Make a folder named `unsolvable_data` inside your `Data` folder, with three modified copies of the data files, each of which breaks a different rule. For example: a service that no mechanic is certified for, a job whose `earliest_slot` is later than its `latest_slot`, or a service needed by 3 jobs that only one part-time mechanic (`max_jobs` of 2) is certified for.
 
    - Your program must report the conflicting groups for each unsolvable data file.
 
@@ -333,7 +333,7 @@ from scheduler import solve_schedule
 # These paths start at the folder where you run the program,
 # so run it from your project folder, the one that contains Data
 DATA_FOLDER = "Data"
-UNSOLVABLE_FOLDER = "unsolvable_data"
+UNSOLVABLE_FOLDER = os.path.join(DATA_FOLDER, "unsolvable_data")
 
 
 # TODO: Write print_schedule(schedule). It prints the schedule as a table
@@ -548,7 +548,7 @@ In `main.py`, call either function and print `answer["count"]` and the schedule 
 
  Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on Canvas:
 
-1. The files: Python (.py) files (one or more) and the `unsolvable_data` folder. If you did Challenge 1, also include your refactored data files.
+1. The files: Python (.py) files (one or more) and the `unsolvable_data` folder from inside your `Data` folder. If you did Challenge 1, also include your refactored data files.
 2. The code review <u>from your lab partner</u> with the “Prod.” column filled out by you.
 
 ### Grading Criteria
