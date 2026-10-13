@@ -11,7 +11,7 @@
     - [Tokenize the Text and Build Feature Vectors](#tokenize-the-text-and-build-feature-vectors)
       - [Code Explanation](#code-explanation)
       - [Explore the Feature Vector Matrix](#explore-the-feature-vector-matrix)
-    - [Transform Occurance Counts to Frequencies](#transform-occurance-counts-to-frequencies)
+    - [Transform [WorkingWithTextData.md](WorkingWithTextData.md)  Occurance Counts to Frequencies](#transform-occurance-counts-to-frequencies)
       - [Calculating Term Frequency](#calculating-term-frequency)
       - [Calculating Term Frequency and Inverse Term Frequency](#calculating-term-frequency-and-inverse-term-frequency)
   - [Training a classifier](#training-a-classifier)
@@ -554,6 +554,8 @@ Refine the implementation and iterate until the exercise is solved.
 
 ### Exercise 1: Language identification
 
+In this exercise, you will train a classifier to tell which language a piece of text is written in. The earlier sections of this tutorial used whole words as features. Here you will use short sequences of *characters* instead, because the letter patterns in a language, such as common pairs and triplets of letters, are a good clue to which language it is.
+
 - Write a text classification pipeline using a custom preprocessor and `TfidfVectorizer` set up to use *character based* *n-grams*, using data from Wikipedia articles as the training set.
 - Evaluate the performance on some held out test set.
 
@@ -572,6 +574,8 @@ Refine the implementation and iterate until the exercise is solved.
   
 
 ### Exercise 2: Sentiment Analysis on movie reviews
+
+In this exercise, you will train a classifier to decide whether a movie review is positive or negative. It's a chance to use everything from this tutorial in one project: build a pipeline, use grid search to choose good parameters, and then check how well the result works on reviews it hasn't seen.
 
 - Write a text classification pipeline to classify movie reviews as either positive or negative.
 - Find a good set of parameters using grid search.
