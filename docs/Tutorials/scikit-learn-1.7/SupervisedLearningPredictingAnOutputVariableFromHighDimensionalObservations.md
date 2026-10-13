@@ -14,7 +14,7 @@ If the prediction task is to classify the observations in a set of finite labels
 
 When doing classification in scikit-learn, `y` is a vector of integers or strings.
 
-Note: See the <a href="https://scikit-learn.org/1.7/tutorial/basic/tutorial.html#introduction" target="_blank">Introduction to machine learning with scikit-learn Tutorial</a> for a quick run-through on the basic machine learning vocabulary used within scikit-learn.
+Note: See the <a href="https://scikit-learn.org/1.4/tutorial/basic/tutorial.html#introduction" target="_blank">Introduction to machine learning with scikit-learn Tutorial</a> for a quick run-through on the basic machine learning vocabulary used within scikit-learn.
 
 ## Nearest neighbor and the curse of dimensionality
 
@@ -208,7 +208,7 @@ A representation of the full diabetes dataset would involve 11 dimensions (10 fe
 
 We can see that, although feature 2 has a strong coefficient on the full model, it conveys little information on `y` when considered with feature 1.
 
-To improve the conditioning of the problem (i.e. mitigating the <a href="https://scikit-learn.org/1.7/tutorial/statistical_inference/supervised_learning.html#curse-of-dimensionality" target="_blank">The curse of dimensionality</a>), it would be interesting to select only the informative features and set non-informative ones, like feature 2 to 0. Ridge regression will decrease their contribution, but not set them to zero. Another penalization approach, called <a href="https://scikit-learn.org/1.7/modules/linear_model.html#lasso" target="_blank">Lasso</a> (least absolute shrinkage and selection operator), can set some coefficients to zero. Such methods are called **sparse methods** and sparsity can be seen as an application of Occam’s razor: *prefer simpler models*.
+To improve the conditioning of the problem (i.e. mitigating the <a href="https://scikit-learn.org/1.4/tutorial/statistical_inference/supervised_learning.html#curse-of-dimensionality" target="_blank">The curse of dimensionality</a>), it would be interesting to select only the informative features and set non-informative ones, like feature 2 to 0. Ridge regression will decrease their contribution, but not set them to zero. Another penalization approach, called <a href="https://scikit-learn.org/1.7/modules/linear_model.html#lasso" target="_blank">Lasso</a> (least absolute shrinkage and selection operator), can set some coefficients to zero. Such methods are called **sparse methods** and sparsity can be seen as an application of Occam’s razor: *prefer simpler models*.
 
 ```python
 >>> regr = linear_model.Lasso()
@@ -233,7 +233,7 @@ Different algorithms can be used to solve the same mathematical problem. For ins
 
 For classification, as in the labeling <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set" target="_blank">iris</a> task, linear regression is not the right approach as it will give too much weight to data far from the decision frontier. A linear approach is to fit a sigmoid function or **logistic** function:
 
-![Logistic Regression](sphx_glr_plot_logistic_001.png)
+![Logistic Regression](https://scikit-learn.org/1.4/_images/sphx_glr_plot_logistic_001.png)
 
 ```python
 >>> log = linear_model.LogisticRegression(C=1e5)
@@ -251,7 +251,7 @@ If you have several classes to predict, an option often used is to fit one-versu
 
 Shrinkage and sparsity with logistic regression
 
-The `C` parameter controls the amount of regularization in the <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression" target="_blank">`LogisticRegression`</a> object: a large value for `C` results in less regularization. `penalty="l2"` gives <a href="https://scikit-learn.org/1.7/tutorial/statistical_inference/supervised_learning.html#shrinkage" target="_blank">Shrinkage</a> (i.e. non-sparse coefficients), while `penalty="l1"` gives <a href="https://scikit-learn.org/1.7/tutorial/statistical_inference/supervised_learning.html#sparsity" target="_blank">Sparsity</a>.
+The `C` parameter controls the amount of regularization in the <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression" target="_blank">`LogisticRegression`</a> object: a large value for `C` results in less regularization. `penalty="l2"` gives <a href="https://scikit-learn.org/1.4/tutorial/statistical_inference/supervised_learning.html#shrinkage" target="_blank">Shrinkage</a> (i.e. non-sparse coefficients), while `penalty="l1"` gives <a href="https://scikit-learn.org/1.4/tutorial/statistical_inference/supervised_learning.html#sparsity" target="_blank">Sparsity</a>.
 
 **Exercise**
 
@@ -264,7 +264,7 @@ X_digits, y_digits = datasets.load_digits(return_X_y=True)
 X_digits = X_digits / X_digits.max()
 ```
 
-A solution can be downloaded <a href="https://scikit-learn.org/1.7/_downloads/e4d278c5c3a8450d66b5dd01a57ae923/plot_digits_classification_exercise.py" download target="_blank">`here`</a>.
+A solution can be downloaded <a href="https://scikit-learn.org/1.4/_downloads/e4d278c5c3a8450d66b5dd01a57ae923/plot_digits_classification_exercise.py" download target="_blank">`here`</a>.
 
 ## Support vector machines (SVMs)
 
@@ -343,7 +343,7 @@ Classes are not always linearly separable in feature space. The solution is to b
 
 **Interactive example**
 
-See the <a href="https://scikit-learn.org/1.7/auto_examples/applications/svm_gui.html#sphx-glr-auto-examples-applications-svm-gui-py" target="_blank">SVM GUI</a> to download `svm_gui.py`; add data points of both classes with right and left button, fit the model and change parameters and data.
+See the <a href="https://scikit-learn.org/1.4/auto_examples/applications/svm_gui.html#sphx-glr-auto-examples-applications-svm-gui-py" target="_blank">SVM GUI</a> to download `svm_gui.py`; add data points of both classes with right and left button, fit the model and change parameters and data.
 
 **Exercise**
 
@@ -364,7 +364,7 @@ y = y[y != 0]
 
 ![Iris Dataset](sphx_glr_plot_iris_dataset_001.png)
 
-A solution can be downloaded <a href="https://scikit-learn.org/1.7/_downloads/a3ad6892094cf4c9641b7b11f9263348/plot_iris_exercise.py" download target="_blank">`here`</a>
+A solution can be downloaded <a href="https://scikit-learn.org/1.4/_downloads/a3ad6892094cf4c9641b7b11f9263348/plot_iris_exercise.py" download target="_blank">`here`</a>
 
 ## Enhanced Supervised Learning Features in scikit-learn 1.7
 

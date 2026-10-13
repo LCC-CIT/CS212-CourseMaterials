@@ -122,7 +122,7 @@ On the digits dataset, plot the cross-validation score of a <a href="https://sci
 
 ```
 
-![../../_images/model_selection-1.png](https://scikit-learn.org/1.7/_images/model_selection-1.png)
+![../../_images/model_selection-1.png](https://scikit-learn.org/1.4/_images/model_selection-1.png)
 ## Grid-search and cross-validated estimators
 
 ### Grid-search
@@ -195,7 +195,7 @@ X, y = datasets.load_diabetes(return_X_y=True)
 X = X[:150]
 ```
 
-**Solution:** <a href="https://scikit-learn.org/1.7/auto_examples/exercises/plot_cv_diabetes.html#sphx-glr-auto-examples-exercises-plot-cv-diabetes-py" target="_blank">Cross-validation on diabetes Dataset Exercise</a>
+**Solution:** <a href="https://scikit-learn.org/1.4/auto_examples/exercises/plot_cv_diabetes.html#sphx-glr-auto-examples-exercises-plot-cv-diabetes-py" target="_blank">Cross-validation on diabetes Dataset Exercise</a>
 
 ## Enhanced Model Selection Features in scikit-learn 1.7
 

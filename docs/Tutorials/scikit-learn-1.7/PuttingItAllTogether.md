@@ -54,9 +54,9 @@ ax0.legend(prop=dict(size=12))
 
 ## Face recognition with eigenfaces
 
-The dataset used in this example is a preprocessed excerpt of the "Labeled Faces in the Wild", also known as <a href="http://vis-www.cs.umass.edu/lfw/" target="_blank">LFW</a>:
+The dataset used in this example is a preprocessed excerpt of the "Labeled Faces in the Wild", also known as <a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.fetch_lfw_people.html" target="_blank">LFW</a>:
 
-<a href="http://vis-www.cs.umass.edu/lfw/lfw-funneled.tgz" target="_blank">Download LFW dataset</a> (233MB)
+Use scikit-learn's <a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.fetch_lfw_people.html" target="_blank">fetch_lfw_people</a> function to download the LFW dataset (233MB).
 
 ```python
 """
@@ -222,11 +222,11 @@ plt.show()
 # tensorflow to implement such models.
 ```
 
-<a href="https://scikit-learn.org/1.7/_images/plot_face_recognition_1.png" target="_blank"><img src="https://scikit-learn.org/1.7/_images/plot_face_recognition_1.png" alt="../../_images/plot_face_recognition_1.png"></a>
+<a href="https://scikit-learn.org/1.4/_images/plot_face_recognition_1.png" target="_blank"><img src="https://scikit-learn.org/1.4/_images/plot_face_recognition_1.png" alt="../../_images/plot_face_recognition_1.png"></a>
 
 **Prediction**
 
-<a href="https://scikit-learn.org/1.7/_images/plot_face_recognition_2.png" target="_blank"><img src="https://scikit-learn.org/1.7/_images/plot_face_recognition_2.png" alt="../../_images/plot_face_recognition_2.png"></a>
+<a href="https://scikit-learn.org/1.4/_images/plot_face_recognition_2.png" target="_blank"><img src="https://scikit-learn.org/1.4/_images/plot_face_recognition_2.png" alt="../../_images/plot_face_recognition_2.png"></a>
 
 **Eigenfaces**
 

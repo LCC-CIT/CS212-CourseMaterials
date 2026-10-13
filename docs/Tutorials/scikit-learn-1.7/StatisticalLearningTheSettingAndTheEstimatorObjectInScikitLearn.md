@@ -34,7 +34,7 @@ The digits dataset is made of 1797 8x8 images of hand-written digits
 <...>
 ```
 
-<a href="https://scikit-learn.org/1.7/auto_examples/datasets/plot_digits_last_image.html" target="_blank"><img src="https://scikit-learn.org/1.7/_images/sphx_glr_plot_digits_last_image_001.png" alt="../../_images/sphx_glr_plot_digits_last_image_001.png"></a>
+<a href="https://scikit-learn.org/1.7/auto_examples/datasets/plot_digits_last_image.html" target="_blank"><img src="sphx_glr_plot_digits_last_image_001.png" alt="../../_images/sphx_glr_plot_digits_last_image_001.png"></a>
 
 To use this dataset with scikit-learn, we transform each 8x8 image into a feature vector of length 64
 

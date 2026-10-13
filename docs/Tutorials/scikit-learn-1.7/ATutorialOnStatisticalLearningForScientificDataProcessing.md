@@ -25,7 +25,7 @@ Scikit-learn is a Python module integrating classic machine learning algorithms 
   - [Clustering: grouping observations together](UnsupervisedLearningSeekingRepresentationsOfTheData.md#clustering-grouping-observations-together)
   - [Decompositions: from a signal to components and loadings](UnsupervisedLearningSeekingRepresentationsOfTheData.md#decompositions-from-a-signal-to-components-and-loadings)
 - [Putting it all together](PuttingItAllTogether.md)
-  - [Pipelining](Pipelining.md)
+  - [Pipelining](PuttingItAllTogether.md#pipelining)
   - [Face recognition with eigenfaces](PuttingItAllTogether.md#face-recognition-with-eigenfaces)
   - [Open problem: Stock Market Structure](PuttingItAllTogether.md#open-problem-stock-market-structure)
 

@@ -31,7 +31,7 @@ KMeans(n_clusters=3)
 [0 0 0 0 0 1 1 1 1 1 2 2 2 2 2]
 ```
 
-<a href="https://scikit-learn.org/1.7/auto_examples/cluster/plot_cluster_iris.html" target="_blank"><img src="https://scikit-learn.org/1.7/_images/sphx_glr_plot_cluster_iris_001.png" alt="../../_images/sphx_glr_plot_cluster_iris_001.png"></a>
+<a href="https://scikit-learn.org/1.7/auto_examples/cluster/plot_cluster_iris.html" target="_blank"><img src="https://scikit-learn.org/1.4/_images/sphx_glr_plot_cluster_iris_001.png" alt="../../_images/sphx_glr_plot_cluster_iris_001.png"></a>
 
 Warning
 
@@ -173,7 +173,7 @@ The point cloud spanned by the observations above is very flat in one direction:
 >>> _ = ax.set(xlabel="x", ylabel="y", zlabel="z")
 ```
 
-![../../_images/unsupervised_learning-1.png](https://scikit-learn.org/1.7/_images/unsupervised_learning-1.png)
+![../../_images/unsupervised_learning-1.png](https://scikit-learn.org/1.4/_images/unsupervised_learning-1.png)
 
 PCA finds the directions in which the data is not *flat*.
 
