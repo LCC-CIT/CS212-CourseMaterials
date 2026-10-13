@@ -47,14 +47,24 @@ To make this interesting, you can use a different set of newsgroup categories fr
 
 ## Part 2
 
-There will be three versions of part 2. The instructions will be in separate documents.
+There are three versions of part 2. 
+
+- [Group A: Language Identification Using a Text Classifier](GroupA/CS212_Lab03_Part2_Instructions_GroupA.html)
+- [Group B: Sentiment Analysis on Movie Reviews](GroupB/CS212_Lab03_Part2_Instructions_GroupB.html)
+- [Group C: Predicting Star Ratings from Movie Reviews](GroupC/CS212_Lab03_Part2_Instructions_GroupC.html)
+
+
+### Code Review
+
+- Review one of your lab partners' code and post the review in your team channel on Discord.
+- Submit a copy of the code review <u>you did</u> to the code review assignment on Canvas.
 
 ## Submitting your lab work on Canvas
 
 Upload your Python code file to the Lab 3, Part 1 assignment on Canvas. 
 You only need to submit your code. You <u>do not</u> need to upload your virtual environment (.venv) folder.
 
-(No code review is needed)
+
 
 ### Grading Criteria
 
