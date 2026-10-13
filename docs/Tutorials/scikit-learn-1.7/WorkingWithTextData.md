@@ -11,9 +11,9 @@
     - [Tokenize the Text and Build Feature Vectors](#tokenize-the-text-and-build-feature-vectors)
       - [Code Explanation](#code-explanation)
       - [Explore the Feature Vector Matrix](#explore-the-feature-vector-matrix)
-    - [Transform [WorkingWithTextData.md](WorkingWithTextData.md)  Occurance Counts to Frequencies](#transform-occurance-counts-to-frequencies)
+    - [Transform Occurrence Counts to Frequencies](#transform-occurrence-counts-to-frequencies)
       - [Calculating Term Frequency](#calculating-term-frequency)
-      - [Calculating Term Frequency and Inverse Term Frequency](#calculating-term-frequency-and-inverse-term-frequency)
+      - [Calculating Term Frequency and Inverse Document Frequency](#calculating-term-frequency-and-inverse-document-frequency)
   - [Training a classifier](#training-a-classifier)
   - [Making Predictions](#making-predictions)
 - [Building a Pipeline](#building-a-pipeline)
@@ -70,7 +70,7 @@ twenty_train = fetch_20newsgroups(subset='train', categories=categories, shuffle
 
 #### Exploring the Data
 
-Now that the 4 newsgroups are loaded into `twenty_train`, (note that it's just the four specified in `categories` not twenty) lets explore the dataset. (This isn't part of the training process&mdash; it's just to help you understand the dataset.)
+Now that the 4 newsgroups are loaded into `twenty_train` (note that it's just the four specified in `categories`, not twenty), let's explore the dataset. (This isn't part of the training process&mdash; it's just to help you understand the dataset.)
 
 The returned dataset is a `scikit-learn` “bunch”: a simple holder object with fields that can be both accessed as python `dict` keys or `object` attributes for convenience, for instance the `target_names` holds the list of the requested category names:
 
@@ -83,8 +83,8 @@ twenty_train.target_names
 The files themselves are loaded in memory in the `data` attribute. For reference the filenames are also available:
 
 ```python
-len(twenty_train.data)
-len(twenty_train.filenames)
+print(len(twenty_train.data))
+print(len(twenty_train.filenames))
 ```
 
 > *response:*  
@@ -122,7 +122,7 @@ It is possible to get back the category names as follows:
 
 ```python
 for t in twenty_train.target[:10]:
-  print(twenty_train.target_names[t])
+    print(twenty_train.target_names[t])
 ```
 
 > *response:*  
@@ -156,7 +156,7 @@ The bags of words representation implies that `n_features` is the number of dist
 
 If `n_samples == 10000`, storing `X` as a NumPy array of type float32 would require 10000 x 100000 x 4 bytes = 4GB in RAM which is a lot for the average consumer computer.
 
-Fortunately, <u>most values in x will be zeros</u> since for a given document less than a few thousand distinct words will be used. For this reason we say that bags of words are typically *high-dimensional sparse* datasets. We can save a lot of memory by only storing the non-zero parts of the feature vectors in memory.
+Fortunately, <u>most values in `X` will be zeros</u> since for a given document less than a few thousand distinct words will be used. For this reason we say that bags of words are typically *high-dimensional sparse* datasets. We can save a lot of memory by only storing the non-zero parts of the feature vectors in memory.
 
 `scipy.sparse` matrices are data structures that do exactly this, and `scikit-learn` has built-in support for these structures. 
 
@@ -182,7 +182,7 @@ X_train_counts = count_vect.fit_transform(twenty_train.data)
 - `from sklearn.feature_extraction.text import CountVectorizer`
   Imports the `CountVectorizer` class from the scikit-learn library. `CountVectorizer` is a feature extractor.
 - `count_vect = CountVectorizer()`
-  Creates an instance of the `CountVectorizer`. This object now holds the logic for the entire text-to-numerical conversion process and has stored the vocabulary of the `twenty_train` dataset.
+  Creates an instance of the `CountVectorizer`. This object holds the logic for the entire text-to-numerical conversion process. It doesn't have a vocabulary yet; it learns one in the next step.
 - `X_train_counts = count_vect.fit_transform(twenty_train.data)`
   This is the main operation, which performs two main steps: `fit` and *`transform`*
   - *fit*: the vectorizer learns from the input text data (`twenty_train.data`) by scanning all the documents to identify every unique word, performing text preprocessing and tokenizing in the process. This builds an internal dictionary of features.
@@ -190,7 +190,7 @@ X_train_counts = count_vect.fit_transform(twenty_train.data)
 
 ##### Explore the Feature Vector Matrix
 
-The feature vectors are now stored in `X_train_counts` which is a scipy sparse matrix. Lets take a look at it.
+The feature vectors are now stored in `X_train_counts` which is a scipy sparse matrix. Let's take a look at it. It has one row for each document and one column for each word in the vocabulary.
 
 ```python
 X_train_counts.shape
@@ -208,20 +208,19 @@ count_vect.vocabulary_.get('algorithm')
 > *response*  
 > 4690
 
-- `count_vect` is the `CountVectorizer` object for our `train_twenty` project.
-- .`vocabulary_` is a Python attribute which is a dictionary containing a mapping of terms to feature indices. (Words are the keys and the values are indices into the feature matrix, `X_train_counts`)
+- `count_vect` is the `CountVectorizer` object we fitted to `twenty_train`.
+- `.vocabulary_` is an attribute that holds a dictionary mapping terms to feature indices. (Words are the keys and the values are column indices in the feature matrix, `X_train_counts`.)
+- `.get('algorithm')` gets the column index for the word "algorithm". It is *not* a count; the counts for that word are stored in that column of `X_train_counts`, one per document.
 
-- `.get('algorithm')` gets a count of the word "algorithm" in the 
+#### Transform Occurrence Counts to Frequencies
 
-#### Transform Occurance Counts to Frequencies
+The values in `X_train_counts` are the number of times each word occurs in each document. Occurrence count is a good start but there is an issue: longer documents will have higher average count values than shorter documents, even though they might be about the same topics.
 
-The count obtained above, was the number of occurances of the word "algorithm" across the entire corpus. Occurrence count is a good start but there is an issue: longer documents will have higher average count values than shorter documents, even though they might be about the same topics.
-
-We can avoid this potential discrepancy by dividing the number of occurrences of each unique word in a document by the total number of words in the document: these will be new features called `tf` for *Term Frequencies*.
+We can avoid this potential discrepancy by dividing the number of occurrences of each unique word in a document by the total number of words in the document: these new features are called `tf` for *Term Frequencies*. (By default, scikit-learn actually scales each document's row of counts to a length of 1 instead, which has the same effect of making long and short documents comparable.)
 
 ##### Calculating Term Frequency
 
-The scipy sparse matrix of *term frequencies* can be computed using <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer" target="_blank">`TfidfTransformer`</a>. (This code is an example, we won't use `X_train-tf`  after this.)
+The scipy sparse matrix of *term frequencies* can be computed using <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer" target="_blank">`TfidfTransformer`</a>. (This code is just an example; we won't use `X_train_tf` after this.)
 
 ```python
 from sklearn.feature_extraction.text import TfidfTransformer
@@ -230,16 +229,16 @@ X_train_tf = tf_transformer.transform(X_train_counts)
 X_train_tf.shape
 ```
 
-> *resposnse:*  
+> *response:*  
 > (2257, 35788)
 
-In the above example-code, we first used the `fit(..)` method to fit our estimator[^6] to the data and secondly the `transform(..)` method to transform our count-matrix to a `tf` representation. 
+In the above example code, we first used the `fit(..)` method to fit our estimator[^6] to the data and then the `transform(..)` method to transform our count matrix to a `tf` representation. 
 
-##### Calculating Term Frequency and Inverse Term Frequency
+##### Calculating Term Frequency and Inverse Document Frequency
 
-Another refinement on top of `tf` is to give a lower weight to words that occur across many documents in the corpus and are therefore are less informative than those that occur only in a smaller portion of the corpus.
+Another refinement on top of `tf` is to give a lower weight to words that occur across many documents in the corpus and are therefore less informative than those that occur only in a smaller portion of the corpus.
 
-This weight reduction is called <a href="https://en.wikipedia.org/wiki/Tf-idf" target="_blank">tf–idf</a> for “*Term Frequency* times *Inverse Document Frequency*”. The calculation of `tf` and `idf` can be combined. This is done through using the `fit_transform(..)` method as shown below:
+This weight reduction is called <a href="https://en.wikipedia.org/wiki/Tf-idf" target="_blank">tf–idf</a> for “*Term Frequency* times *Inverse Document Frequency*”. The fit and transform steps can be combined into one call using the `fit_transform(..)` method, as shown below:
 
 ```python
 tfidf_transformer = TfidfTransformer()
@@ -247,10 +246,10 @@ X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
 X_train_tfidf.shape
 ```
 
-> *respoonse:*  
+> *response:*  
 > (2257, 35788)
 
-`X_train_tfidf` is the scipy sparce matrix containg the new feature vectors.
+`X_train_tfidf` is the scipy sparse matrix containing the new feature vectors.
 
 ### Training a classifier
 
@@ -273,7 +272,7 @@ X_new_tfidf = tfidf_transformer.transform(X_new_counts)
 predicted = clf.predict(X_new_tfidf)
 
 for doc, category in zip(docs_new, predicted):
-  print('%r => %s' % (doc, twenty_train.target_names[category]))
+    print('%r => %s' % (doc, twenty_train.target_names[category]))
 ```
 
 > *response:*  
@@ -294,7 +293,7 @@ for doc, category in zip(docs_new, predicted):
 
 - `predicted = clf.predict(X_new_tfidf)`
 
-  **The prdiction happens here!** The previously trained classifier *predicts* the category (topic) for each of the new documents.
+  **The prediction happens here!** The previously trained classifier *predicts* the category (topic) for each of the new documents.
 
 - `for doc, category in zip(docs_new, predicted):`
 
@@ -319,8 +318,6 @@ text_clf = Pipeline([
 
 The names `vect`, `tfidf` and `clf` (classifier) are arbitrary. We will use them to perform grid search for suitable hyperparameters[^8] below. We can now train the model with a single command:
 
-**Note:** In scikit-learn 1.7, when you display pipeline objects in Jupyter notebooks, you'll see enhanced HTML representations with comprehensive parameter information and a copy button for easy configuration.
-
 ```python
 text_clf.fit(twenty_train.data, twenty_train.target)
 ```
@@ -329,20 +326,22 @@ text_clf.fit(twenty_train.data, twenty_train.target)
 > Pipeline(steps=[('vect', CountVectorizer()), ('tfidf', TfidfTransformer()),
 >                 ('clf', MultinomialNB())])
 
+**Note:** In scikit-learn 1.7, when you display pipeline objects in Jupyter notebooks, you'll see enhanced HTML representations with comprehensive parameter information and a copy button for easy configuration.
+
 **Estimators and hyperparameters used in the pipeline:**
 
-Each of the estimators passed to the `text_clf` pipeline `fit` method contians a hyper parameter attribute that has a default value but can also be set to a new value. In our example we are using default values.
+Each of the estimators in the `text_clf` pipeline has hyperparameters that have default values but can also be set to new values. In our example we are using the default values. Here is one key hyperparameter for each:
 
 - CountVectorizer (`vect`). 
-  *ngram_range* is a tuple (start, end) that specifies the minimum and maximum lengths of contiguous word sequences (N-grams) to be extracted as features (tokens). The default is (1, 1).
+  *ngram_range* is a tuple (min, max) that specifies the minimum and maximum lengths of contiguous word sequences (N-grams) to be extracted as features (tokens). The default is (1, 1).
 - TfidfTransformer (`tfidf`).   
-  *use_idf* is set this to True or False determining whether the Inverse Document Frequency calculation is used. The default  is True.
+  *use_idf* is set to True or False to determine whether the Inverse Document Frequency calculation is used. The default is True.
 - MultinomialNB (`clf`)  
-  A key hyperparameter is *alpha* (known as the smoothing parameter). This small value is added to all counts to prevent zero probabilities. The default vlaue is 1.0.
+  *alpha* is the smoothing parameter. This small value is added to all counts to prevent zero probabilities. The default value is 1.0.
 
 ## Testing Classification Accuracy
 
-Evaluating the predictive accuracy of the model is equally easy. The news post text files that `fetch_20newsgroups` pulls data sets from are organized in *training* and *test* directories. To eveluate the performance of the classifier we will use the test posts.
+Evaluating the predictive accuracy of the model is equally easy. The newsgroup posts that `fetch_20newsgroups` loads are split into *training* and *test* sets. To evaluate the performance of the classifier we will use the test posts.
 
 ```python
 import numpy as np
@@ -360,7 +359,7 @@ We achieved 83.5% accuracy.
 
 ### Train and Test a Support Vector Machine
 
-Let's see if we can do better with a linear <a href="https://scikit-learn.org/1.7/modules/svm.html#svm" target="_blank">support vector machine (SVM)</a>, which is widely regarded as one of the best text classification algorithms (although it's also a bit slower than naïve Bayes). We can change the learner by simply plugging a different classifier object into our pipeline:
+Let's see if we can do better with a linear <a href="https://scikit-learn.org/1.7/modules/svm.html#svm" target="_blank">support vector machine (SVM)</a>, which is widely regarded as one of the best text classification algorithms (although it's also a bit slower than naïve Bayes). We can change the learner by simply plugging a different classifier object into our pipeline. (`SGDClassifier` with `loss='hinge'` trains a linear SVM.)
 
 ```python
 from sklearn.linear_model import SGDClassifier
@@ -385,7 +384,7 @@ np.mean(predicted == twenty_test.target)
 > *Response:*  
 > np.float64(0.9101198402130493)
 
-We achieved 91.3% accuracy using the SVM.
+We achieved 91.0% accuracy using the SVM.
 
 #### Classification Report
 
@@ -413,7 +412,7 @@ The columns are showing the following:
 - **Precision:** the ratio `tp / (tp + fp)` where `tp` is the number of *true positives* and `fp` the number of *false positives*. The precision is intuitively the ability of the classifier not to label a negative sample as positive.
 - **Recall:** the ratio `tp / (tp + fn)` where `tp` is the number of true positives and `fn` the number of false negatives. The recall is intuitively the ability of the classifier to find all the positive samples.
 - **F1-score:** A balance between precision and recall (the harmonic mean). 
-- **Support:** the number of occurrences of each class in `y_true`.  (The number of actual samples for each class in the test set).
+- **Support:** the number of actual samples of each class in the test set.
 
 #### Confusion Matrix
 
@@ -430,21 +429,20 @@ metrics.confusion_matrix(twenty_test.target, predicted)
 
 The  *confusion matrix*[^9] is arranged as follows:
 
-- **Rows** represent the actual classes of the documents (the ground truth). 
-  - **TP** (True Positive) is the count of posts correctly classified as in a class.
-  - **FN** (False Negative) is the count of posts incorrectly classified as outside a class.
+- **Rows** represent the actual classes of the documents (the ground truth).
 - **Columns** represent the predicted classes made by the classifier.
-  - **FP** (False Positive) is the count of posts incorrectly classified as in a class.
+- The **diagonal** represents correct classifications: **TP** (True Positive) is the count of posts correctly classified as in a class.
+- Every off-diagonal cell is a mistake, and it counts against two classes:
+  - Across a row, it is a **FN** (False Negative) for that row's class: a post that belongs to the class was put in a different one.
+  - Down a column, it is a **FP** (False Positive) for that column's class: a post was put in the class but doesn't belong there.
 
-The diagonal represents correct classifications.
-
-|                         | **Predicted Atheism** | **Predicted Graphics** | **Predicted Medical** | **Predicted Christianity** |
-| ----------------------- | --------------------- | ---------------------- | --------------------- | -------------------------- |
-| **Actual Atheism**      | **256** (TP)          | 11 (FN)                | 16 (FN)               | 36 (FN)                    |
-| **Actual Graphics**     | 4 (FN)                | **380** (TP)           | 3 (FN)                | 2 (FN)                     |
-| **Actual Medical**      | 5 (FN)                | 35 (FN)                | **353** (TP)          | 3 (FN)                     |
-| **Actual Christianity** | 5 (FN)                | 11 (FN)                | 4 (FN)                | **378** (TP)               |
-|                         | 14  FP                | 57  FP                 | 23  FP                | 41  FP                     |
+|                         | **Predicted Atheism** | **Predicted Graphics** | **Predicted Medical** | **Predicted Christianity** | **Total FN** |
+| ----------------------- | --------------------- | ---------------------- | --------------------- | -------------------------- | ------------ |
+| **Actual Atheism**      | **256** (TP)          | 11                     | 16                    | 36                         | 63           |
+| **Actual Graphics**     | 4                     | **380** (TP)           | 3                     | 2                          | 9            |
+| **Actual Medical**      | 5                     | 35                     | **353** (TP)          | 3                          | 43           |
+| **Actual Christianity** | 5                     | 11                     | 4                     | **378** (TP)               | 20           |
+| **Total FP**            | 14                    | 57                     | 23                    | 41                         |              |
 
 As expected, this shows that posts from the newsgroups on atheism and Christianity are more often confused for one another than with computer graphics.
 
@@ -452,7 +450,7 @@ As expected, this shows that posts from the newsgroups on atheism and Christiani
 
 We’ve already encountered some parameters such as `use_idf` in the `TfidfTransformer`. Classifiers tend to have many parameters as well; e.g., `MultinomialNB` includes a smoothing parameter `alpha` and `SGDClassifier` has a penalty parameter `alpha` and configurable loss and penalty terms in the objective function (see the module documentation, or use the Python `help` function to get a description of these).
 
-Instead of tweaking the parameters of the various components of the chain, it is possible to run an exhaustive search of the best parameters on a grid of possible values. We try out all classifiers on either words or *bigrams*[^10], with or without *idf*, and with a penalty parameter of either 0.01 or 0.001 for the linear SVM:
+Instead of tweaking the parameters of the various components of the chain, it is possible to run an exhaustive search of the best parameters on a grid of possible values. We try out all classifiers on either words or *bigrams*[^10], with or without *idf*, and with a penalty parameter of either 0.01 or 0.001 for the linear SVM. Each key is the pipeline step name, two underscores, and the parameter name:
 
 ```python
 from sklearn.model_selection import GridSearchCV
@@ -471,12 +469,12 @@ gs_clf = GridSearchCV(text_clf, parameters, cv=5, n_jobs=-1)
 
 Description of parameters:
 
-- `estimator`: An object that fits a model based on some training data and can make predictions for  new data. In this case, `text_clf`, the SGDClassifier we trained earlier.
-- `param_grid`: A dictionary with parameters names as keys and lists of parameter settings to try. In this case, the `parameters` dictionary we trained earlier.
-- `n-jobs`: The number of jobs to run in parallel.
-- `cv`: Determines the *cross-validation*[^11] splitting strategy.
+- `estimator`: An object that fits a model based on some training data and can make predictions for new data. In this case, `text_clf`, the SVM pipeline we built earlier.
+- `param_grid`: A dictionary with parameter names as keys and lists of parameter settings to try. In this case, the `parameters` dictionary we defined earlier.
+- `n_jobs`: The number of jobs to run in parallel.
+- `cv`: Determines the *cross-validation*[^11] splitting strategy. `cv=5` splits the data into 5 parts.
 
-Note that `txt_clf` is still the SVG classifier, which is the classifier whose parameters we are tuning with grid search. The grid search instance behaves like a normal `scikit-learn` model. 
+The grid search instance behaves like a normal `scikit-learn` model.
 
 Let’s perform the search on a smaller subset of the training data to speed up the computation:
 
@@ -493,7 +491,7 @@ twenty_train.target_names[gs_clf.predict(['God is love'])[0]]
 > *Response:*  
 > 'soc.religion.christian'
 
-The object’s `best_score_` and `best_params_` attributes store the best mean score and the parameters setting corresponding to that score:
+The object’s `best_score_` and `best_params_` attributes store the best mean score and the parameter settings corresponding to that score:
 
 ```python
 gs_clf.best_score_
@@ -503,17 +501,17 @@ gs_clf.best_score_
 
 ```python
 for param_name in sorted(parameters.keys()):
-  print("%s: %r" % (param_name, gs_clf.best_params_[param_name]))
+    print("%s: %r" % (param_name, gs_clf.best_params_[param_name]))
 ```
 
 > *Response:*  
-> clf_ _alpha: 0.001
-> tfidf_ _use_idf: True
-> vect_ _ngram_range: (1, 1)
+> `clf__alpha: 0.001`  
+> `tfidf__use_idf: True`  
+> `vect__ngram_range: (1, 1)`
 
 You can get a more detailed summary of the search from `gs_clf.cv_results_`.
 
-The `cv_results_` parameter can be easily imported into pandas as a `DataFrame` for further inspection.
+The `cv_results_` attribute can be easily imported into pandas as a `DataFrame` for further inspection.
 
 ## Exercises
 
@@ -620,18 +618,20 @@ The code examples and text were updated for scikit-learn version 1.7 by Brian Bi
 
 Note: Claude Sonet 4 and Gemini Flash 2.5 were used to assist in drafting the revisions to this tutorial.
 
-[^1]: *Text preprossesing* is the initial set of steps to clean and standardize raw text data before analysis. This often includes converting all text to lowercase, removing punctuation, and handling special characters to ensure consistency. ↩
+Claude Opus 5.5 was used to correct errors in this tutorial and convert it to a Jupyter notebook, 10/12/2026.
+
+[^1]: *Text preprocessing* is the initial set of steps to clean and standardize raw text data before analysis. This often includes converting all text to lowercase, removing punctuation, and handling special characters to ensure consistency. ↩
 [^2]: *Tokenizing* is the process of breaking down a text document into smaller units called *tokens*. Tokens are usually words, but can also be individual characters or parts of words.
-[^3]: *Stopwords* are common words (like "the," "a," "is," "and," "of") that generally don't carry significant meaning for classification or analysis. Removing them helps reduce the size of the feature set and can improve model performance.
+[^3]: *Stopwords* are common words (like "the," "a," "is," "and," "of") that generally don't carry significant meaning for classification or analysis. Removing them helps reduce the size of the feature set and can improve model performance. (`CountVectorizer` only removes them if you set its `stop_words` parameter; by default it keeps them.)
 [^4]: A *feature vector* in the context of scikit-learn is a one-dimensional array of numerical values that represents a single data point (or sample) to be used by a machine learning algorithm.
 [^5]: An *n-gram* is a contiguous sequence of N characters or words from a given sample of text.
 [^6]: *Estimators* are objects in scikit-learn that can learn parameters from data by implementing a `.fit()` method. These include: *Predictors* (Models): like `MultinomialNB` or `LinearRegression` and *Transformers* (Preprocessing Tools) like `CountVectorizer` or `StandardScaler` that learn rules to transform or process data.
-[^7]: *Multinomial* in this context, means the classifier is built to handle data with many features. The "multi" refers to the entire vocabulary of unique words, where every word is treated as a separate feature. The model works by learning the relative frequency of all the words for a specific topic.
+[^7]: *Multinomial* in this context means the classifier models each document's word counts with a *multinomial distribution*: for each topic, it learns how often each word in the vocabulary tends to appear, and it predicts the topic whose word frequencies best match the document.
 [^8]: *Hyperparameter* refers to a configuration setting that is external to the model and whose value can't be estimated from the data. Instead, a hyperparameter's value must be set by the developer.
 
 [^9]: A *confusion matrix* is a table used to evaluate the performance of a classification model on a set of test data for which the true values are known. It visually summarizes the classifier's performance by comparing the predicted categories to the actual categories.
 [^10]: A *bigram* is an *n-gram* sequence of two words or characters, for example: "quick brown" or "qu".
-[^11]: *cross-validation* is a resampling method that iteratively partitions data into mutually exclusive ‘train’ and ‘test’ subsets so model performance can be evaluated on unseen data.
+[^11]: *Cross-validation* is a resampling method that repeatedly splits the data into separate ‘train’ and ‘test’ subsets so model performance can be evaluated on unseen data.
 
 
 
