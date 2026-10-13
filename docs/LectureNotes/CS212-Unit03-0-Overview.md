@@ -50,8 +50,8 @@ None yet.
 
 ## Things to Do This Week
 
-- Lab 2 code review due by Tuesday, 10/13.
-- Lab 2 production version due by Thursday, 10/15.
+- Lab 2 code review due by Tuesday, 10/13 (optional, extra credit).
+- Lab 2 production version due by Thursday, 10/15 (optional, extra credit).
 - Lab 3 beta version should be shared with your lab partner(s) by Saturday, 10/17.
 - Take quiz 3 over the assigned reading by Sunday, 10/18.
 

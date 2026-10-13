@@ -10,14 +10,6 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-| Topics                                                       |                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------ |
-| 1. What is AI, Python                                        | 6. Artificial Neural Networks: Image recognition |
-| 2.  Symbolic AI: rule-based                                  | 7. Generative AI                                 |
-| 3.  <mark>Classical Machine Learning</mark><br />Bayes' Rule | 8. Custom chatbot                                |
-| 4. ML: ScikitLearn Part 1                                    | 9. LLM fine-tuning                               |
-| 5. ML: Scikit Learn Part 2                                   | 10. Ethics                                       |
-
 <h2>Table of Contents</h2>
 
 - [Bayes' Rule](#bayes-rule)
