@@ -6,13 +6,13 @@ A Jupyter notebook that trains a **naive Bayes** classifier with scikit-learn to
 
 ## Run the Notebook in Google Colab
 
-Open [SpamDetection.ipynb in Colab](https://colab.research.google.com/github/LCC-CIT/CS212-CourseMaterials/blob/main/docs/Examples/SpamDetection/SpamDetection.ipynb), or download the notebook and upload it with **File → Upload notebook**. Colab already has pandas and scikit-learn, and the notebook downloads the data itself, so there's nothing to install.
+Open [SpamDetection.ipynb in Colab](https://colab.research.google.com/github/LCC-CIT/CS212-CourseMaterials/blob/main/docs/Examples/SpamDetection/SpamDetectionNotebook/SpamDetection.ipynb), or download the notebook and upload it with **File → Upload notebook**. Colab already has pandas and scikit-learn, and the notebook downloads the data itself, so there's nothing to install.
 
 ## Run the Notebook in VS Code with `uv`
 
-[`uv`](https://docs.astral.sh/uv/) reads [`pyproject.toml`](pyproject.toml) and installs the right packages for you. If you don't have it yet, see "Install `uv`" in the [Constraint Solving example](../ConstraintSolving/README.md).
+[`uv`](https://docs.astral.sh/uv/) reads [`pyproject.toml`](pyproject.toml) and installs the right packages for you. If you don't have it yet, see "Install `uv`" in the [Constraint Solving example](../../ConstraintSolving/README.md).
 
-Open a terminal in the `SpamDetection` folder, then run:
+Open a terminal in the `SpamDetectionNotebook` folder, then run:
 
 ```bash
 uv sync
