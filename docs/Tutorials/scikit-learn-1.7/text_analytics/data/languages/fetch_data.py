@@ -1,4 +1,3 @@
-
 # simple python script to collect text paragraphs from various languages on the
 # same topic namely the Wikipedia encyclopedia itself
 
@@ -26,9 +25,10 @@ pages = {
 #    u'zh': u'http://zh.wikipedia.org/wiki/Wikipedia',
 }
 
-html_folder = 'html'
-text_folder = 'paragraphs'
-short_text_folder = 'short_paragraphs'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+html_folder = os.path.join(BASE_DIR, 'html')
+text_folder = os.path.join(BASE_DIR, 'paragraphs')
+short_text_folder = os.path.join(BASE_DIR, 'short_paragraphs')
 n_words_per_short_text = 5
 
 
