@@ -517,7 +517,7 @@ The `cv_results_` attribute can be easily imported into pandas as a `DataFrame` 
 
 ### Setup for All the Exercises
 
-The source code for these exercises is <a href="https://github.com/scikit-learn/scikit-learn/tree/1.4.X/doc/tutorial/text_analytics" target="_blank">on GitHub</a>.
+The source code for these exercises is <a href="https://download-directory.github.io/?url=https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Tutorials/scikit-learn-1.7/text_analytics" target="_blank">on GitHub</a>.
 
 The tutorial folder on GitHub should contain the following sub-folders:
 
@@ -548,7 +548,7 @@ Or run the script in an IDE where you can edit and debug more easily.
 
 Refine the implementation and iterate until the exercise is solved.
 
-**For each exercise, the skeleton file provides all the necessary import statements, boilerplate code to load the data and sample code to evaluate the predictive accuracy of the model.**
+**For each exercise, the skeleton file provides all the necessary import statements and boilerplate code to load the data as well as sample code to evaluate the predictive accuracy of the model.**
 
 ### Exercise 1: Language identification
 
