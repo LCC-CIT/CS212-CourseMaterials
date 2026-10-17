@@ -44,7 +44,7 @@ In this section we will see how to:
 
 To get started with this tutorial, you must first install *scikit-learn* and all of its required dependencies.
 
-Please refer to the <a href="https://scikit-learn.org/1.7/install.html#installation-instructions" target="_blank">installation instructions</a> page for more information and for system-specific instructions. (Note: this tutorial was updated for scikit-learn 1.7, but has been tested with 1.6 through 1.9.)
+Please refer to the <a href="https://scikit-learn.org/1.7/install.html#installation-instructions" target="_blank">installation instructions</a> page for more information and for system-specific instructions. (Note: this tutorial was originally written for scikit-learn 1.4, updated 1.7, and has been tested with 1.6 through 1.9.)
 
 ### Loading the 20 newsgroups dataset
 
@@ -61,7 +61,7 @@ categories = ['alt.atheism', 'soc.religion.christian','comp.graphics', 'sci.med'
 ```
 
 We can now load the list of files matching those categories as follows:
-***(This will take a minute or more to load.)***
+***This will take a minute or more to load. Noting will happen until the data is loaded.***
 
 ```python
 from sklearn.datasets import fetch_20newsgroups
