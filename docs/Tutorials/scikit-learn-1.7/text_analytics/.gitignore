@@ -1,0 +1,10 @@
+data/languages/*
+!data/languages/fetch_data.py
+data/movie_reviews/*
+!data/movie_reviews/fetch_data.py
+paragraphs/
+short_paragraphs/
+html/
+txt_sentoken/
+poldata.README.2.0
+review_polarity.tar.gz
