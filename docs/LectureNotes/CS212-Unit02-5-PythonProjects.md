@@ -503,18 +503,10 @@ You can edit this file by hand. After doing so, run `uv sync` (or `uv run`) to u
 
 uv creates a `.venv` folder in your project, so VS Code finds it the same way as in the previous section: open the project folder, run **Python: Select Interpreter**, and choose the `.venv` interpreter. After that, the debugger and `F5` work normally.
 
-## Exercise
-
-1. Create a folder called `venv_practice`. Using only `venv` and `pip`, create and activate a `.venv`, install the `z3-solver` package, and write a short program that imports `z3` and prints `z3.get_version_string()`. Run it, then run `python -m pip freeze > requirements.txt` and look at the file. Deactivate the environment.
-2. Install uv. Create a new project with `uv init uv_practice`. Add `z3-solver` with `uv add`, change `main.py` to print the Z3 version, and run it with `uv run main.py`.
-3. Open `pyproject.toml` and find your dependency. Compare the version recorded there with the exact version in `uv.lock`.
-4. Delete the `.venv` folder in `uv_practice`, then run `uv sync`. What happens?
-5. Run `uv add --dev pytest` and look at how `pyproject.toml` changed.
-
 ## Reference
 
-- <a href="https://docs.python.org/3/tutorial/venv.html" target="_blank">Virtual Environments and Packages</a>&mdash;Python Tutorial
-- <a href="https://docs.python.org/3/library/venv.html" target="_blank">venv — Creation of virtual environments</a>&mdash;Python documentation
+- <a href="https://docs.python.org/3/tutorial/venv.html" target="_blank">Virtual Environments and Packages</a>&mdash;Official Python Tutorial
+- <a href="https://docs.python.org/3/library/venv.html" target="_blank">venv — Creation of virtual environments</a>&mdash;Official Python documentation
 - <a href="https://pip.pypa.io/en/stable/" target="_blank">pip documentation</a>&mdash;Python Packaging Authority
 - <a href="https://docs.astral.sh/uv/" target="_blank">uv documentation</a>&mdash;Astral
   - <a href="https://docs.astral.sh/uv/getting-started/installation/" target="_blank">Installing uv</a>
@@ -525,7 +517,7 @@ uv creates a `.venv` folder in your project, so VS Code finds it the same way as
 
 
 
-*Note: Parts of this document were drafted with assistance from Claude Sonnet 5.5, 10/7/2026*
+*Note: Parts of this document were drafted with assistance from Claude Sonnet 5.5 and reviesed by Brian Bird 10/17/2026*
 
 ---
 

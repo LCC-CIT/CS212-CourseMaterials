@@ -10,6 +10,8 @@ This folder has the starter code for the exercises at the end of the scikit-lear
 
 The tutorial page has the full instructions and hints.
 
+The original exercise code was from https://github.com/scikit-learn/scikit-learn/tree/1.4.X/doc/tutorial/text_analytics .
+
 ## Getting the Data
 
 The datasets aren't included. Download them by running each `fetch_data.py` script from inside its own folder, since the scripts save the data in the current folder. The languages script needs the `lxml` package (`pip install lxml`).
