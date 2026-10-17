@@ -10,6 +10,7 @@ In this examples we will use a movie review dataset.
 """
 # Author: Olivier Grisel <olivier.grisel@ensta.org>
 # License: Simplified BSD
+# Original repository: https://github.com/scikit-learn/scikit-learn/tree/1.4.X/doc/tutorial/text_analytics
 
 import sys
 from sklearn.feature_extraction.text import TfidfVectorizer

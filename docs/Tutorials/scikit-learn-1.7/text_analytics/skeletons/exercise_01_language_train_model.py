@@ -8,6 +8,7 @@ sequences as 'fingerprints'.
 """
 # Author: Olivier Grisel <olivier.grisel@ensta.org>
 # License: Simplified BSD
+# Original repository: https://github.com/scikit-learn/scikit-learn/tree/1.4.X/doc/tutorial/text_analytics
 
 import sys
 
