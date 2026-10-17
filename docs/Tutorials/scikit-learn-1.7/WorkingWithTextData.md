@@ -44,7 +44,7 @@ In this section we will see how to:
 
 To get started with this tutorial, you must first install *scikit-learn* and all of its required dependencies.
 
-Please refer to the <a href="https://scikit-learn.org/1.7/install.html#installation-instructions" target="_blank">installation instructions</a> page for more information and for system-specific instructions.
+Please refer to the <a href="https://scikit-learn.org/1.7/install.html#installation-instructions" target="_blank">installation instructions</a> page for more information and for system-specific instructions. (Note: this tutorial was updated for scikit-learn 1.7, but has been tested with 1.6 through 1.9.)
 
 ### Loading the 20 newsgroups dataset
 
