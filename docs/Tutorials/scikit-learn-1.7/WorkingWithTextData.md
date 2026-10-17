@@ -524,7 +524,6 @@ The tutorial folder on GitHub should contain the following sub-folders:
 - `*.rst files` - the source of the tutorial document written with sphinx.
 - `data` - folder to put the datasets used during the tutorial.
 - `skeletons` - sample incomplete scripts for the exercises.
-- `solutions` - solutions of the exercises.
 
 Copy the skeletons folder into a new folder somewhere on your hard-drive named `sklearn_TextAnalyaticsTutorial`, where you can edit your own files for the exercises while keeping the original skeletons intact:
 
