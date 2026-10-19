@@ -18,22 +18,22 @@ The Python notes for this course are spread across several units. This page list
 
 ## The Python Notes
 
-1. **[Intro to Python](CS212-Unit01-1-Python.md)**
+1. **[Intro to Python](https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit01-1-Python.html)**
    How to install Python on Windows and macOS, run a "Hello World" program, and use VS Code and its debugger. It also covers what makes Python different from C-family languages (indentation instead of curly braces, dynamic typing, no semicolons), Python's programming paradigms, an object-oriented example, and a "die battle" exercise to translate into Python.
 
-2. **[Python Coding Style Cheat-Sheet](PythonCodingStyleCheatSheet.md)**
+2. **[Python Coding Style Cheat-Sheet](https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/PythonCodingStyleCheatSheet.html)**
    A one-page summary of the PEP 8 style guide: indentation and line length, naming conventions (`snake_case`, `CapWords`, `ALL_CAPS`), comments, whitespace, docstrings, imports, and blank lines. Use it to make your code look *pythonic*.
 
-3. **[Python Collection Types](CS212-Unit02-3-PythonCollectionTypes.md)**
+3. **[Python Collection Types](https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit02-3-PythonCollectionTypes.html)**
    The four built-in collection types: lists, dictionaries, sets, and tuples. Each one has a table showing its syntax, ordering, mutability, and whether it allows duplicates, plus examples. It also explains how to use `dict.get()` to look up a key safely.
 
-4. **[Python Loops](CS212-Unit02-4-PythonLoops.md)**
+4. **[Python Loops](https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit02-4-PythonLoops.html)**
    How to use `for` loops to go through a sequence (including `range()`), how to use `while` loops to repeat code while a condition is true, and how `break`, `continue`, and a loop's `else` clause change the flow of a loop.
 
-5. **[Python Projects](CS212-Unit02-5-PythonProjects.md)**
+5. **[Python Projects](https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit02-5-PythonProjects.html)**
    Why each project needs its own virtual environment, and how to manage environments and packages in two ways: with Python's built-in `venv` and `pip` tools (including `requirements.txt`), and with `uv`, the project manager we use in this course. It also explains `pyproject.toml`, the `uv.lock` file, using environments in VS Code, and how to fix common problems.
 
-6. **[Set Up Python Packages for ML](SetUpPythonAndLibrariesForAI.md)**
+6. **[Set Up Python Packages for ML](https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/SetUpPythonAndLibrariesForAI.html)**
    An introduction to the machine learning libraries we'll use later in the course (NumPy, scikit-learn, TensorFlow with Keras, Pillow, and Matplotlib), with instructions for installing them in a virtual environment on Windows and macOS.
 
 ## More Python Resources
