@@ -517,7 +517,7 @@ The `cv_results_` attribute can be easily imported into pandas as a `DataFrame` 
 
 ### Setup for All the Exercises
 
-The source code for these exercises is <a href="https://github.com/scikit-learn/scikit-learn/tree/1.4.X/doc/tutorial/text_analytics" target="_blank">on GitHub</a>.
+The source code for these exercises is <a href="https://github.com/scikit-learn/scikit-learn/tree/1.4.X/doc/tutorial/text_analytics" target="_blank">on GitHub</a>, you can download it [with this link](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fscikit-learn%2Fscikit-learn%2Ftree%2F1.4.X%2Fdoc%2Ftutorial%2Ftext_analytics).
 
 The tutorial folder on GitHub should contain the following sub-folders:
 
