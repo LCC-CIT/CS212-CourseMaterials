@@ -17,21 +17,21 @@ This part of the lab is for everyone.
 
 ### Step A: Do the Tutorial
 
-Work through the scikit-learn tutorial: [Working with Text Data](https://lcc-cit.github.io/CS212-CourseMaterials/Tutorials/scikit-learn-1.7/WorkingWithTextData.html) . 
+- Work through the scikit-learn tutorial: [Working with Text Data](https://lcc-cit.github.io/CS212-CourseMaterials/Tutorials/scikit-learn-1.7/WorkingWithTextData.html) . 
+  Read it, run the code and check the results at each step so you understand what the code is doing. Adding code that prints variables is a great way to do this. (There are already quite a few lines of code that are just there to show you what the program is doing.)
 
-Read it, run the code and check the results at each step so you understand what the code is doing. Adding code that prints variables is a great way to get a better handle on what the code is doing. (There are already quite a few lines of code that are just there to show you what the program is doing.)
+- You have two choices for the way you do the tutorial:
 
-You have two choices for the way you do the tutorial:
+  - Copy the code from the tutorial web page into an interactive Python interpereter (as suggested in the tutorial.)
+    -- OR --
 
-- Copy the code from the tutorial web page into an interactive Python interpereter (as sugggested in the tutorial.)
-  -- OR --
-- Run the code in this [Jupyter notebook on Google Colab](https://colab.research.google.com/drive/1FBrABO2L1DFKRn1v0zRknHS57eiktzgm?usp=sharing).
+  - Run the code in this [Jupyter notebook on Google Colab](https://colab.research.google.com/drive/1FBrABO2L1DFKRn1v0zRknHS57eiktzgm?usp=sharing).
 
-You don't need to do the exercises at the end of the tutorial... yet. (Groups A and B will do them for part 2.)
+- You don't need to do the exercises at the end of the tutorial... yet. (Groups A and B will do them for part 2. Group C has a different exercise.)
 
 ### Step B: Put the Essential Parts of the Tutorial in a Python File
 
-Wiite a .py file that <u>only includes the essential steps</u> to:
+Write a .py file that <u>only includes the essential steps</u> to:
 
 - Fetch the training data
 
@@ -51,7 +51,7 @@ Wiite a .py file that <u>only includes the essential steps</u> to:
 
 <u>You don't need to build a pipeline or do a grid search</u>.
 
-**Alternative:** To make this interesting, you can use a different set of newsgroup categories from the ones used in the tutorial.
+**Alternative:** To make this interesting, you can use a different set of newsgroup categories than the ones used in the tutorial.
 
 
 

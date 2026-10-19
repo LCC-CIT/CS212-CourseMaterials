@@ -288,7 +288,7 @@ To update uv later, run `uv self update` (if you installed it with the standalon
 Create a new project in a new folder:
 
 ```
-uv init my_project
+uv init --no-package my_project
 cd my_project
 ```
 
