@@ -44,7 +44,7 @@ In this section we will see how to:
 
 To get started with this tutorial, you must first install *scikit-learn* and all of its required dependencies.
 
-Please refer to the <a href="https://scikit-learn.org/1.7/install.html#installation-instructions" target="_blank">installation instructions</a> page for more information and for system-specific instructions.
+Please refer to the <a href="https://scikit-learn.org/1.7/install.html#installation-instructions" target="_blank">installation instructions</a> page for more information and for system-specific instructions. (Note: this tutorial was originally written for scikit-learn 1.4, updated 1.7, and has been tested with 1.6 through 1.9.)
 
 ### Loading the 20 newsgroups dataset
 
@@ -61,7 +61,7 @@ categories = ['alt.atheism', 'soc.religion.christian','comp.graphics', 'sci.med'
 ```
 
 We can now load the list of files matching those categories as follows:
-***(This will take a minute or more to load.)***
+***This will take a minute or more to load. Noting will happen until the data is loaded.***
 
 ```python
 from sklearn.datasets import fetch_20newsgroups
@@ -517,14 +517,13 @@ The `cv_results_` attribute can be easily imported into pandas as a `DataFrame` 
 
 ### Setup for All the Exercises
 
-The source code for these exercises is <a href="https://github.com/scikit-learn/scikit-learn/tree/1.4.X/doc/tutorial/text_analytics" target="_blank">on GitHub</a>, you can download it [with this link](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fscikit-learn%2Fscikit-learn%2Ftree%2F1.4.X%2Fdoc%2Ftutorial%2Ftext_analytics).
+The source code for these exercises is <a href="https://download-directory.github.io/?url=https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Tutorials/scikit-learn-1.7/text_analytics" target="_blank">on GitHub</a>.
 
 The tutorial folder on GitHub should contain the following sub-folders:
 
 - `*.rst files` - the source of the tutorial document written with sphinx.
 - `data` - folder to put the datasets used during the tutorial.
 - `skeletons` - sample incomplete scripts for the exercises.
-- `solutions` - solutions of the exercises.
 
 Copy the skeletons folder into a new folder somewhere on your hard-drive named `sklearn_TextAnalyaticsTutorial`, where you can edit your own files for the exercises while keeping the original skeletons intact:
 
@@ -548,7 +547,7 @@ Or run the script in an IDE where you can edit and debug more easily.
 
 Refine the implementation and iterate until the exercise is solved.
 
-**For each exercise, the skeleton file provides all the necessary import statements, boilerplate code to load the data and sample code to evaluate the predictive accuracy of the model.**
+**For each exercise, the skeleton file provides all the necessary import statements and boilerplate code to load the data as well as sample code to evaluate the predictive accuracy of the model.**
 
 ### Exercise 1: Language identification
 
