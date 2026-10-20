@@ -23,7 +23,7 @@ Course materials for **CS 212, AI Programming 1** at Lane Community College, by 
 
 - Files are edited in Typora. Most start with YAML front matter (`title`, `description`, `keywords`, `generator`, `author`).
 - The page title is an HTML `<h1>`, usually followed by `**CS 212 AI Programming 1**`. Longer lecture notes add a `<h2>Contents</h2>` heading and a `[TOC]` line, which the script in `head-custom.html` replaces with a table of contents built from the `##`–`####` headings.
-- The breadcrumb at the top of each page is built from the page's URL and its `title` front matter. Optional `breadcrumb:` front matter gives a shorter label for the page's own entry. Folder labels are set in `breadcrumb_names` in `_config.yml`.
+- The breadcrumb at the top of each page is built from the page's URL and its `title` front matter. Optional `breadcrumb:` front matter gives a shorter label for the page's own entry. Folder labels are set in `breadcrumb_names` in `_config.yml`; an entry can be a plain label or `name:` plus `url:` to make the folder a link.
 - Pages end with an AI attribution line (if AI helped), then the Creative Commons BY-SA 4.0 footer. Don't change or remove either one without being asked.
 - Keep edits concise and in the existing plain, friendly teaching voice. Don't rewrite sections you weren't asked to change.
 

@@ -20,7 +20,8 @@
       {% comment %}
         Breadcrumb trail built from the page's URL, replacing the theme's site-title link.
         Folder labels come from breadcrumb_names in _config.yml (the folder name is used if
-        there is no entry). The last item is the page's `breadcrumb` front matter if it has
+        there is no entry). An entry can be a plain label or a name/url pair; a url starting
+        with "/" is from the site root, any other url is relative to that folder. The last item is the page's `breadcrumb` front matter if it has
         one, otherwise its `title`, otherwise its file name.
       {% endcomment %}
       {% if page.url != "/" %}
@@ -30,10 +31,20 @@
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <ol>
           <li><a href="{{ "/" | relative_url }}">Home</a></li>
+          {% assign crumb_path = "/" %}
           {% for part in crumb_parts %}
             {% if forloop.first or forloop.last %}{% continue %}{% endif %}
-            {% assign crumb_name = site.breadcrumb_names[part] | default: part | url_decode %}
-            <li>{{ crumb_name }}</li>
+            {% assign crumb_path = crumb_path | append: part | append: "/" %}
+            {% assign crumb_entry = site.breadcrumb_names[part] %}
+            {% assign crumb_name = crumb_entry.name | default: crumb_entry | default: part | url_decode %}
+            {% assign crumb_url = crumb_entry.url %}
+            {% if crumb_url %}
+              {% assign crumb_first = crumb_url | slice: 0 %}
+              {% if crumb_first != "/" %}{% assign crumb_url = crumb_path | append: crumb_url %}{% endif %}
+              <li><a href="{{ crumb_url | relative_url }}">{{ crumb_name }}</a></li>
+            {% else %}
+              <li>{{ crumb_name }}</li>
+            {% endif %}
           {% endfor %}
           <li aria-current="page">{{ crumb_title }}</li>
         </ol>

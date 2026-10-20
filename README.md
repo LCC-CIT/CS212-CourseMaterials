@@ -13,7 +13,7 @@ Customizations:
 
 | File | What it does |
 |---|---|
-| `docs/_config.yml` | Site title and description, the theme, kramdown settings, and `breadcrumb_names` (labels for folder names in the breadcrumb trail). |
+| `docs/_config.yml` | Site title and description, the theme, kramdown settings, and `breadcrumb_names` (labels for folder names in the breadcrumb trail, each optionally with a `url` to make it a link). |
 | `docs/_layouts/default.html` | Copy of the theme's page layout. Replaces the theme's site-title link at the top of each page with a breadcrumb trail built from the page's URL: Home › folder › page title. The last item is the `breadcrumb` front matter value if a page has one, otherwise its `title`. |
 | `docs/_includes/head-custom.html` | Added to the `<head>` of every page. Provides the `[TOC]` table of contents script, icons for external and download links, and Mermaid diagram rendering. |
 | `.github/workflows/link-check.yaml` | Builds `docs/` and checks every link with [lychee](https://lychee.cli.rs/). Settings are in `lychee.toml` and `.lycheeignore`. |
