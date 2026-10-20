@@ -1,7 +1,7 @@
 ---
 title: .venv and Python Projects
 description: How to use virtual environments (.venv), pip, and uv to manage Python projects and their packages.
-keywords: Python, venv, pip, uv, pyproject.toml, MacOS, Windows
+keywords: Python, venv, pip, uv, pyproject.toml
 generator: Typora
 author: Brian Bird
 ---
@@ -288,7 +288,7 @@ To update uv later, run `uv self update` (if you installed it with the standalon
 Create a new project in a new folder:
 
 ```
-uv init my_project
+uv init --no-package my_project
 cd my_project
 ```
 

@@ -46,6 +46,25 @@ To get started with this tutorial, you must first install *scikit-learn* and all
 
 Please refer to the <a href="https://scikit-learn.org/1.7/install.html#installation-instructions" target="_blank">installation instructions</a> page for more information and for system-specific instructions. (Note: this tutorial was originally written for scikit-learn 1.4, updated 1.7, and has been tested with 1.6 through 1.9.)
 
+> **Setting up a venv for this project**
+>
+> If you are using the interactive python interpreter you can create a  .venv (virtual environment) folder to contain the version of Python you are using and the packages for this tutorial. It isn't required (you can install everything globally) but it is often the best way to manage versions of python and python packages. 
+>
+> To do this using [uv](https://docs.astral.sh/uv/), navigate to the folder where you will run this tutorial and execute the following commands:
+>
+> - Create a pyproject.toml file: `uv init --no-package lab03`
+> - Add the packages uses in this tutorial: `uv add scikit-learn numpy`
+>
+> Next activate the venv. There are different commands depending on your OS and terminal type:
+>
+> - Windows PowerShell: `.venv\Scripts\Activate.ps1`
+>
+> - Windows Command Prompt (CMD):  `.venv\Scripts\activate.bat`
+>
+> - MacOS terminal: `source .venv/bin/activate`
+
+
+
 ### Loading the 20 newsgroups dataset
 
 The dataset is called “Twenty Newsgroups”. Here is the official description, quoted from the <a href="http://qwone.com/~jason/20Newsgroups/" target="_blank">website</a>:
