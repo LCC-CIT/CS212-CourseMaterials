@@ -1,5 +1,7 @@
 ---
 title: Python Coding Style Cheat-Sheet
+parent: Python Crash Course
+parent_url: PythonCrashCourse.html
 ---
 
 # Python Coding Style Cheat-Sheet

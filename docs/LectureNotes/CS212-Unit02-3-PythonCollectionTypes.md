@@ -1,5 +1,7 @@
 ---
 title: Python Collection Types
+parent: Python Crash Course
+parent_url: PythonCrashCourse.html
 ---
 
 <h1>Python Collection Types</h1>

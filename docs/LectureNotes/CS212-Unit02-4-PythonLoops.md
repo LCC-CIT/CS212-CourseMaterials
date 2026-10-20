@@ -1,5 +1,7 @@
 ---
 title: Python Loops
+parent: Python Crash Course
+parent_url: PythonCrashCourse.html
 ---
 
 <h1>Python Loops</h1>
