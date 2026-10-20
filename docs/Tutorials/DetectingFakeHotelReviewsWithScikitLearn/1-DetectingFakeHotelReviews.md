@@ -7,7 +7,7 @@
 3. [Building Feature Vectors and Training the Model](3-BuildingFeatureVectorsAndTraining.md)
 4. [Testing Classifier Accuracy](4-TestingClassifierAccuracy.md)
 5. [Building a Training Pipeline](5-BuildingAPipeline.md)
-6. [Tuning Hyperparameters using Grid Search](6-GridSearchparameterTuning.md)
+6. [Tuning Hyperparameters using Grid Search](6-GridSearchParameterTuning.md)
 7. [Exercises](7-Exercises.md)
 
 ## Introduction
@@ -37,7 +37,7 @@ In VS Code, select the `.venv` environment as the Python interpreter.
 ## References
 
 - [scikit-learn Tutorials](https://scikit-learn.org/1.4/tutorial/index.html) by scikit-learn developers for scikit-learn version 1.4.
-- [scikit-learn Tutorials Updated for V 1.7](../scikit-learn-1.7/ScikitLearntutorials.md)  Updated by Brian Bird for scikit-learn version 1.7
+- [scikit-learn Tutorials Updated for V 1.7](../scikit-learn-1.7/ScikitLearnTutorials.md)  Updated by Brian Bird for scikit-learn version 1.7
 
 ## Acklnolegments
 
