@@ -10,16 +10,6 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-| Topics                               |                                   |
-| ------------------------------------ | --------------------------------- |
-| <mark>Overview, History of AI</mark> | Generative AI                     |
-| Machine Learning: Symbolic           | Using LLMs in custom applications |
-| Machine Learning: Statistical        | Custom chatbot creation           |
-| Neural networks                      | LLM fine-tuning                   |
-| Image recognition                    | Social and ethical issues of AI   |
-
-
-
 <h2>Contents</h2>
 
 - [Math to Review](#math-to-review)

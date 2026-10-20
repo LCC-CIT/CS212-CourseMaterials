@@ -4,9 +4,15 @@ parent: Python Crash Course
 parent_url: PythonCrashCourse.html
 ---
 
-# Python Coding Style Cheat-Sheet
+<h1>Python Coding Style Cheat-Sheet</h1>
 
-This cheat-sheet for Python coding conventions is based on the PEP 8 official style guide.
+<h2>Contents</h2>
+
+[TOC]
+
+## Introduction
+
+This cheat-sheet for Python coding conventions is based on the [PEP 8 official style guide](https://peps.python.org/pep-0008/).
 
 ## Line Length and Indentation
 

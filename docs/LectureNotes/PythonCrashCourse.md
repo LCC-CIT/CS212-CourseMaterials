@@ -18,7 +18,7 @@ In this course we write all of our AI programs in Python. You don't need to be a
 
 The Python notes for this course are spread across several units. This page lists them all in one place, in the order we suggest reading them. Each note is short and focused, so you can read the whole set like a crash course, or come back to a single note when you need a refresher.
 
-## The Python Notes
+## Python Notes and Guides
 
 1. **[Intro to Python](https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit01-1-Python.html)**
    How to install Python on Windows and macOS, run a "Hello World" program, and use VS Code and its debugger. It also covers what makes Python different from C-family languages (indentation instead of curly braces, dynamic typing, no semicolons), Python's programming paradigms, an object-oriented example, and a "die battle" exercise to translate into Python.
