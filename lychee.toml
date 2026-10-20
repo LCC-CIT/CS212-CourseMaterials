@@ -2,3 +2,7 @@
 # Servers that block bots answer 403, and busy servers answer 429 (too many requests).
 # Both mean the page exists, so they don't count as broken.
 accept = [200, 403, 429]
+
+# Jekyll leaves a raw copy of any .md page that has no front matter next to its
+# generated .html. Check only the .html pages, which are what gets published.
+exclude_path = ['\.md$']
