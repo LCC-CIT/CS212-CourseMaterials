@@ -1,8 +1,9 @@
 ---
-title: Python: Learning and Using
+title: "Python: Learning and Using"
 description: How to get started with Python if you know another language.
 keywords: Python, MacOS, Windows
-Parent: Python Crash Course
+parent: Python Crash Course
+parent_url: PythonCrashCourse.html
 generator: Typora
 author: Brian Bird
 ---

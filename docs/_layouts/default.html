@@ -22,7 +22,8 @@
         Folder labels come from breadcrumb_names in _config.yml (the folder name is used if
         there is no entry). An entry can be a plain label or a name/url pair; a url starting
         with "/" is from the site root, any other url is relative to that folder. The last item is the page's `breadcrumb` front matter if it has
-        one, otherwise its `title`, otherwise its file name.
+        one, otherwise its `title`, otherwise its file name. A page can name a `parent` (and
+        optionally a `parent_url`, handled like a folder url) to add one more item before its own.
       {% endcomment %}
       {% if page.url != "/" %}
       {% assign crumb_parts = page.url | split: "/" %}
@@ -46,6 +47,16 @@
               <li>{{ crumb_name }}</li>
             {% endif %}
           {% endfor %}
+          {% if page.parent %}
+            {% assign crumb_url = page.parent_url %}
+            {% if crumb_url %}
+              {% assign crumb_first = crumb_url | slice: 0 %}
+              {% if crumb_first != "/" %}{% assign crumb_url = crumb_path | append: crumb_url %}{% endif %}
+              <li><a href="{{ crumb_url | relative_url }}">{{ page.parent }}</a></li>
+            {% else %}
+              <li>{{ page.parent }}</li>
+            {% endif %}
+          {% endif %}
           <li aria-current="page">{{ crumb_title }}</li>
         </ol>
       </nav>
