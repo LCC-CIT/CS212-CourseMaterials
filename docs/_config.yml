@@ -9,3 +9,6 @@ kramdown:
 # Labels for folder names in the breadcrumb trail (see _layouts/default.html).
 breadcrumb_names:
   LectureNotes: Lecture Notes
+  DetectingFakeHotelReviewsWithScikitLearn:
+    name: Detecting Fake Hotel Reviews
+    url: 1-DetectingFakeHotelReviews.html

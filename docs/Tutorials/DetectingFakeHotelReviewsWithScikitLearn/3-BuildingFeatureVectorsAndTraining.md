@@ -165,10 +165,6 @@ The predicted labels can vary depending on the training data and split.
 
 
 
----
-
-<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2026</time> are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
-
 [^4]: A *feature vector* in the context of scikit-learn is a one-dimensional array of numerical values that represents a single data point (or sample) to be used by a machine learning algorithm.
 [^5]: An *n-gram* is a contiguous sequence of N characters or words from a given sample of text.
 [^6]: *Estimators* are objects in scikit-learn that can learn parameters from data by implementing a `.fit()` method. These include: *Predictors* (Models): like `MultinomialNB` or `LinearRegression` and *Transformers* (Preprocessing Tools) like `CountVectorizer` or `StandardScaler` that learn rules to transform or process data.
@@ -177,3 +173,11 @@ The predicted labels can vary depending on the training data and split.
 [^9]: A *confusion matrix* is a table used to evaluate the performance of a classification model on a set of test data for which the true values are known. It visually summarizes the classifier's performance by comparing the predicted categories to the actual categories.
 [^10]: A *bigram* is an *n-gram* sequence of two words or characters, for example: "my husband" or "qu".
 [^11]: *Cross-validation* is a resampling method that repeatedly splits the data into separate ‘train’ and ‘test’ subsets so model performance can be evaluated on unseen data.
+
+
+
+---
+
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2026</time> are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
+
+---
