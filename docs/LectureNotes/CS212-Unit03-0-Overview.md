@@ -17,7 +17,7 @@ author: Brian Bird
 | 1. What is AI, Python                                | 6. ANN: Image recognition     |
 | 2.  Symbolic AI: constraint solving                  | 7. Generative AI              |
 | 3. <mark>Classical machine learning: training</mark> | 8. Custom chatbot             |
-| 4. Classical machine learning: inference             | 9. LLM fine-tuning            |
+| 4. Classical machine learning: testing               | 9. LLM fine-tuning            |
 | 5. Midterm                                           | 10. Social and ethical issues |
 |                                                      | 11. Final                     |
 

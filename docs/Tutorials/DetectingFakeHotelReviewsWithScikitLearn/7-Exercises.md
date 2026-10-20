@@ -35,3 +35,12 @@ In this exercise, you will explore whether character N-grams or multi-word phras
 Using the results of the previous exercises and the `pickle` module of the standard library, write a command line utility that reads a hotel review provided on `stdin` and predicts whether the review is `'truthful'` or `'deceptive'`.
 
 Bonus point if the utility is able to give a confidence level for its predictions (hint: use `loss='log_loss'` in `SGDClassifier` or use `MultinomialNB` to enable `.predict_proba()`).
+
+
+
+---
+
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2026</time> are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
+
+---
+
