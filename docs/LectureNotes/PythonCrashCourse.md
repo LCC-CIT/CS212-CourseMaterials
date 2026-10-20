@@ -8,7 +8,7 @@ author: Brian Bird
 
 <h1>Python for AI and ML Crash Course</h1>
 
-<h2>For Programmers Who Know Another Language</h2>
+<h2>For programmers who know another language</h2>
 
 **CS 212 AI Programming 1**
 
