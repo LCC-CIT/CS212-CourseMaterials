@@ -15,7 +15,7 @@ The most intuitive way to do so is to use a "bag of words" representation:
 1. Assign a fixed integer id to each word occurring in any document of the training set (for instance, by building a dictionary from words to integer indices).
 2. For each document `i`, count how many times each word `w` occurs and store the count in `X[i, j]`, where `i` is the document's row number and `j` is the column number for word `w` in the dictionary.
 
-It is called a "bag" of words because the order of words in a sentence is discarded—only their occurrence counts are kept. However, if we also extract **N-grams**[^2] (contiguous sequences of 2 or 3 words, such as `"my husband"` or `"front desk"`), we can preserve local word order and capture multi-word stylistic phrases.
+It is called a "bag" of words because the order of words in a sentence is discarded—only their occurrence counts are kept. However, if we also extract *N-grams*[^2] (contiguous sequences of 2 or 3 words, such as `"my husband"` or `"front desk"`), we can preserve local word order and capture multi-word stylistic phrases.
 
 The bag of words representation implies that `n_features` is the number of distinct words in the corpus: across large text collections, this number is typically larger than 100,000.
 
@@ -33,7 +33,7 @@ Text preprocessing[^3], tokenizing[^4] and filtering (removal) of stopwords[^5] 
 - Transforms documents to feature vectors[^1]. Each document is transformed into a vector (a row in the matrix) where the value at each position corresponds to the count (*frequency*) of a specific word (*feature*) from the dictionary in that document.
 
 **Concept — Why keep stopwords for fake review detection?**  
-In topic classification, common words like `"i"`, `"my"`, `"we"`, and `"the"` are often removed as noise. In deception detection, however, psycholinguistic studies show that **pronouns and function words are strong signals of deception** (fake reviewers use significantly more first-person pronouns to make their stories sound personal). By default, `CountVectorizer()` keeps stopwords (`stop_words=None`), which is ideal for our task.
+In topic classification, common words like `"i"`, `"my"`, `"we"`, and `"the"` are often removed as noise. In deception detection, however, psycholinguistic studies show that <u>pronouns and function words are strong signals of deception</u> (fake reviewers use significantly more first-person pronouns to make their stories sound personal). By default, `CountVectorizer()` keeps stopwords (`stop_words=None`), which is ideal for our task.
 
 This code does all that:
 
