@@ -1,7 +1,7 @@
 ---
 title: Week 4 Overview
 description: What's happening in CS 212 during week 4
-keywords: Announcements, Due Dates, Help
+keywords: Learning Objectives, Announcements, Due Dates
 generator: Typora
 author: Brian Bird
 ---
@@ -18,7 +18,7 @@ author: Brian Bird
 | 2.  Symbolic AI: constraint solving                 | 7. Generative AI              |
 | 3. Classical machine learning: training             | 8. Custom chatbot             |
 | 4. <mark>Classical ML: testing and inference</mark> | 9. LLM fine-tuning            |
-| 5. Midterm                                          | 10. Social and ethical issues |
+| 5. History of AI and Midterm                        | 10. Social and ethical issues |
 |                                                     | 11. Final                     |
 
 
@@ -52,8 +52,6 @@ None yet.
 - Lab 3 production version due by Thursday, 10/22.
 - Lab 4 beta version should be shared with your lab partner(s) by Saturday, 10/24.
 - Take quiz 4 over the assigned reading by Sunday, 10/25.
-
-
 
 
 
