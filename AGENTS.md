@@ -9,7 +9,8 @@ Course materials for **CS 212, AI Programming 1** at Lane Community College, by 
   - `LectureNotes/`: one Markdown file per topic, named `CS212-UnitNN-M-Topic.md` (`-0-Overview` is the week overview).
   - `Labs/`: lab instructions, rubrics, and code review forms, one folder per lab.
   - `Examples/`: runnable example projects (e.g., `ConstraintSolving/`, a `uv` project with a script, a notebook, and a README).
-  - `_config.yml`, `_includes/head-custom.html`: Jekyll site settings, custom CSS, and the `[TOC]` script.
+  - `_config.yml`, `_includes/head-custom.html`: Jekyll site settings (including `breadcrumb_names`), custom CSS, and the `[TOC]` script.
+  - `_layouts/default.html`: overrides the theme's layout to show a breadcrumb trail instead of the site-title link.
 - `JupyterNotebooks/`, `ResearchNotes/`, `Tutorials/`: instructor working material that isn't published.
 
 ## Publishing
@@ -22,6 +23,7 @@ Course materials for **CS 212, AI Programming 1** at Lane Community College, by 
 
 - Files are edited in Typora. Most start with YAML front matter (`title`, `description`, `keywords`, `generator`, `author`).
 - The page title is an HTML `<h1>`, usually followed by `**CS 212 AI Programming 1**`. Longer lecture notes add a `<h2>Contents</h2>` heading and a `[TOC]` line, which the script in `head-custom.html` replaces with a table of contents built from the `##`–`####` headings.
+- The breadcrumb at the top of each page is built from the page's URL and its `title` front matter. Optional `breadcrumb:` front matter gives a shorter label for the page's own entry. Folder labels are set in `breadcrumb_names` in `_config.yml`.
 - Pages end with an AI attribution line (if AI helped), then the Creative Commons BY-SA 4.0 footer. Don't change or remove either one without being asked.
 - Keep edits concise and in the existing plain, friendly teaching voice. Don't rewrite sections you weren't asked to change.
 

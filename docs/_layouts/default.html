@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    {% include head-custom.html %}
+    <style>
+      .breadcrumb { font-size: 0.9em; margin-bottom: 1rem; }
+      .breadcrumb ol { list-style: none; margin: 0; padding: 0; }
+      .breadcrumb li { display: inline; }
+      .breadcrumb li + li::before { content: "\203A"; padding: 0 0.5em; color: #57606a; }
+    </style>
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      {% comment %}
+        Breadcrumb trail built from the page's URL, replacing the theme's site-title link.
+        Folder labels come from breadcrumb_names in _config.yml (the folder name is used if
+        there is no entry). The last item is the page's `breadcrumb` front matter if it has
+        one, otherwise its `title`, otherwise its file name.
+      {% endcomment %}
+      {% if page.url != "/" %}
+      {% assign crumb_parts = page.url | split: "/" %}
+      {% assign crumb_file = crumb_parts | last | remove: ".html" | url_decode %}
+      {% assign crumb_title = page.breadcrumb | default: page.title | default: crumb_file %}
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="{{ "/" | relative_url }}">Home</a></li>
+          {% for part in crumb_parts %}
+            {% if forloop.first or forloop.last %}{% continue %}{% endif %}
+            {% assign crumb_name = site.breadcrumb_names[part] | default: part | url_decode %}
+            <li>{{ crumb_name }}</li>
+          {% endfor %}
+          <li aria-current="page">{{ crumb_title }}</li>
+        </ol>
+      </nav>
+      {% endif %}
+
+      {{ content }}
+
+      {% if site.github.private != true and site.github.license %}
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. {% github_edit_link "Improve this page" %}.
+      </div>
+      {% endif %}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>

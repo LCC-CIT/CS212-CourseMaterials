@@ -5,3 +5,7 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
+# Labels for folder names in the breadcrumb trail (see _layouts/default.html).
+breadcrumb_names:
+  LectureNotes: Lecture Notes

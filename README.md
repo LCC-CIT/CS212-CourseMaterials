@@ -5,4 +5,17 @@ Example code for this course: <a href="https://github.com/LCC-CIT/CS212-Examples
 
 Course home page: <a href="https://lcc-cit.github.io/CS212-CourseMaterials/" target="_blank">https://lcc-cit.github.io/CS212-CourseMaterials</a>
 
-Note: The html files for the GitHub Pages site (the link above this line) are generated from .md files and published to the pages site when the repo is pushed. The html files do not appear in the repo.
+## How the Site Is Built
+
+The site is published with GitHub Pages from the `docs/` folder. GitHub builds it with Jekyll (`jekyll-theme-primer`, kramdown) when the repo is pushed to `main`, so the HTML files are generated from the `.md` files and do not appear in the repo. Relative links between `.md` files are converted to `.html` links automatically.
+
+Customizations:
+
+| File | What it does |
+|---|---|
+| `docs/_config.yml` | Site title and description, the theme, kramdown settings, and `breadcrumb_names` (labels for folder names in the breadcrumb trail). |
+| `docs/_layouts/default.html` | Copy of the theme's page layout. Replaces the theme's site-title link at the top of each page with a breadcrumb trail built from the page's URL: Home › folder › page title. The last item is the `breadcrumb` front matter value if a page has one, otherwise its `title`. |
+| `docs/_includes/head-custom.html` | Added to the `<head>` of every page. Provides the `[TOC]` table of contents script, icons for external and download links, and Mermaid diagram rendering. |
+| `.github/workflows/link-check.yaml` | Builds `docs/` and checks every link with [lychee](https://lychee.cli.rs/). Settings are in `lychee.toml` and `.lycheeignore`. |
+
+The home page, `docs/index.html`, is plain HTML with no front matter, so it does not use the layout or the breadcrumb.
