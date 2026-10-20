@@ -6,7 +6,9 @@ generator: Typora
 author: Brian Bird
 ---
 
-<h1>Python Crash Course</h1>
+<h1>Python for AI and ML Crash Course</h1>
+
+<h2>For Programmers Who Know Another Language</h2>
 
 **CS 212 AI Programming 1**
 
