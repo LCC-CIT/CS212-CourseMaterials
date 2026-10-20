@@ -86,13 +86,6 @@ for label in labels_train[:10]:
 `train_test_split` shuffles the rows by default.
 
 
-
-[^1]: *Text preprocessing* is the initial set of steps to clean and standardize raw text data before analysis. This often includes converting all text to lowercase, removing punctuation, and handling special characters to ensure consistency. ↩
-[^2]: *Tokenizing* is the process of breaking down a text document into smaller units called *tokens*. Tokens are usually words, but can also be individual characters or parts of words.
-[^3]: *Stopwords* are common words (like "the," "a," "is," "my," "and," "of") that often don't carry topic meaning, though in deception detection they provide useful stylistic clues. (`CountVectorizer` only removes them if you set its `stop_words` parameter; by default it keeps them.)
-
-
-
 ---
 
 <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2026</time> are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 

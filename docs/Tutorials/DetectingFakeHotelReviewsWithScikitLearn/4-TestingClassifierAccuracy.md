@@ -66,7 +66,7 @@ The columns are showing the following:
 metrics.confusion_matrix(labels_test, predicted, labels=target_names)
 ```
 
-The *confusion matrix*[^9] is arranged as follows:
+The *confusion matrix*[^1] is arranged as follows:
 
 - **Rows** represent the actual classes of the documents (the ground truth).
 - **Columns** represent the predicted classes made by the classifier.
@@ -95,12 +95,8 @@ print(feature_names[np.argsort(weights)[-10:][::-1]])
 The most predictive words can vary with the training data and split. Often, **truthful indicators** are concrete, spatial, and transactional (such as floor numbers or rates), whereas **deceptive indicators** may include personal pronouns, vague narratives, and superlatives.
 
 
-
 ---
 
 <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2026</time> are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
-[^8]: *Hyperparameter* refers to a configuration setting that is external to the model and whose value can't be estimated from the data. Instead, a hyperparameter's value must be set by the developer.
-[^9]: A *confusion matrix* is a table used to evaluate the performance of a classification model on a set of test data for which the true values are known. It visually summarizes the classifier's performance by comparing the predicted categories to the actual categories.
-[^10]: A *bigram* is an *n-gram* sequence of two words or characters, for example: "my husband" or "qu".
-[^11]: *Cross-validation* is a resampling method that repeatedly splits the data into separate ‘train’ and ‘test’ subsets so model performance can be evaluated on unseen data.
+[^1]: A *confusion matrix* is a table used to evaluate the performance of a classification model on a set of test data for which the true values are known. It visually summarizes the classifier's performance by comparing the predicted categories to the actual categories.

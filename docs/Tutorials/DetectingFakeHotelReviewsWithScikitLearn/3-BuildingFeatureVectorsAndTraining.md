@@ -6,7 +6,7 @@ title: Building Feature Vectors and Training the Model
 
 ### Extracting features from review text
 
-In order to perform machine learning on text documents, we first need to turn the text content into *numerical* *feature vectors*[^4].
+In order to perform machine learning on text documents, we first need to turn the text content into *numerical* *feature vectors*[^1].
 
 #### Bags of words and N-grams
 
@@ -15,7 +15,7 @@ The most intuitive way to do so is to use a "bag of words" representation:
 1. Assign a fixed integer id to each word occurring in any document of the training set (for instance, by building a dictionary from words to integer indices).
 2. For each document `i`, count how many times each word `w` occurs and store the count in `X[i, j]`, where `i` is the document's row number and `j` is the column number for word `w` in the dictionary.
 
-It is called a "bag" of words because the order of words in a sentence is discarded—only their occurrence counts are kept. However, if we also extract **N-grams**[^5] (contiguous sequences of 2 or 3 words, such as `"my husband"` or `"front desk"`), we can preserve local word order and capture multi-word stylistic phrases.
+It is called a "bag" of words because the order of words in a sentence is discarded—only their occurrence counts are kept. However, if we also extract **N-grams**[^2] (contiguous sequences of 2 or 3 words, such as `"my husband"` or `"front desk"`), we can preserve local word order and capture multi-word stylistic phrases.
 
 The bag of words representation implies that `n_features` is the number of distinct words in the corpus: across large text collections, this number is typically larger than 100,000.
 
@@ -27,10 +27,10 @@ Fortunately, <u>most values in `X` will be zeros</u> since for a given hotel rev
 
 #### Tokenize the Text and Build Feature Vectors
 
-Text preprocessing[^1], tokenizing[^2] and filtering (removal) of stopwords[^3] are all included in <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#sklearn.feature_extraction.text.CountVectorizer" target="_blank">`CountVectorizer`</a>, which:
+Text preprocessing[^3], tokenizing[^4] and filtering (removal) of stopwords[^5] are all included in <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#sklearn.feature_extraction.text.CountVectorizer" target="_blank">`CountVectorizer`</a>, which:
 
 - Builds a dictionary of features in which each unique token (word) found across all training documents is assigned a specific index (a column number in the resulting matrix).
-- Transforms documents to feature vectors[^4]. Each document is transformed into a vector (a row in the matrix) where the value at each position corresponds to the count (*frequency*) of a specific word (*feature*) from the dictionary in that document.
+- Transforms documents to feature vectors[^1]. Each document is transformed into a vector (a row in the matrix) where the value at each position corresponds to the count (*frequency*) of a specific word (*feature*) from the dictionary in that document.
 
 **Concept — Why keep stopwords for fake review detection?**  
 In topic classification, common words like `"i"`, `"my"`, `"we"`, and `"the"` are often removed as noise. In deception detection, however, psycholinguistic studies show that **pronouns and function words are strong signals of deception** (fake reviewers use significantly more first-person pronouns to make their stories sound personal). By default, `CountVectorizer()` keeps stopwords (`stop_words=None`), which is ideal for our task.
@@ -64,7 +64,7 @@ print(X_train_counts)
 
 The first number is the number of training reviews. The second is the number of unique word features and can vary with the training data.
 
-<a href="https://scikit-learn.org/1.7/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#sklearn.feature_extraction.text.CountVectorizer" target="_blank">`CountVectorizer`</a> supports counts of words (or *N-grams*[^5] of words or consecutive characters). Once fitted, our vectorizer object will have built a dictionary of feature indices:
+<a href="https://scikit-learn.org/1.7/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#sklearn.feature_extraction.text.CountVectorizer" target="_blank">`CountVectorizer`</a> supports counts of words (or *N-grams*[^2] of words or consecutive characters). Once fitted, our vectorizer object will have built a dictionary of feature indices:
 
 ```python
 count_vect.vocabulary_.get('chicago')
@@ -168,20 +168,16 @@ The predicted labels can vary depending on the training data and split.
   **Prints the result** by showing the first 55 characters of the review string followed by the predicted category label (`truthful` or `deceptive`).
 
 
-
-[^4]: A *feature vector* in the context of scikit-learn is a one-dimensional array of numerical values that represents a single data point (or sample) to be used by a machine learning algorithm.
-[^5]: An *n-gram* is a contiguous sequence of N characters or words from a given sample of text.
-[^6]: *Estimators* are objects in scikit-learn that can learn parameters from data by implementing a `.fit()` method. These include: *Predictors* (Models): like `MultinomialNB` or `LinearRegression` and *Transformers* (Preprocessing Tools) like `CountVectorizer` or `StandardScaler` that learn rules to transform or process data.
-[^7]: *Multinomial* in this context means the classifier models each document's word counts with a *multinomial distribution*: for each category, it learns how often each word in the vocabulary tends to appear, and it predicts the category whose word frequencies best match the document.
-[^8]: *Hyperparameter* refers to a configuration setting that is external to the model and whose value can't be estimated from the data. Instead, a hyperparameter's value must be set by the developer.
-[^9]: A *confusion matrix* is a table used to evaluate the performance of a classification model on a set of test data for which the true values are known. It visually summarizes the classifier's performance by comparing the predicted categories to the actual categories.
-[^10]: A *bigram* is an *n-gram* sequence of two words or characters, for example: "my husband" or "qu".
-[^11]: *Cross-validation* is a resampling method that repeatedly splits the data into separate ‘train’ and ‘test’ subsets so model performance can be evaluated on unseen data.
-
-
-
 ---
 
 <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2026</time> are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---
+
+[^1]: A *feature vector* in the context of scikit-learn is a one-dimensional array of numerical values that represents a single data point (or sample) to be used by a machine learning algorithm.
+[^2]: An *n-gram* is a contiguous sequence of N characters or words from a given sample of text.
+[^3]: *Text preprocessing* is the initial set of steps to clean and standardize raw text data before analysis. This often includes converting all text to lowercase, removing punctuation, and handling special characters to ensure consistency.
+[^4]: *Tokenizing* is the process of breaking down a text document into smaller units called *tokens*. Tokens are usually words, but can also be individual characters or parts of words.
+[^5]: *Stopwords* are common words (like "the," "a," "is," "my," "and," "of") that often don't carry topic meaning, though in deception detection they provide useful stylistic clues. (`CountVectorizer` only removes them if you set its `stop_words` parameter; by default it keeps them.)
+[^6]: *Estimators* are objects in scikit-learn that can learn parameters from data by implementing a `.fit()` method. These include: *Predictors* (Models): like `MultinomialNB` or `LinearRegression` and *Transformers* (Preprocessing Tools) like `CountVectorizer` or `StandardScaler` that learn rules to transform or process data.
+[^7]: *Multinomial* in this context means the classifier models each document's word counts with a *multinomial distribution*: for each category, it learns how often each word in the vocabulary tends to appear, and it predicts the category whose word frequencies best match the document.

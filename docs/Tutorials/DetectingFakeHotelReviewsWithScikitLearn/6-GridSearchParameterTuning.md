@@ -6,7 +6,7 @@ title: Tuning Hyperparameters using Grid Search
 
 We’ve already encountered some parameters such as `use_idf` in the `TfidfTransformer`. Classifiers tend to have many parameters as well; e.g., `MultinomialNB` includes a smoothing parameter `alpha` and `SGDClassifier` has a regularization penalty parameter `alpha` (which controls how strongly the model penalizes large weights to prevent overfitting).
 
-Instead of tweaking the parameters of the various components of the chain manually, it is possible to run an exhaustive search of the best parameters on a grid of possible values. We try out our classifier on either single words or *bigrams*[^10] (such as `"my husband"` or `"front desk"`), with or without *idf*, and with a penalty parameter of either 0.001 or 0.0001 for the linear SVM. Each key is the pipeline step name, two underscores, and the parameter name:
+Instead of tweaking the parameters of the various components of the chain manually, it is possible to run an exhaustive search of the best parameters on a grid of possible values. We try out our classifier on either single words or *bigrams*[^1] (such as `"my husband"` or `"front desk"`), with or without *idf*, and with a penalty parameter of either 0.001 or 0.0001 for the linear SVM. Each key is the pipeline step name, two underscores, and the parameter name:
 
 ```python
 from sklearn.model_selection import GridSearchCV
@@ -28,7 +28,7 @@ Description of parameters:
 - `estimator`: An object that fits a model based on some training data and can make predictions for new data. In this case, `text_clf`, the SVM pipeline we built earlier.
 - `param_grid`: A dictionary with parameter names as keys and lists of parameter settings to try. In this case, the `parameters` dictionary we defined earlier.
 - `n_jobs`: The number of jobs to run in parallel.
-- `cv`: Determines the *cross-validation*[^11] splitting strategy. `cv=5` splits the training data into 5 equal folds, training on 4 folds and validating on the 5th fold repeatedly so the test set remains completely untouched during tuning.
+- `cv`: Determines the *cross-validation*[^2] splitting strategy. `cv=5` splits the training data into 5 equal folds, training on 4 folds and validating on the 5th fold repeatedly so the test set remains completely untouched during tuning.
 
 The grid search instance behaves like a normal `scikit-learn` model. Let’s fit the grid search across our training reviews:
 
@@ -65,3 +65,5 @@ The best score and settings depend on the data and cross-validation results. You
 
 ---
 
+[^1]: A *bigram* is an *n-gram* sequence of two words or characters, for example: "my husband" or "qu".
+[^2]: *Cross-validation* is a resampling method that repeatedly splits the data into separate ‘train’ and ‘test’ subsets so model performance can be evaluated on unseen data.
