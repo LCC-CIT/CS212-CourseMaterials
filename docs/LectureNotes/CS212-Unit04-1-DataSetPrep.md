@@ -5,7 +5,7 @@ generator: Typora
 author: Brian Bird
 ---
 
-<h1>Data Set Concepts and Preperation</h1>
+<h1>Data Set Concepts and Preparation</h1>
 
 **CS 212, AI Programming 1**
 

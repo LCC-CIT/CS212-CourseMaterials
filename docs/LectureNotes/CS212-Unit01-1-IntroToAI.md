@@ -1,5 +1,5 @@
 ---
-title: Unit 1 Overview
+title: Overview of AI
 description: What's AI
 keywords: Classical AI, Symbolic AI, GOFAI
 generator: Typora

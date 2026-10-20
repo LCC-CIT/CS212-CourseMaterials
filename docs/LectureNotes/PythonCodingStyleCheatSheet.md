@@ -1,3 +1,7 @@
+---
+title: Python Coding Style Cheat-Sheet
+---
+
 # Python Coding Style Cheat-Sheet
 
 This cheat-sheet for Python coding conventions is based on the PEP 8 official style guide.

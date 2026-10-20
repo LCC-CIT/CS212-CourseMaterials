@@ -8,15 +8,16 @@ Course materials for **CS 212, AI Programming 1** at Lane Community College, by 
   - `index.html`: course home page (Bootstrap layout). New pages appear on the site only if they're linked from here or from another page.
   - `LectureNotes/`: one Markdown file per topic, named `CS212-UnitNN-M-Topic.md` (`-0-Overview` is the week overview).
   - `Labs/`: lab instructions, rubrics, and code review forms, one folder per lab.
+  - `Tutorials/`: step-by-step tutorials (the fake hotel reviews series and the adapted scikit-learn tutorials).
   - `Examples/`: runnable example projects (e.g., `ConstraintSolving/`, a `uv` project with a script, a notebook, and a README).
   - `_config.yml`, `_includes/head-custom.html`: Jekyll site settings (including `breadcrumb_names`), custom CSS, and the `[TOC]` script.
   - `_layouts/default.html`: overrides the theme's layout to show a breadcrumb trail instead of the site-title link.
-- `JupyterNotebooks/`, `ResearchNotes/`, `Tutorials/`: instructor working material that isn't published.
+- `JupyterNotebooks/`, `ResearchNotes/`: instructor working material that isn't published.
 
 ## Publishing
 
 - GitHub Pages builds `docs/` from `main` with Jekyll (`jekyll-theme-primer`, kramdown GFM). There is no workflow file in the repo and no local build step.
-- Jekyll converts `.md` to `.html`, and relative links to `.md` files work on the site. The generated HTML isn't in the repo.
+- Jekyll converts `.md` to `.html`, and relative links to `.md` files work on the site. The generated HTML isn't in the repo. `README.md` files in subfolders are not converted (their pages 404), so link to them on GitHub instead.
 - A failed deployment with a 5xx error is a GitHub problem, not a content problem. Check githubstatus.com or re-run the job.
 
 ## Markdown Conventions (Lecture Notes and Labs)
@@ -41,7 +42,7 @@ Course materials for **CS 212, AI Programming 1** at Lane Community College, by 
 - Settings are in `lychee.toml` (accepts 200, 403, 429) and `.lycheeignore` (one regex per line).
 - Fix a broken link rather than ignoring it. Add to `.lycheeignore` only a link that works in a browser but fails in CI, and add a comment saying why.
 - The workflow remaps our own published URLs (`https://lcc-cit.github.io/CS212-CourseMaterials/...`) to the local build, so a new page doesn't fail before the site has deployed.
-- Only `docs/` is published. A link to a folder outside it (such as `Tutorials/`) will be broken on the site.
+- Only `docs/` is published. A link to a folder outside it (such as `JupyterNotebooks/`) will be broken on the site.
 
 ## Working Here
 

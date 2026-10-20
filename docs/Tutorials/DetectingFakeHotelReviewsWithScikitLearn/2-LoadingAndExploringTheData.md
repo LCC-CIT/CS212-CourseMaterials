@@ -1,3 +1,7 @@
+---
+title: Loading and Exploring the Data
+---
+
 ### Loading the Deceptive Opinion Spam dataset
 
 The dataset is called the “Deceptive Opinion Spam Corpus”, originally collected by Myle Ott et al. at Cornell University. Here is a description of the collection:

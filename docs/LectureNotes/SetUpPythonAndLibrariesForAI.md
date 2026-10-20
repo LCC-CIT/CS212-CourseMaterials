@@ -1,7 +1,7 @@
 ---
-title: Installing scikit-learn and tensor flow
+title: Set Up Python Packages for ML
 description: How to set up a computer to use Python to work with the scikit-learn and tensorflow AI libraries.
-keywords: ML, numpy, scikit-learn, tensroflow, python
+keywords: ML, numpy, scikit-learn, tensorflow, python
 generator: Typora
 author: Brian Bird
 ---

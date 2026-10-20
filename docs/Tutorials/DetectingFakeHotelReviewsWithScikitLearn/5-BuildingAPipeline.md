@@ -1,3 +1,7 @@
+---
+title: Building a Training Pipeline
+---
+
 ## Building a Pipeline
 
 In order to make the vectorizer => transformer => classifier easier to work with, `scikit-learn` provides a <a href="https://scikit-learn.org/1.7/modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" target="_blank">`Pipeline`</a> class that behaves like a compound classifier:

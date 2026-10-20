@@ -1,3 +1,7 @@
+---
+title: CS 212 Syllabus
+---
+
 <h1>Artificial Intelligence Programming 1</h1>
 
 <h2>CS 212 Syllabus for Fall 2026</h2>

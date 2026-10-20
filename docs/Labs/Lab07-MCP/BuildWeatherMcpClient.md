@@ -1,3 +1,7 @@
+---
+title: Building an MCP Client
+---
+
 <h1>Building a MCP Client</h1>
 
 - [Introduction](#introduction)

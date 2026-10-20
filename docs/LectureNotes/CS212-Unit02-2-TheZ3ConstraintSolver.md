@@ -1,3 +1,7 @@
+---
+title: The Z3 Constraint Solver
+---
+
 <h1>The Z3 Constraint Solver</h1>
 
 **CS 212 AI Programming 1**

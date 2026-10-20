@@ -6,7 +6,7 @@ generator: Typora
 author: Brian Bird
 ---
 
-<h1>Artificial Neural Netoworks (ANNs)</h1>
+<h1>Artificial Neural Networks (ANNs)</h1>
 
 **CS 212, AI Programming 1**
 

@@ -41,7 +41,7 @@ author: Brian Bird
     - [Thresholds and Significance](#thresholds-and-significance)
 - [Linear Algebra](#linear-algebra)
   - [Vectors](#vectors)
-  - [Matricies](#matricies)
+  - [Matrices](#matrices)
   - [Matrix Multiplication](#matrix-multiplication)
     - [How It Works](#how-it-works)
     - [Example](#example)
@@ -187,7 +187,7 @@ Recent discussions suggest that  p = 0.05  may be too lenient, and more stringen
 
 ## Linear Algebra
 
-Linear algebra is the branch of mathematics that is widely used in machine learning. It involves operations on vectors and matrices called linear transformations, such as multiplying two matricies.
+Linear algebra is the branch of mathematics that is widely used in machine learning. It involves operations on vectors and matrices called linear transformations, such as multiplying two matrices.
 
 ### Vectors
 
@@ -195,7 +195,7 @@ A **mathematical vector** is an object that has both **magnitude** and **directi
 
 Vectors are used to describe things like velocity, force, or position in physics, and they’re fundamental in linear algebra, machine learning, and computer graphics. They support operations like addition, scaling, and dot products, which make them powerful tools for modeling and computation.
 
-### Matricies
+### Matrices
 
 A **matrix** is a rectangular grid of numbers arranged in rows and columns. It’s a fundamental structure in mathematics used to represent data, perform linear transformations, and solve systems of equations. In Python and machine learning, matrices often model things like images, datasets, or weights in neural networks. You can think of a matrix as a 2D generalization of a vector.
 
@@ -255,7 +255,7 @@ $$
   Chapter 0: Basic Linear Algebra, Statistics and Probability
 - *Math for Deep Learning*, Ronald T. Kneusel, 2021, No Starch Press. 
 
-- <a href="https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces" target="_blank">Vectrors and Spaces</a>&mdash;Khan Academy
+- <a href="https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces" target="_blank">Vectors and Spaces</a>&mdash;Khan Academy
 
 - <a href="https://www.khanacademy.org/math/linear-algebra/matrix-transformations" target="_blank">Matrix Transformations</a>&mdash;Kahn Academy
 

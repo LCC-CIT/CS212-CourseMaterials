@@ -63,7 +63,7 @@ author: Brian Bird
 
 ## Registration for Winter Term 2026
 
-Registration for winter term is open. If you are pursuing the AAS in Software Development, these are the reccomended courses:
+Registration for winter term is open. If you are pursuing the AAS in Software Development, these are the recommended courses:
 
 - CS 295N, Web Development 1: ASP.NET
 - CS 275, Introduction to Database Systems and Modeling

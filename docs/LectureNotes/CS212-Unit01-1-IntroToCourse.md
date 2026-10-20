@@ -83,7 +83,7 @@ Q: How do you feel about AI doing coding&mdash;and more?
 - Social issues
 
   - Job loss
-  - Dependecy on AI and loss of critical thinking and crativity
+  - Dependency on AI and loss of critical thinking and creativity
   - Mental health: AI fueling delusional thought or AI as a therapist
   - Isolation: using AI as a friend or for entertainment
   - Loss of humanity when AI takes over human roles like creativitiy and relationship.

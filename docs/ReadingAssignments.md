@@ -1,3 +1,7 @@
+---
+title: Reading Assignments
+---
+
 <a href="https://www.ibm.com/think/machine-learning#605511093" target="_blank">The 2025 Guide to Machine Learning from IBM</a>
 
 <a href="https://www.ibm.com/think/topics/generative-ai#257779831" target="_blank">What is generative AI?</a> 

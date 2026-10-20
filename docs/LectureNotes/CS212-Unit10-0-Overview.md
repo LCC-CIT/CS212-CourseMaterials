@@ -26,7 +26,7 @@ author: Brian Bird
 - [This Week's Objectives](#this-weeks-objectives)
 - [Announcements for Fall 2025](#announcements-for-fall-2025)
   - [RegFest](#regfest)
-    - [Reccomended Classes for AAS in Software Development](#reccomended-classes-for-aas-in-software-development)
+    - [Recommended Classes for AAS in Software Development](#recommended-classes-for-aas-in-software-development)
   - [Last Day for Submissions](#last-day-for-submissions)
   - [Global Game Jam](#global-game-jam)
 - [Q and A](#q-and-a)
@@ -52,7 +52,7 @@ We will discuss the potential (and actual) positive and negative effects of AI o
       and/or
 - Those needing assistance with Financial Aid, Advising, or Student Accounts (Bursar).
 
-#### Reccomended Classes for AAS in Software Development 
+#### Recommended Classes for AAS in Software Development 
 
 If you are pursuing the AAS in Software Development, these are the recommended courses:
 - If you are in the first year of the program:

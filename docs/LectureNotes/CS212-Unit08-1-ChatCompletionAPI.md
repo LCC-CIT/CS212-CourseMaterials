@@ -1,6 +1,6 @@
 ---
 title: Chat Completion API
-description: How to integrate AI into an app by call a chat completion API 
+description: How to integrate AI into an app by calling a chat completion API
 keywords: OpenAI, chat-completion
 generator: Typora
 author: Brian Bird

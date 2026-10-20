@@ -1,3 +1,7 @@
+---
+title: Working With Text Data
+---
+
 [scikit-learn tutorials index](ScikitLearnTutorials.md)
 
 <h1>Working With Text Data</h1>

@@ -11,8 +11,8 @@
     <meta name="description" content="Home page for CS 212, Artificial Intelligence Programming 1">
     <meta name="keywords" content="AI, LCC, Lane Community College, CIT, Computer Information Technology, CS210, Artificial Intelligence, Programming">
     <title>CS212: AI Programming 1</title>
-    <!-- Faviocon -->
-    <link rel="icon" href="Images/favicon.ico"">
+    <!-- Favicon -->
+    <link rel="icon" href="Images/favicon.ico">
     <!-- Load libraries from CDNs -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -24,19 +24,21 @@
     <meta property="og:image" content="https://lcc-cit.github.io/CS212-CourseMaterials/Images/AdobeStock_AI_Icon.jpeg" />
     <meta property="og:description"
         content="Course materials for the AI Programming 1 course at Lane Community College, an introduction to 
-        writing software applicaitons that incorporate AI" />
+        writing software applications that incorporate AI" />
     <meta property="og:site_name" content="CS 212 Course Materials Repository" />
     <meta property="og:locale" content="en_US" />
+    <style>
+        html, body { position: relative; margin: 0; padding: 0; }
+    </style>
 </head>
 
 <body>
     <!-- Header and GitHub banner in flexbox for consistent layout, preserving header margin -->
                     <aside style="position:absolute; top:0; right:0; margin:0; padding:0; z-index:10; line-height:0;">
-        <a href="https://github.com/LCC-CIT/CS112-CourseMaterials" target="_blank"><img decoding="async" width="149"
+        <a href="https://github.com/LCC-CIT/CS212-CourseMaterials" target="_blank"><img decoding="async" width="149"
                 height="149"
                 src="https://github.blog/wp-content/uploads/2008/12/forkme_right_white_ffffff.png?resize=149%2C149"
                 class="attachment-full size-full" alt="Fork me on GitHub" loading="lazy" data-recalc-dims="1"></a>
-                        </a>
                     </aside>
                 <div class="container">
                     <div class="d-flex align-items-start mt-4" style="gap: 1rem;">
@@ -64,9 +66,6 @@
                         </div>
                     </div>
                 </div>
-                <style>
-                    html, body { position: relative; margin: 0; padding: 0; }
-                </style>
 
     <!-- Lecture Notes Section -->
     <section class="container">
@@ -76,18 +75,129 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <h4 class="section-heading">Lecture Notes & Topics</h4>
+                <h4 class="section-heading">Lecture Notes &amp; Topics</h4>
+            </div>
+            <section class="col-12 col-lg-6 mb-3">
+                <h5>Unit 1: What Is AI, Python</h5>
                 <ul class="list-group">
-                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit01-0-Overview.html" target="_blank"><i class="fas fa-link"></i> Unit 1 Overview</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit01-0-Overview.html" target="_blank"><i class="fas fa-link"></i> Week 1 Overview</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit01-1-IntroToCourse.html" target="_blank"><i class="fas fa-link"></i> Intro to CS 212, AI Programming 1</a></li>
                     <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit01-1-IntroToAI.html" target="_blank"><i class="fas fa-link"></i> Introduction to AI</a></li>
                     <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit01-1-Python.html" target="_blank"><i class="fas fa-link"></i> Python for AI Programming</a></li>
-                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/PythonCrashCourse.html" target="_blank"><i class="fas fa-link"></i> Python Crash Course</a></li>
-                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/MathReviewForAI.html" target="_blank"><i class="fas fa-link"></i> Math Review for AI</a></li>
-                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/SetUpPythonAndLibrariesForAI.html" target="_blank"><i class="fas fa-link"></i> Setting Up Python & Libraries</a></li>
-                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/ComputerForAI.html" target="_blank"><i class="fas fa-link"></i> Computer Requirements for AI</a></li>
-                    <!-- Add more lecture notes as they are created -->
                 </ul>
+            </section>
+            <section class="col-12 col-lg-6 mb-3">
+                <h5>Unit 2: Symbolic AI, Constraint Solving</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit02-0-Overview.html" target="_blank"><i class="fas fa-link"></i> Week 2 Overview</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit02-1-ConstraintSolvers.html" target="_blank"><i class="fas fa-link"></i> Constraint Solvers</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit02-2-TheZ3ConstraintSolver.html" target="_blank"><i class="fas fa-link"></i> The Z3 Constraint Solver</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit02-3-PythonCollectionTypes.html" target="_blank"><i class="fas fa-link"></i> Python Collection Types</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit02-4-PythonLoops.html" target="_blank"><i class="fas fa-link"></i> Python Loops</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit02-5-PythonProjects.html" target="_blank"><i class="fas fa-link"></i> Python Projects</a></li>
+                </ul>
+            </section>
+            <section class="col-12 col-lg-6 mb-3">
+                <h5>Unit 3: Classical Machine Learning, Training</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit03-0-Overview.html" target="_blank"><i class="fas fa-link"></i> Week 3 Overview</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit03-1-MachineLearning.html" target="_blank"><i class="fas fa-link"></i> Machine Learning</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit03-2-Bayes.html" target="_blank"><i class="fas fa-link"></i> Machine Learning: Bayes' Rule</a></li>
+                </ul>
+            </section>
+            <section class="col-12 col-lg-6 mb-3">
+                <h5>Unit 4: Classical Machine Learning, Testing and Inference</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit04-0-Overview.html" target="_blank"><i class="fas fa-link"></i> Week 4 Overview</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit04-1-DataSetPrep.html" target="_blank"><i class="fas fa-link"></i> Data Set Concepts and Preparation</a></li>
+                </ul>
+            </section>
+            <section class="col-12 col-lg-6 mb-3">
+                <h5>Unit 5: More Machine Learning and the History of AI</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit05-0-Overview.html" target="_blank"><i class="fas fa-link"></i> Week 5 Overview</a></li>
+                </ul>
+            </section>
+            <section class="col-12 col-lg-6 mb-3">
+                <h5>Unit 6: Artificial Neural Networks, Image Recognition</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit06-0-Overview.html" target="_blank"><i class="fas fa-link"></i> Week 6 Overview</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit06-1-ANNs.html" target="_blank"><i class="fas fa-link"></i> Artificial Neural Networks (ANNs)</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit06-2-TensorFlow.html" target="_blank"><i class="fas fa-link"></i> TensorFlow</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit06-3-CNNs.html" target="_blank"><i class="fas fa-link"></i> Convolutional Neural Networks (CNNs)</a></li>
+                </ul>
+            </section>
+            <section class="col-12 col-lg-6 mb-3">
+                <h5>Unit 7: Generative AI</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit07-0-Overview.html" target="_blank"><i class="fas fa-link"></i> Week 7 Overview</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit07-1-GenAI_Draft.html" target="_blank"><i class="fas fa-link"></i> Generative AI (draft)</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit07-2-AI-AssistedCoding.html" target="_blank"><i class="fas fa-link"></i> AI-Assisted Coding</a></li>
+                </ul>
+            </section>
+            <section class="col-12 col-lg-6 mb-3">
+                <h5>Unit 8: Calling a Chat Completion API</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit08-0-Overview.html" target="_blank"><i class="fas fa-link"></i> Week 8 Overview</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit08-1-ChatCompletionAPI.html" target="_blank"><i class="fas fa-link"></i> Calling a Chat-Completion API</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit08-1-DotsAndBoxesAiExample.html" target="_blank"><i class="fas fa-link"></i> Building an AI Game Opponent</a></li>
+                </ul>
+            </section>
+            <section class="col-12 col-lg-6 mb-3">
+                <h5>Unit 9: Model Context Protocol (MCP)</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit09-0-Overview.html" target="_blank"><i class="fas fa-link"></i> Week 9 Overview</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit09-1-MCP.html" target="_blank"><i class="fas fa-link"></i> Agents and MCP</a></li>
+                </ul>
+            </section>
+            <section class="col-12 col-lg-6 mb-3">
+                <h5>Unit 10: Social and Ethical Issues, Term Project</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/CS212-Unit10-0-Overview.html" target="_blank"><i class="fas fa-link"></i> Week 10 Overview</a></li>
+                </ul>
+            </section>
+            <section class="col-12 col-lg-6 mb-3">
+                <h5>Reference and Setup</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/PythonCrashCourse.html" target="_blank"><i class="fas fa-link"></i> Python Crash Course</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/PythonCodingStyleCheatSheet.html" target="_blank"><i class="fas fa-link"></i> Python Coding Style Cheat Sheet</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/MathReviewForAI.html" target="_blank"><i class="fas fa-link"></i> Math Review for AI</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/SetUpPythonAndLibrariesForAI.html" target="_blank"><i class="fas fa-link"></i> Setting Up Python &amp; Libraries</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/LectureNotes/ComputerForAI.html" target="_blank"><i class="fas fa-link"></i> Computer Requirements for AI</a></li>
+                </ul>
+            </section>
+        </div>
+    </section>
+
+    <!-- Tutorials and Examples Section -->
+    <section class="container">
+        <div class="row mt-3">
+            <div class="col-12">
+                <h4 class="section-heading">Tutorials &amp; Examples</h4>
             </div>
+            <section class="col-12 col-lg-6 mb-3">
+                <h5>Tutorials</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/Tutorials/DetectingFakeHotelReviewsWithScikitLearn/1-DetectingFakeHotelReviews.html" target="_blank"><i class="fas fa-link"></i> Detecting Fake Hotel Reviews with Text Classification</a>&mdash;Start here (7 parts)</li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/Tutorials/DetectingFakeHotelReviewsWithScikitLearn/2-LoadingAndExploringTheData.html" target="_blank"><i class="fas fa-link"></i> Part 2: Loading and Exploring the Data</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/Tutorials/DetectingFakeHotelReviewsWithScikitLearn/3-BuildingFeatureVectorsAndTraining.html" target="_blank"><i class="fas fa-link"></i> Part 3: Building Feature Vectors and Training the Model</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/Tutorials/DetectingFakeHotelReviewsWithScikitLearn/4-TestingClassifierAccuracy.html" target="_blank"><i class="fas fa-link"></i> Part 4: Testing Classifier Accuracy</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/Tutorials/DetectingFakeHotelReviewsWithScikitLearn/5-BuildingAPipeline.html" target="_blank"><i class="fas fa-link"></i> Part 5: Building a Training Pipeline</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/Tutorials/DetectingFakeHotelReviewsWithScikitLearn/6-GridSearchParameterTuning.html" target="_blank"><i class="fas fa-link"></i> Part 6: Tuning Hyperparameters using Grid Search</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/Tutorials/DetectingFakeHotelReviewsWithScikitLearn/7-Exercises.html" target="_blank"><i class="fas fa-link"></i> Part 7: Exercises</a></li>
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/Tutorials/scikit-learn-1.7/ScikitLearnTutorials.html" target="_blank"><i class="fas fa-link"></i> scikit-learn Tutorials</a>&mdash;Adapted from the scikit-learn documentation</li>
+                </ul>
+            </section>
+            <section class="col-12 col-lg-6 mb-3">
+                <h5>Examples</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="https://lcc-cit.github.io/CS212-CourseMaterials/Examples/Lab02-Scheduling/CS212_Lab02_Example.html" target="_blank"><i class="fas fa-link"></i> Lab 2 Example: Scheduling with a Constraint Solver</a>&mdash;Class example</li>
+                    <li class="list-group-item"><a href="https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Examples/Lab02-Scheduling/Solution" target="_blank"><i class="fas fa-link"></i> Lab 2 Example: Solution Code</a>&mdash;On GitHub</li>
+                    <li class="list-group-item"><a href="https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Examples/ConstraintSolving" target="_blank"><i class="fas fa-link"></i> Lab Partner Assignment with Z3</a>&mdash;On GitHub</li>
+                    <li class="list-group-item"><a href="https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Examples/SpamDetection/SpamDetectionNotebook" target="_blank"><i class="fas fa-link"></i> Spam Detection Notebook</a>&mdash;Naive Bayes in Jupyter, on GitHub</li>
+                    <li class="list-group-item"><a href="https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Examples/SpamDetection/SpamDetectionProgram" target="_blank"><i class="fas fa-link"></i> Spam Detection Program</a>&mdash;Naive Bayes in a Python script, on GitHub</li>
+                </ul>
+            </section>
         </div>
     </section>
 
@@ -113,7 +223,7 @@
                         free account</li>
                     <li class="list-group-item"><a href="https://portal.azure.com/" target="_blank"><i
                                 class="fas fa-globe"></i> Azure Portal</a>&mdash;The Microsoft cloud</li>
-                    <li class="list-group-item"><a href="https://portal.azure.com/" target="_blank"><i
+                    <li class="list-group-item"><a href="https://copilotstudio.microsoft.com/" target="_blank"><i
                                 class="fas fa-globe"></i> Microsoft Copilot Studio</a>&mdash;Create custom chatbots</li>
                     <!-- Add more resources as needed -->
                 </ul>
@@ -145,7 +255,7 @@
                             Intelligence</a>&mdash;IBM tutorials</li>
                 </ul>
                 <!-- Add more tutorials as needed -->
-            </div>
+            </section>
 
             <!-- Online AI Tools Column -->
             <section class="col-12 col-lg-6">
@@ -163,7 +273,7 @@
                         generator
                     </li>
                     <li class="list-group-item"><a href="https://gemini.google.com" target="_blank"><i
-                                class="fas fa-robot fas"></i> <i class="fas fa-image"></i> Gemeini by
+                                class="fas fa-robot fas"></i> <i class="fas fa-image"></i> Gemini by
                             Google</a>&mdash;Chatbot and image generator</li>
                     <li class="list-group-item"><a href="https://meta.ai" target="_blank"><i class="fas fa-robot"></i>
                             <i class="fas fa-image"></i>

@@ -1,3 +1,7 @@
+---
+title: Python Collection Types
+---
+
 <h1>Python Collection Types</h1>
 
 **CS 212 AI Programming 1**

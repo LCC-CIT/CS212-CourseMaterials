@@ -1,3 +1,7 @@
+---
+title: Exercises
+---
+
 ## Exercises
 
 ### Setup for All the Exercises

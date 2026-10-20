@@ -1,3 +1,7 @@
+---
+title: Build a Weather MCP Server
+---
+
 <h1>Build a Weather MCP Server</h1>
 
 - [Introduction](#introduction)

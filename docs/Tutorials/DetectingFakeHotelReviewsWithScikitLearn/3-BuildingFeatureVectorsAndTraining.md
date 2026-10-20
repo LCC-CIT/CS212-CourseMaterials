@@ -1,3 +1,7 @@
+---
+title: Building Feature Vectors and Training the Model
+---
+
 ## Building Feature Vectors and Training
 
 ### Extracting features from review text

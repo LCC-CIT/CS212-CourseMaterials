@@ -1,12 +1,12 @@
 ---
-title: Artificial Neural Networks
-description: Overview of ANNs (Artificial Neural Networks)
-keywords: AI, ML, ANN
+title: Convolutional Neural Networks (CNNs)
+description: Overview of CNNs (Convolutional Neural Networks) for image recognition
+keywords: AI, ML, ANN, CNN
 generator: Typora
 author: Brian Bird
 ---
 
-<h1>Convolutional Neural Netoworks (CNNs)</h1>
+<h1>Convolutional Neural Networks (CNNs)</h1>
 
 **CS 212, AI Programming 1**
 

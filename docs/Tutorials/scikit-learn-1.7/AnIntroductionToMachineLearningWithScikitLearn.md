@@ -1,3 +1,7 @@
+---
+title: An Introduction to Machine Learning with scikit-learn
+---
+
 > [scikit-learn tutorials index](ScikitLearnTutorials.md)
 
 <h1>An introduction to machine learning with scikit-learn</h1>

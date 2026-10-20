@@ -1,5 +1,5 @@
 ---
-title: Computer for for AI Work
+title: Computer Systems for AI Work
 description: What are the system requirements for the computer you use to do AI work.
 generator: Typora
 author: Brian Bird
@@ -21,7 +21,7 @@ author: Brian Bird
 
 <h2>Contents</h2>
 
-- [Graphic Procesing Unit (GPU)](#graphic-procesing-unit-gpu)
+- [Graphic Processing Unit (GPU)](#graphic-procesing-unit-gpu)
   - [Why GPUs Matter in Deep Learning](#why-gpus-matter-in-deep-learning)
   - [GPU vs. CPU](#gpu-vs-cpu)
   - [Optional GPU Use for TensorFlow](#optional-gpu-use-for-tensorflow)
@@ -30,7 +30,7 @@ author: Brian Bird
   - [2. External Libraries for GPU Acceleration](#2-external-libraries-for-gpu-acceleration)
 - [References](#references)
 
-## Graphic Procesing Unit (GPU)
+## Graphic Processing Unit (GPU)
 
 **Graphics Processing Units (GPUs)** are highly parallel processors originally designed for rendering graphics in video games. Their architecture makes them ideal for the massive computations required in deep learning, especially for training large neural networks.
 

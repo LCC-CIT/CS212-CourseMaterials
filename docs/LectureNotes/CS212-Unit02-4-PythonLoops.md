@@ -1,3 +1,7 @@
+---
+title: Python Loops
+---
+
 <h1>Python Loops</h1>
 
 **CS 212 AI Programming 1**

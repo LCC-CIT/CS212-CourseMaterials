@@ -39,7 +39,7 @@ These are different ways of representing the concpet&mdash;the chances of someth
 
 #### Probability
 
-This is written as a fraction or a percent representing the the number of times a thing happens divided by the total number of occurance. For thowing a die, the probability of rolling a 6 (or any specific number) is 1/6 or about 16.7%.
+This is written as a fraction or a percent representing the number of times a thing happens divided by the total number of occurrences. For throwing a die, the probability of rolling a 6 (or any specific number) is 1/6 or about 16.7%.
 
 #### Odds
 
@@ -81,7 +81,7 @@ Likelihood of rain on days it is cloudy is:  7/9 &divide; 1/9 = 7
 ### Posterior odds
 
 **Definition**
-This is the end result. The new odds that are calculated after the new information (liklihood) has been added.
+This is the end result. The new odds that are calculated after the new information (likelihood) has been added.
 
 Bayes' Formula:
 posteriorOdds = priorOdds * likelihoodRatio
@@ -153,7 +153,7 @@ We might then decide that 75 is the threshold value for deciding the sentiment o
 
 *Inference* is the term we use to describe the process of making decisions based on the training. In this case, we want to make decisions based on *posterior odds* (in the form of a probability) which are calculated using the formula below. We are assuming the prior odds (odds of a post having negative sentiment) are 1:1 or a probability of 0.5.
 $$
-probability = prior \times liklihood_1 \times likelihood_2 \times...\times likelihood_n
+probability = prior \times likelihood_1 \times likelihood_2 \times...\times likelihood_n
 $$
 Let's say we want to do inference on two new posts. The posts have these words (as well as others) in them:
 

@@ -29,13 +29,13 @@ author: Brian Bird
 
 ## This Week's Learning Objectives
 
-- This week you will learn more about another category of symbolic logic, *constraint solvers* and write Python code for an app that uses an open-source constratint solver.
+- This week you will learn more about another category of symbolic logic, *constraint solvers* and write Python code for an app that uses an open-source constraint solver.
 
   This week you will learn how to:
 
   - Explain what a *SMT solver* is.
   - Identify problems that can be solved by an SMT solver.
-  - Write an app that uses a SMT sovler.
+  - Write an app that uses a SMT solver.
   - Use a <a href="./CS212-Unit02-5-PythonProjects.html" target="_blank">Python virtual environment</a>, <a href="./CS212-Unit02-4-PythonLoops.html" target="_blank">Python loops</a> and <a href="./CS212-Unit02-3-PythonCollectionTypes.html" target="_blank">Python collection types</a>
 
 ## Announcements

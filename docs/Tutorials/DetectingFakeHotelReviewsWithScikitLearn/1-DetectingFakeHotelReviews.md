@@ -1,3 +1,7 @@
+---
+title: Detecting Fake Hotel Reviews with Text Classification
+---
+
 <h1>Detecting Fake Hotel Reviews with Text Classification</h1>
 
 <h2>Table of Contents</h2>

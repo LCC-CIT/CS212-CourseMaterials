@@ -1,3 +1,7 @@
+---
+title: Python Coding Style and Best Practices Checklist
+---
+
 <h1>Python Coding Style and Best Practices Checklist</h1>
 
 <h2>For CS 212, AI Programming 1</h2>

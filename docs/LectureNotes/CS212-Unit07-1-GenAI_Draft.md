@@ -1,7 +1,7 @@
 ---
-title: Week 7 Overview
-description: What's happening in CS 212 during week 7
-keywords: Announcements, Due Dates, Help
+title: Generative AI
+description: An introduction to generative AI
+keywords: Generative AI, LLM
 generator: Typora
 author: Brian Bird
 ---

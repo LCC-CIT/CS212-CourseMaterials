@@ -1,3 +1,7 @@
+---
+title: Constraint Solvers
+---
+
 <h1>Constraint Solvers</h1>
 
 **CS 212 AI Programming 1**

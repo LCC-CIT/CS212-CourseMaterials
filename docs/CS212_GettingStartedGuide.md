@@ -1,3 +1,7 @@
+---
+title: CS 212 Getting Started Guide
+---
+
 <h1>CS 212: Artificial Intelligence Programming 1</h1>
 
 <h2>Getting Started Guide</h2>

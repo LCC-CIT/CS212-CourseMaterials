@@ -1,7 +1,7 @@
 ---
-title: Week 7 Overview
-description: What's happening in CS 212 during week 7
-keywords: Announcements, Due Dates, Help
+title: AI-Assisted Coding
+description: How to use AI tools to help write code
+keywords: AI-assisted coding, code generation
 generator: Typora
 author: Brian Bird
 ---
@@ -27,7 +27,7 @@ author: Brian Bird
   - [Architect & Planner Mindset (Before Coding)](#architect-planner-mindset-before-coding)
   - [Critical Reviewer Mindset (During Coding)](#critical-reviewer-mindset-during-coding)
   - [Process & Documentation Mindset (After Coding)](#process-documentation-mindset-after-coding)
-- [Rererence](#rererence)
+- [Reference](#reference)
   - [Vibe Coding](#vibe-coding)
   - [GitHub Copilot](#github-copilot)
 
@@ -107,7 +107,7 @@ By applying these principles, you move away from "vibe coding" and engage in AI 
 
 
 
-## Rererence
+## Reference
 
 <a href="https://extremeprogrammingalliance.com/about-extreme-programming-xp/extreme-programming-xp-practices/extreme-programming-xp-coding-technical-practices/" target="_blank">Pair Programming</a>&mdash;Extreme Programming Alliance (XPA)
 

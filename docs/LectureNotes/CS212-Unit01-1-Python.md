@@ -48,7 +48,7 @@ Most programming languages have many things in common:
   - Arrays&mdash;Python has lists, which are similar. The NumPy library provides actual arrays.
   - Dictionaries&mdash;Python's dictionaries are very similar to JavaScript objects.
 
-Once you've learned how to work with these concepts in one language, it's mostly just a mater of learning the new syntax for the next language you learn.
+Once you've learned how to work with these concepts in one language, it's mostly just a matter of learning the new syntax for the next language you learn.
 
 
 
@@ -130,7 +130,7 @@ In the Terminal, run:
 python3 --version
 ```
 
-If it's older than 3.14 (the latest version in October 2026) then upate it.
+If it's older than 3.14 (the latest version in October 2026) then update it.
 
 #### Install or Update Python
 

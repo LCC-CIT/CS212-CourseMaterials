@@ -1,3 +1,7 @@
+---
+title: Tuning Hyperparameters using Grid Search
+---
+
 ## Parameter Tuning Using Grid Search
 
 We’ve already encountered some parameters such as `use_idf` in the `TfidfTransformer`. Classifiers tend to have many parameters as well; e.g., `MultinomialNB` includes a smoothing parameter `alpha` and `SGDClassifier` has a regularization penalty parameter `alpha` (which controls how strongly the model penalizes large weights to prevent overfitting).
