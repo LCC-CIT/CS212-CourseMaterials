@@ -58,14 +58,16 @@ The `ClassifierMetricsNotebook` folder has the notebook, `ClassifierMetrics.ipyn
 - **In Google Colab:** [open the notebook in Colab](https://colab.research.google.com/github/LCC-CIT/CS212-CourseMaterials/blob/main/docs/Examples/Lab04-ClassifierMetrics/ClassifierMetricsNotebook/ClassifierMetrics.ipynb). Colab already has scikit-learn, so there is nothing to install.
 - **In VS Code:** open a terminal in the `ClassifierMetricsNotebook` folder and run `uv sync`. Then open the notebook and choose the `.venv` Python environment as the kernel.
 
-## Try It Yourself
+## Experimenting
 
 - In `main.py`, make a classifier that calls every message spam: `always_spam = [1] * len(test_labels)`. Print its scores with `show_scores`. What are its precision and recall? Why is it useless even though its recall is perfect?
 - In `spam_results.py`, change `test_size` from 0.25 to 0.5. Which of the numbers change, and by how much? What does that tell you about how much to trust the result from one test set?
 - Which mistake would you rather your spam filter make: sending a real message to the spam folder, or letting a spam message through? What do the precision and recall of spam tell you about that?
 - In the three-department example, move one of the Security messages that was sent to Billing so it is predicted correctly. How much does the accuracy change? How much does the Security recall change?
 
-*These lab materials were drafted by Claude Code and are waiting for review by Brian Bird. 10/21/2026*
+
+
+*These lab materials were drafted by Claude Code and revised by Brian Bird. 10/21/2026*
 
 ------
 
