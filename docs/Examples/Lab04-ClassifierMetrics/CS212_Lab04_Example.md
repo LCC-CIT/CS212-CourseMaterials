@@ -13,7 +13,7 @@ author: Brian Bird
 
 <h2>Example for Lab 4</h2>
 
-This example builds on the [Spam Detection example](../SpamDetection/CS212_SpamDetection_Overview.md). It takes the results of the spam classifier from that example and uses scikit-learn to calculate its *performance metrics*: accuracy (the percent correct), precision, recall and F1. It also prints a classification report and a confusion matrix, and ends with a made-up three-class example to show what the report looks like when there are more than two classes.
+This example builds on the [Spam Detection example](../SpamDetection/CS212_SpamDetection_Overview.md). It takes the results of the spam classifier from that example and uses scikit-learn to calculate its *performance metrics*: accuracy (the percent correct), precision, recall and F1. It also prints a classification report and a confusion matrix, and ends with a made-up three-class example to show what the report looks like when there are more than two classes. A second program, `tune.py`, uses a grid search to tune the classifier with a performance metric as the score.
 
 The explanations of what the numbers mean and how they are calculated are in the lecture notes, [Classifier Metrics](../../LectureNotes/CS212-Unit04-2-ClassifierMetrics.md). Read them first, then run the code.
 
@@ -38,18 +38,20 @@ The `ClassifierMetricsProgram` folder has these files:
 | --- | --- |
 | `spam_results.py` | Repeats the steps of the Spam Detection example and returns the true and predicted labels of its test messages |
 | `main.py` | Measures the spam classifier with scikit-learn's metrics functions, then shows a made-up three-department example |
+| `tune.py` | Uses `GridSearchCV` to tune the spam classifier, scoring by accuracy and by F1 |
 | `data/` | The SMS Spam Collection data file and its readme |
 | `pyproject.toml` | The project settings and the packages it needs |
 | `uv.lock` | The exact package versions that `uv` installed when this was written |
 | `README.md` | A short description of the project |
 
-You need [`uv`](https://docs.astral.sh/uv/). It reads `pyproject.toml` and installs scikit-learn the first time you run something. Run this command from inside the `ClassifierMetricsProgram` folder:
+You need [`uv`](https://docs.astral.sh/uv/). It reads `pyproject.toml` and installs scikit-learn the first time you run something. Run these commands from inside the `ClassifierMetricsProgram` folder:
 
 ```bash
 uv run main.py
+uv run tune.py
 ```
 
-It has to run from inside that folder, because `spam_results.py` opens `data/sms_spam.csv` using a relative path, and Python starts looking in the folder where the program is *running*.
+They have to run from inside that folder, because `spam_results.py` opens `data/sms_spam.csv` using a relative path, and Python starts looking in the folder where the program is *running*.
 
 ## Running the Jupyter Notebook
 
@@ -63,6 +65,7 @@ The `ClassifierMetricsNotebook` folder has the notebook, `ClassifierMetrics.ipyn
 - In `main.py`, make a classifier that calls every message spam: `always_spam = [1] * len(test_labels)`. Print its scores with `show_scores`. What are its precision and recall? Why is it useless even though its recall is perfect?
 - In `spam_results.py`, change `test_size` from 0.25 to 0.5. Which of the numbers change, and by how much? What does that tell you about how much to trust the result from one test set?
 - Which mistake would you rather your spam filter make: sending a real message to the spam folder, or letting a spam message through? What do the precision and recall of spam tell you about that?
+- In `tune.py`, add `0.01` to the `nb__alpha` list and `(1, 3)` to the `ngram_range` list. Do the best settings change? Does the F1 on the test messages change? If not, what does that tell you about how much there was to gain from tuning this classifier?
 - In the three-department example, move one of the Security messages that was sent to Billing so it is predicted correctly. How much does the accuracy change? How much does the Security recall change?
 
 

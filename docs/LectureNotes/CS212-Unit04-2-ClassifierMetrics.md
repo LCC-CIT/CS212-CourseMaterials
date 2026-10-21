@@ -221,6 +221,77 @@ At the bottom of the report are two kinds of average, and they tell different st
 
 If you only looked at the accuracy, you wouldn't notice that half of the Security messages were sent to the wrong department. The confusion matrix shows where they went: 3 to Billing and 2 to Technical. Each row is a true department and each column is a predicted department, so the numbers on the diagonal are the correct answers.
 
+## Using a Metric to Tune a Classifier
+
+Performance metrics are also how you decide whether a change made a classifier better. Most classifiers have *hyperparameters*, settings that you choose before training, such as the `alpha` of naive Bayes or whether the word counts include pairs of words. `GridSearchCV` tries every combination of the settings you give it. For each combination it trains and tests the classifier several times with cross-validation, using only the training messages. Then it keeps the combination with the best *score*.
+
+That score is another performance metric, and you choose it with the `scoring` argument. The default for a classifier is accuracy, which has the problem described above: when one class is rare, accuracy can hardly tell a good classifier from a bad one. For a rare class you usually want `scoring="f1"`, which is the F1 of the positive class. For more than two classes, `scoring="f1_macro"` averages the F1 of every class, the same way the macro average in the report does.
+
+The program `tune.py` tunes the spam classifier. It puts the word counts and the classifier in a `Pipeline`, so the grid search can change settings in both, and it tries a small grid with each of the two scores. You can run it with `uv run tune.py`.
+
+```python
+# Lab 4 example: using a performance metric to tune the spam classifier.
+#
+# Run with:  uv run tune.py
+
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics import classification_report
+from sklearn.model_selection import GridSearchCV
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.pipeline import Pipeline
+
+from spam_results import load_spam_data
+
+train_messages, test_messages, train_labels, test_labels = load_spam_data()
+
+# The same steps as before, as a pipeline. The names "counts" and "nb" are used
+# in the settings below, for example "nb__alpha" is the alpha setting of "nb".
+pipeline = Pipeline([("counts", CountVectorizer()), ("nb", MultinomialNB())])
+settings = {
+    "counts__ngram_range": [(1, 1), (1, 2)],   # single words, or single words and word pairs
+    "nb__alpha": [0.1, 0.5, 1.0],              # how much smoothing naive Bayes does
+}
+
+# Try every combination of settings, using 5-fold cross-validation on the training
+# messages only. The score decides which combination is "best", so the choice of
+# score matters. We try two: accuracy and F1 (the F1 of the positive class, spam).
+for score_name in ["accuracy", "f1"]:
+    search = GridSearchCV(pipeline, settings, scoring=score_name, cv=5)
+    search.fit(train_messages, train_labels)
+    print("Best settings when scoring by", score_name)
+    print("  ", search.best_params_)
+    print("   cross-validation", score_name, "=", round(search.best_score_, 3))
+
+# Only now use the test messages, once, with the model that was best by F1.
+print()
+predicted_labels = search.predict(test_messages)
+print(classification_report(test_labels, predicted_labels, target_names=["ham", "spam"]))
+```
+
+Here is the output of `uv run tune.py`:
+
+```
+Best settings when scoring by accuracy
+   {'counts__ngram_range': (1, 2), 'nb__alpha': 0.1}
+   cross-validation accuracy = 0.987
+Best settings when scoring by f1
+   {'counts__ngram_range': (1, 2), 'nb__alpha': 0.1}
+   cross-validation f1 = 0.95
+
+              precision    recall  f1-score   support
+
+         ham       0.99      0.99      0.99      1203
+        spam       0.96      0.94      0.95       191
+
+    accuracy                           0.99      1394
+   macro avg       0.97      0.97      0.97      1394
+weighted avg       0.99      0.99      0.99      1394
+```
+
+Both scores picked the same settings, and the tuned classifier is barely different from the untuned one: spam precision went from 0.967 to 0.957 and recall from 0.932 to 0.942, so F1 stayed at about 0.95. That is a normal result. The spam classifier was already good, the test set is small (191 spam messages), and a difference of one or two messages is just noise. Tuning isn't a way to get a big improvement. It helps you pick settings in a systematic way, and it only makes sense if the score you tune for is the one that matters. Here the two scores agree because spam is 13% of the messages. The rarer the class is, the more likely they are to disagree.
+
+Notice that the test messages were used only once, at the end. The grid search chose the settings with cross-validation on the training messages. If you chose the settings by looking at the test results, the test results would no longer tell you how well the classifier works on new messages.
+
 ## Running the Code
 
 The code is in the [Lab 4 example](../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md), as a complete Python project and as a Jupyter notebook. That page explains how to download and run them.
@@ -230,6 +301,7 @@ The code is in the [Lab 4 example](../Examples/Lab04-ClassifierMetrics/CS212_Lab
 - In `main.py`, make a classifier that calls every message spam: `always_spam = [1] * len(test_labels)`. Print its scores with `show_scores`. What are its precision and recall? Why is it useless even though its recall is perfect?
 - In `spam_results.py`, change `test_size` from 0.25 to 0.5. Which of the numbers change, and by how much? What does that tell you about how much to trust the result from one test set?
 - Which mistake would you rather your spam filter make: sending a real message to the spam folder, or letting a spam message through? What do the precision and recall of spam tell you about that?
+- In `tune.py`, add `0.01` to the `nb__alpha` list and `(1, 3)` to the `ngram_range` list. Do the best settings change? Does the F1 on the test messages change? If not, what does that tell you about how much there was to gain from tuning this classifier?
 - In the three-department example, move one of the Security messages that was sent to Billing so it is predicted correctly. How much does the accuracy change? How much does the Security recall change?
 
 ## Reference
