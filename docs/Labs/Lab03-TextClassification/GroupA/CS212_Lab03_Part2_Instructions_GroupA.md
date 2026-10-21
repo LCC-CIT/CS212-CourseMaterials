@@ -38,7 +38,7 @@ Alternatively, you can do a classification project of your own design.  You can 
 
 ## Submitting your lab work on Canvas
 
-**Note**: You only need to submit your code. You <u>do not</u> need to upload your virtual environment (.venv) folder.
+**Note**: You only need to submit your code. You <u>should not</u> upload your virtual environment (.venv) folder. Yo don't need to upload the data since the .venv will be rebuilt from your `pyproject.toml` file and the data will be downloaded by the fetch_data.py program.
 
 ### Beta Version
 
@@ -66,7 +66,7 @@ The main focus of grading will be on use of the sckit-learn classes and problem 
 
 ------
 
-<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming lab instructions by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 lab instructions by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in 2025, revised in <time>2026</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ------------
 
