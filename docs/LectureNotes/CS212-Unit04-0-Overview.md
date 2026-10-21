@@ -51,6 +51,8 @@ None yet.
 - Lab 3 code review due by Tuesday, 10/20.
 - Lab 3 production version due by Thursday, 10/22.
 - Lab 4 beta version should be shared with your lab partner(s) by Saturday, 10/24.
+  - Lab 4 instructions: [Group A](../Labs/Lab04-ClassifierEvaluation/GroupA/CS212_Lab04_Instructions_GroupA.md) | [Group B](../Labs/Lab04-ClassifierEvaluation/GroupB/CS212_Lab04_Instructions_GroupB.md) | [Group C](../Labs/Lab04-ClassifierEvaluation/GroupC/CS212_Lab04_Instructions_GroupC.md).
+  - Read the [Lab 4 example](../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md) first.
 - Take quiz 4 over the assigned reading by Sunday, 10/25.
 
 
