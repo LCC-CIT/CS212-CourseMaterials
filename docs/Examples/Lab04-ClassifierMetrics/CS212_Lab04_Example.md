@@ -13,7 +13,7 @@ author: Brian Bird
 
 <h2>Example</h2>
 
-In Lab 3 you measured a classifier with *accuracy*, the share of test messages it got right. That works when the classes are about the same size. It can be very misleading when one class is rare. The Lab 4 assignments (all three groups) are about measuring a classifier well and then improving it, so read this example before you start your lab. The complete program is [metrics_example.py](metrics_example.py).
+In Lab 3 you measured a classifier with *accuracy*, the share of test messages it got right. That works when the classes are about the same size. It can be very misleading when one class is rare. The Lab 4 assignments (all three groups) are about measuring a classifier well and then improving it, so read this example before you start your lab. The code is a complete Python project. To get all of it at once, [download the project as a zip file](https://download-directory.github.io/?url=https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Examples/Lab04-ClassifierMetrics/Solution), unzip it and run it from inside the unzipped folder (see [Running the Project](#running-the-project)).
 
 <h2>Contents</h2>
 
@@ -52,19 +52,18 @@ Precision and recall pull against each other. A classifier that flags everything
 
 ## Calculating the Measures in Python
 
-The program below counts the four results with a plain `for` loop and calculates the four measures from the counts. It then asks scikit-learn (`sklearn.metrics`) for the same numbers, so you can see that they agree. The functions are careful about dividing by zero. For example, a classifier that never says "yes" has `tp + fp == 0`, so its precision can't be calculated and the function returns 0.0.
+The project has two parts. The module `metrics.py` counts the four results with a plain `for` loop and calculates the four measures from the counts. The functions are careful about dividing by zero. For example, a classifier that never says "yes" has `tp + fp == 0`, so its precision can't be calculated and the function returns 0.0.
 
 ```python
-# Lab 4 example: measuring a classifier with precision, recall and F1.
-#
-# Run with:  uv run metrics_example.py
+"""Accuracy, precision, recall and F1, calculated by hand from the four counts.
 
-from sklearn.metrics import (accuracy_score, classification_report, confusion_matrix,
-                             f1_score, precision_score, recall_score)
+The positive class is 1. Each function returns 0.0 instead of dividing by zero.
+"""
 
 
 def count_results(true_labels, predicted_labels):
-    """Count the four kinds of result. The positive class is 1."""
+    """Count the four kinds of result: true positives, false positives,
+    false negatives and true negatives."""
     true_positives = 0
     false_positives = 0
     false_negatives = 0
@@ -101,6 +100,19 @@ def f1(precision_value, recall_value):
     if precision_value + recall_value == 0:
         return 0.0
     return 2 * precision_value * recall_value / (precision_value + recall_value)
+```
+
+The program `main.py` uses those functions on some made-up results. It then asks scikit-learn (`sklearn.metrics`) for the same numbers, so you can see that they agree.
+
+```python
+# Lab 4 example: measuring a classifier with precision, recall and F1.
+#
+# Run with:  uv run main.py
+
+from sklearn.metrics import (accuracy_score, classification_report, confusion_matrix,
+                             f1_score, precision_score, recall_score)
+
+from metrics import accuracy, count_results, f1, precision, recall
 
 
 def show_scores(name, true_labels, predicted_labels):
@@ -152,7 +164,7 @@ print(names)
 print(confusion_matrix(true_departments, predicted_departments, labels=names))
 ```
 
-To run it, use `uv run metrics_example.py` in the example's folder. Here is the output:
+Here is the output of `uv run main.py`:
 
 ```
 Classifier
@@ -199,9 +211,31 @@ At the bottom of the report are two kinds of average, and they tell different st
 
 If you only looked at the accuracy, you wouldn't notice that half of the Security messages were sent to the wrong department. The confusion matrix shows where they went: 3 to Billing and 2 to Technical. Each row is a true department and each column is a predicted department, so the numbers on the diagonal are the correct answers.
 
+## Running the Project
+
+The project folder has these files:
+
+| File | What it does |
+| --- | --- |
+| `metrics.py` | The functions that count the results and calculate the four measures |
+| `main.py` | Runs the examples and prints the by-hand and scikit-learn results side by side |
+| `test_metrics.py` | Tests that check `metrics.py` against hand calculations and scikit-learn |
+| `pyproject.toml` | The project settings and the packages it needs |
+| `uv.lock` | The exact package versions that `uv` installed when this was written |
+| `README.md` | A short description of the project |
+
+You need [`uv`](https://docs.astral.sh/uv/). It reads `pyproject.toml` and installs scikit-learn the first time you run something. Run these commands from inside the project folder:
+
+```bash
+uv run main.py
+uv run test_metrics.py
+```
+
+The tests are optional, but they are a good model for how to check your own code. `uv run pytest` runs the same tests with pytest, if you want to try it.
+
 ## Try It Yourself
 
-- Change the `predicted_labels` list so that the classifier finds all 20 emergencies but raises 100 false alarms. What happens to the precision and the recall?
+- In `main.py`, change the `predicted_labels` list so that the classifier finds all 20 emergencies but raises 100 false alarms. What happens to the precision and the recall?
 - Change it again so that the classifier says "emergency" only once, and is right. What are the precision and recall now?
 - In the three-department example, move one of the Security messages that was sent to Billing so it is predicted correctly. How much does the accuracy change? How much does the Security recall change?
 

@@ -1,0 +1,13 @@
+[project]
+name = "lab04-classifier-metrics-example"
+version = "0.1.0"
+description = "Lab 4 class example: measuring a classifier with precision, recall and F1"
+requires-python = ">=3.10"
+dependencies = [
+    "scikit-learn>=1.5",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
