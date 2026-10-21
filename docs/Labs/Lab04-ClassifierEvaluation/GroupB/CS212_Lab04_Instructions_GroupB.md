@@ -27,7 +27,7 @@ In Lab 3 the classifiers chose between two or three classes of about the same si
 - seen how `class_weight` changes the balance between precision and recall for a rare class, and
 - chosen **hyperparameters** with a grid search that is scored with the right measure.
 
-**Before you start,** read the [Lab 4 example](../../../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md). It explains the performance metrics you will use in this lab (accuracy, precision, recall and F1) and the confusion matrix.
+**Before you start,** read the lecture notes [Classifier Metrics](../../../LectureNotes/CS212-Unit04-2-ClassifierMetrics.md). They explain the performance metrics you will use in this lab (accuracy, precision, recall and F1) and the confusion matrix. Then look at the [Lab 4 example](../../../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md), which has code that calculates them with scikit-learn.
 
 ### The data
 

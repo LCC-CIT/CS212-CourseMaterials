@@ -29,7 +29,7 @@ Most messages are *not* about medical help, so a "yes" is rare. That makes accur
 
 **A note about the data.** These are real messages from people in Haiti, Chile, Pakistan and other places, sent during earthquakes, floods and storms. Some are frightening or sad. Read them with respect.
 
-**Before you start,** read the [Lab 4 example](../../../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md). It explains the performance metrics you will use in this lab (accuracy, precision, recall and F1) and the confusion matrix.
+**Before you start,** read the lecture notes [Classifier Metrics](../../../LectureNotes/CS212-Unit04-2-ClassifierMetrics.md). They explain the performance metrics you will use in this lab (accuracy, precision, recall and F1) and the confusion matrix. Then look at the [Lab 4 example](../../../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md), which has code that calculates them with scikit-learn.
 
 ### The data
 

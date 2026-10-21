@@ -29,7 +29,7 @@ You will use the same tools as in Lab 3. This time the focus is on *measuring* y
 
 You will also test your classifier on a different kind of question than the one it was trained on. That test shows how far you can trust a classifier like this.
 
-**Before you start,** read the [Lab 4 example](../../../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md). It explains the performance metrics you will use in this lab (accuracy, precision, recall and F1) and the confusion matrix.
+**Before you start,** read the lecture notes [Classifier Metrics](../../../LectureNotes/CS212-Unit04-2-ClassifierMetrics.md). They explain the performance metrics you will use in this lab (accuracy, precision, recall and F1) and the confusion matrix. Then look at the [Lab 4 example](../../../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md), which has code that calculates them with scikit-learn.
 
 ### The data
 
