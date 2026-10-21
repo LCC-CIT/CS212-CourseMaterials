@@ -17,11 +17,7 @@ author: Brian Bird
 
 [TOC]
 
-## Part 1
-
-Part 1 is for everyone. The instructions are [here](../CS212_Lab04_Part1_Instructions.md). Part 1 has its own assignment submission on Canvas.
-
-## Part 2: Which Department Should Get This Message?
+## Which Department Should Get This Message?
 
 When you message your bank's help desk, someone has to decide which team should read it. In this lab you will build a classifier that reads a customer's message and routes it to one of **six departments**: Cards, Payments, Transfers, TopUps, Security or Account.
 
@@ -30,6 +26,8 @@ In Lab 3 the classifiers chose between two or three classes of about the same si
 - read a multi-class `classification_report` and `confusion_matrix`,
 - seen how `class_weight` changes the balance between precision and recall for a rare class, and
 - chosen **hyperparameters** with a grid search that is scored with the right measure.
+
+**Before you start,** read the [Lab 4 example](../../../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md). It explains accuracy, precision, recall, F1 and the confusion matrix, which you will use throughout this lab.
 
 ### The data
 
@@ -52,7 +50,7 @@ The data comes in two files, `train.csv` (10,003 messages) and `test.csv` (3,080
 
 ### Set up your project
 
-1. If you did Part 1, use the same project. Otherwise, make one with `uv init lab04` and `cd lab04`.
+1. Make a project folder for the lab with `uv init lab04`, and then `cd lab04`.
 2. Add scikit-learn: `uv add scikit-learn`
 3. Save this program as `fetch_data.py` in your project folder and run it once with `uv run fetch_data.py`. It downloads the two data files into a folder named `data`.
 

@@ -17,11 +17,7 @@ author: Brian Bird
 
 [TOC]
 
-## Part 1
-
-Part 1 is for everyone. The instructions are [here](../CS212_Lab04_Part1_Instructions.md). Part 1 has its own assignment submission on Canvas.
-
-## Part 2: Which Messages Need Medical Help?
+## Which Messages Need Medical Help?
 
 After a major disaster, aid organizations receive thousands of messages from people who need help. There are far too many for people to read, so a classifier could pick out the messages that a particular team needs to see first. In this lab you will build a classifier that reads one message and answers a yes/no question: **is this person asking for medical help?**
 
@@ -33,24 +29,25 @@ Most messages are *not* about medical help, so a "yes" is rare. That makes accur
 
 **A note about the data.** These are real messages from people in Haiti, Chile, Pakistan and other places, sent during earthquakes, floods and storms. Some are frightening or sad. Read them with respect.
 
+**Before you start,** read the [Lab 4 example](../../../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md). It explains accuracy, precision, recall, F1 and the confusion matrix, which you will use throughout this lab.
+
 ### The data
 
 The data is the **Disaster Response Messages** data set, which has about 26,000 messages labeled by Appen (formerly Figure Eight) for disaster relief. Each message has a `genre` (`direct` for a message sent by a person, `news`, or `social`) and 36 yes/no categories. We will use five of the categories, which are listed below. Its license is not stated, so you will download it yourself instead of getting it from the course site.
 
-The data is stored in Parquet files, which Python can read with the `pandas` and `pyarrow` packages. You only need those packages in the small program that fetches the data. Your own program will read an ordinary CSV file.
-
 ### Set up your project
 
-1. If you did Part 1, use the same project. Otherwise, make one with `uv init lab04` and `cd lab04`.
-2. Add the packages: `uv add scikit-learn pandas pyarrow`
-3. Save this program as `fetch_data.py` in your project folder and run it once with `uv run fetch_data.py`. It downloads about 4 MB, removes blank and repeated messages, and saves a CSV file named `disaster_messages.csv` in your project folder.
+1. Make a project folder for the lab with `uv init lab04`, and then `cd lab04`.
+2. Add scikit-learn: `uv add scikit-learn`
+3. Save this program as `fetch_data.py` in your project folder and run it once with `uv run fetch_data.py`. It downloads three CSV files (about 7 MB), removes blank and repeated messages, and saves one CSV file named `disaster_messages.csv` in your project folder. Your own program will read that file.
 
 ```python
-# fetch_data.py: download the disaster response messages and save them as a CSV.
+# fetch_data.py: download the disaster response messages and save them as one CSV file.
 # Run it once with:  uv run fetch_data.py
+import csv
+import os
 import socket
-
-import pandas as pd
+from urllib.request import urlretrieve
 
 try:
     import truststore  # only needed if you get a certificate error (see the lab instructions)
@@ -60,35 +57,47 @@ except ImportError:
 
 socket.setdefaulttimeout(60)  # give up with an error instead of waiting forever
 
-URL = ("https://huggingface.co/datasets/community-datasets/"
-       "disaster_response_messages/resolve/main/data/")
-SPLITS = ["train-00000-of-00001.parquet",
-          "validation-00000-of-00001.parquet",
-          "test-00000-of-00001.parquet"]
+URL = "https://s3.amazonaws.com/datasets.huggingface.co/disaster_response_messages_"
+PARTS = ["training", "validation", "test"]
 
-# The columns we keep. Every category is 1 (yes) or 0 (no).
+# The categories we keep. Every category is 1 (yes) or 0 (no).
 CATEGORIES = ["medical_help", "search_and_rescue", "missing_people", "fire", "water"]
 
-parts = []
-for name in SPLITS:
-    print("Downloading", name)
-    parts.append(pd.read_parquet(URL + name))
-data = pd.concat(parts)
-count_before = len(data)
+rows = []
+seen = set()  # the messages we have already kept
+count_before = 0
+for part in PARTS:
+    print("Downloading", part)
+    temp_name = part + ".csv"
+    urlretrieve(URL + part + ".csv", temp_name)
+    # The files start with a "byte order mark", which utf-8-sig removes.
+    with open(temp_name, encoding="utf-8-sig", newline="") as file:
+        for row in csv.DictReader(file):
+            count_before += 1
+            message = row["message"].strip()
+            # Skip blank and repeated messages.
+            if message == "" or message in seen:
+                continue
+            seen.add(message)
+            new_row = {"message": message, "genre": row["genre"]}
+            for category in CATEGORIES:
+                new_row[category] = row[category]
+            rows.append(new_row)
+    os.remove(temp_name)
 
-# Clean up: remove blank messages and repeated messages.
-data["message"] = data["message"].str.strip()
-data = data[data["message"] != ""]
-data = data.drop_duplicates(subset="message")
+print("Removed", count_before - len(rows), "blank or repeated messages")
 
-print("Removed", count_before - len(data), "blank or repeated messages")
+with open("disaster_messages.csv", "w", encoding="utf-8", newline="") as file:
+    writer = csv.DictWriter(file, fieldnames=["message", "genre"] + CATEGORIES)
+    writer.writeheader()
+    writer.writerows(rows)
 
-data = data[["message", "genre"] + CATEGORIES]
-data.to_csv("disaster_messages.csv", index=False)
-
-print("Saved", len(data), "messages to disaster_messages.csv")
+print("Saved", len(rows), "messages to disaster_messages.csv")
 for category in CATEGORIES:
-    print(category, data[category].sum(), "messages")
+    total = 0
+    for row in rows:
+        total += int(row[category])
+    print(category, total, "messages")
 ```
 
 If the download fails with an error that mentions `CERTIFICATE_VERIFY_FAILED`, run `uv add truststore` and then run the program again. If it stops with a timeout, just run it again.
@@ -96,9 +105,9 @@ If the download fails with an error that mentions `CERTIFICATE_VERIFY_FAILED`, r
 Output:
 
 ```
-Downloading train-00000-of-00001.parquet
-Downloading validation-00000-of-00001.parquet
-Downloading test-00000-of-00001.parquet
+Downloading training
+Downloading validation
+Downloading test
 Removed 79 blank or repeated messages
 Saved 26169 messages to disaster_messages.csv
 medical_help 2080 messages

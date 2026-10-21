@@ -17,11 +17,7 @@ author: Brian Bird
 
 [TOC]
 
-## Part 1
-
-Part 1 is for everyone. The instructions are [here](../CS212_Lab04_Part1_Instructions.md). Part 1 has its own assignment submission on Canvas.
-
-## Part 2: Can a Classifier Tell ChatGPT from a Person?
+## Can a Classifier Tell ChatGPT from a Person?
 
 Teachers, editors and websites all want to know whether a piece of writing came from a person or from a chatbot. In this lab you will build a classifier that reads an answer to a question about computers or science and decides: **human (0)** or **ChatGPT (1)**.
 
@@ -32,6 +28,8 @@ You will use the same tools as in Lab 3. This time the focus is on *measuring* y
 - chosen **hyperparameters** with a grid search.
 
 You will also test your classifier on a different kind of question than the one it was trained on. That test shows how far you can trust a classifier like this.
+
+**Before you start,** read the [Lab 4 example](../../../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md). It explains accuracy, precision, recall, F1 and the confusion matrix, which you will use throughout this lab.
 
 ### The data
 
@@ -46,7 +44,7 @@ Each line of a file is one question, written as a JSON object with three parts: 
 
 ### Set up your project
 
-1. If you did Part 1, use the same project. Otherwise, make one with `uv init lab04` and `cd lab04`.
+1. Make a project folder for the lab with `uv init lab04`, and then `cd lab04`.
 2. Add scikit-learn: `uv add scikit-learn`
 3. Save this program as `fetch_data.py` in your project folder and run it once with `uv run fetch_data.py`. It downloads the two data files into a folder named `data` (about 5 MB in all).
 
@@ -184,9 +182,11 @@ Write your code in one Python file, and put your answers to the questions in com
 - **Top words.** For a `LogisticRegression` in a pipeline named `pipe` with steps called `"tfidf"` and `"clf"`:
 
   ```python
+  import numpy as np
+
   words = pipe.named_steps["tfidf"].get_feature_names_out()
   weights = pipe.named_steps["clf"].coef_[0]
-  order = weights.argsort()   # positions of the words, from most "human" to most "ChatGPT"
+  order = np.argsort(weights)   # positions of the words, from most "human" to most "ChatGPT"
   print(list(words[order[:15]]))     # the 15 most human-like words
   print(list(words[order[-15:]]))    # the 15 most ChatGPT-like words
   ```
