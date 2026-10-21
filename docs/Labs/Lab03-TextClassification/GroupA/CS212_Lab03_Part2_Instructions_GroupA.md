@@ -38,7 +38,8 @@ Alternatively, you can do a classification project of your own design.  You can 
 
 ## Submitting your lab work on Canvas
 
-**Note**: You only need to submit your code. You <u>should not</u> upload your virtual environment (.venv) folder. Yo don't need to upload the data since the .venv will be rebuilt from your `pyproject.toml` file and the data will be downloaded by the fetch_data.py program.
+**Note**: You only need to submit your code. You <u>should not</u> upload your virtual environment (.venv) folder since the .venv will be rebuilt from your `pyproject.toml` file. 
+You don't need to upload the data since it can be downloaded by the fetch_data.py program.
 
 ### Beta Version
 
