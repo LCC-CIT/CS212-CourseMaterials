@@ -23,7 +23,7 @@
   - [Exercise 2: Sentiment Analysis on movie reviews](WorkingWithTextData.md#exercise-2-sentiment-analysis-on-movie-reviews)
   - [Exercise 3: CLI text classification utility](WorkingWithTextData.md#exercise-3-cli-text-classification-utility)
   - [Where to from here](WorkingWithTextData.md#where-to-from-here)
-- [Choosing the right estimator](ChoosingTheRightEstimatorScikitLearn142Documentation.html)
+- [Choosing the right estimator](ChoosingTheRightEstimator.md)
 - <a href="https://scikit-learn.org/1.7/presentations.html" target="_blank">External Resources, Videos and Talks</a>
   - <a href="https://scikit-learn.org/1.7/presentations.html#new-to-scientific-python" target="_blank">New to Scientific Python?</a>
   - <a href="https://scikit-learn.org/1.7/presentations.html#external-tutorials" target="_blank">External Tutorials</a>

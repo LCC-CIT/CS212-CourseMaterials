@@ -46,7 +46,7 @@ Machine learning is about learning some properties of a data set and then testin
 
 ### Loading an example dataset
 
-`scikit-learn` comes with a few standard datasets[^1], for instance the <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set" target="_blank">iris</a> and <a href="https://archive.ics.uci.edu/dataset/683/mnist+database+of+handwritten+digits" target="_blank">digits</a> datasets for classification and the <a href="https://www4.stat.ncsu.edu/~boos/var.select/diabetes.html" target="_blank">diabetes dataset</a> for regression.
+`scikit-learn` comes with a few standard datasets[^1], for instance the <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set" target="_blank">iris</a> and <a href="https://archive.ics.uci.edu/dataset/683/mnist+database+of+handwritten+digits" target="_blank">digits</a> datasets for classification and the <a href="https://web.archive.org/web/2023/https://www4.stat.ncsu.edu/~boos/var.select/diabetes.html" target="_blank">diabetes dataset</a> for regression.
 
 In the following, we start a Python interpreter from our shell and then load the `digits` dataset. 
 

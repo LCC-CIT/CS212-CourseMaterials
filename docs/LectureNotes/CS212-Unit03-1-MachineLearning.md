@@ -171,7 +171,7 @@ The core of linear regression uses the simple algebraic equation for a straight 
 >
 > Sales = 2(100) + 50 = 250
 >
-> <img src="Images\LinearRegression-AdvertisingVsSales.png" alt="Linear regression graph" style="zoom:75%;" />
+> <img src="Images/LinearRegression-AdvertisingVsSales.png" alt="Linear regression graph" style="zoom:75%;" />
 >
 > - Data Points: Scattered dots on the chart represent the actual historical sales data (e.g., a dot at (50, 150) means $50 of ad spend resulted in 150 sales).
 >
