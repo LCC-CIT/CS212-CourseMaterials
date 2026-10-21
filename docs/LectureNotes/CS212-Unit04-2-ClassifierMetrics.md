@@ -10,14 +10,6 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-| Topics                                                  |                                                  |
-| ------------------------------------------------------- | ------------------------------------------------ |
-| 1. What is AI, Python                                   | 6. Artificial Neural Networks: Image recognition |
-| 2.  Symbolic AI: rule-based                             | 7. Generative AI                                 |
-| 3.  Classical Machine Learning<br />Bayes' Rule         | 8. Custom chatbot                                |
-| 4. <mark>scikit-learn<br />Working with Data Sets</mark> | 9. LLM fine-tuning                               |
-| 5. ML: Scikit Learn Part 2                              | 10. Ethics                                       |
-
 In Lab 3 you measured a classifier with *accuracy*, the percent of test messages it got right. That works when the classes are all about the same size. It can be very misleading when the number of samples for one class is small.
 
 The Lab 4 assignments (all three groups) are about measuring how well a classifier performs and then improving it. *Accuracy*, *precision*, *recall* and *F1* are all *performance metrics*, which are numbers that measure how well a classifier does its job. These notes build on the [Spam Detection example](../Examples/SpamDetection/CS212_SpamDetection_Overview.md): they take its spam classifier and show what its performance metrics mean and how they are calculated. The code is in the [Lab 4 example](../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md).
@@ -245,9 +237,12 @@ The code is in the [Lab 4 example](../Examples/Lab04-ClassifierMetrics/CS212_Lab
 - <a href="https://scikit-learn.org/stable/modules/model_evaluation.html" target="_blank">Metrics and scoring: quantifying the quality of predictions</a>, scikit-learn User Guide.
 - <a href="https://archive.ics.uci.edu/dataset/228/sms+spam+collection" target="_blank">SMS Spam Collection</a>, UCI Machine Learning Repository, by Tiago A. Almeida and José María Gómez Hidalgo.
 
+
+
+*These notes were drafted by Claude Code and revised by Brian Bird. 10/21/2026*
+
 ---
 
 <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 lecture notes by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2026</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---
-These notes were drafted by Claude Code and are waiting for review by Brian Bird. 10/21/2026
