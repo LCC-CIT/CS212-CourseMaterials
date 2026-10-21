@@ -1,6 +1,6 @@
 # Measuring a Classifier (Jupyter Notebook)
 
-A Jupyter notebook for the [Lab 4 class example](../CS212_Lab04_Example.html). It builds on the [Spam Detection example](../../SpamDetection/CS212_SpamDetection_Overview.md): it takes the results of the spam classifier, calculates accuracy, precision, recall and F1 with scikit-learn, and shows a three-class `classification_report`. It does the same steps as the Python project in the [ClassifierMetricsProgram](../ClassifierMetricsProgram/README.md) folder, with an explanation of each one.
+A Jupyter notebook for the [Lab 4 class example](../CS212_Lab04_Example.html). It builds on the [Spam Detection example](../../SpamDetection/CS212_SpamDetection_Overview.md): it takes the results of the spam classifier, calculates accuracy, precision, recall and F1 with scikit-learn, and shows the `classification_report` of the four-newsgroups example from the Week 3 tutorial. It does the same steps as the Python project in the [ClassifierMetricsProgram](../ClassifierMetricsProgram/README.md) folder, with an explanation of each one.
 
 ---
 

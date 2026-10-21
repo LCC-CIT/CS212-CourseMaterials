@@ -2,8 +2,12 @@
 #
 # Run with:  uv run main.py
 
+from sklearn.datasets import fetch_20newsgroups
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+from sklearn.linear_model import SGDClassifier
 from sklearn.metrics import (accuracy_score, classification_report, confusion_matrix,
                              f1_score, precision_score, recall_score)
+from sklearn.pipeline import Pipeline
 
 from spam_results import get_spam_results
 
@@ -39,25 +43,26 @@ print("Confusion matrix (rows = true, columns = predicted):")
 print(["ham", "spam"])
 print(confusion_matrix(test_labels, predicted_labels))
 
-# ---------------------------------------------------------------- three classes
-# A made-up example. A help desk sorts 100 messages into three departments.
-# Security is the rare one. Each case is (true department, predicted department,
-# how many messages).
-cases = [
-    ("Billing", "Billing", 57), ("Billing", "Technical", 3),
-    ("Technical", "Technical", 27), ("Technical", "Billing", 1), ("Technical", "Security", 2),
-    ("Security", "Security", 5), ("Security", "Billing", 3), ("Security", "Technical", 2),
-]
-true_departments = []
-predicted_departments = []
-for true_department, predicted_department, count in cases:
-    for i in range(count):
-        true_departments.append(true_department)
-        predicted_departments.append(predicted_department)
+# ---------------------------------------------------------------- four classes
+# The newsgroups example from the scikit-learn text tutorial (Week 3): posts from four
+# newsgroups, classified with the tf-idf and linear SVM pipeline from that tutorial.
+# The first run downloads the data, which scikit-learn keeps for later runs.
+categories = ["alt.atheism", "soc.religion.christian", "comp.graphics", "sci.med"]
+twenty_train = fetch_20newsgroups(subset="train", categories=categories, shuffle=True, random_state=42)
+twenty_test = fetch_20newsgroups(subset="test", categories=categories, shuffle=True, random_state=42)
 
-print("\nThree departments (made up)")
-names = ["Billing", "Technical", "Security"]
-print(classification_report(true_departments, predicted_departments, labels=names))
+text_clf = Pipeline([
+    ("vect", CountVectorizer()),
+    ("tfidf", TfidfTransformer()),
+    ("clf", SGDClassifier(loss="hinge", penalty="l2", alpha=1e-3,
+                          random_state=42, max_iter=5, tol=None)),
+])
+text_clf.fit(twenty_train.data, twenty_train.target)
+newsgroup_predictions = text_clf.predict(twenty_test.data)
+
+print("\nFour newsgroups")
+print(classification_report(twenty_test.target, newsgroup_predictions,
+                            target_names=twenty_test.target_names))
 print("Confusion matrix (rows = true, columns = predicted):")
-print(names)
-print(confusion_matrix(true_departments, predicted_departments, labels=names))
+print(twenty_test.target_names)
+print(confusion_matrix(twenty_test.target, newsgroup_predictions))

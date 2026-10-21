@@ -78,15 +78,19 @@ If a classifier never says "spam", then TP + FP is 0, and precision (TP / (TP + 
 
 The function `get_spam_results` in `spam_results.py` repeats the steps of the Spam Detection program (the same data, the same 75/25 split, and a naive Bayes classifier on word counts) and returns the true labels and the predicted labels of the test messages. You can read that program to see how those steps work.
 
-The program `main.py` has a function, `show_scores`, that uses these scikit-learn functions to print the four counts and the four performance metrics. It measures the spam classifier and the "always ham" classifier for comparison, and prints the classification report and confusion matrix that the Spam Detection program printed. At the end it has a made-up example with three classes, which is explained below.
+The program `main.py` has a function, `show_scores`, that uses these scikit-learn functions to print the four counts and the four performance metrics. It measures the spam classifier and the "always ham" classifier for comparison, and prints the classification report and confusion matrix that the Spam Detection program printed. At the end it repeats the four-newsgroups example from the scikit-learn text tutorial (Week 3), which has more than two classes and is explained below.
 
 ```python
 # Lab 4 example: measuring the spam classifier from the Spam Detection example.
 #
 # Run with:  uv run main.py
 
+from sklearn.datasets import fetch_20newsgroups
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+from sklearn.linear_model import SGDClassifier
 from sklearn.metrics import (accuracy_score, classification_report, confusion_matrix,
                              f1_score, precision_score, recall_score)
+from sklearn.pipeline import Pipeline
 
 from spam_results import get_spam_results
 
@@ -122,28 +126,29 @@ print("Confusion matrix (rows = true, columns = predicted):")
 print(["ham", "spam"])
 print(confusion_matrix(test_labels, predicted_labels))
 
-# ---------------------------------------------------------------- three classes
-# A made-up example. A help desk sorts 100 messages into three departments.
-# Security is the rare one. Each case is (true department, predicted department,
-# how many messages).
-cases = [
-    ("Billing", "Billing", 57), ("Billing", "Technical", 3),
-    ("Technical", "Technical", 27), ("Technical", "Billing", 1), ("Technical", "Security", 2),
-    ("Security", "Security", 5), ("Security", "Billing", 3), ("Security", "Technical", 2),
-]
-true_departments = []
-predicted_departments = []
-for true_department, predicted_department, count in cases:
-    for i in range(count):
-        true_departments.append(true_department)
-        predicted_departments.append(predicted_department)
+# ---------------------------------------------------------------- four classes
+# The newsgroups example from the scikit-learn text tutorial (Week 3): posts from four
+# newsgroups, classified with the tf-idf and linear SVM pipeline from that tutorial.
+# The first run downloads the data, which scikit-learn keeps for later runs.
+categories = ["alt.atheism", "soc.religion.christian", "comp.graphics", "sci.med"]
+twenty_train = fetch_20newsgroups(subset="train", categories=categories, shuffle=True, random_state=42)
+twenty_test = fetch_20newsgroups(subset="test", categories=categories, shuffle=True, random_state=42)
 
-print("\nThree departments (made up)")
-names = ["Billing", "Technical", "Security"]
-print(classification_report(true_departments, predicted_departments, labels=names))
+text_clf = Pipeline([
+    ("vect", CountVectorizer()),
+    ("tfidf", TfidfTransformer()),
+    ("clf", SGDClassifier(loss="hinge", penalty="l2", alpha=1e-3,
+                          random_state=42, max_iter=5, tol=None)),
+])
+text_clf.fit(twenty_train.data, twenty_train.target)
+newsgroup_predictions = text_clf.predict(twenty_test.data)
+
+print("\nFour newsgroups")
+print(classification_report(twenty_test.target, newsgroup_predictions,
+                            target_names=twenty_test.target_names))
 print("Confusion matrix (rows = true, columns = predicted):")
-print(names)
-print(confusion_matrix(true_departments, predicted_departments, labels=names))
+print(twenty_test.target_names)
+print(confusion_matrix(twenty_test.target, newsgroup_predictions))
 ```
 
 Here is the output of `uv run main.py`:
@@ -179,22 +184,24 @@ Confusion matrix (rows = true, columns = predicted):
 [[1197    6]
  [  13  178]]
 
-Three departments (made up)
-              precision    recall  f1-score   support
+Four newsgroups
+                        precision    recall  f1-score   support
 
-     Billing       0.93      0.95      0.94        60
-   Technical       0.84      0.90      0.87        30
-    Security       0.71      0.50      0.59        10
+           alt.atheism       0.95      0.80      0.87       319
+         comp.graphics       0.87      0.98      0.92       389
+               sci.med       0.94      0.89      0.91       396
+soc.religion.christian       0.90      0.95      0.93       398
 
-    accuracy                           0.89       100
-   macro avg       0.83      0.78      0.80       100
-weighted avg       0.89      0.89      0.89       100
+              accuracy                           0.91      1502
+             macro avg       0.91      0.91      0.91      1502
+          weighted avg       0.91      0.91      0.91      1502
 
 Confusion matrix (rows = true, columns = predicted):
-['Billing', 'Technical', 'Security']
-[[57  3  0]
- [ 1 27  2]
- [ 3  2  5]]
+['alt.atheism', 'comp.graphics', 'sci.med', 'soc.religion.christian']
+[[256  11  16  36]
+ [  4 380   3   2]
+ [  5  35 353   3]
+ [  5  11   4 378]]
 ```
 
 ## Reading the Output
@@ -212,14 +219,18 @@ Confusion matrix (rows = true, columns = predicted):
 
 ## More Than Two Classes
 
-The spam classifier chooses between two classes. Of the three lab assignment versions, Group B's classifier chooses between six classes (six departments), so if you are in Group B, you will read a report like the one below. When there are more than two classes, scikit-learn calculates precision, recall and F1 for each class in turn, treating that class as the positive one. To show what that looks like, the end of `main.py` has a made-up example: a help desk that sorts 100 messages into three departments. Security is the rare one: it gets only 10 of the 100 messages.
+The spam classifier chooses between two classes. Of the three lab assignment versions, Group B's classifier chooses between six classes (six departments), so if you are in Group B, you will read a report like the one below. When there are more than two classes, scikit-learn calculates precision, recall and F1 for each class in turn, treating that class as the positive one. To show what that looks like, the end of `main.py` repeats the newsgroups example from the scikit-learn text tutorial in Week 3: posts from four newsgroups (atheism, computer graphics, medicine and Christianity), classified with the tf-idf and linear SVM pipeline from the tutorial. The numbers are the same as in the tutorial.
 
-At the bottom of the report are two kinds of average, and they tell different stories:
+Read the report one row at a time. For `alt.atheism`, the recall is 0.80: there were 319 atheism posts in the test set and the classifier found 256 of them. The precision is 0.95: the classifier put 270 posts in `alt.atheism` (256 + 4 + 5 + 5, the first column of the confusion matrix) and 256 of them belonged there. The other classes work the same way, each one taking its turn as the positive class. In the confusion matrix each row is a true newsgroup and each column is a predicted newsgroup, so the numbers on the diagonal are the correct answers.
 
-- **Macro average:** the plain average of the per-class scores. Every class counts the same, however small. Security's recall of 0.50 pulls the macro F1 down to 0.80.
-- **Weighted average:** the per-class scores averaged in proportion to the number of messages in each class. The big departments dominate it, so the weighted F1 is 0.89, the same as the accuracy.
+At the bottom of the report are two kinds of average:
 
-If you only looked at the accuracy, you wouldn't notice that half of the Security messages were sent to the wrong department. The confusion matrix shows where they went: 3 to Billing and 2 to Technical. Each row is a true department and each column is a predicted department, so the numbers on the diagonal are the correct answers.
+- **Macro average:** the plain average of the per-class scores. Every class counts the same, however small.
+- **Weighted average:** the per-class scores averaged in proportion to the number of posts in each class (the *support* column).
+
+Here the four newsgroups are about the same size (319 to 398 posts), so the macro average, the weighted average and the accuracy are all 0.91. They would be different if one class were much smaller than the others. A class with only 10 test posts would hardly change the weighted average or the accuracy, but it would count as much as any other class in the macro average. When the classes are not the same size, look at both averages and at each class's own row.
+
+The accuracy of 0.91 hides the fact that the recall for `alt.atheism` is only 0.80, the lowest of the four. The confusion matrix shows where those posts went: 36 of the 63 that were missed were put in `soc.religion.christian`. That matches what the tutorial said, that atheism and Christianity posts are confused with each other more often than with the other topics.
 
 ## Using a Metric to Tune a Classifier
 
@@ -302,7 +313,7 @@ The code is in the [Lab 4 example](../Examples/Lab04-ClassifierMetrics/CS212_Lab
 - In `spam_results.py`, change `test_size` from 0.25 to 0.5. Which of the numbers change, and by how much? What does that tell you about how much to trust the result from one test set?
 - Which mistake would you rather your spam filter make: sending a real message to the spam folder, or letting a spam message through? What do the precision and recall of spam tell you about that?
 - In `tune.py`, add `0.01` to the `nb__alpha` list and `(1, 3)` to the `ngram_range` list. Do the best settings change? Does the F1 on the test messages change? If not, what does that tell you about how much there was to gain from tuning this classifier?
-- In the three-department example, move one of the Security messages that was sent to Billing so it is predicted correctly. How much does the accuracy change? How much does the Security recall change?
+- In the newsgroups example, look at the confusion matrix. Which two newsgroups are confused most often? Calculate the precision and recall of `sci.med` from the matrix, and check your answers against the report.
 
 ## Reference
 
