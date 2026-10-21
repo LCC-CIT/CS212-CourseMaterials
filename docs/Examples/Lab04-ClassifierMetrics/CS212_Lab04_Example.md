@@ -9,9 +9,9 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-<h1>Lab 4, Measuring a Classifier</h1>
+<h1>Example for Lab 4: Measuring and Iproving a Classifier</h1>
 
-<h2>Example</h2>
+<h2>Example for Lab 4</h2>
 
 This example builds on the [Spam Detection example](../SpamDetection/CS212_SpamDetection_Overview.md). It takes the results of the spam classifier from that example and uses scikit-learn to calculate its *performance metrics*: accuracy (the percent correct), precision, recall and F1. It also prints a classification report and a confusion matrix, and ends with a made-up three-class example to show what the report looks like when there are more than two classes.
 
