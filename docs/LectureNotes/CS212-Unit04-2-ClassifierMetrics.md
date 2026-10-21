@@ -108,6 +108,22 @@ def show_scores(name, true_labels, predicted_labels):
     print("  F1       ", round(f1_score(true_labels, predicted_labels), 3))
 
 
+def keep_fewer(newsgroups, small_group, how_many):
+    """Return the posts and their labels, keeping only the first how_many posts of small_group."""
+    small_label = newsgroups.target_names.index(small_group)
+    posts = []
+    labels = []
+    small_count = 0
+    for i in range(len(newsgroups.data)):
+        label = newsgroups.target[i]
+        if label == small_label:
+            small_count = small_count + 1
+        if label != small_label or small_count <= how_many:
+            posts.append(newsgroups.data[i])
+            labels.append(label)
+    return posts, labels
+
+
 # ---------------------------------------------------------------- two classes
 # The true labels and the predicted labels of the test messages (1 = spam, 0 = ham).
 test_labels, predicted_labels = get_spam_results()
@@ -127,12 +143,18 @@ print(["ham", "spam"])
 print(confusion_matrix(test_labels, predicted_labels))
 
 # ---------------------------------------------------------------- four classes
-# The newsgroups example from the scikit-learn text tutorial (Week 3): posts from four
-# newsgroups, classified with the tf-idf and linear SVM pipeline from that tutorial.
+# The newsgroups example from the scikit-learn text tutorial (Week 3), with two of its
+# newsgroups changed: posts from four newsgroups, classified with the tf-idf and linear
+# SVM pipeline from that tutorial.
 # The first run downloads the data, which scikit-learn keeps for later runs.
-categories = ["alt.atheism", "soc.religion.christian", "comp.graphics", "sci.med"]
+categories = ["talk.religion.misc", "rec.sport.hockey", "comp.graphics", "sci.med"]
 twenty_train = fetch_20newsgroups(subset="train", categories=categories, shuffle=True, random_state=42)
 twenty_test = fetch_20newsgroups(subset="test", categories=categories, shuffle=True, random_state=42)
+
+# To show what happens when one class is rare, keep only 75 of the 377 religion posts for
+# training and 50 of the 251 for testing. The other newsgroups keep all of their posts.
+train_posts, train_labels = keep_fewer(twenty_train, "talk.religion.misc", 75)
+test_posts, test_labels = keep_fewer(twenty_test, "talk.religion.misc", 50)
 
 text_clf = Pipeline([
     ("vect", CountVectorizer()),
@@ -140,15 +162,15 @@ text_clf = Pipeline([
     ("clf", SGDClassifier(loss="hinge", penalty="l2", alpha=1e-3,
                           random_state=42, max_iter=5, tol=None)),
 ])
-text_clf.fit(twenty_train.data, twenty_train.target)
-newsgroup_predictions = text_clf.predict(twenty_test.data)
+text_clf.fit(train_posts, train_labels)
+newsgroup_predictions = text_clf.predict(test_posts)
 
 print("\nFour newsgroups")
-print(classification_report(twenty_test.target, newsgroup_predictions,
+print(classification_report(test_labels, newsgroup_predictions,
                             target_names=twenty_test.target_names))
 print("Confusion matrix (rows = true, columns = predicted):")
 print(twenty_test.target_names)
-print(confusion_matrix(twenty_test.target, newsgroup_predictions))
+print(confusion_matrix(test_labels, newsgroup_predictions))
 ```
 
 Here is the output of `uv run main.py`:
@@ -185,23 +207,23 @@ Confusion matrix (rows = true, columns = predicted):
  [  13  178]]
 
 Four newsgroups
-                        precision    recall  f1-score   support
+                    precision    recall  f1-score   support
 
-           alt.atheism       0.95      0.80      0.87       319
-         comp.graphics       0.87      0.98      0.92       389
-               sci.med       0.94      0.89      0.91       396
-soc.religion.christian       0.90      0.95      0.93       398
+     comp.graphics       0.90      0.97      0.93       389
+  rec.sport.hockey       0.97      0.99      0.98       399
+           sci.med       0.93      0.90      0.92       396
+talk.religion.misc       0.96      0.52      0.68        50
 
-              accuracy                           0.91      1502
-             macro avg       0.91      0.91      0.91      1502
-          weighted avg       0.91      0.91      0.91      1502
+          accuracy                           0.94      1234
+         macro avg       0.94      0.84      0.88      1234
+      weighted avg       0.94      0.94      0.93      1234
 
 Confusion matrix (rows = true, columns = predicted):
-['alt.atheism', 'comp.graphics', 'sci.med', 'soc.religion.christian']
-[[256  11  16  36]
- [  4 380   3   2]
- [  5  35 353   3]
- [  5  11   4 378]]
+['comp.graphics', 'rec.sport.hockey', 'sci.med', 'talk.religion.misc']
+[[377   3   9   0]
+ [  3 394   2   0]
+ [ 35   3 357   1]
+ [  4   6  14  26]]
 ```
 
 ## Reading the Output
@@ -219,18 +241,18 @@ Confusion matrix (rows = true, columns = predicted):
 
 ## More Than Two Classes
 
-The spam classifier chooses between two classes. Of the three lab assignment versions, Group B's classifier chooses between six classes (six departments), so if you are in Group B, you will read a report like the one below. When there are more than two classes, scikit-learn calculates precision, recall and F1 for each class in turn, treating that class as the positive one. To show what that looks like, the end of `main.py` repeats the newsgroups example from the scikit-learn text tutorial in Week 3: posts from four newsgroups (atheism, computer graphics, medicine and Christianity), classified with the tf-idf and linear SVM pipeline from the tutorial. The numbers are the same as in the tutorial.
+The spam classifier chooses between two classes. Of the three lab assignment versions, Group B's classifier chooses between six classes (six departments), so if you are in Group B, you will read a report like the one below. When there are more than two classes, scikit-learn calculates precision, recall and F1 for each class in turn, treating that class as the positive one. To show what that looks like, the end of `main.py` uses the newsgroups example from the scikit-learn text tutorial in Week 3: posts from four newsgroups (computer graphics, hockey, medicine and religion), classified with the tf-idf and linear SVM pipeline from the tutorial. Two of the tutorial's newsgroups (atheism and Christianity) are replaced with hockey and religion. To show what happens when one class is rare, the function `keep_fewer` throws away most of the religion posts: it keeps only 75 of the 377 for training and 50 of the 251 for testing. The other three newsgroups keep all of their posts, about 600 each for training and 390 each for testing.
 
-Read the report one row at a time. For `alt.atheism`, the recall is 0.80: there were 319 atheism posts in the test set and the classifier found 256 of them. The precision is 0.95: the classifier put 270 posts in `alt.atheism` (256 + 4 + 5 + 5, the first column of the confusion matrix) and 256 of them belonged there. The other classes work the same way, each one taking its turn as the positive class. In the confusion matrix each row is a true newsgroup and each column is a predicted newsgroup, so the numbers on the diagonal are the correct answers.
+Read the report one row at a time. For `talk.religion.misc`, the recall is 0.52: there were 50 religion posts in the test set and the classifier found only 26 of them. The precision is 0.96: the classifier put 27 posts in `talk.religion.misc` (0 + 0 + 1 + 26, the last column of the confusion matrix) and 26 of them belonged there. The other classes work the same way, each one taking its turn as the positive class. In the confusion matrix each row is a true newsgroup and each column is a predicted newsgroup, so the numbers on the diagonal are the correct answers.
 
 At the bottom of the report are two kinds of average:
 
 - **Macro average:** the plain average of the per-class scores. Every class counts the same, however small.
 - **Weighted average:** the per-class scores averaged in proportion to the number of posts in each class (the *support* column).
 
-Here the four newsgroups are about the same size (319 to 398 posts), so the macro average, the weighted average and the accuracy are all 0.91. They would be different if one class were much smaller than the others. A class with only 10 test posts would hardly change the weighted average or the accuracy, but it would count as much as any other class in the macro average. When the classes are not the same size, look at both averages and at each class's own row.
+Here the religion class is much smaller than the others: 50 test posts, compared with 389 to 399. In the weighted average it counts for only 50 of the 1234 posts, so the weighted average F1 is 0.93, close to the scores of the three big classes. In the macro average it counts as one class out of four, so its low recall pulls the macro average recall down to 0.84 and the macro average F1 down to 0.88. When the classes are not the same size, look at both averages and at each class's own row.
 
-The accuracy of 0.91 hides the fact that the recall for `alt.atheism` is only 0.80, the lowest of the four. The confusion matrix shows where those posts went: 36 of the 63 that were missed were put in `soc.religion.christian`. That matches what the tutorial said, that atheism and Christianity posts are confused with each other more often than with the other topics.
+The accuracy of 0.94 hides the fact that the classifier misses about half of the religion posts. It is the same problem as the "always ham" classifier: a rare class hardly changes the accuracy, so the accuracy can't tell you how well that class is classified. The confusion matrix shows where the missed posts went: 14 of the 24 were put in `sci.med`. With only 75 religion posts to learn from, the classifier rarely predicts that class. When it does, it is almost always right (high precision), but it misses many of the religion posts (low recall). The best fix is to collect more examples of the rare class. When you can't, you can at least choose a classifier's settings with a score that counts every class equally, as the next section shows.
 
 ## Using a Metric to Tune a Classifier
 
@@ -314,6 +336,7 @@ The code is in the [Lab 4 example](../Examples/Lab04-ClassifierMetrics/CS212_Lab
 - Which mistake would you rather your spam filter make: sending a real message to the spam folder, or letting a spam message through? What do the precision and recall of spam tell you about that?
 - In `tune.py`, add `0.01` to the `nb__alpha` list and `(1, 3)` to the `ngram_range` list. Do the best settings change? Does the F1 on the test messages change? If not, what does that tell you about how much there was to gain from tuning this classifier?
 - In the newsgroups example, look at the confusion matrix. Which two newsgroups are confused most often? Calculate the precision and recall of `sci.med` from the matrix, and check your answers against the report.
+- In `main.py`, change the 75 and the 50 to 377 and 251, so that all of the religion posts are used. How do the recall of `talk.religion.misc` and the macro average change? Try 150 and 100 as well.
 
 ## Reference
 
@@ -322,7 +345,7 @@ The code is in the [Lab 4 example](../Examples/Lab04-ClassifierMetrics/CS212_Lab
 
 
 
-*These notes were drafted by Claude Code and revised by Brian Bird. 10/21/2026*
+*These notes were drafted by Claude and revised by Brian Bird. 10/21/2026*
 
 ---
 
