@@ -21,13 +21,13 @@ author: Brian Bird
 
 When you message your bank's help desk, someone has to decide which team should read it. In this lab you will build a classifier that reads a customer's message and routes it to one of **six departments**: Cards, Payments, Transfers, TopUps, Security or Account.
 
-In Lab 3 the classifiers chose between two or three classes of about the same size. Here there are six, and two of them (Security and Account) are much rarer than the others, as they would be in real life. That makes accuracy a poor measure, and it gives you a chance to see what happens when a classifier mostly learns about the common classes. By the end of the lab you will have:
+In Lab 3 the classifiers chose between two or three classes of about the same size. Here there are six, and two of them (Security and Account) are much rarer than the others, as they would be in real life. That makes accuracy (the percent correct) a poor measure, and it gives you a chance to see what happens when a classifier mostly learns about the common classes. By the end of the lab you will have:
 
 - read a multi-class `classification_report` and `confusion_matrix`,
 - seen how `class_weight` changes the balance between precision and recall for a rare class, and
 - chosen **hyperparameters** with a grid search that is scored with the right measure.
 
-**Before you start,** read the [Lab 4 example](../../../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md). It explains accuracy, precision, recall, F1 and the confusion matrix, which you will use throughout this lab.
+**Before you start,** read the [Lab 4 example](../../../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md). It explains the performance metrics you will use in this lab (accuracy, precision, recall and F1) and the confusion matrix.
 
 ### The data
 
@@ -225,7 +225,7 @@ Write your code in one Python file, and put your answers to the questions in com
 
 2. **Experiment 1: `class_weight`.** Train the same model again with `LogisticRegression(max_iter=2000, class_weight="balanced")`. This makes mistakes on the rare departments count more during training. Print the same report. In your comments, answer:
    - What happened to the precision and recall of Security and Account? Is that what you expected?
-   - What happened to the overall accuracy? What happened to the macro F1 (`f1_score(..., average="macro")`)?
+   - What happened to the accuracy? What happened to the macro F1 (`f1_score(..., average="macro")`)?
    - If Security messages are about fraud and lost cards, would the bank want the old behavior or the new behavior? Which would you choose for the Cards department?
 
 3. **Experiment 2: Tune the hyperparameters.** Use `GridSearchCV` to search `tfidf__ngram_range`, `tfidf__min_df` and `clf__C`. Use `cv=3` and **`scoring="f1_macro"`**. Print the best settings and the cross-validation score. Then print the report and confusion matrix of the best model on the test set. In your comments, answer:

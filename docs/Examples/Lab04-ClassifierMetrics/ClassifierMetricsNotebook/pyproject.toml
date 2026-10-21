@@ -1,0 +1,9 @@
+[project]
+name = "classifier-metrics-notebook"
+version = "0.1.0"
+description = "Lab 4 class example: measuring a classifier with precision, recall and F1"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=7.0.0",
+    "scikit-learn>=1.5",
+]

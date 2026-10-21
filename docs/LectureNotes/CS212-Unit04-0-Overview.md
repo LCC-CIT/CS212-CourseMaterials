@@ -34,7 +34,7 @@ This week we will revisit ML with scikit-learn and go deeper into  concepts and 
 
 - Gain a better understanding of features,  feature extraction and feature vectors.
   
-- Be able to write tests to assess the accuracy of a model and understand all the different types of accuracy metrics.
+- Be able to write tests that measure how well a model works, and understand the different performance metrics (accuracy, precision, recall and F1).
   
 - Understand and be able to set training hyperparameters.
   

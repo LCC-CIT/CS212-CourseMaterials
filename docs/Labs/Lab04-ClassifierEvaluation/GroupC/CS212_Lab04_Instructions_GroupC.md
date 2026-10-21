@@ -21,7 +21,7 @@ author: Brian Bird
 
 After a major disaster, aid organizations receive thousands of messages from people who need help. There are far too many for people to read, so a classifier could pick out the messages that a particular team needs to see first. In this lab you will build a classifier that reads one message and answers a yes/no question: **is this person asking for medical help?**
 
-Most messages are *not* about medical help, so a "yes" is rare. That makes accuracy a poor measure, and it gives you a chance to work with **precision** and **recall**. By the end of the lab you will have:
+Most messages are *not* about medical help, so a "yes" is rare. That makes accuracy (the percent correct) a poor measure, and it gives you a chance to work with **precision** and **recall**. By the end of the lab you will have:
 
 - seen a classifier with 92% accuracy that does nothing useful,
 - used `class_weight` and the **decision threshold** to trade precision for recall, and
@@ -29,7 +29,7 @@ Most messages are *not* about medical help, so a "yes" is rare. That makes accur
 
 **A note about the data.** These are real messages from people in Haiti, Chile, Pakistan and other places, sent during earthquakes, floods and storms. Some are frightening or sad. Read them with respect.
 
-**Before you start,** read the [Lab 4 example](../../../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md). It explains accuracy, precision, recall, F1 and the confusion matrix, which you will use throughout this lab.
+**Before you start,** read the [Lab 4 example](../../../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md). It explains the performance metrics you will use in this lab (accuracy, precision, recall and F1) and the confusion matrix.
 
 ### The data
 

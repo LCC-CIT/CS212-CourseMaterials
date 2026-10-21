@@ -1,7 +1,7 @@
 ---
 title: "Lab 4, Example"
-description: "Class example for Lab 4: measuring a classifier with accuracy, precision, recall and F1."
-keywords: accuracy, precision, recall, F1, confusion matrix, scikit-learn
+description: "Class example for Lab 4: measuring a classifier with the performance metrics accuracy, precision, recall and F1, building on the spam detection example."
+keywords: performance metrics, accuracy, precision, recall, F1, confusion matrix, spam detection, scikit-learn
 material: Lab Instructions
 generator: Typora
 author: Brian Bird
@@ -13,53 +13,77 @@ author: Brian Bird
 
 <h2>Example</h2>
 
-In Lab 3 you measured a classifier with *accuracy*, the share of test messages it got right. That works when the classes are about the same size. It can be very misleading when one class is rare. The Lab 4 assignments (all three groups) are about measuring a classifier well and then improving it, so read this example before you start your lab. The code is a complete Python project. To get all of it at once, [download the project as a zip file](https://download-directory.github.io/?url=https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Examples/Lab04-ClassifierMetrics/Solution), unzip it and run it from inside the unzipped folder (see [Running the Project](#running-the-project)).
+In Lab 3 you measured a classifier with *accuracy*, the percent of test messages it got right. That works when the classes are all about the same size. It can be very misleading when the number of samples for one class is small. 
+
+The Lab 4 assignments (all three groups) are about measuring how well a classifier performs and then improving it. *Accuracy*, *precision*, *recall* and *F1* are all *performance metrics*, which are numbers that measure how well a classifier does its job. 
+
+This example builds on the spam detection example. It takes the spam classifier and shows what its performance metrics mean and how they are calculated. Look at this example before you start your lab. There are two versions of the code: a Jupyter notebook and a complete Python project. To get both, [download them as a zip file](https://download-directory.github.io/?url=https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Examples/Lab04-ClassifierMetrics), unzip it and run the code in the unzipped folder (see [Running the Code](#running-the-code)).
 
 <h2>Contents</h2>
 
 [TOC]
 
+## Starting Point: The Spam Detection Example
+
+The [Spam Detection example](../SpamDetection/CS212_SpamDetection_Overview.md) loads the data, splits it into training and test messages, counts the words, trains the classifier and tests it. After testing, it prints three things about the classifier: its accuracy, a classification report and a confusion matrix.
+
+This example starts where that program ends. It takes the classifier's results and explains what the numbers mean, how they are calculated, and how to judge whether they are good.
+
+The data is the SMS Spam Collection, collected by Tiago Almeida and José María Gómez Hidalgo. It has 5,574 real text messages, and people labeled each one as spam or ham. In the file `data/sms_spam.csv` in the Python project folder (the notebook reads the same data from GitHub), each row has a `label` and a `message`. The file `data/SMSSpamCollection-readme.txt` describes the collection and its terms of use. Only 747 of the messages (13%) are spam.
+
+## What We Are Measuring
+
+To find out how well a classifier works, you compare its answers with the right answers for the same messages. Both are needed:
+
+- The *true labels* are the correct classes in the test data set. Someone read each message and marked it as spam or ham.
+- The *predicted labels* are the classes the classifier chose for the same messages.
+
+You measure the classifier on the *test* messages, which it did not learn from. In this example the true labels and the predicted labels are lists of numbers, where 1 means spam and 0 means ham.
+
+In your lab you will do something similar with a different data set. The true labels come from a data set that your group's lab instructions describe, and the predicted labels come from a classifier that you train with scikit-learn.
+
 ## Why Accuracy Isn't Enough
 
-Imagine a program that watches 1,000 text messages and flags the ones that report an emergency. Only 20 of the 1,000 really are emergencies. Here is a "classifier" that never needs any training:
+The spam classifier's accuracy is 98.6%. That sounds excellent, but how good is it really? Here is a "classifier" that never needs any training:
 
 ```python
 def classify(message):
-    return 0   # 0 means "not an emergency"
+    return "ham"
 ```
 
-It gets 980 out of 1,000 right, so its accuracy is 98%. It also never finds a single emergency, which makes it useless. To see this, you need to count the different kinds of right and wrong answers.
+Most messages are ham: 1,203 of the 1,394 test messages. So this classifier gets 86.3% of them right. It also never finds a single spam message, which makes it useless as a spam filter. The spam classifier's 98.6% has to be compared with that 86.3%. And if spam were much rarer than 13%, the problem would be worse. A classifier that is 99% accurate when 99% of the messages are ham is no better than the one above.
+
+To see how well a classifier does on the rare class (in this case the spam), you need to count the different kinds of right and wrong clasifications.
 
 ## The Four Counts
 
-Pick one class to be the *positive* class. Here it is "emergency" (label 1). Every prediction is one of four kinds:
+Pick one class to be the *positive* class. Here it is spam (label 1). Every prediction is one of four kinds:
 
-| | Predicted "emergency" | Predicted "not emergency" |
+| | Predicted spam | Predicted ham |
 | --- | --- | --- |
-| **Really an emergency** | True positive (TP) | False negative (FN) |
-| **Really not an emergency** | False positive (FP) | True negative (TN) |
+| **Really spam** | True positive (TP) | False negative (FN) |
+| **Really ham** | False positive (FP) | True negative (TN) |
 
-A table like this is called a *confusion matrix*. From the four counts you can calculate:
+A table like this is called a *confusion matrix*. From the four counts you can calculate these performance metrics:
 
 | Measure | Formula | The question it answers |
 | --- | --- | --- |
-| Accuracy | (TP + TN) / all messages | How many of all the messages did it get right? |
-| Precision | TP / (TP + FP) | When it says "emergency", how often is it right? |
-| Recall | TP / (TP + FN) | Of the real emergencies, how many did it find? |
-| F1 | 2 × precision × recall / (precision + recall) | One number that is high only when precision *and* recall are both high |
+| Accuracy | (TP + TN) / all messages | What percent of all the messages did it get right? |
+| Precision | TP / (TP + FP) | When it says "spam", how often is it right? |
+| Recall | TP / (TP + FN) | Of the real spam messages, how many did it find? |
+| F1 | 2 × precision × recall / (precision + recall) | A number that is high only when precision *and* recall are both high |
 
-Precision and recall pull against each other. A classifier that flags everything has perfect recall and terrible precision. One that only flags the messages it is very sure about has high precision and poor recall. Which one you want depends on the cost of each kind of mistake. A missed emergency costs more than a false alarm.
+*Precision* and *recall* pull against each other. A classifier that calls every message spam has perfect recall and terrible precision. One that only says "spam" for only the most obvious spam has high precision and poor recall. Which one you want depends on the *cost* of each kind of mistake. For a spam filter, a real message lost in the spam folder (a false positive) is usually worse than a spam message that gets through (a false negative).
 
 ## Calculating the Measures in Python
 
-The project has two parts. The module `metrics.py` counts the four results with a plain `for` loop and calculates the four measures from the counts. The functions are careful about dividing by zero. For example, a classifier that never says "yes" has `tp + fp == 0`, so its precision can't be calculated and the function returns 0.0.
+This project has these parts (not counting the spam classifier from the previous example). The module `metrics.py` counts the four results with a plain `for` loop and calculates the four measures from the counts. The functions are careful about not dividing by zero. For example, a classifier that never classifies messages as "spam" has `tp + fp == 0`, so its precision can't be calculated and the function returns 0.0.
 
 ```python
-"""Accuracy, precision, recall and F1, calculated by hand from the four counts.
+"""Accuracy, precision, recall and F1, calculated by our code from the four counts.
 
 The positive class is 1. Each function returns 0.0 instead of dividing by zero.
 """
-
 
 def count_results(true_labels, predicted_labels):
     """Count the four kinds of result: true positives, false positives,
@@ -79,22 +103,18 @@ def count_results(true_labels, predicted_labels):
             true_negatives += 1
     return true_positives, false_positives, false_negatives, true_negatives
 
-
 def accuracy(tp, fp, fn, tn):
     return (tp + tn) / (tp + fp + fn + tn)
-
 
 def precision(tp, fp):
     if tp + fp == 0:
         return 0.0  # the classifier never said "yes"
     return tp / (tp + fp)
 
-
 def recall(tp, fn):
     if tp + fn == 0:
         return 0.0  # there were no real "yes" messages
     return tp / (tp + fn)
-
 
 def f1(precision_value, recall_value):
     if precision_value + recall_value == 0:
@@ -102,18 +122,14 @@ def f1(precision_value, recall_value):
     return 2 * precision_value * recall_value / (precision_value + recall_value)
 ```
 
-The program `main.py` uses those functions on some made-up results. It then asks scikit-learn (`sklearn.metrics`) for the same numbers, so you can see that they agree.
+The function `show_scores` in `report.py` uses those functions to print the performance metrics for a set of results. It then asks scikit-learn (`sklearn.metrics`) for the same numbers, so you can see that they agree.
 
 ```python
-# Lab 4 example: measuring a classifier with precision, recall and F1.
-#
-# Run with:  uv run main.py
+"""Prints performance metrics calculated by hand (metrics.py) next to scikit-learn's."""
 
-from sklearn.metrics import (accuracy_score, classification_report, confusion_matrix,
-                             f1_score, precision_score, recall_score)
+from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
 from metrics import accuracy, count_results, f1, precision, recall
-
 
 def show_scores(name, true_labels, predicted_labels):
     tp, fp, fn, tn = count_results(true_labels, predicted_labels)
@@ -127,23 +143,43 @@ def show_scores(name, true_labels, predicted_labels):
           "| precision", round(precision_score(true_labels, predicted_labels, zero_division=0), 3),
           "| recall", round(recall_score(true_labels, predicted_labels), 3),
           "| F1", round(f1_score(true_labels, predicted_labels), 3))
+```
 
+The function `get_spam_results` in `spam_results.py` repeats the steps of the Spam Detection program (the same data, the same 75/25 split, and a naive Bayes classifier on word counts) and returns the true labels and the predicted labels of the test messages. You can read that program to see how those steps work.
+
+The program `main.py` measures the spam classifier. It also measures the "always ham" classifier for comparison, and prints the classification report and confusion matrix that the Spam Detection program printed. At the end it has a made-up example with three classes, which is explained below.
+
+```python
+# Lab 4 example: measuring the spam classifier from the Spam Detection example.
+#
+# Run with:  uv run main.py
+
+from sklearn.metrics import classification_report, confusion_matrix
+
+from report import show_scores
+from spam_results import get_spam_results
 
 # ---------------------------------------------------------------- two classes
-# 1000 messages. The first 20 really are emergencies (1), the other 980 are not (0).
-true_labels = [1] * 20 + [0] * 980
+# The true labels and the predicted labels of the test messages (1 = spam, 0 = ham).
+test_labels, predicted_labels = get_spam_results()
+print(len(test_labels), "test messages,", sum(test_labels), "of them are spam")
+print()
+show_scores("Spam classifier", test_labels, predicted_labels)
 
-# This classifier found 15 of the 20 emergencies and raised 10 false alarms.
-predicted_labels = [1] * 15 + [0] * 5 + [1] * 10 + [0] * 970
-show_scores("Classifier", true_labels, predicted_labels)
+# For comparison, a "classifier" that calls every message ham.
+always_ham = [0] * len(test_labels)
+show_scores("Always ham", test_labels, always_ham)
 
-# A "classifier" that always says no.
-always_no = [0] * 1000
-show_scores("Always no", true_labels, always_no)
+print()
+print(classification_report(test_labels, predicted_labels, target_names=["ham", "spam"]))
+print("Confusion matrix (rows = true, columns = predicted):")
+print(["ham", "spam"])
+print(confusion_matrix(test_labels, predicted_labels))
 
 # ---------------------------------------------------------------- three classes
-# A help desk sorts 100 messages into three departments. Security is the rare one.
-# Each case is (true department, predicted department, how many messages).
+# A made-up example. A help desk sorts 100 messages into three departments.
+# Security is the rare one. Each case is (true department, predicted department,
+# how many messages).
 cases = [
     ("Billing", "Billing", 57), ("Billing", "Technical", 3),
     ("Technical", "Technical", 27), ("Technical", "Billing", 1), ("Technical", "Security", 2),
@@ -156,7 +192,7 @@ for true_department, predicted_department, count in cases:
         true_departments.append(true_department)
         predicted_departments.append(predicted_department)
 
-print("\nThree departments")
+print("\nThree departments (made up)")
 names = ["Billing", "Technical", "Security"]
 print(classification_report(true_departments, predicted_departments, labels=names))
 print("Confusion matrix (rows = true, columns = predicted):")
@@ -167,16 +203,32 @@ print(confusion_matrix(true_departments, predicted_departments, labels=names))
 Here is the output of `uv run main.py`:
 
 ```
-Classifier
-  counts:       TP = 15  FP = 10  FN = 5  TN = 970
-  by hand:      accuracy 0.985 | precision 0.6 | recall 0.75 | F1 0.667
-  scikit-learn: accuracy 0.985 | precision 0.6 | recall 0.75 | F1 0.667
-Always no
-  counts:       TP = 0  FP = 0  FN = 20  TN = 980
-  by hand:      accuracy 0.98 | precision 0.0 | recall 0.0 | F1 0.0
-  scikit-learn: accuracy 0.98 | precision 0.0 | recall 0.0 | F1 0.0
+1394 test messages, 191 of them are spam
 
-Three departments
+Spam classifier
+  counts:       TP = 178  FP = 6  FN = 13  TN = 1197
+  by hand:      accuracy 0.986 | precision 0.967 | recall 0.932 | F1 0.949
+  scikit-learn: accuracy 0.986 | precision 0.967 | recall 0.932 | F1 0.949
+Always ham
+  counts:       TP = 0  FP = 0  FN = 191  TN = 1203
+  by hand:      accuracy 0.863 | precision 0.0 | recall 0.0 | F1 0.0
+  scikit-learn: accuracy 0.863 | precision 0.0 | recall 0.0 | F1 0.0
+
+              precision    recall  f1-score   support
+
+         ham       0.99      1.00      0.99      1203
+        spam       0.97      0.93      0.95       191
+
+    accuracy                           0.99      1394
+   macro avg       0.98      0.96      0.97      1394
+weighted avg       0.99      0.99      0.99      1394
+
+Confusion matrix (rows = true, columns = predicted):
+['ham', 'spam']
+[[1197    6]
+ [  13  178]]
+
+Three departments (made up)
               precision    recall  f1-score   support
 
      Billing       0.93      0.95      0.94        60
@@ -196,13 +248,15 @@ Confusion matrix (rows = true, columns = predicted):
 
 ## Reading the Output
 
-**The "always no" classifier.** Its accuracy is 98%, but its recall is 0.0: it found none of the 20 emergencies. Its precision is also reported as 0.0, but really it is undefined, because the classifier never said "yes". When one class is rare, accuracy mostly measures how common the *other* class is, so it can't tell a useful classifier from a useless one. Precision and recall look at the rare class itself.
+**The "always ham" classifier.** Its accuracy is 86.3%, but its recall is 0.0: it found none of the 191 spam messages. Its precision is also reported as 0.0, but really it is undefined, because the classifier never said "spam". When one class is rare, accuracy mostly measures how common the *other* class is, so it can't tell a useful classifier from a useless one. Precision and recall look at the rare class itself.
 
-**The first classifier.** Its accuracy is 98.5%, which hardly beats "always no". But look at the other measures. The precision of 0.60 means that it said "emergency" 25 times (15 + 10), and 15 of those were right, so 6 out of 10 alarms are real. The recall of 0.75 means that of the 20 real emergencies it found 15 and missed 5. It makes more false-alarm mistakes (10) than missed-emergency mistakes (5). To get fewer false alarms it would have to be more cautious, and then it would probably miss more emergencies.
+**The spam classifier.** Its accuracy of 98.6% is far above the 86.3% of "always ham", so the classifier really is useful. Precision and recall show what kind of mistakes it makes. It said "spam" for 184 of the 1,394 test messages (178 + 6). Its precision is 0.967 because 178 of those 184 really were spam, and the other 6 were normal messages that it wrongly called spam. Its recall is 0.932 because there were 191 spam messages in the test set, and it found 178 of them. The other 13 got through. The confusion matrix at the bottom of the spam results shows the same counts: the row for really ham is `[1197 6]` and the row for really spam is `[13 178]`.
+
+**Which mistake is worse?** That depends on what the classifier is for. For a spam filter, losing a real message (a false positive) is probably worse than letting some spam through (a false negative), so precision matters more. For a classifier that flags emergency messages, it would be the other way around, and recall would matter more. You choose the performance metrics to watch by thinking about what each kind of mistake costs.
 
 ## More Than Two Classes
 
-In the labs, some of the classifiers choose between several classes. scikit-learn then calculates precision, recall and F1 for each class in turn, treating that class as the positive one. The `classification_report` in the output above shows this for a help desk that sorts 100 messages into three departments. Security is the rare one: it gets only 10 of the 100 messages.
+The spam classifier chooses between two classes. In the labs, some of the classifiers choose between several. scikit-learn then calculates precision, recall and F1 for each class in turn, treating that class as the positive one. To show what that looks like, the end of `main.py` has a made-up example: a help desk that sorts 100 messages into three departments. Security is the rare one: it gets only 10 of the 100 messages.
 
 At the bottom of the report are two kinds of average, and they tell different stories:
 
@@ -211,35 +265,57 @@ At the bottom of the report are two kinds of average, and they tell different st
 
 If you only looked at the accuracy, you wouldn't notice that half of the Security messages were sent to the wrong department. The confusion matrix shows where they went: 3 to Billing and 2 to Technical. Each row is a true department and each column is a predicted department, so the numbers on the diagonal are the correct answers.
 
-## Running the Project
+## Running the Code
 
-The project folder has these files:
+The example folder has two subfolders, one for each version of the code:
+
+| Folder | What it is |
+| --- | --- |
+| `ClassifierMetricsProgram` | A complete Python project that you run from the command line with `uv` |
+| `ClassifierMetricsNotebook` | A Jupyter notebook that does the same steps, with an explanation of each one |
+
+### The Python Project
+
+The `ClassifierMetricsProgram` folder has these files:
 
 | File | What it does |
 | --- | --- |
 | `metrics.py` | The functions that count the results and calculate the four measures |
-| `main.py` | Runs the examples and prints the by-hand and scikit-learn results side by side |
+| `report.py` | Prints the by-hand and scikit-learn results side by side |
+| `spam_results.py` | Repeats the steps of the Spam Detection example and returns the true and predicted labels of its test messages |
+| `main.py` | Measures the spam classifier, then shows a made-up three-department example |
+| `data/` | The SMS Spam Collection data file and its readme |
 | `test_metrics.py` | Tests that check `metrics.py` against hand calculations and scikit-learn |
 | `pyproject.toml` | The project settings and the packages it needs |
 | `uv.lock` | The exact package versions that `uv` installed when this was written |
 | `README.md` | A short description of the project |
 
-You need [`uv`](https://docs.astral.sh/uv/). It reads `pyproject.toml` and installs scikit-learn the first time you run something. Run these commands from inside the project folder:
+You need [`uv`](https://docs.astral.sh/uv/). It reads `pyproject.toml` and installs scikit-learn the first time you run something. Run these commands from inside the `ClassifierMetricsProgram` folder:
 
 ```bash
 uv run main.py
 uv run test_metrics.py
 ```
 
+Run them from inside that folder, because `spam_results.py` opens `data/sms_spam.csv` using a relative path, and Python starts looking in the folder where the program is *running*.
+
 The tests are optional, but they are a good model for how to check your own code. `uv run pytest` runs the same tests with pytest, if you want to try it.
+
+### The Jupyter Notebook
+
+The `ClassifierMetricsNotebook` folder has the notebook, `ClassifierMetrics.ipynb`. It downloads the data from GitHub, so it needs an internet connection.
+
+- **In Google Colab:** [open the notebook in Colab](https://colab.research.google.com/github/LCC-CIT/CS212-CourseMaterials/blob/main/docs/Examples/Lab04-ClassifierMetrics/ClassifierMetricsNotebook/ClassifierMetrics.ipynb). Colab already has scikit-learn, so there is nothing to install.
+- **In VS Code:** open a terminal in the `ClassifierMetricsNotebook` folder and run `uv sync`. Then open the notebook and choose the `.venv` Python environment as the kernel.
 
 ## Try It Yourself
 
-- In `main.py`, change the `predicted_labels` list so that the classifier finds all 20 emergencies but raises 100 false alarms. What happens to the precision and the recall?
-- Change it again so that the classifier says "emergency" only once, and is right. What are the precision and recall now?
+- In `main.py`, make a classifier that calls every message spam: `always_spam = [1] * len(test_labels)`. Print its scores with `show_scores`. What are its precision and recall? Why is it useless even though its recall is perfect?
+- In `spam_results.py`, change `test_size` from 0.25 to 0.5. Which of the numbers change, and by how much? What does that tell you about how much to trust the result from one test set?
+- Which mistake would you rather your spam filter make: sending a real message to the spam folder, or letting a spam message through? What do the precision and recall of spam tell you about that?
 - In the three-department example, move one of the Security messages that was sent to Billing so it is predicted correctly. How much does the accuracy change? How much does the Security recall change?
 
-*These lab materials were drafted by Claude Code and are waiting for review by Brian Bird. 10/20/2026*
+*These lab materials were drafted by Claude Code and are waiting for review by Brian Bird. 10/21/2026*
 
 ------
 

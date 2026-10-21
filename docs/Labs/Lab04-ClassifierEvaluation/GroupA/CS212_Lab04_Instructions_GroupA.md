@@ -21,15 +21,15 @@ author: Brian Bird
 
 Teachers, editors and websites all want to know whether a piece of writing came from a person or from a chatbot. In this lab you will build a classifier that reads an answer to a question about computers or science and decides: human (0) or ChatGPT (1).
 
-You will use the same tools as in Lab 3. This time the focus is on *measuring* your classifier and on *improving* it's accuracy. By the end of the lab you will have:
+You will use the same tools as in Lab 3. This time the focus is on *measuring* your classifier and on *improving* its accuracy (the percent correct). By the end of the lab you will have:
 
 - compared different *features* (words, word pairs, characters) and seen how the choice affects the result,
-- measured your classifier with more than accuracy, and
-- chosen **hyperparameters** with a grid search.
+- measured your classifier so you can tell a real improvement from luck and see if it does better on one class than the other, and
+- chosen *hyperparameters* with a grid search.
 
 You will also test your classifier on a different kind of question than the one it was trained on. That test shows how far you can trust a classifier like this.
 
-**Before you start,** read the [Lab 4 example](../../../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md). It explains accuracy, precision, recall, F1 and the confusion matrix, which you will use throughout this lab.
+**Before you start,** read the [Lab 4 example](../../../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md). It explains the performance metrics you will use in this lab (accuracy, precision, recall and F1) and the confusion matrix.
 
 ### The data
 
