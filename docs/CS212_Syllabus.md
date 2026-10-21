@@ -210,7 +210,7 @@ View <a href="https://www.lanecc.edu/calendars/academic-calendar" target="_blank
 | **1**<br />9/28  | Intro to AI<br />Python               | Introduce yourself on Discord<br />Start lab 1&mdash;Python & expert systems<br />Quiz 1 |
 | **2**<br />10/5  | TBD                        | Start lab 2&mdash;Python and SMT solver<br />Quiz 2<br />Lab 1 code review, production version |
 | **3**<br />10/12 | Intro to ML and Bayes                 | Start lab 3&mdash;ML & Bayes rule<br />Quiz 3<br />Lab 2 code review, production version |
-| **4**<br />10/19 | Training an ML Model                  | Start lab 4&mdash;Neural Networks<br />Quiz 4<br />Lab 3 code review, production version |
+| **4**<br />10/19 | Training an ML Model                  | Start lab 4&mdash;Evaluating a text classifier<br />Quiz 4<br />Lab 3 code review, production version |
 | **5**<br />10/26 | History of AI and Midterm Quiz        | Lab 4 code review, production version<br />Midterm quiz: Thursday, 10/29 (hybrid section)<br />See Canvas for locations and dates for the online class section. |
 | **6**<br />11/2  | Neural Networks                       | Term project proposal<br />Start lab 5&mdash;Writing code with AI<br />Quiz 5 |
 | **7**<br />11/9  | Generative AI                         | Start lab 6&mdash;Chat completion API<br />Quiz 6<br />Lab 5 code review, production version |
