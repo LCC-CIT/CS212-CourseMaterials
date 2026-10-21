@@ -2,10 +2,24 @@
 #
 # Run with:  uv run main.py
 
-from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.metrics import (accuracy_score, classification_report, confusion_matrix,
+                             f1_score, precision_score, recall_score)
 
-from report import show_scores
 from spam_results import get_spam_results
+
+
+def show_scores(name, true_labels, predicted_labels):
+    """Print the four counts and the four performance metrics. The positive class is 1."""
+    # For two classes, the confusion matrix has the four counts: [[TN, FP], [FN, TP]].
+    tn, fp, fn, tp = confusion_matrix(true_labels, predicted_labels, labels=[0, 1]).ravel()
+    print(name)
+    print("  counts:  TP =", tp, " FP =", fp, " FN =", fn, " TN =", tn)
+    print("  accuracy ", round(accuracy_score(true_labels, predicted_labels), 3))
+    # zero_division=0 is the score to use if the classifier never says "spam"
+    print("  precision", round(precision_score(true_labels, predicted_labels, zero_division=0), 3))
+    print("  recall   ", round(recall_score(true_labels, predicted_labels), 3))
+    print("  F1       ", round(f1_score(true_labels, predicted_labels), 3))
+
 
 # ---------------------------------------------------------------- two classes
 # The true labels and the predicted labels of the test messages (1 = spam, 0 = ham).
@@ -13,6 +27,7 @@ test_labels, predicted_labels = get_spam_results()
 print(len(test_labels), "test messages,", sum(test_labels), "of them are spam")
 print()
 show_scores("Spam classifier", test_labels, predicted_labels)
+print()
 
 # For comparison, a "classifier" that calls every message ham.
 always_ham = [0] * len(test_labels)

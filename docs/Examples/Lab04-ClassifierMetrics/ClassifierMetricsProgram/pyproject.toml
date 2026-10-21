@@ -6,8 +6,3 @@ requires-python = ">=3.10"
 dependencies = [
     "scikit-learn>=1.5",
 ]
-
-[dependency-groups]
-dev = [
-    "pytest>=8.0",
-]
