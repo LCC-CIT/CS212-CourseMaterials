@@ -1,6 +1,6 @@
 ---
 title: "Lab 4, Group A"
-description: "Instructions for Lab 4, Group A: telling ChatGPT answers from human answers with a text classifier."
+description: "Instructions for Lab 4, Group A: Distinguishing ChatGPT answers from human answers with a text classifier."
 keywords: classifier, scikit-learn, TF-IDF, cross-validation, grid search
 material: Lab Instructions
 generator: Typora
@@ -19,11 +19,11 @@ author: Brian Bird
 
 ## Can a Classifier Tell ChatGPT from a Person?
 
-Teachers, editors and websites all want to know whether a piece of writing came from a person or from a chatbot. In this lab you will build a classifier that reads an answer to a question about computers or science and decides: **human (0)** or **ChatGPT (1)**.
+Teachers, editors and websites all want to know whether a piece of writing came from a person or from a chatbot. In this lab you will build a classifier that reads an answer to a question about computers or science and decides: human (0) or ChatGPT (1).
 
-You will use the same tools as in Lab 3. This time the focus is on *measuring* your classifier well and on *improving* it on purpose. By the end of the lab you will have:
+You will use the same tools as in Lab 3. This time the focus is on *measuring* your classifier and on *improving* it's accuracy. By the end of the lab you will have:
 
-- compared different **features** (words, word pairs, characters) and seen how the choice affects the result,
+- compared different *features* (words, word pairs, characters) and seen how the choice affects the result,
 - measured your classifier with more than accuracy, and
 - chosen **hyperparameters** with a grid search.
 
@@ -239,6 +239,6 @@ The main focus of grading will be on use of the scikit-learn classes, on whether
 
 ------
 
-<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming lab instructions by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2026</time> are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 lab instructions by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2026</time> are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ------------
