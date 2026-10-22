@@ -10,13 +10,31 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-In Lab 3 you measured a classifier with *accuracy*, the percent of test messages it got right. That works when the classes are all about the same size. It can be very misleading when the number of samples for one class is small.
-
-The Lab 4 assignments (all three groups) are about measuring how well a classifier performs and then improving it. *Accuracy*, *precision*, *recall* and *F1* are all *performance metrics*, which are numbers that measure how well a classifier does its job. These notes build on the [Spam Detection example](../Examples/SpamDetection/CS212_SpamDetection_Overview.md): they take its spam classifier and show what its performance metrics mean and how they are calculated. The code is in the [Lab 4 example](../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md).
-
 <h2>Contents</h2>
 
 [TOC]
+
+## Introduction
+
+Last week we briefly looked at classifier with *accuracy*, the percent of test messages it got right. There are other *performance metrics* that matter as well *precision*, *recall* and *F1*. We will learn to use tools to make these performance assessments and discuss their importance. We will also learn how to improve the performance of our models.
+
+## Review
+
+Lets review by looking at a [spam detection example](../Examples/SpamDetection/CS212_SpamDetection_Overview.md). Last week we looked at similar code in [the twenty newsgroups tutorial](https://colab.research.google.com/drive/1FBrABO2L1DFKRn1v0zRknHS57eiktzgm?usp=sharing). In both of these programs, these are the things that are done:
+
+- Prepare the data
+  - Download a data set.
+  - Load the data into a 
+  - Split the data set into training and test sets.
+  - Get word frequency counts from both data sets.
+    (These are the feature vectors.)
+- Training
+  - Use the training data word counts to train the model.
+- Testing
+  - Use the model for prediction (inference).
+    Generate a set of predicted labels for the test data.
+  - Extract feature vectors from the training set.
+  - Calculate an accuracy score (percent right) by comparing the actual labels to the predicted labels.
 
 ## Starting Point: The Spam Detection Example
 
