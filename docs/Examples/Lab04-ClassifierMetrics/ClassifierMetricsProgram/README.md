@@ -6,7 +6,8 @@ The code for the [Lab 4 class example](../CS212_Lab04_Example.html). It builds o
 | --- | --- |
 | `spam_results.py` | Repeats the steps of the Spam Detection example and returns the true and predicted labels of its test messages |
 | `main.py` | Measures the spam classifier with scikit-learn's metrics functions, then shows a four-newsgroups example adapted from the Week 3 tutorial |
-| `tune.py` | Uses `GridSearchCV` to tune the spam classifier, scoring by accuracy and by F1 |
+| `newsgroups_data.py` | Loads the newsgroups posts for `main.py` and `tune.py`, keeping only a few posts from one newsgroup |
+| `tune.py` | Uses `GridSearchCV` to tune the spam classifier and the newsgroups classifier, comparing accuracy with F1 as the score |
 | `data/` | The SMS Spam Collection (`sms_spam.csv`) and its readme, which has its description and terms of use |
 | `pyproject.toml` | The project settings and the packages it needs (scikit-learn) |
 | `uv.lock` | The exact package versions that `uv` installed when this was written |
@@ -18,4 +19,4 @@ uv run main.py
 uv run tune.py
 ```
 
-Run them from this folder: `spam_results.py` opens `data/sms_spam.csv` using a relative path, and Python starts looking in the folder where the program is *running*. The first run of `main.py` downloads the newsgroups data, so it needs an internet connection.
+Run them from this folder: `spam_results.py` opens `data/sms_spam.csv` using a relative path, and Python starts looking in the folder where the program is *running*. The first run of `main.py` or `tune.py` downloads the newsgroups data, so it needs an internet connection.

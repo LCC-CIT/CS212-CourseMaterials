@@ -3,13 +3,13 @@
 #
 # Run with:  uv run main.py
 
-from sklearn.datasets import fetch_20newsgroups
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.linear_model import SGDClassifier
 from sklearn.metrics import (accuracy_score, classification_report, confusion_matrix,
                              f1_score, precision_score, recall_score)
 from sklearn.pipeline import Pipeline
 
+from newsgroups_data import load_newsgroups
 from spam_results import get_spam_results
 
 
@@ -25,21 +25,6 @@ def show_scores(name, true_labels, predicted_labels):
     print("  recall   ", round(recall_score(true_labels, predicted_labels), 3))
     print("  F1       ", round(f1_score(true_labels, predicted_labels), 3))
 
-
-def keep_fewer(newsgroups, small_group, how_many):
-    """Return the posts and their labels, keeping only the first how_many posts of small_group."""
-    small_label = newsgroups.target_names.index(small_group)
-    posts = []
-    labels = []
-    small_count = 0
-    for i in range(len(newsgroups.data)):
-        label = newsgroups.target[i]
-        if label == small_label:
-            small_count = small_count + 1
-        if label != small_label or small_count <= how_many:
-            posts.append(newsgroups.data[i])
-            labels.append(label)
-    return posts, labels
 
 
 # ---------------------------------------------------------------- two classes
@@ -62,17 +47,9 @@ print(confusion_matrix(test_labels, predicted_labels))
 
 # ---------------------------------------------------------------- four classes
 # The newsgroups example from the scikit-learn text tutorial (Week 3), with two of its
-# newsgroups changed: posts from four newsgroups, classified with the tf-idf and linear
-# SVM pipeline from that tutorial.
-# The first run downloads the data, which scikit-learn keeps for later runs.
-categories = ["talk.religion.misc", "rec.sport.hockey", "comp.graphics", "sci.med"]
-twenty_train = fetch_20newsgroups(subset="train", categories=categories, shuffle=True, random_state=42)
-twenty_test = fetch_20newsgroups(subset="test", categories=categories, shuffle=True, random_state=42)
-
-# To show what happens when one class is rare, keep only 75 of the 377 religion posts for
-# training and 50 of the 251 for testing. The other newsgroups keep all of their posts.
-train_posts, train_labels = keep_fewer(twenty_train, "talk.religion.misc", 75)
-test_posts, test_labels = keep_fewer(twenty_test, "talk.religion.misc", 50)
+# newsgroups changed and only a few posts from one of them (see newsgroups_data.py).
+# The posts are classified with the tf-idf and linear SVM pipeline from that tutorial.
+train_posts, test_posts, train_groups, test_groups, group_names = load_newsgroups()
 
 text_clf = Pipeline([
     ("vect", CountVectorizer()),
@@ -80,12 +57,11 @@ text_clf = Pipeline([
     ("clf", SGDClassifier(loss="hinge", penalty="l2", alpha=1e-3,
                           random_state=42, max_iter=5, tol=None)),
 ])
-text_clf.fit(train_posts, train_labels)
+text_clf.fit(train_posts, train_groups)
 newsgroup_predictions = text_clf.predict(test_posts)
 
 print("\nFour newsgroups")
-print(classification_report(test_labels, newsgroup_predictions,
-                            target_names=twenty_test.target_names))
+print(classification_report(test_groups, newsgroup_predictions, target_names=group_names))
 print("Confusion matrix (rows = true, columns = predicted):")
-print(twenty_test.target_names)
-print(confusion_matrix(test_labels, newsgroup_predictions))
+print(group_names)
+print(confusion_matrix(test_groups, newsgroup_predictions))
