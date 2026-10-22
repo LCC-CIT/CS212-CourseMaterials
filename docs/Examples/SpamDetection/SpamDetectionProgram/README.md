@@ -16,26 +16,33 @@ uv run spam_detection.py
 
 The packages the program needs are listed in a comment block at the top of `spam_detection.py`. `uv` reads that list and installs the packages in its own cache, so it doesn't create a `.venv` folder.
 
-### Using a `pyproject.toml` File Instead
+### Using the `pyproject.toml` File
 
-Most Python projects list their packages in a `pyproject.toml` file instead. If you want to do that (for example, to add more Python files to the project), make a file named `pyproject.toml` in the `SpamDetectionProgram` folder with this code:
-
-```toml
-[project]
-name = "spam-detection-program"
-version = "0.1.0"
-description = "Detecting spam text messages with a naive Bayes classifier"
-requires-python = ">=3.11"
-dependencies = [
-    "numpy>=2.4.0",
-    "pandas>=3.0.0",
-    "scikit-learn>=1.9.0",
-]
-```
-
-Next, delete the comment block at the top of `spam_detection.py` (the lines from `# /// script` to `# ///`). If a script has that block, `uv run` uses it and ignores `pyproject.toml`.
+The `SpamDetectionProgram` folder includes a `pyproject.toml` file that lists the required packages. To use it instead of the inline script dependencies, delete the comment block at the top of `spam_detection.py` (the lines from `# /// script` to `# ///`). If a script has that block, `uv run` uses it and ignores `pyproject.toml`.
 
 Then run the program with the same command, `uv run spam_detection.py`. This time `uv` installs the packages in a `.venv` folder inside the project folder.
+
+### Activating the Virtual Environment and Running with `python`
+
+The `.venv` folder is a *virtual environment*: a private copy of Python with the project's packages installed. Once `uv` has created it, you can activate it and run the program with the `python` command instead of `uv run`. If `.venv` doesn't exist yet, run `uv sync` in the `SpamDetectionProgram` folder to create it.
+
+Activate the virtual environment from a terminal in the `SpamDetectionProgram` folder:
+
+| Terminal | Command |
+|---|---|
+| Windows PowerShell | `.venv\Scripts\Activate.ps1` |
+| Windows Command Prompt | `.venv\Scripts\activate.bat` |
+| macOS and Linux | `source .venv/bin/activate` |
+
+When it's active, `(.venv)` appears at the start of your terminal prompt. Then run the program:
+
+```bash
+python spam_detection.py
+```
+
+(On macOS and Linux, you may need to type `python3` instead.)
+
+When you're done, type `deactivate` to leave the virtual environment.
 
 ## Run the Program without `uv`
 

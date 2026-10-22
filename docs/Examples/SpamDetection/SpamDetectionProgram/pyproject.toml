@@ -1,0 +1,10 @@
+[project]
+name = "spam-detection-program"
+version = "0.1.0"
+description = "Detecting spam text messages with a naive Bayes classifier"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.4.0",
+    "pandas>=3.0.0",
+    "scikit-learn>=1.9.0",
+]
