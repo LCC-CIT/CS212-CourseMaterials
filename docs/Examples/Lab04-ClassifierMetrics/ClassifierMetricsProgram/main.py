@@ -1,4 +1,5 @@
 # Lab 4 example: measuring the spam classifier from the Spam Detection example.
+# By Brian Bird 10/21/2026 with assistance from Claude Code
 #
 # Run with:  uv run main.py
 
