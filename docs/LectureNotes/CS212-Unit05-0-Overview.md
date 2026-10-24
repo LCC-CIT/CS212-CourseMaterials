@@ -35,16 +35,16 @@ TBD
 
 - Lab 4 code review due by Tuesday, 10/27.
 - Lab 4 production version due by Thursday, 10/29.
-- Midterm quiz on Thursday, 10/29 (hybrid section). See Canvas for locations and dates for the online class section.
+- Midterm quiz on Thursday, 10/29.
 
 ## Instructor's Office Hours
 
 This is just a reminder that I'm always happy to chat, look at code or answer questions!
 
-- Drop in on <a href="https://lanecc.zoom.us/j/8982554800" target="_blank">Zoom</a> or in person in building 19, room 152.
-  - Monday and Wednesday 2:00 to 3:50 in my office and on Zoom.
-  - Tuesday and Thursday 1:00 to 1:50 in the lab.
-- You can email or message me to make an appointment to meet at another time.
+- Drop in:
+  - Monday and Wednesday 2:00 to 3:50 in my office and on [Zoom](https://lanecc.zoom.us/j/8982554800).
+  - Tuesday and Thursday 1:00 to 1:50 in the CIT lab.
+- You can email or DM me to make an appointment to meet at another time.
 
 ---
 
