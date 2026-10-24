@@ -21,11 +21,12 @@ author: Brian Bird
 | 5. <mark>History of AI and Midterm</mark>          | 10. Social and ethical issues |
 |                                                     | 11. Final                     |
 
-<h2>Contents</h2>
+## Learning Objectives
 
-- [Announcements for Fall 2025](#announcements-for-fall-2025)
-- [Things to Do This Week](#things-to-do-this-week)
-- [Instructor's Office Hours](#instructors-office-hours)
+By the end of this week, you will:
+
+- Know the basic outline of the historical development of Machine Learning.
+- Be able to explain the significance of the major milestones in this part of the history of AI.
 
 ## Announcements
 
