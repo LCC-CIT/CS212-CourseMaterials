@@ -33,13 +33,14 @@ Most messages are *not* about medical help, so a "yes" is rare. That makes accur
 
 ### The data
 
-The data is the **Disaster Response Messages** data set, which has about 26,000 messages labeled by Appen (formerly Figure Eight) for disaster relief. Each message has a `genre` (`direct` for a message sent by a person, `news`, or `social`) and 36 yes/no categories. We will use five of the categories, which are listed below. Its license is not stated, so you will download it yourself instead of getting it from the course site.
+The data is the [Disaster Response Messages data set](https://huggingface.co/datasets/community-datasets/disaster_response_messages), which has about 26,000 messages labeled by Appen (formerly Figure Eight) for disaster relief. Each message has a `genre` (which we are not using) and 36 yes/no categories. We will use five of these categories: medical_help, search_and_rescue, missing_people, fire, and water.
 
 ### Set up your project
 
-1. Make a project folder for the lab with `uv init lab04`, and then `cd lab04`.
-2. Add scikit-learn: `uv add scikit-learn`
-3. Save this program as `fetch_data.py` in your project folder and run it once with `uv run fetch_data.py`. It downloads three CSV files (about 7 MB), removes blank and repeated messages, and saves one CSV file named `disaster_messages.csv` in your project folder. Your own program will read that file.
+1. Make a project folder for the lab with `uv init lab04_VersionC`
+2. , and then `cd lab04_VersionC`.
+3. Add scikit-learn: `uv add scikit-learn`
+4. Save this program as `fetch_data.py` in your project folder and run it once with `uv run fetch_data.py`. It downloads three CSV files (about 7 MB), removes blank and repeated messages, and saves one CSV file named `disaster_messages.csv` in your project folder. Your own program will read that file.
 
 ```python
 # fetch_data.py: download the disaster response messages and save them as one CSV file.
@@ -117,19 +118,22 @@ fire 282 messages
 water 1669 messages
 ```
 
-You can choose any of the five categories to work on, but **use `medical_help` unless you have a reason not to.** The percentage is the share of the messages that are "yes".
+You can choose any of the five categories to work on, but **use `medical_help` unless you have a reason not to.** The percentage is the share of the messages that are "yes". 
 
-| Category | "Yes" messages | Share | Notes |
+The table below provides an overview of the messages and the percentage of the total messages that are in each category.
+
+| Category | Number | Percent | Notes |
 | --- | --- | --- | --- |
-| `medical_help` | 2,080 | 7.9% | The default for this lab. Enough "yes" messages to get steady results. |
-| `water` | 1,669 | 6.4% | The easiest. Water has clear keywords. |
-| `search_and_rescue` | 724 | 2.8% | A challenge. The labels are noisy, so expect low scores. |
+| other | 21116  | 80.7% | These messages are uncategorized or not in categories included in the data we downloaded. |
+| `medical_help` | 2,080 | 7.9% | The default for this lab. Enough messages in this category to get steady results. |
+| `water` | 1,669 | 6.4% | The easiest to classify. Water has clear keywords. |
+| `search_and_rescue` | 724 | 2.8% | A challenge. The labels are noisy, so expect low performance scores. |
 | `missing_people` | 298 | 1.1% | A challenge. Very few examples. |
 | `fire` | 282 | 1.1% | A challenge. Very few examples. |
 
 ### Starter code
 
-Put this code at the top of your program. It reads the CSV file and gives you the message texts and the 1/0 labels for the category you choose.
+Create a new program file and put this code at the top. It reads the CSV file and gives you the message texts and the 1/0 labels for the category you choose.
 
 ```python
 import csv
@@ -180,7 +184,7 @@ test: 5234 messages, 416 yes
 
 Write your code in one Python file, and put your answers to the questions in comments. Unless a step says otherwise, train on the training set and measure on the **validation** set.
 
-1. **An "always no" classifier.** Use `DummyClassifier(strategy="most_frequent")`, which ignores the message and always predicts the most common label. Train it and print its accuracy, precision and recall for the "yes" class (`precision_score`, `recall_score` with `zero_division=0`). In your comments, say what the accuracy is and why that number is misleading.
+1. **An "always medical_help" classifier.** Use `DummyClassifier(strategy="most_frequent")`, which ignores the message and always predicts the most common label. Train it and print its accuracy, precision and recall for the "yes" class (`precision_score`, `recall_score` with `zero_division=0`). In your comments, say what the accuracy is and why that number is misleading.
 
 2. **Baseline.** Build a pipeline with a `TfidfVectorizer` and a `LogisticRegression`:
 
