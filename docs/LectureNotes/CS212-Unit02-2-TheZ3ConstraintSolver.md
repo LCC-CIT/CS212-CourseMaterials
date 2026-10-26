@@ -40,7 +40,7 @@ s = Solver()                                  # 2. create a solver
 for friend in (ana, ben, cat, dev):           # 3. add the constraints
     s.add(friend >= 1, friend <= 4)           # seats are numbered 1-4
 s.add(Distinct(ana, ben, cat, dev))           # everyone gets their own seat
-s.add(Abs(ana - ben) > 1)                     # Ana and Ben aren't next to each other
+s.add(Abs(ana - ben) > 1)                     # Ana and Ben aren't side by side
 s.add(cat == 1)                               # Cat gets the aisle seat
 s.add(Abs(dev - ana) == 1)                    # Dev sits next to Ana
 s.add(ana < ben)                              # Ana is to the left of Ben
@@ -230,8 +230,9 @@ for i in range(len(names)):
         g = names[j]
         start1, end1 = flights[f]
         start2, end2 = flights[g]
-        if start1 < end2 and start2 < end1:      # plain Python: the times are known
-            s.add(gate[f] != gate[g])            # Z3: the gates are unknown
+        # Plain Python: the times are known
+        if start1 < end2 and start2 < end1:
+            s.add(gate[f] != gate[g])  # Z3: the gates are unknown
 
 print(s.check())    # unsat
 ```
@@ -350,10 +351,13 @@ from z3 import *
 x = Int('x')            # whole number
 r = Real('r')           # decimal number
 b = Bool('b')           # True / False
-a, c, d = Ints('a c d') # several at once
+a, c, d = Ints('a c d')  # several at once
 
 # --- constraints (expressions using +, -, *, ==, !=, <, <=, >, >=) ---
-And(x > 0, x < 5)   Or(b, x == 3)   Not(b)   Implies(b, x == 0)
+And(x > 0, x < 5)
+Or(b, x == 3)
+Not(b)
+Implies(b, x == 0)
 If(x > 0, 1, 0)         # If(condition, value_if_true, value_if_false)
 Distinct(a, c, d)
 Sum([a, c, d])
@@ -364,7 +368,8 @@ s = Solver()
 s.add(constraint, ...)
 s.check()               # sat / unsat / unknown
 s.model()               # the solution (only after sat)
-s.push();  s.pop()      # temporary constraints
+s.push()                # temporary constraints
+s.pop()
 s.reset()               # start over
 
 # --- reading a model ---
@@ -374,7 +379,8 @@ m.eval(expression)      # evaluate an expression using the solution
 
 # --- optimization ---
 o = Optimize()          # like Solver, plus:
-o.maximize(expr);  o.minimize(expr)
+o.maximize(expr)
+o.minimize(expr)
 ```
 
 ## Practice Problems

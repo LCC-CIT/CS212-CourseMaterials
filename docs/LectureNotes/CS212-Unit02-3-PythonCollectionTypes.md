@@ -79,7 +79,8 @@ print(student_profile["major"])
 # Mutability (adding a new key-value pair)
 student_profile["gpa"] = 3.8
 print(student_profile)
-# Output: {'name': 'Alice', 'age': 21, 'major': 'Computer Science', 'gpa': 3.8}
+# Output:
+# {'name': 'Alice', 'age': 21, 'major': 'Computer Science', 'gpa': 3.8}
 ```
 
 ### Accessing Dictionary Values using `get()`
@@ -212,7 +213,7 @@ Python
 
 ```
 coordinates = (10.0, 20.5)
-rgb_color = ("red", 255, 0, 0) # Common use for fixed sets of values
+rgb_color = ("red", 255, 0, 0)  # Common use for fixed sets of values
 print(coordinates)
 # Output: (10.0, 20.5)
 
@@ -221,11 +222,14 @@ print(rgb_color[0])
 # Output: red
 
 # Immutability (this would cause an error if uncommented)
-# coordinates[0] = 15.0 # TypeError: 'tuple' object does not support item assignment
+# coordinates[0] = 15.0
+# TypeError: 'tuple' object does not support item assignment
+
 
 # A common use case: returning multiple values from a function
 def get_user_info():
     return "Alice", 30, "alice@example.com"
+
 
 name, age, email = get_user_info()
 print(f"Name: {name}, Age: {age}")

@@ -228,21 +228,21 @@ Here is an implementation of the classic "FizzBuzz" program[^1] in Python:
 ```python
 # FizzBuzz program
 for i in range(1, 10):
-      output = ""
+    output = ""
 
-      # Check for divisibility by 3
-      if i % 3 == 0:
-          output += "Fizz"
+    # Check for divisibility by 3
+    if i % 3 == 0:
+        output += "Fizz"
 
-      # Check for divisibility by 5
-      if i % 5 == 0:
-          output += "Buzz"
+    # Check for divisibility by 5
+    if i % 5 == 0:
+        output += "Buzz"
 
-      # If output is still empty, print the number
-      if output == "":
-          print(i)
-      else:
-          print(output)
+    # If output is still empty, print the number
+    if output == "":
+        print(i)
+    else:
+        print(output)
 ```
 
 

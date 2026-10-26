@@ -45,7 +45,7 @@ This is just a reminder that I'm always happy to chat, look at code or answer qu
 - Drop in:
   - Monday and Wednesday 2:00 to 3:50 in my office and on [Zoom](https://lanecc.zoom.us/j/8982554800).
   - Tuesday and Thursday 1:00 to 1:50 in the CIT lab.
-- You can email or DM me to make an appointment to meet at another time.
+- You can also contact me to make an appointment to meet at another time.
 
 ---
 

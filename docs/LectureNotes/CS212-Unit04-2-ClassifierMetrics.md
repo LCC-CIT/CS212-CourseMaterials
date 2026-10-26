@@ -99,15 +99,17 @@ The function `get_spam_results` in `spam_results.py` repeats the steps of the Sp
 The program `main.py` has a function, `show_scores`, that uses these scikit-learn functions to print the four counts and the four performance metrics. It measures the spam classifier and the "always ham" classifier for comparison, and prints the classification report and confusion matrix that the Spam Detection program printed. At the end it shows a four-newsgroups example adapted from the scikit-learn text tutorial (Week 3), which has more than two classes and is explained below.
 
 ```python
-# Lab 4 example: measuring the spam classifier from the Spam Detection example.
+# Lab 4 example: measuring the spam classifier from the Spam Detection
+# example.
 # By Brian Bird 10/21/2026 with assistance from Claude Code
 #
 # Run with:  uv run main.py
 
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.linear_model import SGDClassifier
-from sklearn.metrics import (accuracy_score, classification_report, confusion_matrix,
-                             f1_score, precision_score, recall_score)
+from sklearn.metrics import (accuracy_score, classification_report,
+                             confusion_matrix, f1_score, precision_score,
+                             recall_score)
 from sklearn.pipeline import Pipeline
 
 from newsgroups_data import load_newsgroups
@@ -115,21 +117,31 @@ from spam_results import get_spam_results
 
 
 def show_scores(name, true_labels, predicted_labels):
-    """Print the four counts and the four performance metrics. The positive class is 1."""
-    # For two classes, the confusion matrix has the four counts: [[TN, FP], [FN, TP]].
-    tn, fp, fn, tp = confusion_matrix(true_labels, predicted_labels, labels=[0, 1]).ravel()
+    """Print the four counts and the four performance metrics.
+
+    The positive class is 1.
+    """
+    # For two classes, the confusion matrix has the four counts:
+    # [[TN, FP], [FN, TP]].
+    matrix = confusion_matrix(true_labels, predicted_labels, labels=[0, 1])
+    tn, fp, fn, tp = matrix.ravel()
     print(name)
     print("  counts:  TP =", tp, " FP =", fp, " FN =", fn, " TN =", tn)
-    print("  accuracy ", round(accuracy_score(true_labels, predicted_labels), 3))
-    # zero_division=0 is the score to use if the classifier never says "spam"
-    print("  precision", round(precision_score(true_labels, predicted_labels, zero_division=0), 3))
-    print("  recall   ", round(recall_score(true_labels, predicted_labels), 3))
-    print("  F1       ", round(f1_score(true_labels, predicted_labels), 3))
+    accuracy = accuracy_score(true_labels, predicted_labels)
+    # zero_division=0 is the score to use if the classifier never says
+    # "spam"
+    precision = precision_score(true_labels, predicted_labels, zero_division=0)
+    recall = recall_score(true_labels, predicted_labels)
+    f1 = f1_score(true_labels, predicted_labels)
+    print("  accuracy ", round(accuracy, 3))
+    print("  precision", round(precision, 3))
+    print("  recall   ", round(recall, 3))
+    print("  F1       ", round(f1, 3))
 
 
-
-# ---------------------------------------------------------------- two classes
-# The true labels and the predicted labels of the test messages (1 = spam, 0 = ham).
+# ------------------------------------------------ two classes
+# The true labels and the predicted labels of the test messages
+# (1 = spam, 0 = ham).
 test_labels, predicted_labels = get_spam_results()
 print(len(test_labels), "test messages,", sum(test_labels), "of them are spam")
 print()
@@ -141,16 +153,19 @@ always_ham = [0] * len(test_labels)
 show_scores("Always ham", test_labels, always_ham)
 
 print()
-print(classification_report(test_labels, predicted_labels, target_names=["ham", "spam"]))
+print(classification_report(test_labels, predicted_labels,
+                            target_names=["ham", "spam"]))
 print("Confusion matrix (rows = true, columns = predicted):")
 print(["ham", "spam"])
 print(confusion_matrix(test_labels, predicted_labels))
 
-# ---------------------------------------------------------------- four classes
-# The newsgroups example from the scikit-learn text tutorial (Week 3), with two of its
-# newsgroups changed and only a few posts from one of them (see newsgroups_data.py).
-# The posts are classified with the tf-idf and linear SVM pipeline from that tutorial.
-train_posts, test_posts, train_groups, test_groups, group_names = load_newsgroups()
+# ------------------------------------------------ four classes
+# The newsgroups example from the scikit-learn text tutorial (Week 3),
+# with two of its newsgroups changed and only a few posts from one of
+# them (see newsgroups_data.py). The posts are classified with the
+# tf-idf and linear SVM pipeline from that tutorial.
+(train_posts, test_posts, train_groups, test_groups,
+ group_names) = load_newsgroups()
 
 text_clf = Pipeline([
     ("vect", CountVectorizer()),
@@ -162,7 +177,8 @@ text_clf.fit(train_posts, train_groups)
 newsgroup_predictions = text_clf.predict(test_posts)
 
 print("\nFour newsgroups")
-print(classification_report(test_groups, newsgroup_predictions, target_names=group_names))
+print(classification_report(test_groups, newsgroup_predictions,
+                            target_names=group_names))
 print("Confusion matrix (rows = true, columns = predicted):")
 print(group_names)
 print(confusion_matrix(test_groups, newsgroup_predictions))
@@ -258,8 +274,8 @@ That score is another performance metric, and you choose it with the `scoring` a
 The program `tune.py` tunes the spam classifier first, then the newsgroups classifier. For each one it puts the steps in a `Pipeline`, so the grid search can change settings in any of them, and it tries a small grid with each of two scores. You can run it with `uv run tune.py`. It takes about a minute.
 
 ```python
-# Lab 4 example: using a performance metric to tune the spam classifier and the
-# newsgroups classifier.
+# Lab 4 example: using a performance metric to tune the spam classifier
+# and the newsgroups classifier.
 #
 # Run with:  uv run tune.py
 
@@ -273,60 +289,78 @@ from sklearn.pipeline import Pipeline
 from newsgroups_data import load_newsgroups
 from spam_results import load_spam_data
 
-# ---------------------------------------------------------------- spam
-train_messages, test_messages, train_labels, test_labels = load_spam_data()
+# ------------------------------------------------ spam
+(train_messages, test_messages,
+ train_labels, test_labels) = load_spam_data()
 
-# The same steps as before, as a pipeline. The names "counts" and "nb" are used
-# in the settings below, for example "nb__alpha" is the alpha setting of "nb".
-pipeline = Pipeline([("counts", CountVectorizer()), ("nb", MultinomialNB())])
+# The same steps as before, as a pipeline. The names "counts" and "nb"
+# are used in the settings below, for example "nb__alpha" is the alpha
+# setting of "nb".
+pipeline = Pipeline([("counts", CountVectorizer()),
+                     ("nb", MultinomialNB())])
 settings = {
-    "counts__ngram_range": [(1, 1), (1, 2)],   # single words, or single words and word pairs
-    "nb__alpha": [0.1, 0.5, 1.0],              # how much smoothing naive Bayes does
+    # single words, or single words and word pairs
+    "counts__ngram_range": [(1, 1), (1, 2)],
+    # how much smoothing naive Bayes does
+    "nb__alpha": [0.1, 0.5, 1.0],
 }
 
-# Try every combination of settings, using 5-fold cross-validation on the training
-# messages only. The score decides which combination is "best", so the choice of
-# score matters. We try two: accuracy and F1 (the F1 of the positive class, spam).
+# Try every combination of settings, using 5-fold cross-validation on
+# the training messages only. The score decides which combination is
+# "best", so the choice of score matters. We try two: accuracy and F1
+# (the F1 of the positive class, spam).
 for score_name in ["accuracy", "f1"]:
     search = GridSearchCV(pipeline, settings, scoring=score_name, cv=5)
     search.fit(train_messages, train_labels)
     print("Best settings when scoring by", score_name)
     print("  ", search.best_params_)
-    print("   cross-validation", score_name, "=", round(search.best_score_, 3))
+    print("   cross-validation", score_name, "=",
+          round(search.best_score_, 3))
 
-# Only now use the test messages, once, with the model that was best by F1.
+# Only now use the test messages, once, with the model that was best
+# by F1.
 print()
 predicted_labels = search.predict(test_messages)
-print(classification_report(test_labels, predicted_labels, target_names=["ham", "spam"]))
+print(classification_report(test_labels, predicted_labels,
+                            target_names=["ham", "spam"]))
 
-# ---------------------------------------------------------------- four newsgroups
-# The newsgroups classifier from main.py, where talk.religion.misc is the rare class.
-train_posts, test_posts, train_groups, test_groups, group_names = load_newsgroups()
+# ------------------------------------------------ four newsgroups
+# The newsgroups classifier from main.py, where talk.religion.misc is
+# the rare class.
+(train_posts, test_posts, train_groups, test_groups,
+ group_names) = load_newsgroups()
 
 pipeline = Pipeline([
     ("vect", CountVectorizer()),
     ("tfidf", TfidfTransformer()),
-    ("clf", SGDClassifier(loss="hinge", penalty="l2", random_state=42, max_iter=5, tol=None)),
+    ("clf", SGDClassifier(loss="hinge", penalty="l2", random_state=42,
+                          max_iter=5, tol=None)),
 ])
 settings = {
-    "vect__ngram_range": [(1, 1), (1, 2)],          # single words, or single words and word pairs
-    "clf__alpha": [0.01, 0.001, 0.0001, 0.00001],   # how strongly the classifier is kept simple
-    "clf__class_weight": [None, "balanced"],        # "balanced" counts each post of a small class for more
+    # single words, or single words and word pairs
+    "vect__ngram_range": [(1, 1), (1, 2)],
+    # how strongly the classifier is kept simple
+    "clf__alpha": [0.01, 0.001, 0.0001, 0.00001],
+    # "balanced" counts each post of a small class for more
+    "clf__class_weight": [None, "balanced"],
 }
 
-# This time we compare accuracy with f1_macro, the average of the F1 of each newsgroup.
-# To see how the two choices differ, we test both tuned models on the test posts. The
-# test results are only for comparing them, not for choosing the settings.
+# This time we compare accuracy with f1_macro, the average of the F1 of
+# each newsgroup. To see how the two choices differ, we test both tuned
+# models on the test posts. The test results are only for comparing
+# them, not for choosing the settings.
 print("Four newsgroups")
 for score_name in ["accuracy", "f1_macro"]:
     search = GridSearchCV(pipeline, settings, scoring=score_name, cv=5)
     search.fit(train_posts, train_groups)
     print("Best settings when scoring by", score_name)
     print("  ", search.best_params_)
-    print("   cross-validation", score_name, "=", round(search.best_score_, 3))
+    print("   cross-validation", score_name, "=",
+          round(search.best_score_, 3))
     print()
     predicted_groups = search.predict(test_posts)
-    print(classification_report(test_groups, predicted_groups, target_names=group_names))
+    print(classification_report(test_groups, predicted_groups,
+                                target_names=group_names))
 ```
 
 Here is the output of `uv run tune.py`:

@@ -96,7 +96,8 @@ In MacOS terminal: `export GEMINI_API_KEY="<YOUR_API_KEY>"`
 ```python
 from google import genai
 
-# The client gets the API key from the environment variable `GEMINI_API_KEY`.
+# The client gets the API key from the environment variable
+# `GEMINI_API_KEY`.
 client = genai.Client()
 
 response = client.models.generate_content(

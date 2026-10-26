@@ -36,7 +36,7 @@ s = Solver()                                  # 2. create a solver
 for friend in (ana, ben, cat, dev):           # 3. add the constraints
     s.add(friend >= 1, friend <= 4)           # seats are numbered 1-4
 s.add(Distinct(ana, ben, cat, dev))           # everyone gets their own seat
-s.add(Abs(ana - ben) > 1)                     # Ana and Ben aren't next to each other
+s.add(Abs(ana - ben) > 1)                     # Ana and Ben aren't side by side
 s.add(cat == 1)                               # Cat gets the aisle seat
 s.add(Abs(dev - ana) == 1)                    # Dev sits next to Ana
 s.add(ana < ben)                              # Ana is to the left of Ben
@@ -239,8 +239,9 @@ def create_variables(flights):
 
 
 def overlap(flight_a, flight_b):
-    """Plain Python: the times are known, so a normal comparison works."""
-    return flight_a["arrive"] < flight_b["depart"] and flight_b["arrive"] < flight_a["depart"]
+    """Plain Python: the times are known, so a comparison works."""
+    return (flight_a["arrive"] < flight_b["depart"]
+            and flight_b["arrive"] < flight_a["depart"])
 
 
 def add_constraints(solver, flights, gate, num_gates):
@@ -255,7 +256,11 @@ def add_constraints(solver, flights, gate, num_gates):
 
 
 def assign_gates(flights, num_gates):
-    """Return {"status": "sat" or "unsat" or "unknown", "gates": {flight name: gate number}}."""
+    """Assign a gate to each flight.
+
+    Return {"status": "sat" or "unsat" or "unknown",
+            "gates": {flight name: gate number}}.
+    """
     solver = Solver()
     gate = create_variables(flights)
     add_constraints(solver, flights, gate, num_gates)
@@ -283,7 +288,8 @@ for num_gates in (2, 3):
     print(num_gates, "gates:", answer["status"], answer["gates"])
 
 # 2 gates: unsat {}
-# 3 gates: sat {'F1': 1, 'F2': 2, 'F3': 1, 'F4': 3}    (Z3 may pick other valid gates)
+# 3 gates: sat {'F1': 1, 'F2': 2, 'F3': 1, 'F4': 3}
+# (Z3 may pick other valid gates)
 ```
 
 With 2 gates the answer is **`unsat`**: F1, F2, and F4 are all at the airport during the 9 o'clock hour, so three gates are needed. With 3 gates, the solver returns `sat`, and `assign_gates()` reads each flight's gate out of the model.
@@ -307,7 +313,7 @@ NUM_TRUCKS = 2
 
 
 def load_packages():
-    """Return the packages as a list of dictionaries (weight is in kg)."""
+    """Return the packages as a list of dictionaries (weight in kg)."""
     return [
         {"name": "P1", "weight": 4},
         {"name": "P2", "weight": 3},
@@ -324,7 +330,7 @@ from z3 import Int, Solver, If, Sum, sat
 
 
 def create_variables(packages):
-    """Make one variable for each package: the number of the truck that carries it."""
+    """Make one variable per package: the number of its truck."""
     truck = []
     for package in packages:
         truck.append(Int("truck_" + package["name"]))
@@ -345,7 +351,10 @@ def add_constraints(solver, packages, truck, num_trucks, capacity):
 
 
 def load_trucks(packages, num_trucks, capacity):
-    """Return {"status": ..., "trucks": {package name: truck number}}."""
+    """Load each package onto a truck.
+
+    Return {"status": ..., "trucks": {package name: truck number}}.
+    """
     solver = Solver()
     truck = create_variables(packages)
     add_constraints(solver, packages, truck, num_trucks, capacity)
@@ -356,7 +365,8 @@ def load_trucks(packages, num_trucks, capacity):
     if result == sat:
         model = solver.model()
         for p in range(len(packages)):
-            truck_number = model.eval(truck[p], model_completion=True).as_long()
+            truck_number = model.eval(truck[p],
+                                      model_completion=True).as_long()
             answer["trucks"][packages[p]["name"]] = truck_number
     return answer
 ```
@@ -428,7 +438,7 @@ s.add(Implies(in_range, And(x >= 0, x <= 10)))
 s.add(Implies(is_even, x % 2 == 0))
 s.add(Implies(is_big, x > 20))
 
-result = s.check([in_range, is_even, is_big])    # the flags are the assumptions
+result = s.check([in_range, is_even, is_big])  # the flags are assumptions
 if result == unsat:
     print(s.unsat_core())    # [in_range, is_big]  (the order can vary)
 ```
@@ -506,10 +516,13 @@ from z3 import *
 x = Int('x')            # whole number
 r = Real('r')           # decimal number
 b = Bool('b')           # True / False
-a, c, d = Ints('a c d') # several at once
+a, c, d = Ints('a c d')  # several at once
 
 # --- constraints (expressions using +, -, *, ==, !=, <, <=, >, >=) ---
-And(x > 0, x < 5)   Or(b, x == 3)   Not(b)   Implies(b, x == 0)
+And(x > 0, x < 5)
+Or(b, x == 3)
+Not(b)
+Implies(b, x == 0)
 If(x > 0, 1, 0)         # If(condition, value_if_true, value_if_false)
 Distinct(a, c, d)
 Sum([a, c, d])
@@ -520,10 +533,11 @@ s = Solver()
 s.add(constraint, ...)
 s.check()               # sat / unsat / unknown
 s.model()               # the solution (only after sat)
-s.push();  s.pop()      # temporary constraints
+s.push()                # temporary constraints
+s.pop()
 s.reset()               # start over
-s.set("timeout", 10000) # give up after 10 seconds (check() returns unknown)
-s.check([flag1, flag2]) # check with tracking flags as assumptions
+s.set("timeout", 10000)  # give up after 10 s (check() returns unknown)
+s.check([flag1, flag2])  # check with tracking flags as assumptions
 s.unsat_core()          # after unsat: the flags that conflict
 
 # --- reading a model ---
@@ -534,7 +548,8 @@ m.eval(x, model_completion=True).as_long()    # always gives a Python int
 
 # --- optimization ---
 o = Optimize()          # like Solver, plus:
-o.maximize(expr);  o.minimize(expr)
+o.maximize(expr)
+o.minimize(expr)
 ```
 
 ## Practice Problems
