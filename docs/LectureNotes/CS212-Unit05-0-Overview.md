@@ -34,9 +34,18 @@ TBD
 
 ## Things to Do This Week
 
-- Lab 4 code review due by Tuesday, 10/27.
-- Lab 4 production version due by Thursday, 10/29.
-- Midterm quiz on Thursday, 10/29.
+- **Lab 4 code review** due by Tuesday, 10/27.
+- **Lab 4 production version** due by Thursday, 10/29.
+- **Midterm quiz** on Thursday, 10/29.
+
+  - <u>In person students:</u> Take the quiz in the classroom at the normal class time. 
+
+  - <u>Online students:</u> You can take it any time on 10/29 using the Midterm Quiz--Remote link on Canvas. You can take it from home or anywhere. 
+    ***If you will not be able to take it that day, let me know in advance so we can arrange a different day for you.*** 
+
+    If you would like to take it in the classroom, you can come to building 19, room 126. The quiz will be available there from 10:00 to 12:00. An advantage to taking the quiz in the classroom is that I will be there and can answer questions you might have during the quiz, The quiz will not be given in the Instructional Testing Services test center. 
+
+  - **You are on your honor not to use anything except your own brain and your one sheet of notes while taking the quiz!** 
 
 ## Instructor's Office Hours
 
