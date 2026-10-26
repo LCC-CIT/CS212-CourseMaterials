@@ -39,7 +39,7 @@ for fruit in fruits:
 **Example (Iterating a fixed number of times using `range()`):**
 
 ```python
-for i in range(3): # range(3) produces the sequence 0, 1, 2
+for i in range(3):  # range(3) produces the sequence 0, 1, 2
     print(f"Count: {i}")
 # Output:
 # Count: 0
@@ -67,7 +67,7 @@ count = 3
 
 while count > 0:
     print(f"Counting down: {count}")
-    count = count - 1 # Crucial step to change the condition
+    count = count - 1  # Crucial step to change the condition
 # Output:
 # Counting down: 3
 # Counting down: 2
@@ -106,7 +106,7 @@ for num in numbers:
 
 ```python
 for x in range(1, 5):
-    if x % 2 != 0: # Skip odd numbers
+    if x % 2 != 0:  # Skip odd numbers
         continue
     print(f"Even number: {x}")
 # Output:

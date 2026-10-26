@@ -61,35 +61,43 @@ MAX_PEOPLE = 3  # Three humans and three zombies in total
 
 # --- Core Logic Functions ---
 
+
 def is_valid_state(h, z):
     """
     Checks the safety constraint for both banks.
-    Constraint: Zombies must not outnumber humans on either bank, unless humans = 0.
+    Constraint: Zombies must not outnumber humans on either bank,
+    unless humans = 0.
 
     Bank 1 (Starting Bank): h humans, z zombies
-    Bank 2 (Other Bank): (MAX_PEOPLE - h) humans, (MAX_PEOPLE - z) zombies
+    Bank 2 (Other Bank): (MAX_PEOPLE - h) humans,
+                         (MAX_PEOPLE - z) zombies
     """
     # Check Bank 1
-    # Condition: If there are humans (h > 0), zombies (z) must not be greater than humans (z <= h).
+    # Condition: If there are humans (h > 0), zombies (z) must not be
+    # greater than humans (z <= h).
     if h > 0 and z > h:
         return False
 
     # Check Bank 2 (Other Bank)
     h_other = MAX_PEOPLE - h
     z_other = MAX_PEOPLE - z
-    # Condition: If there are humans on the other bank (h_other > 0), 
-    # zombies on the other bank (z_other) must not be greater than humans (z_other <= h_other).
+    # Condition: If there are humans on the other bank (h_other > 0),
+    # zombies on the other bank (z_other) must not be greater than
+    # humans (z_other <= h_other).
     if h_other > 0 and z_other > h_other:
         return False
 
-    # Check bounds (must have between 0 and MAX_PEOPLE on the starting bank)
+    # Check bounds (must have between 0 and MAX_PEOPLE on the starting
+    # bank)
     if not (0 <= h <= MAX_PEOPLE and 0 <= z <= MAX_PEOPLE):
         return False
 
     # Boat must always have a position (1 or 0)
-    # The boat check is handled in the 'get_possible_moves' function later.
+    # The boat check is handled in the 'get_possible_moves' function
+    # later.
 
     return True
+
 
 def get_possible_moves():
     """
@@ -107,6 +115,7 @@ def get_possible_moves():
     ]
     return moves
 
+
 def get_next_states(current_state):
     """
     Generates all valid successor states from the current state.
@@ -115,20 +124,27 @@ def get_next_states(current_state):
     next_states = []
 
     # Get the movement factor:
-    # If B=1 (boat on starting bank), the boat moves to the other side (B -> 0), 
-    # and people (h_move, z_move) LEAVE the starting bank (subtracted). Factor = 1.
-    # If B=0 (boat on other bank), the boat moves to the starting bank (B -> 1), 
-    # and people (h_move, z_move) RETURN to the starting bank (added). Factor = -1.
-    
-    # We use 'factor' to determine whether the move adds or subtracts from (H, Z)
-    # Factor = 1: people move from Bank 1 to Bank 2 (H -= h_move, Z -= z_move)
-    # Factor = -1: people move from Bank 2 to Bank 1 (H += h_move, Z += z_move)
+    # If B=1 (boat on starting bank), the boat moves to the other side
+    # (B -> 0), and people (h_move, z_move) LEAVE the starting bank
+    # (subtracted). Factor = 1.
+    # If B=0 (boat on other bank), the boat moves to the starting bank
+    # (B -> 1), and people (h_move, z_move) RETURN to the starting bank
+    # (added). Factor = -1.
+
+    # We use 'factor' to determine whether the move adds or subtracts
+    # from (H, Z)
+    # Factor = 1: people move from Bank 1 to Bank 2
+    #   (H -= h_move, Z -= z_move)
+    # Factor = -1: people move from Bank 2 to Bank 1
+    #   (H += h_move, Z += z_move)
     factor = 1 if B == 1 else -1
 
     for h_move, z_move in get_possible_moves():
-        # A move is valid ONLY IF the people being moved are available on the current boat bank
-        
-        # Calculate people on the boat's current bank (the bank they are leaving from)
+        # A move is valid ONLY IF the people being moved are available
+        # on the current boat bank
+
+        # Calculate people on the boat's current bank (the bank they are
+        # leaving from)
         if B == 1:
             # Leaving from Bank 1 (Starting Bank)
             h_available = H
@@ -140,11 +156,10 @@ def get_next_states(current_state):
 
         # Check if the required people are available to make the move
         if h_move <= h_available and z_move <= z_available:
-            
             # Calculate the new state (H', Z', B')
             H_new = H - (h_move * factor)
             Z_new = Z - (z_move * factor)
-            B_new = 1 - B # Flip boat position
+            B_new = 1 - B  # Flip boat position
 
             # Check if the new state is valid and within bounds
             if is_valid_state(H_new, Z_new):
@@ -152,23 +167,25 @@ def get_next_states(current_state):
 
     return next_states
 
+
 def solve_zombie_crossing():
     """
     Uses Breadth-First Search (BFS) to find the shortest path solution.
     """
     # Queue for BFS: stores (state, path_to_state)
     queue = collections.deque([(INITIAL_STATE, [INITIAL_STATE])])
-    
-    # Set to keep track of visited states to avoid cycles and redundant work
+
+    # Set to keep track of visited states to avoid cycles and redundant
+    # work
     visited = {INITIAL_STATE}
-    
+
     # Run the BFS
     while queue:
         current_state, path = queue.popleft()
 
         # Check for goal state
         if current_state == GOAL_STATE:
-            return path # Found the shortest path!
+            return path  # Found the shortest path!
 
         # Explore successor states
         for next_state in get_next_states(current_state):
@@ -177,8 +194,9 @@ def solve_zombie_crossing():
                 # Create a new path by appending the next_state
                 new_path = path + [next_state]
                 queue.append((next_state, new_path))
-    
-    return None # No solution found
+
+    return None  # No solution found
+
 
 # --- Execution and Output ---
 
@@ -194,19 +212,20 @@ if solution_path:
     for i, state in enumerate(solution_path):
         h, z, b = state
         step_number = i
-        
+
         # Calculate people on the other bank for display purposes
         h_other = MAX_PEOPLE - h
         z_other = MAX_PEOPLE - z
-        
+
         boat_location = "START Bank" if b == 1 else "OTHER Bank"
 
-        # Determine the action taken to get to this state (not possible for step 0)
+        # Determine the action taken to get to this state (not possible
+        # for step 0)
         action_desc = "START"
         if i > 0:
-            prev_state = solution_path[i-1]
+            prev_state = solution_path[i - 1]
             prev_h, prev_z, prev_b = prev_state
-            
+
             # Calculate change in H and Z (relative to starting bank)
             h_diff = prev_h - h
             z_diff = prev_z - z
@@ -216,21 +235,24 @@ if solution_path:
 
             # Reconstruct the move
             if prev_b == 1:
-                # Move was from start to other, so h_diff and z_diff are positive (or zero)
-                action_desc = f"Move {abs(h_diff)} H, {abs(z_diff)} Z {direction}"
+                # Move was from start to other, so h_diff and z_diff are
+                # positive (or zero)
+                action_desc = (f"Move {abs(h_diff)} H, {abs(z_diff)} Z "
+                               f"{direction}")
             else:
-                # Move was from other to start, so h_diff and z_diff are negative (or zero)
-                action_desc = f"Move {abs(h_diff)} H, {abs(z_diff)} Z {direction}"
-
+                # Move was from other to start, so h_diff and z_diff are
+                # negative (or zero)
+                action_desc = (f"Move {abs(h_diff)} H, {abs(z_diff)} Z "
+                               f"{direction}")
 
         print(f"STEP {step_number:02d} | Action: {action_desc}")
         print(f"      Start Bank: {h} Humans, {z} Zombies")
-        print(f"      Other Bank: {h_other} Humans, {z_other} Zombies (Boat: {boat_location})")
+        print(f"      Other Bank: {h_other} Humans, {z_other} Zombies "
+              f"(Boat: {boat_location})")
         print("-" * 40)
-        
+
     print(f"Solution completed in {len(solution_path) - 1} moves.")
 else:
     print("No solution found for the Zombie Crossing problem.")
-
 ```
 

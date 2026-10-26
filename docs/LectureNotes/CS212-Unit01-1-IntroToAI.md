@@ -113,10 +113,10 @@ Here is an outline of what we'll cover:
 
 
 
-<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, revised in 2026 are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in 2025, revised in <time>2026</time> are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 [^1]: <a href="https://en.wikipedia.org/wiki/Dartmouth_workshop" target="_blank">Dartmouth workshop</a>&mdash;Wikipedia
-[^2]: <a href="http://jmc.stanford.edu/artificial-intelligence/what-is-ai/#:~:text=Q.,methods%20that%20are%20biologically%20observable." target="_blank">What is AI? / Basic Questions</a>&mdash;Professor John McCarthy, Father of AI Website
+[^2]: [What is AI? / Basic Questions](https://cs.torontomu.ca/~mes/courses/cps721/ln/McCarthyWhatisAI_Part1_BasicQuestions.pdf)&mdash;Professor John McCarthy, Stanford
 [^3]: <a href="https://law.justia.com/codes/us/2021/title-15/chapter-119/sec-9401/#:~:text=SUBSIDIARIES%20SHORT%20TITLE-,Pub.,Title" target="_blank">2021 U.S. Code Title 15 - Commerce and Trade Chapter 119 - National Artificial Intelligence Initiative Sec. 9401 - Definitions</a>&mdash;Justia web site
 [^4]: <a href="https://en.wikipedia.org/wiki/GOFAI" target="_blank">GOFAI</a>&mdash;Wikipedia
 [^5]: <a href="https://direct.mit.edu/books/book/4347/Artificial-IntelligenceThe-Very-Idea" target="_blank">*Artificial Intelligence: The Very Idea*</a>, John Haugeland, 1989, MIT Press.
