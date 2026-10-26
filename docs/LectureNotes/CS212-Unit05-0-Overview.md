@@ -25,7 +25,7 @@ author: Brian Bird
 
 By the end of this week, you will:
 
-- Know the basic outline of the historical development of Machine Learning.
+- Know the basic outline of the historical development of AI.
 - Be able to explain the significance of the major milestones in this part of the history of AI.
 
 ## Announcements
