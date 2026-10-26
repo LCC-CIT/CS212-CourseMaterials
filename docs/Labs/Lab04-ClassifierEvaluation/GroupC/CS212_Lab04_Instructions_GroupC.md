@@ -184,7 +184,13 @@ test: 5234 messages, 416 yes
 
 Write your code in one Python file, and put your answers to the questions in comments. Unless a step says otherwise, train on the training set and measure on the **validation** set.
 
-1. **An "always medical_help" classifier.** Use `DummyClassifier(strategy="most_frequent")`, which ignores the message and always predicts the most common label. Train it and print its accuracy, precision and recall for the "yes" class (`precision_score`, `recall_score` with `zero_division=0`). In your comments, say what the accuracy is and why that number is misleading.
+1. **An "always no" classifier.** Create a dummy list of labels which are all 0 meaning no category. 
+
+   ```Python
+   always_no = [0] * len(test_labels)  # list of zeros (not categorized).
+   ```
+
+   Use the `sklearn.metrics` functions to see it's *confusion matrix*, *accuracy*, *precision* and *recall* for the medical_help class (`precision_score`, `recall_score` with `zero_division=0`). In your comments, say what the accuracy is and why that number is misleading.
 
 2. **Baseline.** Build a pipeline with a `TfidfVectorizer` and a `LogisticRegression`:
 
