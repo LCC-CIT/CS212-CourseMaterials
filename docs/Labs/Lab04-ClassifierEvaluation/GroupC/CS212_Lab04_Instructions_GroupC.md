@@ -103,20 +103,19 @@ for category in CATEGORIES:
 
 If the download fails with an error that mentions `CERTIFICATE_VERIFY_FAILED`, run `uv add truststore` and then run the program again. If it stops with a timeout, just run it again.
 
-Output:
+Output example:
 
-```
-Downloading training
-Downloading validation
-Downloading test
-Removed 79 blank or repeated messages
-Saved 26169 messages to disaster_messages.csv
-medical_help 2080 messages
-search_and_rescue 724 messages
-missing_people 298 messages
-fire 282 messages
-water 1669 messages
-```
+> Downloading training
+> Downloading validation
+> Downloading test
+> Removed 79 blank or repeated messages
+> Saved 26169 messages to disaster_messages.csv
+> medical_help 2080 messages
+> search_and_rescue 724 messages
+> missing_people 298 messages
+> fire 282 messages
+> water 1669 messages
+
 
 You can choose any of the five categories to work on, but **use `medical_help` unless you have a reason not to.** The percentage is the share of the messages that are "yes". 
 
@@ -223,14 +222,8 @@ Write your code in one Python file, and put your answers to the questions in com
 - **`scoring="f1"`.** `GridSearchCV` picks the setting with the best score. The default score is accuracy, which would favor a classifier that rarely says "yes". `"f1"` is the F1 score of the positive class.
 - **Probabilities.** `predict_proba` returns a table with two columns, the probability of 0 and the probability of 1. `[:, 1]` selects the second column. `LinearSVC` doesn't have `predict_proba`, so use `LogisticRegression` for steps 4 to 6.
 - **Run time.** The grid in step 5 has 24 combinations, so 72 training runs. The whole solution runs in about 20 seconds on a laptop.
-- **What to expect.** Your scores will be modest, and that's normal. This is a hard problem, partly because people don't always label messages the same way. With `medical_help` the baseline finds only about 1 in 10 of the "yes" messages (recall about 0.10), with high precision. With `class_weight="balanced"` the recall goes up to about 0.60, and the precision drops to about 0.35. A tuned model gets an F1 of about 0.45 to 0.50. The test set results will be a bit different from the validation set results.
+- **What to expect.** Your scores will be modest, and that's normal. This is a hard classification problem, partly because people don't always label messages the same way. With `medical_help` the baseline finds only about 1 in 10 of the "yes" messages (recall about 0.10), with high precision. With `class_weight="balanced"` the recall goes up to about 0.60, and the precision drops to about 0.35. A tuned model gets an F1 of about 0.45 to 0.50. The test set results will be a bit different from the validation set results.
 - **Your numbers will differ** if you choose another category or change `random_state`.
-
-### References
-
-The data is the Disaster Response Messages data set from Appen (formerly Figure Eight), as published on <a href="https://huggingface.co/datasets/community-datasets/disaster_response_messages" target="_blank">Hugging Face</a>.
-
-The scikit-learn guides to <a href="https://scikit-learn.org/stable/modules/model_evaluation.html" target="_blank">model evaluation</a> and the [Working with Text Data tutorial](../../../Tutorials/scikit-learn-1.7/WorkingWithTextData.md) (see its sections on the classification report, confusion matrix and grid search) are good references for this lab.
 
 ## Sharing and Submitting Your Lab Work
 
@@ -268,7 +261,15 @@ Based on the code review and helpful advice from your lab partners, you may revi
 
 The main focus of grading will be on use of the scikit-learn classes, on whether you measured your results correctly, and on the explanations in your comments. The accuracy of your classifier will not be graded.
 
-*These lab instructions were drafted by Claude Code and are waiting for review by Brian Bird. 10/20/2026*
+### References
+
+The data is the Disaster Response Messages data set from Appen (formerly Figure Eight), as published on <a href="https://huggingface.co/datasets/community-datasets/disaster_response_messages" target="_blank">Hugging Face</a>.
+
+The scikit-learn guides to <a href="https://scikit-learn.org/stable/modules/model_evaluation.html" target="_blank">model evaluation</a> and the [Working with Text Data tutorial](../../../Tutorials/scikit-learn-1.7/WorkingWithTextData.md) (see its sections on the classification report, confusion matrix and grid search) are good references for this lab.
+
+
+
+*These lab instructions were drafted by Claude Code and reviewed by Brian Bird. 10/26/2026*
 
 ------
 
