@@ -81,7 +81,6 @@ Put this code at the top of your program. The first function reads a data file. 
 ```python
 import json
 
-
 def load_hc3(path):
     """Read an HC3 file. Returns three lists with one item per question:
     the questions, the first human answer and the first ChatGPT answer."""
@@ -131,12 +130,10 @@ print("A ChatGPT answer:", chatgpt_answers[0][:70])
 
 Output:
 
-```
-842 questions
-1262 training answers, 422 test answers
-A human answer:   Animal cognition encompasses the mental capacities of non-human animal
-A ChatGPT answer: Animal cognition refers to the mental capacities of non-human animals.
-```
+> 842 questions
+> 1262 training answers, 422 test answers
+> A human answer:   Animal cognition encompasses the mental capacities of non-human animal
+> A ChatGPT answer: Animal cognition refers to the mental capacities of non-human animals.
 
 **Why split by question?** Each question has two answers, one from a person and one from ChatGPT. If one of the two ended up in the training set and the other in the test set, the classifier could pick up clues from the *topic* of the question instead of the *style* of the writing. Splitting the question numbers first keeps both answers to a question on the same side.
 
@@ -165,7 +162,7 @@ Write your code in one Python file, and put your answers to the questions in com
    - Which features were best? Is the difference bigger than the standard deviation? If not, you can't say one is really better.
    - What happened when you removed the stop words? Does that surprise you? (Think about what kind of words are in the list.)
 
-3. **Look inside the classifier.** Print the 15 words with the strongest "human" weight and the 15 with the strongest "ChatGPT" weight. See the hints for how. Which words are about *style*, and which are *artifacts* of how the data was collected? An artifact is something that gives the answer away but wouldn't be there in real writing.
+3. **Look inside the classifier.** Print the 15 words with the strongest "human" weight and the 15 with the strongest "ChatGPT" weight. (See the hints for how.) Which words are characteristic of writing *style*, and which are *artifacts* of how the data was collected? (An artifact is something that gives the answer away but wouldn't be there in real writing.)
 
 4. **Tune the hyperparameters.** Use `GridSearchCV` with your pipeline and `cv=5` to search `tfidf__ngram_range`, `tfidf__min_df` and `clf__C`. Print the best settings and their cross-validation score. Then print the accuracy of the best model on the test set. Use the test set for this only once.
 
@@ -203,13 +200,9 @@ Write your code in one Python file, and put your answers to the questions in com
 
 - **What to expect.** With the settings above, the baseline gets about 89% accuracy and a tuned model about 94% on the wiki_csai test set. On open_qa the accuracy drops to about 79%. Your numbers will be a little different.
 
+- **Artifacts**. An artifact can come from either class. On the human side it comes from the source and how the text was scraped (Wikipedia markup, citations, lost formatting). On the ChatGPT side it comes from how the answers were generated (one fixed prompt, chat formatting, refusals). 
+
 - **Think about it.** Tools that claim to detect AI writing are used on student essays. What would a false positive (flagging a person's writing as AI) cost the student? Your classifier was trained on answers written by one version of ChatGPT in early 2023. How much would you trust it today?
-
-### References
-
-Biyang Guo, Xin Zhang, Ziyuan Wang, Minqi Jiang, Jinran Nie, Yuxuan Ding, Jianwei Yue and Yupeng Wu, "How Close is ChatGPT to Human Experts? Comparison Corpus, Evaluation, and Detection," 2023. The data is at <a href="https://huggingface.co/datasets/Hello-SimpleAI/HC3" target="_blank">Hello-SimpleAI/HC3 on Hugging Face</a>.
-
-The scikit-learn guide to <a href="https://scikit-learn.org/stable/modules/model_evaluation.html" target="_blank">model evaluation</a> and the [Working with Text Data tutorial](../../../Tutorials/scikit-learn-1.7/WorkingWithTextData.md) (see its sections on the classification report, confusion matrix and grid search) are good references for this lab.
 
 ## Sharing and Submitting Your Lab Work
 
@@ -246,6 +239,14 @@ Based on the code review and helpful advice from your lab partners, you may revi
 ## Grading Criteria
 
 The main focus of grading will be on use of the scikit-learn classes, on whether you measured your results correctly, and on the explanations in your comments. The accuracy of your classifier will not be graded.
+
+## References
+
+Biyang Guo, Xin Zhang, Ziyuan Wang, Minqi Jiang, Jinran Nie, Yuxuan Ding, Jianwei Yue and Yupeng Wu, "How Close is ChatGPT to Human Experts? Comparison Corpus, Evaluation, and Detection," 2023. The data is at <a href="https://huggingface.co/datasets/Hello-SimpleAI/HC3" target="_blank">Hello-SimpleAI/HC3 on Hugging Face</a>.
+
+The scikit-learn guide to <a href="https://scikit-learn.org/stable/modules/model_evaluation.html" target="_blank">model evaluation</a> and the [Working with Text Data tutorial](../../../Tutorials/scikit-learn-1.7/WorkingWithTextData.md) (see its sections on the classification report, confusion matrix and grid search) are good references for this lab.
+
+## 
 
 *These lab instructions were drafted by Claude Code and revised by Brian Bird. 10/26/2026*
 
