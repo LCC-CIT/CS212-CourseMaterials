@@ -253,25 +253,37 @@ Iñigo Casanueva, Tadas Temčinas, Daniela Gerz, Matthew Henderson and Ivan Vuli
 
 The scikit-learn guide to <a href="https://scikit-learn.org/stable/modules/model_evaluation.html" target="_blank">model evaluation</a> and the [Working with Text Data tutorial](../../../Tutorials/scikit-learn-1.7/WorkingWithTextData.md) (see its sections on the classification report, confusion matrix and grid search) are good references for this lab.
 
-## Submitting your lab work on Canvas
+1. ## Sharing and Submitting Your Lab Work
 
-**Note**: You only need to submit your code. You <u>do not</u> need to upload your virtual environment (.venv) folder or the data files.
+   ### What to Submit
 
-### Beta Version
+   For both the beta and production versions you should share or submit the following:
 
-- Post the beta version of your Python file to your team channel in Discord.
+   - Python code files (.py files)
+   - pyproject.toml
+   - uv.lock
 
-### Code Review
+   Whoever downloads your code will be able to:
 
-- Review one of your lab partners' code and post the review in your team channel on Discord.
-- Submit a copy of the code review <u>you did</u> to the code review assignment on Canvas.
+   - restore all the packages by running `uv sync`
+   - download all the data by runing `uv run fetch_data.py`
+   - run your program by running `uv run program_name.py`
 
-### Production Version
+   ### Beta Version
 
-Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the "Prod." column to show what you revised. Upload the following to the *Lab Production Version* assignment on Canvas:
+   - Post your zipped beta version files to your team channel on Discord.
 
-1. The Python (.py) file
-2. The code review <u>from your lab partner</u> with the "Prod." column filled out by you.
+   ### Code Review
+
+   - Review one of your lab partners' code and post the review in your team channel on Discord.
+   - Submit a copy of the code review <u>you did</u> to the code review assignment on Canvas.
+
+   ### Production Version
+
+   Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the "Prod." column to show what you revised. Upload the following to the *Lab Production Version* assignment on Canvas:
+
+   1. The Zipped code files.
+   2. The code review <u>from your lab partner</u> with the "Prod." column filled out by you.
 
 ## Grading Criteria
 

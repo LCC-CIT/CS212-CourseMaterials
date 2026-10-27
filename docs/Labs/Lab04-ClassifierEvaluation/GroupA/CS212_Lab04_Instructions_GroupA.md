@@ -229,7 +229,7 @@ Whoever downloads your code will be able to:
 
 ### Beta Version
 
-- Post ypur zipped beta version to your team channel on Discord.
+- Post your zipped beta version files to your team channel on Discord.
 
 ### Code Review
 
