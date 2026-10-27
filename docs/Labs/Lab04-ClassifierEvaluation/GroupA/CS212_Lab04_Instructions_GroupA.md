@@ -211,13 +211,25 @@ Biyang Guo, Xin Zhang, Ziyuan Wang, Minqi Jiang, Jinran Nie, Yuxuan Ding, Jianwe
 
 The scikit-learn guide to <a href="https://scikit-learn.org/stable/modules/model_evaluation.html" target="_blank">model evaluation</a> and the [Working with Text Data tutorial](../../../Tutorials/scikit-learn-1.7/WorkingWithTextData.md) (see its sections on the classification report, confusion matrix and grid search) are good references for this lab.
 
-## Submitting your lab work on Canvas
+## Sharing and Submitting Your Lab Work
 
-**Note**: You only need to submit your code. You <u>do not</u> need to upload your virtual environment (.venv) folder or the data files.
+### What to Submit
+
+For both the beta and production versions you should share or submit the following:
+
+- Python code files (.py files)
+- pyproject.toml
+- uv.lock
+
+Whoever downloads your code will be able to:
+
+- restore all the packages by running `uv sync`
+- download all the data by runing `uv run fetch_data.py`
+- run your program by running `uv run program_name.py`
 
 ### Beta Version
 
-- Post the beta version of your Python file to your team channel in Discord.
+- Post ypur zipped beta version to your team channel on Discord.
 
 ### Code Review
 
@@ -228,14 +240,14 @@ The scikit-learn guide to <a href="https://scikit-learn.org/stable/modules/model
 
 Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the "Prod." column to show what you revised. Upload the following to the *Lab Production Version* assignment on Canvas:
 
-1. The Python (.py) file
+1. The Zipped code files.
 2. The code review <u>from your lab partner</u> with the "Prod." column filled out by you.
 
 ## Grading Criteria
 
 The main focus of grading will be on use of the scikit-learn classes, on whether you measured your results correctly, and on the explanations in your comments. The accuracy of your classifier will not be graded.
 
-*These lab instructions were drafted by Claude Code and are waiting for review by Brian Bird. 10/20/2026*
+*These lab instructions were drafted by Claude Code and revised by Brian Bird. 10/26/2026*
 
 ------
 
