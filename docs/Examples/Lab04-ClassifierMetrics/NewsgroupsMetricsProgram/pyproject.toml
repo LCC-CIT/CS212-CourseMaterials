@@ -1,0 +1,8 @@
+[project]
+name = "lab04-newsgroups-metrics-example"
+version = "0.1.0"
+description = "Lab 4 class example: measuring a classifier with more than two classes"
+requires-python = ">=3.12"
+dependencies = [
+    "scikit-learn>=1.7",
+]

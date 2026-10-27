@@ -42,7 +42,7 @@ The [Spam Detection example](../Examples/SpamDetection/CS212_SpamDetection_Overv
 
 This example starts where that program ends. It takes the classifier's results and explains what the numbers mean, how they are calculated, and how to judge whether they are good.
 
-The data is the SMS Spam Collection, collected by Tiago Almeida and José María Gómez Hidalgo. It has 5,574 real text messages, and people labeled each one as spam or ham. In the file `data/sms_spam.csv` in the Python project folder (the notebook reads the same data from GitHub), each row has a `label` and a `message`. The file `data/SMSSpamCollection-readme.txt` describes the collection and its terms of use. Only 747 of the messages (13%) are spam.
+The data is the SMS Spam Collection, collected by Tiago Almeida and José María Gómez Hidalgo. It has 5,574 real text messages, and people labeled each one as spam or ham. In the file `data/sms_spam.csv` in the spam Python project folder (the spam notebook reads the same data from GitHub), each row has a `label` and a `message`. The file `data/SMSSpamCollection-readme.txt` describes the collection and its terms of use. Only 747 of the messages (13%) are spam.
 
 ## What We Are Measuring
 
@@ -94,13 +94,11 @@ You don't need to write code to calculate these numbers. The module `sklearn.met
 
 If a classifier never says "spam", then TP + FP is 0, and precision (TP / (TP + FP)) would divide by zero. The argument `zero_division=0` tells `precision_score` to return 0.0 in that case instead of printing a warning.
 
-The program `main.py` has a function, `show_scores`, that uses these scikit-learn functions to print the four counts and the four performance metrics. The program measures two examples: first the spam classifier, which has two classes, then a newsgroups classifier, which has four.
+The [Lab 4 example](../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md) has two Python projects, one for each of the two examples below. `SpamMetricsProgram` measures the spam classifier, which has two classes, and `NewsgroupsMetricsProgram` measures a newsgroups classifier, which has four. In each project, `main.py` uses these scikit-learn functions to measure the classifier, and `tune.py` tunes it (see [Using a Metric to Tune a Classifier](#using-a-metric-to-tune-a-classifier)).
 
 ### The Spam Example
 
-The function `get_spam_results` in `spam_results.py` repeats the steps of the Spam Detection program (the same data, the same 75/25 split, and a naive Bayes classifier on word counts) and returns the true labels and the predicted labels of the test messages. You can read that program to see how those steps work.
-
-The first part of `main.py` measures the spam classifier and the "always ham" classifier for comparison, and prints the classification report and confusion matrix that the Spam Detection program printed:
+The program `main.py` in `SpamMetricsProgram` starts with the steps of the Spam Detection program: the same data, the same 75/25 split, and a naive Bayes classifier on word counts. You can read that example to see how those steps work. Then it prints the four counts and the four performance metrics of the spam classifier, and of the "always ham" classifier for comparison. At the end it prints the classification report and confusion matrix that the Spam Detection program printed:
 
 ```python
 # Lab 4 example: measuring the spam classifier from the Spam Detection
@@ -109,53 +107,81 @@ The first part of `main.py` measures the spam classifier and the "always ham" cl
 #
 # Run with:  uv run main.py
 
-from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
-from sklearn.linear_model import SGDClassifier
+import csv
+
+from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics import (accuracy_score, classification_report,
                              confusion_matrix, f1_score, precision_score,
                              recall_score)
-from sklearn.pipeline import Pipeline
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import MultinomialNB
 
-from newsgroups_data import load_newsgroups
-from spam_results import get_spam_results
+# ------------------------------------------------ the spam classifier
+# These steps are the same as in the Spam Detection example: the same
+# data, the same 75/25 split, and a naive Bayes classifier on word
+# counts. The only differences are that the data is read with the csv
+# module and the labels are numbers: 1 is spam and 0 is ham.
+messages = []
+labels = []
+with open("data/sms_spam.csv", encoding="utf-8", newline="") as file:
+    for row in csv.DictReader(file):
+        messages.append(row["message"])
+        if row["label"] == "spam":
+            labels.append(1)
+        else:
+            labels.append(0)
 
+train_messages, test_messages, train_labels, test_labels = train_test_split(
+    messages, labels, test_size=0.25, random_state=42)
 
-def show_scores(name, true_labels, predicted_labels):
-    """Print the four counts and the four performance metrics.
+vectorizer = CountVectorizer()
+train_counts = vectorizer.fit_transform(train_messages)
+test_counts = vectorizer.transform(test_messages)
 
-    The positive class is 1.
-    """
-    # For two classes, the confusion matrix has the four counts:
-    # [[TN, FP], [FN, TP]].
-    matrix = confusion_matrix(true_labels, predicted_labels, labels=[0, 1])
-    tn, fp, fn, tp = matrix.ravel()
-    print(name)
-    print("  counts:  TP =", tp, " FP =", fp, " FN =", fn, " TN =", tn)
-    accuracy = accuracy_score(true_labels, predicted_labels)
-    # zero_division=0 is the score to use if the classifier never says
-    # "spam"
-    precision = precision_score(true_labels, predicted_labels, zero_division=0)
-    recall = recall_score(true_labels, predicted_labels)
-    f1 = f1_score(true_labels, predicted_labels)
-    print("  accuracy ", round(accuracy, 3))
-    print("  precision", round(precision, 3))
-    print("  recall   ", round(recall, 3))
-    print("  F1       ", round(f1, 3))
+classifier = MultinomialNB()
+classifier.fit(train_counts, train_labels)
+predicted_labels = classifier.predict(test_counts)
 
-
-# ------------------------------------------------ two classes
-# The true labels and the predicted labels of the test messages
-# (1 = spam, 0 = ham).
-test_labels, predicted_labels = get_spam_results()
 print(len(test_labels), "test messages,", sum(test_labels), "of them are spam")
 print()
-show_scores("Spam classifier", test_labels, predicted_labels)
+
+# ------------------------------------------------ measuring it
+# For two classes, the confusion matrix has the four counts:
+# [[TN, FP], [FN, TP]]. The positive class is 1 (spam).
+matrix = confusion_matrix(test_labels, predicted_labels, labels=[0, 1])
+tn, fp, fn, tp = matrix.ravel()
+print("Spam classifier")
+print("  counts:  TP =", tp, " FP =", fp, " FN =", fn, " TN =", tn)
+accuracy = accuracy_score(test_labels, predicted_labels)
+precision = precision_score(test_labels, predicted_labels)
+recall = recall_score(test_labels, predicted_labels)
+f1 = f1_score(test_labels, predicted_labels)
+print("  accuracy ", round(accuracy, 3))
+print("  precision", round(precision, 3))
+print("  recall   ", round(recall, 3))
+print("  F1       ", round(f1, 3))
 print()
 
+# ------------------------------------------------ always ham
 # For comparison, a "classifier" that calls every message ham.
 always_ham = [0] * len(test_labels)
-show_scores("Always ham", test_labels, always_ham)
 
+matrix = confusion_matrix(test_labels, always_ham, labels=[0, 1])
+tn, fp, fn, tp = matrix.ravel()
+print("Always ham")
+print("  counts:  TP =", tp, " FP =", fp, " FN =", fn, " TN =", tn)
+accuracy = accuracy_score(test_labels, always_ham)
+# This classifier never says "spam", so precision would divide by zero.
+# zero_division=0 makes precision_score return 0 instead of a warning.
+precision = precision_score(test_labels, always_ham, zero_division=0)
+recall = recall_score(test_labels, always_ham)
+f1 = f1_score(test_labels, always_ham)
+print("  accuracy ", round(accuracy, 3))
+print("  precision", round(precision, 3))
+print("  recall   ", round(recall, 3))
+print("  F1       ", round(f1, 3))
+
+# ------------------------------------------------ report and matrix
 print()
 print(classification_report(test_labels, predicted_labels,
                             target_names=["ham", "spam"]))
@@ -164,7 +190,7 @@ print(["ham", "spam"])
 print(confusion_matrix(test_labels, predicted_labels))
 ```
 
-Here is the output of this part of `uv run main.py`:
+Here is the output of `uv run main.py`:
 
 > 1394 test messages, 191 of them are spam
 >
@@ -224,19 +250,65 @@ The numbers on the diagonal, from the top left to the bottom right (1197 and 178
 
 The spam classifier chooses between two classes. Of the three lab assignment versions, Group B's classifier chooses between six classes (six departments), so if you are in Group B, you will read a report like the one below. When there are more than two classes, scikit-learn calculates precision, recall and F1 for each class in turn, treating that class as the positive one.
 
-To show what that looks like, the end of `main.py` uses the newsgroups example from the scikit-learn text tutorial in Week 3: posts from four newsgroups (computer graphics, hockey, medicine and religion), classified with the tf-idf and linear SVM pipeline from the tutorial. Two of the tutorial's newsgroups (atheism and Christianity) are replaced with hockey and religion. To show what happens when one class is rare, the function `keep_fewer` in `newsgroups_data.py` throws away most of the religion posts: it keeps only 75 of the 377 for training and 50 of the 251 for testing. The other three newsgroups keep all of their posts, about 600 each for training and 390 each for testing.
+To show what that looks like, the program `main.py` in `NewsgroupsMetricsProgram` uses the newsgroups example from the scikit-learn text tutorial in Week 3: posts from four newsgroups (computer graphics, hockey, medicine and religion), classified with the tf-idf and linear SVM pipeline from the tutorial. Two of the tutorial's newsgroups (atheism and Christianity) are replaced with hockey and religion. To show what happens when one class is rare, the program throws away most of the religion posts: it keeps only 75 of the 377 for training and 50 of the 251 for testing. The other three newsgroups keep all of their posts, about 600 each for training and 390 each for testing.
 
-The imports for the pipeline are at the top of `main.py`, shown above. Here is the rest of `main.py`:
+Here is `main.py`:
 
 ```python
-# ------------------------------------------------ four classes
-# The newsgroups example from the scikit-learn text tutorial (Week 3),
-# with two of its newsgroups changed and only a few posts from one of
-# them (see newsgroups_data.py). The posts are classified with the
-# tf-idf and linear SVM pipeline from that tutorial.
-(train_posts, test_posts, train_groups, test_groups,
- group_names) = load_newsgroups()
+# Lab 4 example: measuring a classifier with more than two classes,
+# using the newsgroups example from the scikit-learn text tutorial
+# (Week 3).
+# By Brian Bird 10/21/2026 with assistance from Claude Code
+#
+# Run with:  uv run main.py
 
+from sklearn.datasets import fetch_20newsgroups
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+from sklearn.linear_model import SGDClassifier
+from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.pipeline import Pipeline
+
+# ------------------------------------------------ the data
+# Posts from four newsgroups. Two of the tutorial's newsgroups (atheism
+# and Christianity) are replaced with hockey and religion. The first run
+# downloads the data, which scikit-learn keeps for later runs.
+categories = ["talk.religion.misc", "rec.sport.hockey", "comp.graphics",
+              "sci.med"]
+twenty_train = fetch_20newsgroups(subset="train", categories=categories,
+                                  shuffle=True, random_state=42)
+twenty_test = fetch_20newsgroups(subset="test", categories=categories,
+                                 shuffle=True, random_state=42)
+group_names = twenty_test.target_names
+religion = group_names.index("talk.religion.misc")
+
+# To show what happens when one class is rare, keep only the first 75
+# of the 377 religion posts for training. The other newsgroups keep all
+# of their posts.
+train_posts = []
+train_groups = []
+religion_count = 0
+for i in range(len(twenty_train.data)):
+    group = twenty_train.target[i]
+    if group == religion:
+        religion_count = religion_count + 1
+    if group != religion or religion_count <= 75:
+        train_posts.append(twenty_train.data[i])
+        train_groups.append(group)
+
+# Do the same for testing, keeping only 50 of the 251 religion posts.
+test_posts = []
+test_groups = []
+religion_count = 0
+for i in range(len(twenty_test.data)):
+    group = twenty_test.target[i]
+    if group == religion:
+        religion_count = religion_count + 1
+    if group != religion or religion_count <= 50:
+        test_posts.append(twenty_test.data[i])
+        test_groups.append(group)
+
+# ------------------------------------------------ the classifier
+# The tf-idf and linear SVM pipeline from the tutorial.
 text_clf = Pipeline([
     ("vect", CountVectorizer()),
     ("tfidf", TfidfTransformer()),
@@ -244,17 +316,18 @@ text_clf = Pipeline([
                           random_state=42, max_iter=5, tol=None)),
 ])
 text_clf.fit(train_posts, train_groups)
-newsgroup_predictions = text_clf.predict(test_posts)
+predicted_groups = text_clf.predict(test_posts)
 
-print("\nFour newsgroups")
-print(classification_report(test_groups, newsgroup_predictions,
+# ------------------------------------------------ measuring it
+print("Four newsgroups")
+print(classification_report(test_groups, predicted_groups,
                             target_names=group_names))
 print("Confusion matrix (rows = true, columns = predicted):")
 print(group_names)
-print(confusion_matrix(test_groups, newsgroup_predictions))
+print(confusion_matrix(test_groups, predicted_groups))
 ```
 
-Here is the rest of the output (the newsgroups part):
+Here is the output of `uv run main.py`:
 
 > Four newsgroups
 >
@@ -313,34 +386,45 @@ That score is another performance metric, and you choose it with the `scoring` a
 
 ### Hyperparameters Being Tuned
 
-These are the hyperparameters that `tune.py` tries. In the code, each name starts with the name of a pipeline step and two underscores, so `nb__alpha` means the `alpha` setting of the step named `nb`.
+These are the hyperparameters that the two `tune.py` programs try. In the code, each name starts with the name of a pipeline step and two underscores, so `nb__alpha` means the `alpha` setting of the step named `nb`.
 
 - **`ngram_range`** (`counts__ngram_range` for spam, `vect__ngram_range` for the newsgroups): which word groups `CountVectorizer` counts. `(1, 1)` counts single words only. `(1, 2)` also counts pairs of words that are next to each other, such as "free entry" or "call now", so the classifier can learn from short phrases as well as single words. Pairs make many more features, so training is slower.
 - **`alpha` of naive Bayes** (`nb__alpha`): how much *smoothing* naive Bayes does. Before calculating its probabilities, naive Bayes adds `alpha` to the count of every word in every class. Without smoothing, a word that never appeared in a spam message during training would make the probability of spam zero for any message that contains it. A small `alpha` (0.1) affects the training counts less, and a large one (1.0) affects them more (smooths them more).
 - **`alpha` of the linear SVM** (`clf__alpha`): how strongly the classifier is kept simple (this is called *regularization*). A large `alpha` (0.01) keeps the classifier's weights small, so it may miss real patterns. A small `alpha` (0.00001) lets it fit the training posts very closely, so it may learn details that don't carry over to new posts. This is a different setting from the `alpha` of naive Bayes, even though it has the same name.
 - **`class_weight`** (`clf__class_weight`): how much each training post counts. With `None`, every post counts the same, so a small class has little effect on what the classifier learns. With `"balanced"`, each post counts for more if its class is small and less if its class is big, so every class has the same total effect.
 
+### Tuning the Spam Classifier
+
+The program `tune.py` in `SpamMetricsProgram` puts the word counts and naive Bayes in a `Pipeline`, so the grid search can change settings in both. It tries a small grid with each of two scores, accuracy and F1. You can run it with `uv run tune.py`.
+
 ```python
-# Lab 4 example: using a performance metric to tune the spam classifier
-# and the newsgroups classifier.
+# Lab 4 example: using a performance metric to tune the spam classifier.
 #
 # Run with:  uv run tune.py
 
-from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
-from sklearn.linear_model import SGDClassifier
+import csv
+
+from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics import classification_report
-from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import GridSearchCV, train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 
-from newsgroups_data import load_newsgroups
-from spam_results import load_spam_data
+# The same data and the same 75/25 split as main.py (1 is spam, 0 is ham).
+messages = []
+labels = []
+with open("data/sms_spam.csv", encoding="utf-8", newline="") as file:
+    for row in csv.DictReader(file):
+        messages.append(row["message"])
+        if row["label"] == "spam":
+            labels.append(1)
+        else:
+            labels.append(0)
 
-# ------------------------------------------------ spam
-(train_messages, test_messages,
- train_labels, test_labels) = load_spam_data()
+train_messages, test_messages, train_labels, test_labels = train_test_split(
+    messages, labels, test_size=0.25, random_state=42)
 
-# The same steps as before, as a pipeline. The names "counts" and "nb"
+# The same steps as main.py, as a pipeline. The names "counts" and "nb"
 # are used in the settings below, for example "nb__alpha" is the alpha
 # setting of "nb".
 pipeline = Pipeline([("counts", CountVectorizer()),
@@ -370,44 +454,6 @@ print()
 predicted_labels = search.predict(test_messages)
 print(classification_report(test_labels, predicted_labels,
                             target_names=["ham", "spam"]))
-
-# ------------------------------------------------ four newsgroups
-# The newsgroups classifier from main.py, where talk.religion.misc is
-# the rare class.
-(train_posts, test_posts, train_groups, test_groups,
- group_names) = load_newsgroups()
-
-pipeline = Pipeline([
-    ("vect", CountVectorizer()),
-    ("tfidf", TfidfTransformer()),
-    ("clf", SGDClassifier(loss="hinge", penalty="l2", random_state=42,
-                          max_iter=5, tol=None)),
-])
-settings = {
-    # single words, or single words and word pairs
-    "vect__ngram_range": [(1, 1), (1, 2)],
-    # how strongly the classifier is kept simple
-    "clf__alpha": [0.01, 0.001, 0.0001, 0.00001],
-    # "balanced" counts each post of a small class for more
-    "clf__class_weight": [None, "balanced"],
-}
-
-# This time we compare accuracy with f1_macro, the average of the F1 of
-# each newsgroup. To see how the two choices differ, we test both tuned
-# models on the test posts. The test results are only for comparing
-# them, not for choosing the settings.
-print("Four newsgroups")
-for score_name in ["accuracy", "f1_macro"]:
-    search = GridSearchCV(pipeline, settings, scoring=score_name, cv=5)
-    search.fit(train_posts, train_groups)
-    print("Best settings when scoring by", score_name)
-    print("  ", search.best_params_)
-    print("   cross-validation", score_name, "=",
-          round(search.best_score_, 3))
-    print()
-    predicted_groups = search.predict(test_posts)
-    print(classification_report(test_groups, predicted_groups,
-                                target_names=group_names))
 ```
 
 Here is the output of `uv run tune.py`:
@@ -426,8 +472,96 @@ Here is the output of `uv run tune.py`:
 > | accuracy | | | 0.99 | 1394 |
 > | macro avg | 0.97 | 0.97 | 0.97 | 1394 |
 > | weighted avg | 0.99 | 0.99 | 0.99 | 1394 |
->
-> Four newsgroups<br>
+
+### Tuning the Newsgroups Classifier
+
+The program `tune.py` in `NewsgroupsMetricsProgram` does the same for the newsgroups classifier, but it compares accuracy with `f1_macro`, and it tests the classifiers chosen with both scores. You can run it with `uv run tune.py`. It takes about a minute.
+
+```python
+# Lab 4 example: using a performance metric to tune the newsgroups
+# classifier, where talk.religion.misc is the rare class.
+#
+# Run with:  uv run tune.py
+
+from sklearn.datasets import fetch_20newsgroups
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+from sklearn.linear_model import SGDClassifier
+from sklearn.metrics import classification_report
+from sklearn.model_selection import GridSearchCV
+from sklearn.pipeline import Pipeline
+
+# The same posts as main.py: all of the posts from three newsgroups,
+# and only 75 training posts and 50 test posts from talk.religion.misc.
+categories = ["talk.religion.misc", "rec.sport.hockey", "comp.graphics",
+              "sci.med"]
+twenty_train = fetch_20newsgroups(subset="train", categories=categories,
+                                  shuffle=True, random_state=42)
+twenty_test = fetch_20newsgroups(subset="test", categories=categories,
+                                 shuffle=True, random_state=42)
+group_names = twenty_test.target_names
+religion = group_names.index("talk.religion.misc")
+
+train_posts = []
+train_groups = []
+religion_count = 0
+for i in range(len(twenty_train.data)):
+    group = twenty_train.target[i]
+    if group == religion:
+        religion_count = religion_count + 1
+    if group != religion or religion_count <= 75:
+        train_posts.append(twenty_train.data[i])
+        train_groups.append(group)
+
+test_posts = []
+test_groups = []
+religion_count = 0
+for i in range(len(twenty_test.data)):
+    group = twenty_test.target[i]
+    if group == religion:
+        religion_count = religion_count + 1
+    if group != religion or religion_count <= 50:
+        test_posts.append(twenty_test.data[i])
+        test_groups.append(group)
+
+# The same steps as main.py, as a pipeline, but without alpha, because
+# the grid search chooses it. The names "vect" and "clf" are used in
+# the settings below, for example "clf__alpha" is the alpha setting of
+# "clf".
+pipeline = Pipeline([
+    ("vect", CountVectorizer()),
+    ("tfidf", TfidfTransformer()),
+    ("clf", SGDClassifier(loss="hinge", penalty="l2", random_state=42,
+                          max_iter=5, tol=None)),
+])
+settings = {
+    # single words, or single words and word pairs
+    "vect__ngram_range": [(1, 1), (1, 2)],
+    # how strongly the classifier is kept simple
+    "clf__alpha": [0.01, 0.001, 0.0001, 0.00001],
+    # "balanced" counts each post of a small class for more
+    "clf__class_weight": [None, "balanced"],
+}
+
+# Try every combination of settings, using 5-fold cross-validation on
+# the training posts only. We compare two scores: accuracy and
+# f1_macro, the average of the F1 of each newsgroup. To see how the two
+# choices differ, we test both tuned models on the test posts. The test
+# results are only for comparing them, not for choosing the settings.
+for score_name in ["accuracy", "f1_macro"]:
+    search = GridSearchCV(pipeline, settings, scoring=score_name, cv=5)
+    search.fit(train_posts, train_groups)
+    print("Best settings when scoring by", score_name)
+    print("  ", search.best_params_)
+    print("   cross-validation", score_name, "=",
+          round(search.best_score_, 3))
+    print()
+    predicted_groups = search.predict(test_posts)
+    print(classification_report(test_groups, predicted_groups,
+                                target_names=group_names))
+```
+
+Here is the output of `uv run tune.py`:
+
 > Best settings when scoring by accuracy<br>
 > `{'clf__alpha': 0.0001, 'clf__class_weight': 'balanced', 'vect__ngram_range': (1, 2)}`<br>
 > cross-validation accuracy = 0.976
@@ -460,7 +594,7 @@ Here is the output of `uv run tune.py`:
 
 The tuning results for the newsgroups classifier is different from the spam classifier: its religion class is rare, and the grid has one more setting, `class_weight`. Normally every training post counts the same, so a class with only 75 posts has little effect on what the classifier learns. The setting `class_weight="balanced"` makes each post of a small class count for more, in proportion to how rare the class is.
 
-Tuning made a much bigger difference here than it did for spam. Before tuning, in the output of `main.py`, the classifier found 26 of the 50 religion posts (recall 0.52). Both tuned classifiers use a smaller `alpha` and `class_weight="balanced"`, and they find many more: 36 with the settings chosen by accuracy (recall 0.72) and 42 with the settings chosen by `f1_macro` (recall 0.84). The two scores disagree about word pairs. The F1 of the religion class went from 0.68 to 0.77 and 0.83, and the macro average F1 from 0.88 to 0.90 and 0.92. There is a cost: the precision of the religion class went down from 0.96 to 0.82, because the classifier now puts more posts in that class that don't belong there.
+Tuning made a much bigger difference here than it did for spam. Before tuning, in the output of the newsgroups `main.py`, the classifier found 26 of the 50 religion posts (recall 0.52). Both tuned classifiers use a smaller `alpha` and `class_weight="balanced"`, and they find many more: 36 with the settings chosen by accuracy (recall 0.72) and 42 with the settings chosen by `f1_macro` (recall 0.84). The two scores disagree about word pairs. The F1 of the religion class went from 0.68 to 0.77 and 0.83, and the macro average F1 from 0.88 to 0.90 and 0.92. There is a cost: the precision of the religion class went down from 0.96 to 0.82, because the classifier now puts more posts in that class that don't belong there.
 
 Now look at the accuracy on the test posts: it is 0.94 for both tuned classifiers, the same as before tuning. If accuracy were the only number you looked at, you would think tuning had done nothing. Keep in mind that there are only 50 religion posts in the test set, so the difference between the two tuned classifiers is 6 posts. It is a real difference but not a big one. The lesson is that the score you tune for decides which settings you get, so it should be the score that measures what you care about.
 

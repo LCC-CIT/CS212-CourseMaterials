@@ -1,0 +1,8 @@
+[project]
+name = "lab04-spam-metrics-example"
+version = "0.1.0"
+description = "Lab 4 class example: measuring the spam classifier with precision, recall and F1"
+requires-python = ">=3.12"
+dependencies = [
+    "scikit-learn>=1.7",
+]

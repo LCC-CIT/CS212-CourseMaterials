@@ -24,7 +24,7 @@ wheels = [
 ]
 
 [[package]]
-name = "lab04-classifier-metrics-example"
+name = "lab04-spam-metrics-example"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
