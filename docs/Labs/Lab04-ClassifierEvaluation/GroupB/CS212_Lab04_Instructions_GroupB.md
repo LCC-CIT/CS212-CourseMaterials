@@ -289,7 +289,9 @@ Based on the code review and helpful advice from your lab partners, you may revi
 
 The main focus of grading will be on use of the scikit-learn classes, on whether you measured your results correctly, and on the explanations in your comments. The accuracy of your classifier will not be graded.
 
-*These lab instructions were drafted by Claude Code and are waiting for review by Brian Bird. 10/20/2026*
+
+
+*These lab instructions were drafted by Claude Code and  revised by Brian Bird. 10/26/2026*
 
 ------
 
