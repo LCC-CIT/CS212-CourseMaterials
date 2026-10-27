@@ -223,9 +223,9 @@ For both the beta and production versions you should share or submit the followi
 
 Whoever downloads your code will be able to:
 
-- restore all the packages by running `uv sync`
-- download all the data by runing `uv run fetch_data.py`
-- run your program by running `uv run program_name.py`
+- Create a .venv folder and restore all the packages and by running `uv sync`
+- Download all the data by runing `uv run fetch_data.py`
+- Run your program by running `uv run program_name.py`
 
 ### Beta Version
 
@@ -233,7 +233,7 @@ Whoever downloads your code will be able to:
 
 ### Code Review
 
-- Review one of your lab partners' code and post the review in your team channel on Discord.
+- Review code from one of your lab partners' and post the review in your team channel on Discord.
 - Submit a copy of the code review <u>you did</u> to the code review assignment on Canvas.
 
 ### Production Version
