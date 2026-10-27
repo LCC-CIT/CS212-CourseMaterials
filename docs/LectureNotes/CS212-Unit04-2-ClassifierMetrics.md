@@ -88,15 +88,19 @@ A table like this is called a *confusion matrix*. From the four counts you can c
 
 *Precision* and *recall* pull against each other. A classifier that calls every message spam has perfect recall and terrible precision. One that only says "spam" for only the most obvious spam has high precision and poor recall. Which one you want depends on the *cost* of each kind of mistake. For a spam filter, a real message lost in the spam folder (a false positive) is usually worse than a spam message that gets through (a false negative).
 
-## Calculating the Measures in Python
+## Calculating the Measures with scikit-learn
 
 You don't need to write code to calculate these numbers. The module `sklearn.metrics` has a function for each one: `accuracy_score`, `precision_score`, `recall_score` and `f1_score`. You give each of them the true labels and the predicted labels. The function `confusion_matrix` gives you the four counts. For two classes, its result is `[[TN, FP], [FN, TP]]`, so `.ravel()` flattens it into the four numbers in that order.
 
 If a classifier never says "spam", then TP + FP is 0, and precision (TP / (TP + FP)) would divide by zero. The argument `zero_division=0` tells `precision_score` to return 0.0 in that case instead of printing a warning.
 
-The function `get_spam_results` in `spam_results.py` repeats the steps of the Spam Detection program (the same data, the same 75/25 split, and a naive Bayes classifier on word counts) and returns the true labels and the predicted labels of the test messages. You can read that program to see how those steps work. In the same way, the function `load_newsgroups` in `newsgroups_data.py` loads the posts for the newsgroups example below.
+The program `main.py` has a function, `show_scores`, that uses these scikit-learn functions to print the four counts and the four performance metrics. The program measures two examples: first the spam classifier, which has two classes, then a newsgroups classifier, which has four.
 
-The program `main.py` has a function, `show_scores`, that uses these scikit-learn functions to print the four counts and the four performance metrics. It measures the spam classifier and the "always ham" classifier for comparison, and prints the classification report and confusion matrix that the Spam Detection program printed. At the end it shows a four-newsgroups example adapted from the scikit-learn text tutorial (Week 3), which has more than two classes and is explained below.
+### The Spam Example
+
+The function `get_spam_results` in `spam_results.py` repeats the steps of the Spam Detection program (the same data, the same 75/25 split, and a naive Bayes classifier on word counts) and returns the true labels and the predicted labels of the test messages. You can read that program to see how those steps work.
+
+The first part of `main.py` measures the spam classifier and the "always ham" classifier for comparison, and prints the classification report and confusion matrix that the Spam Detection program printed:
 
 ```python
 # Lab 4 example: measuring the spam classifier from the Spam Detection
@@ -158,7 +162,73 @@ print(classification_report(test_labels, predicted_labels,
 print("Confusion matrix (rows = true, columns = predicted):")
 print(["ham", "spam"])
 print(confusion_matrix(test_labels, predicted_labels))
+```
 
+Here is the output of this part of `uv run main.py`:
+
+> 1394 test messages, 191 of them are spam
+>
+> Spam classifier<br>
+> counts:  TP = 178  FP = 6  FN = 13  TN = 1197<br>
+> accuracy  0.986<br>
+> precision 0.967<br>
+> recall    0.932<br>
+> F1        0.949
+>
+> Always ham<br>
+> counts:  TP = 0  FP = 0  FN = 191  TN = 1203<br>
+> accuracy  0.863<br>
+> precision 0.0<br>
+> recall    0.0<br>
+> F1        0.0
+>
+> | | precision | recall | f1-score | support |
+> | --- | ---: | ---: | ---: | ---: |
+> | ham | 0.99 | 1.00 | 0.99 | 1203 |
+> | spam | 0.97 | 0.93 | 0.95 | 191 |
+> | accuracy | | | 0.99 | 1394 |
+> | macro avg | 0.98 | 0.96 | 0.97 | 1394 |
+> | weighted avg | 0.99 | 0.99 | 0.99 | 1394 |
+>
+> Confusion matrix (rows = true, columns = predicted):<br>
+> ['ham', 'spam']<br>
+> [[1197    6]<br>
+> [  13  178]]
+
+#### Reading the Output
+
+**The "always ham" classifier.** Its accuracy is 86.3%, but its recall is 0.0: it found none of the 191 spam messages. Its precision is also reported as 0.0, but really it is undefined, because the classifier never found "spam". When one class is rare, accuracy mostly measures how common the *other* class is, so it can't tell a useful classifier from a useless one. Precision and recall look at the rare class itself.
+
+**The spam classifier.** Its accuracy of 98.6% is far above the 86.3% of "always ham", so the classifier really is useful. Precision and recall show what kind of mistakes it makes. 
+
+- **Precision**: 0.967 because it classified 184 messages as spam, but only 178 were really spam, the other 6 were ham. 
+- **Recall**: 0.932 because there were 191 spam messages in the test set, and it found 178 of them. The other 13 got through. 
+
+**The confusion matrix.** The confusion matrix at the bottom of the spam results shows the same four counts. Each *row* is a true class (what the message really is), and each *column* is a predicted class (what the classifier said it is). scikit-learn puts the classes in order of their labels, so ham (0) comes first and spam (1) second. That is the opposite order from the table in [The Four Counts](#the-four-counts), so be careful when you read it. Here is the matrix `[[1197 6] [13 178]]` with each cell labeled:
+
+| | Predicted ham | Predicted spam |
+| --- | --- | --- |
+| **Really ham** | **1197**: true negatives (TN), real messages correctly left in the inbox | **6**: false positives (FP), real messages wrongly sent to the spam folder |
+| **Really spam** | **13**: false negatives (FN), spam messages that got through | **178**: true positives (TP), spam messages correctly caught |
+
+- **Row 1, really ham:** 1197 + 6 = 1,203, all of the ham messages in the test set.
+- **Row 2, really spam:** 13 + 178 = 191, all of the spam messages. Each row adds up to the number of messages in that class, the *support* column of the classification report. Recall uses this row: 178 / 191 = 0.932.
+- **Column 1, predicted ham:** 1197 + 13 = 1,210, all of the messages the classifier called ham.
+- **Column 2, predicted spam:** 6 + 178 = 184, all of the messages the classifier called spam. Precision uses this column: 178 / 184 = 0.967.
+
+The numbers on the diagonal, from the top left to the bottom right (1197 and 178), are the right answers. The other two numbers (6 and 13) are the mistakes.
+
+**Which mistake is worse?** That depends on what the classifier is for. For a spam filter, losing a real message (a false positive) is probably worse than letting some spam through (a false negative), so precision matters more. For a classifier that flags emergency messages, it would be the other way around, and recall would matter more. You choose the performance metrics to watch by thinking about what each kind of mistake costs.
+
+### The Newsgroups Example
+
+The spam classifier chooses between two classes. Of the three lab assignment versions, Group B's classifier chooses between six classes (six departments), so if you are in Group B, you will read a report like the one below. When there are more than two classes, scikit-learn calculates precision, recall and F1 for each class in turn, treating that class as the positive one.
+
+To show what that looks like, the end of `main.py` uses the newsgroups example from the scikit-learn text tutorial in Week 3: posts from four newsgroups (computer graphics, hockey, medicine and religion), classified with the tf-idf and linear SVM pipeline from the tutorial. Two of the tutorial's newsgroups (atheism and Christianity) are replaced with hockey and religion. To show what happens when one class is rare, the function `keep_fewer` in `newsgroups_data.py` throws away most of the religion posts: it keeps only 75 of the 377 for training and 50 of the 251 for testing. The other three newsgroups keep all of their posts, about 600 each for training and 390 each for testing.
+
+The imports for the pipeline are at the top of `main.py`, shown above. Here is the rest of `main.py`:
+
+```python
 # ------------------------------------------------ four classes
 # The newsgroups example from the scikit-learn text tutorial (Week 3),
 # with two of its newsgroups changed and only a few posts from one of
@@ -184,77 +254,45 @@ print(group_names)
 print(confusion_matrix(test_groups, newsgroup_predictions))
 ```
 
-Here is the output of `uv run main.py`:
+Here is the rest of the output (the newsgroups part):
 
-```
-1394 test messages, 191 of them are spam
+> Four newsgroups
+>
+> | | precision | recall | f1-score | support |
+> | --- | ---: | ---: | ---: | ---: |
+> | comp.graphics | 0.90 | 0.97 | 0.93 | 389 |
+> | rec.sport.hockey | 0.97 | 0.99 | 0.98 | 399 |
+> | sci.med | 0.93 | 0.90 | 0.92 | 396 |
+> | talk.religion.misc | 0.96 | 0.52 | 0.68 | 50 |
+> | accuracy | | | 0.94 | 1234 |
+> | macro avg | 0.94 | 0.84 | 0.88 | 1234 |
+> | weighted avg | 0.94 | 0.94 | 0.93 | 1234 |
+>
+> Confusion matrix (rows = true, columns = predicted):<br>
+> ['comp.graphics', 'rec.sport.hockey', 'sci.med', 'talk.religion.misc']<br>
+> [[377   3   9   0]<br>
+> [  3 394   2   0]<br>
+> [ 35   3 357   1]<br>
+> [  4   6  14  26]]
 
-Spam classifier
-  counts:  TP = 178  FP = 6  FN = 13  TN = 1197
-  accuracy  0.986
-  precision 0.967
-  recall    0.932
-  F1        0.949
-
-Always ham
-  counts:  TP = 0  FP = 0  FN = 191  TN = 1203
-  accuracy  0.863
-  precision 0.0
-  recall    0.0
-  F1        0.0
-
-              precision    recall  f1-score   support
-
-         ham       0.99      1.00      0.99      1203
-        spam       0.97      0.93      0.95       191
-
-    accuracy                           0.99      1394
-   macro avg       0.98      0.96      0.97      1394
-weighted avg       0.99      0.99      0.99      1394
-
-Confusion matrix (rows = true, columns = predicted):
-['ham', 'spam']
-[[1197    6]
- [  13  178]]
-
-Four newsgroups
-                    precision    recall  f1-score   support
-
-     comp.graphics       0.90      0.97      0.93       389
-  rec.sport.hockey       0.97      0.99      0.98       399
-           sci.med       0.93      0.90      0.92       396
-talk.religion.misc       0.96      0.52      0.68        50
-
-          accuracy                           0.94      1234
-         macro avg       0.94      0.84      0.88      1234
-      weighted avg       0.94      0.94      0.93      1234
-
-Confusion matrix (rows = true, columns = predicted):
-['comp.graphics', 'rec.sport.hockey', 'sci.med', 'talk.religion.misc']
-[[377   3   9   0]
- [  3 394   2   0]
- [ 35   3 357   1]
- [  4   6  14  26]]
-```
-
-## Reading the Output
-
-**The "always ham" classifier.** Its accuracy is 86.3%, but its recall is 0.0: it found none of the 191 spam messages. Its precision is also reported as 0.0, but really it is undefined, because the classifier never said "spam". When one class is rare, accuracy mostly measures how common the *other* class is, so it can't tell a useful classifier from a useless one. Precision and recall look at the rare class itself.
-
-**The spam classifier.** Its accuracy of 98.6% is far above the 86.3% of "always ham", so the classifier really is useful. Precision and recall show what kind of mistakes it makes. 
-
-- **Precision**: 0.967 because it classified 184 messages as spam, but only 178 were really spam, the other 6 were ham. 
-- **Recall**: 0.932 because there were 191 spam messages in the test set, and it found 178 of them. The other 13 got through. 
-
- The confusion matrix at the bottom of the spam results shows the same counts: the row for really ham is `[1197 6]` and the row for really spam is `[13 178]`.
-
-**Which mistake is worse?** That depends on what the classifier is for. For a spam filter, losing a real message (a false positive) is probably worse than letting some spam through (a false negative), so precision matters more. For a classifier that flags emergency messages, it would be the other way around, and recall would matter more. You choose the performance metrics to watch by thinking about what each kind of mistake costs.
-
-## More Than Two Classes
-
-The spam classifier chooses between two classes. Of the three lab assignment versions, Group B's classifier chooses between six classes (six departments), so if you are in Group B, you will read a report like the one below. When there are more than two classes, scikit-learn calculates precision, recall and F1 for each class in turn, treating that class as the positive one. To show what that looks like, the end of `main.py` uses the newsgroups example from the scikit-learn text tutorial in Week 3: posts from four newsgroups (computer graphics, hockey, medicine and religion), classified with the tf-idf and linear SVM pipeline from the tutorial. Two of the tutorial's newsgroups (atheism and Christianity) are replaced with hockey and religion. To show what happens when one class is rare, the function `keep_fewer` in `newsgroups_data.py` throws away most of the religion posts: it keeps only 75 of the 377 for training and 50 of the 251 for testing. The other three newsgroups keep all of their posts, about 600 each for training and 390 each for testing.
+#### Reading the Output
 
 Read the report one row at a time. For `talk.religion.misc`, the recall is 0.52: there were 50 religion posts in the test set and the classifier found only 26 of them. The precision is 0.96: the classifier put 27 posts in `talk.religion.misc` (0 + 0 + 1 + 26, the last column of the confusion matrix) and 26 of them belonged there. The other classes work the same way, each one taking its turn as the positive class. In the confusion matrix each row is a true newsgroup and each column is a predicted newsgroup, so the numbers on the diagonal are the correct answers.
+
+The rows and columns are in the same order as the list of names printed above the matrix: `comp.graphics`, `rec.sport.hockey`, `sci.med` and `talk.religion.misc` (shortened to graphics, hockey, medicine and religion below). Here is the matrix with each cell labeled:
+
+| | Predicted graphics | Predicted hockey | Predicted medicine | Predicted religion |
+| --- | --- | --- | --- | --- |
+| **Really graphics** | **377**: correct | **3**: graphics posts called hockey | **9**: graphics posts called medicine | **0**: graphics posts called religion |
+| **Really hockey** | **3**: hockey posts called graphics | **394**: correct | **2**: hockey posts called medicine | **0**: hockey posts called religion |
+| **Really medicine** | **35**: medicine posts called graphics | **3**: medicine posts called hockey | **357**: correct | **1**: medicine post called religion |
+| **Really religion** | **4**: religion posts called graphics | **6**: religion posts called hockey | **14**: religion posts called medicine | **26**: correct |
+
+- **Each row** is all the test posts from one newsgroup, and it adds up to that newsgroup's *support* in the report. For example, the religion row is 4 + 6 + 14 + 26 = 50. The number on the diagonal divided by the row total is that newsgroup's recall: 26 / 50 = 0.52 for religion.
+- **Each column** is all the posts the classifier put in one newsgroup. The number on the diagonal divided by the column total is that newsgroup's precision: for religion, 26 / (0 + 0 + 1 + 26) = 26 / 27 = 0.96.
+- **The diagonal** (377, 394, 357 and 26) is the right answers. Every other cell is a mistake, and it tells you which two newsgroups were confused. The biggest one is the 35 medicine posts that were called graphics.
+
+With more than two classes, the words true positive, false positive and false negative only make sense after you pick one class to be the positive one. If religion is the positive class, then 26 is TP, the other three numbers in its row (4, 6 and 14) are FN, and the other three numbers in its column (0, 0 and 1) are FP. All of the other cells are TN for religion. Each class takes its turn as the positive class in the same way.
 
 At the bottom of the report are two kinds of average:
 
@@ -269,9 +307,18 @@ The accuracy of 0.94 hides the fact that the classifier misses about half of the
 
 Performance metrics are also how you decide whether a change made a classifier better. Most classifiers have *hyperparameters*, settings that you choose before training, such as the `alpha` of naive Bayes or whether the word counts include pairs of words. `GridSearchCV` tries every combination of the settings you give it. For each combination it trains and tests the classifier several times with cross-validation, using only the training messages. Then it keeps the combination with the best *score*.
 
+### Choosing a Metric to Optimize for
+
 That score is another performance metric, and you choose it with the `scoring` argument. The default for a classifier is accuracy, which has the problem described above: when one class is rare, accuracy can hardly tell a good classifier from a bad one. For a rare class you usually want `scoring="f1"`, which is the F1 of the positive class. For more than two classes, `scoring="f1_macro"` averages the F1 of every class, the same way the macro average in the report does.
 
-The program `tune.py` tunes the spam classifier first, then the newsgroups classifier. For each one it puts the steps in a `Pipeline`, so the grid search can change settings in any of them, and it tries a small grid with each of two scores. You can run it with `uv run tune.py`. It takes about a minute.
+### Hyperparameters Being Tuned
+
+These are the hyperparameters that `tune.py` tries. In the code, each name starts with the name of a pipeline step and two underscores, so `nb__alpha` means the `alpha` setting of the step named `nb`.
+
+- **`ngram_range`** (`counts__ngram_range` for spam, `vect__ngram_range` for the newsgroups): which word groups `CountVectorizer` counts. `(1, 1)` counts single words only. `(1, 2)` also counts pairs of words that are next to each other, such as "free entry" or "call now", so the classifier can learn from short phrases as well as single words. Pairs make many more features, so training is slower.
+- **`alpha` of naive Bayes** (`nb__alpha`): how much *smoothing* naive Bayes does. Before calculating its probabilities, naive Bayes adds `alpha` to the count of every word in every class. Without smoothing, a word that never appeared in a spam message during training would make the probability of spam zero for any message that contains it. A small `alpha` (0.1) affects the training counts less, and a large one (1.0) affects them more (smooths them more).
+- **`alpha` of the linear SVM** (`clf__alpha`): how strongly the classifier is kept simple (this is called *regularization*). A large `alpha` (0.01) keeps the classifier's weights small, so it may miss real patterns. A small `alpha` (0.00001) lets it fit the training posts very closely, so it may learn details that don't carry over to new posts. This is a different setting from the `alpha` of naive Bayes, even though it has the same name.
+- **`class_weight`** (`clf__class_weight`): how much each training post counts. With `None`, every post counts the same, so a small class has little effect on what the classifier learns. With `"balanced"`, each post counts for more if its class is small and less if its class is big, so every class has the same total effect.
 
 ```python
 # Lab 4 example: using a performance metric to tune the spam classifier
@@ -365,58 +412,53 @@ for score_name in ["accuracy", "f1_macro"]:
 
 Here is the output of `uv run tune.py`:
 
-```
-Best settings when scoring by accuracy
-   {'counts__ngram_range': (1, 2), 'nb__alpha': 0.1}
-   cross-validation accuracy = 0.987
-Best settings when scoring by f1
-   {'counts__ngram_range': (1, 2), 'nb__alpha': 0.1}
-   cross-validation f1 = 0.95
+> Best settings when scoring by accuracy<br>
+> `{'counts__ngram_range': (1, 2), 'nb__alpha': 0.1}`<br>
+> cross-validation accuracy = 0.987<br>
+> Best settings when scoring by f1<br>
+> `{'counts__ngram_range': (1, 2), 'nb__alpha': 0.1}`<br>
+> cross-validation f1 = 0.95
+>
+> | | precision | recall | f1-score | support |
+> | --- | ---: | ---: | ---: | ---: |
+> | ham | 0.99 | 0.99 | 0.99 | 1203 |
+> | spam | 0.96 | 0.94 | 0.95 | 191 |
+> | accuracy | | | 0.99 | 1394 |
+> | macro avg | 0.97 | 0.97 | 0.97 | 1394 |
+> | weighted avg | 0.99 | 0.99 | 0.99 | 1394 |
+>
+> Four newsgroups<br>
+> Best settings when scoring by accuracy<br>
+> `{'clf__alpha': 0.0001, 'clf__class_weight': 'balanced', 'vect__ngram_range': (1, 2)}`<br>
+> cross-validation accuracy = 0.976
+>
+> | | precision | recall | f1-score | support |
+> | --- | ---: | ---: | ---: | ---: |
+> | comp.graphics | 0.91 | 0.97 | 0.94 | 389 |
+> | rec.sport.hockey | 0.97 | 0.99 | 0.98 | 399 |
+> | sci.med | 0.96 | 0.90 | 0.93 | 396 |
+> | talk.religion.misc | 0.82 | 0.72 | 0.77 | 50 |
+> | accuracy | | | 0.94 | 1234 |
+> | macro avg | 0.91 | 0.89 | 0.90 | 1234 |
+> | weighted avg | 0.94 | 0.94 | 0.94 | 1234 |
+>
+> Best settings when scoring by f1_macro<br>
+> `{'clf__alpha': 0.0001, 'clf__class_weight': 'balanced', 'vect__ngram_range': (1, 1)}`<br>
+> cross-validation f1_macro = 0.966
+>
+> | | precision | recall | f1-score | support |
+> | --- | ---: | ---: | ---: | ---: |
+> | comp.graphics | 0.91 | 0.97 | 0.94 | 389 |
+> | rec.sport.hockey | 0.98 | 0.99 | 0.98 | 399 |
+> | sci.med | 0.96 | 0.89 | 0.93 | 396 |
+> | talk.religion.misc | 0.82 | 0.84 | 0.83 | 50 |
+> | accuracy | | | 0.94 | 1234 |
+> | macro avg | 0.92 | 0.92 | 0.92 | 1234 |
+> | weighted avg | 0.95 | 0.94 | 0.94 | 1234 |
 
-              precision    recall  f1-score   support
 
-         ham       0.99      0.99      0.99      1203
-        spam       0.96      0.94      0.95       191
 
-    accuracy                           0.99      1394
-   macro avg       0.97      0.97      0.97      1394
-weighted avg       0.99      0.99      0.99      1394
-
-Four newsgroups
-Best settings when scoring by accuracy
-   {'clf__alpha': 0.0001, 'clf__class_weight': 'balanced', 'vect__ngram_range': (1, 2)}
-   cross-validation accuracy = 0.976
-
-                    precision    recall  f1-score   support
-
-     comp.graphics       0.91      0.97      0.94       389
-  rec.sport.hockey       0.97      0.99      0.98       399
-           sci.med       0.96      0.90      0.93       396
-talk.religion.misc       0.82      0.72      0.77        50
-
-          accuracy                           0.94      1234
-         macro avg       0.91      0.89      0.90      1234
-      weighted avg       0.94      0.94      0.94      1234
-
-Best settings when scoring by f1_macro
-   {'clf__alpha': 0.0001, 'clf__class_weight': 'balanced', 'vect__ngram_range': (1, 1)}
-   cross-validation f1_macro = 0.966
-
-                    precision    recall  f1-score   support
-
-     comp.graphics       0.91      0.97      0.94       389
-  rec.sport.hockey       0.98      0.99      0.98       399
-           sci.med       0.96      0.89      0.93       396
-talk.religion.misc       0.82      0.84      0.83        50
-
-          accuracy                           0.94      1234
-         macro avg       0.92      0.92      0.92      1234
-      weighted avg       0.95      0.94      0.94      1234
-```
-
-Both scores picked the same settings, and the tuned classifier is barely different from the untuned one: spam precision went from 0.967 to 0.957 and recall from 0.932 to 0.942, so F1 stayed at about 0.95. That is a normal result. The spam classifier was already good, the test set is small (191 spam messages), and a difference of one or two messages is just noise. Tuning isn't a way to get a big improvement. It helps you pick settings in a systematic way, and it only makes sense if the score you tune for is the one that matters. Here the two scores agree because spam is 13% of the messages. The rarer the class is, the more likely they are to disagree.
-
-The newsgroups classifier is different: its religion class is rare, and the grid has one more setting, `class_weight`. Normally every training post counts the same, so a class with only 75 posts has little effect on what the classifier learns. The setting `class_weight="balanced"` makes each post of a small class count for more, in proportion to how rare the class is.
+The tuning results for the newsgroups classifier is different from the spam classifier: its religion class is rare, and the grid has one more setting, `class_weight`. Normally every training post counts the same, so a class with only 75 posts has little effect on what the classifier learns. The setting `class_weight="balanced"` makes each post of a small class count for more, in proportion to how rare the class is.
 
 Tuning made a much bigger difference here than it did for spam. Before tuning, in the output of `main.py`, the classifier found 26 of the 50 religion posts (recall 0.52). Both tuned classifiers use a smaller `alpha` and `class_weight="balanced"`, and they find many more: 36 with the settings chosen by accuracy (recall 0.72) and 42 with the settings chosen by `f1_macro` (recall 0.84). The two scores disagree about word pairs. The F1 of the religion class went from 0.68 to 0.77 and 0.83, and the macro average F1 from 0.88 to 0.90 and 0.92. There is a cost: the precision of the religion class went down from 0.96 to 0.82, because the classifier now puts more posts in that class that don't belong there.
 
@@ -424,18 +466,7 @@ Now look at the accuracy on the test posts: it is 0.94 for both tuned classifier
 
 Notice that the test messages and posts were not used to choose the settings. The grid search chose them with cross-validation on the training data, and the test data was used only at the end, to see how well the tuned classifiers work. (For the newsgroups, both tuned classifiers are tested so that you can compare them.) If you chose the settings by looking at the test results, the test results would no longer tell you how well the classifier works on new messages.
 
-## Running the Code
 
-The code is in the [Lab 4 example](../Examples/Lab04-ClassifierMetrics/CS212_Lab04_Example.md), as a complete Python project and as a Jupyter notebook. That page explains how to download and run them.
-
-## Try It Yourself
-
-- In `main.py`, make a classifier that calls every message spam: `always_spam = [1] * len(test_labels)`. Print its scores with `show_scores`. What are its precision and recall? Why is it useless even though its recall is perfect?
-- In `spam_results.py`, change `test_size` from 0.25 to 0.5. Which of the numbers change, and by how much? What does that tell you about how much to trust the result from one test set?
-- Which mistake would you rather your spam filter make: sending a real message to the spam folder, or letting a spam message through? What do the precision and recall of spam tell you about that?
-- In `tune.py`, add `0.01` to the `nb__alpha` list and `(1, 3)` to the `counts__ngram_range` list. Do the best settings change? Does the F1 on the test messages change? If not, what does that tell you about how much there was to gain from tuning this classifier?
-- In the newsgroups example, look at the confusion matrix. Which two newsgroups are confused most often? Calculate the precision and recall of `sci.med` from the matrix, and check your answers against the report.
-- In `newsgroups_data.py`, change the 75 and the 50 to 377 and 251, so that all of the religion posts are used. How do the recall of `talk.religion.misc` and the macro average change? Run `tune.py` again: does tuning still make as much difference? Try 150 and 100 as well.
 
 ## Reference
 
