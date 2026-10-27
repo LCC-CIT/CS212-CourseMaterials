@@ -265,7 +265,7 @@ For both the beta and production versions you should share or submit the followi
 
 Whoever downloads your code will be able to:
 
-- Create a .venv folder and restore all the packages and by running `uv sync`
+- Create a .venv folder and restore all the packages and python version by running `uv sync`
 - Download all the data by runing `uv run fetch_data.py`
 - Run your program by running `uv run program_name.py`
 
