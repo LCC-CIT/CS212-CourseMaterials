@@ -13,12 +13,14 @@ author: Brian Bird
 
 ## What is AI?
 
-- **Dartmouth workshop** (1956, John McCarthy, who coined "AI"): "every aspect of learning... can in principle be so precisely described that a machine can be made to simulate it."[^ai]
+- **Dartmouth workshop** (1956, John McCarthy, who coined "AI"): "every aspect of learning... can in principle be so precisely described that a machine can be made to simulate it."
 - **Symbolic AI / GOFAI** ("Good Old Fashioned AI", Haugeland): explicit rules and logic on human-readable *symbols*. `IF feathers AND flies THEN bird`.
 - **Modern (US 2020 law) definition:** a machine-based system that makes **predictions, recommendations or decisions**. It *perceives* input, *abstracts* it into a model (**training**), and uses the model to choose options (**inference**).
 - **Categories:** Symbolic (GOFAI) | Machine learning (statistical, ANN).
 
-## Python Basics[^py]
+*Sources: [Overview of AI](CS212-Unit01-1-IntroToAI.md)*
+
+## Python Basics
 
 - No braces (**indentation** makes blocks), no `;`, **dynamically typed**, interpreted, style guide = **PEP 8**.
 - Multi-paradigm; **duck typing**; first-class functions. OOP: **composition** (has-a), **inheritance** (is-a), **encapsulation**.
@@ -30,7 +32,7 @@ author: Brian Bird
 | set | `{1, 2}` | no | yes | **no** |
 | dict | `{"k": 1}` | insertion | yes | keys unique |
 
-Dict keys must be immutable (a tuple can be a key; a list can't).[^coll]
+Dict keys must be immutable (a tuple can be a key; a list can't).
 
 ```python
 d = {"apples": 50}
@@ -40,7 +42,7 @@ unique = set([1, 2, 2, 3])        # {1, 2, 3}
 name, age = ("Alice", 30)         # tuple unpacking
 ```
 
-**Loops:** `for x in iterable:` (known items; `range(3)` gives 0,1,2) | `while condition:` (unknown count; change the condition or loop forever). `break` exits the loop; `continue` skips to next pass; loop `else` runs only if no `break`.[^loop]
+**Loops:** `for x in iterable:` (known items; `range(3)` gives 0,1,2) | `while condition:` (unknown count; change the condition or loop forever). `break` exits the loop; `continue` skips to next pass; loop `else` runs only if no `break`.
 
 ```python
 for i in range(1, 4):
@@ -49,7 +51,9 @@ for i in range(1, 4):
     print(i)           # prints 1, then 3
 ```
 
-## Python Projects[^proj]
+*Sources: [Intro to Python](CS212-Unit01-1-Python.md), [Python Collection Types](CS212-Unit02-3-PythonCollectionTypes.md), [Python Loops](CS212-Unit02-4-PythonLoops.md)*
+
+## Python Projects
 
 - Each project gets its own **virtual environment** (`.venv`): avoids version conflicts, documents dependencies, protects system Python. Don't commit `.venv`.
 - **venv/pip:** `python -m venv .venv`, activate (`.venv\Scripts\Activate.ps1` Windows, `source .venv/bin/activate` Mac), `python -m pip install pkg`, `pip freeze > requirements.txt`.
@@ -64,7 +68,9 @@ for i in range(1, 4):
 
 - `pyproject.toml` : project settings and dependencies (TOML format). `uv.lock` = exact versions of everything.
 
-## Constraint Solving[^cs]
+*Sources: [Python Projects](CS212-Unit02-5-PythonProjects.md)*
+
+## Constraint Solving
 
 - **Declarative**: describe *what* a correct answer looks like, not *how* to find it. Part of symbolic AI; **deterministic**; answer is guaranteed to obey the rules and it can prove none exists.
 - **Three inputs:** **variables** (unknowns), **domains** (allowed values), **constraints** (rules).
@@ -72,7 +78,9 @@ for i in range(1, 4):
 - Why not loops? Combinations explode (20 guests have about 2.4 quintillion seatings); solvers prune whole branches.
 - Fits scheduling, gates, delivery, timetables, Sudoku. Key question: *"What are the unknowns and what are the rules?"*
 
-## Z3 (SMT solver)[^z3]
+*Sources: [Constraint Solvers](CS212-Unit02-1-ConstraintSolvers.md)*
+
+## Z3 (SMT solver)
 
 Five steps: **create variables, create solver, add constraints, check, read model.**
 
@@ -96,7 +104,9 @@ if s.check() == sat:              # check BEFORE model()
 - Solver: `add`, `check`, `model`, `push`/`pop` (what-if), `reset`, `set("timeout", ms)`. `unsat_core()` (with tracking flags) shows conflicting rules; `Optimize` has `minimize`/`maximize`.
 - Z3 gives *a* solution, not *the* only one.
 
-## Machine Learning Basics[^ml]
+*Sources: [The Z3 Constraint Solver](CS212-Unit02-2-TheZ3ConstraintSolver.md)*
+
+## Machine Learning Basics
 
 - ML = models trained on data sets to **predict** and **classify**. A **model** = algorithm + what it learned from training data.
 - **Feature**: one piece of input info. **Label**: target output. **Training data** teaches; **test data** (unseen) evaluates.
@@ -113,7 +123,9 @@ if s.check() == sat:              # check BEFORE model()
 | **Random forest** | many trees on random samples; majority vote (or average); reduces overfitting |
 | **ANN** | weighted connected neurons; weights adjusted in training |
 
-## Bayes' Rule[^bayes]
+*Sources: [Machine Learning](CS212-Unit03-1-MachineLearning.md)*
+
+## Bayes' Rule
 
 - **Probability** = happens / total (die 6: 1/6). **Odds** = happens : doesn't (1:5). Odds *o* to probability: *o* / (1 + *o*).
 - **Prior odds**: before new evidence (rain in Eugene 146:219).
@@ -122,9 +134,11 @@ if s.check() == sat:              # check BEFORE model()
 - **Naive Bayes sentiment:** label posts, count word frequencies per class, then `likelihood = (negFreq/negTotal) / (posFreq/posTotal)` (e.g. fine: 10/500 &divide; 50/1000 = 0.40).
 - **Inference:** prior &times; likelihood<sub>1</sub> &times; ... &times; likelihood<sub>n</sub>, compare to a **decision threshold** found from training data.
 
-- 
+-
 
-## scikit-learn Text Pipeline[^sk]
+*Sources: [Machine Learning: Bayes' Rule](CS212-Unit03-2-Bayes.md)*
+
+## scikit-learn Text Pipeline
 
 - **Bag of words:** each word gets a column; cell = count. High-dimensional and **sparse** (mostly zeros).
 - **`CountVectorizer`** builds vocabulary + counts. **tf** = counts scaled by doc length; **tf-idf** = also down-weights words common to many documents.
@@ -149,7 +163,9 @@ gs = GridSearchCV(pipe, grid, cv=5, scoring="f1")
 gs.fit(tr_x, tr_y)               # best_params_, best_score_
 ```
 
-## Classifier Metrics[^met]
+*Sources: [Working with Text Data](../Tutorials/scikit-learn-1.7/WorkingWithTextData.md)*
+
+## Classifier Metrics
 
 Pick a **positive** class (spam = 1). **Confusion matrix** (rows = true, cols = predicted); sklearn 2-class order is `[[TN, FP], [FN, TP]]`.
 
@@ -178,18 +194,7 @@ precision_score(te_y, pred, zero_division=0)
 print(classification_report(te_y, pred))
 ```
 
-[^ai]: [Overview of AI](CS212-Unit01-1-IntroToAI.md): Dartmouth, McCarthy, GOFAI, the 2020 definition, categories.
-[^py]: [Intro to Python](CS212-Unit01-1-Python.md): Python distinctives, paradigms, OOP concepts.
-[^coll]: [Python Collection Types](CS212-Unit02-3-PythonCollectionTypes.md): lists, dictionaries, `get()`, sets, tuples.
-[^loop]: [Python Loops](CS212-Unit02-4-PythonLoops.md): `for`, `while`, `break`, `continue`, `else`.
-[^proj]: [Python Projects](CS212-Unit02-5-PythonProjects.md): `.venv`, pip, `requirements.txt`, uv, `pyproject.toml`.
-[^cs]: [Constraint Solvers](CS212-Unit02-1-ConstraintSolvers.md): variables, domains, constraints, sat/unsat, real-world uses.
-[^z3]: [The Z3 Constraint Solver](CS212-Unit02-2-TheZ3ConstraintSolver.md): five steps, Z3 functions, solver methods, pitfalls, cheat sheet.
-[^ml]: [Machine Learning](CS212-Unit03-1-MachineLearning.md): terminology, types of ML, supervised models.
-[^bayes]: [Machine Learning: Bayes' Rule](CS212-Unit03-2-Bayes.md): odds, prior, likelihood ratio, posterior, sentiment example.
-[^data]: [Data Set Concepts and Preparation](CS212-Unit04-1-DataSetPrep.md): features, dataset quality, scaling, splitting, k-fold, inspection.
-[^sk]: [Working with Text Data](../Tutorials/scikit-learn-1.7/WorkingWithTextData.md) (week 3 scikit-learn tutorial): bag of words, tf-idf, pipeline, grid search.
-[^met]: [Classifier Metrics](CS212-Unit04-2-ClassifierMetrics.md): confusion matrix, accuracy/precision/recall/F1, multiclass reports, tuning.
+*Sources: [Classifier Metrics](CS212-Unit04-2-ClassifierMetrics.md)*
 
 
 
@@ -197,4 +202,6 @@ print(classification_report(te_y, pred))
 
 ---
 
-<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in 2026 are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in 2026 are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+---
