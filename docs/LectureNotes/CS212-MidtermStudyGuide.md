@@ -178,18 +178,18 @@ precision_score(te_y, pred, zero_division=0)
 print(classification_report(te_y, pred))
 ```
 
-[^ai]: [Overview of AI](../LectureNotes/CS212-Unit01-1-IntroToAI.md): Dartmouth, McCarthy, GOFAI, the 2020 definition, categories.
-[^py]: [Intro to Python](../LectureNotes/CS212-Unit01-1-Python.md): Python distinctives, paradigms, OOP concepts.
-[^coll]: [Python Collection Types](../LectureNotes/CS212-Unit02-3-PythonCollectionTypes.md): lists, dictionaries, `get()`, sets, tuples.
-[^loop]: [Python Loops](../LectureNotes/CS212-Unit02-4-PythonLoops.md): `for`, `while`, `break`, `continue`, `else`.
-[^proj]: [Python Projects](../LectureNotes/CS212-Unit02-5-PythonProjects.md): `.venv`, pip, `requirements.txt`, uv, `pyproject.toml`.
-[^cs]: [Constraint Solvers](../LectureNotes/CS212-Unit02-1-ConstraintSolvers.md): variables, domains, constraints, sat/unsat, real-world uses.
-[^z3]: [The Z3 Constraint Solver](../LectureNotes/CS212-Unit02-2-TheZ3ConstraintSolver.md): five steps, Z3 functions, solver methods, pitfalls, cheat sheet.
-[^ml]: [Machine Learning](../LectureNotes/CS212-Unit03-1-MachineLearning.md): terminology, types of ML, supervised models.
-[^bayes]: [Machine Learning: Bayes' Rule](../LectureNotes/CS212-Unit03-2-Bayes.md): odds, prior, likelihood ratio, posterior, sentiment example.
-[^data]: [Data Set Concepts and Preparation](../LectureNotes/CS212-Unit04-1-DataSetPrep.md): features, dataset quality, scaling, splitting, k-fold, inspection.
+[^ai]: [Overview of AI](CS212-Unit01-1-IntroToAI.md): Dartmouth, McCarthy, GOFAI, the 2020 definition, categories.
+[^py]: [Intro to Python](CS212-Unit01-1-Python.md): Python distinctives, paradigms, OOP concepts.
+[^coll]: [Python Collection Types](CS212-Unit02-3-PythonCollectionTypes.md): lists, dictionaries, `get()`, sets, tuples.
+[^loop]: [Python Loops](CS212-Unit02-4-PythonLoops.md): `for`, `while`, `break`, `continue`, `else`.
+[^proj]: [Python Projects](CS212-Unit02-5-PythonProjects.md): `.venv`, pip, `requirements.txt`, uv, `pyproject.toml`.
+[^cs]: [Constraint Solvers](CS212-Unit02-1-ConstraintSolvers.md): variables, domains, constraints, sat/unsat, real-world uses.
+[^z3]: [The Z3 Constraint Solver](CS212-Unit02-2-TheZ3ConstraintSolver.md): five steps, Z3 functions, solver methods, pitfalls, cheat sheet.
+[^ml]: [Machine Learning](CS212-Unit03-1-MachineLearning.md): terminology, types of ML, supervised models.
+[^bayes]: [Machine Learning: Bayes' Rule](CS212-Unit03-2-Bayes.md): odds, prior, likelihood ratio, posterior, sentiment example.
+[^data]: [Data Set Concepts and Preparation](CS212-Unit04-1-DataSetPrep.md): features, dataset quality, scaling, splitting, k-fold, inspection.
 [^sk]: [Working with Text Data](../Tutorials/scikit-learn-1.7/WorkingWithTextData.md) (week 3 scikit-learn tutorial): bag of words, tf-idf, pipeline, grid search.
-[^met]: [Classifier Metrics](../LectureNotes/CS212-Unit04-2-ClassifierMetrics.md): confusion matrix, accuracy/precision/recall/F1, multiclass reports, tuning.
+[^met]: [Classifier Metrics](CS212-Unit04-2-ClassifierMetrics.md): confusion matrix, accuracy/precision/recall/F1, multiclass reports, tuning.
 
 
 
