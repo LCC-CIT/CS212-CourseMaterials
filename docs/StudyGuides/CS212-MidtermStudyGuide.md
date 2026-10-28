@@ -5,9 +5,11 @@ keywords: midterm, study guide, cheat sheet
 author: Brian Bird
 ---
 
+**CS 212, AI Programming 1**
+
 <h1>CS 212 Midterm Study Guide</h1>
 
-**CS 212, AI Programming 1**
+[TOC]
 
 ## What is AI?
 
