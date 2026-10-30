@@ -50,15 +50,10 @@ None yet.
 
 ## Things to Do This Week
 
-- Lab 3 code review due by Thursday, 11/5.
-  (I didn't realize I hadn't given you a code review form for lab 3.)
-- Lab 3, part 2 production version due by Thursday, 11/5.
 - Take quiz 5 over ANNs by Sunday, 11/8.
 - Lab 4 part 1 due by Sunday, 11/8.
-  - Part 1 is a TensorFlow tutorial. See the [Lab 4, Part 1 instructions](../Labs/Lab04-ANN/CS212_Lab04_Part1_Instructions.md).
-  - Read the lecture notes [Artificial Neural Networks](CS212-Unit06-1-ANNs.md) and [TensorFlow](CS212-Unit06-2-TensorFlow.md) first.
+  - Part 1 is a TensorFlow tutorial. See the [Lab 5, Part 1 instructions](../Labs/Lab05-ANN/CS212_Lab04_Part1_Instructions.md).
 - Lab 4 part 2 beta version due by Sunday, 11/8.
-  TBD, will be assigned before class time Thursday.
 - Lab 4 part 2 code review due by Tuesday, 11/10.
 - Lab 4 part 2 production version due by Thursday, 11/12.
 
