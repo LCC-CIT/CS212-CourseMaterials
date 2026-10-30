@@ -40,7 +40,7 @@ The *Model Context Protocol* (MCP) standardizes communication with and between L
 **This week you will:**
 
 - Get a basic understanding of the MCP protocol.
-- <a href="../Labs/Lab07-MCP/BuildWeatherMcpServer.html" target="_blank">Build an MCP Server</a>.
+- <a href="../Labs/Lab08-MCP/BuildWeatherMcpServer.html" target="_blank">Build an MCP Server</a>.
 - Build an MCP client.
 
 ## Announcements for Fall 2025
@@ -70,7 +70,7 @@ Registration for winter term is open. If you are pursuing the AAS in Software De
 
 - Do you have any questions about:
 
-  - Lab 6&mdash;Calling a chat-completion API?
+  - Lab 7&mdash;Calling a chat-completion API?
   - The reading on MCP?
 
   - Anything else?
@@ -80,16 +80,16 @@ Registration for winter term is open. If you are pursuing the AAS in Software De
 ### This Week (Week 9)
 
 - Tuesday 11/25
-  - Lab 6 code review
+  - Lab 7 code review
 - Friday 11/28
-  - Lab 6 production version
+  - Lab 7 production version
 - Sunday 11/30
-  - Lab 7 beta version
+  - Lab 8 beta version
 
 ### Next Week (Week10)
 
-- Tuesday 12/2 Lab 7 Code review
-- Thursday 12/4 Lab 7 production version
+- Tuesday 12/2 Lab 8 Code review
+- Thursday 12/4 Lab 8 production version
 - Friday 12/5 Term project beta version
 - Saturday 12/6 Term project code review
 

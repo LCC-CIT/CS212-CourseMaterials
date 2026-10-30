@@ -1,5 +1,5 @@
 ---
-title: Lab 4, Part 1 Explanation
+title: Lab 5, Part 1 Explanation
 description: Explanation of Quickstart tutorial in lab 4
 keywords: TensorFlow
 material: Lab Instructions

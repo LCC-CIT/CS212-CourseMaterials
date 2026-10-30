@@ -95,7 +95,7 @@ Any late assignments are due by the end of the day on **12/9, Tuesday of next we
 
 - Do you have any questions about:
 
-  - Lab 7&mdash;the MCP tutorial?
+  - Lab 8&mdash;the MCP tutorial?
   - Your term project?
 
   - Anything else?
@@ -104,8 +104,8 @@ Any late assignments are due by the end of the day on **12/9, Tuesday of next we
 
 ### This Week (Week 10)
 
-- Tuesday 12/2: Lab 7 code review
-- Thursday 12/4: Lab 7 production version
+- Tuesday 12/2: Lab 8 code review
+- Thursday 12/4: Lab 8 production version
 - Friday 12/5: Term project beta version
 
 - Saturday 12/6: Term project code review

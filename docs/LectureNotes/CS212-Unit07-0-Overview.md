@@ -67,7 +67,7 @@ Registration for winter term is open. If you are pursuing the AAS in Software De
 
 - Do you have any questions about:
 
-  - Lab 4&mdash;Tensorflow?
+  - Lab 5&mdash;Tensorflow?
   - The reading on Gen AI?
 
   - Anything else?
@@ -78,9 +78,9 @@ Registration for winter term is open. If you are pursuing the AAS in Software De
 
 - Tuesday 11/11  
   I was late getting the code review form ready, so I will be flexible about this due date.
-  - Lab 4 code review.
+  - Lab 5 code review.
 - Thursday 11/13   
-  - Lab 4 (TensorFlow), part 2, production version.
+  - Lab 5 (TensorFlow), part 2, production version.
 
 ### Next Week (Week 8) *Chat Completion API*
 
@@ -88,14 +88,14 @@ Registration for winter term is open. If you are pursuing the AAS in Software De
 
 - Tuesday 11/18   
   - Quiz 6 (GenAI) closes.
-  - Lab 5  (AI Coding) beta version.
+  - Lab 6  (AI Coding) beta version.
   - Term project proposal.
 - Thursday 11/20
-  - Lab 5 code review.
+  - Lab 6 code review.
 - Sunday 11/23
-  - Lab 5, production version.
+  - Lab 6, production version.
   - Quiz 7 over calling chat completion APIs.
-  - Lab 6 (AI APIs) beta version
+  - Lab 7 (AI APIs) beta version
 
 ## Week 9: *Model Context Protocol* (MCP)
 

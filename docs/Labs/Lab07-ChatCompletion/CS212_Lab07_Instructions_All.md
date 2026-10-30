@@ -1,6 +1,6 @@
 ---
-title: Lab 5, All Groups
-description: Instructions for making an app with GitHub Copilot
+title: Lab 7, All Groups
+description: Instructions for adding calls to a chat completion API to an app
 keywords: AI-assisted coding
 material: Lab Instructions
 generator: Typora
@@ -9,11 +9,11 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-<h1>Lab 5: AI Assisted Coding</h1>
+<h1>Lab 7: Calling a Chat Completion API</h1>
 
 
 
-- [Introduction](#introduction)
+- [Objective](#objective)
 - [Instructions](#instructions)
 - [Submitting your lab work on Canvas](#submitting-your-lab-work-on-canvas)
   - [Beta Version](#beta-version)
@@ -21,34 +21,17 @@ author: Brian Bird
   - [Production Version](#production-version)
 - [Grading Criteria](#grading-criteria)
 
-## Introduction
+## Objective
 
-In this lab you will use an AI-coding assistant like GitHub Copilot to write code for a moderately complex app. This will be a console based app in order to minimize complexity. (Unless you have experience writing code for a GUI and want to do that.)
-
-This week's app will be modified next week by adding calls to a generative AI *chat completion API* in order to enhance the app with an AI feature.
+In this lab you will modify the app you built in the previous lab by adding calls to a *chat completion API* in order to enhance the app with an AI feature.
 
 ## Instructions
 
-Since everyone will potentially be choosing different apps to write and they will probably be designed and coded differently, there won't be three versions of this lab assignment. But here are suggestions for the types of apps you could write:
+Since everyone is building different apps there aren't three versions of this lab assignment. 
 
-- Flash card or quiz generator
-  - For this lab load questions and answers from a file.
-  - In the next lab have AI generate the Q and A.
-- A console based game
-  - For this lab two humans would play on one computer.
-  - For the next lab, the human would play against an AI player.
-  - Some possibilities for games would be:
-    - Checkers
-    - Chess
-    - Dungeon crawler
-    - Text based quest
-    - Dice game
-    - Card game
-- A more comprehensive expert system.
-  - For this lab you would use an AI coding assistant to either improve the expert system you made earlier or make a new rule-based one. Possible enhancements would be: a progressive interview loop and a larger set of rules.
-  - For the next lab you would use AI to do an interview and make decisions instead of the rule-based system.
+Add a call to the Gemini chat completion API or some other generative chat completion API to add a feature to the app. For example, if the app is a game, add an AI opponent. 
 
-
+If the app is not a game, add an AI feature that does something in response to the user's input. This should be more than just giving answers (don't just make a chatbot), but the AI featuere should do some kind of decision making based on the user's input or the state of the app and then the app should do something based on the response from the AI.
 
 ## Submitting your lab work on Canvas
 
@@ -65,8 +48,7 @@ Since everyone will potentially be choosing different apps to write and they wil
 
  Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on Canvas:
 
-1. The Zipped Python (.py) and any other project files or a link to your GitHub repository.
-   (Don't include non-source code like .venv or `__pycache__`, etc.)
+1. The Zipped project files or a link to your GitHub repository.
 2. The code review <u>from your lab partner</u> with the “Prod.” column filled out by you.
 
 

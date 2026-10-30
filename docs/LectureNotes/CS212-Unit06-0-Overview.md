@@ -44,18 +44,18 @@ By the end of this week you will:
 
 <div style="clear: both;"></div>
 
-## Announcements
+## Announcements and Discussion
 
-None yet.
+- Any questions or comments related to the midterm or lab 4?
 
 ## Things to Do This Week
 
 - Take quiz 5 over ANNs by Sunday, 11/8.
-- Lab 4 part 1 due by Sunday, 11/8.
-  - Part 1 is a TensorFlow tutorial. See the [Lab 5, Part 1 instructions](../Labs/Lab05-ANN/CS212_Lab04_Part1_Instructions.md).
-- Lab 4 part 2 beta version due by Sunday, 11/8.
-- Lab 4 part 2 code review due by Tuesday, 11/10.
-- Lab 4 part 2 production version due by Thursday, 11/12.
+- Lab 5 part 1 due by Sunday, 11/8.
+  - Part 1 is a TensorFlow tutorial. See the [Lab 5, Part 1 instructions](../Labs/Lab05-ANN/CS212_Lab05_Part1_Instructions.md).
+- Lab 5 part 2 beta version due by Sunday, 11/8.
+- Lab 5 part 2 code review due by Tuesday, 11/10.
+- Lab 5 part 2 production version due by Thursday, 11/12.
 
 
 

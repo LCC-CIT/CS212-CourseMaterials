@@ -1,5 +1,5 @@
 ---
-title: Lab 7, MCP
+title: Lab 8, MCP
 description: Tutorials on building an MCP server and client
 keywords: MCP
 material: Lab Instructions
@@ -9,7 +9,7 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-<h1>Lab 7: Model Context Protocol</h1>
+<h1>Lab 8: Model Context Protocol</h1>
 
 
 
@@ -30,8 +30,8 @@ author: Brian Bird
 You have three options. You can <u>do any one</u> of these:
 
 1. Follow tutorials to build an MCP server and client
-   - Follow <a href="https://modelcontextprotocol.io/docs/develop/build-server" target="_blank">this tutorial to build an MCP weather server</a>, or <a href="https://lcc-cit.github.io/CS212-CourseMaterials/Labs/Lab07-MCP/BuildWeatherMcpServer.html" target="_blank">your instructor's simplified version</a> of the tutorial.
-   - Follow <a href="https://modelcontextprotocol.io/docs/develop/build-client" target="_blank">this tutorial to build an MCP client</a>, or <a href="https://lcc-cit.github.io/CS212-CourseMaterials/Labs/Lab07-MCP/BuildWeatherMcpClient.html" target="_blank">your instructor's simplified version</a> of the tutorial.   
+   - Follow <a href="https://modelcontextprotocol.io/docs/develop/build-server" target="_blank">this tutorial to build an MCP weather server</a>, or <a href="https://lcc-cit.github.io/CS212-CourseMaterials/Labs/Lab08-MCP/BuildWeatherMcpServer.html" target="_blank">your instructor's simplified version</a> of the tutorial.
+   - Follow <a href="https://modelcontextprotocol.io/docs/develop/build-client" target="_blank">this tutorial to build an MCP client</a>, or <a href="https://lcc-cit.github.io/CS212-CourseMaterials/Labs/Lab08-MCP/BuildWeatherMcpClient.html" target="_blank">your instructor's simplified version</a> of the tutorial.   
                                                     OR
 2. Write an MCP server to do something useful for the app you wrote in the previous lab. Incorporate an MCP client into the app from your previous lab.  
                                                           OR

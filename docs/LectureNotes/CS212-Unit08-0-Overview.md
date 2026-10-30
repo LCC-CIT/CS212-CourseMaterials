@@ -84,7 +84,7 @@ Registration for winter term is open. If you are pursuing the AAS in Software De
 
 - Do you have any questions about:
 
-  - Lab 5&mdash;AI assisted programming?
+  - Lab 6&mdash;AI assisted programming?
   - The reading on the chat completion API?
 
   - Anything else?
@@ -95,22 +95,22 @@ Registration for winter term is open. If you are pursuing the AAS in Software De
 
 - Tuesday 11/18   
   - Quiz 6 (GenAI) closes.
-  - Lab 5  (AI Coding) beta version.
+  - Lab 6  (AI Coding) beta version.
   - <u>Term project proposal.</u>  
     Submit a project proposal before starting on your app.
 - Thursday 11/20
-  - Lab 5 code review.
+  - Lab 6 code review.
 - Sunday 11/23
-  - Lab 5, production version.
-  - Lab 6 (AI APIs) beta version
+  - Lab 6, production version.
+  - Lab 7 (AI APIs) beta version
 
 ### Next Week (Week 9)
 
 - Tuesday 11/25
-  - Lab 6 Code review
+  - Lab 7 Code review
 - Friday 11/28
   - Quiz on MCP
-  - Lab 6 Productions version
+  - Lab 7 Productions version
 
 ## Upcoming Topics
 
