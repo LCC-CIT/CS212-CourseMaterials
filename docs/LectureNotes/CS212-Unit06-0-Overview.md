@@ -10,7 +10,7 @@ author: Brian Bird
 
 <h1>Week 6 Overview for Fall 2026</h1>
 
-<h2>Nov. 2 through Nov, 11/8</h2>
+<h2>Nov. 2 through Nov. 8</h2>
 
 | Topics                                  |                                        |
 | --------------------------------------- | -------------------------------------- |
@@ -21,81 +21,51 @@ author: Brian Bird
 | 5. More ML + History of AI              | 10. Social and ethical issues          |
 |                                         | 11. Final project presentation         |
 
-<h2>Contents</h2>
+## This Week's Learning Objectives
 
-- [Announcements for Fall 2025](#announcements-for-fall-2025)
-- [Registration for Winter Term 2026](#registration-for-winter-term-2026)
-  - [Relevant Links:](#relevant-links)
-- [Q and A](#q-and-a)
-- [Assignments Due](#assignments-due)
-  - [This Week](#this-week)
-  - [Next Week](#next-week)
+<figure style="float: right; width: 200px; margin: 0 0 1em 1.5em;">
+  <img src="../Images/AnnDiagram.png" alt="A diagram of an artificial neural network with five columns of colored nodes joined by lines" width="200">
+  <figcaption style="text-align: center; font-size: small;">Image by B. Bird using Gemini 2.5</figcaption>
+</figure>
 
-## Announcements for Fall 2025
+By the end of this week you will:
 
-- **CIT Lab hiring workers**
-  
-- **Student Emergent Tech & AI Club**
-  Fusion Lab Faculty and students are forming a [club on emergent technology and AI](Images/ETAIClubPoster.pdf).
-   <a href="https://out.smore.com/e/nd345/V0ERKC?__$u__" target="_blank">Interest Form</a> | Contact: <a href="https://out.smore.com/e/nd345/X14b6G?__$u__" target="_blank">Kevin Steeves</a>
+- Know how biological neurons and neural networks function.
 
-- **Snacks/Food available**
-  
-  In light of the interruption of SNAP benefits, the CIT lab has an increased stock of free snack and lunch food. The <a href="https://www.lanecc.edu/get-support/daily-living-support/titan-pantry-and-closet" target="_blank">Titan Food Pantry</a> has also has an increased stock and variety of food that is available for students.
+- Be able to describe how a perceptron (an artificial neuron) works.
 
-## Registration for Winter Term 2026
+- Be able to explain what an artificial neural network (ANN) is and how it can be used.
 
-Registration for winter term is open. If you are pursuing the AAS in Software Development, these are the recommended courses:
+- Understand deep learning neural networks.
 
-- CS 295N, Web Development 1: ASP.NEt
-- CS 275, Introduction to Database Systems and Modeling
-- CS 206, Co-op Ed: CIT Seminar
-- CS 246, System Design
+- Be able to train and use TensorFlow for image recognition.
 
-### Relevant Links:
+- Propose your term project.
 
-- <a href="https://lanecc.smartcatalogiq.com/en/current/lcc-catalog/programs-of-study/computer-information-technology/software-development-aas" target="_blank">Degree Requirements</a> for AAS in Software Dev
+<div style="clear: both;"></div>
 
-- <a href="https://docs.google.com/document/d/1F8CJY1M7A4J9uJtGRDFRyF-0j7l2AVe0vpPE5vcfHXE/edit?tab=t.0" target="_blank">Term-By-Term Sample Planner</a> for AAS in Software Dev
+## Announcements
 
-- Winter 2026 Class Schedule
+None yet.
 
-- <a href="https://lanecc.edu/advising" target="_blank">Academic Advising</a>
+## Things to Do This Week
 
-- <a href="https://my.lanecc.edu/StudentRegistrationSsb/ssb/registration" target="_blank">Registration</a>
+- Lab 3 code review due by Thursday, 11/5.
+  (I didn't realize I hadn't given you a code review form for lab 3.)
+- Lab 3, part 2 production version due by Thursday, 11/5.
+- Take quiz 5 over ANNs by Sunday, 11/8.
+- Lab 4 part 1 due by Sunday, 11/8.
+  - Part 1 is a TensorFlow tutorial. See the [Lab 4, Part 1 instructions](../Labs/Lab04-ANN/CS212_Lab04_Part1_Instructions.md).
+  - Read the lecture notes [Artificial Neural Networks](CS212-Unit06-1-ANNs.md) and [TensorFlow](CS212-Unit06-2-TensorFlow.md) first.
+- Lab 4 part 2 beta version due by Sunday, 11/8.
+  TBD, will be assigned before class time Thursday.
+- Lab 4 part 2 code review due by Tuesday, 11/10.
+- Lab 4 part 2 production version due by Thursday, 11/12.
 
-## Q and A
 
-- Do you have any questions about:
-  
-  - Lab 3 on scikit-learn?
-  
-  - The reading on AANs
-  
-  - Anything else?
-
-## Assignments Due
-
-### This Week
-
-- Thursday 11/6
-  - Lab 3 code review=
-    (I didn't realize I hadn't given you a code review form for lab 3.)
-  - Lab 3, part 2 production version
-- Sunday 11/9
-  - Take quiz 5 over ANNs
-  - Lab 4 part 1
-    (Part 1 is a TensorFlow tutorial.)
-  - Lab 4 part 2 beta version
-    TBD, will be assigned before class time Thursday
-
-### Next Week
-
-- Lab 4 part 2 code review due by Tuesday, 11/11.
-- Lab 4 part 2 production version by Thursday, 11/13.
 
 ---
 
-<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in 2025, revised in <time>2026</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---
