@@ -12,14 +12,14 @@ author: Brian Bird
 
 <h2>Oct. 26 through Nov. 1</h2>
 
-| Topics                                              |                               |
-| --------------------------------------------------- | ----------------------------- |
-| 1. What is AI, Python                               | 6. ANN: Image recognition     |
-| 2.  Symbolic AI: constraint solving                 | 7. Generative AI              |
-| 3. Classical machine learning: training             | 8. Custom chatbot             |
-| 4. Classical ML: testing and inference              | 9. LLM fine-tuning            |
-| 5. <mark>History of AI and Midterm</mark>          | 10. Social and ethical issues |
-|                                                     | 11. Final                     |
+| Topics                                    |                               |
+| ----------------------------------------- | ----------------------------- |
+| 1. What is AI, Python                     | 6. ANN: Image recognition     |
+| 2.  Symbolic AI: constraint solving       | 7. Generative AI              |
+| 3. Classical machine learning: training   | 8. Custom chatbot             |
+| 4. Classical ML: testing and tuning       | 9. LLM fine-tuning            |
+| 5. <mark>History of AI and Midterm</mark> | 10. Social and ethical issues |
+|                                           | 11. Final                     |
 
 ## Learning Objectives
 

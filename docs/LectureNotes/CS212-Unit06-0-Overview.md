@@ -8,18 +8,18 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-<h1>Week 6 Overview for Fall 2025</h1>
+<h1>Week 6 Overview for Fall 2026</h1>
 
-<h2>Nov. 3 through Nov, 11/9</h2>
+<h2>Nov. 2 through Nov, 11/8</h2>
 
-| Topics                                   |                                        |
-| ---------------------------------------- | -------------------------------------- |
-| 1. What is AI, Python                    | 6. <mark>ANN: Image recognition</mark> |
-| 2.  Symbolic AI                          | 7. Generative AI                       |
-| 3. Classical machine learning: training  | 8. Custom chatbot                      |
-| 4. Classical machine learning: inference | 9. LLM fine-tuning                     |
-| 5. More ML + History of AI           | 10. Social and ethical issues          |
-|                                          | 11. Final project presentation         |
+| Topics                                  |                                        |
+| --------------------------------------- | -------------------------------------- |
+| 1. What is AI, Python                   | 6. <mark>ANN: Image recognition</mark> |
+| 2. Constraint solvers                   | 7. Generative AI                       |
+| 3. Classical machine learning: training | 8. Custom chatbot                      |
+| 4.Classical ML: testing and tuning      | 9. LLM fine-tuning                     |
+| 5. More ML + History of AI              | 10. Social and ethical issues          |
+|                                         | 11. Final project presentation         |
 
 <h2>Contents</h2>
 
