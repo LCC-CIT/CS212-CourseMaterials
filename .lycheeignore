@@ -4,3 +4,6 @@
 
 # Works in a browser, but lychee gets an HTTP/2 protocol error
 ^https://gemini\.google\.com/$
+
+# Works in a browser, but lychee gets an HTTP/2 protocol error
+^https://chatgpt\.com/$
