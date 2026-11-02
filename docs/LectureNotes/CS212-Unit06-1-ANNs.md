@@ -10,34 +10,9 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-| Topics                                          |                                                              |
-| ----------------------------------------------- | ------------------------------------------------------------ |
-| 1. What is AI, Python                           | 6. <mark>Artificial Neural Networks: Image recognition</mark> |
-| 2.  Symbolic AI: rule-based                     | 7. Generative AI                                             |
-| 3.  Classical Machine Learning<br />Bayes' Rule | 8. Custom chatbot                                            |
-| 4. ML: scikit-learn<br />Working with Data Sets | 9. LLM fine-tuning                                           |
-| 5. ML: Scikit Learn Part 2                      | 10. Ethics                                                   |
-
 <h2>Table of Contents</h2>
 
-- [Description](#description)
-  - [Neural Networks in the Brain](#neural-networks-in-the-brain)
-- [Perceptrons](#perceptrons)
-    - [Mathematical Model](#mathematical-model)
-      - [Activation Function](#activation-function)
-  - [Limitations of Perceptrons](#limitations-of-perceptrons)
-- [Artificial Neural Networks](#artificial-neural-networks)
-  - [Deep Learning](#deep-learning)
-  - [Characteristics of ANNs](#characteristics-of-anns)
-    - [Discussion](#discussion)
-- [Backpropagation](#backpropagation)
-  - [Backpropagation in a Perceptron](#backpropagation-in-a-perceptron)
-  - [Backpropagation in an ANN](#backpropagation-in-an-ann)
-- [Reference](#reference)
-  - [Articles and Tutorials](#articles-and-tutorials)
-  - [Interactive Web Pages](#interactive-web-pages)
-
-
+[TOC]
 
 ## Description
 
@@ -177,10 +152,10 @@ Here is a simplified summary of the steps in the algorithm:
 
 
 
+*GPT-4 and GPT-4o were used to draft parts of these notes, July 2024.*
+
 [^1]: Marvin Minsky, in collaboration with Dean Edmonds, developed the first artificial neural network in 1951, known as the Stochastic Neural Analog Reinforcement Calculator (SNARC). It was not implemented in software and did not use a computer. Its 40 artificial neurons were built with mechanical and electronic components. It was about the size of a grand piano and included a plugboard for interconnecting the neurons. It was designed for a single task: to learn a path through a maze using Hebbian Learning.
 
 ---
 
-<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 lecture notes by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2024</time>, revised in <time>2025</time> are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
-
-Note: GPT-4 and GPT-4o were used to draft parts of these notes, July 2024.
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 lecture notes by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2024</time>, revised in <time>2026</time> are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
