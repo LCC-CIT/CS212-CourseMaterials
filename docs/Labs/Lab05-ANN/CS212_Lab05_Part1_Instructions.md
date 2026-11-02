@@ -21,9 +21,9 @@ Do the tutorial, <a href="https://www.tensorflow.org/tutorials/quickstart/beginn
 
 ## Submitting your lab work on Canvas
 
-For part 1, submit the URL link to your Google Colab notebook on Canvas.
+For part 1, submit the URL link for your Google Colab notebook on Canvas in the lab 5 submission text box where you will also submit the link for part 2.
 
-(No code review is needed)
+(No code review is needed for part 1.)
 
 ### Grading Criteria
 
