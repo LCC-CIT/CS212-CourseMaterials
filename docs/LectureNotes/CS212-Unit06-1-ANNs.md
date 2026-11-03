@@ -20,7 +20,7 @@ author: Brian Bird
 
 <img src="Images/BrainNeuralNetworkAndNeuron.jpg" alt="BrainNeuralNetworkAndNeuron" style="zoom:24%;" />
 
-A biological neural network consists of interconnected neurons that communicate through axons, dendrites and synapses to process and transmit information. The dendrites are inputs to the neuron and the axon is the output of the neuron. The connection points are synapses. This intricate web of connections forms the basis for learning, memory, and behavior in living organisms.
+A biological neural network consists of interconnected neurons that communicate through axons, dendrites and synapses to process and transmit information. The dendrites are inputs to the neuron and the axon is the output of the neuron. The connection points are synapses. This intricate web of connections forms the basis for learning, memory, and thought in living organisms.
 
 
 
@@ -34,16 +34,16 @@ A perceptron is modeled on a single neuron.
 
 #### Mathematical Model
 
-linear combination = intercept + weight1 × input1 + ... + weight6 × input6 (where ... is shorthand notation meaning that the sum include all the terms from 1 to 6).
+linear combination = intercept + weight1 × input1 + ... + weight6 × input6 (where ... is shorthand notation meaning that the sum includes all the terms from 1 to 6).
 
-- The *weights* are used as multipliers on the *inputs* of the neuron, which are added up.
-- The *intercept* term is like the intercept in linear regression. This can be thought of as a fixed additional charge.
+- The *weights* are used as multipliers on the *inputs* of the neuron, which are summed.
+- The *intercept* term is like the intercept in linear regression. This can be thought of as a fixed additional bias that shifts the output value up or down.
 
 ##### Activation Function
 
-Once the linear combination has been computed, the neuron takes the linear combination and puts it through an activation function. Typical examples of the activation function include:
+Once the linear combination has been calculated, the neuron takes the linear combination and sends it to an activation function. Typical examples of activation functions include:
 
-- Step function: if the value of the linear combination is greater than zero, send a pulse (ON), otherwise do nothing (OFF)
+- Step function: if the value of the linear combination is greater than zero, switch the output to a positive value (ON), otherwise do nothing (OFF)
 - Sign function: similar to the step function, but the output will be either +1 or -1.
 - Sigmoid (logistic) function: a “soft” version of the step function.
 
@@ -51,27 +51,27 @@ Once the linear combination has been computed, the neuron takes the linear combi
 
 ### Limitations of Perceptrons
 
-Perceptrons seemed to some, like Rosenblatt, the developer of the perceptron (1957,) to be the best way to advance the field of AI. But there were obstacles, which were publicized in detail by Minsky (who ironically developed the first neural network in 1951[^1]) and Pappert in their book *Perceptrons* (1969). These were two of the main obstacles:
+Perceptrons seemed to some, like Rosenblatt, the developer of the perceptron (1957), to be the best way to advance the field of AI. But there were obstacles, which were publicized in detail by Minsky (who ironically developed the first neural network in 1951[^1]) and Pappert in their book *Perceptrons* (1969). These were two of the main obstacles:
 
 - Since there was only a single layer of nodes (neurons), they could only do linear classification (much like regression or Bayesian machine learning techniques).
-- There was no known way to write an algorithm for automatically learning the optimal weights for the connections.
+- There was no known way to write an algorithm for automatically setting the optimal weights for the connections.
 
 ## Artificial Neural Networks
 
 <img src="Images/ART_Artificial_intelligence_Neural_network_explain.png" alt="ART_Artificial_intelligence_Neural_network_explain" style="zoom:40%;" />
 
-An artificial neural network (ANN) is a computational model inspired by the structure and function of neural networks in the brain. Each node, or "neuron", has multiple inputs, but one output. The nodes are arranged in layers and are interconnected. The input layer gets input data to be processed, the hidden layers do the processing and send data to an output layer (which could have more than one node.
+An artificial neural network (ANN) is a model with multiple interconnected "neurons"&mdash;in contrast to the perceptron that has just one artificial neuron. Each "neuron", or *node*, has multiple inputs, but one output. The nodes are arranged in layers and each one is connected to all the others in the next layer. The input layer gets data to be processed, the middle, or *hidden*, layers do the processing and send data to an output layer (which could have more than one node).
 
 ### Deep Learning
 
 Techniques were developed to overcome some of the main the limitations identified by Minsky and Pappert.
 
 - **Multiple Layers**: The term “deep” refers to the use of multiple layers in the network&mdash;the *hidden layers*. These layers transform the input data into a more abstract and composite representation that goes beyond simple linear classification.
-- **Self-learning**: A number of algorithms were developed to set the weights on the connections in the ANN. One of these was Hebbian Learning, named after the psychologist Donald Hebb, it is based on a rule which states that if two neurons fire together, then the connection between them strengthens. This is often summarized as “Cells that fire together, wire together.” 
+- **Self-learning**: A number of algorithms were developed to set the weights on the connections in the ANN. One of these was *Hebbian Learning*, named after the psychologist Donald Hebb, it is based on a rule which states that if two neurons fire together, then the connection between them strengthens. This is often summarized as "Cells that fire together, wire together."
 
 ### Characteristics of ANNs
 
-- Information processing and storage (memory) are both done in the same place instead of memory and processing being separated.
+- Information processing and storage (memory) both happen in the same place instead of memory and processing happening in different structures.
 - Processing is done simultaneously (in parallel) across many neurons instead of sequentially. 
 
 #### Discussion
@@ -84,8 +84,8 @@ Techniques were developed to overcome some of the main the limitations identifie
 
   - Different types of processing units in consumer PCs:
     - CPU: typically 4 to 16 cores
-    - GPU: NVIDIA GPUs can have hundreds or thousands of CUDA (Compute Unified Device Architecture) cores.
-    - NPU: Typically have 10 to 20 cores.
+    - GPU: NVIDIA GPUs can have hundreds or thousands of CUDA (Compute Unified Device Architecture) and Tensor cores.
+    - NPU: Typically has 10 to 20 cores.
 
 - Where is data in an ANN stored?
 
