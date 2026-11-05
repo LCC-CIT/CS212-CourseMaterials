@@ -10,29 +10,23 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-<h2>Table of Contents</h2>
+<h2>Contents</h2>
 
-- [Convolutional Neural Networks (CNN)](#convolutional-neural-networks-cnn)
-  - [History of CNN Development](#history-of-cnn-development)
-- [Reference](#reference)
-  - [Articles and Tutorials](#articles-and-tutorials)
-  - [Interactive Web Pages](#interactive-web-pages)
+[TOC]
 
-## Convolutional Neural Networks (CNN)
-
-When we tried to assign weights to an ANN that classified happy and sad faces, we discovered that the ANN had difficulty with:
+When we tried to assign weights to a perceptron that classified happy and sad faces, we discovered that the perceptron (or an ANN) had difficulty with:
 
 - Different sizes of faces
 - Faces that were positioned higher or lower in the input grid
 - Features (mouth size and position) that varied from face to face
 
-CNNs resolves these problems and more using a *convolution operation*. This operation involves sliding a filter  over the input data and performing element-wise multiplication followed by a sum. This process helps in extracting features from the input.
+CNNs resolves these problems and more using a *convolution operation*. This operation involves sliding a filter (called a *kernel*) over the input data and performing pixel-wise multiplication followed by a sum. This process helps in extracting features from the input.
 
 Here is a simplified description of the process (provided by MS Copilot):
 
 > Think of an image as a large field of different colored flowers. Now, suppose you want to identify patterns or features in this field, like areas of certain colors or color combinations.
 >
-> The convolution operation is like using a small magnifying glass to look at one small area of the field at a time. This magnifying glass is what we call a "filter" or "kernel" in a Convolutional Neural Network (CNN).
+> The convolution operation is like using a small magnifying glass to look at one small area of the field at a time. 
 >
 > As you move the magnifying glass across the field (or the image), you're focusing on one small area at a time. For each area, you're asking, "What's interesting here?" The answer could be "a lot of red flowers," "mostly blue flowers," "a mix of red and blue flowers," and so on. These are the "features" that the filter is learning to recognize.
 >
@@ -44,9 +38,17 @@ Here is a simplified description of the process (provided by MS Copilot):
 
 Convolutional Neural Networks (CNNs) were first developed and used in the 1980s. The foundational work was done by Kunihiko Fukushima and Yann LeCun. 
 
-Yann LeCun, in 1989, proposed a neural network architecture known as LeNet-5. This was the first successful implementation of a network that utilized the backpropagation algorithm for training, which is a standard method for training CNNs today. LeNet-5 was used for digit recognition tasks.
+Yann LeCun, in 1989, proposed a neural network architecture known as LeNet-5. This was the first successful implementation of a network that utilized the *backpropagation* algorithm for training, which is a standard method for training CNNs today. LeNet-5 was used for digit recognition tasks.
 
 The significant breakthrough in the field of CNNs came in 2012 with the development of AlexNet by Alex Krizhevsky. AlexNet significantly outperformed previous image recognition algorithms and won the 2012 ImageNet contest with 85% accuracy. 
+
+## Using TensorFlow for Image Recognition
+
+TensorFlow makes building CNNs highly accessible,  through its high-level API, **Keras**. Instead of writing complex mathematical equations for matrix multiplications and convolutions from scratch, a developer can build a CNN in TensorFlow using a few lines of code by stacking prebuilt blocks:
+
+- `tf.keras.layers.Conv2D`: Creates the convulsion layers that scan images for features.
+- `tf.keras.layers.MaxPooling2D`: Down-samples the image data to reduce computational load.
+- `tf.keras.layers.Dense`: Connects the extracted features to final classification outputs (e.g., identifying if an image is a "cat" or a "dog").
 
 
 

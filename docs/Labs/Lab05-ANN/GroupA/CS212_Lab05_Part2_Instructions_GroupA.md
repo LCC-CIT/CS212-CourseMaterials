@@ -27,7 +27,7 @@ author: Brian Bird
 
 ### Objective:
 
-Your goal is to apply the exact same steps you learned in the "<a href="https://www.tensorflow.org/tutorials/keras/classification" target="_blank">Basic image classification</a>" tutorial (which used the Fashion MNIST dataset) to a new, slightly more complex dataset: CIFAR-10.
+Your goal is to apply the same steps you learned in the "<a href="https://www.tensorflow.org/tutorials/keras/classification" target="_blank">Basic image classification</a>" tutorial (which used the Fashion MNIST dataset) to a new, slightly more complex dataset: CIFAR-10.
 
 This will test your understanding of:
 
@@ -61,7 +61,7 @@ This is the same as the tutorial. You'll need tensorflow (as tf), numpy, and mat
 
 Python
 
-```
+```python
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
@@ -69,7 +69,7 @@ import matplotlib.pyplot as plt
 
 Step 2: Load the Data
 
-Instead of fashion_mnist, you will import and load cifar10.
+Instead of fashion_mnist, you will import and load the [cifar10 dataset](https://cave.cs.toronto.edu/kriz/cifar.html) which consists of 60,000 32 x 32 color images in 10 classes.
 
 ```python
 # Load the CIFAR-10 dataset

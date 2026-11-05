@@ -150,6 +150,8 @@ Here is a simplified summary of the steps in the algorithm:
 
 <a href="https://perceptrondemo.com/" target="_blank">Perceptron Visualizer</a>
 
+[Perceptron Happy/Sad Face Classifier](https://lcc-cit.github.io/CS112-CourseMaterials/Exercises/EoAI-Ch5/PerceptronSimulator.html)&mdash;Brian Bird
+
 
 
 *GPT-4 and GPT-4o were used to draft parts of these notes, July 2024.*
