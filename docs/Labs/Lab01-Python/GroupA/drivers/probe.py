@@ -22,6 +22,19 @@ path, payload = sys.argv[1], json.loads(sys.argv[2])
 real_out = sys.stdout
 sys.path.insert(0, os.path.dirname(path))
 os.chdir(os.path.dirname(path))
+def conv(a):
+    if isinstance(a, dict) and "__enum__" in a:   # the module's enum member with this value, if it has one
+        import enum
+        for v in list(vars(sys.modules["student_mod"]).values()):
+            if isinstance(v, type) and issubclass(v, enum.Enum):
+                for m in v:
+                    if m.value == a["__enum__"]:
+                        return m
+        return a["__enum__"]
+    if isinstance(a, dict) and "__obj__" in a:
+        import types
+        return types.SimpleNamespace(**a["__obj__"])
+    return a
 def run(fn):
     buf = io.StringIO()
     err = None
@@ -50,9 +63,11 @@ if payload.get("calls"):
     f = getattr(mod, payload["function"], None)
     for args in payload["calls"]:
         if isinstance(args, dict):
-            ret, out, err = run(lambda: f(**args))
+            kw = {k: conv(v) for k, v in args.items()}
+            ret, out, err = run(lambda: f(**kw))
         else:
-            ret, out, err = run(lambda: f(*args))
+            pos = [conv(v) for v in args]
+            ret, out, err = run(lambda: f(*pos))
         try:
             json.dumps(ret)
         except Exception:
@@ -142,3 +157,69 @@ def numbers(text):
 
 def report(name, ok, why=''):
     print(f"{'PASS' if ok else 'FAIL'} {name}" + (f" ({why})" if why and not ok else ''))
+
+
+def candidate_functions(functions, roles):
+    """Every function whose parameters fit all roles (bound by name, else by count), best name first."""
+    out = []
+    for name, params in functions:
+        pnames = [p[0] for p in params]
+        found = {}
+        for role, rx in roles.items():
+            for pn in pnames:
+                if re.search(rx, pn, re.I) and pn not in found.values():
+                    found[role] = pn
+                    break
+        if len(found) == len(roles) or len(pnames) == len(roles):
+            hint = 1 if re.search(r'recommend|rating|rate|status|alert|priority|check|compat|room|get_', name, re.I) else 0
+            out.append((-hint, name, found, pnames))
+    return [(n, f, p) for _, n, f, p in sorted(out, key=lambda t: t[0])]
+
+
+def run_cases(path, roles, cases, judge, variants=None, object_attrs=None):
+    """
+    Try the student's code on each case; a case passes when ANY attempt is judged right.
+      roles    {role: param-name regex}, e.g. {'speed': r'speed', 'strength': r'strength'}
+      cases    [(name, {role: value}, expected)]
+      judge    judge(ret, out, expected) -> bool, where ret is the return value and out what was printed
+      variants variants(role, value) -> alternative spellings of an input (default: just the value)
+      object_attrs  {role: [attribute names]}: also try a one-parameter function given an object with those attributes
+    Returns ({case name: bool}, note) -- note explains a total failure to find anything callable.
+    """
+    import itertools
+    info = probe(path)
+    results = {name: False for name, _, _ in cases}
+    cands = candidate_functions(info['functions'], roles)
+    one_param = [(n, p) for n, params in info['functions'] for p in [[x[0] for x in params]] if len(p) == 1] if object_attrs else []
+    if not cands and not one_param:
+        return results, ('program did not load (%s)' % info['load_error']) if info['load_error'] else 'no function taking these inputs was found'
+    attempts = []   # (function name, args, case name, expected)
+    for name, values, expected in cases:
+        alts = [list((variants(r, values[r]) if variants else [values[r]])) for r in roles]
+        for combo in itertools.product(*alts):
+            vals = dict(zip(roles, combo))
+            for fn, found, pnames in cands:
+                if len(found) == len(roles):
+                    args = {found[r]: vals[r] for r in roles}
+                    for pn in pnames:
+                        args.setdefault(pn, True)
+                else:
+                    args = [vals[r] for r in roles]
+                attempts.append((fn, args, name, expected))
+            if object_attrs:
+                attrs = {a: vals[r] for r, names in object_attrs.items() for a in names}
+                for fn, _ in one_param:
+                    attempts.append((fn, [{'__obj__': attrs}], name, expected))
+    by_fn = {}
+    for a in attempts:
+        by_fn.setdefault(a[0], []).append(a)
+    for fn, group in by_fn.items():
+        outs = probe(path, fn, [g[1] for g in group])['calls']
+        for (_, _, name, expected), r in zip(group, outs):
+            if not results[name] and r['err'] is None and judge(r['ret'], r['out'], expected):
+                results[name] = True
+    return results, ''
+
+
+def words(ret, out):
+    return ('%s %s' % (ret if ret is not None else '', out or '')).lower()

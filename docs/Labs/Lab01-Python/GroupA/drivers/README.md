@@ -35,4 +35,4 @@ checker could not find or call it. Read the message, fix your program and run it
 `probe.py` holds the shared helpers. To wire these into the AI grader, give each group's
 `testCheck` entries `supportFiles` `{ "from": "<this folder>", "to": "grader_checks" }` and entries
 `grader_checks/check_shipping.py` / `grader_checks/check_recommend.py` (see `lab01_config.json`'s
-`_nextTerm` note in CS233JS-AI_Grading).
+`_note` in the grading repo, which keeps a copy of this folder).
