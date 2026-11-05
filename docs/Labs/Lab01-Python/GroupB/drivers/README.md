@@ -33,3 +33,7 @@ checker could not find or call a function. Read the message, fix your program an
 `probe.py` holds the shared helpers (the same file is in each group's `drivers` folder). The
 grader config (`lab01_config.json` in the grading repo) keeps a copy of this folder and runs it for each group's
 `testCheck` entries (this folder is the master; re-copy it when it changes).
+
+## Strict mode (for the version of the lab that names its functions)
+
+With `LAB_STRICT=1` set in the environment, the checks call only the function named in the lab instructions, with the inputs exactly as given (no guessing of names, alternative spellings or objects). Use it once the instructions fix the function names, as the `_draft` instructions do.

@@ -31,7 +31,7 @@ if not path:
     sys.exit(2)
 
 info = probe(path)
-choice = pick_function(info['functions'], ROLES)
+choice = pick_function(info['functions'], ROLES, strict_name='recommend_product')
 mode = 'function' if choice else 'script'
 combos = list(PRODUCTS)
 results = {c: False for c in combos}

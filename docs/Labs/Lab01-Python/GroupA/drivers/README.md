@@ -36,3 +36,7 @@ checker could not find or call it. Read the message, fix your program and run it
 `testCheck` entries `supportFiles` `{ "from": "<this folder>", "to": "grader_checks" }` and entries
 `grader_checks/check_shipping.py` / `grader_checks/check_recommend.py` (see `lab01_config.json`'s
 `_note` in the grading repo, which keeps a copy of this folder).
+
+## Strict mode (for the version of the lab that names its functions)
+
+With `LAB_STRICT=1` set in the environment, the checks call only the function named in the lab instructions, with the inputs exactly as given (no guessing of names, alternative spellings or objects). Use it once the instructions fix the function names, as the `_draft` instructions do.

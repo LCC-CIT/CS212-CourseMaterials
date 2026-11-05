@@ -12,7 +12,7 @@ ROLES = {'attendees': r'attendee|people|count|size|num|guest', 'projector': r'pr
 def judge(ret, out, expected):
     t = words(ret, out)
     if expected == 'none':      # invalid headcount: must not recommend a room
-        return not any(r in t for r in ROOMS)
+        return not any(r in t for r in ROOMS[:3])   # "Denied" is an acceptable answer for an impossible headcount
     return expected in t and not any(r in t for r in ROOMS if r != expected)
 
 
@@ -41,6 +41,6 @@ for n in (16, 40):
 cases.append(('0 attendees: no room recommended', {'attendees': 0, 'projector': False}, 'none'))
 cases.append(('-3 attendees: no room recommended', {'attendees': -3, 'projector': False}, 'none'))
 
-results, note = run_cases(path, ROLES, cases, judge, variants)
+results, note = run_cases(path, ROLES, cases, judge, variants, strict_name='recommend_room')
 for name, _, _ in cases:
     report(name, results[name], note)

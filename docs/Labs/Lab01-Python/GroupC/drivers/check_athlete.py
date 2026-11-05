@@ -30,6 +30,6 @@ TABLE = [
     (49, 69, 'beginner'), (0, 0, 'beginner'), (10, 40, 'beginner'),
 ]
 cases = [(f'Speed {s}, strength {g}: {TIER_NAMES.get(e, e.capitalize())}', {'speed': s, 'strength': g}, e) for s, g, e in TABLE]
-results, note = run_cases(path, ROLES, cases, judge, object_attrs=OBJECT_ATTRS)
+results, note = run_cases(path, ROLES, cases, judge, object_attrs=OBJECT_ATTRS, strict_name='rate_athlete')
 for name, _, _ in cases:
     report(name, results[name], note)

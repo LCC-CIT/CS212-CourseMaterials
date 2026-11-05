@@ -16,7 +16,7 @@ if not path:
 
 cases = [(w, z, RATES[z][t]) for z in 'ABC' for w, t in WEIGHTS]
 info = probe(path)
-choice = pick_function(info['functions'], ROLES)
+choice = pick_function(info['functions'], ROLES, strict_name='shipping_cost')
 results = {}
 if choice:
     fn, found, pnames = choice

@@ -120,10 +120,17 @@ def run_script(path, stdin_text, timeout=6):
         return (e.stdout or b'').decode('utf-8', 'replace') if isinstance(e.stdout, bytes) else (e.stdout or '')
 
 
-def pick_function(functions, roles, name_hint=r'ship|cost|calc|rate|recommend|product|invest|advice|suggest|get_'):
+def strict_only(functions, strict_name):
+    """Strict mode (environment variable LAB_STRICT=1): only the function named in the lab instructions counts."""
+    if strict_name and os.environ.get('LAB_STRICT'):
+        return [f for f in functions if f[0] == strict_name]
+    return functions
+
+
+def pick_function(functions, roles, name_hint=r'ship|cost|calc|rate|recommend|product|invest|advice|suggest|get_', strict_name=None):
     """roles: {role: regex}. Return (function name, {role: param name}) for the best candidate."""
     best = None
-    for name, params in functions:
+    for name, params in strict_only(functions, strict_name):
         pnames = [p[0] for p in params]
         found = {}
         for role, rx in roles.items():
@@ -176,7 +183,7 @@ def candidate_functions(functions, roles):
     return [(n, f, p) for _, n, f, p in sorted(out, key=lambda t: t[0])]
 
 
-def run_cases(path, roles, cases, judge, variants=None, object_attrs=None):
+def run_cases(path, roles, cases, judge, variants=None, object_attrs=None, strict_name=None):
     """
     Try the student's code on each case; a case passes when ANY attempt is judged right.
       roles    {role: param-name regex}, e.g. {'speed': r'speed', 'strength': r'strength'}
@@ -184,11 +191,16 @@ def run_cases(path, roles, cases, judge, variants=None, object_attrs=None):
       judge    judge(ret, out, expected) -> bool, where ret is the return value and out what was printed
       variants variants(role, value) -> alternative spellings of an input (default: just the value)
       object_attrs  {role: [attribute names]}: also try a one-parameter function given an object with those attributes
+      strict_name   the function name the lab instructions require; with LAB_STRICT=1 only that function is
+                    called, with the inputs exactly as given (no alternative spellings, no objects)
     Returns ({case name: bool}, note) -- note explains a total failure to find anything callable.
     """
     import itertools
     info = probe(path)
     results = {name: False for name, _, _ in cases}
+    if strict_name and os.environ.get('LAB_STRICT'):
+        info['functions'] = strict_only(info['functions'], strict_name)
+        variants, object_attrs = None, None
     cands = candidate_functions(info['functions'], roles)
     one_param = [(n, p) for n, params in info['functions'] for p in [[x[0] for x in params]] if len(p) == 1] if object_attrs else []
     if not cands and not one_param:

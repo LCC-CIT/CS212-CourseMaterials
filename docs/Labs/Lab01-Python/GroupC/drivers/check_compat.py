@@ -30,6 +30,6 @@ TABLE = [
     ('am4', 'ddr4', 'compatible'), ('lga1700', 'ddr5', 'compatible'),
 ]
 cases = [(f'{s} with {r} is {e.capitalize()}', {'socket': s, 'ram': r}, e) for s, r, e in TABLE]
-results, note = run_cases(path, ROLES, cases, judge)
+results, note = run_cases(path, ROLES, cases, judge, strict_name='check_compatibility')
 for name, _, _ in cases:
     report(name, results[name], note)

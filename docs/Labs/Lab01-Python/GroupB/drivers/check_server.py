@@ -36,6 +36,6 @@ def variants(role, value):
 
 
 cases = [(f'Health {h}, {t} hours: {p.upper()}', {'health': h, 'hours': t}, p) for h, t, p in TABLE]
-results, note = run_cases(path, ROLES, cases, judge, variants)
+results, note = run_cases(path, ROLES, cases, judge, variants, strict_name='alert_priority')
 for name, _, _ in cases:
     report(name, results[name], note)
