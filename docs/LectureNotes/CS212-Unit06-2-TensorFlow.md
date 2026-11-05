@@ -1,6 +1,6 @@
 ---
 title: TensorFlow
-description: Intro to Tensorflow
+description: Intro to TensorFlow
 keywords: AI, ML, ANN
 generator: Typora
 author: Brian Bird
@@ -16,15 +16,37 @@ author: Brian Bird
 
 ## What is TensorFlow?
 
-From Wikipedia:
+Adapted from Wikipedia:
 
-> TensorFlow is a <a href="https://en.wikipedia.org/wiki/Library_(computing)" target="_blank">software library</a> for <a href="https://en.wikipedia.org/wiki/Machine_learning" target="_blank">machine learning</a> and <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank">artificial intelligence</a>. It can be used across a range of tasks, but is used mainly for <a href="https://en.wikipedia.org/wiki/Types_of_artificial_neural_networks#Training" target="_blank">training</a> and <a href="https://en.wikipedia.org/wiki/Statistical_inference" target="_blank">inference</a> of <a href="https://en.wikipedia.org/wiki/Neural_network_(machine_learning)" target="_blank">neural networks</a>.It is one of the most popular <a href="https://en.wikipedia.org/wiki/Deep_learning" target="_blank">deep learning</a> frameworks, alongside others such as <a href="https://en.wikipedia.org/wiki/PyTorch" target="_blank">PyTorch</a>. It is <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software" target="_blank">free and open-source software</a> released under the <a href="https://en.wikipedia.org/wiki/Apache_License_2.0" target="_blank">Apache License 2.0</a>.
+> TensorFlow is a  machine learning platform that can be used across a wide range of tasks, but is used mainly for <a href="https://en.wikipedia.org/wiki/Types_of_artificial_neural_networks#Training" target="_blank">training</a> and <a href="https://en.wikipedia.org/wiki/Statistical_inference" target="_blank">inference</a> of <a href="https://en.wikipedia.org/wiki/Neural_network_(machine_learning)" target="_blank">neural networks</a>. It is one of the most popular <a href="https://en.wikipedia.org/wiki/Deep_learning" target="_blank">deep learning</a> frameworks, alongside others such as <a href="https://en.wikipedia.org/wiki/PyTorch" target="_blank">PyTorch</a>. It is free and open-source software released under the <a href="https://en.wikipedia.org/wiki/Apache_License_2.0" target="_blank">Apache License 2.0</a>.
 >
-> It was developed by the <a href="https://en.wikipedia.org/wiki/Google_Brain" target="_blank">Google Brain</a> team for <a href="https://en.wikipedia.org/wiki/Google" target="_blank">Google</a>'s internal use in research and production. The initial version was released under the <a href="https://en.wikipedia.org/wiki/Apache_License_2.0" target="_blank">Apache License 2.0</a> in 2015. Google released an updated version, TensorFlow 2.0, in September 2019.
+> It was developed by the <a href="https://en.wikipedia.org/wiki/Google_Brain" target="_blank">Google Brain</a> team for Google's internal use in research and production. The initial version was released in 2015. Google released an updated version, TensorFlow 2.0, in September 2019.
 >
-> TensorFlow can be used in a wide variety of programming languages, including <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Python</a>, <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>, <a href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank">C++</a>, and <a href="https://en.wikipedia.org/wiki/Java_(programming_language)" target="_blank">Java</a>, facilitating its use in a range of applications in many sectors.
+> TensorFlow can be used with a wide variety of programming languages, including <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Python</a>, <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>, <a href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank">C++</a>, [C#](https://dotnet.microsoft.com/en-us/apps/ai/ml-dotnet#extensibility) and <a href="https://en.wikipedia.org/wiki/Java_(programming_language)" target="_blank">Java</a>, facilitating its use in a range of applications in many sectors.
 >
-> 
+
+## What It Can Do
+
+- **Computer Vision and Image Processing:** Handling image classification, object detection in self-driving cars, facial recognition, and medical scan analysis using Convolutional Neural Networks (CNNs).
+- **Natural Language Processing (NLP)**: Powering text translation, sentiment analysis, chatbots, and Large Language Models (LLMs) using Recurrent Neural Networks (RNNs) and Transformers.
+- **Time-Series Forecasting**: Predicting stock market trends, weather patterns, and supply chain demands.
+- **Generative AI**: Powering Generative Adversarial Networks (GANs) and diffusion models to create entirely new art, audio, or text.
+- **Tabular Data Analysis**: Running traditional machine learning algorithms like regression, decision trees, and clustering for financial fraud detection or customer churn prediction.
+- **Reinforcement Learning**: Training AI agents to play video games, control robotics, or navigate autonomous vehicles through specialized libraries like TF-Agents.
+
+## The  TensorFlow Ecosystem
+
+TensorFlow is considered a "platform" because it handles the entire life-cycle of a machine learning model, from data preparation to production:
+
+| Component                     | What It Does                                                 |
+| ----------------------------- | ------------------------------------------------------------ |
+| **tf.data**                   | Handles massive datasets and builds efficient input pipelines. |
+| **TensorBoard**               | A visualization toolkit to track and log metrics like loss and accuracy during training. |
+| **LiteRT (formerly TF Lite)** | Compresses and deploys models directly onto mobile phones, IoT gadgets, and edge devices. |
+| **TensorFlow.js**             | Allows developers to train and run machine learning models directly inside a web browser using JavaScript. |
+| **TFX (TensorFlow Extended)** | An enterprise-grade pipeline for deploying and managing production-scale machine learning workflows. |
+
+
 
 ## Reference
 
