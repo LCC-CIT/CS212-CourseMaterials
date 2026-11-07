@@ -1,0 +1,15 @@
+{
+  "courseName": "CS212",
+  "courseCode": "CS212",
+  "rubricPrefix": "CS212",
+  "defaults": {
+    "language": "python",
+    "execution": {
+      "cwd": "copy"
+    },
+    "urlPatterns": {
+      "colab": "colab.research.google.com"
+    }
+  },
+  "canvasCourseId": 3948
+}

@@ -1,0 +1,254 @@
+{
+  "rubricName": "../../docs/Labs/Lab01-Python/CS212_Lab01_Rubric.xlsm",
+  "titleText": "Lab01",
+  "titleCell": "A1",
+  "summaryCell": "A2",
+  "graderCell": "E1",
+  "language": "python",
+  "skipStudents": [
+    "Test Student"
+  ],
+  "runtimeCheck": "build",
+  "mappings": [
+    {
+      "cell": "C6",
+      "commentCell": "E6",
+      "type": "code_review",
+      "maxScore": 2
+    },
+    {
+      "cell": "C9",
+      "commentCell": "E9",
+      "type": "developer_comments",
+      "maxScore": 1,
+      "require": [
+        "name",
+        "date"
+      ],
+      "scope": "each",
+      "namePartialCredit": 0.5,
+      "ignoreCommentsBy": [
+        "Brian Bird"
+      ]
+    },
+    {
+      "cell": "C10",
+      "commentCell": "E10",
+      "type": "test_check",
+      "maxScore": 5,
+      "testId": "part1"
+    },
+    {
+      "cell": "C11",
+      "commentCell": "E11",
+      "type": "llm_check",
+      "maxScore": 3,
+      "criterion": "Comprehensive test program",
+      "guidance": "A test program may be a separate test file, or code in the program file that calls the functions with chosen inputs and compares or prints the expected and actual results. Full credit: covers every row of the decision table and the boundary values, with expected results stated. Partial credit: some rows or no boundaries. 0: no tests of the student's own. Suggest a score up to 4."
+    },
+    {
+      "cell": "C12",
+      "commentCell": "E12",
+      "type": "build_check",
+      "maxScore": 2,
+      "stockComments": {
+        "full": "No syntax errors (every file compiles; the functionality checks also run the program)"
+      }
+    },
+    {
+      "cell": "C13",
+      "commentCell": "E13",
+      "type": "llm_check",
+      "maxScore": 2,
+      "criterion": "Correct code syntax and logic",
+      "guidance": "Check for syntax errors, logic bugs, and incorrect control flow; suggest a score up to 3."
+    },
+    {
+      "cell": "C14",
+      "commentCell": "E14",
+      "type": "lint",
+      "maxScore": 2,
+      "severity": "warnings"
+    },
+    {
+      "cell": "C17",
+      "commentCell": "E17",
+      "type": "developer_comments",
+      "maxScore": 1,
+      "require": [
+        "name",
+        "date"
+      ],
+      "scope": "each",
+      "namePartialCredit": 0.5,
+      "ignoreCommentsBy": [
+        "Brian Bird"
+      ]
+    },
+    {
+      "cell": "C18",
+      "commentCell": "E18",
+      "type": "test_check",
+      "maxScore": 10,
+      "testId": "part2"
+    },
+    {
+      "cell": "C19",
+      "commentCell": "E19",
+      "type": "llm_check",
+      "maxScore": 5,
+      "criterion": "Comprehensive test program",
+      "guidance": "A test program may be a separate test file, or code in the program file that calls the functions with chosen inputs and compares or prints the expected and actual results. Full credit: covers every row of the decision table and the boundary values, with expected results stated. Partial credit: some rows or no boundaries. 0: no tests of the student's own. Suggest a score up to 8."
+    },
+    {
+      "cell": "C20",
+      "commentCell": "E20",
+      "type": "build_check",
+      "maxScore": 2,
+      "stockComments": {
+        "full": "No syntax errors (every file compiles; the functionality checks also run the program)"
+      }
+    },
+    {
+      "cell": "C21",
+      "commentCell": "E21",
+      "type": "llm_check",
+      "maxScore": 3,
+      "criterion": "Correct code syntax and logic",
+      "guidance": "Check for syntax errors, logic bugs, and incorrect control flow; suggest a score up to 4."
+    },
+    {
+      "cell": "C22",
+      "commentCell": "E22",
+      "type": "lint",
+      "maxScore": 2,
+      "severity": "warnings"
+    }
+  ],
+  "variations": {
+    "A": {
+      "appName": "Shipping Cost",
+      "overrides": {
+        "testCheck": [
+          {
+            "id": "part1",
+            "mode": "script",
+            "entry": "grader_checks/check_shipping.py",
+            "timeoutMs": 120000,
+            "supportFiles": [
+              {
+                "from": "../../docs/Labs/Lab01-Python/GroupA/drivers",
+                "to": "grader_checks"
+              }
+            ]
+          },
+          {
+            "id": "part2",
+            "mode": "script",
+            "entry": "grader_checks/check_recommend.py",
+            "timeoutMs": 120000,
+            "supportFiles": [
+              {
+                "from": "../../docs/Labs/Lab01-Python/GroupA/drivers",
+                "to": "grader_checks"
+              }
+            ]
+          }
+        ],
+        "execution": {
+          "cwd": "copy"
+        }
+      }
+    },
+    "B": {
+      "appName": "RoomReservations",
+      "overrides": {
+        "testCheck": [
+          {
+            "id": "part1",
+            "mode": "script",
+            "entry": "grader_checks/check_rooms.py",
+            "timeoutMs": 120000,
+            "supportFiles": [
+              {
+                "from": "../../docs/Labs/Lab01-Python/GroupB/drivers",
+                "to": "grader_checks"
+              }
+            ]
+          },
+          {
+            "id": "part2",
+            "mode": "script",
+            "entry": "grader_checks/check_server.py",
+            "timeoutMs": 120000,
+            "supportFiles": [
+              {
+                "from": "../../docs/Labs/Lab01-Python/GroupB/drivers",
+                "to": "grader_checks"
+              }
+            ]
+          }
+        ],
+        "execution": {
+          "cwd": "copy"
+        }
+      }
+    },
+    "C": {
+      "appName": "CompatibilityChecker",
+      "overrides": {
+        "testCheck": [
+          {
+            "id": "part1",
+            "mode": "script",
+            "entry": "grader_checks/check_compat.py",
+            "timeoutMs": 120000,
+            "supportFiles": [
+              {
+                "from": "../../docs/Labs/Lab01-Python/GroupC/drivers",
+                "to": "grader_checks"
+              }
+            ]
+          },
+          {
+            "id": "part2",
+            "mode": "script",
+            "entry": "grader_checks/check_athlete.py",
+            "timeoutMs": 120000,
+            "supportFiles": [
+              {
+                "from": "../../docs/Labs/Lab01-Python/GroupC/drivers",
+                "to": "grader_checks"
+              }
+            ]
+          }
+        ],
+        "execution": {
+          "cwd": "copy"
+        }
+      }
+    }
+  },
+  "canvas": {
+    "assignmentId": 154461
+  },
+  "testCheck": [
+    {
+      "id": "part1",
+      "mode": "script",
+      "entry": "grader_checks/driver_part1.py"
+    },
+    {
+      "id": "part2",
+      "mode": "script",
+      "entry": "grader_checks/driver_part2.py"
+    }
+  ],
+  "_note": "The 'Has all functionality' rows (C10, C18) run each group's drivers from the drivers/ folder next to this file (copies of CS212-CourseMaterials' Lab01-Python/Group<X>/drivers, which are the master copies; refresh them with: node bin/sync-drivers.js <that Lab01-Python folder> configs/CS212/Lab01, add --check to only compare). Set LAB_STRICT=1 in the grading environment once the instructions fix the function names (see the _draft instructions). The base testCheck entries are placeholders for a group with no drivers (NEEDS MANUAL CHECK). llm_check rows use DeepSeek through the OpenAI-compatible API (llmCheck): the API key and model come from LLM_API_KEY or this machine's configs/local-config.json (llmEndpoints / llm). This sends student code, including names in header comments, to DeepSeek. The 'No run-time errors' rows (C12, C20) are build_check: for Python that is a syntax check only; crashes show up as failures in the functionality rows. developer_comments rows require a name and a date in EACH file (scope each); 'Brian Bird' header lines (starter files) are ignored. llmCheck.model is pinned so the config does not depend on a machine's local-config.",
+  "llmCheck": {
+    "provider": "openai",
+    "baseUrl": "https://api.deepseek.com",
+    "model": "deepseek-flash",
+    "concurrency": 4
+  }
+}

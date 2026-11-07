@@ -1,0 +1,20 @@
+# CS212 (AI Programming 1) course-wide ruff ruleset — used for every CS212 lab unless the lab
+# (configs/CS212/<Lab>/ruff.toml) or step has its own. Starts from the shipped
+# python/student.ruff.toml (kept standalone rather than `extend`-ing it, because lint_code.js
+# copies the resolved file next to the graded labs for editor use, where a relative `extend`
+# path would no longer resolve) and adds what the CS212 "Python Coding Style and Best
+# Practices Checklist" grades:
+#   N — pep8-naming: snake_case functions/variables/arguments, PascalCase classes,
+#       snake_case module (file) names
+#   I — isort: imports grouped standard library, then third-party, then local
+line-length = 100
+# Lint Jupyter notebooks too (CS212's Colab labs). Already the default in recent ruff;
+# kept explicit for older versions.
+extend-include = ["*.ipynb"]
+
+[lint]
+# E/W = pycodestyle, F = pyflakes (correctness), C90 = complexity — same as the shipped default
+select = ["E", "W", "F", "C90", "N", "I"]
+ignore = [
+    "E501",   # line too long — length is already relaxed above; don't double-penalize
+]
