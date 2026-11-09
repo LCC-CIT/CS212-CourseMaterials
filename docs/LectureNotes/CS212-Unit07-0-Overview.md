@@ -56,7 +56,7 @@ By the end of this week you will:
 
 ## Registration for Winter Term 2027
 
-Registration for winter term is open. If you are pursuing the AAS in Software Development (91&ndash;92 credits, 2026&ndash;27 catalog), these are the recommended winter courses for second-year students, according to the sample term plan:
+Registration for winter term is open. If you are pursuing the AAS in Software Development, these are the recommended winter term courses for second-year students:
 
 - CS 275, Introduction to Database Systems and Modeling
 - CS 296R, Web Development 2: React (prerequisite: CS 295R)
@@ -70,7 +70,7 @@ Courses in the program are offered only in certain terms, so plan ahead. For exa
 - <a href="https://lanecc.smartcatalogiq.com/en/current/lcc-catalog/programs-of-study/computer-information-technology/software-development-aas" target="_blank">Degree Requirements</a> for AAS in Software Dev (2026&ndash;27 catalog)
 - <a href="https://docs.google.com/document/d/1PBKakh2utJBAd7Sh2m_A8GzAjCR0Llkdl0QcmD6JxeE/edit?usp=sharing" target="_blank">Term-By-Term Sample Planner</a> for AAS in Software Dev (2026&ndash;27)
 
-- Winter 2027 Class Schedule
+- [Browse classes](https://my.lanecc.edu/StudentRegistrationSsb/ssb/classSearch/classSearch).
 - <a href="https://www.lanecc.edu/get-support/academic-support/academic-advising/connect-advising" target="_blank">Academic Advising</a> (or email CitAdvising@lanecc.edu)
 - <a href="https://my.lanecc.edu/StudentRegistrationSsb/ssb/registration" target="_blank">Registration</a>
 
