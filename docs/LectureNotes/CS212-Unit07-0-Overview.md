@@ -80,31 +80,9 @@ Courses in the program are offered only in certain terms, so plan ahead. For exa
   - Lab 5 part 2 code review.
 - Thursday 11/12
   - Lab 5 (TensorFlow), part 2, production version.
+- Saturday, 11/14
+  - Share a beta version of lab 6 with your lab partners.
 
-### Next Week (Week 8) *Chat Completion API*
-
-**Topic: calling *chat completion* APIs**
-
-- Tuesday 11/17
-  - Quiz 6 (GenAI) closes.
-  - Lab 6  (AI Coding) beta version.
-  - Term project proposal.
-- Thursday 11/19
-  - Lab 6 code review.
-- Sunday 11/22
-  - Lab 6, production version.
-  - Quiz 7 over calling chat completion APIs.
-  - Lab 7 (AI APIs) beta version
-
-## Week 9: *Model Context Protocol* (MCP)
-
-The *Model Context Protocol* (MCP) standardizes communication with and between LLMs to enable  *agentic AI*, allowing an LLM to move beyond simple chat and interact with apps and APIs. It lets developers write applications where AI can do things like  "go look up the user's latest file and then send an email". An MCP server takes care of translating those requests into system actions.
-
-## Week 10:  Your Term Project
-
-Your project can be an entirely new app that incorporates some type of AI, or you can enhance one of your lab projects with an additional or different AI feature than it originally had. The project should be a stand-alone console app (not a Jupyter notebook). 
-
-Submit a project proposal before starting on your app.
 
 
 
