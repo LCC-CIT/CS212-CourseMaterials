@@ -18,6 +18,26 @@ author: Brian Bird
 
 Generative AI is a subset of machine learning (ML) that is used for creating new content. Generative models use neural networks to generate data based on, but different from, the data they were trained on. 
 
+<div style="width: 60%; margin: 0 auto; text-align: center;">
+
+```mermaid
+graph TD
+    subgraph AI ["Artificial Intelligence (Broadest Field)"]
+        subgraph ML ["Machine Learning (Learning from Data)"]
+            subgraph NN ["Neural Networks / Deep Learning"]
+                GenAI["<b>Generative AI and LLMs</b><br>(Creating New Content)"]
+            end
+        end
+    end
+
+    style AI fill:#f8f9fa,stroke:#adb5bd,stroke-width:2px
+    style ML fill:#e9ecef,stroke:#6c757d,stroke-width:2px
+    style NN fill:#dee2e6,stroke:#495057,stroke-width:2px
+    style GenAI fill:#d0ebff,stroke:#1971c2,stroke-width:3px,color:#1864ab
+```
+
+*Figure: Generative AI sits within the broader fields of Neural Networks, Machine Learning, and Artificial Intelligence (Source: Wikimedia Commons, CC BY-SA 4.0).*
+
 OpenAI released a public demo of ChatGPT on November 30, 2022 that took the world by storm and suddenly generative AI was the new sensation.
 
 A Generative Pretrained Transformer (GPT) chatbot, like ChatGPT, works by taking a prompt (often a question or instruction) as input and generating a response (an answer) based on statistical probabilities.
@@ -65,6 +85,16 @@ The process of generating output is iterative:
 4. The newly selected token is appended to the prompt, and the model repeats step 2 to choose the next token.
 5. This cycle continues until the model predicts a dedicated *End of Sequence (EOS / Stop)* token, or reaches a user-specified token limit.
 
+```mermaid
+xychart-beta
+    title "Next Token Probability Distribution ('The best thing about cats is that they [?]')"
+    x-axis ["are", "purr", "make", "don't", "can", "sleep", "require", "fly"]
+    y-axis "Probability (%)" 0 --> 40
+    bar [32, 21, 14, 11, 9, 7, 5, 0.001]
+```
+
+### 
+
 ### Context Length
 
 The *context length* (or *context window*) of an LLM refers to the maximum number of tokens it can hold in its active memory at one time, encompassing both the input prompt and the generated response. 
@@ -102,6 +132,16 @@ Early generative models like GPT-3 had a context length of 4,096 tokens, while G
   - **Lack of Real World Experience & Ground Truth**: Models manipulate language tokens based on statistical associations, not lived experience or verified understanding.
   - **Unsuitable for Crisis or Clinical Care**: While chatbots can provide basic psychoeducational resources, they are not licensed professionals and should never be used as a substitute for mental health counseling or crisis intervention.
   - **Subjective Recommendations**: Chatbots cannot genuinely "prefer" or evaluate subjective quality; their recommendations reflect the prevailing biases and distribution of their training corpus.
+
+
+
+## Interactive Web Pages
+
+[Tokenizer](https://platform.openai.com/tokenizer)&mdash;OpenAI. Visualizes the tokenization process. 
+
+[Generative AI Exists because of the Transformer](https://ig.ft.com/generative-ai/)&mdash; [Visual Storytelling Team](https://www.ft.com/visual-and-data-journalism) and [Madhumita Murgia](https://www.ft.com/madhumita-murgia) . Financial Times. 2023
+
+[Transformer Explainer](https://poloclub.github.io/transformer-explainer/)&mdash; [Aeree Cho](https://aereeeee.github.io/), [Grace C. Kim](https://www.linkedin.com/in/chaeyeonggracekim/), [Alexander Karpekov](https://alexkarpekov.com/), [Alec Helbling](https://alechelbling.com/), [Jay Wang](https://zijie.wang/), [Seongmin Lee](https://seongmin.xyz/), [Benjamin Hoover](https://bhoov.com/), and [Polo Chau](https://poloclub.github.io/polochau/) at the Georgia Institute of Technology. 2024.
 
 ## References
 

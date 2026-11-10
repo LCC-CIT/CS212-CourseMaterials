@@ -10,26 +10,9 @@ author: Brian Bird
 
 <h1>AI-Assisted Coding</h1>
 
-| Topics                                   |                                                              |
-| ---------------------------------------- | ------------------------------------------------------------ |
-| 1. What is AI, Python                    | 6. ANN: Image recognition                                    |
-| 2.  Symbolic AI                          | 7. <mark>Generative AI</mark>                                |
-| 3. Classical machine learning: training  | 8. Calling the chat completion API                           |
-| 4. Classical machine learning: inference | 9. Agentic AI with MCP                                       |
-| 5. More ML + History of AI               | 10. Social and ethical issues  <br />Term project completion |
-|                                          | 11. Final project presentation                               |
-
 <h2>Contents</h2>
 
-- [What is AI-Assisted Coding](#what-is-ai-assisted-coding)
-  - [Don't Call it Vibe Coding](#dont-call-it-vibe-coding)
-- [How to Code with AI without Making a Mess](#how-to-code-with-ai-without-making-a-mess)
-  - [Architect & Planner Mindset (Before Coding)](#architect-planner-mindset-before-coding)
-  - [Critical Reviewer Mindset (During Coding)](#critical-reviewer-mindset-during-coding)
-  - [Process & Documentation Mindset (After Coding)](#process-documentation-mindset-after-coding)
-- [Reference](#reference)
-  - [Vibe Coding](#vibe-coding)
-  - [GitHub Copilot](#github-copilot)
+[TOC]
 
 ## What is AI-Assisted Coding
 
