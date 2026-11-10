@@ -44,7 +44,8 @@
       "type": "llm_check",
       "maxScore": 3,
       "criterion": "Comprehensive test program",
-      "guidance": "A test program may be a separate test file, or code in the program file that calls the functions with chosen inputs and compares or prints the expected and actual results. Full credit: covers every row of the decision table and the boundary values, with expected results stated. Partial credit: some rows or no boundaries. 0: no tests of the student's own. Suggest a score up to 4."
+      "guidance": "A test program may be a separate test file, or code in the program file that calls the functions with chosen inputs and compares or prints the expected and actual results. Full credit: covers every row of the decision table and the boundary values, with expected results stated. Partial credit: some rows or no boundaries. 0: no tests of the student's own. Suggest a score up to 3.",
+      "partId": "part1"
     },
     {
       "cell": "C12",
@@ -61,14 +62,16 @@
       "type": "llm_check",
       "maxScore": 2,
       "criterion": "Correct code syntax and logic",
-      "guidance": "Check for syntax errors, logic bugs, and incorrect control flow; suggest a score up to 3."
+      "guidance": "Check for syntax errors, logic bugs, and incorrect control flow; suggest a score up to 2.",
+      "partId": "part1"
     },
     {
       "cell": "C14",
       "commentCell": "E14",
       "type": "lint",
       "maxScore": 2,
-      "severity": "warnings"
+      "severity": "warnings",
+      "partId": "part1"
     },
     {
       "cell": "C17",
@@ -98,7 +101,8 @@
       "type": "llm_check",
       "maxScore": 5,
       "criterion": "Comprehensive test program",
-      "guidance": "A test program may be a separate test file, or code in the program file that calls the functions with chosen inputs and compares or prints the expected and actual results. Full credit: covers every row of the decision table and the boundary values, with expected results stated. Partial credit: some rows or no boundaries. 0: no tests of the student's own. Suggest a score up to 8."
+      "guidance": "A test program may be a separate test file, or code in the program file that calls the functions with chosen inputs and compares or prints the expected and actual results. Full credit: covers every row of the decision table and the boundary values, with expected results stated. Partial credit: some rows or no boundaries. 0: no tests of the student's own. Suggest a score up to 5.",
+      "partId": "part2"
     },
     {
       "cell": "C20",
@@ -115,14 +119,16 @@
       "type": "llm_check",
       "maxScore": 3,
       "criterion": "Correct code syntax and logic",
-      "guidance": "Check for syntax errors, logic bugs, and incorrect control flow; suggest a score up to 4."
+      "guidance": "Check for syntax errors, logic bugs, and incorrect control flow; suggest a score up to 3.",
+      "partId": "part2"
     },
     {
       "cell": "C22",
       "commentCell": "E22",
       "type": "lint",
       "maxScore": 2,
-      "severity": "warnings"
+      "severity": "warnings",
+      "partId": "part2"
     }
   ],
   "variations": {
@@ -157,6 +163,18 @@
         ],
         "execution": {
           "cwd": "copy"
+        },
+        "lint": {
+          "parts": [
+            {
+              "id": "part1",
+              "filePattern": "zone"
+            },
+            {
+              "id": "part2",
+              "filePattern": "horizon|invest|risk"
+            }
+          ]
         }
       }
     },
@@ -191,6 +209,18 @@
         ],
         "execution": {
           "cwd": "copy"
+        },
+        "lint": {
+          "parts": [
+            {
+              "id": "part1",
+              "filePattern": "room|attendee"
+            },
+            {
+              "id": "part2",
+              "filePattern": "health|server"
+            }
+          ]
         }
       }
     },
@@ -225,6 +255,18 @@
         ],
         "execution": {
           "cwd": "copy"
+        },
+        "lint": {
+          "parts": [
+            {
+              "id": "part1",
+              "filePattern": "socket|ddr"
+            },
+            {
+              "id": "part2",
+              "filePattern": "speed"
+            }
+          ]
         }
       }
     }
@@ -244,7 +286,17 @@
       "entry": "grader_checks/driver_part2.py"
     }
   ],
-  "_note": "The 'Has all functionality' rows (C10, C18) run each group's drivers from the drivers/ folder next to this file (copies of CS212-CourseMaterials' Lab01-Python/Group<X>/drivers, which are the master copies; refresh them with: node bin/sync-drivers.js <that Lab01-Python folder> configs/CS212/Lab01, add --check to only compare). Set LAB_STRICT=1 in the grading environment once the instructions fix the function names (see the _draft instructions). The base testCheck entries are placeholders for a group with no drivers (NEEDS MANUAL CHECK). llm_check rows use DeepSeek through the OpenAI-compatible API (llmCheck): the API key and model come from LLM_API_KEY or this machine's configs/local-config.json (llmEndpoints / llm). This sends student code, including names in header comments, to DeepSeek. The 'No run-time errors' rows (C12, C20) are build_check: for Python that is a syntax check only; crashes show up as failures in the functionality rows. developer_comments rows require a name and a date in EACH file (scope each); 'Brian Bird' header lines (starter files) are ignored. llmCheck.model is pinned so the config does not depend on a machine's local-config.",
+  "lint": {
+    "parts": [
+      {
+        "id": "part1"
+      },
+      {
+        "id": "part2"
+      }
+    ]
+  },
+  "_note": "The 'Has all functionality' rows (C10, C18) run each group's drivers from the drivers/ folder next to this file (copies of CS212-CourseMaterials' Lab01-Python/Group<X>/drivers, which are the master copies; refresh them with: node bin/sync-drivers.js <that Lab01-Python folder> configs/CS212/Lab01, add --check to only compare). Set LAB_STRICT=1 in the grading environment once the instructions fix the function names (see the _draft instructions). The base testCheck entries are placeholders for a group with no drivers (NEEDS MANUAL CHECK). llm_check rows use DeepSeek through the OpenAI-compatible API (llmCheck): the API key comes from LLM_API_KEY or this machine's configs/local-config.json (main menu: Settings → AI grading checks; grading asks for it and stops without it). This sends student code, including names in header comments, to DeepSeek. The 'No run-time errors' rows (C12, C20) are build_check: for Python that is a syntax check only; crashes show up as failures in the functionality rows. developer_comments rows require a name and a date in EACH file (scope each); 'Brian Bird' header lines (starter files) are ignored. llmCheck.model is pinned so the config does not depend on a machine's local-config. Lint rows (C14, C22) lint only their part's files: each group's variations.<X>.overrides.lint.parts gives a filePattern per part (the same word the group's drivers use to find that program, matched against file text or path, case-insensitive); the base lint.parts are placeholders for a student whose group is unknown (those rows say NEEDS MANUAL CHECK). A file matching a part's pattern is linted for that part; comments list errors then warnings by file and line, without rule codes. The llm_check rows (C11, C13 / C19, C21) carry partId too, so each reads only its part's files (the same lint.parts).",
   "llmCheck": {
     "provider": "openai",
     "baseUrl": "https://api.deepseek.com",
