@@ -141,7 +141,7 @@ Early generative models like GPT-3 had a context length of 4,096 tokens, while G
 
 [Generative AI Exists because of the Transformer](https://ig.ft.com/generative-ai/)&mdash; [Visual Storytelling Team](https://www.ft.com/visual-and-data-journalism) and [Madhumita Murgia](https://www.ft.com/madhumita-murgia) . Financial Times. 2023
 
-[Transformer Explainer](https://poloclub.github.io/transformer-explainer/)&mdash; [Aeree Cho](https://aereeeee.github.io/), [Grace C. Kim](https://www.linkedin.com/in/chaeyeonggracekim/), [Alexander Karpekov](https://alexkarpekov.com/), [Alec Helbling](https://alechelbling.com/), [Jay Wang](https://zijie.wang/), [Seongmin Lee](https://seongmin.xyz/), [Benjamin Hoover](https://bhoov.com/), and [Polo Chau](https://poloclub.github.io/polochau/) at the Georgia Institute of Technology. 2024.
+[Transformer Explainer](https://poloclub.github.io/transformer-explainer/)&mdash;Aeree Cho, Grace C. Kim, Alexander Karpekov, Alec Helbling, Jay Wang, Seongmin Lee, Benjamin Hoover, and Polo Chau. Georgia Institute of Technology. 2024.
 
 ## References
 
