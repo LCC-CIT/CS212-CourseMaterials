@@ -22,9 +22,9 @@ Generative AI is a subset of machine learning (ML) that is used for creating new
 
 ```mermaid
 graph TD
-    subgraph AI ["Artificial Intelligence (Broadest Field)"]
-        subgraph ML ["Machine Learning (Learning from Data)"]
-            subgraph NN ["Neural Networks / Deep Learning"]
+    subgraph AI ["Artificial Intelligence"]
+        subgraph ML ["Machine Learning"]
+            subgraph NN ["Neural Networks"]
                 GenAI["<b>Generative AI and LLMs</b><br>(Creating New Content)"]
             end
         end
@@ -88,8 +88,9 @@ The process of generating output is iterative:
 5. This cycle continues until the model predicts a dedicated *End of Sequence (EOS / Stop)* token, or reaches a user-specified token limit.
 
 ```mermaid
+%%{init: {"xyChart": {"width": 900, "height": 450}}}%%
 xychart-beta
-    title "Next Token Probability Distribution ('The best thing about cats is that they [?]')"
+    title "Next Token Probability: The best thing about cats is that they ..."
     x-axis ["are", "purr", "make", "don't", "can", "sleep", "require", "fly"]
     y-axis "Probability (%)" 0 --> 40
     bar [32, 21, 14, 11, 9, 7, 5, 0.001]
