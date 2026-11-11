@@ -18,7 +18,7 @@ author: Brian Bird
 
 Generative AI is a subset of machine learning (ML) that is used for creating new content. Generative models use neural networks to generate data based on, but different from, the data they were trained on. 
 
-<div style="width: 60%; margin: 0 auto; text-align: center;">
+<div markdown="1" style="width: 60%; margin: 0 auto; text-align: center;">
 
 ```mermaid
 graph TD
@@ -37,6 +37,8 @@ graph TD
 ```
 
 *Figure: Generative AI sits within the broader fields of Neural Networks, Machine Learning, and Artificial Intelligence (Source: Wikimedia Commons, CC BY-SA 4.0).*
+
+</div>
 
 OpenAI released a public demo of ChatGPT on November 30, 2022 that took the world by storm and suddenly generative AI was the new sensation.
 
@@ -92,8 +94,6 @@ xychart-beta
     y-axis "Probability (%)" 0 --> 40
     bar [32, 21, 14, 11, 9, 7, 5, 0.001]
 ```
-
-### 
 
 ### Context Length
 
