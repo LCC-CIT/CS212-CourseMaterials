@@ -29,6 +29,7 @@ This week's app will be modified next week by adding calls to a generative AI *c
 
 ## Instructions
 
+### 1. Choose a project
 Since everyone will potentially be choosing different apps to write and they will probably be designed and coded differently, there won't be three versions of this lab assignment. But here are suggestions for the types of apps you could write:
 
 - Flash card or quiz generator
@@ -48,6 +49,18 @@ Since everyone will potentially be choosing different apps to write and they wil
   - For this lab you would use an AI coding assistant to either improve the expert system you made earlier or make a new rule-based one. Possible enhancements would be: a progressive interview loop and a larger set of rules.
   - For the next lab you would use AI to do an interview and make decisions instead of the rule-based system.
 
+### 2. Make a Plan
+
+You can put all these things in a README.md file:
+
+- Write a specification for the program that you will guide the AI to write.
+- Make a list of the things that will need to be tested (verification).
+- Describe the architecture to the degree you are able. What modules should it have? How are do they interact? Should the code be object oriented?
+
+### 3. Iterate with the AI to Create the App
+
+Give the AI your instructions, let it write code, check the code and test the app, repeat.
+
 
 
 ## Submitting your lab work on Canvas
@@ -55,6 +68,7 @@ Since everyone will potentially be choosing different apps to write and they wil
 ### Beta Version
 
 - Post a zip file or GitHub link for the beta version of your project in your team channel on Discord.
+  This should include the source code and the README.md file.
 
 ### Code Review
 
@@ -66,7 +80,11 @@ Since everyone will potentially be choosing different apps to write and they wil
  Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on Canvas:
 
 1. The Zipped Python (.py) and any other project files or a link to your GitHub repository.
-   (Don't include non-source code like .venv or `__pycache__`, etc.)
+
+   - Include the README.md file
+
+   - Don't include non-source code like .venv or `__pycache__`, etc.)
+
 2. The code review <u>from your lab partner</u> with the “Prod.” column filled out by you.
 
 
