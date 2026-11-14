@@ -76,6 +76,7 @@ Come see me during office hours&mdash;drop in! No appointment needed. Come get h
 - <a href="https://jupyter.org/" target="_blank">Jupyter Notebooks</a> will be used for some of the programming examples and lab assignments.
 - <a href="https://colab.research.google.com/" target="_blank">Google Colab</a> will be used for running and sharing Jupyter Notebooks online.
 - <a href="https://gemini.google/students/" target="_blank">Google Gemini for Students</a>: Google offers students a free one-year Pro subscription (Google One AI Premium) to their Gemini AI platform. We will use this in class when we incorporate calls to an LLM API in the apps we write.
+- [GitHub Education](https://github.com/education): Get a free one-year subscription to GitHub that includes usage of GitHub Copilot, the AI system that is built into Visual Studio Code.
 
 
 ### Skills You Will Need

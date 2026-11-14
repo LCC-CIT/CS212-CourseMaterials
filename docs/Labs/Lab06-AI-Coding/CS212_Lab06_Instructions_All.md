@@ -79,11 +79,11 @@ Give the AI your instructions, let it write code, check the code and test the ap
 
  Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on Canvas:
 
-1. The Zipped Python (.py) and any other project files or a link to your GitHub repository.
+1. The zipped project files or a link to your GitHub repository.
 
-   - Include the README.md file
+   - Include the README.md and an AGENTS.md or CLAUDE.md file.
 
-   - Don't include non-source code like .venv or `__pycache__`, etc.)
+   - Don't include non-source code like .venv or `__pycache__`, etc.
 
 2. The code review <u>from your lab partner</u> with the “Prod.” column filled out by you.
 
@@ -97,7 +97,7 @@ The main focus of grading will be on program design, problem solving skills, AI-
 
 ------
 
-<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming lab instructions by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming lab instructions by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in 2025, revised in <time>2026</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ------------
 
