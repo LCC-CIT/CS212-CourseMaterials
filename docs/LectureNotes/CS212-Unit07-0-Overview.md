@@ -24,7 +24,7 @@ author: Brian Bird
 ## This Week's Learning Objectives
 
 <figure style="float: right; width: 200px; margin: 0 0 1em 1.5em;">
-  <img src="Images/GenerativeAiWordCloud.png" alt="A circular word cloud of generative AI terms such as Generative AI, LLM, GPT, Prompt and Neural Network" width="200">
+  <img src="Images/GenAiWordCloudBlueYellow.png" alt="A circular word cloud of generative AI terms such as Generative AI, LLM, GPT, Prompt and Neural Network" width="200">
 </figure>
 
 By the end of this week you will:
