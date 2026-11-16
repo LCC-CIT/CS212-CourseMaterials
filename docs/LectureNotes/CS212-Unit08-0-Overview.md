@@ -8,128 +8,65 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-<h1>Week 8 Overview for Fall 2025</h1>
+<h1>Week 8 Overview for Fall 2026</h1>
 
-<h2>Nov. 17 through Nov. 23</h2>
+<h2>Nov. 16 through Nov. 22</h2>
 
-| Topics                                   |                                                              |
-| ---------------------------------------- | ------------------------------------------------------------ |
-| 1. What is AI, Python                    | 6. ANN: Image recognition                                    |
-| 2.  Symbolic AI                          | 7. Generative AI                                             |
-| 3. Classical machine learning: training  | 8. <mark>Calling the chat completion API</mark>              |
-| 4. Classical machine learning: inference | 9. Model Context Protocol (MCP)                              |
-| 5. More ML + History of AI               | 10. Social and ethical issues  <br />Term project completion |
-|                                          | 11. Final project presentation                               |
+| Topics                                  |                                                 |
+| --------------------------------------- | ----------------------------------------------- |
+| 1. What is AI, Python                   | 6. ANN: Image recognition                       |
+| 2. Constraint solvers                   | 7. Generative AI                                |
+| 3. Classical machine learning: training | 8. <mark>Calling the chat completion API</mark> |
+| 4.Classical ML: testing and tuning      | 9. Agentic AI with MCP                          |
+| 5. More ML + History of AI              | 10. Social and ethical issues                   |
+|                                         | 11. Final project presentation                  |
 
-<h2>Contents</h2>
+## This Week's Learning Objectives
 
-- [Announcements for Fall 2025](#announcements-for-fall-2025)
-- [Registration for Winter Term 2026](#registration-for-winter-term-2026)
-  - [Relevant Links:](#relevant-links)
-- [Q and A](#q-and-a)
-- [Assignments Due](#assignments-due)
-  - [This Week (Week 8)](#this-week-week-8)
-  - [Next Week (Week 9)](#next-week-week-9)
-- [Upcoming Topics](#upcoming-topics)
-  - [Week 9: Model Context Protocol (MCP)](#week-9-model-context-protocol-mcp)
-  - [Week 10:  Your Term Project](#week-10-your-term-project)
+<figure style="float: right; width: 200px; margin: 0 0 1em 1.5em;">
+  <img src="Images/ChatCompletionAiCall.png" alt="Client code on the left sends a request by arrow to a robot icon on the right, labeled chat-completion API, and a response arrow comes back" width="200">
+  <figcaption style="text-align: center; font-size: small;">Image by B. Bird using Gemini Flash 2.5</figcaption>
+</figure>
 
-## Announcements for Fall 2025
+By the end of this week you will:
 
+- Be able to explain what a chat completion API is and how client code uses it.
+
+- Be able to call a chat completion API from a Python program.
+
+- Be able to build an app that sends prompts to an LLM and uses the responses.
+
+<div style="clear: both;"></div>
+
+## Announcements and Discussion
+
+- **Register for Winter term**: Registration is open for next term. See the [Registration, Schedules, and the Academic Calendar](https://www.lanecc.edu/programs-academics/registration-schedules-and-academic-calendar) web page for more information and registration links.
+
+- **Drop-in Winter Reg Fest** on Tuesday, Dec. 1 from 9am&ndash;2pm in Building 1, Admissions 102.
+  Get help with admissions, financial aid, academic advising and registration.
+  Plan to arrive before 1pm.
 - **Week 8 is the last week to drop a class or change grade options**
-  This <u>Friday, November 21</u> is the last day to make fall term schedule changes. This includes adding or dropping a course, withdrawing, taking an incomplete, or changing grading methods. 
-  **Note**: Students should <u>always</u> consult <a href="https://www.lanecc.edu/get-support/academic-support/academic-advising" target="_blank">an academic advisor</a> and/or <a href="https://www.lanecc.edu/costs-admission/paying-college/financial-aid" target="_blank">financial aid</a> representative before making these changes, especially withdrawing. These types of changes can potentially have implications for academic progress and/or financial aid awards. 
-
-- **LCC Team Gets First Place at QuackHacks!**
-
-  LCC took a six member team to the QuackHacks Hackathon this weekend, where they worked on a game together for 24 hours straight. They used Miro to brainstorm, Jira to manage the project, GitHub to coordinate their efforts, the Godot game engine with GDScript to build the game and Libresprite to build the game assets.
-
-  <u>They earned first place in the Game Dev track!</u>
-
-  You can see their work and description of themselves and their process here.
-
-  https://devpost.com/software/tina-s-big-adventure
-
-  If you see these students this week, let them know how proud we are!
-
-  - Cole McLain
-  - Drew McKenzie
-  - Josh Ginsberg
-  - Leah Higman
-  - Max Ferguson
-  - Morgan Titsworth
-
-
-
-## Registration for Winter Term 2026
-
-Registration for winter term is open. If you are pursuing the AAS in Software Development, these are the recommended courses:
-
-- CS 295N, Web Development 1: ASP.NET
-- CS 275, Introduction to Database Systems and Modeling
-- CS 206, Co-op Ed: CIT Seminar
-- CS 246, System Design
-- CS 135M, Mobile App Development (program elective)
-
-### Relevant Links:
-
-- <a href="https://lanecc.smartcatalogiq.com/en/current/lcc-catalog/programs-of-study/computer-information-technology/software-development-aas" target="_blank">Degree Requirements</a> for AAS in Software Dev
-- <a href="https://docs.google.com/document/d/1F8CJY1M7A4J9uJtGRDFRyF-0j7l2AVe0vpPE5vcfHXE/edit?tab=t.0" target="_blank">Term-By-Term Sample Planner</a> for AAS in Software Dev
-
-- Winter 2026 Class Schedule
-- <a href="https://lanecc.edu/advising" target="_blank">Academic Advising</a>
-- <a href="https://my.lanecc.edu/StudentRegistrationSsb/ssb/registration" target="_blank">Registration</a>
-
-## Q and A
-
-- Do you have any questions about:
-
-  - Lab 6&mdash;AI assisted programming?
+  This <u>Friday, November 20</u> is the last day to make fall term schedule changes. This includes adding or dropping a course, withdrawing or changing grading methods. 
+  **Note**: Students should <u>always</u> consult [an academic advisor](https://www.lanecc.edu/get-support/academic-support/academic-advising) and/or [financial aid](https://www.lanecc.edu/costs-admission/paying-college/financial-aid) representative before making these changes, especially withdrawing. These types of changes can potentially have implications for academic progress and/or financial aid awards. 
+- Do you have any questions or comments about:
+  - Lab 6&mdash;AI-assisted coding?
   - The reading on the chat completion API?
-
   - Anything else?
 
-## Assignments Due
+## Things to Do This Week
 
-### This Week (Week 8)
-
-- Tuesday 11/18   
-  - Quiz 6 (GenAI) closes.
-  - Lab 6  (AI Coding) beta version.
-  - <u>Term project proposal.</u>  
-    Submit a project proposal before starting on your app.
-- Thursday 11/20
+- Tuesday 11/17
   - Lab 6 code review.
-- Sunday 11/23
-  - Lab 6, production version.
-  - Lab 7 (AI APIs) beta version
-
-### Next Week (Week 9)
-
-- Tuesday 11/25
-  - Lab 7 Code review
-- Friday 11/28
-  - Quiz on MCP
-  - Lab 7 Productions version
-
-## Upcoming Topics
-
-### Week 9: *Model Context Protocol* (MCP)
-
-The *Model Context Protocol* (MCP) standardizes communication with and between LLMs to enable  *agentic AI*, allowing an LLM to move beyond simple chat and interact with apps and APIs. It lets developers write applications where AI can do things like  "go look up the user's latest file and then send an email". An MCP server takes care of translating those requests into system actions.
-
-### Week 10:  Your Term Project
-
-Your project can be an entirely new app that incorporates some type of AI, or you can enhance one of your lab projects with an additional or different AI feature than it originally had. The project should be a stand-alone app console apps (not a Jupyter notebook). 
-
-
-
-![F2025Week08](Images/F2025Week08.jpg)
+- Thursday 11/19
+  - Lab 6 production version.
+- Sunday 11/22
+  - Quiz 7 over calling chat completion APIs.
+  - Lab 7 beta version&mdash;share it with your lab partners.
 
 
 
 ---
 
-<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in 2025, revised in <time>2026</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---
