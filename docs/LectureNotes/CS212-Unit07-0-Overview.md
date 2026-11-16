@@ -25,6 +25,7 @@ author: Brian Bird
 
 <figure style="float: right; width: 200px; margin: 0 0 1em 1.5em;">
   <img src="Images/GenAiWordCloudBlueYellow.png" alt="A circular word cloud of generative AI terms such as Generative AI, LLM, GPT, Prompt and Neural Network" width="200">
+  <figcaption style="text-align: center; font-size: small;">Word cloud by B. Bird and Gemini 3</figcaption>
 </figure>
 
 By the end of this week you will:
