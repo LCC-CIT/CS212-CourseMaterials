@@ -12,36 +12,19 @@ author: Brian Bird
 
 <h2>Using the Dots and Boxes Game Example</h2>
 
-| Topics                                   |                                                              |
-| ---------------------------------------- | ------------------------------------------------------------ |
-| 1. What is AI, Python                    | 6. ANN: Image recognition                                    |
-| 2.  Symbolic AI                          | 7. Generative AI                                             |
-| 3. Classical machine learning: training  | 8. <mark>Calling the chat completion API</mark>              |
-| 4. Classical machine learning: inference | 9. Agentic AI with MCP                                       |
-| 5. More ML + History of AI               | 10. Social and ethical issues  <br />Term project completion |
-|                                          | 11. Final project presentation                               |
-
 <h2>Contents</h2>
 
-- [Introduction](#introduction)
-- [High-Level Implementation Steps](#high-level-implementation-steps)
-- [Prompt Templates for Dots and Boxes](#prompt-templates-for-dots-and-boxes)
-  - [1. System Instruction (Static Setup)](#1-system-instruction-static-setup)
-  - [2. User Prompt (Dynamic Input)](#2-user-prompt-dynamic-input)
-    - [Example JSON Input for Board State](#example-json-input-for-board-state)
-  - [3. Required JSON Response Format (Output)](#3-required-json-response-format-output)
-    - [Required JSON Output from Gemini](#required-json-output-from-gemini)
-- [Reference](#reference)
+[TOC]
 
 ## Introduction
 
-Using the Gemini API to implement an opponent for "Dots and Boxes" requires you to treat the Large Language Model (LLM) not as a player that thinks algorithmically, but as a **reasoning engine** that interprets the game state and outputs a move in a specific, parsable format. This relies heavily on **structured prompting** and a clean representation of the game board.
+Using the OpenRouter API to implement an opponent for "Dots and Boxes" requires you to treat the Large Language Model (LLM) not as a player that thinks algorithmically, but as a **reasoning engine** that interprets the game state and outputs a move in a specific, parsable format. This relies heavily on **structured prompting** and a clean representation of the game board.
 
 ## High-Level Implementation Steps
 
 1. **Define Game State Representation:** Establish a clear, unambiguous text format for the current state of the board.
-2. **Create a System Instruction (Persona):** Prompt the Gemini model to adopt the persona of a highly strategic "Dots and Boxes" player and define its output format.
-3. **Send the Request:** On the human player's turn, send the current game state to the Gemini API.
+2. **Create a System Instruction (Persona):** Prompt the model (any model available through OpenRouter) to adopt the persona of a highly strategic "Dots and Boxes" player and define its output format.
+3. **Send the Request:** On the human player's turn, send the current game state to the OpenRouter API (the chat completions endpoint, `https://openrouter.ai/api/v1/chat/completions`).
 4. **Parse and Validate the Move:** Your application must receive the model's text output and parse it into a valid move (e.g., coordinates), then update the game board.
 
 ## Prompt Templates for Dots and Boxes
@@ -50,7 +33,7 @@ You should use a multi-part prompt that includes a **System Instruction** (stati
 
 ### 1. System Instruction (Static Setup)
 
-This instruction is sent once per API call to define the model's persona, the rules, and the strict output format. **This is the most critical part.**
+This instruction is sent once per API call, as the message with `"role": "system"`, to define the model's persona, the rules, and the strict output format. **This is the most critical part.**
 
 > **System Prompt:**
 >
@@ -62,7 +45,7 @@ This instruction is sent once per API call to define the model's persona, the ru
 
 ###  2. User Prompt (Dynamic Input)
 
-This is the JSON data structure your application sends to the Gemini API on the AI's turn, detailing the current state of the game.
+This is the JSON data structure your application sends to the OpenRouter API (as the content of the `"role": "user"` message) on the AI's turn, detailing the current state of the game.
 
 #### Example JSON Input for Board State
 
@@ -94,9 +77,9 @@ This is the JSON data structure your application sends to the Gemini API on the 
 
 ### 3. Required JSON Response Format (Output)
 
-In your API call, you would set the `response_mime_type` to `application/json` and provide a schema defining this structure.
+In your API call, you would set `response_format` to `{"type": "json_schema", ...}` and provide a schema defining this structure. (Not every model on OpenRouter supports structured outputs, so choose one that does.)
 
-#### Required JSON Output from Gemini
+#### Required JSON Output from the Model
 
 ```json
 {
@@ -112,11 +95,11 @@ By enforcing the JSON output format, you eliminate the risk of the model adding 
 
 ## Reference
 
-<a href="https://gemini.google/sg/students/?hl=en" target="_blank">Free Gemini Pro Subscription for Students</a>
+<a href="https://openrouter.ai/models" target="_blank">OpenRouter Models</a>
 
-<a href="https://aistudio.google.com/app/" target="_blank">Google AI Studio</a>
+<a href="https://openrouter.ai/docs/quickstart" target="_blank">OpenRouter Quickstart</a>
 
-<a href="https://ai.google.dev/gemini-api/docs" target="_blank">Google Gemini API Docs</a>
+<a href="https://openrouter.ai/docs/features/structured-outputs" target="_blank">OpenRouter Structured Outputs</a>
 
 <a href="https://www.youtube.com/watch?v=YVuoIxil9Sw" target="_blank">Building an LLM-Powered Text-Based AI RPG</a>&mdash; This video shows how an LLM can be used to drive game mechanics in a text-based RPG.
 
