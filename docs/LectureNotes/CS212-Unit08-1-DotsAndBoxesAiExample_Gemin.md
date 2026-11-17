@@ -18,13 +18,13 @@ author: Brian Bird
 
 ## Introduction
 
-Using the Gemini API to implement an opponent for "Dots and Boxes" requires you to treat the Large Language Model (LLM) not as a player that thinks algorithmically, but as a reasoning engine that interprets the game state and outputs a move in a specific, parsable format. This relies heavily on *structured prompting* and a clean representation of the game board.
+Using a chat completion API to implement an opponent for "Dots and Boxes" requires you to treat the Large Language Model (LLM) not as a player that thinks algorithmically, but as a reasoning engine that interprets the game state and outputs a move in a specific, parsable format. This relies heavily on *structured prompting* and a clean representation of the game board.
 
 ## High-Level Implementation Steps
 
 1. **Define Game State Representation:** Establish a clear, unambiguous text format for the current state of the board.
-2. **Create a System Instruction (Persona):** Prompt the Gemini model to adopt the persona of a highly strategic "Dots and Boxes" player and define its output format.
-3. **Send the Request:** On the human player's turn, send the current game state to the Gemini API.
+2. **Create a System Instruction (Persona):** Prompt the model to adopt the persona of a highly strategic "Dots and Boxes" player and define its output format.
+3. **Send the Request:** On the human player's turn, send the current game state to the model API.
 4. **Parse and Validate the Move:** Your application must receive the model's text output and parse it into a valid move (e.g., coordinates), then update the game board.
 
 ## Prompt Templates for Dots and Boxes
@@ -45,7 +45,7 @@ This instruction is sent once per API call to define the model's persona, the ru
 
 ###  2. User Prompt (Dynamic Input)
 
-This is the JSON data structure your application sends to the Gemini API on the AI's turn, detailing the current state of the game.
+This is the JSON data structure your application sends to the model API on the AI's turn, detailing the current state of the game.
 
 #### Example JSON Input for Board State
 
@@ -79,7 +79,7 @@ This is the JSON data structure your application sends to the Gemini API on the 
 
 In your API call, you would set the `response_mime_type` to `application/json` and provide a schema defining this structure.
 
-#### Required JSON Output from Gemini
+#### Required JSON Output from the Model
 
 ```json
 {
