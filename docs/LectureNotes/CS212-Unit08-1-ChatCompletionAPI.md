@@ -318,15 +318,15 @@ It's highly recommended to use a virtual environment to manage dependencies for 
 
 ## Reference
 
-<a href="https://openrouter.ai/" target="_blank">OpenRouter</a>
+- <a href="https://openrouter.ai/" target="_blank">OpenRouter</a>&mdash;Official Web Site
+  - <a href="https://openrouter.ai/models" target="_blank">OpenRouter Models</a>
+  - <a href="https://openrouter.ai/docs" target="_blank">OpenRouter API Docs</a>
 
-<a href="https://openrouter.ai/models" target="_blank">OpenRouter Models</a>
+- <a href="https://github.com/openai/openai-python" target="_blank">OpenAI Python SDK</a>&mdash;OpenAI GitHub Repo
 
-<a href="https://openrouter.ai/docs" target="_blank">OpenRouter API Docs</a>
+- [Model Ranking and Price Comparison](https://profbird.github.io/OpenCodeInfo/)&mdash;Brian Bird
 
-<a href="https://github.com/openai/openai-python" target="_blank">OpenAI Python SDK</a>
-
-[Model Ranking and Price Comparison](https://profbird.github.io/OpenCodeInfo/)&mdash;Brian Bird
+- [Gemini AI Studio and API Usage](CS212-Unit08-1-ChatCompletionAPI_Gemini.md)&mdash;Brian Bird
 
 
 
