@@ -319,14 +319,18 @@ It's highly recommended to use a virtual environment to manage dependencies for 
 ## Reference
 
 - <a href="https://openrouter.ai/" target="_blank">OpenRouter</a>&mdash;Official Web Site
-  - <a href="https://openrouter.ai/models" target="_blank">OpenRouter Models</a>
-  - <a href="https://openrouter.ai/docs" target="_blank">OpenRouter API Docs</a>
-
+  - [Sign up for OpenRouter](https://openrouter.ai/sign-up/)
+    The account is free. You can skip providing a payment method.
+  - [OpenRouter QuickStart](https://ai.google.dev/gemini-api/docs/quickstart)
+    With code samples in Python and TypeScript
+  - [Chat Completion Refernce](https://openrouter.ai/docs/api/api-reference/chat/create-a-chat-completion)
+    With examples in all major languages and an AI assistant on the page.
+  
 - <a href="https://github.com/openai/openai-python" target="_blank">OpenAI Python SDK</a>&mdash;OpenAI GitHub Repo
 
 - [Model Ranking and Price Comparison](https://profbird.github.io/OpenCodeInfo/)&mdash;Brian Bird
 
-- [Gemini AI Studio and API Usage](CS212-Unit08-1-ChatCompletionAPI_Gemini.md)&mdash;Brian Bird
+- [Notes on Gemini AI Studio and API](CS212-Unit08-1-ChatCompletionAPI_Gemini.md)&mdash;Brian Bird
 
 
 
