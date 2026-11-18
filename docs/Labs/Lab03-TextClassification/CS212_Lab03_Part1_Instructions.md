@@ -72,7 +72,7 @@ There are three versions of part 2.
 ## Submitting your lab work on Canvas
 
 Zip and upload your Python code files to the Lab 3 Production Version  assignment on Canvas. 
-You only need to submit your code. You <u>should not</u> upload your virtual environment (.venv) folder since the .venv will be rebuilt from your `pyproject.toml` file.  
+You only need to submit your source files. You <u>should not</u> upload your virtual environment (.venv) folder since the .venv will be rebuilt from your `pyproject.toml` file.  
 You don't need to upload the data since it can be downloaded by from the repository where you got it.
 
 ### Grading Criteria
