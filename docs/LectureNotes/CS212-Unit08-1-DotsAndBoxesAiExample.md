@@ -169,69 +169,87 @@ The <a href="https://github.com/LCC-CIT/CS212-DotsAndBoxesGame/tree/main/DotsAnd
 
 | File | What it does |
 | --- | --- |
-| `llm_client.py` | Builds the prompt, calls OpenRouter, and parses the reply into a move. |
-| `ai_player.py` | The `AIPlayer` class. It asks `llm_client` for a move, checks that the move is legal, and picks a random legal move if it isn't. |
+| `llm_client.py` | The `ask_llm` function. It sends a system prompt and a user prompt to a model on OpenRouter and returns the reply. |
+| `ai_player.py` | The `AIPlayer` class and helper functions. They describe the board in a prompt, read the move out of the model's reply, and check that the move is legal. |
+| `test_ai_player.py` | A test driver. Part 1 checks the prompt and reply code without calling the model. Part 2 asks the model for a real move. |
+
+### Calling the Model
+
+`llm_client.py` is the same pattern as the review example at the top of these notes:
+
+```python
+settings = dotenv_values(Path(__file__).with_name(".env"))  # the .env next to this file
+
+def ask_llm(system_prompt, user_prompt):
+    api_key = settings.get("OPENROUTER_API_KEY")
+    if not api_key:
+        raise ValueError("No OPENROUTER_API_KEY found in the .env file")
+
+    client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=api_key)
+    response = client.chat.completions.create(
+        model=MODEL,                        # "baidu/ernie-5.5-flash-preview:free"
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+    )
+    return response.choices[0].message.content or ""
+```
 
 ### The Prompts
 
 The system prompt asks for a move as plain text in the same format a human player types, `x1,y1 x2,y2`:
 
 ```
-You are an AI opponent for the Dots and Boxes game. Return ONLY one legal move in the format: x1,y1 x2,y2. ...
+You are an AI opponent in the game Dots and Boxes. Reply with ONLY one legal move in the format x1,y1 x2,y2 and nothing else. ...
 ```
 
-The user prompt is a list of labeled lines rather than JSON. It includes the board size, the lines already drawn, the completed boxes, the scores, whose turn it is, and the list of legal moves. Giving the model the legal moves makes an illegal answer less likely.
+`build_prompt` in `ai_player.py` writes the user prompt. It describes the board, the lines already drawn, and the legal moves. Giving the model the legal moves makes an illegal answer less likely.
 
 ```
-BOARD_SIZE: 3
-LINES_DRAWN_COUNT: 2
-LINES_DRAWN: [0,0 1,0; 0,0 0,1]
-...
-VALID_MOVES: [1,0 2,0; 0,1 1,1; ...]
-RETURN: one move in format 'x1,y1 x2,y2'
+The board has 3x3 dots, numbered from 0,0 (top left) to 2,2 (bottom right).
+Lines already drawn: 0,0 1,0
+Legal moves: 1,0 2,0; 0,1 1,1; 1,1 2,1; ...
+Which line do you draw?
 ```
 
 Note that the example labels dots `x,y` (column, row), while the JSON format earlier in these notes uses `r, c` (row, column). Either works, as long as the prompt says which one you use.
 
-### Sending the Request and Parsing the Reply
+### Reading and Checking the Move
 
-This is the core of `request_move` in `llm_client.py`, slightly shortened:
+Because the reply is plain text, `parse_move` uses a regular expression to find the first `x1,y1 x2,y2` in it. Then `choose_move` checks that the move is legal:
 
 ```python
-settings = dotenv_values(ENV_FILE)          # ENV_FILE is the .env next to llm_client.py
-api_key = settings.get("OPENROUTER_API_KEY")
-if not api_key:
-    return None                             # No key: the caller picks a random move
+def choose_move(self, game_logic):
+    grid = game_logic.grid
+    prompt = build_prompt(grid, game_logic.get_valid_moves())
+    reply = ask_llm(SYSTEM_PROMPT, prompt)
 
-client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=api_key)
-response = client.chat.completions.create(
-    model=MODEL,                            # "baidu/ernie-5.5-flash-preview:free"
-    messages=[
-        {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": dynamic_prompt},
-    ],
-)
-text = (response.choices[0].message.content or "").strip()
-
-# Find the first "x1,y1 x2,y2" in the reply and turn it into two (x, y) tuples.
-match = MOVE_REGEX.search(text)
-if not match:
-    return None
-x1, y1, x2, y2 = map(int, match.groups())
-return (x1, y1), (x2, y2)
+    move = parse_move(reply)
+    if move is None or not grid.is_valid_line(move[0], move[1]):
+        raise ValueError(f"The model did not give a legal move. It replied: {reply!r}")
+    return move
 ```
 
-Because the reply is plain text, the code uses a regular expression to find the move instead of parsing JSON. The whole call is inside a `try` block, so a network error or a bad reply also returns `None`.
+### Handling Errors
 
-### Validating the Move
+If there's no key, the model isn't responding, or its move isn't legal, `choose_move` raises an exception. The game loop in `main.py` catches it, shows the message, and ends the game:
 
-`AIPlayer.choose_move` only uses the model's move if it is in the list of legal moves. If there is no key, the call fails, or the move is illegal, it picks a random legal move instead. This way the game keeps working even when the model gives a bad answer or you're offline.
+```python
+try:
+    start, end = current.choose_move(game_logic)
+except Exception as error:
+    print(f"AI error: {error}")
+    print("The game cannot continue without the AI. Goodbye!")
+    return
+```
 
 ### Ideas for Improving the Example
 
 - Change the output to the JSON format shown above and use `response_format` with a JSON schema.
-- If the model's move is illegal, send it a follow-up message saying why and ask again before falling back.
-- Replace the random move with a simple strategy: complete a box if you can, and avoid drawing the third side of a box.
+- If the model's move is illegal, send it a follow-up message saying why and ask again instead of ending the game.
+- If the model isn't responding, play a move using a simple strategy instead: complete a box if you can, and avoid drawing the third side of a box.
+- Give the model more information, such as which boxes are complete and the scores, and see if it plays better.
 - Try different models by changing `MODEL` in `llm_client.py`, and compare how well they play.
 
 
