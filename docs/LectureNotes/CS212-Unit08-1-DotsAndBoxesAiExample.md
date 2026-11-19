@@ -20,27 +20,42 @@ author: Brian Bird
 
 From [Calling a Chat-Completion API](CS212-Unit08-1-ChatCompletionAPI.md):
 
-- Use the OpenAI Python SDK, pointed at OpenRouter. Keep the API key in the `OPENROUTER_API_KEY` environment variable, not in your code.
+- Use the OpenAI Python SDK, pointed at OpenRouter. Keep the API key out of your code.
 - A request sends a model name and a list of messages. Each message has a `role` (`system`, `user`, or `assistant`) and `content`.
 - The reply is in `response.choices[0].message.content`.
 - The API is stateless, so every request must include everything the model needs to know.
 
+In the example below, the key is in a file named `.env` in the project folder:
+
+```
+OPENROUTER_API_KEY=your-key-here
+```
+
+Add `.env` to your `.gitignore` file so the key never gets committed. Install the packages with `pip install openai python-dotenv`.
+
 ```python
-import os
+from dotenv import dotenv_values
 from openai import OpenAI
 
+# Read the settings in .env into a dictionary.
+settings = dotenv_values(".env")
+
+# Point the OpenAI client at OpenRouter instead of OpenAI.
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key=os.environ["OPENROUTER_API_KEY"],
+    api_key=settings["OPENROUTER_API_KEY"],
 )
 
+# Send the model a system message (rules) and a user message (the question).
 response = client.chat.completions.create(
-    model="google/gemma-4-31b-it:free",
+    model="baidu/ernie-5.5-flash-preview:free",
     messages=[
         {"role": "system", "content": "You are a helpful tutor. Answer in two sentences."},
         {"role": "user", "content": "What is a token?"},
     ],
 )
+
+# The model's reply is the content of the first choice.
 print(response.choices[0].message.content)
 ```
 
@@ -52,7 +67,13 @@ Unlike symbolic game AI (GOFAI)[^1], the LLM doesn't use a search algorithm to l
 
 [^1]: GOFAI stands for "Good Old-Fashioned AI," a nickname for symbolic AI. It uses hand-written rules and search algorithms, such as minimax, instead of learning from data.
 
-Board used in these notes: 4x4 dots (3x3 boxes), rows and columns numbered 0–3.
+Board used in these notes: 3x3 dots (2x2 boxes), rows and columns numbered 0–2.
+
+### The Dots and Boxes Game
+
+Dots and Boxes is a two-player pencil-and-paper game played on a grid of dots. Players take turns drawing a line between two neighboring dots. A player who draws the fourth side of a box claims that box, scores a point, and takes another turn. When all the boxes are claimed, the player with the most boxes wins.
+
+Example code: <a href="https://github.com/LCC-CIT/CS212-Examples/tree/main/DotsAndBoxes" target="_blank">DotsAndBoxes</a> (a console version of the game for two human players, in the CS212-Examples repository on GitHub).
 
 ## High-Level Implementation Steps
 
@@ -72,7 +93,7 @@ This instruction is sent once per API call, as the message with `"role": "system
 > **System Prompt:**
 >
 > ```
-> You are an expert, highly strategic AI player of the game "Dots and Boxes" on a 4x4 grid of dots (3x3 boxes). Your sole objective is to win by maximizing closed boxes, focusing on forced moves and chain strategies.
+> You are an expert, highly strategic AI player of the game "Dots and Boxes" on a 3x3 grid of dots (2x2 boxes). Your sole objective is to win by maximizing closed boxes, focusing on forced moves and chain strategies.
 > You will be provided the current game state as a JSON object.
 > You MUST analyze the input JSON and respond with ONLY a single, valid, and legal move in the required JSON response format. Do NOT include any explanations, commentary, or extra text outside the required JSON.
 > ```
@@ -88,15 +109,15 @@ The `//` comments below are only there to explain each part. Real JSON can't con
 ```json
 {
   "turn": "AI_Player",
-  "board_dimensions": "4x4 dots",
+  "board_dimensions": "3x3 dots",
   "occupied_lines": [
     // Format: [r1, c1, r2, c2] where the line connects the two coordinates
     // Example: Line from (0, 0) to (0, 1) is taken
     [0, 0, 0, 1],
     // Example: Line from (0, 0) to (1, 0) is taken
     [0, 0, 1, 0],
-    // Example: Line from (2, 2) to (3, 2) is taken
-    [2, 2, 3, 2]
+    // Example: Line from (1, 1) to (2, 1) is taken
+    [1, 1, 2, 1]
     // ... list of ALL taken lines ...
   ],
   "closed_boxes": [
@@ -119,7 +140,7 @@ In your API call, you would set `response_format` to `{"type": "json_schema", ..
 
 ```json
 {
-  "move": [2, 3, 3, 3]
+  "move": [1, 2, 2, 2]
 }
 ```
 
