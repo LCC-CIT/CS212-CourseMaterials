@@ -18,13 +18,19 @@ author: Brian Bird
 
 ## Introduction
 
-Using the OpenRouter API to implement an opponent for "Dots and Boxes" requires you to treat the Large Language Model (LLM) not as a player that thinks algorithmically, but as a **reasoning engine** that interprets the game state and outputs a move in a specific, parsable format. This relies heavily on **structured prompting** and a clean representation of the game board.
+An LLM will serve as the computer opponent in Dots and Boxes. Your program still runs the game: it keeps track of the board, enforces the rules, and keeps score. On the AI's turn, it sends the board state to the LLM through the OpenRouter API and gets a move back.
+
+Unlike symbolic game AI (GOFAI)[^1], the LLM doesn't use a search algorithm to look at all possible moves. It reads the board description and suggests a move, which may be a poor choice or even illegal, so your program must validate every move.
+
+[^1]: GOFAI stands for "Good Old-Fashioned AI," a nickname for symbolic AI. It uses hand-written rules and search algorithms, such as minimax, instead of learning from data.
+
+Board used in these notes: 4x4 dots (3x3 boxes), rows and columns numbered 0–3.
 
 ## High-Level Implementation Steps
 
 1. **Define Game State Representation:** Establish a clear, unambiguous text format for the current state of the board.
 2. **Create a System Instruction (Persona):** Prompt the model (any model available through OpenRouter) to adopt the persona of a highly strategic "Dots and Boxes" player and define its output format.
-3. **Send the Request:** On the human player's turn, send the current game state to the OpenRouter API (the chat completions endpoint, `https://openrouter.ai/api/v1/chat/completions`).
+3. **Send the Request:** On the AI player's turn, send the current game state to the OpenRouter API (the chat completions endpoint, `https://openrouter.ai/api/v1/chat/completions`).
 4. **Parse and Validate the Move:** Your application must receive the model's text output and parse it into a valid move (e.g., coordinates), then update the game board.
 
 ## Prompt Templates for Dots and Boxes
@@ -38,7 +44,7 @@ This instruction is sent once per API call, as the message with `"role": "system
 > **System Prompt:**
 >
 > ```
-> You are an expert, highly strategic AI player of the game "Dots and Boxes" on a 4x4 grid. Your sole objective is to win by maximizing closed boxes, focusing on forced moves and chain strategies.
+> You are an expert, highly strategic AI player of the game "Dots and Boxes" on a 4x4 grid of dots (3x3 boxes). Your sole objective is to win by maximizing closed boxes, focusing on forced moves and chain strategies.
 > You will be provided the current game state as a JSON object.
 > You MUST analyze the input JSON and respond with ONLY a single, valid, and legal move in the required JSON response format. Do NOT include any explanations, commentary, or extra text outside the required JSON.
 > ```
@@ -49,10 +55,12 @@ This is the JSON data structure your application sends to the OpenRouter API (as
 
 #### Example JSON Input for Board State
 
+The `//` comments below are only there to explain each part. Real JSON can't contain comments, so leave them out of the JSON your program sends.
+
 ```json
 {
   "turn": "AI_Player",
-  "board_dimensions": "4x4",
+  "board_dimensions": "4x4 dots",
   "occupied_lines": [
     // Format: [r1, c1, r2, c2] where the line connects the two coordinates
     // Example: Line from (0, 0) to (0, 1) is taken
@@ -64,7 +72,7 @@ This is the JSON data structure your application sends to the OpenRouter API (as
     // ... list of ALL taken lines ...
   ],
   "closed_boxes": [
-    // Format: [r, c, owner] where (r, c) is the top-left dot of the box
+    // Format: {"r": r, "c": c, "owner": owner} where (r, c) is the top-left dot of the box
     // Example: Box at (0, 0) is closed and owned by the Human
     {"r": 0, "c": 0, "owner": "Human"},
     // Example: Box at (1, 1) is not yet closed (owner: "None")
@@ -89,7 +97,7 @@ In your API call, you would set `response_format` to `{"type": "json_schema", ..
 
 - **`"move"`:** A list of four integers `[r1, c1, r2, c2]` representing the two adjacent dots connected by the new line. Your application must validate this move.
 
-By enforcing the JSON output format, you eliminate the risk of the model adding conversational text, ensuring a clean, machine-readable response every time.
+Requiring this JSON output format keeps the model from adding conversational text, so your program always gets a reply it can parse. It doesn't guarantee a *legal* move, though. The model might still choose a line that's already taken or one that isn't between two neighboring dots, so your program must check the move and ask again (or pick a fallback move) if it's invalid.
 
 
 
