@@ -16,6 +16,34 @@ author: Brian Bird
 
 [TOC]
 
+## Review: Calling a Chat Completion API
+
+From [Calling a Chat-Completion API](CS212-Unit08-1-ChatCompletionAPI.md):
+
+- Use the OpenAI Python SDK, pointed at OpenRouter. Keep the API key in the `OPENROUTER_API_KEY` environment variable, not in your code.
+- A request sends a model name and a list of messages. Each message has a `role` (`system`, `user`, or `assistant`) and `content`.
+- The reply is in `response.choices[0].message.content`.
+- The API is stateless, so every request must include everything the model needs to know.
+
+```python
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key=os.environ["OPENROUTER_API_KEY"],
+)
+
+response = client.chat.completions.create(
+    model="google/gemma-4-31b-it:free",
+    messages=[
+        {"role": "system", "content": "You are a helpful tutor. Answer in two sentences."},
+        {"role": "user", "content": "What is a token?"},
+    ],
+)
+print(response.choices[0].message.content)
+```
+
 ## Introduction
 
 An LLM will serve as the computer opponent in Dots and Boxes. Your program still runs the game: it keeps track of the board, enforces the rules, and keeps score. On the AI's turn, it sends the board state to the LLM through the OpenRouter API and gets a move back.
