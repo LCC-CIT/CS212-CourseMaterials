@@ -73,7 +73,10 @@ Board used in these notes: 3x3 dots (2x2 boxes), rows and columns numbered 0–2
 
 Dots and Boxes is a two-player pencil-and-paper game played on a grid of dots. Players take turns drawing a line between two neighboring dots. A player who draws the fourth side of a box claims that box, scores a point, and takes another turn. When all the boxes are claimed, the player with the most boxes wins.
 
-Example code: <a href="https://github.com/LCC-CIT/CS212-Examples/tree/main/DotsAndBoxes" target="_blank">DotsAndBoxes</a> (a console version of the game for two human players, in the CS212-Examples repository on GitHub).
+Example code, in the <a href="https://github.com/LCC-CIT/CS212-DotsAndBoxesGame" target="_blank">CS212-DotsAndBoxesGame</a> repository on GitHub:
+
+- <a href="https://github.com/LCC-CIT/CS212-DotsAndBoxesGame/tree/main/DotsAndBoxes" target="_blank">DotsAndBoxes</a>: a console version of the game for two human players.
+- <a href="https://github.com/LCC-CIT/CS212-DotsAndBoxesGame/tree/main/DotsAndBoxesWithAI" target="_blank">DotsAndBoxesWithAI</a>: a version with an AI opponent that gets its moves from a model on OpenRouter. It is described in [The Example Code: DotsAndBoxesWithAI](#the-example-code-dotsandboxeswithai) below.
 
 ## High-Level Implementation Steps
 
@@ -147,6 +150,94 @@ In your API call, you would set `response_format` to `{"type": "json_schema", ..
 - **`"move"`:** A list of four integers `[r1, c1, r2, c2]` representing the two adjacent dots connected by the new line. Your application must validate this move.
 
 Requiring this JSON output format keeps the model from adding conversational text, so your program always gets a reply it can parse. It doesn't guarantee a *legal* move, though. The model might still choose a line that's already taken or one that isn't between two neighboring dots, so your program must check the move and ask again (or pick a fallback move) if it's invalid.
+
+## The Example Code: DotsAndBoxesWithAI
+
+The <a href="https://github.com/LCC-CIT/CS212-DotsAndBoxesGame/tree/main/DotsAndBoxesWithAI" target="_blank">DotsAndBoxesWithAI</a> example follows the four steps above, with a simpler output format: the model replies with plain text instead of JSON.
+
+### Setup
+
+1. Install the packages: `pip install -r requirements.txt` (installs `openai` and `python-dotenv`).
+2. Copy `.env.example` to `.env` in the project folder and put your key in it:
+   ```
+   OPENROUTER_API_KEY=your-key-here
+   ```
+   The project's `.gitignore` already lists `.env`.
+3. Run `python main.py` and type `AI` when asked for a player's type.
+
+### Where the AI Code Is
+
+| File | What it does |
+| --- | --- |
+| `llm_client.py` | Builds the prompt, calls OpenRouter, and parses the reply into a move. |
+| `ai_player.py` | The `AIPlayer` class. It asks `llm_client` for a move, checks that the move is legal, and uses a fallback strategy if it isn't. |
+
+### The Prompts
+
+The system prompt asks for a move as plain text in the same format a human player types, `x1,y1 x2,y2`:
+
+```
+You are an AI opponent for the Dots and Boxes game. Return ONLY one legal move in the format: x1,y1 x2,y2. ...
+```
+
+The user prompt is a list of labeled lines rather than JSON. It includes the board size, the lines already drawn, the completed boxes, the scores, whose turn it is, and the list of legal moves. Giving the model the legal moves makes an illegal answer less likely.
+
+```
+BOARD_SIZE: 3
+LINES_DRAWN_COUNT: 2
+LINES_DRAWN: [0,0 1,0; 0,0 0,1]
+...
+VALID_MOVES: [1,0 2,0; 0,1 1,1; ...]
+RETURN: one move in format 'x1,y1 x2,y2'
+```
+
+Note that the example labels dots `x,y` (column, row), while the JSON format earlier in these notes uses `r, c` (row, column). Either works, as long as the prompt says which one you use.
+
+### Sending the Request and Parsing the Reply
+
+This is the core of `request_move` in `llm_client.py`, slightly shortened:
+
+```python
+settings = dotenv_values(ENV_FILE)          # ENV_FILE is the .env next to llm_client.py
+api_key = settings.get("OPENROUTER_API_KEY")
+if not api_key:
+    return None                             # No key: the caller uses the fallback
+
+client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=api_key)
+response = client.chat.completions.create(
+    model=MODEL,                            # "baidu/ernie-5.5-flash-preview:free"
+    messages=[
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "user", "content": dynamic_prompt},
+    ],
+)
+text = (response.choices[0].message.content or "").strip()
+
+# Find the first "x1,y1 x2,y2" in the reply and turn it into two (x, y) tuples.
+match = MOVE_REGEX.search(text)
+if not match:
+    return None
+x1, y1, x2, y2 = map(int, match.groups())
+return (x1, y1), (x2, y2)
+```
+
+Because the reply is plain text, the code uses a regular expression to find the move instead of parsing JSON. The whole call is inside a `try` block, so a network error or a bad reply also returns `None`.
+
+### Validating the Move and Falling Back
+
+`AIPlayer.choose_move` only uses the model's move if it is in the list of legal moves. If there is no key, the call fails, or the move is illegal, it picks a move itself:
+
+1. Complete a box if possible.
+2. Otherwise, avoid drawing the third side of a box (which would give the opponent a box).
+3. Otherwise, choose any legal move at random.
+
+This way the game keeps working even when the model gives a bad answer or you're offline.
+
+### Ideas for Improving the Example
+
+- Change the output to the JSON format shown above and use `response_format` with a JSON schema.
+- If the model's move is illegal, send it a follow-up message saying why and ask again before falling back.
+- Try different models by changing `MODEL` in `llm_client.py`, and compare how well they play.
 
 
 
