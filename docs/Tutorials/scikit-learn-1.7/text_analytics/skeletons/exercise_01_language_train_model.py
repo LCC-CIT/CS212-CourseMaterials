@@ -55,7 +55,7 @@ print(cm)
 # Predict the result on some short new sentences:
 sentences = [
     'This is a language detection test.',
-    'Ceci est un test de d\\xe9tection de la langue.',
+    'Ceci est un test de d\xe9tection de la langue.',
     'Dies ist ein Test, um die Sprache zu erkennen.',
 ]
 predicted = clf.predict(sentences)
