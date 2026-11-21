@@ -1,5 +1,5 @@
 ---
-title: Lab 3, Group A
+title: Lab 3, Version A
 description: Instructions for doing text classification
 keywords: classifier, scikit-learn
 material: Lab Instructions
@@ -11,57 +11,51 @@ author: Brian Bird
 
 <h1>Lab 3: Working with Text Data</h1>
 
-<h2>Group A</h2>
-
-- [Part 1: The scikit-learn "Working with Text Data" Tutorial](#part-1-the-scikit-learn-working-with-text-data-tutorial)
-- [Part 2: Language Identification Using a Text Classifier](#part-2-language-identification-using-a-text-classifier)
-- [Submitting your lab work on Canvas](#submitting-your-lab-work-on-canvas)
-  - [Beta Version](#beta-version)
-  - [Code Review](#code-review)
-  - [Production Version](#production-version)
-- [Grading Criteria](#grading-criteria)
-
-## Part 1: The scikit-learn "Working with Text Data" Tutorial
+<h2>Part 2, Version A</h2>
 
 The instructions for part 1 are [here](../CS212_Lab03_Part1_Instructions.html).
-Part 1 has its own assignment submission on Canvas.
 
+<h2>Contents</h2>
 
+[TOC]
 
 ## Part 2: Language Identification Using a Text Classifier
 
-You will do Exercise 1, Language identification, which is at the end of the ["Working with Text Data" tutorial](../../../Tutorials/scikit-learn-1.7/WorkingWithTextData.html). The starter code for exercises 1 and 2 is [on GitHub](https://download-directory.github.io/?url=https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Tutorials/scikit-learn-1.7/text_analytics). The skeleton code for this exercise imports the perceptron classifier, but you may use whatever classifier you wish. You might prefer to use the *Multinomial Naive Bays* or the *Support Vector Machine* classifier used in the tutorial.
+You will do Exercise 1, Language identification, which is at the end of the ["Working with Text Data" tutorial](../../../Tutorials/scikit-learn-1.7/WorkingWithTextData.md). The starter code for exercises 1 and 2 is on [GitHub](https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Tutorials/scikit-learn-1.7/text_analytics) ( [download from GitHub here)](https://download-directory.github.io/?url=https://github.com/LCC-CIT/CS212-CourseMaterials/tree/main/docs/Tutorials/scikit-learn-1.7/text_analytics). The skeleton code for this exercise imports the *perceptron* classifier, but you may use whatever classifier you wish. You might prefer to use the *Multinomial Naive Bays* or the *Support Vector Machine* classifier used in the tutorial.
 
-Alternatively, you can do a classification project of your own design.  You can browse the <a href="https://scikit-learn.org/stable/datasets.html" target="_blank">scikit-learn datset loaders</a> page for ideas. Let me know if you would have something to propose. It would be very cool to see some of you do a mini-project of your own choosing!
+### Alternative
+
+If you'd like to do something else, you can do a classification project of your own design.  You can browse the <a href="https://scikit-learn.org/stable/datasets.html" target="_blank">scikit-learn datset loaders</a> page for ideas. Let me know if you would have something to propose. It would be very cool to see some of you do a mini-project of your own choosing!
 
 
 
 ## Submitting your lab work on Canvas
 
-**Note**: You only need to submit your code. You <u>should not</u> upload your virtual environment (.venv) folder since the .venv will be rebuilt from your `pyproject.toml` file. 
+**Note**: You only need to submit your source files. You <u>should not</u> upload your virtual environment (.venv) folder since the .venv will be rebuilt from your `pyproject.toml` file (or requirements.txt if you're not using `uv`).
+
 You don't need to upload the data since it can be downloaded by the fetch_data.py program.
 
 ### Beta Version
 
-- Post the beta version of your Python file to your team channel in Discord.
+- Post the beta version of your Python file to your team's channel in Discord.
 
 ### Code Review
 
-- Review one of your lab partners' code and post the review in your team channel on Discord.
+- Do a code review for one of your lab partners and post it in your team channel on Discord.
 - Submit a copy of the code review <u>you did</u> to the code review assignment on Canvas.
 
 ### Production Version
 
  Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on Canvas:
 
-1. The Python (.py) file
+1. The zipped Python (.py) and pyproject.toml or requirements.txt files.
 2. The code review <u>from your lab partner</u> with the “Prod.” column filled out by you.
 
 
 
 ## Grading Criteria
 
-The main focus of grading will be on use of the sckit-learn classes and problem solving skills.
+[Lab 3 grading rubric](CS212_Lab03_Rubric.html)
 
 
 
