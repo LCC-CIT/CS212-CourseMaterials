@@ -20,8 +20,8 @@ from sklearn.model_selection import train_test_split
 from sklearn import metrics
 
 
-# Example: python exercise_01_language_train_model.py ./path/to/training_data
 # The training data folder must be passed as first argument
+# CLI command to run this module: python exercise_01_language_train_model.py ./path/to/training_data
 languages_data_folder = sys.argv[1]
 dataset = load_files(languages_data_folder)
 
