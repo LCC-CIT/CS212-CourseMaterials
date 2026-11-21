@@ -20,6 +20,7 @@ from sklearn.model_selection import train_test_split
 from sklearn import metrics
 
 
+# Example: python exercise_01_language_train_model.py ./path/to/training_data
 # The training data folder must be passed as first argument
 languages_data_folder = sys.argv[1]
 dataset = load_files(languages_data_folder)
@@ -54,7 +55,7 @@ print(cm)
 # Predict the result on some short new sentences:
 sentences = [
     'This is a language detection test.',
-    'Ceci est un test de d\xe9tection de la langue.',
+    'Ceci est un test de d\\xe9tection de la langue.',
     'Dies ist ein Test, um die Sprache zu erkennen.',
 ]
 predicted = clf.predict(sentences)
