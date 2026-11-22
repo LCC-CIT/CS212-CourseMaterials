@@ -55,6 +55,8 @@ You don't need to upload the data since it can be downloaded by the fetch_data.p
 
 ## Grading Criteria
 
+The main focus of grading will be on use of the sckit-learn classes and problem solving skills.
+
 [Lab 3 grading rubric](CS212_Lab03_Rubric.html)
 
 

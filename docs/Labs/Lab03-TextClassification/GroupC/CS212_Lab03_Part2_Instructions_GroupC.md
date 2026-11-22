@@ -133,6 +133,8 @@ Based on the code review and helpful advice from your lab partners, you may revi
 
 The main focus of grading will be on use of the sckit-learn classes and problem solving skills.
 
+[Lab 3 grading rubric](../CS212_Lab03_Rubric.html)
+
 
 
 ------
