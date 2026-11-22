@@ -30,6 +30,7 @@ if __name__ == "__main__":
     # that is used when n_jobs != 1 in GridSearchCV
 
     # the training data folder must be passed as first argument
+    # CLI command to run this module: python exercise_01_language_train_model.py ./path/to/training_data
     movie_reviews_data_folder = sys.argv[1]
     dataset = load_files(movie_reviews_data_folder, shuffle=False)
     print("n_samples: %d" % len(dataset.data))

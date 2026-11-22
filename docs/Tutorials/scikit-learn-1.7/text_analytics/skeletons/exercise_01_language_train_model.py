@@ -21,6 +21,7 @@ from sklearn import metrics
 
 
 # The training data folder must be passed as first argument
+# CLI command to run this module: python exercise_01_language_train_model.py ./path/to/training_data
 languages_data_folder = sys.argv[1]
 dataset = load_files(languages_data_folder)
 

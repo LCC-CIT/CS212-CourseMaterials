@@ -11,16 +11,13 @@ author: Brian Bird
 
 <h1>Lab 3: Working with Text Data</h1>
 
-<h2>Group C</h2>
-
-[TOC]
-
-## Part 1: The scikit-learn "Working with Text Data" Tutorial
+<h2>Part 2, Version C</h2>
 
 The instructions for part 1 are [here](../CS212_Lab03_Part1_Instructions.html).
-Part 1 has its own assignment submission on Canvas.
 
+<h2>Contents</h2>
 
+[TOC]
 
 ## Part 2: Predicting Star Ratings from Movie Reviews
 
@@ -31,7 +28,7 @@ In the tutorial's sentiment exercise, a review is either positive or negative. R
 The data is the Cornell "scale dataset", which has about 5,000 movie review excerpts by four film critics. Each review is labeled with the rating the critic gave the movie.
 
 1. Download <a href="https://www.cs.cornell.edu/people/pabo/movie-review-data/scale_data.tar.gz" target="_blank">scale_data.tar.gz</a> (4 MB) from the <a href="https://www.cs.cornell.edu/people/pabo/movie-review-data/" target="_blank">Cornell movie review data page</a>.
-2. Extract it into your project folder. This works on Windows 10 and later, macOS and Linux: open a terminal in your project folder and run `tar -xzf scale_data.tar.gz`. You will get a folder named `scaledata` with one sub-folder for each critic.
+2. Extract it into your project folder. This works on Windows 10 or 11, macOS and Linux: open a terminal in your project folder and run `tar -xzf scale_data.tar.gz`. You will get a folder named `scaledata` with one sub-folder for each critic.
 
 Each critic's folder has these files, with one review on each line. Line 5 of one file matches line 5 of every other file in the same folder.
 
@@ -127,7 +124,7 @@ The data is from Bo Pang and Lillian Lee, "Seeing stars: Exploiting class relati
 
 Based on the code review and helpful advice from your lab partners, you may revise your code. On the code review from your lab partner, complete the “Prod.” column to show what you revised. Upload the following to the *Lab Production Version* assignment on Canvas:
 
-1. The Python (.py) file
+1. The zipped Python (.py) and pyproject.toml or requirements.txt files.
 2. The code review <u>from your lab partner</u> with the “Prod.” column filled out by you.
 
 
@@ -135,6 +132,8 @@ Based on the code review and helpful advice from your lab partners, you may revi
 ## Grading Criteria
 
 The main focus of grading will be on use of the sckit-learn classes and problem solving skills.
+
+[Lab 3 grading rubric](../CS212_Lab03_Rubric.html)
 
 
 

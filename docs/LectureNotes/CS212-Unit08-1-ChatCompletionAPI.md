@@ -22,7 +22,7 @@ Model APIs are used when adding AI features to your own apps (chat, summarizing,
 
 Most AI companies offer the same models in two different ways:
 
-- **Chatbot client** (ChatGPT, Claude, Gemini apps and websites)
+- **Chatbot client/harness** (ChatGPT, Claude, Gemini apps and websites)
   - For people typing and reading in a chat window.
   - Paid for with a flat subscription (e.g., free, Plus, Pro), usually with usage limits.
 - **API service** (programming interface)
@@ -38,15 +38,24 @@ Most AI companies offer the same models in two different ways:
 
 These companies provide access to proprietary models that can only be run on servers they control.
 
-- <a href="https://openai.com/" target="_blank">OpenAI</a>: <a href="https://openai.com/chatgpt/overview/" target="_blank">ChatGPT</a>
-- <a href="https://www.anthropic.com/" target="_blank">Anthropic</a>: <a href="https://www.anthropic.com/claude" target="_blank">Claude</a>
-- <a href="https://deepmind.google/" target="_blank">Google</a>: <a href="https://deepmind.google/models/gemini/" target="_blank">Gemini</a>
-- <a href="https://ai.meta.com/" target="_blank">Meta</a>: <a href="https://dev.meta.ai/docs/models" target="_blank">Muse</a>
+| **Company** | **Model Family** | **Most Capable** | **Second** | **Third** | **Fourth** |
+| ----------- | ---------------- | ---------------- | ---------- | --------- | ---------- |
+| <a href="https://openai.com/" target="_blank">OpenAI</a> | <a href="https://openai.com/chatgpt/overview/" target="_blank">ChatGPT</a> | GPT-6.2 Astra | GPT-6.2 Sol | GPT-6.1 Terra | GPT-6 Luna |
+| <a href="https://www.anthropic.com/" target="_blank">Anthropic</a> | <a href="https://www.anthropic.com/claude" target="_blank">Claude</a> | Claude Fable 5.2 | Claude Opus 5.5 | Claude Sonnet 5.5 | Claude Haiku 5.5 |
+| <a href="https://deepmind.google/" target="_blank">Google</a> | <a href="https://deepmind.google/models/gemini/" target="_blank">Gemini</a> | Gemini 4 Carbon | Gemini 4 Argon | Gemini 4 Hydrogen | Gemini 3.8 Flash |
+| <a href="https://ai.meta.com/" target="_blank">Meta</a> | <a href="https://dev.meta.ai/docs/models" target="_blank">Muse</a> | Muse Wonder | Muse Spark | Muse Ember |  |
+
+- Models are listed from most to least capable. Smaller models are faster and cheaper.
+- This list reflects the latest as of Nov.19, 2026. Each company releases new versions often, so check its models page for the current names.
 
 ### Open Model Providers
 
-These companies release some *open-weight* models, which anyone can download and run on their own servers (subject to each model's license). They also provide access to the models from their own servers.
+These companies release *open-weight* models, which anyone can download and run on their own servers. Many of them also provide access to the models from their own servers.
 
+- <a href="https://ai.meta.com/" target="_blank">Meta</a>: <a href="https://dev.meta.ai/docs/models" target="_blank">Muse Spark Open and Muse Glimmer</a>
+- <a href="https://deepmind.google/" target="_blank">Google</a>: <a href="https://deepmind.google/models/gemma/" target="_blank">Gemma</a>
+- <a href="https://www.nvidia.com/" target="_blank">NVIDIA</a>: <a href="https://www.nvidia.com/en-us/ai-data-science/foundation-models/nemotron/" target="_blank">Nemotron</a>
+- <a href="https://mistral.ai/" target="_blank">Mistral AI</a>: <a href="https://mistral.ai/models" target="_blank">Mistral</a>
 - <a href="https://www.deepseek.com/" target="_blank">DeepSeek AI</a>: <a href="https://www.deepseek.com/" target="_blank">DeepSeek</a>
 - <a href="https://www.alibabacloud.com/" target="_blank">Alibaba</a>: <a href="https://qwen.ai/" target="_blank">Qwen</a>
 - <a href="https://www.moonshot.ai/" target="_blank">Moonshot AI</a>: <a href="https://www.kimi.com/" target="_blank">Kimi</a>
@@ -54,7 +63,7 @@ These companies release some *open-weight* models, which anyone can download and
 
 ### LLM API Aggregators
 
-An LLM API aggregator provides developers with access to dozens of different models and hosting providers through a single, standardized API endpoint. 
+An LLM API aggregator provides developers with access to many different models and hosting providers through a single, standardized API endpoint. 
 
 - <a href="https://openrouter.ai/" target="_blank">OpenRouter</a>
 - <a href="https://opencode.ai/zen" target="_blank">OpenCode Zen</a>

@@ -31,7 +31,7 @@ This part of the lab is for everyone.
 
 ### Step B: Put the Essential Parts of the Tutorial in a Python File
 
-Write a .py file that <u>only includes the essential steps</u> to:
+Write a .py file that <u>only includes the essential code</u>, not the code that is there to just show you what the program is doing. Include the code to:
 
 - Fetch the training data
 
@@ -49,7 +49,7 @@ Write a .py file that <u>only includes the essential steps</u> to:
   
   - Print the average (mean) accuracy of the classifier
 
-<u>You don't need to build a pipeline or do a grid search</u>.
+<u>You don't need to build a pipeline or do a grid search for this step.</u>.
 
 **Alternative:** To make this interesting, you can use a different set of newsgroup categories than the ones used in the tutorial.
 
@@ -71,10 +71,17 @@ There are three versions of part 2.
 
 ## Submitting your lab work on Canvas
 
-Zip and upload your Python code files to the Lab 3 Production Version  assignment on Canvas. 
-You only need to submit your source files. You <u>should not</u> upload your virtual environment (.venv) folder since the .venv will be rebuilt from your `pyproject.toml` file.  
-You don't need to upload the data since it can be downloaded by from the repository where you got it.
+Zip and upload your Python source files to the Lab 3 Production Version assignment on Canvas. 
+(You will uplod part 2 there too.)
+
+Notes:
+
+- You only need to submit your source files. You <u>should not</u> upload your virtual environment (.venv) folder since the .venv will be rebuilt from your `pyproject.toml` file.  
+- You don't need to upload the data since it can be downloaded by the program from the repository where you got it.
 
 ### Grading Criteria
 
-The main focus of grading will be on correct coding and problem solving skills.
+The main focus of grading will be on use of the sckit-learn classes and problem solving skills.
+
+[Lab 3 grading rubric](../CS212_Lab03_Rubric.html)
+

@@ -570,28 +570,27 @@ Or run the script in an IDE where you can edit and debug more easily.
 
 Refine the implementation and iterate until the exercise is solved.
 
-**For each exercise, the skeleton file provides all the necessary import statements and boilerplate code to load the data as well as sample code to evaluate the predictive accuracy of the model.**
+**For each exercise, the skeleton file provides all the necessary import statements and boilerplate code to load the data as well as sample code to evaluate the predictive accuracy of the model.** 
 
 ### Exercise 1: Language identification
 
-In this exercise, you will train a classifier to tell which language a piece of text is written in. The earlier sections of this tutorial used whole words as features. Here you will use short sequences of *characters* instead, because the letter patterns in a language, such as common pairs and triplets of letters, are a good clue to which language it is.
+In this exercise, you will train a classifier to tell which language a piece of text is written in. The earlier sections of this tutorial used *whole words* as features. Here you will use short *sequences of characters* instead, because the letter patterns in a language, such as common pairs and triplets of letters, are a good clue as to which language it is.
 
 - Write a text classification pipeline using a custom preprocessor and `TfidfVectorizer` set up to use *character based* *n-grams*, using data from Wikipedia articles as the training set.
 - Evaluate the performance on some held out test set.
 
 #### Hints
 
-- Setting up a vectorizer for a character instead of word sequence.  
-  This code specifies *n-grams* of 1, 2, or 3 character sequences.
-
+- Setting up a vectorizer for a character instead of word sequence:
+  
   ```python
   vectorizer = TfidfVectorizer(
       analyzer='char',      # Use individual characters as features
       ngram_range=(1, 3)    # Extract unigrams (1), bigrams (2), and trigrams (3)
   )
   ```
-
   
+  This code specifies *n-grams* of 1, 2, or 3 character sequences.
 
 ### Exercise 2: Sentiment Analysis on movie reviews
 
