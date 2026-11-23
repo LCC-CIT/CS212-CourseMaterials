@@ -43,23 +43,19 @@ By the end of this week you will:
   Get help with admissions, financial aid, academic advising and registration.
   Plan to arrive before 1pm.
   If you are pursuing the AAS in Software Development, these are the recommended winter courses:
-  - If you are in the first year of the program:
-    - WR 121Z, Composition 1
-    - CS 161N, Computer Science 1: C# (only offered in winter)
-    - CS 133JS, Beginning Programming: JavaScript (only offered in winter)
-    - A directed elective (see the list in the sample planner)
   - If you are in the second year of the program:
     - CS 275, Basic Database SQL
+      or if you have already taken CS 275: Directed elective CS 213, AI Programming 2
     - CS 296R, Web Development 2: React (only offered in winter)
     - CS 206, Co-op Ed: CIT Seminar
     - CS 246, System Design (only offered in winter)
-
+  
   Relevant links:
   - <a href="https://lanecc.smartcatalogiq.com/en/current/lcc-catalog/programs-of-study/computer-information-technology/software-development-aas" target="_blank">Degree Requirements</a> for AAS in Software Dev
   - <a href="https://docs.google.com/document/d/1F8CJY1M7A4J9uJtGRDFRyF-0j7l2AVe0vpPE5vcfHXE/edit?tab=t.0" target="_blank">Term-By-Term Sample Planner</a> for AAS in Software Dev
   - <a href="https://lanecc.edu/advising" target="_blank">Academic Advising</a>
   - [Registration, Schedules, and the Academic Calendar](https://www.lanecc.edu/programs-academics/registration-schedules-and-academic-calendar)
-
+  
 - **Last day for submissions**: Any late assignments are due by the end of the day on **Tuesday, 12/8** (finals week).
 
 - Do you have any questions or comments about:
