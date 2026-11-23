@@ -39,10 +39,11 @@ By the end of this week you will:
 
 ## Announcements and Discussion
 
-- **Drop-in Winter Reg Fest** on Tuesday, Dec. 1 from 9am&ndash;2pm in Building 1, Admissions 102.
-  Get help with admissions, financial aid, academic advising and registration.
+- **Drop-in Winter Reg Fest** on Tuesday, Dec. 1 from 9am&ndash;2pm in Building 1, Admissions 102. Get help with admissions, financial aid, academic advising and registration.
   Plan to arrive before 1pm.
-  If you are pursuing the AAS in Software Development, these are the recommended winter courses:
+  
+- If you are pursuing the AAS in Software Development, these are the recommended winter courses:
+  
   - If you are in the second year of the program:
     - CS 275, Basic Database SQL  
       or if you have already taken CS 275: Directed elective CS 213, AI Programming 2
@@ -82,6 +83,10 @@ By the end of this week you will:
   - Term project production version.
 - Tuesday 12/8
   - Term project presentations. Read the [Term Project Presentation Guidelines](../Labs/TermProject/CS212-TermProjectPresentationGuide.html).
+
+
+
+![Week 10 F2026-27](D:\Repos\CS212-213-Repos\CS212-CourseMaterials\docs\LectureNotes\Images\Week 10 F2026-27.jpg)
 
 
 
