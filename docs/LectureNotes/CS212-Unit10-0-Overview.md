@@ -17,7 +17,7 @@ author: Brian Bird
 | 1. What is AI, Python                   | 6. ANN: Image recognition                 |
 | 2. Constraint solvers                   | 7. Generative AI                          |
 | 3. Classical machine learning: training | 8. Calling the chat completion API        |
-| 4. Classical ML: testing and tuning     | 9. Agentic AI with MCP                    |
+| 4. Classical ML: testing and tuning     | 9. LLM tool use with MCP                  |
 | 5. More ML + History of AI              | 10. <mark>Social and ethical issues</mark> |
 |                                         | 11. Final project presentation            |
 
@@ -44,7 +44,7 @@ By the end of this week you will:
   Plan to arrive before 1pm.
   If you are pursuing the AAS in Software Development, these are the recommended winter courses:
   - If you are in the second year of the program:
-    - CS 275, Basic Database SQL
+    - CS 275, Basic Database SQL  
       or if you have already taken CS 275: Directed elective CS 213, AI Programming 2
     - CS 296R, Web Development 2: React (only offered in winter)
     - CS 206, Co-op Ed: CIT Seminar
@@ -57,6 +57,8 @@ By the end of this week you will:
   - [Registration, Schedules, and the Academic Calendar](https://www.lanecc.edu/programs-academics/registration-schedules-and-academic-calendar)
   
 - **Last day for submissions**: Any late assignments are due by the end of the day on **Tuesday, 12/8** (finals week).
+
+## Discussion
 
 - Do you have any questions or comments about:
   - Lab 8&mdash;the MCP tutorial?

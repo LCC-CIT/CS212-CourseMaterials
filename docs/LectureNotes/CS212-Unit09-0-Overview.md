@@ -49,7 +49,7 @@ By the end of this week you will:
     
   - **AAS in Software Development**: these are the recommended second-year winter term courses:
   
-    - CS 275, Basic Database SQL
+    - CS 275, Basic Database SQL  
       or if you have already taken CS 275: Directed elective CS 213, AI Programming 2
     - CS 296R, Web Development 2: React (only offered in winter)
     - CS 206, Co-op Ed: CIT Seminar

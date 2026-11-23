@@ -17,7 +17,7 @@ author: Brian Bird
 | 1. What is AI, Python                   | 6. ANN: Image recognition              |
 | 2. Constraint solvers                   | 7. <mark>Generative AI</mark>          |
 | 3. Classical machine learning: training | 8. Custom chatbot                      |
-| 4.Classical ML: testing and tuning      | 9. LLM fine-tuning                     |
+| 4.Classical ML: testing and tuning      | 9. LLM tool use with MCP               |
 | 5. More ML + History of AI              | 10. Social and ethical issues          |
 |                                         | 11. Final project presentation         |
 
