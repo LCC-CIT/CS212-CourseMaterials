@@ -14,4 +14,5 @@ Your project can be an entirely new app that incorporates some type of AI, or yo
 
 You can write the description in the Canvas online text area or upload a file.
 
-Here is a link to the [term project requirements document](https://lcc-cit.github.io/CS212-CourseMaterials/Labs/TermProject/CS212-TermProjectRequirements.md).
+Here is a link to the [term project requirements document](CS212-TermProjectRequirements.md).
+
