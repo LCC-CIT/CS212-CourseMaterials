@@ -8,123 +8,87 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-<h1>Week 10 Overview for Fall 2025</h1>
+<h1>Week 10 Overview for Fall 2026</h1>
 
-<h2>Dec. 1 through Dec. 7</h2>
+<h2>Nov. 30 through Dec. 6</h2>
 
-| Topics                                   |                                                              |
-| ---------------------------------------- | ------------------------------------------------------------ |
-| 1. What is AI, Python                    | 6. ANN: Image recognition                                    |
-| 2.  Symbolic AI                          | 7. Generative AI                                             |
-| 3. Classical machine learning: training  | 8. Calling the chat completion API                           |
-| 4. Classical machine learning: inference | 9. Model Context Protocol (MCP)                              |
-| 5. More ML + History of AI               | 10. <mark>Social and ethical issues  <br />Term project completion</mark> |
-|                                          | 11. Final project presentation                               |
+| Topics                                  |                                           |
+| --------------------------------------- | ----------------------------------------- |
+| 1. What is AI, Python                   | 6. ANN: Image recognition                 |
+| 2. Constraint solvers                   | 7. Generative AI                          |
+| 3. Classical machine learning: training | 8. Calling the chat completion API        |
+| 4. Classical ML: testing and tuning     | 9. Agentic AI with MCP                    |
+| 5. More ML + History of AI              | 10. <mark>Social and ethical issues</mark> |
+|                                         | 11. Final project presentation            |
 
-<h2>Contents</h2>
+## This Week's Learning Objectives
 
-- [This Week's Objectives](#this-weeks-objectives)
-- [Announcements for Fall 2025](#announcements-for-fall-2025)
-  - [RegFest](#regfest)
-    - [Recommended Classes for AAS in Software Development](#recommended-classes-for-aas-in-software-development)
-  - [Last Day for Submissions](#last-day-for-submissions)
-  - [Global Game Jam](#global-game-jam)
-- [Q and A](#q-and-a)
-- [Assignments Due](#assignments-due)
-  - [This Week (Week 10)](#this-week-week-10)
-  - [Fianals Week (Week 11)](#fianals-week-week-11)
-
-## This Week's Objectives
+<figure style="float: right; width: 200px; margin: 0 0 1em 1.5em;">
+  <img src="Images/RobotHoldingAIforGoodSign.jpeg" alt="A friendly white robot with glowing blue eyes holds a sign that says AI for Good, with a city skyline in the background" width="200">
+</figure>
 
 We will discuss the potential (and actual) positive and negative effects of AI on society and the world. You'll also have time in class to work on your lab assignment and term project.
 
-**This week you will:**
+By the end of this week you will:
 
-- Finish your term project
+- Be able to describe some of the positive and negative effects of AI on society.
 
-## Announcements for Fall 2025
+- Have finished your term project.
 
-### RegFest
+<div style="clear: both;"></div>
 
-**Tues, December 2, from 9 a.m. to 2 p.m**. on the first floor of Building 1. This event is designed for students:
+## Announcements and Discussion
 
-- Who have not yet registered for the upcoming term  
-      and/or
-- Those needing assistance with Financial Aid, Advising, or Student Accounts (Bursar).
+- **Drop-in Winter Reg Fest** on Tuesday, Dec. 1 from 9am&ndash;2pm in Building 1, Admissions 102.
+  Get help with admissions, financial aid, academic advising and registration.
+  Plan to arrive before 1pm.
+  If you are pursuing the AAS in Software Development, these are the recommended winter courses:
+  - If you are in the first year of the program:
+    - WR 121Z, Composition 1
+    - CS 161N, Computer Science 1: C# (only offered in winter)
+    - CS 133JS, Beginning Programming: JavaScript (only offered in winter)
+    - A directed elective (see the list in the sample planner)
+  - If you are in the second year of the program:
+    - CS 275, Basic Database SQL
+    - CS 296R, Web Development 2: React (only offered in winter)
+    - CS 206, Co-op Ed: CIT Seminar
+    - CS 246, System Design (only offered in winter)
 
-#### Recommended Classes for AAS in Software Development 
-
-If you are pursuing the AAS in Software Development, these are the recommended courses:
-- If you are in the first year of the program:
-  - CS 233JS, Intermediate Programming: JavaScript
-
-  - CS 161N, Beginning Programming: C#
-
-  - Directed Elective: CS 135M, Beginning Mobile Application Development
-
-  - WR 121Z, Composition 1
-
-- If you are in the second year of the program:
-  - CS 295N, Web Development 1: ASP.NET
-  - CS 275, Introduction to Database Systems and Modeling
-  - CS 206, Co-op Ed: CIT Seminar
-  - CS 246, System Design
-  - CS 135M, Mobile App Development (program elective)
-
-- Relevant Links:
-
+  Relevant links:
   - <a href="https://lanecc.smartcatalogiq.com/en/current/lcc-catalog/programs-of-study/computer-information-technology/software-development-aas" target="_blank">Degree Requirements</a> for AAS in Software Dev
-
   - <a href="https://docs.google.com/document/d/1F8CJY1M7A4J9uJtGRDFRyF-0j7l2AVe0vpPE5vcfHXE/edit?tab=t.0" target="_blank">Term-By-Term Sample Planner</a> for AAS in Software Dev
-
-  - Winter 2026 Class Schedule
-
   - <a href="https://lanecc.edu/advising" target="_blank">Academic Advising</a>
+  - [Registration, Schedules, and the Academic Calendar](https://www.lanecc.edu/programs-academics/registration-schedules-and-academic-calendar)
 
-  - <a href="https://my.lanecc.edu/StudentRegistrationSsb/ssb/registration" target="_blank">Registration</a>
+- **Last day for submissions**: Any late assignments are due by the end of the day on **Tuesday, 12/8** (finals week).
 
-### Last Day for Submissions
-
-Any late assignments are due by the end of the day on **12/9, Tuesday of next week** (finals week).
-
-### Global Game Jam
-
-**Save the date! Jan 30&ndash;Feb 1, 2026**. LCC is hosting this game jam in the CIT Lab, building 19, room 135. Food and drinks will be provided. Come build a game!  <a href="https://globalgamejam.org/jam-sites/2026/lcc-bitforest-ggj26" target="_blank">Registration is now open</a>
-
-## Q and A
-
-- Do you have any questions about:
-
+- Do you have any questions or comments about:
   - Lab 8&mdash;the MCP tutorial?
   - Your term project?
-
   - Anything else?
 
-## Assignments Due
+## Things to Do This Week
 
-### This Week (Week 10)
+- Tuesday 12/1
+  - Lab 8 code review.
+- Thursday 12/3
+  - Lab 8 production version.
+- Friday 12/4
+  - Term project beta version.
+- Saturday 12/5
+  - Term project code review.
 
-- Tuesday 12/2: Lab 8 code review
-- Thursday 12/4: Lab 8 production version
-- Friday 12/5: Term project beta version
+**Next week (finals week):**
 
-- Saturday 12/6: Term project code review
-
-### Fianals Week (Week 11)
-
-- Monday 12/8 Term project production version
-
-- Tuesday 12/9 Term project presentations. 
-  Read the [Term Project Presentation Guidelines](../Labs/TermProject/CS212-TermProjectPresentationGuide.html)
-  
-  
-
-![F2025Week10](Images/F2025Week10.png)
+- Monday 12/7
+  - Term project production version.
+- Tuesday 12/8
+  - Term project presentations. Read the [Term Project Presentation Guidelines](../Labs/TermProject/CS212-TermProjectPresentationGuide.html).
 
 
 
 ---
 
-<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in 2025, revised in <time>2026</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---
