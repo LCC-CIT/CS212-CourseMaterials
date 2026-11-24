@@ -1,0 +1,183 @@
+{
+  "titleText": "Lab03",
+  "rubricName": "../../docs/Labs/Lab03-TextClassification/CS212_Lab03_Rubric.xlsm",
+  "codeReview": {
+    "groupCell": "B26"
+  },
+  "runtimeCheck": "run_check",
+  "mappings": [
+    {
+      "label": "Code review with \"Prod\" column completed",
+      "cell": "C6",
+      "commentCell": "E6",
+      "type": "code_review",
+      "maxScore": 2
+    },
+    {
+      "label": "Developer’s name, any AI used and the date in comments in each file",
+      "cell": "C9",
+      "commentCell": "E9",
+      "type": "developer_comments",
+      "maxScore": 1,
+      "requireAiDisclosure": false
+    },
+    {
+      "label": "Fetches the newsgroups training data and builds the feature vector matrix",
+      "cell": "C10",
+      "commentCell": "E10",
+      "type": "manual",
+      "maxScore": 1,
+      "msg": "NEEDS MANUAL CHECK"
+    },
+    {
+      "label": "Trains the classifier (without a pipeline)",
+      "cell": "C11",
+      "commentCell": "E11",
+      "type": "manual",
+      "maxScore": 1,
+      "msg": "NEEDS MANUAL CHECK"
+    },
+    {
+      "label": "Tests the classifier on the test data (twenty_test) and prints the mean accuracy",
+      "cell": "C12",
+      "commentCell": "E12",
+      "type": "manual",
+      "maxScore": 1,
+      "msg": "NEEDS MANUAL CHECK"
+    },
+    {
+      "label": "Includes only the essential code (not code that just shows what the program is doing)",
+      "cell": "C13",
+      "commentCell": "E13",
+      "type": "manual",
+      "maxScore": 4,
+      "msg": "NEEDS MANUAL CHECK"
+    },
+    {
+      "label": "No errors in the IDE and runs without errors",
+      "cell": "C14",
+      "commentCell": "E14",
+      "type": "run_check",
+      "maxScore": 2
+    },
+    {
+      "label": "Uses best practices and good coding style",
+      "type": "lint",
+      "cell": "C15",
+      "maxScore": 2,
+      "severity": "errors",
+      "commentCell": "E15"
+    },
+    {
+      "label": "Developer’s name, any AI used and the date in comments in each file",
+      "cell": "C18",
+      "commentCell": "E18",
+      "type": "developer_comments",
+      "maxScore": 1,
+      "requireAiDisclosure": false
+    },
+    {
+      "label": "No syntax or runtime errors",
+      "type": "build_check",
+      "cell": "C19",
+      "maxScore": 1,
+      "commentCell": "E19"
+    },
+    {
+      "label": "Uses best practices and good coding style",
+      "cell": "C20",
+      "commentCell": "E20",
+      "type": "manual",
+      "maxScore": 1,
+      "msg": "NEEDS MANUAL CHECK"
+    },
+    {
+      "label": "Loads data, splits into train and test data structures",
+      "cell": "C21",
+      "commentCell": "E21",
+      "type": "manual",
+      "maxScore": 4,
+      "msg": "NEEDS MANUAL CHECK"
+    },
+    {
+      "label": "Extracts features from text and uses a Pipeline (vectorizer + classifier)",
+      "cell": "C22",
+      "commentCell": "E22",
+      "type": "manual",
+      "maxScore": 3,
+      "msg": "NEEDS MANUAL CHECK"
+    },
+    {
+      "label": "Fits the model to the training data",
+      "cell": "C23",
+      "commentCell": "E23",
+      "type": "manual",
+      "maxScore": 3,
+      "msg": "NEEDS MANUAL CHECK"
+    },
+    {
+      "label": "Does classification on the test data",
+      "cell": "C24",
+      "commentCell": "E24",
+      "type": "manual",
+      "maxScore": 3,
+      "msg": "NEEDS MANUAL CHECK"
+    },
+    {
+      "label": "Evaluates performance using test data, prints the accuracy",
+      "cell": "C25",
+      "commentCell": "E25",
+      "type": "manual",
+      "maxScore": 3,
+      "msg": "NEEDS MANUAL CHECK"
+    },
+    {
+      "label": "A: 1 to 3 character vectorizer; B and C: GridSearchCV",
+      "cell": "C27",
+      "commentCell": "E27",
+      "type": "manual",
+      "maxScore": 5,
+      "msg": "NEEDS MANUAL CHECK"
+    },
+    {
+      "label": "Versions A and B: adds explanatory comments; Version C: answers the questions in comments",
+      "cell": "C28",
+      "commentCell": "E28",
+      "type": "manual",
+      "maxScore": 2,
+      "msg": "NEEDS MANUAL CHECK"
+    }
+  ],
+  "variations": {
+    "A": {
+      "appName": "Language identification for wikipedia text"
+    },
+    "B": {
+      "appName": "Sentiment analysis of movie reviews"
+    },
+    "C": {
+      "appName": "Predicting Star Ratings from Movie Reviews"
+    }
+  },
+  "calibration": {
+    "solution": {
+      "A": "."
+    }
+  },
+  "llmCheck": {
+    "instructions": {
+      "A": [
+        "../../docs/Labs/Lab03-TextClassification/CS212_Lab03_Part1_Instructions.md",
+        "../../docs/Labs/Lab03-TextClassification/GroupA/CS212_Lab03_Part2_Instructions_GroupA.md"
+      ],
+      "B": [
+        "../../docs/Labs/Lab03-TextClassification/CS212_Lab03_Part1_Instructions.md",
+        "../../docs/Labs/Lab03-TextClassification/GroupC/CS212_Lab03_Part2_Instructions_GroupC.md"
+      ],
+      "C": [
+        "../../docs/Labs/Lab03-TextClassification/CS212_Lab03_Part1_Instructions.md",
+        "../../docs/Labs/Lab03-TextClassification/GroupC/CS212_Lab03_Part2_Instructions_GroupC.md"
+      ]
+    }
+  }
+}
