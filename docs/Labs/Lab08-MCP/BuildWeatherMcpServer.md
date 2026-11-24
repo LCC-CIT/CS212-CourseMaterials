@@ -18,7 +18,7 @@ title: Build a Weather MCP Server
 
 ## Introduction
 
-In this tutorial, you will build a Model Context Protocol (MCP) server that provides weather forecasts and alerts. This tutorial was adapted from <a href="https://modelcontextprotocol.io/docs/develop/build-server" target="_blank">Build an MCP Server</a>. The purpose was to simplify the tutorial for beginning Python programmers. The main changes were to use `pip` instead of `uv`,  use the <a href="https://modelcontextprotocol.github.io/python-sdk/" target="_blank">"official" MCP Server SDK</a> and to not use <a href="https://docs.python.org/3/library/typing.html" target="_blank">Python type hints</a>.
+In this tutorial, you will build a Model Context Protocol (MCP) server that provides weather forecasts and alerts. This tutorial was adapted from <a href="https://modelcontextprotocol.io/docs/develop/build-server" target="_blank">Build an MCP Server</a>. The purpose was to simplify the tutorial for beginning Python programmers. The main changes were to use the low-level `Server` class from the <a href="https://modelcontextprotocol.github.io/python-sdk/" target="_blank">"official" MCP Python SDK</a> instead of its `FastMCP` class, so you can see how tools are defined and called, and to not use <a href="https://docs.python.org/3/library/typing.html" target="_blank">Python type hints</a>.
 
 This tutorial includes instructions for testing the server with two different MCP clients: 
 
@@ -28,39 +28,46 @@ This tutorial includes instructions for testing the server with two different MC
 ### Prerequisites
 
 - Python 3.10 or higher.
+- <a href="https://docs.astral.sh/uv/getting-started/installation/" target="_blank">uv</a> installed.
 - <a href="https://claude.ai/download" target="_blank">Claude Desktop App</a> or <a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a> installed.
 
 
 
 ## Project Setup
 
-We will use standard Python tools (`venv` and `pip`) to set up the environment. The environment will include the <a href="https://modelcontextprotocol.github.io/python-sdk/" target="_blank">"official" Python MCP SDK</a> from the Anthropic MCP open-source project. 
+We will use `uv` to create the project and install the packages it needs. The project will use the <a href="https://modelcontextprotocol.github.io/python-sdk/" target="_blank">"official" Python MCP SDK</a> from the Anthropic MCP open-source project. 
 
-- First make a new project folder with a name like `weather-mcp`
-  - In that folder, using a terminal, do the following :
+In a terminal, go to the folder where you keep your projects and do the following:
 
 ```bash
-# 1. Create a virtual environment
-python -m venv weather-venv
+# 1. Create a new project folder named weather-mcp and go into it
+uv init weather-mcp
+cd weather-mcp
 
-# 2. Activate the environment
-# On macOS/Linux:
-source weather-venv/bin/activate
-# On Windows:
-weather-venv\Scripts\activate
-
-# 3. Install the official Python MCP SDK with CLI tools
-# and install httpx, a modern, fast, asynchronous HTTP client library
-cd weather-venv
-pip install "mcp[cli]" httpx
-cd ..
+# 2. Install the official Python MCP SDK with CLI tools
+# and httpx, a modern, fast, asynchronous HTTP client library
+uv add "mcp[cli]<2" httpx
 ```
 
-**Note**: on a Mac, use the command `python3` instead of `python`.
+`uv add` creates a virtual environment in a `.venv` folder inside your project and installs the packages there. You don't need to activate it; `uv run` will use it for you.
+
+**Notes**
+
+- `[cli]` asks for  an optional set of packages that the `mcp` package has but doesn't install by default. For `mcp`, the `cli` extra installs the packages behind the `mcp` command-line tool (such as `typer`, which show up when you run `uv add`). 
+- The `<2` keeps the SDK on version 1. Version 2 of the SDK changed how tools are registered, so the code below won't run with it.
+
+## NWS Weather Forecast API
+
+he forecasts and alerts come from the **U.S. National Weather Service (NWS)**, part of NOAA, a U.S. government agency. The server calls the NWS API at `api.weather.gov`.
+
+- It's free and needs no API key or account. 
+- It asks every client to send a `User-Agent` header that identifies the app. 
+- It only covers the U.S. and its territories. Coordinates elsewhere get a `404 Not Found`.
+- The official documentation is here: [NWS API Web Service page](https://www.weather.gov/documentation/services-web-api).
 
 ## Writing the Server
 
-Create a file named `server.py` in *weather-mcp*. To keep things simple and avoid complex type definitions, we will define our tool inputs using standard Python dictionaries.
+`uv init` made a file named `main.py`. You can delete it. Create a file named `server.py` in *weather-mcp*. To keep things simple and avoid complex type definitions, we will define our tool inputs using standard Python dictionaries.
 
 ```python
 import asyncio
@@ -196,9 +203,7 @@ async def handle_call_tool(name, arguments):
 
     Returns:
         list[types.TextContent]: The output of the tool execution wrapped in an MCP text content object.
-    
-    Raises:
-        ValueError: If the tool name is unknown.
+            If something goes wrong (including an unknown tool name), the output is an error message.
     """
     try:
         if name == "get-forecast":
@@ -252,16 +257,14 @@ if __name__ == "__main__":
 
 Now we need to tell the Claude Desktop app where to find this script. We do this by editing a configuration file.
 
-1. **Locate the configuration file:**
+1. **Open the configuration file:** In Claude Desktop, go to **Settings → Developer** and click **Edit Config**. This creates the file if it doesn't exist and shows you where it is. It is usually here:
 
    - **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
-   - **Windows:** `C:\Users\YourUserName\AppData\Roaming\Claude\claude_desktop_config.json`
-
-   *If the file doesn't exist, create it.*
+   - **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 
 2. Add your server configuration:
 
-   You must use the absolute path to the python executable inside your virtual environment so Claude can run it without needing you to activate the environment manually.
+   Claude will start your server by running `uv run server.py` in your project folder. The `--directory` argument tells `uv` where that folder is, so you must use its absolute path.
 
    *Replace `/ABSOLUTE/PATH/TO/` with the actual path on your machine.*
 
@@ -269,14 +272,16 @@ Now we need to tell the Claude Desktop app where to find this script. We do this
    {
      "mcpServers": {
        "weather-server": {
-         "command": "/ABSOLUTE/PATH/TO/weather-mcp/weather-venv/bin/python",
-         "args": ["/ABSOLUTE/PATH/TO/weather-mcp/server.py"]
+         "command": "uv",
+         "args": ["--directory", "/ABSOLUTE/PATH/TO/weather-mcp", "run", "server.py"]
        }
      }
    }
    ```
    
-   > **Note for Windows Users:** Your *command* path will be: `C:\\ABSOLUTE\\PATH\\TO\\weather-mcp\\weather-venv\\Scripts\\python.exe`. Your *args* path will also use `\\` delimiters.
+   > **Note for Windows Users:** Use `\\` instead of `/` in the path, for example: `C:\\ABSOLUTE\\PATH\\TO\\weather-mcp`.
+   
+   > **Note:** If Claude can't find `uv`, put the full path to the `uv` executable in the *command* field. You can get it by running `which uv` on macOS/Linux or `where uv` on Windows.
 
 #### Testing with Claude Desktop
 
@@ -286,8 +291,8 @@ Now we need to tell the Claude Desktop app where to find this script. We do this
 
 3. **Ask a Question**:
 
-   - For the weather forecast, you can ask either by latitude and logitude <u>or</u> by city and state. For example:
-     - What is the forecast for lat 44.0521, lon 123.0868?
+   - For the weather forecast, you can ask either by latitude and longitude <u>or</u> by city and state. For example:
+     - What is the forecast for lat 44.0521, lon -123.0868?
      - What is the forecast for Springfield, OR?
 
    Claude will:
@@ -319,14 +324,14 @@ Instead of creating  a global config file like you did for Claude, you will crea
    {
      "servers": {
        "weather-server": {
-         "command": "/ABSOLUTE/PATH/TO/weather-mcp/venv/bin/python",
-         "args": ["/ABSOLUTE/PATH/TO/weather-mcp/server.py"]
+         "command": "uv",
+         "args": ["--directory", "${workspaceFolder}", "run", "server.py"]
        }
      }
    }
    ```
    
-   *(On Windows, remember to use double backslashes `\\` in paths and that the python command is in `Scripts` not `bin`.)*
+   *VS Code replaces `${workspaceFolder}` with the path to the folder you have open, so you don't need to type an absolute path. Make sure you open the `weather-mcp` folder itself in VS Code.*
 
 #### Testing with VS Code
 
@@ -340,15 +345,15 @@ Use the Copilot Chat sidebar.
 
 3. **Select agent mode:** In the agent/ask/plan drop-down, select agent. 
 
-4. **Enable the weather server tool.** Click on the *configure tools* icon. In the list of tools, you should see `weather-server` listed. Check it's checkbox.
+4. **Enable the weather server tool.** Click on the *configure tools* icon. In the list of tools, you should see `weather-server` listed. Check its checkbox.
 
 5. Ask a Question:
 
-   - For the weather forecast, you can ask either by latitude and logitude <u>or</u> by city and state. For example:
-     - What is the forecast for lat 44.0521, lon 123.0868?
+   - For the weather forecast, you can ask either by latitude and longitude <u>or</u> by city and state. For example:
+     - What is the forecast for lat 44.0521, lon -123.0868?
      - What is the forecast for Springfield, OR?
 
-   Claude will:
+   Copilot will:
 
    1. Ask for permission to use the tool.
    2. Run your Python script in the background.
@@ -362,9 +367,12 @@ Use the Copilot Chat sidebar.
 If the *weather-server* doesn't appear in the list of tools or the tool fails:
 
 1. Check the logs:
-   - **macOS:** `~/Library/Logs/Claude/mcp.log`
-   - **Windows:** `%APPDATA%\Claude\logs\mcp.log`
-2. Ensure you used the <u>absolute path</u> to the python executable in the `weather-venv` folder, not the system python.
+   - **Claude Desktop:** Look at `mcp.log` and `mcp-server-weather-server.log` in the logs folder.
+     - **macOS:** `~/Library/Logs/Claude/`
+     - **Windows:** `%APPDATA%\Claude\logs\`
+   - **VS Code:** Open the Command Palette, run **MCP: List Servers**, select *weather-server*, and choose **Show Output**.
+2. For Claude Desktop, make sure you used the <u>absolute path</u> to your `weather-mcp` folder after `--directory`.
+3. Make sure the server runs on its own. In the `weather-mcp` folder, run `uv run server.py`. If there are no errors, it will wait silently for a client to connect. Press `Ctrl+C` to stop it.
 
 
 
@@ -379,7 +387,7 @@ This video demonstrates the "Agent mode" in VS Code and how to access MCP tools 
 
 
 
-*Note: This tutorial was initially drafted using Gemini 3 (2025).*
+*This tutorial was initially drafted using Gemini 3 and revised using Claude Opus 5.5.*
 
 ---
 
