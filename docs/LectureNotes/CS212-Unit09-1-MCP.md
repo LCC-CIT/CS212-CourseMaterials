@@ -10,20 +10,9 @@ author: Brian Bird
 
 <h1>Model Context Protocol (MCP)</h1>
 
-| Topics                                   |                                                              |
-| ---------------------------------------- | ------------------------------------------------------------ |
-| 1. What is AI, Python                    | 6. ANN: Image recognition                                    |
-| 2.  Symbolic AI                          | 7. Generative AI                                             |
-| 3. Classical machine learning: training  | 8. Calling the chat completion API                           |
-| 4. Classical machine learning: inference | 9. <mark>Model Context Protocol</mark>                       |
-| 5. More ML + History of AI               | 10. Social and ethical issues  <br />Term project completion |
-|                                          | 11. Final project presentation                               |
-
 <h2>Contents</h2>
 
-- [Introduction](#introduction)
-- [Examples of MCP Hosts](#examples-of-mcp-hosts)
-- [Reference](#reference)
+[TOC]
 
 ## Introduction
 
