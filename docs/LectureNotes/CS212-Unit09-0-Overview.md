@@ -8,107 +8,84 @@ author: Brian Bird
 
 **CS 212, AI Programming 1**
 
-<h1>Week 9 Overview for Fall 2025</h1>
+<h1>Week 9 Overview for Fall 2026</h1>
 
-<h2>Nov. 24 through Nov. 30</h2>
+<h2>Nov. 23 through Nov. 29</h2>
 
-| Topics                                   |                                                              |
-| ---------------------------------------- | ------------------------------------------------------------ |
-| 1. What is AI, Python                    | 6. ANN: Image recognition                                    |
-| 2.  Symbolic AI                          | 7. Generative AI                                             |
-| 3. Classical machine learning: training  | 8. Calling the chat completion API                           |
-| 4. Classical machine learning: inference | 9. <mark>Model Context Protocol (MCP)</mark>                 |
-| 5. More ML + History of AI               | 10. Social and ethical issues  <br />Term project completion |
-|                                          | 11. Final project presentation                               |
+| Topics                                  |                                       |
+| --------------------------------------- | ------------------------------------- |
+| 1. What is AI, Python                   | 6. ANN: Image recognition             |
+| 2. Constraint solvers                   | 7. Generative AI                      |
+| 3. Classical machine learning: training | 8. Calling the chat completion API    |
+| 4. Classical ML: testing and tuning     | 9. <mark>LLM tool use with MCP</mark> |
+| 5. More ML + History of AI              | 10. Social and ethical issues         |
+|                                         | 11. Final project presentation        |
 
-<h2>Contents</h2>
+## This Week's Learning Objectives
 
-- [This Week's Objectives](#this-weeks-objectives)
-- [Announcements for Fall 2025](#announcements-for-fall-2025)
-- [Registration for Winter Term 2026](#registration-for-winter-term-2026)
-  - [Relevant Links:](#relevant-links)
-- [Q and A](#q-and-a)
-- [Assignments Due](#assignments-due)
-  - [This Week (Week 9)](#this-week-week-9)
-  - [Next Week (Week10)](#next-week-week10)
-  - [Fianals Week (Week 11)](#fianals-week-week-11)
+<figure style="float: right; width: 200px; margin: 0 0 1em 1.5em;">
+  <img src="Images/MCP_Logo.png" alt="The Model Context Protocol logo, a black line drawing that loops back and forth like a bent paper clip" width="200">
+</figure>
 
-## This Week's Objectives
+The *Model Context Protocol* (MCP) is a standard way to connect AI applications to tools and data sources. An MCP server exposes tools, such as "get the weather forecast" or "send an email", and an MCP client lets an LLM call them. Giving an LLM tools like these is a key building block of *agentic AI*, where the LLM decides which actions to take, takes them, and uses the results to decide what to do next.
 
-The *Model Context Protocol* (MCP) standardizes communication with and between LLMs to enable  *agentic AI*, allowing an LLM to move beyond simple chat and interact with apps and APIs. It lets developers write applications where AI can do things like  "go look up the user's latest file and then send an email". An MCP server takes care of translating those requests into system actions.
+By the end of this week you will:
 
-**This week you will:**
+- Have a basic understanding of the MCP protocol.
 
-- Get a basic understanding of the MCP protocol.
-- <a href="../Labs/Lab08-MCP/BuildWeatherMcpServer.html" target="_blank">Build an MCP Server</a>.
-- Build an MCP client.
+- Be able to <a href="../Labs/Lab08-MCP/BuildWeatherMcpServer.html" target="_blank">build an MCP server</a>.
 
-## Announcements for Fall 2025
+- Be able to <a href="../Labs/Lab08-MCP/BuildWeatherMcpClient.html" target="_blank">build an MCP client</a>.
 
-There will be no class on Thursday since the college will be closed Thursday through Sunday, 11/27&ndash;11/30, for the Thanksgiviing holiday.
+<div style="clear: both;"></div>
 
-## Registration for Winter Term 2026
+## Announcements and Discussion
 
-Registration for winter term is open. If you are pursuing the AAS in Software Development, these are the recommended courses:
+- **No class on Thursday**: The college will be closed Thursday through Sunday, 11/26&ndash;11/29, for the Thanksgiving holiday.
 
-- CS 295N, Web Development 1: ASP.NET
-- CS 275, Introduction to Database Systems and Modeling
-- CS 206, Co-op Ed: CIT Seminar
-- CS 246, System Design
-- CS 135M, Mobile App Development (program elective)
-
-### Relevant Links:
-
-- <a href="https://lanecc.smartcatalogiq.com/en/current/lcc-catalog/programs-of-study/computer-information-technology/software-development-aas" target="_blank">Degree Requirements</a> for AAS in Software Dev
-- <a href="https://docs.google.com/document/d/1F8CJY1M7A4J9uJtGRDFRyF-0j7l2AVe0vpPE5vcfHXE/edit?tab=t.0" target="_blank">Term-By-Term Sample Planner</a> for AAS in Software Dev
-
-- Winter 2026 Class Schedule
-- <a href="https://lanecc.edu/advising" target="_blank">Academic Advising</a>
-- <a href="https://my.lanecc.edu/StudentRegistrationSsb/ssb/registration" target="_blank">Registration</a>
-
-## Q and A
-
-- Do you have any questions about:
-
-  - Lab 7&mdash;Calling a chat-completion API?
-  - The reading on MCP?
-
-  - Anything else?
-
-## Assignments Due
-
-### This Week (Week 9)
-
-- Tuesday 11/25
-  - Lab 7 code review
-- Friday 11/28
-  - Lab 7 production version
-- Sunday 11/30
-  - Lab 8 beta version
-
-### Next Week (Week10)
-
-- Tuesday 12/2 Lab 8 Code review
-- Thursday 12/4 Lab 8 production version
-- Friday 12/5 Term project beta version
-- Saturday 12/6 Term project code review
-
-### Fianals Week (Week 11)
-
-- Monday 12/8 Term project production version
-
-- Tuesday 12/9 Term project presentations
-
+- **Register now for Winter term** (if you haven't already)
   
+  - **Drop-in Winter Reg Fest**: Tuesday, Dec. 1 from 9am&ndash;2pm in Building 1, Admissions 102.  See [Registration, Schedules, and the Academic Calendar](https://www.lanecc.edu/programs-academics/registration-schedules-and-academic-calendar) for more information.
+    
+  - **AAS in Software Development**: these are the recommended second-year winter term courses:
+  
+    - CS 275, Basic Database SQL  
+      or if you have already taken CS 275: Directed elective CS 213, AI Programming 2
+    - CS 296R, Web Development 2: React (only offered in winter)
+    - CS 206, Co-op Ed: CIT Seminar
+    - CS 246, System Design (only offered in winter)
+    
+    Relevant links:
+    - <a href="https://lanecc.smartcatalogiq.com/en/current/lcc-catalog/programs-of-study/computer-information-technology/software-development-aas" target="_blank">Degree Requirements</a> for AAS in Software Dev
+    - <a href="https://docs.google.com/document/d/1F8CJY1M7A4J9uJtGRDFRyF-0j7l2AVe0vpPE5vcfHXE/edit?tab=t.0" target="_blank">Term-By-Term Sample Planner</a> for AAS in Software Dev
+    - <a href="https://lanecc.edu/advising" target="_blank">Academic Advising</a>
 
-![F2025Week09](Images/F2025Week09.jpg)
+## Discussion
 
-<a href="https://www.lanecc.edu/get-support/health-wellness/mental-health-wellness-center" target="_blank">Mental Health and Wellness Center (MHWC)</a>
+Do you have any questions or comments about:
+- Lab 7&mdash;Calling a chat completion API?
+- The reading on MCP?
+- Anything else?
+
+## Things to Do This Week
+
+- Tuesday 11/24
+  - Lab 7 code review.
+- Friday 11/27
+  - Lab 7 production version.
+- Sunday 11/29
+  - Lab 8 beta version&mdash;share it with your lab partners.
+
+
+
+![Week9 - F2026-27](Images\Week9 - F2026-27.jpg)
+
+Link to [mhwc](https://www.lanecc.edu/get-support/health-wellness/mental-health-wellness-center)
 
 
 
 ---
 
-<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 Course Materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in 2025, revised in <time>2026</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---

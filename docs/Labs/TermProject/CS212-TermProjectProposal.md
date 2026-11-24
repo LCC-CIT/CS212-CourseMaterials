@@ -13,3 +13,6 @@ author: Brian Bird
 Your project can be an entirely new app that incorporates some type of AI, or you can enhance one of your lab projects with an additional or different AI feature than it originally had. The project should be a stand-alone app (not a Jupyter notebook). 
 
 You can write the description in the Canvas online text area or upload a file.
+
+Here is a link to the [term project requirements document](CS212-TermProjectRequirements.md).
+
