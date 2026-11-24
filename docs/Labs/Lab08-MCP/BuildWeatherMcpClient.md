@@ -81,16 +81,16 @@ from mcp.client.stdio import stdio_client
 from openai import OpenAI
 
 # Import the function that reads the .env file
-from dotenv import load_dotenv
+from dotenv import dotenv_values
 
 # 1. Configuration
 # ----------------
-# Read the API key from the .env file
-load_dotenv()
-OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+# Read the settings in .env into a dictionary.
+settings = dotenv_values(".env")
+OPENROUTER_API_KEY = settings.get("OPENROUTER_API_KEY")
 
 if not OPENROUTER_API_KEY:
-    print("Error: OPENROUTER_API_KEY is not set. Add it to your .env file.")
+    print("Error: No OPENROUTER_API_KEY found in the .env file.")
     sys.exit(1)
 
 # The model to use. It must support tool calling.
