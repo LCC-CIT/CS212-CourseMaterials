@@ -87,14 +87,14 @@ Treat the key like a password: don't put it in your code or commit it to a repos
 
 ### Install the SDK
 
-OpenRouter uses the same API format as OpenAI, so the OpenAI Python SDK works with it:
+OpenRouter uses the same API format as OpenAI, so the OpenAI Python SDK works with it. The `python-dotenv` package reads your API key from a `.env` file:
 
 ```bash
-pip install openai
+pip install openai python-dotenv
 ```
 
 - Requires Python 3.10 or newer. The Python that comes with macOS may be older. Check with `python --version` (Windows) or `python3 --version` (macOS/Linux).
-- On macOS/Linux, use `python3` and `pip3` if `python` and `pip` aren't found. On Windows, `py -m pip install openai` works if `pip` isn't found.
+- On macOS/Linux, use `python3` and `pip3` if `python` and `pip` aren't found. On Windows, `py -m pip install openai python-dotenv` works if `pip` isn't found.
 - Install into a virtual environment to keep projects separate. On macOS, see [Installing the OpenAI SDK on macOS](#installing-the-openai-sdk-on-macos). On Windows:
 
   ```bash
@@ -102,25 +102,33 @@ pip install openai
   .venv\Scripts\activate
   ```
 
-- Run your script in the same terminal where the environment variable was set (or open a new one if it was set permanently).
-- Check the install with `pip show openai`.
+- Check the install with `pip show openai python-dotenv`.
+
+### Save the Key in a .env File
+
+To keep the key out of your code, save it in a file named `.env` in your project folder:
+
+```
+OPENROUTER_API_KEY=YOUR_API_KEY
+```
+
+- The file name is just `.env`, with nothing before the dot. On Windows, Notepad may save it as `.env.txt`. Creating the file in VS Code avoids this.
+- Add `.env` to your `.gitignore` file so the key never gets committed.
+- Run your script from the project folder, so the program finds the `.env` file.
 
 ### Make a Request
 
-Set an environment variable for the API key (see [Setting an Environment Variable](#setting-an-environment-variable)):
-
-In command prompt:  `set OPENROUTER_API_KEY=YOUR_API_KEY`  
-In PowerShell:  `$env:OPENROUTER_API_KEY="YOUR_API_KEY"`   
-In macOS terminal: `export OPENROUTER_API_KEY="<YOUR_API_KEY>"`
-
 ```python
-import os
+from dotenv import dotenv_values
 from openai import OpenAI
+
+# Read the settings in .env into a dictionary.
+settings = dotenv_values(".env")
 
 # Point the OpenAI client at OpenRouter instead of OpenAI.
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key=os.environ["OPENROUTER_API_KEY"],
+    api_key=settings["OPENROUTER_API_KEY"],
 )
 
 response = client.chat.completions.create(
@@ -213,78 +221,6 @@ The OpenAI SDK has arguments for `temperature`, `top_p`, `max_tokens`, `stop`, a
 
 
 
-### Setting an Environment Variable
-
-The standard and most secure way to use your OpenRouter API key with the Python SDK is by setting it as the **`OPENROUTER_API_KEY`** environment variable.
-
-The steps for setting this variable depend on your operating system and, for macOS/Linux, the shell you use.
-
-#### macOS / Linux (Terminal)
-
-In macOS and Linux, environment variables are typically set in your shell's configuration file (most modern macOS systems use **Zsh**, while many Linux distributions use **Bash**).
-
-1. **Open your terminal's configuration file** (replace `~/.zshrc` with `~/.bashrc` or `~/.bash_profile` if you use Bash):
-
-   ```bash
-   nano ~/.zshrc
-   ```
-
-2. **Add the export command** to the end of the file, replacing `<YOUR_API_KEY>` with your actual OpenRouter API key:
-
-   ```bash
-   export OPENROUTER_API_KEY="<YOUR_API_KEY>"
-   ```
-
-3. **Save and close** the file (in `nano`, press `Ctrl+X`, then `Y`, and then `Enter`).
-
-4. **Load the new variable** into your current terminal session:
-
-   ```bash
-   source ~/.zshrc
-   ```
-
-5. **Verify** it was set correctly:
-
-   ```bash
-   echo $OPENROUTER_API_KEY
-   ```
-
-This makes the variable **persistent**, so it will be available every time you open a new terminal window.
-
-#### Windows (Command Prompt or PowerShell)
-
-On Windows, you can set a **persistent user-level environment variable** via the command line, which will be available in new terminal sessions (both Command Prompt and PowerShell).
-
-##### 1. Set the Persistent Variable
-
-Execute the following command, replacing `<YOUR_API_KEY>` with your actual key:
-
-- **In Command Prompt (`cmd`):**
-
-  ```bat
-  setx OPENROUTER_API_KEY "YOUR_API_KEY"
-  ```
-
-- **In PowerShell:**
-
-  ```powershell
-  [Environment]::SetEnvironmentVariable("OPENROUTER_API_KEY", "YOUR_API_KEY", "User")
-  ```
-
-##### 2. Apply and Verify
-
-- The `setx` command makes the variable persistent, but **it only takes effect in new terminal windows**. **Close your current terminal and open a new one.**
-- **Verify** it was set correctly in the new window:
-
-| **Shell**          | **Command to Verify**      |
-| ------------------ | -------------------------- |
-| **Command Prompt** | `echo %OPENROUTER_API_KEY%`    |
-| **PowerShell**     | `echo $env:OPENROUTER_API_KEY` |
-
-> 💡 **Temporary Variable:** If you only need the key for the current session (it will disappear when the window closes), you can use `set OPENROUTER_API_KEY=YOUR_API_KEY` in Command Prompt or `$env:OPENROUTER_API_KEY="YOUR_API_KEY"` in PowerShell. In a macOS terminal use: `export OPENROUTER_API_KEY="<YOUR_API_KEY>"`
-
-
-
 ### Installing the OpenAI SDK on macOS
 
 OpenRouter can be used from Python with the **OpenAI SDK**, which is installed with the Python package installer, **`pip`**, not Homebrew (`brew`). Homebrew is primarily a package manager for macOS system tools and command-line applications.
@@ -292,7 +228,7 @@ OpenRouter can be used from Python with the **OpenAI SDK**, which is installed w
 #### Python SDK Installation
 
 ```bash
-pip install openai
+pip install openai python-dotenv
 ```
 
 #### Best Practice: Use a Virtual Environment
@@ -314,7 +250,7 @@ It's highly recommended to use a virtual environment to manage dependencies for 
 3. **Install the SDK:**
 
    ```bash
-   pip install openai
+   pip install openai python-dotenv
    ```
 
 4. **Deactivate when done:**
@@ -330,9 +266,9 @@ It's highly recommended to use a virtual environment to manage dependencies for 
 - <a href="https://openrouter.ai/" target="_blank">OpenRouter</a>&mdash;Official Web Site
   - [Sign up for OpenRouter](https://openrouter.ai/sign-up/)
     The account is free. You can skip providing a payment method.
-  - [OpenRouter QuickStart](https://ai.google.dev/gemini-api/docs/quickstart)
+  - [OpenRouter QuickStart](https://openrouter.ai/docs/quickstart)
     With code samples in Python and TypeScript
-  - [Chat Completion Refernce](https://openrouter.ai/docs/api/api-reference/chat/create-a-chat-completion)
+  - [Chat Completion Reference](https://openrouter.ai/docs/api/api-reference/chat/create-a-chat-completion)
     With examples in all major languages and an AI assistant on the page.
   
 - <a href="https://github.com/openai/openai-python" target="_blank">OpenAI Python SDK</a>&mdash;OpenAI GitHub Repo
