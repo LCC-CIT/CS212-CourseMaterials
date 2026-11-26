@@ -19,39 +19,53 @@
       "commentCell": "E9",
       "type": "developer_comments",
       "maxScore": 1,
-      "requireAiDisclosure": false
+      "require": [
+        "name",
+        "date",
+        "ai"
+      ],
+      "scope": "each",
+      "ignoreCommentsBy": [
+        "Brian Bird",
+        "Olivier Grisel"
+      ]
     },
     {
       "label": "Fetches the newsgroups training data and builds the feature vector matrix",
       "cell": "C10",
       "commentCell": "E10",
-      "type": "manual",
+      "type": "feature",
       "maxScore": 1,
-      "msg": "NEEDS MANUAL CHECK"
+      "featureId": "p1_features",
+      "failMsg": "Part 1: no fetch_20newsgroups with fit_transform in one file"
     },
     {
       "label": "Trains the classifier (without a pipeline)",
       "cell": "C11",
       "commentCell": "E11",
-      "type": "manual",
+      "type": "feature",
       "maxScore": 1,
-      "msg": "NEEDS MANUAL CHECK"
+      "featureId": "p1_train",
+      "failMsg": "Part 1: no classifier .fit() without a pipeline"
     },
     {
       "label": "Tests the classifier on the test data (twenty_test) and prints the mean accuracy",
       "cell": "C12",
       "commentCell": "E12",
-      "type": "manual",
+      "type": "feature",
       "maxScore": 1,
-      "msg": "NEEDS MANUAL CHECK"
+      "featureId": "p1_test",
+      "failMsg": "Part 1: no predict on twenty_test with a mean accuracy"
     },
     {
       "label": "Includes only the essential code (not code that just shows what the program is doing)",
       "cell": "C13",
       "commentCell": "E13",
-      "type": "manual",
+      "type": "llm_check",
       "maxScore": 4,
-      "msg": "NEEDS MANUAL CHECK"
+      "partId": "part1",
+      "criterion": "The Part 1 program includes only the essential code from the tutorial, not code that just shows what the program is doing",
+      "guidance": "Essential code: fetch the training data, build the feature vector matrix (CountVectorizer and TfidfTransformer, or TfidfVectorizer), train the classifier without a pipeline, fetch twenty_test, predict, and print the mean accuracy. Deduct for leftover exploration code, such as printing target names, data lengths, matrix shapes, vocabulary lookups or sample documents, and for pipeline or grid search code. Suggest a score up to 4."
     },
     {
       "label": "No errors in the IDE and runs without errors",
@@ -65,8 +79,9 @@
       "type": "lint",
       "cell": "C15",
       "maxScore": 2,
-      "severity": "errors",
-      "commentCell": "E15"
+      "severity": "warnings",
+      "commentCell": "E15",
+      "partId": "part1"
     },
     {
       "label": "Developer’s name, any AI used and the date in comments in each file",
@@ -74,97 +89,642 @@
       "commentCell": "E18",
       "type": "developer_comments",
       "maxScore": 1,
-      "requireAiDisclosure": false
+      "require": [
+        "name",
+        "date",
+        "ai"
+      ],
+      "scope": "each",
+      "ignoreCommentsBy": [
+        "Brian Bird",
+        "Olivier Grisel"
+      ]
     },
     {
       "label": "No syntax or runtime errors",
-      "type": "build_check",
+      "type": "lint",
       "cell": "C19",
       "maxScore": 1,
-      "commentCell": "E19"
+      "commentCell": "E19",
+      "severity": "errors",
+      "partId": "part2",
+      "thresholds": {
+        "full": 2,
+        "half": 4
+      }
     },
     {
       "label": "Uses best practices and good coding style",
       "cell": "C20",
       "commentCell": "E20",
-      "type": "manual",
+      "type": "lint",
       "maxScore": 1,
-      "msg": "NEEDS MANUAL CHECK"
+      "severity": "warnings",
+      "partId": "part2"
     },
     {
       "label": "Loads data, splits into train and test data structures",
       "cell": "C21",
       "commentCell": "E21",
-      "type": "manual",
+      "type": "feature",
       "maxScore": 4,
-      "msg": "NEEDS MANUAL CHECK"
+      "featureId": "p2_split",
+      "failMsg": "Part 2: no train_test_split"
     },
     {
       "label": "Extracts features from text and uses a Pipeline (vectorizer + classifier)",
       "cell": "C22",
       "commentCell": "E22",
-      "type": "manual",
+      "type": "feature",
       "maxScore": 3,
-      "msg": "NEEDS MANUAL CHECK"
+      "featureId": "p2_pipeline",
+      "failMsg": "Part 2: no Pipeline with a vectorizer"
     },
     {
       "label": "Fits the model to the training data",
       "cell": "C23",
       "commentCell": "E23",
-      "type": "manual",
+      "type": "feature",
       "maxScore": 3,
-      "msg": "NEEDS MANUAL CHECK"
+      "featureId": "p2_fit",
+      "failMsg": "Part 2: no .fit()"
     },
     {
       "label": "Does classification on the test data",
       "cell": "C24",
       "commentCell": "E24",
-      "type": "manual",
+      "type": "feature",
       "maxScore": 3,
-      "msg": "NEEDS MANUAL CHECK"
+      "featureId": "p2_predict",
+      "failMsg": "Part 2: no .predict() on the test data"
     },
     {
       "label": "Evaluates performance using test data, prints the accuracy",
       "cell": "C25",
       "commentCell": "E25",
-      "type": "manual",
+      "type": "feature",
       "maxScore": 3,
-      "msg": "NEEDS MANUAL CHECK"
+      "featureId": "p2_accuracy",
+      "failMsg": "Part 2: no accuracy (accuracy_score, np.mean or .score)"
     },
     {
       "label": "A: 1 to 3 character vectorizer; B and C: GridSearchCV",
       "cell": "C27",
       "commentCell": "E27",
-      "type": "manual",
+      "type": "feature",
       "maxScore": 5,
-      "msg": "NEEDS MANUAL CHECK"
+      "featureId": "p2_version_req",
+      "failMsg": "Version A: no analyzer='char' with ngram_range=(1, 3); versions B and C: no GridSearchCV with best_params_ and a score"
     },
     {
       "label": "Versions A and B: adds explanatory comments; Version C: answers the questions in comments",
       "cell": "C28",
       "commentCell": "E28",
-      "type": "manual",
+      "type": "llm_check",
       "maxScore": 2,
-      "msg": "NEEDS MANUAL CHECK"
+      "partId": "part2",
+      "criterion": "Versions A and B: the Part 2 code has comments that explain what it does. Version C: comments at the top of the Part 2 file answer the three questions in the instructions (best and hardest class, using the confusion matrix; the most common mistakes; why it can't reach 100%)",
+      "guidance": "Full credit: clear, accurate comments (A, B) or reasonable answers to all three questions (C). Partial credit: few or thin comments, or some questions unanswered. 0: none. Suggest a score up to 2."
     }
   ],
   "variations": {
     "A": {
-      "appName": "Language identification for wikipedia text"
+      "appName": "Language identification for wikipedia text",
+      "overrides": {
+        "analysis": {
+          "features": [
+            {
+              "id": "p1_features",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "fetch_20newsgroups\\s*\\("
+                  },
+                  {
+                    "regex": "\\.fit_transform\\s*\\("
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p1_train",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "fetch_20newsgroups\\s*\\("
+                  },
+                  {
+                    "regex": "(MultinomialNB|SGDClassifier|LinearSVC|LogisticRegression|Perceptron)\\s*\\("
+                  },
+                  {
+                    "regex": "\\.fit\\s*\\("
+                  },
+                  {
+                    "not": {
+                      "regex": "Pipeline\\s*\\(|make_pipeline\\s*\\("
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p1_test",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "twenty_test"
+                  },
+                  {
+                    "regex": "\\.predict\\s*\\("
+                  },
+                  {
+                    "regex": "np\\.mean\\s*\\(|numpy\\.mean\\s*\\(|accuracy_score\\s*\\(|\\.score\\s*\\("
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p2_split",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+                  },
+                  {
+                    "regex": "train_test_split\\s*\\("
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p2_pipeline",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+                  },
+                  {
+                    "regex": "Pipeline\\s*\\(|make_pipeline\\s*\\("
+                  },
+                  {
+                    "regex": "Vectorizer\\s*\\("
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p2_fit",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+                  },
+                  {
+                    "regex": "\\.fit\\s*\\("
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p2_predict",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+                  },
+                  {
+                    "regex": "\\.predict\\s*\\(\\s*[\\w.\\[\\]]*test"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p2_accuracy",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+                  },
+                  {
+                    "regex": "accuracy_score\\s*\\(|np\\.mean\\s*\\(|numpy\\.mean\\s*\\(|\\.score\\s*\\(|best_score_"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p2_version_req",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "analyzer\\s*=\\s*['\\\"]char(_wb)?['\\\"]"
+                  },
+                  {
+                    "regex": "ngram_range\\s*=\\s*\\(\\s*1\\s*,\\s*3\\s*\\)"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "lint": {
+          "exclude": [
+            "fetch_data.py"
+          ],
+          "parts": [
+            {
+              "id": "part1",
+              "filePattern": "fetch_20newsgroups|twenty_test"
+            },
+            {
+              "id": "part2",
+              "filePattern": "language"
+            }
+          ]
+        }
+      }
     },
     "B": {
-      "appName": "Sentiment analysis of movie reviews"
+      "appName": "Sentiment analysis of movie reviews",
+      "overrides": {
+        "analysis": {
+          "features": [
+            {
+              "id": "p1_features",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "fetch_20newsgroups\\s*\\("
+                  },
+                  {
+                    "regex": "\\.fit_transform\\s*\\("
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p1_train",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "fetch_20newsgroups\\s*\\("
+                  },
+                  {
+                    "regex": "(MultinomialNB|SGDClassifier|LinearSVC|LogisticRegression|Perceptron)\\s*\\("
+                  },
+                  {
+                    "regex": "\\.fit\\s*\\("
+                  },
+                  {
+                    "not": {
+                      "regex": "Pipeline\\s*\\(|make_pipeline\\s*\\("
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p1_test",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "twenty_test"
+                  },
+                  {
+                    "regex": "\\.predict\\s*\\("
+                  },
+                  {
+                    "regex": "np\\.mean\\s*\\(|numpy\\.mean\\s*\\(|accuracy_score\\s*\\(|\\.score\\s*\\("
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p2_split",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+                  },
+                  {
+                    "regex": "train_test_split\\s*\\("
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p2_pipeline",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+                  },
+                  {
+                    "regex": "Pipeline\\s*\\(|make_pipeline\\s*\\("
+                  },
+                  {
+                    "regex": "Vectorizer\\s*\\("
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p2_fit",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+                  },
+                  {
+                    "regex": "\\.fit\\s*\\("
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p2_predict",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+                  },
+                  {
+                    "regex": "\\.predict\\s*\\(\\s*[\\w.\\[\\]]*test"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p2_accuracy",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+                  },
+                  {
+                    "regex": "accuracy_score\\s*\\(|np\\.mean\\s*\\(|numpy\\.mean\\s*\\(|\\.score\\s*\\(|best_score_"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p2_version_req",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "GridSearchCV\\s*\\("
+                  },
+                  {
+                    "regex": "best_params_"
+                  },
+                  {
+                    "regex": "best_score_|cv_results_|best_estimator_|accuracy_score\\s*\\(|\\.score\\s*\\("
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "lint": {
+          "exclude": [
+            "fetch_data.py"
+          ],
+          "parts": [
+            {
+              "id": "part1",
+              "filePattern": "fetch_20newsgroups|twenty_test"
+            },
+            {
+              "id": "part2",
+              "filePattern": "sentiment|polarity|movie_reviews"
+            }
+          ]
+        }
+      }
     },
     "C": {
-      "appName": "Predicting Star Ratings from Movie Reviews"
+      "appName": "Predicting Star Ratings from Movie Reviews",
+      "overrides": {
+        "analysis": {
+          "features": [
+            {
+              "id": "p1_features",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "fetch_20newsgroups\\s*\\("
+                  },
+                  {
+                    "regex": "\\.fit_transform\\s*\\("
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p1_train",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "fetch_20newsgroups\\s*\\("
+                  },
+                  {
+                    "regex": "(MultinomialNB|SGDClassifier|LinearSVC|LogisticRegression|Perceptron)\\s*\\("
+                  },
+                  {
+                    "regex": "\\.fit\\s*\\("
+                  },
+                  {
+                    "not": {
+                      "regex": "Pipeline\\s*\\(|make_pipeline\\s*\\("
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p1_test",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "twenty_test"
+                  },
+                  {
+                    "regex": "\\.predict\\s*\\("
+                  },
+                  {
+                    "regex": "np\\.mean\\s*\\(|numpy\\.mean\\s*\\(|accuracy_score\\s*\\(|\\.score\\s*\\("
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p2_split",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+                  },
+                  {
+                    "regex": "train_test_split\\s*\\("
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p2_pipeline",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+                  },
+                  {
+                    "regex": "Pipeline\\s*\\(|make_pipeline\\s*\\("
+                  },
+                  {
+                    "regex": "Vectorizer\\s*\\("
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p2_fit",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+                  },
+                  {
+                    "regex": "\\.fit\\s*\\("
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p2_predict",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+                  },
+                  {
+                    "regex": "\\.predict\\s*\\(\\s*[\\w.\\[\\]]*test"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p2_accuracy",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+                  },
+                  {
+                    "regex": "accuracy_score\\s*\\(|np\\.mean\\s*\\(|numpy\\.mean\\s*\\(|\\.score\\s*\\(|best_score_"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "p2_version_req",
+              "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+              "sameFile": true,
+              "match": {
+                "allOf": [
+                  {
+                    "regex": "GridSearchCV\\s*\\("
+                  },
+                  {
+                    "regex": "best_params_"
+                  },
+                  {
+                    "regex": "best_score_|cv_results_|best_estimator_|accuracy_score\\s*\\(|\\.score\\s*\\("
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "lint": {
+          "exclude": [
+            "fetch_data.py"
+          ],
+          "parts": [
+            {
+              "id": "part1",
+              "filePattern": "fetch_20newsgroups|twenty_test"
+            },
+            {
+              "id": "part2",
+              "filePattern": "scaledata|3class"
+            }
+          ]
+        }
+      }
     }
   },
   "calibration": {
-    "solution": {
-      "A": "."
+    "starter": {
+      "A": "../../docs/Tutorials/scikit-learn-1.7/text_analytics/skeletons",
+      "B": "../../docs/Tutorials/scikit-learn-1.7/text_analytics/skeletons"
     }
   },
   "llmCheck": {
+    "provider": "openai",
+    "baseUrl": "https://api.deepseek.com",
+    "model": "deepseek-flash",
+    "concurrency": 4,
     "instructions": {
       "A": [
         "../../docs/Labs/Lab03-TextClassification/CS212_Lab03_Part1_Instructions.md",
@@ -172,12 +732,201 @@
       ],
       "B": [
         "../../docs/Labs/Lab03-TextClassification/CS212_Lab03_Part1_Instructions.md",
-        "../../docs/Labs/Lab03-TextClassification/GroupC/CS212_Lab03_Part2_Instructions_GroupC.md"
+        "../../docs/Labs/Lab03-TextClassification/GroupB/CS212_Lab03_Part2_Instructions_GroupB.md"
       ],
       "C": [
         "../../docs/Labs/Lab03-TextClassification/CS212_Lab03_Part1_Instructions.md",
         "../../docs/Labs/Lab03-TextClassification/GroupC/CS212_Lab03_Part2_Instructions_GroupC.md"
       ]
     }
+  },
+  "analysis": {
+    "features": [
+      {
+        "id": "p1_features",
+        "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+        "sameFile": true,
+        "match": {
+          "allOf": [
+            {
+              "regex": "fetch_20newsgroups\\s*\\("
+            },
+            {
+              "regex": "\\.fit_transform\\s*\\("
+            }
+          ]
+        }
+      },
+      {
+        "id": "p1_train",
+        "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+        "sameFile": true,
+        "match": {
+          "allOf": [
+            {
+              "regex": "fetch_20newsgroups\\s*\\("
+            },
+            {
+              "regex": "(MultinomialNB|SGDClassifier|LinearSVC|LogisticRegression|Perceptron)\\s*\\("
+            },
+            {
+              "regex": "\\.fit\\s*\\("
+            },
+            {
+              "not": {
+                "regex": "Pipeline\\s*\\(|make_pipeline\\s*\\("
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "p1_test",
+        "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+        "sameFile": true,
+        "match": {
+          "allOf": [
+            {
+              "regex": "twenty_test"
+            },
+            {
+              "regex": "\\.predict\\s*\\("
+            },
+            {
+              "regex": "np\\.mean\\s*\\(|numpy\\.mean\\s*\\(|accuracy_score\\s*\\(|\\.score\\s*\\("
+            }
+          ]
+        }
+      },
+      {
+        "id": "p2_split",
+        "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+        "sameFile": true,
+        "match": {
+          "allOf": [
+            {
+              "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+            },
+            {
+              "regex": "train_test_split\\s*\\("
+            }
+          ]
+        }
+      },
+      {
+        "id": "p2_pipeline",
+        "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+        "sameFile": true,
+        "match": {
+          "allOf": [
+            {
+              "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+            },
+            {
+              "regex": "Pipeline\\s*\\(|make_pipeline\\s*\\("
+            },
+            {
+              "regex": "Vectorizer\\s*\\("
+            }
+          ]
+        }
+      },
+      {
+        "id": "p2_fit",
+        "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+        "sameFile": true,
+        "match": {
+          "allOf": [
+            {
+              "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+            },
+            {
+              "regex": "\\.fit\\s*\\("
+            }
+          ]
+        }
+      },
+      {
+        "id": "p2_predict",
+        "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+        "sameFile": true,
+        "match": {
+          "allOf": [
+            {
+              "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+            },
+            {
+              "regex": "\\.predict\\s*\\(\\s*[\\w.\\[\\]]*test"
+            }
+          ]
+        }
+      },
+      {
+        "id": "p2_accuracy",
+        "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+        "sameFile": true,
+        "match": {
+          "allOf": [
+            {
+              "regex": "train_test_split\\s*\\(|load_files\\s*\\(|scaledata"
+            },
+            {
+              "regex": "accuracy_score\\s*\\(|np\\.mean\\s*\\(|numpy\\.mean\\s*\\(|\\.score\\s*\\(|best_score_"
+            }
+          ]
+        }
+      },
+      {
+        "id": "p2_version_req",
+        "fileRegex": "^(?!(.*/)?fetch_data\\.py$).*\\.py$",
+        "sameFile": true,
+        "match": {
+          "anyOf": [
+            {
+              "allOf": [
+                {
+                  "regex": "analyzer\\s*=\\s*['\\\"]char(_wb)?['\\\"]"
+                },
+                {
+                  "regex": "ngram_range\\s*=\\s*\\(\\s*1\\s*,\\s*3\\s*\\)"
+                }
+              ]
+            },
+            {
+              "allOf": [
+                {
+                  "regex": "GridSearchCV\\s*\\("
+                },
+                {
+                  "regex": "best_params_"
+                },
+                {
+                  "regex": "best_score_|cv_results_|best_estimator_|accuracy_score\\s*\\(|\\.score\\s*\\("
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "lint": {
+    "exclude": [
+      "fetch_data.py"
+    ],
+    "parts": [
+      {
+        "id": "part1",
+        "filePattern": "fetch_20newsgroups|twenty_test"
+      },
+      {
+        "id": "part2",
+        "filePattern": "train_test_split|load_files|scaledata"
+      }
+    ]
+  },
+  "runCheck": {
+    "partId": "part1",
+    "timeoutMs": 120000
   }
 }
