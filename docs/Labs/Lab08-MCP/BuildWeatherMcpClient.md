@@ -17,7 +17,7 @@ This tutorial was adapted from the <a href="https://modelcontextprotocol.io/docs
 ## Prerequisites
 
 - The `weather-mcp` project you made in the [Build a Weather MCP Server](BuildWeatherMcpServer.md) tutorial. You don't need to start the server; the client will start it for you.
-- An OpenRouter account and API key (see below).
+- An OpenRouter or other LLM API account and API key (see below).
 
 ## Project Setup
 
@@ -65,7 +65,9 @@ Your API key is like a password, so don't put it in your code. Instead, you will
 
 ## Writing the Client Code
 
-Create a file named `client.py` in your `weather-mcp` folder, next to `server.py`. This script will start your weather server, get its list of tools, send them to the model, and handle the conversation loop.
+**Create** a file named `client.py` in your `weather-mcp` folder, next to `server.py`. 
+
+This script will start your weather server, get its list of tools, send them to the model, and handle the conversation loop.
 
 ```python
 import asyncio
@@ -94,7 +96,7 @@ if not OPENROUTER_API_KEY:
     sys.exit(1)
 
 # The model to use. It must support tool calling.
-MODEL = "google/gemma-4-31b-it:free"
+MODEL = "nvidia/nemotron-3.5-lightning:free"
 
 # server.py is in the same folder as this file
 SERVER_SCRIPT_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "server.py")

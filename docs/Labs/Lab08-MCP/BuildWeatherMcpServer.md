@@ -50,7 +50,7 @@ uv add "mcp[cli]<2" httpx
 
 ## NWS Weather Forecast API
 
-he forecasts and alerts come from the **U.S. National Weather Service (NWS)**, part of NOAA, a U.S. government agency. The server calls the NWS API at `api.weather.gov`.
+The forecasts and alerts come from the **U.S. National Weather Service (NWS)**, part of NOAA, a U.S. government agency. The server calls the NWS API at `api.weather.gov`.
 
 - It's free and needs no API key or account. 
 - It asks every client to send a `User-Agent` header that identifies the app. 
@@ -59,7 +59,13 @@ he forecasts and alerts come from the **U.S. National Weather Service (NWS)**, p
 
 ## Writing the Server
 
-`uv init` made a file named `main.py`. You can delete it. Create a file named `server.py` in *weather-mcp*. To keep things simple and avoid complex type definitions, we will define our tool inputs using standard Python dictionaries.
+`uv init` made a file named `main.py`, but we won't use it.
+
+- **Delete** `main.py`
+
+- **Create** a file named `server.py` in *weather-mcp*. 
+
+To keep things simple and avoid complex type definitions, we will define our tool inputs using standard Python dictionaries.
 
 ```python
 import asyncio
@@ -298,9 +304,65 @@ Now we need to tell the Claude Desktop app where to find this script. We do this
 
 ### Configuring VS Code as a Client
 
-To switch from Claude Desktop to VS Code (GitHub Copilot) as a client, you only need to make a configuration file for use with VS Code. Nothing needs to be changed in the server code.
+To use VS Code (with GitHub Copilot) as a client, you only need to make a configuration file for use with VS Code. Nothing needs to be changed in the server code.
 
 Instead of creating  a global config file like you did for Claude, you will create a project-specific config file for VS Code.
+
+Where the config file goes depends on your VS Code version. To check it, go to **Help → About** (on macOS, **Code → About Visual Studio Code**).
+
+- **VS Code 1.143 or later:** Chat uses the new **Copilot harness** by default. Follow the [VS Code 1.143 and Later](#vs-code-1143-and-later) instructions.
+- **Before VS Code 1.143,** or if your chat session uses the older **Local** harness: Follow the [Before VS Code 1.143](#before-vs-code-1143) instructions. (The Local harness was deprecated in VS Code 1.146 and will be removed in February 2027.)
+
+#### VS Code 1.143 and Later
+
+**Instructions:**
+
+1. In the root of your `weather-mcp` folder (next to `server.py`), create a file named `.mcp.json`. Note the dot at the start of the name.
+
+2. Add the following configuration. It uses the same `mcpServers` root key as the Claude Desktop config.
+
+   *Replace `/ABSOLUTE/PATH/TO/` with the actual path on your machine.*
+
+   ```json
+   {
+     "mcpServers": {
+       "weather-server": {
+         "type": "stdio",
+         "command": "uv",
+         "args": ["--directory", "/ABSOLUTE/PATH/TO/weather-mcp", "run", "server.py"]
+       }
+     }
+   }
+   ```
+
+   > **Note for Windows Users:** Use `\\` instead of `/` in the path, for example: `C:\\ABSOLUTE\\PATH\\TO\\weather-mcp`.
+
+   *`.mcp.json` doesn't support VS Code variables like `${workspaceFolder}`, so you need the absolute path here, just like you did for Claude Desktop.*
+
+#### Testing with VS Code 1.143 and Later
+
+**Instructions:**
+
+1. **Open the `weather-mcp` folder** in VS Code. The folder must be trusted. If VS Code asks whether you trust the authors of the files in this folder, choose **Yes**.
+
+2. **Open Copilot Chat:** Click the Chat icon in the sidebar. Make sure the session target is **Copilot**.
+
+3. **Turn on the weather server:** Click the **Session Customizations** icon at the top of the chat window, then select **MCP Servers**. (You can also open the Command Palette and run **Chat: Open Customizations**.) You should see `weather-server` in the list. Make sure its toggle is on. If it isn't running, open its **...** menu and choose **Start Server**.
+
+4. **Ask a Question:**
+
+   - For the weather forecast, you can ask either by latitude and longitude <u>or</u> by city and state. For example:
+     - What is the forecast for lat 44.0521, lon -123.0868?
+     - What is the forecast for Springfield, OR?
+
+   Copilot will:
+
+   1. Ask for permission to use the tool.
+   2. Run your Python script in the background.
+   3. Get the result ("sunny with a high of 75°F").
+   4. Write a response based on that data.
+
+#### Before VS Code 1.143
 
 **Instructions:**
 
@@ -325,9 +387,9 @@ Instead of creating  a global config file like you did for Claude, you will crea
    
    *VS Code replaces `${workspaceFolder}` with the path to the folder you have open, so you don't need to type an absolute path. Make sure you open the `weather-mcp` folder itself in VS Code.*
 
-#### Testing with VS Code
+#### Testing with VS Code Before 1.143
 
-Use the Copilot Chat sidebar.
+Use the Copilot Chat sidebar (after reloading).
 
 **Instructions:**
 
@@ -362,9 +424,10 @@ If the *weather-server* doesn't appear in the list of tools or the tool fails:
    - **Claude Desktop:** Look at `mcp.log` and `mcp-server-weather-server.log` in the logs folder.
      - **macOS:** `~/Library/Logs/Claude/`
      - **Windows:** `%APPDATA%\Claude\logs\`
-   - **VS Code:** Open the Command Palette, run **MCP: List Servers**, select *weather-server*, and choose **Show Output**.
-2. For Claude Desktop, make sure you used the <u>absolute path</u> to your `weather-mcp` folder after `--directory`.
-3. Make sure the server runs on its own. In the `weather-mcp` folder, run `uv run server.py`. If there are no errors, it will wait silently for a client to connect. Press `Ctrl+C` to stop it.
+   - **VS Code:** Open the Command Palette, run **MCP: List Servers**, select *weather-server*, and choose **Show Output**. In VS Code 1.143 and later, you can also go to **Session Customizations → MCP Servers**, open the server's **...** menu, and choose **Show Output**.
+2. For Claude Desktop and for `.mcp.json` in VS Code, make sure you used the <u>absolute path</u> to your `weather-mcp` folder after `--directory`.
+3. For VS Code 1.143 and later, make sure `.mcp.json` is in the root of the folder you opened, not in `.vscode`, and that its root key is `mcpServers`.
+4. Make sure the server runs on its own. In the `weather-mcp` folder, run `uv run server.py`. If there are no errors, it will wait silently for a client to connect. Press `Ctrl+C` to stop it.
 
 
 
@@ -379,11 +442,11 @@ This video demonstrates the "Agent mode" in VS Code and how to access MCP tools 
 
 
 
-*This tutorial was initially drafted using Gemini 3 and revised using Claude Opus 5.5.*
+*This tutorial was initially drafted using Gemini 3 and revised with assistance from Claude Opus 5.5.*
 
 ---
 
-<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 course materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in <time>2025</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
+<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a> AI Programming 1 course materials by <a href="https://profbird.dev" target="_blank">Brian Bird</a>, written in 2025, revised in <time>2026</time>, are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>. 
 
 ---
 
